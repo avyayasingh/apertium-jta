@@ -1,3 +1,4 @@
+# Adapted from the Standard Tamil apertium-tam available at https://github.com/apertium/apertium-tam.git, by Maathavan Nithiyananthan <maathumaathavan@gmail.com>
 # Morphological Transducer for Jaffna Tamil
 
 # Part of speech categories
@@ -28,26 +29,31 @@
 ###############################################################################
 
 PATTERNS
-## Example inflection pattern:
-# NounRoot RegNounInfl
+Nouns [ <n>: ] NounNum Cases
 Number
 Punctuation
 
+LEXICON NounNum
+<sg>:#
+<pl>:>          #finish plural marking
 
-## Example inflection lexicon:
-# LEXICON RegNounInfl
-# <n><sg>:
-# <n><pl>:>s
-
+LEXICON Cases
+<nom>:#
+<acc>:>ஐ         # 'ay'
+<int>:>ாலெ     # 'aalai~ay'
+<dat>:>ுக்கு     # 'ukku'                  check twol
+<com>:>ோடெ    # 'ootai~ay'              fix oo if needed
+<loc>:>ிலெ      # 'ilai~ay'
+<refr>:>ிட்டெ    # 'ittai~ay'
+<gen>:>ின்ரெ    # 'inrai~ay'
+<abl>:>                                     #extra word
 
 ###############################################################################
 ###                          L E X I C O N                                  ###
 ###############################################################################
 
-## Example stem lexicon:
-# LEXICON NounRoot
-# house:house   # A noun
-
+LEXICON Nouns
+மரம்:மரம{Anu}
 
 PATTERN Number
 Numeral [<num>:]

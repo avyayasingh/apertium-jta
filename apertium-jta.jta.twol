@@ -1,9 +1,13 @@
 ! Adapted from apertium-tam available at https://github.com/apertium/apertium-tam.git, by Maathavan Nithiyananthan <maathumaathavan@gmail.com>
 
+! check twol for rules in lexd
+
 Alphabet
     அ ஆ இ ஈ உ ஊ எ ஏ ஐ ஒ ஓ ஔ ஃ க ங ச ஞ	ட ண த ந ப ம ய ர ல வ	ழ ள ற ன
    ா ி  ீ  ு  ூ  ெ  ே  ை  ொ  ோ  ௌ  ௗ   ்
-     %{X%}:0 %>:0 %»:0;
+     %{X%}:0
+     %{Anu%}:0
+     %>:0 %»;
 
 Sets
 
@@ -19,8 +23,6 @@ VowWithSym = ஆ இ ஈ உ ஊ எ ஏ ஐ ஒ ஓ ஔ ;
 VowSym = ா ி  ீ  ு  ூ  ெ  ே  ை  ொ  ோ  ௌ ;
 ShortVowSym = ி  ு  ெ  ை  ொ;
 LongVowSym =  ா  ீ  ூ  ே  ோ  ௌ;
-
-Rules
 
 Rules 
 
