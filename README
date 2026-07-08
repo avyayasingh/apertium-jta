@@ -1,12 +1,12 @@
 jta: `apertium-jta`
 ===============================================================================
 
-This is an Apertium monolingual language package for jta. What
+This is an Apertium monolingual language package for Jaffna Tamil. What
 you can use this language package for:
 
-* Morphological analysis of jta
-* Morphological generation of jta
-* Part-of-speech tagging of jta
+* Morphological analysis of Jaffna Tamil
+* Morphological generation of Jaffna Tamil
+* Part-of-speech tagging of Jaffna Tamil
 
 Requirements
 -------------------------------------------------------------------------------
