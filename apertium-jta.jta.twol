@@ -1,17 +1,98 @@
+! Adapted from apertium-tam available at https://github.com/apertium/apertium-tam.git, by Maathavan Nithiyananthan <maathumaathavan@gmail.com>
+
 Alphabet
- A B Ç D E Ä F G H I J Ž K L M N Ň O Ö P R S Ş T U Ü W Y Ý Z
- a b ç d e ä f g h i j ž k l m n ň o ö p r s ş t u ü w y ý z
- %{A%}:a %>:0  ;
+    அ ஆ இ ஈ உ ஊ எ ஏ ஐ ஒ ஓ ஔ ஃ க ங ச ஞ	ட ண த ந ப ம ய ர ல வ	ழ ள ற ன
+   ா ி  ீ  ு  ூ  ெ  ே  ை  ொ  ோ  ௌ  ௗ   ்
+     %{X%}:0 %>:0 %»:0;
 
 Sets
 
-Vowel = A E Ä I O Ö U Ü Y Ý
-        a e ä i o ö u ü y ý ;
+Consonant = க ங ச ஞ	ட ண த ந ப ம ய ர ல வ	ழ ள ற ன ;
+Mellinam = ங ஞ ண ந ம ன;
+Vallinam = க ச ட த ப ற;
+Idaiyinam = ய ர ல வ ழ ள;
+
+RemConsonant = Mellinam ல ;
+
+Vowel = அ ஆ இ ஈ உ ஊ எ ஏ ஐ ஒ ஓ ஔ ஃ ;
+VowWithSym = ஆ இ ஈ உ ஊ எ ஏ ஐ ஒ ஓ ஔ ;
+VowSym = ா ி  ீ  ு  ூ  ெ  ே  ை  ொ  ோ  ௌ ;
+ShortVowSym = ி  ு  ெ  ை  ொ;
+LongVowSym =  ா  ீ  ூ  ே  ோ  ௌ;
 
 Rules
 
-"Remove suffix vowel with vowel-ending stem"
-i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
+Rules 
+
+"Change to VowSymbols When Preceded by a Consonant"
+Vx:Vy <=> %»: _ ;
+          where Vx in VowWithSym Vy in VowSym matched;
+
+"Ending with Vowels"
+%{X%}:க <=> LongVowSym: %>: _ ;
+
+"Ending with Mellinam"
+%{X%}:ங <=> Mellinam: ்: %>: _ ;
+
+"Ending with ல"
+%{X%}:ற <=> ல:  ்: %>: _ ;
+              except
+               ி: ல:  ்: %>: _ ;
+               ோ: ல:  ்: %>: _ ;
+
+"Ending with ல"
+%{X%}:ல <=> Vx: ல:  ்: %>: _ ;
+              where Vx in ( ி  ோ ) ;
+
+"Removing அ When adding after a consonant"
+அ:0 <=> %»: _ ;
+
+"Inserting ய"
+%{X%}:ய <=> ை: _ %»:;
+             ி: _ %»:;
+
+"Ending with ல"
+%{X%}:வ <=>  ா: _ %»:;
+
+"Inserting ல"
+%{X%}:ல <=> Vallinam: ல:   ்: _ %»:;
+            except 
+            ட: ல:   ்: _ %»:;
+
+"Changing to த"
+%{X%}:த <=> ம:   ்: _ %»:;
+
+"Changing to த"
+ம:த <=> _   ்: %{X%}: %»:;
+
+"Changing to ட"
+%{X%}:ட <=> VowSym: ட:  ு: _ %»:;
+
+"Removing  ு"
+ ு:Vx <=> VowSym: ட: _ %{X%}: %»:;
+          where Vx in (  ் ) ;
+
+"Removing  ு"
+ ு:0 <=> வ: _ %{X%}: %»:;
+          க: _ %{X%}: %»:;
+           ்: ட: _ %{X%}: %»:;
+
+"Adding Kutru"
+0:Vy <=> LongVowSym: %>: %{X%}: _ க: ;
+         RemConsonant: ்: %>: %{X%}: _ க: ;
+         where Vy in (  ் ) ;
+
+"Removing kutru When adding Suffix"
+  ்:0 <=> RemConsonant: _ %>: ;
+          _ %{X%}: %»:;
+          except 
+          ப: ல: _ %{X%}: %»:;
+          ம: _ %{X%}: %»:;
+
+
+"Removing Consonant When adding suffix"
+Vx:0 <=> _ ்: %>: ;
+    where Vx in RemConsonant ;
 
 ! Resources:
 ! https://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
