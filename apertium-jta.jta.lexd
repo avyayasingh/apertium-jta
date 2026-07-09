@@ -39,13 +39,13 @@ LEXICON NounNum
 
 LEXICON Cases
 <nom>:#
-<acc>:>ஐ         # 'ay'
-<int>:>ாலெ     # 'aalai~ay'
-<dat>:>ுக்கு     # 'ukku'                  check twol
-<com>:>ோடெ    # 'ootai~ay'              fix oo if needed
-<loc>:>ிலெ      # 'ilai~ay'
-<refr>:>ிட்டெ    # 'ittai~ay'
-<gen>:>ின்ரெ    # 'inrai~ay'
+<acc>:>{AI}         # 'ay'
+<int>:>{AA}லெ      # 'aalai~ay'
+<dat>:>{U}க்கு       # 'ukku'
+<com>:>{OO}டெ      # 'ootai~ay'
+<loc>:>{I}லெ       # 'ilai~ay'
+<refr>:>{I}ட்டெ     # 'ittai~ay'
+<gen>:>{I}ன்ரெ     # 'inrai~ay'
 <abl>:>                                     #extra word
 
 ###############################################################################
@@ -53,7 +53,10 @@ LEXICON Cases
 ###############################################################################
 
 LEXICON Nouns
-மரம்:மரம{Anu}
+மரம்:மர{M}{Pul}         # 'maram'    tree
+பையன்:பையன{Pul}    # 'petiyan'  boy
+அப்பா:அப்ப{AA}         # 'appa'     father
+அம்மா:அம்ம{AA}        # 'amma'     mother
 
 PATTERN Number
 Numeral [<num>:]
@@ -61,6 +64,79 @@ Numeral [<num>:]
 LEXICON Numeral
 /([0123456789])+/
 /([0123456789])+[.,]([0123456789])+/
+
+/([௦௧௨௩௪௫௬௭௮௯௰௱௲])+/
+/([௦௧௨௩௪௫௬௭௮௯])+[.,]([௦௧௨௩௪௫௬௭௮௯])+/
+
+PATTERN Symbol
+Symbols [<sym>:]
+
+LEXICON Symbols
+௳:௳         # day
+௴:௴        # month	
+௵:௵    # year
+௶:௶        # debit
+௷:௷       # credit
+௸:௸     # as above
+௹:௹        # rupee
+௺:௺         # numeral
+ள:ள        # time
+வ:வ        # quantity
+
+PATTERN Fraction
+Fractions [<num>:]
+
+LEXICON Fractions
+𑿀:𑿀
+𑿁:𑿁	
+𑿂:𑿂
+𑿃:𑿃
+𑿄:𑿄
+𑿅:𑿅
+𑿆:𑿆
+𑿇:𑿇
+𑿈:𑿈
+𑿉:𑿉
+𑿊:𑿊
+𑿋:𑿋
+𑿌:𑿌
+𑿍:𑿍
+𑿎:𑿎
+𑿏:𑿏
+𑿐:𑿐
+𑿑:𑿑
+𑿒:𑿒
+𑿓:𑿓
+𑿔:𑿔
+𑿕:𑿕
+𑿖:𑿖
+𑿗:𑿗
+𑿘:𑿘
+𑿙:𑿙
+𑿚:𑿚
+𑿛:𑿛
+𑿜:𑿜
+𑿝:𑿝
+𑿞:𑿞
+𑿟:𑿟
+𑿠:𑿠
+𑿡:𑿡
+𑿢:𑿢
+𑿣:𑿣
+𑿤:𑿤
+𑿥:𑿥
+𑿦:𑿦
+𑿧:𑿧
+𑿨:𑿨
+𑿩:𑿩
+𑿪:𑿪
+𑿫:𑿫
+𑿬:𑿬
+𑿭:𑿭
+𑿮:𑿮
+𑿯:𑿯
+𑿰:𑿰
+𑿱:𑿱
 
 LEXICON Punctuation
 

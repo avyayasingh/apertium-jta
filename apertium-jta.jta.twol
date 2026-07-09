@@ -1,13 +1,20 @@
 ! Adapted from apertium-tam available at https://github.com/apertium/apertium-tam.git, by Maathavan Nithiyananthan <maathumaathavan@gmail.com>
 
-! check twol for rules in lexd
+! check x rules. change according to context
 
 Alphabet
     அ ஆ இ ஈ உ ஊ எ ஏ ஐ ஒ ஓ ஔ ஃ க ங ச ஞ	ட ண த ந ப ம ய ர ல வ	ழ ள ற ன
    ா ி  ீ  ு  ூ  ெ  ே  ை  ொ  ோ  ௌ  ௗ   ்
      %{X%}:0
-     %{Anu%}:0
+     %{AI%}:ை
+     %{AA%}:ா
+     %{U%}:ு
+     %{OO%}:ோ
+     %{I%}:ி
+     %{M%}:ம %{M%}:த
+     %{Pul%}:் %{Pul%}:0
      %>:0 %»;
+
 
 Sets
 
@@ -20,81 +27,94 @@ RemConsonant = Mellinam ல ;
 
 Vowel = அ ஆ இ ஈ உ ஊ எ ஏ ஐ ஒ ஓ ஔ ஃ ;
 VowWithSym = ஆ இ ஈ உ ஊ எ ஏ ஐ ஒ ஓ ஔ ;
-VowSym = ா ி  ீ  ு  ூ  ெ  ே  ை  ொ  ோ  ௌ ;
+VowSym = ா  ி  ீ  ு  ூ  ெ  ே  ை  ொ  ோ  ௌ ;
 ShortVowSym = ி  ு  ெ  ை  ொ;
 LongVowSym =  ா  ீ  ூ  ே  ோ  ௌ;
 
 Rules 
 
-"Change to VowSymbols When Preceded by a Consonant"
-Vx:Vy <=> %»: _ ;
-          where Vx in VowWithSym Vy in VowSym matched;
+! "Ending with Vowels"
+! X:க <=> LongVowSym: %>: _ ;
 
-"Ending with Vowels"
-%{X%}:க <=> LongVowSym: %>: _ ;
+! "Ending with Mellinam"
+! X:ங <=> Mellinam: ்: %>: _ ;
 
-"Ending with Mellinam"
-%{X%}:ங <=> Mellinam: ்: %>: _ ;
+! "Ending with ல"
+! X:ற <=> ல:  ்: %>: _ ;
+!               except
+!                ி: ல:  ்: %>: _ ;
+!                ோ: ல:  ்: %>: _ ;
 
-"Ending with ல"
-%{X%}:ற <=> ல:  ்: %>: _ ;
-              except
-               ி: ல:  ்: %>: _ ;
-               ோ: ல:  ்: %>: _ ;
+! "Ending with ல"
+! X:ல <=> Vx: ல:  ்: %>: _ ;
+!               where Vx in ( ி  ோ ) ;
 
-"Ending with ல"
-%{X%}:ல <=> Vx: ல:  ்: %>: _ ;
-              where Vx in ( ி  ோ ) ;
+! "Removing அ When adding after a consonant"
+! அ:0 <=> Consonant: %>: _ ;
 
-"Removing அ When adding after a consonant"
-அ:0 <=> %»: _ ;
+! "Inserting ய"
+! X:ய <=> ை: _ %»:;
+!              ி: _ %»:;
 
-"Inserting ய"
-%{X%}:ய <=> ை: _ %»:;
-             ி: _ %»:;
+! "Ending with ல"
+! X:வ <=>  ா: _ %»:;
 
-"Ending with ல"
-%{X%}:வ <=>  ா: _ %»:;
+! "Inserting ல"
+! X:ல <=> Vallinam: ல:   ்: _ %»:;
+!             except 
+!             ட: ல:   ்: _ %»:;
 
-"Inserting ல"
-%{X%}:ல <=> Vallinam: ல:   ்: _ %»:;
-            except 
-            ட: ல:   ்: _ %»:;
+! "Changing to த"
+! X:த <=> ம:   ்: _ %»:;
 
-"Changing to த"
-%{X%}:த <=> ம:   ்: _ %»:;
+! "Changing to த"
+! ம:த <=> _   ்: X: %»:;
 
-"Changing to த"
-ம:த <=> _   ்: %{X%}: %»:;
+! "Changing to ட"
+! X:ட <=> VowSym: ட:  ு: _ %»:;
 
-"Changing to ட"
-%{X%}:ட <=> VowSym: ட:  ு: _ %»:;
+! "Removing  ு"
+!  ு:Vx <=> VowSym: ட: _ X: %»:;
+!           where Vx in (  ் ) ;
+
+! "Removing  ு"
+!  ு:0 <=> வ: _ X: %»:;
+!           க: _ X: %»:;
+!            ்: ட: _ X: %»:;
+
+! "Removing kutru When adding Suffix"
+!   ்:0 <=> RemConsonant: _ %>: ;
+!           _ X: %»:;
+!           except 
+!           ப: ல: _ X: %»:;
+!           ம: _ X: %»:;
+
+! "Removing Consonant When adding suffix"
+! Vx:0 <=> _ ்: %>: ;
+!     where Vx in RemConsonant ;
+
+"Removing Pulli When adding Suffix"
+%{Pul%}:0 <=> RemConsonant: _ %>: ;
+                except 
+                ப: ல: _ %>: ;
+                %{M%}: _ %>: ;  
+
+"Transform underlying M to T when suffix"
+%{M%}:த <=> _ %{Pul%}: %>: ;
+
+"Force the Pulli"
+%{Pul%}:் <=> %{M%}: _ %>: ;
+
+"Insert a second T"
+0:த <=> %{M%}: %{Pul%}: %>: _ [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{AA%}: ] ;
+
+"Adding Pulli"
+0:Vy <=> LongVowSym: %>: C: _ C: ;
+         where Vy in ( ் )
+         and C in Vallinam ;
 
 "Removing  ு"
- ு:Vx <=> VowSym: ட: _ %{X%}: %»:;
-          where Vx in (  ் ) ;
-
-"Removing  ு"
- ு:0 <=> வ: _ %{X%}: %»:;
-          க: _ %{X%}: %»:;
-           ்: ட: _ %{X%}: %»:;
-
-"Adding Kutru"
-0:Vy <=> LongVowSym: %>: %{X%}: _ க: ;
-         RemConsonant: ்: %>: %{X%}: _ க: ;
-         where Vy in (  ் ) ;
-
-"Removing kutru When adding Suffix"
-  ்:0 <=> RemConsonant: _ %>: ;
-          _ %{X%}: %»:;
-          except 
-          ப: ல: _ %{X%}: %»:;
-          ம: _ %{X%}: %»:;
-
-
-"Removing Consonant When adding suffix"
-Vx:0 <=> _ ்: %>: ;
-    where Vx in RemConsonant ;
+%{U%}:0 <=> [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{AA%}: ] %>: _ ;
 
 ! Resources:
 ! https://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
