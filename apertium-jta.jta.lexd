@@ -29,34 +29,62 @@
 ###############################################################################
 
 PATTERNS
-Nouns [ <n>: ] NounNum Cases
+Nouns NounNum Cases
+PostPositions [ <post>: ]
 Number
 Punctuation
 
 LEXICON NounNum
-<sg>:#
+<sg>:
 <pl>:>          #finish plural marking
 
 LEXICON Cases
-<nom>:#
-<acc>:>{AI}         # 'ay'
-<int>:>{AA}லெ      # 'aalai~ay'
-<dat>:>{U}க்கு       # 'ukku'
-<com>:>{OO}டெ      # 'ootai~ay'
-<loc>:>{I}லெ       # 'ilai~ay'
-<refr>:>{I}ட்டெ     # 'ittai~ay'
-<gen>:>{I}ன்ரெ     # 'inrai~ay'
-<abl>:>                                     #extra word
+<nom>:
+<acc>:>{AI}                         # 'ay'
+<int>:>{AA}லை                     # 'aalay~ai'
+<dat>:>{U}க்கு                      # 'ukku'
+<com>:>{OO}டை                     # 'ootay~ai'
+<loc>:>{I}லை                      # 'ilay~ai'
+<refr>:>{Irefr}ட்டை                # 'ittay~ai'
+<gen>:>{Igen}{Ngen}{Pul}{R}{AI}      # 'inray~ai'
+<abl>:>{I}ட்டை\ இருந்து            # 'ittay~ai iruntu'
+<abl>:>{I}லை\ இருந்து             # 'ilay~ai iruntu'            Dir/LR
+<ben>:>{AA}க                        # 'aaka'
 
 ###############################################################################
 ###                          L E X I C O N                                  ###
 ###############################################################################
 
 LEXICON Nouns
-மரம்:மர{M}{Pul}         # 'maram'    tree
-பையன்:பையன{Pul}    # 'petiyan'  boy
-அப்பா:அப்ப{AA}         # 'appa'     father
-அம்மா:அம்ம{AA}        # 'amma'     mother
+மரம்<n><nn>:மர{M}{Pul}              # 'maram'    tree
+பைடியன்<n><aa>:பைடியன{Pul}     # 'petiyan'   boy
+அப்பா<n><aa>:அப்ப{AA}              # 'appa'     father
+அம்மா<n><aa>:அம்ம{AA}             # 'amma'     mother
+
+LEXICON PostPositions
+# following a Nominative
+ஒன்றாக:ஒன்றாக     # book lists as ceentu ?
+மூலம்:மூலம்                    # 'muulam'      through
+வரை:வரை                     # 'varay'       upto
+வரைக்கும்:வரைக்கும்           # 'varaykkum'   until
+வரைலை:வரைலை             # 'varayilay'   at about
+
+# following an Accusative
+சுற்றி:சுற்றி                     # 'churri'      around
+பற்றி:பற்றி                     # 'patri'       about
+தவிர:தவிர                     # 'tavira'      except for
+
+# following a Dative
+மேலே:மேலே                   # 'meelay'              above
+கீழே:கீழே                      # 'kiilay'              beneath
+முன்னாலே:முன்னாலே         # 'munnaalay'           before
+முன்னுக்கு:முன்னுக்கு           # 'munnukku'           before            Dir/LR
+பின்னாலே:பின்னாலே          # 'pinnaalay'           after
+பின்னுக்கு:முன்னுக்கு           # 'pinnukku'            after             Dir/LR
+உள்ளே:உள்ளே                 # 'ullay'               inside
+பக்கத்திலே:பக்கத்திலே         # 'pakkattilay'        nearby
+எதிரே:எதிரே                   # 'etiray'              opposite
+அடியிலே:அடியிலே             # 'atiyilay'            at the bottom of
 
 PATTERN Number
 Numeral [<num>:]

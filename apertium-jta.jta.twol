@@ -8,12 +8,17 @@ Alphabet
      %{X%}:0
      %{AI%}:ை
      %{AA%}:ா
-     %{U%}:ு
+     %{U%}:ு %{U%}:0
      %{OO%}:ோ
      %{I%}:ி
-     %{M%}:ம %{M%}:த
      %{Pul%}:் %{Pul%}:0
-     %>:0 %»;
+     %{M%}:ம %{M%}:த
+     %{Irefr%}:ி %{Irefr%}:0
+     %{Igen%}:ி %{Igen%}:0
+     %{N%}:ன
+     %{Ngen%}:ன %{Ngen%}:0
+     %{R%}:ர
+     %>:0;
 
 
 Sets
@@ -64,11 +69,6 @@ Rules
 !             except 
 !             ட: ல:   ்: _ %»:;
 
-! "Changing to த"
-! X:த <=> ம:   ்: _ %»:;
-
-! "Changing to த"
-! ம:த <=> _   ்: X: %»:;
 
 ! "Changing to ட"
 ! X:ட <=> VowSym: ட:  ு: _ %»:;
@@ -93,11 +93,25 @@ Rules
 ! Vx:0 <=> _ ்: %>: ;
 !     where Vx in RemConsonant ;
 
-"Removing Pulli When adding Suffix"
-%{Pul%}:0 <=> RemConsonant: _ %>: ;
+! Pulli
+"Removing Pulli when adding Suffix"
+%{Pul%}:0 <=> :RemConsonant _ %>: ;
+              %{Ngen%}: _ %{R%}: ;
                 except 
                 ப: ல: _ %>: ;
                 %{M%}: _ %>: ;  
+
+"Keeping Pulli when end of word"
+%{Pul%}:் <=> :RemConsonant _ .#. ;
+
+"Adding Pulli"
+0:Vy <=> LongVowSym: %>: C: _ C: ;
+         where Vy in ( ் )
+         and C in Vallinam ;
+
+! M ending pulli
+"Keep M to m if end of word"
+%{M%}:ம <=> _ %{Pul%}: .#. ;
 
 "Transform underlying M to T when suffix"
 %{M%}:த <=> _ %{Pul%}: %>: ;
@@ -106,15 +120,23 @@ Rules
 %{Pul%}:் <=> %{M%}: _ %>: ;
 
 "Insert a second T"
-0:த <=> %{M%}: %{Pul%}: %>: _ [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{AA%}: ] ;
+0:த <=> %{M%}: %{Pul%}: %>: _ [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{Irefr%}: | %{Igen%}: | %{AA%}: ] ;
 
-"Adding Pulli"
-0:Vy <=> LongVowSym: %>: C: _ C: ;
-         where Vy in ( ் )
-         and C in Vallinam ;
-
+! Dative case
 "Removing  ு"
 %{U%}:0 <=> [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{AA%}: ] %>: _ ;
+
+! Referential case
+"Removing I when Referential and noun ends in AA"
+%{Irefr%}:0 <=> %{AA%}: %>: _ ;
+
+! Genitive case
+"Removing I when Genitive and human noun ends in N"
+%{Igen%}:0 <=> %{N%}: %{Pul%}: %>: _ ;
+
+"Removing N when Genitive and noun ends in N"
+%{Ngen%}:0 <=> %{N%}: %{Pul%}: %>: %{Igen%}: _ ;
+
 
 ! Resources:
 ! https://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
