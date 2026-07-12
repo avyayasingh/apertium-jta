@@ -29,7 +29,11 @@
 ###############################################################################
 
 PATTERNS
-Nouns NounNum Cases
+Nouns[NN] NounNum Cases[NN]
+Nouns[AA] NounNum Cases[AA]
+TransVerbStem[PASSIVE] [ <v><tv>: ] Voice[PASSIVE]
+TransVerbStem [ <v><tv>: ] Voice[-PASSIVE]
+IntraVerbStem[PASSIVE] [ <v><iv>: ] Voice[PASSIVE]
 PostPositions [ <post>: ]
 Number
 Punctuation
@@ -39,52 +43,91 @@ LEXICON NounNum
 <pl>:>          #finish plural marking
 
 LEXICON Cases
-<nom>:
-<acc>:>{AI}                         # 'ay'
-<int>:>{AA}லை                     # 'aalay~ai'
-<dat>:>{U}க்கு                      # 'ukku'
-<com>:>{OO}டை                     # 'ootay~ai'
-<loc>:>{I}லை                      # 'ilay~ai'
-<refr>:>{Irefr}ட்டை                # 'ittay~ai'
-<gen>:>{Igen}{Ngen}{Pul}{R}{AI}      # 'inray~ai'
-<abl>:>{I}ட்டை\ இருந்து            # 'ittay~ai iruntu'
-<abl>:>{I}லை\ இருந்து             # 'ilay~ai iruntu'            Dir/LR
-<ben>:>{AA}க                        # 'aaka'
+<nom>:[AA,NN]
+<acc>:>{AI}[AA,NN]                          # 'ay'
+<int>:>{AA}லை[AA,NN]                      # 'aalay~ai'
+<dat>:>{U}க்கு[AA,NN]                       # 'ukku'
+<com>:>{OO}டை[AA,NN]                      # 'ootay~ai'
+<loc>:>{I}லை[AA,NN]                       # 'ilay~ai'
+<refr>:>{Irefr}ட்டை[AA]                    # 'ittay~ai'
+<gen>:>{Igen}{Ngen}{Pul}{R}{AI}[AA,NN]      # 'inray~ai'
+<abl>:>{I}ட்டை\ இருந்து[AA,NN]            # 'ittay~ai iruntu'
+<abl>:>{I}லை\ இருந்து[AA,NN]             # 'ilay~ai iruntu'            Dir/LR
+<ben>:>{AA}க[AA,NN]                        # 'aaka'
+
+LEXICON Voice
+<actv>:
+<pasv>:>ப்பட்டு                        # 'ppattu'
+<pasv>:>{U}ண்டு[PASSIVE]              # 'untu'      eat
+<caus>:>வி                            # 'vi'
+<caus>:>ப்பி                           # 'ppi'   fix causativisation
 
 ###############################################################################
 ###                          L E X I C O N                                  ###
 ###############################################################################
 
 LEXICON Nouns
-மரம்<n><nn>:மர{M}{Pul}              # 'maram'    tree
-பைடியன்<n><aa>:பைடியன{Pul}     # 'petiyan'   boy
-அப்பா<n><aa>:அப்ப{AA}              # 'appa'     father
-அம்மா<n><aa>:அம்ம{AA}             # 'amma'     mother
+# Inanimate
+மரம்<n><nn>:மர{M}{Pul}[NN]              # 'maram'    tree
+காசு<n><nn>:காச{U}[NN]                  # 'kaacu'    money
+தவால்<n><nn>:தவால{Pul}[NN]            # 'thavaal'  letter
+கால்<n><nn>:கால{Pul}[NN]                # 'kaal'     leg
+கை<n><nn>:க{AI}[NN]                     # 'kay'      hand
+பழம்<n><nn>:பழ{M}{Pul}[NN]              # 'pazham'   fruit
+பாடம்<n><nn>:பாட{M}{Pul}[NN]            # 'paatam'   lesson
+
+# Animate
+பைடியன்<n><aa>:பைடியன{Pul}[AA]     # 'petiyan'   boy
+அப்பா<n><aa>:அப்ப{AA}[AA]              # 'appa'     father
+அம்மா<n><aa>:அம்ம{AA}[AA]             # 'amma'     mother
+
+
+LEXICON TransVerbStem
+எழுது:எழுத{U}                     # 'ezhuthu'     write
+கொடு:கொட{U}                   # 'kotu'        give
+உண்:உண{Pul}                    # 'un'          eat
+ஏட்டு:ஏட்ட{U}                      # 'ettu'        reach
+விழங்கு:விழங்க{U}                # 'vizhanku'    understand
+செய்:செய்                         # 'cei'         do
+அடி:அட{I}                        # 'ati'         beat
+
+# Special passive forms
+வெட்டு:வெட்ட{U}[PASSIVE]         # 'vettu'       cut
+ஒட்டு:ஒட்ட{U}[PASSIVE]             # 'ottu'        paste
+தட்டு:தட்ட{U}[PASSIVE]             # 'thattu'      knock
+கொட்டு:கொட்ட{U}[PASSIVE]       # 'kottu'       pour
+ஊற்று:ஊற்ற{U}[PASSIVE]          # 'uurru'       pour
+பூட்டு:பூட்ட{U}[PASSIVE]            # 'puuttu'      lock
+
+
+LEXICON IntraVerbStem
+வாடு:வாட{U}[PASSIVE]            # 'vaatu'       wither
+
 
 LEXICON PostPositions
 # following a Nominative
-ஒன்றாக:ஒன்றாக     # book lists as ceentu ?
+செண்டு:செண்டு                # 'centu'       together
 மூலம்:மூலம்                    # 'muulam'      through
 வரை:வரை                     # 'varay'       upto
 வரைக்கும்:வரைக்கும்           # 'varaykkum'   until
 வரைலை:வரைலை             # 'varayilay'   at about
 
 # following an Accusative
-சுற்றி:சுற்றி                     # 'churri'      around
-பற்றி:பற்றி                     # 'patri'       about
-தவிர:தவிர                     # 'tavira'      except for
+சுற்றி:சுற்றி                     # 'curri'       around
+பற்றி:பற்றி                     # 'parri'       about
+தவிர:தவிர                     # 'thavira'     except for
 
 # following a Dative
-மேலே:மேலே                   # 'meelay'              above
+மேலே:மேலே                   # 'meelee'              above
 கீழே:கீழே                      # 'kiilay'              beneath
-முன்னாலே:முன்னாலே         # 'munnaalay'           before
+முன்னாலே:முன்னாலே         # 'munnaalee'           before
 முன்னுக்கு:முன்னுக்கு           # 'munnukku'           before            Dir/LR
-பின்னாலே:பின்னாலே          # 'pinnaalay'           after
+பின்னாலே:பின்னாலே          # 'pinnaalee'           after
 பின்னுக்கு:முன்னுக்கு           # 'pinnukku'            after             Dir/LR
-உள்ளே:உள்ளே                 # 'ullay'               inside
-பக்கத்திலே:பக்கத்திலே         # 'pakkattilay'        nearby
-எதிரே:எதிரே                   # 'etiray'              opposite
-அடியிலே:அடியிலே             # 'atiyilay'            at the bottom of
+உள்ளே:உள்ளே                 # 'ullee'               inside
+பக்கத்திலே:பக்கத்திலே         # 'pakkattilee'        nearby
+எதிரே:எதிரே                   # 'etiree'              opposite
+அடியிலே:அடியிலே             # 'atiyilee'            at the bottom of
 
 PATTERN Number
 Numeral [<num>:]

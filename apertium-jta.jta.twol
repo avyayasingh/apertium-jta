@@ -82,17 +82,6 @@ Rules
 !           க: _ X: %»:;
 !            ்: ட: _ X: %»:;
 
-! "Removing kutru When adding Suffix"
-!   ்:0 <=> RemConsonant: _ %>: ;
-!           _ X: %»:;
-!           except 
-!           ப: ல: _ X: %»:;
-!           ம: _ X: %»:;
-
-! "Removing Consonant When adding suffix"
-! Vx:0 <=> _ ்: %>: ;
-!     where Vx in RemConsonant ;
-
 ! Pulli
 "Removing Pulli when adding Suffix"
 %{Pul%}:0 <=> :RemConsonant _ %>: ;
@@ -137,6 +126,9 @@ Rules
 "Removing N when Genitive and noun ends in N"
 %{Ngen%}:0 <=> %{N%}: %{Pul%}: %>: %{Igen%}: _ ;
 
+! Noun endings
+"Inserting ய"
+0:ய <=> [ %{AI%}: | %{I%}: ] _ %>:;
 
 ! Resources:
 ! https://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
