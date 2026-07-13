@@ -11,6 +11,7 @@ Alphabet
      %{U%}:ு %{U%}:0
      %{OO%}:ோ
      %{I%}:ி
+     %{II%}:ீ
      %{Pul%}:் %{Pul%}:0
      %{M%}:ம %{M%}:த
      %{Irefr%}:ி %{Irefr%}:0
@@ -111,10 +112,6 @@ Rules
 "Insert a second T"
 0:த <=> %{M%}: %{Pul%}: %>: _ [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{Irefr%}: | %{Igen%}: | %{AA%}: ] ;
 
-! Dative case
-"Removing  ு"
-%{U%}:0 <=> [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{AA%}: ] %>: _ ;
-
 ! Referential case
 "Removing I when Referential and noun ends in AA"
 %{Irefr%}:0 <=> %{AA%}: %>: _ ;
@@ -129,6 +126,10 @@ Rules
 ! Noun endings
 "Inserting ய"
 0:ய <=> [ %{AI%}: | %{I%}: ] _ %>:;
+
+"Removing  ு"
+%{U%}:0 <=> _ %>: [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{II%}: | %{AA%}: ] ;
+            [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{II%}: | %{AA%}: ] %>: _ ;
 
 ! Resources:
 ! https://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol

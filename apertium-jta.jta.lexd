@@ -33,13 +33,19 @@ PATTERNS
 Nouns[NN] NounNum Cases[NN]
 Nouns[AA] NounNum Cases[AA]
 # Verbs
+## Transitives
 TransVerbStem[PASSIVE] [ <v><tv>: ] Voice[PASSIVE]
 TransVerbStem [ <v><tv>: ] Voice[-PASSIVE]
 IntraVerbStem[PASSIVE] [ <v><iv>: ] Voice[PASSIVE]
 TransVerbStem[Class1a] [ <v><tv>: ] Causativiser[Class1a]
 TransVerbStem[Class3] [ <v><tv>: ] Causativiser[Class3]
 TransVerbStem[Class6] [ <v><tv>: ] Causativiser[Class6]
-IntraVerbStem[Class3] [ <v><iv>: ] Causativiser[Class1a,Class3]
+TransVerbStem[WEAKDOUB] [ <v><tv>: ] Causativiser[WEAKDOUB]
+TransVerbStem[IRR2] [ <v><tv>: ] Causativiser[IRR2]
+## Intransitives
+IntraVerbStem[INTRACAUS] [ <v><iv>: ] Causativiser[INTRACAUS]
+IntraVerbStem[IRR1] [ <v><iv>: ] Causativiser[IRR1]
+IntraVerbStem[STRONGDOUB] [ <v><iv>: ] Causativiser[STRONGDOUB]
 # Others
 PostPositions [ <post>: ]
 Number
@@ -68,13 +74,26 @@ LEXICON Voice
 <pasv>:>{U}ண்டு[PASSIVE]              # 'untu'      eat
 
 LEXICON Causativiser
-<caus>:>வி[Class1a,Class3]      # 'vi'
-<caus>:>ப்பி[Class6]             # 'ppi'
+# Weak verb causitive marker
+<caus>:>வி[Class1a,Class3,INTRACAUS]      # 'vi'
+
+# Strong verb causitive marker
+<caus>:>ப்பி[Class6,Class7]                # 'ppi'
+
+# Irregular causitive markers
+<caus>:>த்து[IRR1]                         # 'ththu'
+<caus>:>{II}[IRR2]                         # 'ii'
+
+# Irregular double causitive marker
+<caus><caus>:விப்பி[WEAKDOUB]              # 'vippi'
+<caus><caus>:த்துவி[STRONGDOUB]            # 'ththuvi'
+
 
 ###############################################################################
 ###                          L E X I C O N                                  ###
 ###############################################################################
 
+####################     NOUNS     ####################
 LEXICON Nouns
 # Inanimate
 மரம்<n><nn>:மர{M}{Pul}[NN]              # 'maram'    tree
@@ -90,46 +109,68 @@ LEXICON Nouns
 அப்பா<n><aa>:அப்ப{AA}[AA]              # 'appa'     father
 அம்மா<n><aa>:அம்ம{AA}[AA]             # 'amma'     mother
 
-
-LEXICON TransVerbStem
+####################     VERBS     ####################
 # Verb Classes:
 # 1-4:  Melvinaigal (Weak)
 # 5:    Irregulars
 # 6-7:  Valvinaigal (Strong)
 
+LEXICON TransVerbStem
 # Class 1
-செய்:செய்[Class1a]                # 'cei'         do
+
+## Special double causitive
+செய்:செய்[Class1a,WEAKDOUB]              # 'cei'         do
 
 # Class 3
-எழுது:எழுத{U}[Class3]             # 'ezhuthu'     write
-ஏட்டு:ஏட்ட{U}[Class3]              # 'ettu'        reach
-விழங்கு:விழங்க{U}[Class3]        # 'vizhanku'    understand
+எழுது:எழுத{U}[Class3,IRR2]               # 'ezhuthu'     write
+ஏட்டு:ஏட்ட{U}[Class3]                     # 'ettu'        reach
+விழங்கு:விழங்க{U}[Class3]               # 'vizhanku'    understand
 
-# Class 5
-உண்:உண{Pul}[Class5]            # 'un'          eat
-
-# Class 6
-கொடு:கொட{U}[Class6]           # 'kotu'        give
-அடி:அட{I}[Class6]                # 'ati'         beat
-
-# Special passive forms
-# Class 3
+## Special passive forms
 வெட்டு:வெட்ட{U}[Class3,PASSIVE]         # 'vettu'       cut
 தட்டு:தட்ட{U}[Class3,PASSIVE]             # 'thattu'      knock
 கொட்டு:கொட்ட{U}[Class3,PASSIVE]       # 'kottu'       pour
 ஊற்று:ஊற்ற{U}[Class3,PASSIVE]          # 'uurru'       pour
 பூட்டு:பூட்ட{U}[Class3,PASSIVE]            # 'puuttu'      lock
 
+## Special double causitive
+தேடு:தேட{U}[Class3,WEAKDOUB]            # 'theetu'      search
+
+# Class 5
+உண்:உண{Pul}[Class5]                  # 'un'          eat
+
 # Class 6
+கொடு:கொட{U}[Class6]                  # 'kotu'        give
+அடி:அட{I}[Class6]                       # 'ati'         beat
+
+## Special passive forms
 ஒட்டு:ஒட்ட{U}[Class6,PASSIVE]             # 'ottu'        paste
 
-
+####################
 LEXICON IntraVerbStem
+# Class 1
+
+## Special causitive form
+அழு:அழ{U}[Class1a,INTRACAUS]            # 'azhu'        cry
+
 # Class 3
-வாடு:வாட{U}[Class3,PASSIVE]            # 'vaatu'       wither
-ஒட்டு:ஒட்ட{U}[Class3,PASSIVE]            # 'ottu'        paste
+ஒட்டு:ஒட்ட{U}[Class3]                     # 'ottu'        adhere
 
+## Special passive form
+வாடு:வாட{U}[Class3,PASSIVE]             # 'vaatu'       wither
 
+## Special causitive form
+ஏறு:ஏற{U}[Class3,INTRACAUS]              # 'eeru'        climb
+
+# Class 7
+
+## Special irregular causitive form
+இரு:இர{U}[Class7,IRR1]                  # 'iru'          sit
+
+### Special double causitive
+நட:நட[Class7,IRR1,STRONGDOUB]           # 'nata'         walk
+
+####################     POSTPOSITIONS     ####################
 LEXICON PostPositions
 # following a Nominative
 செண்டு:செண்டு                # 'centu'       together
@@ -155,6 +196,7 @@ LEXICON PostPositions
 எதிரே:எதிரே                   # 'etiree'              opposite
 அடியிலே:அடியிலே             # 'atiyilee'            at the bottom of
 
+####################     NUMBERS     ####################
 PATTERN Number
 Numeral [<num>:]
 
@@ -165,6 +207,7 @@ LEXICON Numeral
 /([௦௧௨௩௪௫௬௭௮௯௰௱௲])+/
 /([௦௧௨௩௪௫௬௭௮௯])+[.,]([௦௧௨௩௪௫௬௭௮௯])+/
 
+####################     SYMBOLS     ####################
 PATTERN Symbol
 Symbols [<sym>:]
 
@@ -180,6 +223,7 @@ LEXICON Symbols
 ள:ள        # time
 வ:வ        # quantity
 
+####################     FRACTIONS     ####################
 PATTERN Fraction
 Fractions [<num>:]
 
@@ -235,6 +279,7 @@ LEXICON Fractions
 𑿰:𑿰
 𑿱:𑿱
 
+####################     PUNCTUATION     ####################
 LEXICON Punctuation
 
 .<sent>:.
