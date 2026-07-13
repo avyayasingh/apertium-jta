@@ -29,11 +29,18 @@
 ###############################################################################
 
 PATTERNS
+# Nouns
 Nouns[NN] NounNum Cases[NN]
 Nouns[AA] NounNum Cases[AA]
+# Verbs
 TransVerbStem[PASSIVE] [ <v><tv>: ] Voice[PASSIVE]
 TransVerbStem [ <v><tv>: ] Voice[-PASSIVE]
 IntraVerbStem[PASSIVE] [ <v><iv>: ] Voice[PASSIVE]
+TransVerbStem[Class1a] [ <v><tv>: ] Causativiser[Class1a]
+TransVerbStem[Class3] [ <v><tv>: ] Causativiser[Class3]
+TransVerbStem[Class6] [ <v><tv>: ] Causativiser[Class6]
+IntraVerbStem[Class3] [ <v><iv>: ] Causativiser[Class1a,Class3]
+# Others
 PostPositions [ <post>: ]
 Number
 Punctuation
@@ -59,8 +66,10 @@ LEXICON Voice
 <actv>:
 <pasv>:>ப்பட்டு                        # 'ppattu'
 <pasv>:>{U}ண்டு[PASSIVE]              # 'untu'      eat
-<caus>:>வி                            # 'vi'
-<caus>:>ப்பி                           # 'ppi'   fix causativisation
+
+LEXICON Causativiser
+<caus>:>வி[Class1a,Class3]      # 'vi'
+<caus>:>ப்பி[Class6]             # 'ppi'
 
 ###############################################################################
 ###                          L E X I C O N                                  ###
@@ -83,25 +92,42 @@ LEXICON Nouns
 
 
 LEXICON TransVerbStem
-எழுது:எழுத{U}                     # 'ezhuthu'     write
-கொடு:கொட{U}                   # 'kotu'        give
-உண்:உண{Pul}                    # 'un'          eat
-ஏட்டு:ஏட்ட{U}                      # 'ettu'        reach
-விழங்கு:விழங்க{U}                # 'vizhanku'    understand
-செய்:செய்                         # 'cei'         do
-அடி:அட{I}                        # 'ati'         beat
+# Verb Classes:
+# 1-4:  Melvinaigal (Weak)
+# 5:    Irregulars
+# 6-7:  Valvinaigal (Strong)
+
+# Class 1
+செய்:செய்[Class1a]                # 'cei'         do
+
+# Class 3
+எழுது:எழுத{U}[Class3]             # 'ezhuthu'     write
+ஏட்டு:ஏட்ட{U}[Class3]              # 'ettu'        reach
+விழங்கு:விழங்க{U}[Class3]        # 'vizhanku'    understand
+
+# Class 5
+உண்:உண{Pul}[Class5]            # 'un'          eat
+
+# Class 6
+கொடு:கொட{U}[Class6]           # 'kotu'        give
+அடி:அட{I}[Class6]                # 'ati'         beat
 
 # Special passive forms
-வெட்டு:வெட்ட{U}[PASSIVE]         # 'vettu'       cut
-ஒட்டு:ஒட்ட{U}[PASSIVE]             # 'ottu'        paste
-தட்டு:தட்ட{U}[PASSIVE]             # 'thattu'      knock
-கொட்டு:கொட்ட{U}[PASSIVE]       # 'kottu'       pour
-ஊற்று:ஊற்ற{U}[PASSIVE]          # 'uurru'       pour
-பூட்டு:பூட்ட{U}[PASSIVE]            # 'puuttu'      lock
+# Class 3
+வெட்டு:வெட்ட{U}[Class3,PASSIVE]         # 'vettu'       cut
+தட்டு:தட்ட{U}[Class3,PASSIVE]             # 'thattu'      knock
+கொட்டு:கொட்ட{U}[Class3,PASSIVE]       # 'kottu'       pour
+ஊற்று:ஊற்ற{U}[Class3,PASSIVE]          # 'uurru'       pour
+பூட்டு:பூட்ட{U}[Class3,PASSIVE]            # 'puuttu'      lock
+
+# Class 6
+ஒட்டு:ஒட்ட{U}[Class6,PASSIVE]             # 'ottu'        paste
 
 
 LEXICON IntraVerbStem
-வாடு:வாட{U}[PASSIVE]            # 'vaatu'       wither
+# Class 3
+வாடு:வாட{U}[Class3,PASSIVE]            # 'vaatu'       wither
+ஒட்டு:ஒட்ட{U}[Class3,PASSIVE]            # 'ottu'        paste
 
 
 LEXICON PostPositions
