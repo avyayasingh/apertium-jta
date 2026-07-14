@@ -6,6 +6,7 @@ Alphabet
     அ ஆ இ ஈ உ ஊ எ ஏ ஐ ஒ ஓ ஔ ஃ க ங ச ஞ	ட ண த ந ப ம ய ர ல வ	ழ ள ற ன
    ா ி  ீ  ு  ூ  ெ  ே  ை  ொ  ோ  ௌ  ௗ   ்
      %{X%}:0
+     ! Vowels
      %{AI%}:ை
      %{A%}:0
      %{AA%}:ா
@@ -13,13 +14,19 @@ Alphabet
      %{OO%}:ோ
      %{I%}:ி
      %{II%}:ீ
+     ! Pulli
      %{Pul%}:் %{Pul%}:0
-     %{M%}:ம %{M%}:த
+     ! Consonants
+     %{M%}:ம %{M%}:த %{M%}:ங
+     %{N%}:ன %{N%}:ங
+     %{K%}:க
+     ! Noun case irregulars
      %{Irefr%}:ி %{Irefr%}:0
      %{Igen%}:ி %{Igen%}:0
-     %{N%}:ன
-     %{Ngen%}:ன %{Ngen%}:0
-     %{R%}:ர
+     %{Ngen1%}:ன
+     %{Ngen2%}:ன %{Ngen2%}:0
+     %{Rgen1%}:ர
+     %{Rgen2%}:ர %{Rgen2%}:0
      %>:0;
 
 
@@ -40,12 +47,6 @@ LongVowSym =  ா  ீ  ூ  ே  ோ  ௌ;
 
 Rules 
 
-! "Ending with Vowels"
-! X:க <=> LongVowSym: %>: _ ;
-
-! "Ending with Mellinam"
-! X:ங <=> Mellinam: ்: %>: _ ;
-
 ! "Ending with ல"
 ! X:ற <=> ல:  ்: %>: _ ;
 !               except
@@ -55,13 +56,6 @@ Rules
 ! "Ending with ல"
 ! X:ல <=> Vx: ல:  ்: %>: _ ;
 !               where Vx in ( ி  ோ ) ;
-
-! "Removing அ When adding after a consonant"
-! அ:0 <=> Consonant: %>: _ ;
-
-! "Inserting ய"
-! X:ய <=> ை: _ %»:;
-!              ி: _ %»:;
 
 ! "Ending with ல"
 ! X:வ <=>  ா: _ %»:;
@@ -87,7 +81,7 @@ Rules
 ! Pulli
 "Removing Pulli when adding Suffix"
 %{Pul%}:0 <=> :RemConsonant _ %>: ;
-              %{Ngen%}: _ %{R%}: ;
+              %{Ngen2%}: _ %{Rgen2%}: ;
                 except 
                 ப: ல: _ %>: ;
                 %{M%}: _ %>: ;  
@@ -104,33 +98,39 @@ Rules
 "Keep M to m if end of word"
 %{M%}:ம <=> _ %{Pul%}: .#. ;
 
-"Transform underlying M to T when suffix"
-%{M%}:த <=> _ %{Pul%}: %>: ;
+"Transform underlying M to T when vowel"
+%{M%}:த <=> _ %{Pul%}: %>: [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{II%}: | %{AA%}: | %{Irefr%}: | %{Igen%}: ] ;
 
 "Force the Pulli"
-%{Pul%}:் <=> %{M%}: _ %>: ;
+%{Pul%}:் <=> %{M%}: _ %>: [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{II%}: | %{AA%}: | %{Irefr%}: | %{Igen%}: ] ;
 
 "Insert a second T"
-0:த <=> %{M%}: %{Pul%}: %>: _ [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{Irefr%}: | %{Igen%}: | %{AA%}: ] ;
+0:த <=> %{M%}: %{Pul%}: %>: _ [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{II%}: | %{AA%}: | %{Irefr%}: | %{Igen%}: ] ;
 
 ! Referential case
 "Removing I when Referential and noun ends in AA"
 %{Irefr%}:0 <=> %{AA%}: %>: _ ;
 
 ! Genitive case
-"Removing I when Genitive and human noun ends in N"
-%{Igen%}:0 <=> %{N%}: %{Pul%}: %>: _ ;
+"Removing I when Genitive and human noun ends in N or R"
+%{Igen%}:0 <=> [ %{Ngen1%}: | %{Rgen1%}: ] %{Pul%}: %>: _ ;
 
-"Removing N when Genitive and noun ends in N"
-%{Ngen%}:0 <=> %{N%}: %{Pul%}: %>: %{Igen%}: _ ;
+"Removing N when Genitive and noun ends in N or R"
+%{Ngen2%}:0 <=> [ %{Ngen1%}: | %{Rgen1%}: ] %{Pul%}: %>: %{Igen%}: _ ;
 
-! Noun endings
+! Noun endings 
 "Inserting ய"
 0:ய <=> [ %{AI%}: | %{I%}: ] _ %>:;
 
 "Removing  ு"
 %{U%}:0 <=> _ %>: [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{II%}: | %{AA%}: ] ;
             [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{II%}: | %{AA%}: ] %>: _ ;
+
+"Starting with K"
+%{M%}:ங <=> _ %{Pul%}: %>: %{K%}: ;
+
+"Starting with K"
+%{N%}:ங <=> _ %{Pul%}: %>: %{K%}: ;
 
 ! Resources:
 ! https://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol

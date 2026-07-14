@@ -30,9 +30,23 @@
 
 ################################     PATTERNS     ################################
 PATTERNS
-# Nouns
-Nouns[NN] NounNum Cases[NN]
-Nouns[AA] NounNum Cases[AA]
+# Nouns & NP
+Nouns[NN,Pl1] NounNum[Pl1] Cases[NN]
+Nouns[AA,Pl1] NounNum[Pl1] Cases[AA]
+Nouns[NN,Pl2] NounNum[Pl2] Cases[NN]
+Nouns[AA,Pl2] NounNum[Pl2] Cases[AA]
+Nouns[NN,Pl3] NounNum[Pl3] Cases[NN]
+Nouns[AA,Pl3] NounNum[Pl3] Cases[AA]
+Nouns[NN,Pl4] NounNum[Pl4] Cases[NN]
+Nouns[AA,Pl4] NounNum[Pl4] Cases[AA]
+Nouns[NN,Pl5] NounNum[Pl5] Cases[NN]
+Nouns[AA,Pl5] NounNum[Pl5] Cases[AA]
+Nouns[NN,Pl6] NounNum[Pl6] Cases[NN]
+Nouns[AA,Pl6] NounNum[Pl6] Cases[AA]
+Nouns[NN,Pl7] NounNum[Pl7] Cases[NN]
+Nouns[AA,Pl7] NounNum[Pl7] Cases[AA]
+Nouns[NN,Pl8] NounNum[Pl8] Cases[NN]
+Nouns[AA,Pl8] NounNum[Pl8] Cases[AA]
 # Verbs
 ## Transitives
 ### Infinitives
@@ -50,7 +64,7 @@ TransVerbStem[WEAKDOUBCAUS] [ <v><tv>: ] Causativiser[WEAKDOUBCAUS]
 TransVerbStem[CAUSIRR2] [ <v><tv>: ] Causativiser[CAUSIRR2]
 ## Intransitives
 ### Infinitives
-IntraVerbStem [ <v><iv>: ] Infinitives\
+IntraVerbStem [ <v><iv>: ] Infinitives
 ### Passivisers
 IntraVerbStem[PASSIVE] [ <v><iv>: ] Voice[PASSIVE]
 ### Causativisers
@@ -68,22 +82,55 @@ Punctuation
 ################################     SUFFIXOLOGY     ################################
 ################## NUMBER
 LEXICON NounNum
-<sg>:
-<pl>:>          #finish plural marking
+# Singular: all apply equally (null)
+<sg>:[Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]
+
+# Plural Classes: 1 through 8
+###### GENERAL CLASSES
+# 1: Common Plural (Inanimate and Animate)
+<pl>:>{K}ள{Pul}[Pl1]                # 'kal'
+
+# 2: Plurals of Proper Nouns, people related to locations (Animate)
+<pl>:>{A}வ{AI}[Pl2]                 # 'avay'
+
+# 3: Variation of Common Plural (Inanimate and Animate)
+<pl>:>{A}ள{Pul}[Pl3]                # 'al'
+
+###### AHTHINAI 'irrational beings and inanimate objects' - Low Class
+# 4: Non humans (Inanimate and Irrational Animates)
+<pl>:>{U}கள{Pul}[Pl4]              # 'ukal'
+## Special form
+<pl>:>{U}ள{Pul}[Pl4]                # 'ul'      Dir/LR
+
+###### UYARTHINAI 'rational beings' - High Class(es)
+# 5: Professional terms and loanwords (Animates)
+<pl>:>மார{Pul}[Pl5]                 # 'maar'
+
+# 6: Combination of 2 and 5 (Animates)
+<pl>:>மார{Pul}[Pl6]                 # 'maar'
+<pl>:>{A}வ{AI}[Pl6]                 # 'avay'    Dir/LR
+
+# 7: Combination of 2, 3 and 5 (Animates only)
+<pl>:>{A}ள{Pul}[Pl7]                # 'al'
+<pl>:>மார{Pul}[Pl7]                 # 'maar'    Dir/LR
+<pl>:>{A}வ{AI}[Pl7]                 # 'avay'     Dir/LR
+
+# 8: -N ending nouns (Animates)
+<pl>:>ர{Pul}[Pl8]                    # 'r'
 
 ################## CASES
 LEXICON Cases
 <nom>:[AA,NN]
-<acc>:>{AI}[AA,NN]                          # 'ay'
-<int>:>{AA}லை[AA,NN]                      # 'aalay~ai'
-<dat>:>{U}க்கு[AA,NN]                       # 'ukku'
-<com>:>{OO}டை[AA,NN]                      # 'ootay~ai'
-<loc>:>{I}லை[AA,NN]                       # 'ilay~ai'
-<refr>:>{Irefr}ட்டை[AA]                    # 'ittay~ai'
-<gen>:>{Igen}{Ngen}{Pul}{R}{AI}[AA,NN]      # 'inray~ai'
-<abl>:>{I}ட்டை\ இருந்து[AA,NN]            # 'ittay~ai iruntu'
-<abl>:>{I}லை\ இருந்து[AA,NN]             # 'ilay~ai iruntu'            Dir/LR
-<ben>:>{AA}க[AA,NN]                        # 'aaka'
+<acc>:>{AI}[AA,NN]                               # 'ay'
+<int>:>{AA}லை[AA,NN]                           # 'aalay~ai'
+<dat>:>{U}க்கு[AA,NN]                            # 'ukku'
+<com>:>{OO}டை[AA,NN]                           # 'ootay~ai'
+<loc>:>{I}லை[AA,NN]                            # 'ilay~ai'
+<refr>:>{Irefr}ட்டை[AA]                         # 'ittay~ai'
+<gen>:>{Igen}{Ngen2}{Pul}{Rgen2}{AI}[AA,NN]      # 'inray~ai'
+<abl>:>{I}ட்டை\ இருந்து[AA,NN]                 # 'ittay~ai iruntu'
+<abl>:>{I}லை\ இருந்து[AA,NN]                  # 'ilay~ai iruntu'            Dir/LR
+<ben>:>{AA}க[AA,NN]                             # 'aaka'
 
 ################## VOICE
 LEXICON Voice
@@ -115,8 +162,8 @@ LEXICON Infinitives
 LEXICON CausativePart
 வை:வைக்க                            # 'vaykka'
 வை:வச்சு                              # 'vaccu'            Dir/LR
-செய்ய:செய்ய                          # 'ceiya'           Dir/LR
-பண்ணினா:பண்ணினா                # 'panninaa'         Dir/LR
+செய்:செய்த                            # 'ceitha'          Dir/LR
+பண்ணு:பண்ணினா                    # 'panninaa'         Dir/LR
 கொள்:கொண்டு                       # 'kontu'            Dir/LR
 பிடி:பிடிச்சு                            # 'piticcu'          Dir/LR
 
@@ -124,24 +171,53 @@ LEXICON CausativePart
 ###                          L E X I C O N                                  ###
 ###############################################################################
 
-################################     NOUNS     ################################
+################################     NOUNS & NP     ################################
 LEXICON Nouns
-# Inanimate
-மரம்<n><nn>:மர{M}{Pul}[NN]                       # 'maram'           tree
-காசு<n><nn>:காச{U}[NN]                           # 'kaacu'           money
-தவால்<n><nn>:தவால{Pul}[NN]                     # 'thavaal'         letter
-கால்<n><nn>:கால{Pul}[NN]                         # 'kaal'            leg
-கை<n><nn>:க{AI}[NN]                              # 'kay'             hand
-பழம்<n><nn>:பழ{M}{Pul}[NN]                       # 'pazham'          fruit
-பாடம்<n><nn>:பாட{M}{Pul}[NN]                    # 'paatam'           lesson
-சாப்பாடு<n><nn>:சாப்பாட{U}[NN]                  # 'caappatu'         food
+##################### ANIMATE
+# Plural form 1
+பைடியன்<n><aa>:பைடிய{N}{Pul}[AA,Pl1]               # 'petiyan'          boy
+பெண்<n><aa>:பெ{N}{Pul}[AA,Pl1]                      # 'pen'             female
+ஆண்<n><aa>:ஆ{N}{Pul}[AA,Pl1]                        # 'aan'             male
 
-# Animate
-பைடியன்<n><aa>:பைடியன{Pul}[AA]              # 'petiyan'          boy
-அப்பா<n><aa>:அப்ப{AA}[AA]                       # 'appa'            father
-அம்மா<n><aa>:அம்ம{AA}[AA]                      # 'amma'            mother
-தம்பி<n><aa>:தம்ப{I}[AA]                         # 'thambi'          younger brother
-வேலைக்காரன்<n><aa>:வேலைக்காரன{Pul}[AA]   # 'veelaykkaaran'   servant
+# Plural form 2
+தீவால்<n><aa>:தீவால{Pul}[AA,Pl2]                      # 'theevaal'       lady from an island
+பன்னாலயால்<n><aa>:பன்னாலயால{Pul}[AA,Pl2]       # 'pannaalayaal'   lady from pannaalai
+
+## Proper Nouns
+பொன்னம்பலம்<np><aa>:பொன்னம்பல{M}{Pul}[AA,Pl2]          # 'ponnambalam'
+முருகன்<np><aa>:முருக{Ngen1}{Pul}[AA,Pl2]                      # 'murugan'
+
+# Plural form 3
+பெட்டை<n><aa>:பெட்ட{AI}[AA,Pl3]                     # 'pettay'          girl
+பிள்ளாய்<n><aa>:பிள்ளாய{Pul}[AA,Pl3]                 # 'pillai'          child
+மீன்காரி<n><aa>:மீன்கார{I}[AA,Pl3]                    # 'meenkaari'       fisherwoman
+
+# Plural form 4
+மான்<n><aa>:மா{N}{Pul}[AA,Pl4]                       # 'maan'            deer
+னுள்ளான்<n><aa>:னுள்ளா{N}{Pul}[AA,Pl4]              # 'nullaan'         small reddish ant
+
+அப்பா<n><aa>:அப்ப{AA}[AA]                            # 'appa'            father
+அம்மா<n><aa>:அம்ம{AA}[AA]                           # 'amma'            mother
+தம்பி<n><aa>:தம்ப{I}[AA]                              # 'thambi'          younger brother
+வேலைக்காரன்<n><aa>:வேலைக்காரன{Pul}[AA]        # 'veelaykkaaran'   servant
+
+##################### INANIMATE
+# Plural form 1
+மரம்<n><nn>:மர{M}{Pul}[NN,Pl1]                        # 'maram'           tree
+வீடு<n><nn>:வீட{U}[NN,Pl1]                             # 'veetu'           house
+
+# Plural form 3
+கை<n><nn>:க{AI}[NN,Pl3]                              # 'kay'             hand
+
+# Plural form 4
+வான்<n><nn>:வா{N}{Pul}[NN,Pl4]                       # 'vaan'           van
+
+காசு<n><nn>:காச{U}[NN]                               # 'kaacu'           money
+தவால்<n><nn>:தவால{Pul}[NN]                         # 'thavaal'         letter
+கால்<n><nn>:கால{Pul}[NN]                             # 'kaal'            leg
+பழம்<n><nn>:பழ{M}{Pul}[NN]                           # 'pazham'          fruit
+பாடம்<n><nn>:பாட{M}{Pul}[NN]                         # 'paatam'           lesson
+சாப்பாடு<n><nn>:சாப்பாட{U}[NN]                       # 'caappatu'         food
 
 ################################     VERBS     ################################
 # Verb Classes:
