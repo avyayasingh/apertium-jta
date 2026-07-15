@@ -104,15 +104,15 @@ LEXICON NounNum
 
 ###### UYARTHINAI 'rational beings' - High Class(es)
 # 5: Professional terms and loanwords (Animates)
-<pl>:>ம{AA}ர{Pul}[Pl5]                 # 'maar'
+<pl>:>ம{AA}ர{Pul}[Pl5]              # 'maar'
 
 # 6: Combination of 2 and 5 (Animates)
-<pl>:>மார{Pul}[Pl6]                 # 'maar'
+<pl>:>ம{AA}ர{Pul}[Pl6]              # 'maar'
 <pl>:>{A}வ{AI}[Pl6]                 # 'avay'    Dir/LR
 
 # 7: Combination of 2, 3 and 5 (Animates only)
 <pl>:>{A}ள{Pul}[Pl7]                # 'al'
-<pl>:>மார{Pul}[Pl7]                 # 'maar'    Dir/LR
+<pl>:>ம{AA}ர{Pul}[Pl7]              # 'maar'    Dir/LR
 <pl>:>{A}வ{AI}[Pl7]                 # 'avay'     Dir/LR
 
 # 8: -N ending nouns (Animates)
@@ -199,7 +199,7 @@ LEXICON Nouns
 # Plural form 5
 எஞ்சினியர்<n><aa>:எஞ்சினியர{Pul}[AA,Pl5]            # 'enciniyar'       engineer
 கிளாக்கு<n><aa>:கிளாக்க{U}[AA,Pl5]                    # 'kilaakku'        clerk
-மனீச்சர்<n><aa>:மானீச்சர{Pul}[AA,Pl5]                  # 'manager'         manager
+மனீச்சர்<n><aa>:மனீச்சர{Pul}[AA,Pl5]                   # 'manager'         manager
 டாக்கொத்தர்<n><aa>:டாக்கொத்தர{Pul}[AA,Pl5]         # 'taakkoththar'    doctor
 
 அப்பா<n><aa>:அப்ப{AA}[AA]                            # 'appa'            father

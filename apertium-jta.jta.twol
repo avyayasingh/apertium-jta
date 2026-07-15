@@ -7,13 +7,18 @@ Alphabet
    ா ி  ீ  ு  ூ  ெ  ே  ை  ொ  ோ  ௌ  ௗ   ்
      %{X%}:0
      ! Vowels
-     %{AI%}:ை
      %{A%}:0
      %{AA%}:ா
-     %{U%}:ு %{U%}:0
-     %{OO%}:ோ
      %{I%}:ி
      %{II%}:ீ
+     %{U%}:ு %{U%}:0
+     %{UU%}:ூ
+     %{E%}:ெ
+     %{EE%}:ே
+     %{AI%}:ை
+     %{O%}:ொ
+     %{OO%}:ோ
+     %{AU%}:ௌ
      ! Pulli
      %{Pul%}:் %{Pul%}:0
      ! Consonants
@@ -44,6 +49,7 @@ VowWithSym = ஆ இ ஈ உ ஊ எ ஏ ஐ ஒ ஓ ஔ ;
 VowSym = ா  ி  ீ  ு  ூ  ெ  ே  ை  ொ  ோ  ௌ ;
 ShortVowSym = ி  ு  ெ  ை  ொ;
 LongVowSym =  ா  ீ  ூ  ே  ோ  ௌ;
+SuffixVowels = %{A%} %{AA%} %{I%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} %{Irefr%} %{Igen%} ;
 
 Rules 
 
@@ -80,15 +86,15 @@ Rules
 
 ! Pulli
 "Removing Pulli when adding Suffix"
-%{Pul%}:0 <=> :RemConsonant _ %>: [ %{A%}: | %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{II%}: | %{AA%}: | %{Irefr%}: | %{Igen%}: ] ;
+%{Pul%}:0 <=> _ %>: SuffixVowels: ;
               %{Ngen2%}: _ %{Rgen2%}: ;
                 except 
                 ப: ல: _ %>: ;
                 %{M%}: _ %>: ;  
 
 "Keeping Pulli when end of word or consonant follows"
-%{Pul%}:் <=> :RemConsonant _ .#. ;
-              :RemConsonant _ %>: :RemConsonant ;
+%{Pul%}:் <=> _ .#. ;
+              _ %>: :RemConsonant ;
 
 "Adding Pulli"
 0:Vy <=> LongVowSym: %>: C: _ C: ;
@@ -100,13 +106,13 @@ Rules
 %{M%}:ம <=> _ %{Pul%}: .#. ;
 
 "Transform underlying M to T when vowel"
-%{M%}:த <=> _ %{Pul%}: %>: [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{II%}: | %{AA%}: | %{Irefr%}: | %{Igen%}: ] ;
+%{M%}:த <=> _ %{Pul%}: %>: SuffixVowels: ;
 
 "Force the Pulli"
-%{Pul%}:் <=> %{M%}: _ %>: [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{II%}: | %{AA%}: | %{Irefr%}: | %{Igen%}: ] ;
+%{Pul%}:் <=> %{M%}: _ %>: SuffixVowels: ;
 
 "Insert a second T"
-0:த <=> %{M%}: %{Pul%}: %>: _ [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{II%}: | %{AA%}: | %{Irefr%}: | %{Igen%}: ] ;
+0:த <=> %{M%}: %{Pul%}: %>: _ SuffixVowels: ;
 
 ! Referential case
 "Removing I when Referential and noun ends in AA"
@@ -124,8 +130,8 @@ Rules
 0:ய <=> [ %{AI%}: | %{I%}: ] _ %>:;
 
 "Removing  ு"
-%{U%}:0 <=> _ %>: [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{II%}: | %{AA%}: ] ;
-            [ %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{II%}: | %{AA%}: ] %>: _ ;
+%{U%}:0 <=> _ %>: SuffixVowels: ;
+            SuffixVowels: %>: _ ;
 
 "Starting with K"
 %{M%}:ங <=> _ %{Pul%}: %>: %{K%}: ;
