@@ -85,8 +85,9 @@ Rules
 !            ்: ட: _ X: %»:;
 
 ! Pulli
-"Removing Pulli when adding Suffix"
+"Removing Pulli"
 %{Pul%}:0 <=> _ %>: SuffixVowels: ;
+              %{NR%}: _ %>: :ர ;
               %{Ngen2%}: _ %{Rgen2%}: ;
                 except 
                 ப: ல: _ %>: ;
@@ -138,6 +139,12 @@ Rules
 
 "Starting with K"
 %{N%}:ங <=> _ %{Pul%}: %>: %{K%}: ;
+
+"Starting with K"
+%{NR%}:ங <=> _ %{Pul%}: %>: %{K%}: ;
+
+"Starting with R"
+%{NR%}:0 <=> _ %{Pul%}: %>: :ர ;
 
 ! Resources:
 ! https://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol

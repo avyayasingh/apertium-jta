@@ -31,6 +31,9 @@
 ################################     PATTERNS     ################################
 PATTERNS
 # Nouns & NP
+Nouns[AA,SgH] NounNum[SgH] Cases[AA]
+Nouns[NN,MNoun] NounNum[MNoun] Cases[NN]
+Nouns[NN,FNoun] NounNum[FNoun] Cases[NN]
 Nouns[NN,Pl1] NounNum[Pl1] Cases[NN]
 Nouns[AA,Pl1] NounNum[Pl1] Cases[AA]
 Nouns[NN,Pl2] NounNum[Pl2] Cases[NN]
@@ -83,7 +86,9 @@ Punctuation
 ################## NUMBER
 LEXICON NounNum
 # Singular: all apply equally (null)
-<sg>:[Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]
+# Class 0: Honorifics [SgH], mass nouns [MNoun] and Foodstuffs [FNoun] (Always singular)
+<sg>:[SgH,MNoun,FNoun,Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]
+# fix honorifics and include note on kaari, kaaran for professions
 
 # Plural Classes: 1 through 8
 ###### GENERAL CLASSES
@@ -96,13 +101,13 @@ LEXICON NounNum
 # 3: Variation of Common Plural (Inanimate and Animate)
 <pl>:>{A}ள{Pul}[Pl3]                # 'al'
 
-###### AHTHINAI 'irrational beings and inanimate objects' - Low Class
+###### AHTHINAI 'irrational beings and inanimate objects' - Low Class (NON-GENDERED)
 # 4: Non humans (Inanimate and Irrational Animates)
 <pl>:>{U}கள{Pul}[Pl4]              # 'ukal'
 ## Special form
 <pl>:>{U}ள{Pul}[Pl4]                # 'ul'      Dir/LR
 
-###### UYARTHINAI 'rational beings' - High Class(es)
+###### UYARTHINAI 'rational beings' - High Class(es) (GENDERED)
 # 5: Professional terms and loanwords (Animates)
 <pl>:>ம{AA}ர{Pul}[Pl5]              # 'maar'
 
@@ -131,6 +136,7 @@ LEXICON Cases
 <abl>:>{I}ட்டை\ இருந்து[AA,NN]                 # 'ittay~ai iruntu'
 <abl>:>{I}லை\ இருந்து[AA,NN]                  # 'ilay~ai iruntu'            Dir/LR
 <ben>:>{AA}க[AA,NN]                             # 'aaka'
+# fix ask about ai
 
 ################## VOICE
 LEXICON Voice
@@ -174,56 +180,76 @@ LEXICON CausativePart
 ################################     NOUNS & NP     ################################
 LEXICON Nouns
 ##################### ANIMATE
-# Plural form 1
-பைடியன்<n><aa>:பைடிய{N}{Pul}[AA,Pl1]               # 'petiyan'          boy
-பெண்<n><aa>:பெ{N}{Pul}[AA,Pl1]                      # 'pen'             female
-ஆண்<n><aa>:ஆ{N}{Pul}[AA,Pl1]                        # 'aan'             male
+# Class 1
+பைடியன்<n><m><aa>:பைடிய{N}{Pul}[AA,Pl1]                      # 'petiyan'          boy
+பெண்<n><f><aa>:பெ{N}{Pul}[AA,Pl1]                              # 'pen'             female
+ஆண்<n><m><aa>:ஆ{N}{Pul}[AA,Pl1]                               # 'aan'             male
+வேலைக்காரன்<n><m><aa>:வேலை>க்காரன{Pul}[AA,Pl1]           # 'veelaykkaaran'   male servant
 
-# Plural form 2
-தீவாள்<n><aa>:தீவாள{Pul}[AA,Pl2]                      # 'theevaal'       lady from an island
-பன்னாலயாள்<n><aa>:பன்னாலயாள{Pul}[AA,Pl2]       # 'pannaalayaal'   lady from pannaalai
+# Class 2
+தீவாள்<n><f><aa>:தீவாள{Pul}[AA,Pl2]                             # 'theevaal'       lady from an island
+பன்னாலயாள்<n><f><aa>:பன்னாலயாள{Pul}[AA,Pl2]              # 'pannaalayaal'   lady from pannaalai
 
 ## Proper Nouns
-பொன்னம்பலம்<np><aa>:பொன்னம்பல{M}{Pul}[AA,Pl2]          # 'ponnambalam'
-முருகன்<np><aa>:முருக{Ngen1}{Pul}[AA,Pl2]                      # 'murugan'
+பொன்னம்பலம்<np><m><aa>:பொன்னம்பல{M}{Pul}[AA,Pl2]        # 'ponnambalam'
+முருகன்<np><m><aa>:முருக{Ngen1}{Pul}[AA,Pl2]                    # 'murugan'
 
-# Plural form 3
-பெட்டை<n><aa>:பெட்ட{AI}[AA,Pl3]                     # 'pettay'          girl
-பிள்ளாய்<n><aa>:பிள்ளாய{Pul}[AA,Pl3]                 # 'pillai'          child
-மீன்காரி<n><aa>:மீன்கார{I}[AA,Pl3]                    # 'meenkaari'       fisherwoman
+# Class 3
+பெட்டை<n><f><aa>:பெட்ட{AI}[AA,Pl3]                            # 'pettay'          girl
+பிள்ளை<n><mf><aa>:பிள்ள{AI}[AA,Pl3]                            # 'pillay'          child
+மீன்காரி<n><f><aa>:மீன்>கார{I}[AA,Pl3]                          # 'meenkaari'       fisherwoman
+வேலைக்காரி<n><f><aa>:வேலை>க்கார{I}[AA,Pl3]                # 'veelaykkaari'    female servant
 
-# Plural form 4
-மான்<n><aa>:மா{N}{Pul}[AA,Pl4]                       # 'maan'            deer
-னுள்ளான்<n><aa>:னுள்ளா{N}{Pul}[AA,Pl4]              # 'nullaan'         small reddish ant
+# Class 4
+மான்<n><aa>:மா{N}{Pul}[AA,Pl4]                                 # 'maan'            deer
+நுல்லான்<n><aa>:நுள்ளா{N}{Pul}[AA,Pl4]                         # 'nullaan'         small reddish ant
 
-# Plural form 5
-எஞ்சினியர்<n><aa>:எஞ்சினியர{Pul}[AA,Pl5]            # 'enciniyar'       engineer
-கிளாக்கு<n><aa>:கிளாக்க{U}[AA,Pl5]                    # 'kilaakku'        clerk
-மனீச்சர்<n><aa>:மனீச்சர{Pul}[AA,Pl5]                   # 'manager'         manager
-டாக்கொத்தர்<n><aa>:டாக்கொத்தர{Pul}[AA,Pl5]         # 'taakkoththar'    doctor
+# Class 5
+எஞ்சினியர்<n><mf><aa>:எஞ்சினியர{Pul}[AA,Pl5]                  # 'enciniyar'       engineer
+கிளார்க்<n><mf><aa>:கிளார்க்{Pul}[AA,Pl5]                         # 'kilaakku'        clerk
+மேனேஜர்<n><mf><aa>:மேனேஜர{Pul}[AA,Pl5]                      # 'maneeccar'       manager
+டாக்டர்<n><mf><aa>:டாக்டர{Pul}[AA,Pl5]                           # 'taaktar'         doctor
 
-அப்பா<n><aa>:அப்ப{AA}[AA]                            # 'appa'            father
-அம்மா<n><aa>:அம்ம{AA}[AA]                           # 'amma'            mother
-தம்பி<n><aa>:தம்ப{I}[AA]                              # 'thambi'          younger brother
-வேலைக்காரன்<n><aa>:வேலைக்காரன{Pul}[AA]        # 'veelaykkaaran'   servant
+# Class 6
+அம்மான்<n><m><aa>:அம்மா{N}{Pul}[AA,Pl6]                       # 'ammaan'          uncle
+மச்சான்<n><m><aa>:மச்சா{N}{Pul}[AA,Pl6]                         # 'maccaan'         male cousin
+தோழி<n><f><aa>:தோழ{I}[AA,Pl6]                                # 'thoozhi'         female friend
+தங்கச்சி<n><f><aa>:தங்கச்ச{I}[AA,Pl6]                            # 'thankachchi'     younger sister
+அய்யர்<n><m><aa>:அய்யர{Pul}[AA,Pl6]                            # 'ayyar'           Hindu priest
+ஐயர்<n><m><aa>:ஐயர{Pul}[AA,Pl6]                                # 'aiyar'           Hindu priest        Dir/LR
+# fix ask about plurals
+அப்பா<n><m><aa>:அப்ப{AA}[AA,Pl6]                               # 'appa'            father
+அம்மா<n><f><aa>:அம்ம{AA}[AA,Pl6]                              # 'amma'            mother
+தம்பி<n><m><aa>:தம்ப{I}[AA,Pl6]                                 # 'thambi'          younger brother
+
+# Class 7
+சினேகிதி<n><f><aa>:சினேகித{I}[AA,Pl7]                         # 'cineekithi'      female friend
+சகோதரி<n><f><aa>:சகோதர{I}[AA,Pl7]                          # 'cakoothari'      sister
+
+# Class 8
+சினேகிதன்<n><m><aa>:சினேகித{NR}[AA,Pl8]                      # 'cineekithan'     male friend
+பாட்டுக்காரன்<n><m><aa>:பாட்டு>க்கார{NR}{Pul}[AA,Pl8]          # 'paattukkaaran'   singer
+எண்ணெய்க்காரன்<n><m><aa>:எண்ணெய்>க்கார{NR}{Pul}[AA,Pl8] # 'ennaikkaaran'    oil presser   
 
 ##################### INANIMATE
-# Plural form 1
-மரம்<n><nn>:மர{M}{Pul}[NN,Pl1]                        # 'maram'           tree
-வீடு<n><nn>:வீட{U}[NN,Pl1]                             # 'veetu'           house
+# Class 0
+பழம்<n><nn>:பழ{M}{Pul}[NN,FNoun]                                # 'pazham'          fruit
+சாப்பாடு<n><nn>:சாப்பாட{U}[NN,FNoun]                           # 'caappatu'         food
 
-# Plural form 3
-கை<n><nn>:க{AI}[NN,Pl3]                              # 'kay'             hand
+# Class 1
+மரம்<n><nn>:மர{M}{Pul}[NN,Pl1]                                  # 'maram'           tree
+வீடு<n><nn>:வீட{U}[NN,Pl1]                                       # 'veetu'           house
+# fix ask about plurals
+காசு<n><nn>:காச{U}[NN,Pl1]                                      # 'kaacu'           money
+தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                # 'thabaal'         letter
+கால்<n><nn>:கால{Pul}[NN,Pl1]                                   # 'kaal'            leg
+பாடம்<n><nn>:பாட{M}{Pul}[NN,Pl1]                               # 'paatam'           lesson
 
-# Plural form 4
-வான்<n><nn>:வா{N}{Pul}[NN,Pl4]                       # 'vaan'           van
+# Class 3
+கை<n><nn>:க{AI}[NN,Pl3]                                        # 'kay'             hand
 
-காசு<n><nn>:காச{U}[NN]                               # 'kaacu'           money
-தவால்<n><nn>:தவால{Pul}[NN]                         # 'thavaal'         letter
-கால்<n><nn>:கால{Pul}[NN]                             # 'kaal'            leg
-பழம்<n><nn>:பழ{M}{Pul}[NN]                           # 'pazham'          fruit
-பாடம்<n><nn>:பாட{M}{Pul}[NN]                         # 'paatam'           lesson
-சாப்பாடு<n><nn>:சாப்பாட{U}[NN]                       # 'caappatu'         food
+# Class 4
+வான்<n><nn>:வா{N}{Pul}[NN,Pl4]                                 # 'vaan'           van
 
 ################################     VERBS     ################################
 # Verb Classes:
@@ -288,7 +314,8 @@ LEXICON IntraVerbStem
 அழு:அழ{U}[Class1a,INTRACAUS]            # 'azhu'        cry
 
 # Class 2
-நிமிர்:நிமிர{Pul}[Class2]                  # 'nimir'       erect 
+நிமிர்:நிமிர{Pul}[Class2]                  # 'nimir'       erect
+வா:வ{AA}[Class2]                        # 'vaa'          come 
 
 # Class 3
 ஒட்டு:ஒட்ட{U}[Class3]                     # 'ottu'        adhere
