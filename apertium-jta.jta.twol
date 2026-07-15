@@ -80,14 +80,15 @@ Rules
 
 ! Pulli
 "Removing Pulli when adding Suffix"
-%{Pul%}:0 <=> :RemConsonant _ %>: ;
+%{Pul%}:0 <=> :RemConsonant _ %>: [ %{A%}: | %{AI%}: | %{OO%}: | %{U%}: | %{I%}: | %{II%}: | %{AA%}: | %{Irefr%}: | %{Igen%}: ] ;
               %{Ngen2%}: _ %{Rgen2%}: ;
                 except 
                 ப: ல: _ %>: ;
                 %{M%}: _ %>: ;  
 
-"Keeping Pulli when end of word"
+"Keeping Pulli when end of word or consonant follows"
 %{Pul%}:் <=> :RemConsonant _ .#. ;
+              :RemConsonant _ %>: :RemConsonant ;
 
 "Adding Pulli"
 0:Vy <=> LongVowSym: %>: C: _ C: ;

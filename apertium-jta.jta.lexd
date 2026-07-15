@@ -104,7 +104,7 @@ LEXICON NounNum
 
 ###### UYARTHINAI 'rational beings' - High Class(es)
 # 5: Professional terms and loanwords (Animates)
-<pl>:>மார{Pul}[Pl5]                 # 'maar'
+<pl>:>ம{AA}ர{Pul}[Pl5]                 # 'maar'
 
 # 6: Combination of 2 and 5 (Animates)
 <pl>:>மார{Pul}[Pl6]                 # 'maar'
@@ -180,8 +180,8 @@ LEXICON Nouns
 ஆண்<n><aa>:ஆ{N}{Pul}[AA,Pl1]                        # 'aan'             male
 
 # Plural form 2
-தீவால்<n><aa>:தீவால{Pul}[AA,Pl2]                      # 'theevaal'       lady from an island
-பன்னாலயால்<n><aa>:பன்னாலயால{Pul}[AA,Pl2]       # 'pannaalayaal'   lady from pannaalai
+தீவாள்<n><aa>:தீவாள{Pul}[AA,Pl2]                      # 'theevaal'       lady from an island
+பன்னாலயாள்<n><aa>:பன்னாலயாள{Pul}[AA,Pl2]       # 'pannaalayaal'   lady from pannaalai
 
 ## Proper Nouns
 பொன்னம்பலம்<np><aa>:பொன்னம்பல{M}{Pul}[AA,Pl2]          # 'ponnambalam'
@@ -195,6 +195,12 @@ LEXICON Nouns
 # Plural form 4
 மான்<n><aa>:மா{N}{Pul}[AA,Pl4]                       # 'maan'            deer
 னுள்ளான்<n><aa>:னுள்ளா{N}{Pul}[AA,Pl4]              # 'nullaan'         small reddish ant
+
+# Plural form 5
+எஞ்சினியர்<n><aa>:எஞ்சினியர{Pul}[AA,Pl5]            # 'enciniyar'       engineer
+கிளாக்கு<n><aa>:கிளாக்க{U}[AA,Pl5]                    # 'kilaakku'        clerk
+மனீச்சர்<n><aa>:மானீச்சர{Pul}[AA,Pl5]                  # 'manager'         manager
+டாக்கொத்தர்<n><aa>:டாக்கொத்தர{Pul}[AA,Pl5]         # 'taakkoththar'    doctor
 
 அப்பா<n><aa>:அப்ப{AA}[AA]                            # 'appa'            father
 அம்மா<n><aa>:அம்ம{AA}[AA]                           # 'amma'            mother
