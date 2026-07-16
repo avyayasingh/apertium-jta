@@ -300,10 +300,26 @@ LEXICON Nouns
 செட்டி<n><m><aa>:செட்ட{I}[AA,Pl7]                               # 'cetti'           male from cetti comm.
 
 # Class 8
+## MALE
+### I
+குருடன்<n><m><aa>:குருட{NR}{Pul}[AA,Pl8]                        # 'kurutan'         blind man
+விசரன்<n><m><aa>:விசர{NR}{Pul}[AA,Pl8]                         # 'vicaran'         mad man
+செகிடன்<n><m><aa>:செகிட{NR}{Pul}[AA,Pl8]                      # 'cekitan'         deaf man
+தலைவன்<n><m><aa>:தலைவ{NR}{Pul}[AA,Pl8]                    # 'thalayvan'       male leader        
 சகோதரன்<n><m><aa>:சகோதர{NR}{Pul}[AA,Pl8]                  # 'cakootharan'     brother
 சினேகிதன்<n><m><aa>:சினேகித{NR}{Pul}[AA,Pl8]                 # 'cineekithan'     male friend
 பாட்டுக்காரன்<n><m><aa>:பாட்டு>க்கார{NR}{Pul}[AA,Pl8]          # 'paattukkaaran'   singer
-எண்ணெய்க்காரன்<n><m><aa>:எண்ணெய்>க்கார{NR}{Pul}[AA,Pl8] # 'ennaikkaaran'    oil presser   
+எண்ணெய்க்காரன்<n><m><aa>:எண்ணெய்>க்கார{NR}{Pul}[AA,Pl8] # 'ennaikkaaran'    oil presser
+துணைவன்<n><m><aa>:துணைவ{NR}{Pul}[AA,Pl8]                 # 'tunayvan'        male assistant
+பிராமணன்<n><m><aa>:பிராமண{NR}{Pul}[AA,Pl8]                 # 'piraamanan'      male brahmin
+நட்டுவன்<n><m><aa>:நட்டுவ{NR}{Pul}[AA,Pl8]                      # 'nattuvan'        male from drum-beater comm.
+கட்டயன்<n><m><aa>:கட்டய{NR}{Pul}[AA,Pl8]                       # 'kattayan'        short man
+பேயன்<n><m><aa>:பேய{NR}{Pul}[AA,Pl8]                          # 'peeyan'          female fool
+### III
+குசவன்<n><m><aa>:குசவ{NR}{Pul}[AA,Pl8]                         # 'kucavan'         male from potmaker comm.
+குறவன்<n><m><aa>:குறவ{NR}{Pul}[AA,Pl8]                         # 'kuravan'         tribal man
+சிங்களவன்<n><m><aa>:சிங்களவ{NR}{Pul}[AA,Pl8]                 # 'cinkalavan'      Sinhalese man
+ஒருவன்<n><m><aa>:ஒருவ{NR}{Pul}[AA,Pl8]                         # 'oruvan'          one woman
 
 ##################### INANIMATE
 # Class 0
