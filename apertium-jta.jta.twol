@@ -25,6 +25,9 @@ Alphabet
      %{M%}:ம %{M%}:த %{M%}:ங
      %{N%}:ன %{N%}:ங
      %{K%}:க
+     %{PL%}:ள
+     %{R%}:ர
+     %{AN%}:ங %{AN%}:0
      ! Noun case irregulars
      %{Irefr%}:ி %{Irefr%}:0
      %{Igen%}:ி %{Igen%}:0
@@ -87,7 +90,7 @@ Rules
 ! Pulli
 "Removing Pulli"
 %{Pul%}:0 <=> _ %>: SuffixVowels: ;
-              %{NR%}: _ %>: :ர ;
+              %{NR%}: _ %>: %{R%}: ;
               %{Ngen2%}: _ %{Rgen2%}: ;
                 except 
                 ப: ல: _ %>: ;
@@ -96,11 +99,7 @@ Rules
 "Keeping Pulli when end of word or consonant follows"
 %{Pul%}:் <=> _ .#. ;
               _ %>: :RemConsonant ;
-
-"Adding Pulli"
-0:Vy <=> LongVowSym: %>: C: _ C: ;
-         where Vy in ( ் )
-         and C in Vallinam ;
+              _ %>: %{K%}: ;
 
 ! M ending pulli
 "Keep M to m if end of word"
@@ -115,6 +114,19 @@ Rules
 "Insert a second T"
 0:த <=> %{M%}: %{Pul%}: %>: _ SuffixVowels: ;
 
+! N addition
+"Starting with K"
+%{AN%}:ங <=> _ :Vy %>: %{K%}: ;
+              where Vy in ( ் ) ; 
+
+"Adding Pulli"
+0:Vy <=> %{AN%}: _ %>: %{K%}: ;
+         where Vy in ( ் ) ;
+
+! Accusative case
+"Removing AA when faced with SuffixVowels"
+%{AA%}:0 <=> _ %>: SuffixVowels: ;
+
 ! Referential case
 "Removing I when Referential and noun ends in AA"
 %{Irefr%}:0 <=> %{AA%}: %>: _ ;
@@ -128,7 +140,7 @@ Rules
 
 ! Noun endings 
 "Inserting ய"
-0:ய <=> [ %{AI%}: | %{I%}: ] _ %>:;
+0:ய <=> [ %{AI%}: | %{I%}: | %{II%}: ] (:0) _ %>: SuffixVowels:;
 
 "Removing  ு"
 %{U%}:0 <=> _ %>: SuffixVowels: ;
@@ -143,8 +155,14 @@ Rules
 "Starting with K"
 %{NR%}:ங <=> _ %{Pul%}: %>: %{K%}: ;
 
+"Starting with AA"
+%{PL%}:0 <=> _ %{Pul%}: %>: %{AA%}: ;
+
 "Starting with R"
 %{NR%}:0 <=> _ %{Pul%}: %>: :ர ;
+
+"Ending with nothing"
+%{NR%}:ன <=> _ %{Pul%}: .#. ;
 
 ! Resources:
 ! https://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol

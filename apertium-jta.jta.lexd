@@ -30,26 +30,36 @@
 
 ################################     PATTERNS     ################################
 PATTERNS
+# Pronouns
+Location(1)[LOC] PronounStems[LOC,GPro] Number[GPro] Cases[AA] Location(2)[LOC]
+Location(1)[LOC] PronounStems[LOC,MH] Number[MH] Honorifics[MH] Cases[AA] Location(2)[LOC]
+Location(1)[LOC] PronounStems[LOC,FPro] Number[FPro] Cases[AA] Location(2)[LOC]
+Location(1)[LOC] PronounStems[LOC,FH] Number[FH] Honorifics[FH] Cases[AA] Location(2)[LOC]
+Location(1)[LOC] PronounStems[LOC,EHIrr] Number[EHIrr] Honorifics[EHIrr] Cases[AA] Location(2)[LOC]
+Location(1)[NOC] PronounStems[NOC,GPro] Number[GPro] Cases[AA] Location(2)[NOC]
+Location(1)[NOC] PronounStems[NOC,PH] Number[PH] Honorifics[PH] Cases[AA] Location(2)[NOC]
+Location(1)[NOC] PronounStems[NOC,IH] Number[IH] Honorifics[IH] Cases[AA] Location(2)[NOC]
 # Nouns & NP
-Nouns[AA,SgH] NounNum[SgH] Cases[AA]
-Nouns[NN,MNoun] NounNum[MNoun] Cases[NN]
-Nouns[NN,FNoun] NounNum[FNoun] Cases[NN]
-Nouns[NN,Pl1] NounNum[Pl1] Cases[NN]
-Nouns[AA,Pl1] NounNum[Pl1] Cases[AA]
-Nouns[NN,Pl2] NounNum[Pl2] Cases[NN]
-Nouns[AA,Pl2] NounNum[Pl2] Cases[AA]
-Nouns[NN,Pl3] NounNum[Pl3] Cases[NN]
-Nouns[AA,Pl3] NounNum[Pl3] Cases[AA]
-Nouns[NN,Pl4] NounNum[Pl4] Cases[NN]
-Nouns[AA,Pl4] NounNum[Pl4] Cases[AA]
-Nouns[NN,Pl5] NounNum[Pl5] Cases[NN]
-Nouns[AA,Pl5] NounNum[Pl5] Cases[AA]
-Nouns[NN,Pl6] NounNum[Pl6] Cases[NN]
-Nouns[AA,Pl6] NounNum[Pl6] Cases[AA]
-Nouns[NN,Pl7] NounNum[Pl7] Cases[NN]
-Nouns[AA,Pl7] NounNum[Pl7] Cases[AA]
-Nouns[NN,Pl8] NounNum[Pl8] Cases[NN]
-Nouns[AA,Pl8] NounNum[Pl8] Cases[AA]
+Nouns[NN,MNoun] Number[MNoun] Cases[NN]
+Nouns[NN,FNoun] Number[FNoun] Cases[NN]
+Nouns[AA,H] Number[H] Honorifics[H] Cases[AA]
+Nouns[AA,EH] Number[EH] Honorifics[H] Cases[AA]
+Nouns[NN,Pl1] Number[Pl1] Cases[NN]
+Nouns[AA,Pl1] Number[Pl1] Cases[AA]
+Nouns[NN,Pl2] Number[Pl2] Cases[NN]
+Nouns[AA,Pl2] Number[Pl2] Cases[AA]
+Nouns[NN,Pl3] Number[Pl3] Cases[NN]
+Nouns[AA,Pl3] Number[Pl3] Cases[AA]
+Nouns[NN,Pl4] Number[Pl4] Cases[NN]
+Nouns[AA,Pl4] Number[Pl4] Cases[AA]
+Nouns[NN,Pl5] Number[Pl5] Cases[NN]
+Nouns[AA,Pl5] Number[Pl5] Cases[AA]
+Nouns[NN,Pl6] Number[Pl6] Cases[NN]
+Nouns[AA,Pl6] Number[Pl6] Cases[AA]
+Nouns[NN,Pl7] Number[Pl7] Cases[NN]
+Nouns[AA,Pl7] Number[Pl7] Cases[AA]
+Nouns[NN,Pl8] Number[Pl8] Cases[NN]
+Nouns[AA,Pl8] Number[Pl8] Cases[AA]
 # Verbs
 ## Transitives
 ### Infinitives
@@ -77,27 +87,54 @@ IntraVerbStem[STRONGDOUBCAUS] [ <v><iv>: ] Causativiser[STRONGDOUBCAUS]
 # Others
 PostPositions [ <post>: ]
 CausativePart [ <caus>: ]
-Number
+Numbers
 Symbol
 Fraction
 Punctuation
 
 ################################     SUFFIXOLOGY     ################################
+########################### GENERAL
+################## HONORIFICS
+LEXICON Honorifics
+## 'kaaran' is usually added for professions (female eq. 'kaari')
+## this is changed to 'kaarar' in both male and female to denote honor
+## this is similar to the general honorific, '-r', which changes (mainly male) '-n' ending nouns
+# General honorific
+<hon>:>{R}{Pul}[H]                                    # 'r'   honorific
+# Epicene plural (implied honorific)
+<hon>:>{R}{Pul}[EH]                                   # 'r'   honorific
+# For pronouns (only applied to p3)
+<ihon>:>{R}{Pul}[IH]                                  # 'r'   intermediate honorific
+<hon>:>{R}{Pul}[MH]                                   # 'r'   male honorific
+<hon>:>{AA}[FH]                                       # 'aa'  female honorific
+<hon>:>{AI}[EHIrr]                                    # 'ai'  epicene plural honorific
+<hon>:>{K}ள{Pul}[PH]                                 # 'kal' plural honorific
+# add more honorifics
+
 ################## NUMBER
-LEXICON NounNum
-# ORUMAI: Singular: all apply equally (null)
-# Class 0: Honorifics [SgH], mass nouns [MNoun] and Foodstuffs [FNoun] (Always singular)
-<sg>:[SgH,MNoun,FNoun,Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]
-# fix honorifics and include note on kaari, kaaran for professions
-# fix ask about plurals
+LEXICON Number
+# ORUMAI: Singular Class: 0
+# 0: a. Foodstuffs [FNoun]              (Always singular)
+##   b. Mass Nouns [MNoun]              (Uncountable)
+##   c. Honorifics [IH,H,MH,FH,PH]      (Forced singular for honorifics 'null')
+<sg>:[FNoun]                                        # null  singular (foodstuffs)
+<sg>:[GPro,FPro]                                    # null  singular (pronouns)
+<sg>:[Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]              # null  singular (nouns)
+<sg>:[IH,H,FH,MH,PH]                                # null  singular (honorifics)
+<unc>:[MNoun]                                       # null  uncountable
 
 # PANMAI: Plural Classes: 1 through 8
+# 1/2: Epicene Plural (Unisex)
+# Ungendered forced plural used for groups of people, honorific implied [EH,EHIrr]
+<epl>:[EH,EHIrr]
 ###### GENERAL CLASSES
 # 1: Common Plural (Inanimate and Animate)
-<pl>:>{K}ள{Pul}[Pl1]                # 'kal'
+# This plural also applies to pronouns generally [GPro]
+<pl>:>{K}ள{Pul}[Pl1,GPro]           # 'kal'
 
 # 2: Plurals of feminine Proper Nouns, people related to locations (Animate)
-<pl>:>{A}வ{AI}[Pl2]                 # 'avay'
+# This plural also applies to female pronouns [FPro]
+<pl>:>{A}வ{AI}[Pl2,FPro]            # 'avay'
 
 # 3: Variation of Common Plural (Inanimate and Animate)
 <pl>:>{A}ள{Pul}[Pl3]                # 'al'
@@ -112,17 +149,17 @@ LEXICON NounNum
 # 5: Professional terms and loanwords (Animates)
 <pl>:>ம{AA}ர{Pul}[Pl5]              # 'maar'
 
-# 6: Combination of 2 and 5 (Animates)
+# 6: Combination of 2 and 5 (Animates) (RELATIONS)
 <pl>:>ம{AA}ர{Pul}[Pl6]              # 'maar'
 <pl>:>{A}வ{AI}[Pl6]                 # 'avay'    Dir/LR
 
-# 7: Combination of 2, 3 and 5 (Animates only)
+# 7: Combination of 2, 3 and 5 (Animates only) (Mainly FEMALES)
 <pl>:>{A}ள{Pul}[Pl7]                # 'al'
 <pl>:>ம{AA}ர{Pul}[Pl7]              # 'maar'    Dir/LR
 <pl>:>{A}வ{AI}[Pl7]                 # 'avay'     Dir/LR
 
-# 8: -N ending nouns (Animates)
-<pl>:>ர{Pul}[Pl8]                    # 'r'
+# 8: -N ending nouns (Animates) (MALES)
+<pl>:>{R}{Pul}[Pl8]                  # 'r'
 
 ################## CASES
 LEXICON Cases
@@ -139,6 +176,7 @@ LEXICON Cases
 <ben>:>{AA}க[AA,NN]                             # 'aaka'
 # fix ask about ai
 
+########################### VERBS
 ################## VOICE
 LEXICON Voice
 <actv>:
@@ -165,6 +203,15 @@ LEXICON Causativiser
 LEXICON Infinitives
 <inf>:{A}                                         # 'a'           fix based on classes
 
+########################### PRONOUN LOCATION
+LEXICON Location(2)
+# No location prefix for p1,p2
+:[NOC]                   :[NOC]
+# Mandatory prefix for p3
+:இ>[LOC]           <prx>:[LOC]
+:உ>[LOC]           <med>:[LOC]
+:அ>[LOC]           <dst>:[LOC]
+
 ################################     PARTICLES     ################################
 LEXICON CausativePart
 வை:வைக்க                            # 'vaykka'
@@ -172,18 +219,26 @@ LEXICON CausativePart
 செய்:செய்த                            # 'ceitha'          Dir/LR
 பண்ணு:பண்ணினா                    # 'panninaa'         Dir/LR
 கொள்:கொண்டு                       # 'kontu'            Dir/LR
-பிடி:பிடிச்சு                            # 'piticcu'          Dir/LR
+பிடி:பிடிச்சு                             # 'piticcu'          Dir/LR
 
 ###############################################################################
 ###                          L E X I C O N                                  ###
 ###############################################################################
+################################     PRONOUN STEMS     ################################
+LEXICON PronounStems
+நான்<prn><p1>:நா{N}{Pul}[NOC,GPro]           # 'naan'             I
+நீ<prn><p2>:ந{II}{AN}[NOC,GPro,PH,IH]          # 'nee'             you
+வன்<prn><p3><m>:வ>{NR}{Pul}[LOC,GPro,MH]     # '-van'            -he
+வள்<prn><p3><f>:வ>{PL}{Pul}[LOC,FPro,FH]     # '-val'            -she
+வ<prn><p3>:வ[LOC,EHIrr]                      # '-va'            -they-
+து<prn><p3><nt>:த{U}[LOC,GPro]                # '-tu'            -they
 
 ################################     NOUNS & NP     ################################
 LEXICON Nouns
 #####
 # UYARTHINAI Grouped into FEMALE, MALE and UNISEX
 # FEMALE and MALE further grouped into Classes I - IV
-# 0th Class contains words with no gendered equivalent
+# 0th Class contains words with no gendered equivalent or irregulars
 #####
 # MALE I: -'an', II: -'aan', III: -'van', IV: communal words
 # FEMALE I(a): -'al', (b): -'i', (c): -'aththi', (d): -'cci',
@@ -243,6 +298,8 @@ LEXICON Nouns
 தோழி<n><f><aa>:தோழ{I}[AA,Pl6]                                # 'thoozhi'         female friend
 தங்கச்சி<n><f><aa>:தங்கச்ச{I}[AA,Pl6]                            # 'thankachchi'     younger sister
 அம்மா<n><f><aa>:அம்ம{AA}[AA,Pl6]                               # 'amma'            mother
+### I(b)
+மாமி<n><f><aa>:மாம{I}[AA,Pl6]                                  # 'maami'           aunt
 ## MALE
 ### 0
 மாமா<n><m><aa>:மாம{AA}[AA,Pl6]                                # 'maamaa'          uncle
@@ -300,26 +357,28 @@ LEXICON Nouns
 செட்டி<n><m><aa>:செட்ட{I}[AA,Pl7]                               # 'cetti'           male from cetti comm.
 
 # Class 8
+## EPICENE
+சொந்தக்காரன்<n><aa>:சொந்தக்கார{NR}{Pul}[AA,Pl8,EH]          # 'conthakkaaran'    relative
 ## MALE
 ### I
-குருடன்<n><m><aa>:குருட{NR}{Pul}[AA,Pl8]                        # 'kurutan'         blind man
-விசரன்<n><m><aa>:விசர{NR}{Pul}[AA,Pl8]                         # 'vicaran'         mad man
-செகிடன்<n><m><aa>:செகிட{NR}{Pul}[AA,Pl8]                      # 'cekitan'         deaf man
-தலைவன்<n><m><aa>:தலைவ{NR}{Pul}[AA,Pl8]                    # 'thalayvan'       male leader        
-சகோதரன்<n><m><aa>:சகோதர{NR}{Pul}[AA,Pl8]                  # 'cakootharan'     brother
-சினேகிதன்<n><m><aa>:சினேகித{NR}{Pul}[AA,Pl8]                 # 'cineekithan'     male friend
-பாட்டுக்காரன்<n><m><aa>:பாட்டு>க்கார{NR}{Pul}[AA,Pl8]          # 'paattukkaaran'   singer
-எண்ணெய்க்காரன்<n><m><aa>:எண்ணெய்>க்கார{NR}{Pul}[AA,Pl8] # 'ennaikkaaran'    oil presser
-துணைவன்<n><m><aa>:துணைவ{NR}{Pul}[AA,Pl8]                 # 'tunayvan'        male assistant
-பிராமணன்<n><m><aa>:பிராமண{NR}{Pul}[AA,Pl8]                 # 'piraamanan'      male brahmin
-நட்டுவன்<n><m><aa>:நட்டுவ{NR}{Pul}[AA,Pl8]                      # 'nattuvan'        male from drum-beater comm.
-கட்டயன்<n><m><aa>:கட்டய{NR}{Pul}[AA,Pl8]                       # 'kattayan'        short man
-பேயன்<n><m><aa>:பேய{NR}{Pul}[AA,Pl8]                          # 'peeyan'          female fool
+குருடன்<n><m><aa>:குருட{NR}{Pul}[AA,Pl8,H]                        # 'kurutan'         blind man
+விசரன்<n><m><aa>:விசர{NR}{Pul}[AA,Pl8,H]                         # 'vicaran'         mad man
+செகிடன்<n><m><aa>:செகிட{NR}{Pul}[AA,Pl8,H]                      # 'cekitan'         deaf man
+தலைவன்<n><m><aa>:தலைவ{NR}{Pul}[AA,Pl8,H]                    # 'thalayvan'       male leader        
+சகோதரன்<n><m><aa>:சகோதர{NR}{Pul}[AA,Pl8,H]                  # 'cakootharan'     brother
+சினேகிதன்<n><m><aa>:சினேகித{NR}{Pul}[AA,Pl8,H]                 # 'cineekithan'     male friend
+பாட்டுக்காரன்<n><m><aa>:பாட்டு>க்கார{NR}{Pul}[AA,Pl8,H]          # 'paattukkaaran'   singer
+எண்ணெய்க்காரன்<n><m><aa>:எண்ணெய்>க்கார{NR}{Pul}[AA,Pl8,H] # 'ennaikkaaran'    oil presser
+துணைவன்<n><m><aa>:துணைவ{NR}{Pul}[AA,Pl8,H]                 # 'tunayvan'        male assistant
+பிராமணன்<n><m><aa>:பிராமண{NR}{Pul}[AA,Pl8,H]                 # 'piraamanan'      male brahmin
+நட்டுவன்<n><m><aa>:நட்டுவ{NR}{Pul}[AA,Pl8,H]                      # 'nattuvan'        male from drum-beater comm.
+கட்டயன்<n><m><aa>:கட்டய{NR}{Pul}[AA,Pl8,H]                       # 'kattayan'        short man
+பேயன்<n><m><aa>:பேய{NR}{Pul}[AA,Pl8,H]                          # 'peeyan'          male fool
 ### III
-குசவன்<n><m><aa>:குசவ{NR}{Pul}[AA,Pl8]                         # 'kucavan'         male from potmaker comm.
-குறவன்<n><m><aa>:குறவ{NR}{Pul}[AA,Pl8]                         # 'kuravan'         tribal man
-சிங்களவன்<n><m><aa>:சிங்களவ{NR}{Pul}[AA,Pl8]                 # 'cinkalavan'      Sinhalese man
-ஒருவன்<n><m><aa>:ஒருவ{NR}{Pul}[AA,Pl8]                         # 'oruvan'          one woman
+குசவன்<n><m><aa>:குசவ{NR}{Pul}[AA,Pl8,H]                         # 'kucavan'         male from potmaker comm.
+குறவன்<n><m><aa>:குறவ{NR}{Pul}[AA,Pl8,H]                         # 'kuravan'         tribal man
+சிங்களவன்<n><m><aa>:சிங்களவ{NR}{Pul}[AA,Pl8,H]                 # 'cinkalavan'      Sinhalese man
+ஒருவன்<n><m><aa>:ஒருவ{NR}{Pul}[AA,Pl8,H]                         # 'oruvan'          one woman
 
 ##################### INANIMATE
 # Class 0
@@ -459,7 +518,7 @@ LEXICON PostPositions
 அடியிலே:அடியிலே             # 'atiyilee'            at the bottom of
 
 ################################     NUMBERS     ################################
-PATTERN Number
+PATTERN Numbers
 Numeral [<num>:]
 
 LEXICON Numeral
