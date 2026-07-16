@@ -85,17 +85,18 @@ Punctuation
 ################################     SUFFIXOLOGY     ################################
 ################## NUMBER
 LEXICON NounNum
-# Singular: all apply equally (null)
+# ORUMAI: Singular: all apply equally (null)
 # Class 0: Honorifics [SgH], mass nouns [MNoun] and Foodstuffs [FNoun] (Always singular)
 <sg>:[SgH,MNoun,FNoun,Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]
 # fix honorifics and include note on kaari, kaaran for professions
+# fix ask about plurals
 
-# Plural Classes: 1 through 8
+# PANMAI: Plural Classes: 1 through 8
 ###### GENERAL CLASSES
 # 1: Common Plural (Inanimate and Animate)
 <pl>:>{K}ள{Pul}[Pl1]                # 'kal'
 
-# 2: Plurals of Proper Nouns, people related to locations (Animate)
+# 2: Plurals of feminine Proper Nouns, people related to locations (Animate)
 <pl>:>{A}வ{AI}[Pl2]                 # 'avay'
 
 # 3: Variation of Common Plural (Inanimate and Animate)
@@ -179,24 +180,49 @@ LEXICON CausativePart
 
 ################################     NOUNS & NP     ################################
 LEXICON Nouns
+#####
+# UYARTHINAI Grouped into FEMALE, MALE and UNISEX
+# FEMALE and MALE further grouped into Classes I - IV
+# 0th Class contains words with no gendered equivalent
+#####
+# MALE I: -'an', II: -'aan', III: -'van', IV: communal words
+# FEMALE I(a): -'al', (b): -'i', (c): -'aththi', (d): -'cci',
+## II(a): -'aal', II(b): -'aaththi', II(c): -'aatti'
+## III: -'ththi', IV: communal words  
 ##################### ANIMATE
 # Class 1
-பைடியன்<n><m><aa>:பைடிய{N}{Pul}[AA,Pl1]                      # 'petiyan'          boy
+## FEMALE
+### 0
 பெண்<n><f><aa>:பெ{N}{Pul}[AA,Pl1]                              # 'pen'             female
+## MALE
+### 0
 ஆண்<n><m><aa>:ஆ{N}{Pul}[AA,Pl1]                               # 'aan'             male
+### I
 வேலைக்காரன்<n><m><aa>:வேலை>க்காரன{Pul}[AA,Pl1]           # 'veelaykkaaran'   male servant
+பைடியன்<n><m><aa>:பைடிய{N}{Pul}[AA,Pl1]                      # 'petiyan'          boy
+### IV
+பண்டாரம்<n><m><aa>:பண்டார{M}{Pul}[AA,Pl1]                    # 'pantaaram'       male from pantaaram comm.
+பண்டாரி<n><m><aa>:பண்டார{I}[AA,Pl1]                          # 'pantaari'        male from pantaaram comm.          Dir/LR
 
 # Class 2
+## FEMALE
+### II(a)
 தீவாள்<n><f><aa>:தீவாள{Pul}[AA,Pl2]                             # 'theevaal'       lady from an island
 பன்னாலயாள்<n><f><aa>:பன்னாலயாள{Pul}[AA,Pl2]              # 'pannaalayaal'   lady from pannaalai
+கட்டுவனாள்<n><f><aa>:கட்டுவனாள{Pul}[AA,Pl2]                 # 'kattuvanaal'    lady from kattuvan
+பிரத்தியாள்<n><f><aa>:பிரத்தியாள{Pul}[AA,Pl2]                  # 'piraththiyaal'   lady from a different place
 
-## Proper Nouns
+## (0) Proper Nouns
 பொன்னம்பலம்<np><m><aa>:பொன்னம்பல{M}{Pul}[AA,Pl2]        # 'ponnambalam'
 முருகன்<np><m><aa>:முருக{Ngen1}{Pul}[AA,Pl2]                    # 'murugan'
 
 # Class 3
-பெட்டை<n><f><aa>:பெட்ட{AI}[AA,Pl3]                            # 'pettay'          girl
+## UNISEX
 பிள்ளை<n><mf><aa>:பிள்ள{AI}[AA,Pl3]                            # 'pillay'          child
+## FEMALE
+### 0
+பெட்டை<n><f><aa>:பெட்ட{AI}[AA,Pl3]                            # 'pettay'          girl
+### I(b)
 மீன்காரி<n><f><aa>:மீன்>கார{I}[AA,Pl3]                          # 'meenkaari'       fisherwoman
 வேலைக்காரி<n><f><aa>:வேலை>க்கார{I}[AA,Pl3]                # 'veelaykkaari'    female servant
 
@@ -205,29 +231,77 @@ LEXICON Nouns
 நுல்லான்<n><aa>:நுள்ளா{N}{Pul}[AA,Pl4]                         # 'nullaan'         small reddish ant
 
 # Class 5
+## UNISEX
 எஞ்சினியர்<n><mf><aa>:எஞ்சினியர{Pul}[AA,Pl5]                  # 'enciniyar'       engineer
 கிளார்க்<n><mf><aa>:கிளார்க்{Pul}[AA,Pl5]                         # 'kilaakku'        clerk
 மேனேஜர்<n><mf><aa>:மேனேஜர{Pul}[AA,Pl5]                      # 'maneeccar'       manager
 டாக்டர்<n><mf><aa>:டாக்டர{Pul}[AA,Pl5]                           # 'taaktar'         doctor
 
 # Class 6
-அம்மான்<n><m><aa>:அம்மா{N}{Pul}[AA,Pl6]                       # 'ammaan'          uncle
-மச்சான்<n><m><aa>:மச்சா{N}{Pul}[AA,Pl6]                         # 'maccaan'         male cousin
+## FEMALE
+### 0 
 தோழி<n><f><aa>:தோழ{I}[AA,Pl6]                                # 'thoozhi'         female friend
 தங்கச்சி<n><f><aa>:தங்கச்ச{I}[AA,Pl6]                            # 'thankachchi'     younger sister
+அம்மா<n><f><aa>:அம்ம{AA}[AA,Pl6]                               # 'amma'            mother
+## MALE
+### 0
+மாமா<n><m><aa>:மாம{AA}[AA,Pl6]                                # 'maamaa'          uncle
+அம்மான்<n><m><aa>:அம்மா{N}{Pul}[AA,Pl6]                       # 'ammaan'          uncle                              Dir/LR
+மச்சான்<n><m><aa>:மச்சா{N}{Pul}[AA,Pl6]                         # 'maccaan'         male cousin
 அய்யர்<n><m><aa>:அய்யர{Pul}[AA,Pl6]                            # 'ayyar'           Hindu priest
-ஐயர்<n><m><aa>:ஐயர{Pul}[AA,Pl6]                                # 'aiyar'           Hindu priest        Dir/LR
-# fix ask about plurals
+ஐயர்<n><m><aa>:ஐயர{Pul}[AA,Pl6]                                # 'aiyar'           Hindu priest                       Dir/LR
 அப்பா<n><m><aa>:அப்ப{AA}[AA,Pl6]                               # 'appa'            father
-அம்மா<n><f><aa>:அம்ம{AA}[AA,Pl6]                              # 'amma'            mother
 தம்பி<n><m><aa>:தம்ப{I}[AA,Pl6]                                 # 'thambi'          younger brother
+### II
+கட்டுவனான்<n><m><aa>:கட்டுவனா{N}{Pul}[AA,Pl6]               # 'kattuvanaan'     male from kattuvan
+பிரத்தியான்<n><m><aa>:பிரத்தியான{Pul}[AA,Pl6]                 # 'piraththiyaan'   male from a different place
+வண்ணான்<n><m><aa>:வண்ணான{Pul}[AA,Pl6]                  # 'vannaan'         washerman
+தட்டான்<n><m><aa>:தட்டான{Pul}[AA,Pl6]                        # 'thattaan'         goldsmith (male)
+சீமான்<n><m><aa>:சீமான{Pul}[AA,Pl6]                           # 'ciimaan'          lord (male)
+வித்துவான்<n><m><aa>:வித்துவான{Pul}[AA,Pl6]                  # 'viththuvaan'      learned man
 
 # Class 7
-சினேகிதி<n><f><aa>:சினேகித{I}[AA,Pl7]                         # 'cineekithi'      female friend
+## UNISEX
+வியாபாரி<n><mf><aa>:வியாபார{I}[AA,Pl7]                       # 'viyaapaari'      trader
+நோயாளி<n><mf><aa>:நோயாள{I}[AA,Pl7]                        # 'nooyaali'        patient
+பாவி<n><mf><aa>:பாவ{I}[AA,Pl7]                                 # 'paavi'           sinner
+## FEMALE
+### I(b)
 சகோதரி<n><f><aa>:சகோதர{I}[AA,Pl7]                          # 'cakoothari'      sister
+சினேகிதி<n><f><aa>:சினேகித{I}[AA,Pl7]                         # 'cineekithi'      female friend
+குருடி<n><f><aa>:குருட{I}[AA,Pl7]                                # 'kuruti'           blind woman
+விசரி<n><f><aa>:விசர{I}[AA,Pl7]                                 # 'vicari'          mad woman
+செகிடி<n><f><aa>:செகிட{I}[AA,Pl7]                              # 'cekiti'          deaf woman
+தலைவி<n><f><aa>:தலைவ{I}[AA,Pl7]                            # 'talayvi'         female leader
+சினேகிதி<n><f><aa>:சினேகித{I}[AA,Pl7]                         # 'cineekithi'      female friend
+துணைவி<n><f><aa>:துணைவ{I}[AA,Pl7]                         # 'tunayvi'         female assistant
+### I(c)
+பிராமணத்தி<n><f><aa>:பிராமணத்த{I}[AA,Pl7]                  # 'piraamanaththi'  female brahmin
+நட்டுவத்தி<n><f><aa>:நட்டுவத்த{I}[AA,Pl7]                       # 'nattuvaththi'    female from drum-beater comm.
+### I(d)
+பெடிச்சி<n><f><aa>:பெட்டிச்ச{I}[AA,Pl7]                          # 'peticci'         girl
+கட்டயச்சி<n><f><aa>:கட்டயச்ச{I}[AA,Pl7]                        # 'kattayacci'      short woman
+பேச்சி<n><f><aa>:பேச்ச{I}[AA,Pl7]                               # 'peecci'          female fool
+### II(b)
+வன்னாத்தி<n><f><aa>:வன்னாத்த{I}[AA,Pl7]                     # 'vannaaththi'      washerwoman
+தட்டாத்தி<n><f><aa>:தட்டாத்த{I}[AA,Pl7]                        # 'thattaaththi'     goldsmith (female)
+### II(c)
+சீமாட்டி<n><f><aa>:சீமாட்ட{I}[AA,Pl7]                           # 'ciimaatti'        lady
+வித்துவாட்டி<n><f><aa>:வித்துவாட்ட{I}[AA,Pl7]                  # 'viththuvaatti'    learned woman
+### III
+குசத்தி<n><f><aa>:குசத்த{I}[AA,Pl7]                             # 'kucaththi'        female from potmaker comm.
+குறத்தி<n><f><aa>:குறத்த{I}[AA,Pl7]                            # 'kuraththi'        tribal woman
+சிங்களத்தி<n><f><aa>:சிங்களத்த{I}[AA,Pl7]                     # 'cinkalaththi'     Sinhalese woman
+ஒருத்தி<n><f><aa>:ஒருத்த{I}[AA,Pl7]                            # 'oruththi'         one woman
+பண்டாரத்தி<n><f><aa>:பண்டாரத்த{I}[AA,Pl7]                  # 'pantaaraththi'    female from pantaaram comm.
+செட்டிச்சி<n><f><aa>:செட்டிச்ச{I}[AA,Pl7]                       # 'cetticci'         female from cetti comm.
+## MALE
+### IV
+செட்டி<n><m><aa>:செட்ட{I}[AA,Pl7]                               # 'cetti'           male from cetti comm.
 
 # Class 8
-சினேகிதன்<n><m><aa>:சினேகித{NR}[AA,Pl8]                      # 'cineekithan'     male friend
+சகோதரன்<n><m><aa>:சகோதர{NR}{Pul}[AA,Pl8]                  # 'cakootharan'     brother
+சினேகிதன்<n><m><aa>:சினேகித{NR}{Pul}[AA,Pl8]                 # 'cineekithan'     male friend
 பாட்டுக்காரன்<n><m><aa>:பாட்டு>க்கார{NR}{Pul}[AA,Pl8]          # 'paattukkaaran'   singer
 எண்ணெய்க்காரன்<n><m><aa>:எண்ணெய்>க்கார{NR}{Pul}[AA,Pl8] # 'ennaikkaaran'    oil presser   
 
