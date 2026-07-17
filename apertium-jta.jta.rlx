@@ -5,6 +5,8 @@ LIST CAUS = caus;
 LIST VPAST = (v past);
 LIST HON = (hon);
 LIST PL = (pl);
+LIST ACC = (acc);
+LIST GEN = (gen);
 
 SECTION
 # Select Rules
@@ -12,7 +14,7 @@ SECTION
 SELECT CAUS IF 
     (0 VPAST)
     (0 CAUS)
-    (-1 (n acc)) ;
+    (-1 ACC) ;
 
 ## Honorific match with verb form
 SELECT HON IF 
@@ -25,6 +27,12 @@ SELECT PL IF
     (0 (pl))
     (1 (v pl)) ;
     
+## Genitive irregular
+SELECT GEN IF
+    (0 (n nom))
+    (0 (n gen))
+    (1 (n)) ;
+
 # Resources:
 # http://visl.sdu.dk/cg3.html
 # http://groups.google.com/group/constraint-grammar

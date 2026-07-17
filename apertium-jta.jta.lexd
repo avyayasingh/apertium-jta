@@ -174,6 +174,7 @@ LEXICON Cases
 <loc>:>{I}லை[AA,NN]                            # 'ilay~ai'
 <refr>:>{Irefr}ட்டை[AA]                         # 'ittay~ai'
 <gen>:>{Igen}{Ngen2}{Pul}{Rgen2}{AI}[AA,NN]      # 'inray~ai'
+<gen>:[AA,NN]                                    # null (irregular genitive)
 <abl>:>{I}ட்டை\ இருந்து[AA,NN]                 # 'ittay~ai iruntu'
 <abl>:>{I}லை\ இருந்து[AA,NN]                  # 'ilay~ai iruntu'            Dir/LR
 <ben>:>{AA}க[AA,NN]                             # 'aaka'
@@ -249,12 +250,13 @@ LEXICON Nouns
 ## III: -'ththi', IV: communal words  
 ##################### ANIMATE
 # Class 1
+மாட்டு<n><aa>:மாட்ட{U}[AA,Pl1]                                   # 'mattu'           cow
 ## FEMALE
 ### 0
 பெண்<n><f><aa>:பெ{N}{Pul}[AA,Pl1]                              # 'pen'             female
 ## MALE
 ### 0
-ஆண்<n><m><aa>:ஆ{N}{Pul}[AA,Pl1]                               # 'aan'             male
+ஆண்<n><m><aa>:ஆ{N}{Pul}[AA,Pl1]                               # 'aan'              male
 ### I
 வேலைக்காரன்<n><m><aa>:வேலை>க்காரன{Pul}[AA,Pl1]           # 'veelaykkaaran'   male servant
 பைடியன்<n><m><aa>:பைடிய{N}{Pul}[AA,Pl1]                      # 'petiyan'          boy
@@ -268,11 +270,12 @@ LEXICON Nouns
 தீவாள்<n><f><aa>:தீவாள{Pul}[AA,Pl2]                             # 'theevaal'       lady from an island
 பன்னாலயாள்<n><f><aa>:பன்னாலயாள{Pul}[AA,Pl2]              # 'pannaalayaal'   lady from pannaalai
 கட்டுவனாள்<n><f><aa>:கட்டுவனாள{Pul}[AA,Pl2]                 # 'kattuvanaal'    lady from kattuvan
-பிரத்தியாள்<n><f><aa>:பிரத்தியாள{Pul}[AA,Pl2]                  # 'piraththiyaal'   lady from a different place
+பிரத்தியாள்<n><f><aa>:பிரத்தியாள{Pul}[AA,Pl2]                   # 'piraththiyaal'   lady from a different place
 
 ## (0) Proper Nouns
 பொன்னம்பலம்<np><m><aa>:பொன்னம்பல{M}{Pul}[AA,Pl2]        # 'ponnambalam'
 முருகன்<np><m><aa>:முருக{Ngen1}{Pul}[AA,Pl2]                    # 'murugan'
+கண்ணன்<np><m><aa>:கண்ண{Ngen1}{Pul}[AA,Pl2]                # 'kannan'
 
 # Class 3
 ## UNISEX
@@ -397,6 +400,10 @@ LEXICON Nouns
 தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                # 'thabaal'         letter
 கால்<n><nn>:கால{Pul}[NN,Pl1]                                   # 'kaal'            leg
 பாடம்<n><nn>:பாட{M}{Pul}[NN,Pl1]                               # 'paatam'          lesson
+கடை<n><nn>:கட{AI}[NN,Pl1]                                     # 'katay'           shop
+வால்<n><nn>:வால{Pul}[NN,Pl1]                                   # 'vaal'            tail
+பெட்டி<n><nn>:பெட்ட{I}[NN,Pl1]                                  # 'petti'           box
+மூடி<n><nn>:மூட{I}[NN,Pl1]                                      # 'muuti'            lid
 
 # Class 3
 கை<n><nn>:க{AI}[NN,Pl3]                                        # 'kay'             hand
