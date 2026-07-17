@@ -103,12 +103,14 @@ LEXICON Honorifics
 <hon>:>{R}{Pul}[H]                                    # 'r'   honorific
 # Epicene plural (implied honorific)
 <hon>:>{R}{Pul}[EH]                                   # 'r'   honorific
-# For pronouns (only applied to p3)
+# For pronouns (applied to p2,p3)
+## p2
 <ihon>:>{R}{Pul}[IH]                                  # 'r'   intermediate honorific
+<hon>:>{K}ள{Pul}[PH]                                 # 'kal' plural honorific
+## p3
 <hon>:>{R}{Pul}[MH]                                   # 'r'   male honorific
 <hon>:>{AA}[FH]                                       # 'aa'  female honorific
-<hon>:>{AI}[EHIrr]                                    # 'ai'  epicene plural honorific
-<hon>:>{K}ள{Pul}[PH]                                 # 'kal' plural honorific
+<hon>:>{AI}[EHIrr]                                    # 'ai'  irregular epicene plural honorific
 # add more honorifics
 
 ################## NUMBER

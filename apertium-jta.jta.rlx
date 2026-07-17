@@ -3,15 +3,28 @@ DELIMITERS = "<.>" ;
 
 LIST CAUS = caus;
 LIST VPAST = (v past);
-LIST ACC = (acc);
+LIST HON = (hon);
+LIST PL = (pl);
 
 SECTION
 # Select Rules
+## Causative particle if previous noun is in the accusative
 SELECT CAUS IF 
     (0 VPAST)
     (0 CAUS)
-    (-1 ACC) ;
+    (-1 (n acc)) ;
 
+## Honorific match with verb form
+SELECT HON IF 
+    (0 (sg hon))
+    (0 (pl))
+    (1 (v hon)) ;
+
+SELECT PL IF 
+    (0 (sg hon))
+    (0 (pl))
+    (1 (v pl)) ;
+    
 # Resources:
 # http://visl.sdu.dk/cg3.html
 # http://groups.google.com/group/constraint-grammar
