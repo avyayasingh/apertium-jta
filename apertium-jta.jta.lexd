@@ -32,17 +32,17 @@
 PATTERNS
 # Pronouns
 ## Location necessary
-Location(1)[LOC] PronounStems[LOC,GPro] Number[GPro] Cases[AA] Location(2)[LOC]
-Location(1)[LOC] PronounStems[LOC,FPro] Number[FPro] Cases[AA] Location(2)[LOC]
+Location(1)[LOC] PronounStems[LOC,GPro] Number[GPro] Cases[AA] Location(2)[LOC] Interrogative?
+Location(1)[LOC] PronounStems[LOC,FPro] Number[FPro] Cases[AA] Location(2)[LOC] Interrogative?
 ### Honorifics
-Location(1)[LOC] PronounStems[LOC,MH] Number[MH] Honorifics[MH] Cases[AA] Location(2)[LOC]
-Location(1)[LOC] PronounStems[LOC,FH] Number[FH] Honorifics[FH] Cases[AA] Location(2)[LOC]
-Location(1)[LOC] PronounStems[LOC,EHIrr] Number[EHIrr] Honorifics[EHIrr] Cases[AA] Location(2)[LOC]
+Location(1)[LOC] PronounStems[LOC,MH] Number[MH] Honorifics[MH] Cases[AA] Location(2)[LOC] Interrogative?
+Location(1)[LOC] PronounStems[LOC,FH] Number[FH] Honorifics[FH] Cases[AA] Location(2)[LOC] Interrogative?
+Location(1)[LOC] PronounStems[LOC,EHIrr] Number[EHIrr] Honorifics[EHIrr] Cases[AA] Location(2)[LOC] Interrogative?
 ## Non-location
-Location(1)[NOC] PronounStems[NOC,GPro] Number[GPro] Cases[AA] Location(2)[NOC]
+Location(1)[NOC] PronounStems[NOC,GPro] Number[GPro] Cases[AA] Location(2)[NOC] Interrogative?
 ### Honorifics
-Location(1)[NOC] PronounStems[NOC,PH] Number[PH] Honorifics[PH] Cases[AA] Location(2)[NOC]
-Location(1)[NOC] PronounStems[NOC,IH] Number[IH] Honorifics[IH] Cases[AA] Location(2)[NOC]
+Location(1)[NOC] PronounStems[NOC,PH] Number[PH] Honorifics[PH] Cases[AA] Location(2)[NOC] Interrogative?
+Location(1)[NOC] PronounStems[NOC,IH] Number[IH] Honorifics[IH] Cases[AA] Location(2)[NOC] Interrogative?
 # Nouns & NP
 ## Irregulars
 Nouns[NN,MNoun] Number[MNoun] Cases[NN]
@@ -192,6 +192,11 @@ LEXICON Cases
 <ben>:>{AA}க[AA,NN]                             # 'aaka'
 # fix ask about ai
 
+################## INTERROGATIVE
+LEXICON Interrogative
+<qst>:{AA}              # 'aa'
+# fix add for verbs after tenses and such
+
 ########################### VERBS
 ################## VOICE
 LEXICON Voice
@@ -217,7 +222,8 @@ LEXICON Causativiser
 
 ################## INFINITIVE
 LEXICON Infinitives
-<inf>:{A}                                         # 'a'           fix based on classes
+<inf>:{A}                                         # 'a'           
+# fix based on classes
 
 ########################### PRONOUN LOCATION
 LEXICON Location(2)
