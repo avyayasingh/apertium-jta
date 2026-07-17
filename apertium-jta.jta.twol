@@ -27,6 +27,7 @@ Alphabet
      %{K%}:க
      %{PL%}:ள
      %{R%}:ர
+     %{RR%}:ற
      %{T%}:ட
      %{AN%}:ங %{AN%}:0
      %{NR%}:ங %{NR%}:ன %{NR%}:0
@@ -108,6 +109,7 @@ Rules
 "Adding Pulli"
 0:Vy <=> %{AN%}: _ %>: %{K%}: ;
          %{T%}: _ (0:) %{U%}: %>: SuffixVowels: ;
+         %{RR%}: _ (0:) %{U%}: %>: SuffixVowels: ;
          where Vy in ( ் ) ;
 
 ! M ending pulli
@@ -119,6 +121,11 @@ Rules
 
 "Insert a second T"
 0:த <=> %{M%}: %{Pul%}: _ %>: SuffixVowels: ;
+
+! rr ending
+"Insert a second RR"
+0:ற <=> %{RR%}: :Vy _ %{U%}: %>: SuffixVowels: ;
+              where Vy in ( ் ) ;
 
 ! -tu ending
 "Insert a second T"

@@ -385,8 +385,10 @@ LEXICON Nouns
 
 ##################### INANIMATE
 # Class 0
+# Foodstuffs
 பழம்<n><nn>:பழ{M}{Pul}[NN,FNoun]                                # 'pazham'          fruit
-சாப்பாடு<n><nn>:சாப்பா{T}{U}[NN,FNoun]                          # 'caappatu'         food
+சாப்பாடு<n><nn>:சாப்பா{T}{U}[NN,FNoun]                          # 'caappatu'        food
+சோறு<n><nn>:சோ{RR}{U}[NN,FNoun]                               # 'cooru'           rice
 
 # Class 1
 மரம்<n><nn>:மர{M}{Pul}[NN,Pl1]                                  # 'maram'           tree
