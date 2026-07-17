@@ -44,6 +44,7 @@ Nouns[NN,MNoun] Number[MNoun] Cases[NN]
 Nouns[NN,FNoun] Number[FNoun] Cases[NN]
 Nouns[AA,H] Number[H] Honorifics[H] Cases[AA]
 Nouns[AA,EH] Number[EH] Honorifics[H] Cases[AA]
+Nouns[AA,ES] Number[ES] Cases[AA]
 Nouns[NN,Pl1] Number[Pl1] Cases[NN]
 Nouns[AA,Pl1] Number[Pl1] Cases[AA]
 Nouns[NN,Pl2] Number[Pl2] Cases[NN]
@@ -121,7 +122,7 @@ LEXICON Number
 ##   c. Honorifics [IH,H,MH,FH,PH]      (Forced singular for honorifics 'null')
 <sg>:[FNoun]                                        # null  singular (foodstuffs)
 <sg>:[GPro,FPro]                                    # null  singular (pronouns)
-<sg>:[Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]              # null  singular (nouns)
+<sg>:[ES,Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]           # null  singular (nouns,epicene irregular)
 <sg>:[IH,H,FH,MH,PH]                                # null  singular (honorifics)
 <unc>:[MNoun]                                       # null  uncountable
 
@@ -360,7 +361,7 @@ LEXICON Nouns
 
 # Class 8
 ## EPICENE
-சொந்தக்காரன்<n><aa>:சொந்தக்கார{NR}{Pul}[AA,Pl8,EH]          # 'conthakkaaran'    relative
+சொந்தக்காரன்<n><aa>:சொந்தக்கார{NR}{Pul}[AA,EH,ES]           # 'conthakkaaran'    relative
 ## MALE
 ### I
 குருடன்<n><m><aa>:குருட{NR}{Pul}[AA,Pl8,H]                        # 'kurutan'         blind man
@@ -385,16 +386,15 @@ LEXICON Nouns
 ##################### INANIMATE
 # Class 0
 பழம்<n><nn>:பழ{M}{Pul}[NN,FNoun]                                # 'pazham'          fruit
-சாப்பாடு<n><nn>:சாப்பாட{U}[NN,FNoun]                           # 'caappatu'         food
+சாப்பாடு<n><nn>:சாப்பா{T}{U}[NN,FNoun]                          # 'caappatu'         food
 
 # Class 1
 மரம்<n><nn>:மர{M}{Pul}[NN,Pl1]                                  # 'maram'           tree
-வீடு<n><nn>:வீட{U}[NN,Pl1]                                       # 'veetu'           house
-# fix ask about plurals
+வீடு<n><nn>:வீ{T}{U}[NN,Pl1]                                      # 'veetu'           house
 காசு<n><nn>:காச{U}[NN,Pl1]                                      # 'kaacu'           money
 தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                # 'thabaal'         letter
 கால்<n><nn>:கால{Pul}[NN,Pl1]                                   # 'kaal'            leg
-பாடம்<n><nn>:பாட{M}{Pul}[NN,Pl1]                               # 'paatam'           lesson
+பாடம்<n><nn>:பாட{M}{Pul}[NN,Pl1]                               # 'paatam'          lesson
 
 # Class 3
 கை<n><nn>:க{AI}[NN,Pl3]                                        # 'kay'             hand

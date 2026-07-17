@@ -27,7 +27,9 @@ Alphabet
      %{K%}:க
      %{PL%}:ள
      %{R%}:ர
+     %{T%}:ட
      %{AN%}:ங %{AN%}:0
+     %{NR%}:ங %{NR%}:ன %{NR%}:0
      ! Noun case irregulars
      %{Irefr%}:ி %{Irefr%}:0
      %{Igen%}:ி %{Igen%}:0
@@ -44,6 +46,7 @@ Consonant = க ங ச ஞ	ட ண த ந ப ம ய ர ல வ	ழ ள ற 
 Mellinam = ங ஞ ண ந ம ன;
 Vallinam = க ச ட த ப ற;
 Idaiyinam = ய ர ல வ ழ ள;
+ConsonantNOTTM = க ங ச ஞ	ட ண ந ப ய ர ல வ	ழ ள ற ன ;
 
 RemConsonant = Mellinam ல ;
 
@@ -89,39 +92,43 @@ Rules
 
 ! Pulli
 "Removing Pulli"
-%{Pul%}:0 <=> _ %>: SuffixVowels: ;
+%{Pul%}:0 <=> :ConsonantNOTTM _ %>: SuffixVowels: ;
               %{NR%}: _ %>: %{R%}: ;
               %{Ngen2%}: _ %{Rgen2%}: ;
                 except 
                 ப: ல: _ %>: ;
-                %{M%}: _ %>: ;  
+                %{M%}: _ %>: SuffixVowels: ;  
 
-"Keeping Pulli when end of word or consonant follows"
+"Keeping Pulli"
 %{Pul%}:் <=> _ .#. ;
               _ %>: :RemConsonant ;
               _ %>: %{K%}: ;
+              %{M%}: _ (0:) %>: SuffixVowels: ;
+
+"Adding Pulli"
+0:Vy <=> %{AN%}: _ %>: %{K%}: ;
+         %{T%}: _ (0:) %{U%}: %>: SuffixVowels: ;
+         where Vy in ( ் ) ;
 
 ! M ending pulli
 "Keep M to m if end of word"
 %{M%}:ம <=> _ %{Pul%}: .#. ;
 
 "Transform underlying M to T when vowel"
-%{M%}:த <=> _ %{Pul%}: %>: SuffixVowels: ;
-
-"Force the Pulli"
-%{Pul%}:் <=> %{M%}: _ %>: SuffixVowels: ;
+%{M%}:த <=> _ %{Pul%}: (0:) %>: SuffixVowels: ;
 
 "Insert a second T"
-0:த <=> %{M%}: %{Pul%}: %>: _ SuffixVowels: ;
+0:த <=> %{M%}: %{Pul%}: _ %>: SuffixVowels: ;
+
+! -tu ending
+"Insert a second T"
+0:ட <=> %{T%}: :Vy _ %{U%}: %>: SuffixVowels: ;
+              where Vy in ( ் ) ;
 
 ! N addition
 "Starting with K"
 %{AN%}:ங <=> _ :Vy %>: %{K%}: ;
               where Vy in ( ் ) ; 
-
-"Adding Pulli"
-0:Vy <=> %{AN%}: _ %>: %{K%}: ;
-         where Vy in ( ் ) ;
 
 ! Accusative case
 "Removing AA when faced with SuffixVowels"
@@ -159,7 +166,7 @@ Rules
 %{PL%}:0 <=> _ %{Pul%}: %>: %{AA%}: ;
 
 "Starting with R"
-%{NR%}:0 <=> _ %{Pul%}: %>: :ர ;
+%{NR%}:0 <=> _ %{Pul%}: %>: %{R%}: ;
 
 "Ending with nothing"
 %{NR%}:ன <=> _ %{Pul%}: .#. ;
