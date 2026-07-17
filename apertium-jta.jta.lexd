@@ -2,9 +2,13 @@
 # Morphological Transducer for Jaffna Tamil
 
 # Part of speech categories
+# <prn>    # Pronoun
 # <n>      # Noun
 # <v>      # Verb
 # <adj>    # Adjective
+# <comp>   # Comparative
+# <post>   # Postposition
+# <caus>   # Causative particles
 # <num>    # Numeral
 
 # <sent>   # Sentence-ending punctuation
@@ -18,8 +22,9 @@
 # <rpar>   # Right parenthesis
 
 # Number morphology
-# <pl>     # Plural
 # <sg>     # Singular
+# <pl>     # Plural
+# <epl>    # Epicene Plural
 
 # Other symbols
 # >        # Morpheme boundary
@@ -47,7 +52,8 @@ Location(1)[NOC] PronounStems[NOC,IH] Number[IH] Honorifics[IH] Cases[AA] Locati
 ## Irregulars
 Nouns[NN,MNoun] Number[MNoun] Cases[NN]|Emphatic
 Nouns[NN,FNoun] Number[FNoun] Cases[NN]|Emphatic
-Nouns[NN,TNoun] Number[TNoun] Cases[NN]|Emphatic
+Nouns[TNoun] Number[TNoun] Cases[AA]|Emphatic
+Nouns[NN,PRED] Number[Pl1] Cases[NN]|Emphatic Predicative[PRED]?
 Nouns[AA,ES] Number[ES] Cases[AA]|Emphatic
 Nouns[VIrr,Pl1] Number[Pl1] Cases[VIrr]
 ## Honorifics
@@ -96,11 +102,13 @@ IntraVerbStem[CAUSIRR1] [ <v><iv>: ] Causativiser[CAUSIRR1]
 IntraVerbStem[STRONGDOUBCAUS] [ <v><iv>: ] Causativiser[STRONGDOUBCAUS]
 # Others
 Adjectives [ <adj>: ]
+Comparatives [ <post><comp>: ]
 PostPositions [ <post>: ]
 CausativePart [ <caus>: ]
 Numbers
 Symbol
 Fraction
+Measure
 Punctuation
 
 ################################     SUFFIXOLOGY     ################################
@@ -199,9 +207,14 @@ LEXICON Interrogative
 <qst>:{AA}              # 'aa'
 # fix add for verbs after tenses and such
 
+########################### NOUNS
 ################## EMPHATIC
 LEXICON Emphatic
 <emph>:>{AI}                                     # 'ay'
+
+################## PREDICATIVE
+LEXICON Predicative
+<pred>:[PRED]                                    # null, built-in for <nq>
 
 ########################### VERBS
 ################## VOICE
@@ -228,7 +241,7 @@ LEXICON Causativiser
 
 ################## INFINITIVE
 LEXICON Infinitives
-<inf>:{A}                                         # 'a'           
+<inf>:>{A}                                        # 'a'           
 # fix based on classes
 
 ########################### PRONOUN LOCATION
@@ -260,11 +273,6 @@ LEXICON PronounStems
 வள்<prn><p3><f>:வ>{PL}{Pul}[LOC,FPro,FH]     # '-val'            -she
 வ<prn><p3>:வ[LOC,EHIrr]                      # '-va'            -they-
 து<prn><p3><nt>:த{U}[LOC,GPro]                # '-tu'            -they
-
-################################     ADJECTIVES     ################################
-LEXICON Adjectives
-நல்ல:நல்ல                 # 'nalla'       good
-உச்சி:உச்சி                # 'ucci'         top
 
 ################################     NOUNS & NP     ################################
 LEXICON Nouns
@@ -301,14 +309,14 @@ LEXICON Nouns
 தீவாள்<n><f><aa>:தீவாள{Pul}[AA,Pl2]                             # 'theevaal'       lady from an island
 பன்னாலயாள்<n><f><aa>:பன்னாலயாள{Pul}[AA,Pl2]              # 'pannaalayaal'   lady from pannaalai
 கட்டுவனாள்<n><f><aa>:கட்டுவனாள{Pul}[AA,Pl2]                 # 'kattuvanaal'    lady from kattuvan
-பிரத்தியாள்<n><f><aa>:பிரத்தியாள{Pul}[AA,Pl2]                   # 'piraththiyaal'   lady from a different place
+பிரத்தியாள்<n><f><aa>:பிரத்தியாள{Pul}[AA,Pl2]                   # 'piraththiyaal'  lady from a different place
 
 ## (0) Proper Nouns
-பொன்னம்பலம்<np><m><aa>:பொன்னம்பல{M}{Pul}[AA,Pl2]        # 'ponnambalam'
-அருள்<np><m><aa>:அருள{Pul}[AA,Pl2]                             # 'arul'
+பொன்னம்பலம்<np><m><aa>:பொன்னம்பல{M}{Pul}[AA,Pl2]        # 'Ponnambalam'
+அருள்<np><m><aa>:அருள{Pul}[AA,Pl2]                             # 'Arul'
 ### -N or -R ending irregulars
-முருகன்<np><m><aa>:முருக{NP}{Pul}[AA,Pl2]                       # 'murugan'
-கண்ணன்<np><m><aa>:கண்ண{NP}{Pul}[AA,Pl2]                   # 'kannan'
+முருகன்<np><m><aa>:முருக{NP}{Pul}[AA,Pl2]                       # 'Murugan'
+கண்ணன்<np><m><aa>:கண்ண{NP}{Pul}[AA,Pl2]                   # 'Kannan'
 
 # Class 3
 ## UNISEX
@@ -427,7 +435,8 @@ LEXICON Nouns
 சாப்பாடு<n><nn>:சாப்பா{T}{U}[NN,FNoun]                          # 'caappatu'        food
 சோறு<n><nn>:சோ{RR}{U}[NN,FNoun]                               # 'cooru'           rice
 # Toponyms
-கொழும்பு<n><top>:கொழும்ப{U}[NN,TNoun]                        # 'kozhumpu'        colombo
+யாழ்ப்பாணம்<n><top>:யாழ்ப்பாண{M}{Pul}[NN,TNoun]             # 'yaazhppaanam'    Jaffna 
+கொழும்பு<n><top>:கொழும்ப{U}[NN,TNoun]                        # 'kozhumpu'        Colombo
 
 # Class 1
 மரம்<n><nn>:மர{M}{Pul}[NN,Pl1]                                  # 'maram'           tree
@@ -444,6 +453,9 @@ LEXICON Nouns
 வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                # 'vayiru'           stomach
 காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                         # 'kaaiccal'         fever
 கார்<n><nn>:கார{Pul}[NN,Pl1]                                    # 'kaar'             car
+
+## Quality nouns (Nouns with built-in predicative)
+உயரம்<nq><nn>:உயர{M}{Pul}[NN,Pl1,PRED]                       # 'uyaram'           height
 
 # Class 3
 கை<n><nn>:க{AI}[NN,Pl3]                                        # 'kay'             hand
@@ -485,6 +497,7 @@ LEXICON TransVerbStem
 வேண்டு:வேண்ட{U}[Class3]               # 'veentu'      want
 கூப்பிடு:கூப்பிட{U}[Class3]                # 'kuuppitu'    call
 கட்டு:கட்ட{U}[Class3]                     # 'kattu'       tie
+காட்டு:காட்ட{U}[Class3]                  # 'kaattu'      show
 
 ## Special passive forms
 வெட்டு:வெட்ட{U}[Class3,PASSIVE]         # 'vettu'       cut
@@ -498,6 +511,7 @@ LEXICON TransVerbStem
 
 # Class 4
 விளங்கு:விளங்க{U}[Class4]               # 'vilanku'     understand
+விடு:விட{U}[Class4]                       # 'vitu'        leave
 
 # Class 5
 உண்:உண{Pul}[Class5]                  # 'un'          eat
@@ -562,6 +576,19 @@ LEXICON IntraVerbStem
 ### Special double causitive
 நட:நட[Class7,CAUSIRR1,STRONGDOUBCAUS]   # 'nata'         walk
 
+################################     ADJECTIVES     ################################
+LEXICON Adjectives
+நல்ல:நல்ல                 # 'nalla'       good
+உச்சி:உச்சி                # 'ucci'         top
+பெரு:பெர{U}              # 'peru'         big
+
+################################     COMPARATIVES     ################################
+LEXICON Comparatives
+விட:விட                    # 'vita'        than
+காட்டிலும்:காட்டிலும்       # 'kaattilum'   than
+பார்க்க:பார்க்க             # 'paarkka'     than
+பார்க்கிலும்:பார்க்கிலும்    # 'paarkkilum'  than
+
 ################################     POSTPOSITIONS     ################################
 LEXICON PostPositions
 # following a Nominative
@@ -614,66 +641,87 @@ LEXICON Symbols
 ௺:௺         # numeral
 ள:ள        # time
 வ:வ        # quantity
+𑿮:𑿮       # in possession
+𑿯:𑿯       # starting from
+𑿰:𑿰       # et cetera (items in series)
+𑿱:𑿱      # et cetera (items of family or kind)
+
+
+# Old currency units
+𑿝:𑿝        # small unit
+𑿞:𑿞        # gold coin
+𑿟:𑿟       # gold coin                   Dir/LR
+𑿠:𑿠       # gold coin with insignia
+
+# Agricultural symbols
+𑿤:𑿤       # wet cultivation
+𑿥:𑿥       # dry cultivation
+𑿦:𑿦       # land
+𑿧:𑿧       # salt pan
+
+# Clerical symbols
+𑿨:𑿨       # old credit symbol
+𑿩:𑿩        # old numeral symbol
+𑿪:𑿪       # current
+𑿫:𑿫       # and odd
+𑿬:𑿬        # spent
+𑿭:𑿭      # total
 
 ################################     FRACTIONS     ################################
 PATTERN Fraction
 Fractions [<num>:]
 
 LEXICON Fractions
-𑿀:𑿀
-𑿁:𑿁	
-𑿂:𑿂
-𑿃:𑿃
-𑿄:𑿄
-𑿅:𑿅
-𑿆:𑿆
-𑿇:𑿇
-𑿈:𑿈
-𑿉:𑿉
-𑿊:𑿊
-𑿋:𑿋
-𑿌:𑿌
-𑿍:𑿍
-𑿎:𑿎
-𑿏:𑿏
-𑿐:𑿐
-𑿑:𑿑
-𑿒:𑿒
-𑿓:𑿓
-𑿔:𑿔
-𑿕:𑿕
-𑿖:𑿖
-𑿗:𑿗
-𑿘:𑿘
-𑿙:𑿙
-𑿚:𑿚
-𑿛:𑿛
-𑿜:𑿜
-𑿝:𑿝
-𑿞:𑿞
-𑿟:𑿟
-𑿠:𑿠
-𑿡:𑿡
-𑿢:𑿢
-𑿣:𑿣
-𑿤:𑿤
-𑿥:𑿥
-𑿦:𑿦
-𑿧:𑿧
-𑿨:𑿨
-𑿩:𑿩
-𑿪:𑿪
-𑿫:𑿫
-𑿬:𑿬
-𑿭:𑿭
-𑿮:𑿮
-𑿯:𑿯
-𑿰:𑿰
-𑿱:𑿱
+𑿀:𑿀          # 1/320
+𑿁:𑿁	          # 1/160
+𑿂:𑿂              # 1/80
+𑿃:𑿃            # 1/64
+𑿄:𑿄             # 1/40
+𑿅:𑿅            # 1/32
+𑿆:𑿆           # 3/8
+𑿇:𑿇            # 3/64
+𑿈:𑿈              # 1/20
+𑿉:𑿉            # 1/16
+𑿊:𑿊            # 1/16         Dir/LR
+𑿋:𑿋              # 1/10
+𑿌:𑿌          # 1/8
+𑿍:𑿍            # 3/20
+𑿎:𑿎           # 3/16
+𑿏:𑿏            # 1/5
+𑿐:𑿐            # 1/4
+𑿑:𑿑             # 1/2
+𑿒:𑿒           # 1/2           Dir/LR
+𑿓:𑿓           # 3/4
+𑿔:𑿔            # Downscaling factor
+
+################################     MEASURES     ################################
+PATTERN Measure
+Measures [<num>:]
+
+LEXICON Measures
+𑿕:𑿕           # one grain of paddy
+𑿖:𑿖           # 360 𑿕
+𑿗:𑿗           # 5 𑿖
+𑿘:𑿘           # 2 𑿗
+𑿙:𑿙          # 3 𑿘
+உரி:உரி        # 2 𑿘
+௳:௳            # 2 உரி 
+𑿚:𑿚             # 8 ௳
+ங:ங            # 8 ௳                   Dir/LR
+𑿛:𑿛          # 2 𑿚
+𑿜:𑿜           # 3 𑿚
+த:த             # 2 𑿛
+ள:ள            # 3 த
+
+# Weights
+𑿡:𑿡          # 500 lbs
+𑿢:𑿢         # 11 sq. feet
+𑿣:𑿣         # 22,000 sq. feet
 
 ################################     PUNCTUATION     ################################
 LEXICON Punctuation
 
+𑿿<sent>:𑿿       # end of text punctuation
 .<sent>:.
 ..<sent>:..
 ...<sent>:...

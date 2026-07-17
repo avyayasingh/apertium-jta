@@ -10,6 +10,12 @@ LIST ACC = (acc);
 LIST GEN = (gen);
 LIST DAT = (dat);
 LIST EMPH = (emph);
+LIST NOM = (nom);
+LIST LOC = (loc);
+LIST COMP = (post comp);
+LIST INF = (inf);
+LIST PRED = (pred);
+LIST PREDNOM = (nom pred);
 # WORDS
 LIST VEETU = "வீடு" ;
 LIST VA = "வா" ;
@@ -38,14 +44,50 @@ SELECT PL IF
 SELECT GEN IF
     (0 (n nom))
     (0 (n gen))
-    (1 (n)) ;
+    (1 (n nom)) ;
 
+## Dative irregular
 SELECT DAT IF
     (0 VEETU)
     (0 DAT)
     (0 EMPH)
     (1 VA OR POO) ;
-    
+
+## Comparative choice
+SELECT COMP IF
+    (0 COMP)
+    (0 INF)
+    (-2 (n nom))
+    (-1 (n acc));
+
+SELECT NOM IF
+    (0 NOM)
+    (0 GEN)
+    (1 ACC)
+    (2 COMP);
+
+SELECT ACC IF
+    (0 ACC)
+    (0 EMPH)
+    (-1 NOM)
+    (1 COMP);
+
+SELECT COMP IF
+    (0 COMP)
+    (0 INF)
+    (-1 LOC)
+    (1 (n) OR (prn));
+
+## Predicative selection
+SELECT NOM IF
+    (0 NOM)
+    (0 GEN)
+    (1 PRED);
+
+SELECT PREDNOM IF
+    (0 PRED)
+    (-1 NOM);
+
 # Resources:
 # http://visl.sdu.dk/cg3.html
 # http://groups.google.com/group/constraint-grammar
