@@ -31,20 +31,28 @@
 ################################     PATTERNS     ################################
 PATTERNS
 # Pronouns
+## Location necessary
 Location(1)[LOC] PronounStems[LOC,GPro] Number[GPro] Cases[AA] Location(2)[LOC]
-Location(1)[LOC] PronounStems[LOC,MH] Number[MH] Honorifics[MH] Cases[AA] Location(2)[LOC]
 Location(1)[LOC] PronounStems[LOC,FPro] Number[FPro] Cases[AA] Location(2)[LOC]
+### Honorifics
+Location(1)[LOC] PronounStems[LOC,MH] Number[MH] Honorifics[MH] Cases[AA] Location(2)[LOC]
 Location(1)[LOC] PronounStems[LOC,FH] Number[FH] Honorifics[FH] Cases[AA] Location(2)[LOC]
 Location(1)[LOC] PronounStems[LOC,EHIrr] Number[EHIrr] Honorifics[EHIrr] Cases[AA] Location(2)[LOC]
+## Non-location
 Location(1)[NOC] PronounStems[NOC,GPro] Number[GPro] Cases[AA] Location(2)[NOC]
+### Honorifics
 Location(1)[NOC] PronounStems[NOC,PH] Number[PH] Honorifics[PH] Cases[AA] Location(2)[NOC]
 Location(1)[NOC] PronounStems[NOC,IH] Number[IH] Honorifics[IH] Cases[AA] Location(2)[NOC]
 # Nouns & NP
+## Irregulars
 Nouns[NN,MNoun] Number[MNoun] Cases[NN]
 Nouns[NN,FNoun] Number[FNoun] Cases[NN]
+Nouns[NN,TNoun] Number[TNoun] Cases[NN]
+Nouns[AA,ES] Number[ES] Cases[AA]
+## Honorifics
 Nouns[AA,H] Number[H] Honorifics[H] Cases[AA]
 Nouns[AA,EH] Number[EH] Honorifics[H] Cases[AA]
-Nouns[AA,ES] Number[ES] Cases[AA]
+## Regulars
 Nouns[NN,Pl1] Number[Pl1] Cases[NN]
 Nouns[AA,Pl1] Number[Pl1] Cases[AA]
 Nouns[NN,Pl2] Number[Pl2] Cases[NN]
@@ -86,6 +94,7 @@ IntraVerbStem[INTRACAUS] [ <v><iv>: ] Causativiser[INTRACAUS]
 IntraVerbStem[CAUSIRR1] [ <v><iv>: ] Causativiser[CAUSIRR1]
 IntraVerbStem[STRONGDOUBCAUS] [ <v><iv>: ] Causativiser[STRONGDOUBCAUS]
 # Others
+Adjectives [ <adj>: ]
 PostPositions [ <post>: ]
 CausativePart [ <caus>: ]
 Numbers
@@ -117,14 +126,17 @@ LEXICON Honorifics
 ################## NUMBER
 LEXICON Number
 # ORUMAI: Singular Class: 0
-# 0: a. Foodstuffs [FNoun]              (Always singular)
-##   b. Mass Nouns [MNoun]              (Uncountable)
-##   c. Honorifics [IH,H,MH,FH,PH]      (Forced singular for honorifics 'null')
-<sg>:[FNoun]                                        # null  singular (foodstuffs)
-<sg>:[GPro,FPro]                                    # null  singular (pronouns)
-<sg>:[ES,Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]           # null  singular (nouns,epicene irregular)
-<sg>:[IH,H,FH,MH,PH]                                # null  singular (honorifics)
-<unc>:[MNoun]                                       # null  uncountable
+# 0: a. Foodstuffs         [FNoun]                               (Always singular)
+##   b. Toponyms           [TNoun]                               (Always singular)
+##   c. Pronouns           [GPro,FPro]                           (Singular form)
+##   d. Epicenes           [ES]                                  (Dont have regular plural)
+##   e. Regular Nouns      [Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]     (Singular form)
+##   f. Honorifics         [IH,H,MH,FH,PH]                       (Forced singular for honorifics 'null')
+##   g. Mass Nouns         [MNoun]                               (Uncountable)
+<sg>:[FNoun,TNoun,GPro,FPro]                  # null  singular
+<sg>:[ES,Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]     # null  singular
+<sg>:[IH,H,FH,MH,PH]                          # null  singular
+<unc>:[MNoun]                                 # null  uncountable
 
 # PANMAI: Plural Classes: 1 through 8
 # 1/2: Epicene Plural (Unisex)
@@ -166,17 +178,17 @@ LEXICON Number
 
 ################## CASES
 LEXICON Cases
-<nom>:[AA,NN]
+<nom>:[AA,NN]                                    # null
 <acc>:>{AI}[AA,NN]                               # 'ay'
 <int>:>{AA}லை[AA,NN]                           # 'aalay~ai'
 <dat>:>{U}க்கு[AA,NN]                            # 'ukku'
 <com>:>{OO}டை[AA,NN]                           # 'ootay~ai'
 <loc>:>{I}லை[AA,NN]                            # 'ilay~ai'
 <refr>:>{Irefr}ட்டை[AA]                         # 'ittay~ai'
-<gen>:>{Igen}{Ngen2}{Pul}{Rgen2}{AI}[AA,NN]      # 'inray~ai'
-<gen>:[AA,NN]                                    # null (irregular genitive)
+<gen>:>{I}{N}{Pul}{R}{AI}[AA,NN]                 # 'inray~ai'
+<gen>:[AA,NN]                                    # null             (irregular genitive)  Dir/LR
 <abl>:>{I}ட்டை\ இருந்து[AA,NN]                 # 'ittay~ai iruntu'
-<abl>:>{I}லை\ இருந்து[AA,NN]                  # 'ilay~ai iruntu'            Dir/LR
+<abl>:>{I}லை\ இருந்து[AA,NN]                  # 'ilay~ai iruntu'                        Dir/LR
 <ben>:>{AA}க[AA,NN]                             # 'aaka'
 # fix ask about ai
 
@@ -237,6 +249,11 @@ LEXICON PronounStems
 வ<prn><p3>:வ[LOC,EHIrr]                      # '-va'            -they-
 து<prn><p3><nt>:த{U}[LOC,GPro]                # '-tu'            -they
 
+################################     ADJECTIVES     ################################
+LEXICON Adjectives
+நல்ல:நல்ல                 # 'nalla'       good
+உச்சி:உச்சி                # 'ucci'         top
+
 ################################     NOUNS & NP     ################################
 LEXICON Nouns
 #####
@@ -250,7 +267,9 @@ LEXICON Nouns
 ## III: -'ththi', IV: communal words  
 ##################### ANIMATE
 # Class 1
-மாட்டு<n><aa>:மாட்ட{U}[AA,Pl1]                                   # 'mattu'           cow
+## UNGENDERED (AHTHINAI Animate)
+மாட்டு<n><aa>:மாட்ட{U}[AA,Pl1]                                   # 'maattu'          cow
+ஆடு<n><aa>:ஆட{U}[AA,Pl1]                                       # 'aatu'            goat
 ## FEMALE
 ### 0
 பெண்<n><f><aa>:பெ{N}{Pul}[AA,Pl1]                              # 'pen'             female
@@ -274,8 +293,10 @@ LEXICON Nouns
 
 ## (0) Proper Nouns
 பொன்னம்பலம்<np><m><aa>:பொன்னம்பல{M}{Pul}[AA,Pl2]        # 'ponnambalam'
-முருகன்<np><m><aa>:முருக{Ngen1}{Pul}[AA,Pl2]                    # 'murugan'
-கண்ணன்<np><m><aa>:கண்ண{Ngen1}{Pul}[AA,Pl2]                # 'kannan'
+அருள்<np><m><aa>:அருள{Pul}[AA,Pl2]                             # 'arul'
+### -N or -R ending irregulars
+முருகன்<np><m><aa>:முருக{NP}{Pul}[AA,Pl2]                       # 'murugan'
+கண்ணன்<np><m><aa>:கண்ண{NP}{Pul}[AA,Pl2]                   # 'kannan'
 
 # Class 3
 ## UNISEX
@@ -288,6 +309,7 @@ LEXICON Nouns
 வேலைக்காரி<n><f><aa>:வேலை>க்கார{I}[AA,Pl3]                # 'veelaykkaari'    female servant
 
 # Class 4
+## UNGENDERED (AHTHINAI Animate)
 மான்<n><aa>:மா{N}{Pul}[AA,Pl4]                                 # 'maan'            deer
 நுல்லான்<n><aa>:நுள்ளா{N}{Pul}[AA,Pl4]                         # 'nullaan'         small reddish ant
 
@@ -392,6 +414,8 @@ LEXICON Nouns
 பழம்<n><nn>:பழ{M}{Pul}[NN,FNoun]                                # 'pazham'          fruit
 சாப்பாடு<n><nn>:சாப்பா{T}{U}[NN,FNoun]                          # 'caappatu'        food
 சோறு<n><nn>:சோ{RR}{U}[NN,FNoun]                               # 'cooru'           rice
+# Toponyms
+கொழும்பு<n><top>:கொழும்ப{U}[NN,TNoun]                        # 'kozhumpu'        colombo
 
 # Class 1
 மரம்<n><nn>:மர{M}{Pul}[NN,Pl1]                                  # 'maram'           tree
@@ -404,9 +428,13 @@ LEXICON Nouns
 வால்<n><nn>:வால{Pul}[NN,Pl1]                                   # 'vaal'            tail
 பெட்டி<n><nn>:பெட்ட{I}[NN,Pl1]                                  # 'petti'           box
 மூடி<n><nn>:மூட{I}[NN,Pl1]                                      # 'muuti'            lid
+தோசை<n><nn>:தோச{AI}[NN,Pl1]                                # 'toocay'           dosa
+வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                # 'vayiru'           stomach
+காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                         # 'kaaiccal'         fever
 
 # Class 3
 கை<n><nn>:க{AI}[NN,Pl3]                                        # 'kay'             hand
+தலை<n><nn>:தல{AI}[NN,Pl3]                                    # 'thalay'           head
 
 # Class 4
 வான்<n><nn>:வா{N}{Pul}[NN,Pl4]                                 # 'vaan'           van
@@ -424,6 +452,9 @@ LEXICON TransVerbStem
 ## Special double causitive
 செய்:செய்[Class1a,WEAKDOUBCAUS]          # 'cei'         do
 
+# Class 2
+மேய்:மேய்[Class2]                        # 'mei'         graze
+
 # Class 3
 எழுது:எழுத{U}[Class3,CAUSIRR2]           # 'ezhuthu'     write
 ஏற்று:ஏற்ற{U}[Class3]                     # 'ettu'        reach
@@ -436,6 +467,10 @@ LEXICON TransVerbStem
 உருக்கு:உருக்க{U}[Class3]                # 'urukku'      melt
 நிமிர்த்து:நிமிர்த்த{U}[Class3]             # 'nimirththu'  erect
 புரட்டு:புரட்ட{U}[Class3]                  # 'purattu'     roll over
+வாங்கு:வாங்க{U}[Class3]                 # 'vaanku'      buy
+வேண்டு:வேண்ட{U}[Class3]               # 'veentu'      want
+கூப்பிடு:கூப்பிட{U}[Class3]                # 'kuuppitu'    call
+கட்டு:கட்ட{U}[Class3]                     # 'kattu'       tie
 
 ## Special passive forms
 வெட்டு:வெட்ட{U}[Class3,PASSIVE]         # 'vettu'       cut
@@ -454,9 +489,12 @@ LEXICON TransVerbStem
 உண்:உண{Pul}[Class5]                  # 'un'          eat
 
 # Class 6
+எடு:எட{U}[Class6]                        # 'etu'         take
 கொடு:கொட{U}[Class6]                  # 'kotu'        give
 அடி:அட{I}[Class6]                       # 'ati'         beat
 சமை:சம{AI}[Class6]                     # 'chamai'      cook
+பிடி:பிட{I}[Class6]                       # 'piti'        catch
+பார்:பார{Pul}[Class6]                    # 'paar'        see
 
 ## Special passive forms
 ஒட்டு:ஒட்ட{U}[Class6,PASSIVE]             # 'ottu'        paste
@@ -479,6 +517,7 @@ LEXICON IntraVerbStem
 
 # Class 3
 ஒட்டு:ஒட்ட{U}[Class3]                     # 'ottu'        adhere
+பேசு:பேச{U}[Class3]                      # 'peecu'       speak
 
 ## Special passive form
 வாடு:வாட{U}[Class3,PASSIVE]             # 'vaatu'       wither
@@ -493,6 +532,11 @@ LEXICON IntraVerbStem
 ஆடு:ஆட{U}[Class4]                      # 'aatu'        swing
 உருகு:உருக{U}[Class4]                   # 'uruku'       melt
 நனை:நன{AI}[Class4]                    # 'nanay'       wet
+தெரி:தெர{I}[Class4]                     # 'theri'       know
+புரி:புர{I}[Class4]                        # 'puri'        understand
+பிடி:பிட{I}[Class4]                       # 'piti'        like
+கிடை:கிட{AI}[Class4]                    # 'kitay'       be available
+வலி:வல{I}[Class4]                       # 'vali'        ache
 
 # Class 7
 
@@ -518,7 +562,7 @@ LEXICON PostPositions
 
 # following a Dative
 மேலே:மேலே                   # 'meelee'              above
-கீழே:கீழே                      # 'kiilay'              beneath
+கீழே:கீழே                      # 'kiizhay'             beneath
 முன்னாலே:முன்னாலே         # 'munnaalee'           before
 முன்னுக்கு:முன்னுக்கு           # 'munnukku'           before            Dir/LR
 பின்னாலே:பின்னாலே          # 'pinnaalee'           after

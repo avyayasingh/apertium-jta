@@ -24,20 +24,18 @@ Alphabet
      ! Consonants
      %{M%}:ம %{M%}:த %{M%}:ங
      %{N%}:ன %{N%}:ங
+     %{NP%}:ன %{NP%}:ங %{NP%}:0
      %{K%}:க
      %{PL%}:ள
      %{R%}:ர
+     %{RP%}:ர %{RP%}:0     
      %{RR%}:ற
      %{T%}:ட
      %{AN%}:ங %{AN%}:0
      %{NR%}:ங %{NR%}:ன %{NR%}:0
      ! Noun case irregulars
      %{Irefr%}:ி %{Irefr%}:0
-     %{Igen%}:ி %{Igen%}:0
-     %{Ngen1%}:ன
-     %{Ngen2%}:ன %{Ngen2%}:0
-     %{Rgen1%}:ர
-     %{Rgen2%}:ர %{Rgen2%}:0
+     ! Morpheme boundary
      %>:0;
 
 
@@ -56,7 +54,8 @@ VowWithSym = ஆ இ ஈ உ ஊ எ ஏ ஐ ஒ ஓ ஔ ;
 VowSym = ா  ி  ீ  ு  ூ  ெ  ே  ை  ொ  ோ  ௌ ;
 ShortVowSym = ி  ு  ெ  ை  ொ;
 LongVowSym =  ா  ீ  ூ  ே  ோ  ௌ;
-SuffixVowels = %{A%} %{AA%} %{I%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} %{Irefr%} %{Igen%} ;
+SuffixVowels = %{A%} %{AA%} %{I%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} %{Irefr%} ;
+SuffixVowelsIr = %{A%} %{AA%} %{I%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} ;
 
 Rules 
 
@@ -95,7 +94,6 @@ Rules
 "Removing Pulli"
 %{Pul%}:0 <=> :ConsonantNOTTM _ %>: SuffixVowels: ;
               %{NR%}: _ %>: %{R%}: ;
-              %{Ngen2%}: _ %{Rgen2%}: ;
                 except 
                 ப: ல: _ %>: ;
                 %{M%}: _ %>: SuffixVowels: ;  
@@ -104,6 +102,8 @@ Rules
 %{Pul%}:் <=> _ .#. ;
               _ %>: :RemConsonant ;
               _ %>: %{K%}: ;
+              %{N%}: _ %{R%}: ;
+              %{NP%}: _ %>: %{R%}: ;
               %{M%}: _ (0:) %>: SuffixVowels: ;
 
 "Adding Pulli"
@@ -139,22 +139,25 @@ Rules
 
 ! Accusative case
 "Removing AA when faced with SuffixVowels"
-%{AA%}:0 <=> _ %>: SuffixVowels: ;
+%{AA%}:0 <=> _ %>: SuffixVowelsIr: ;
+
+! Genitive case
+"Removing I for proper nouns ending in N or R"
+%{I%}:0 <=> [ %{NP%}: | %{RP%}: ] %{Pul%}: %>: _ %{N%}: %{Pul%}: %{R%}: %{AI%}: ;
+
+"Removing N for proper nouns ending in N or R"
+%{N%}:0 <=> [ %{NP%}: | %{RP%}: ] %{Pul%}: %>: %{I%}: _ %{Pul%}: %{R%}: %{AI%}: ;
 
 ! Referential case
 "Removing I when Referential and noun ends in AA"
 %{Irefr%}:0 <=> %{AA%}: %>: _ ;
 
-! Genitive case
-"Removing I when Genitive and human noun ends in N or R"
-%{Igen%}:0 <=> [ %{Ngen1%}: | %{Rgen1%}: ] %{Pul%}: %>: _ ;
-
-"Removing N when Genitive and noun ends in N or R"
-%{Ngen2%}:0 <=> [ %{Ngen1%}: | %{Rgen1%}: ] %{Pul%}: %>: %{Igen%}: _ ;
-
 ! Noun endings 
 "Inserting ய"
-0:ய <=> [ %{AI%}: | %{I%}: | %{II%}: ] (:0) _ %>: SuffixVowels:;
+0:ய <=> [ %{AI%}: | %{I%}: | %{II%}: ] (%{AN%}:) _ %>: SuffixVowels:;
+
+"Inserting வ"
+0:வ <=> %{AA%}: _ %>: SuffixVowelsIr: ;
 
 "Removing  ு"
 %{U%}:0 <=> _ %>: SuffixVowels: ;
@@ -165,6 +168,9 @@ Rules
 
 "Starting with K"
 %{N%}:ங <=> _ %{Pul%}: %>: %{K%}: ;
+
+"Starting with K"
+%{NP%}:ங <=> _ %{Pul%}: %>: %{K%}: ;
 
 "Starting with K"
 %{NR%}:ங <=> _ %{Pul%}: %>: %{K%}: ;
