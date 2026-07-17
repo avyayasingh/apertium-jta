@@ -45,30 +45,31 @@ Location(1)[NOC] PronounStems[NOC,PH] Number[PH] Honorifics[PH] Cases[AA] Locati
 Location(1)[NOC] PronounStems[NOC,IH] Number[IH] Honorifics[IH] Cases[AA] Location(2)[NOC] Interrogative?
 # Nouns & NP
 ## Irregulars
-Nouns[NN,MNoun] Number[MNoun] Cases[NN]
-Nouns[NN,FNoun] Number[FNoun] Cases[NN]
-Nouns[NN,TNoun] Number[TNoun] Cases[NN]
-Nouns[AA,ES] Number[ES] Cases[AA]
+Nouns[NN,MNoun] Number[MNoun] Cases[NN]|Emphatic
+Nouns[NN,FNoun] Number[FNoun] Cases[NN]|Emphatic
+Nouns[NN,TNoun] Number[TNoun] Cases[NN]|Emphatic
+Nouns[AA,ES] Number[ES] Cases[AA]|Emphatic
+Nouns[VIrr,Pl1] Number[Pl1] Cases[VIrr]
 ## Honorifics
 Nouns[AA,H] Number[H] Honorifics[H] Cases[AA]
 Nouns[AA,EH] Number[EH] Honorifics[H] Cases[AA]
 ## Regulars
-Nouns[NN,Pl1] Number[Pl1] Cases[NN]
-Nouns[AA,Pl1] Number[Pl1] Cases[AA]
-Nouns[NN,Pl2] Number[Pl2] Cases[NN]
-Nouns[AA,Pl2] Number[Pl2] Cases[AA]
-Nouns[NN,Pl3] Number[Pl3] Cases[NN]
-Nouns[AA,Pl3] Number[Pl3] Cases[AA]
-Nouns[NN,Pl4] Number[Pl4] Cases[NN]
-Nouns[AA,Pl4] Number[Pl4] Cases[AA]
-Nouns[NN,Pl5] Number[Pl5] Cases[NN]
-Nouns[AA,Pl5] Number[Pl5] Cases[AA]
-Nouns[NN,Pl6] Number[Pl6] Cases[NN]
-Nouns[AA,Pl6] Number[Pl6] Cases[AA]
-Nouns[NN,Pl7] Number[Pl7] Cases[NN]
-Nouns[AA,Pl7] Number[Pl7] Cases[AA]
-Nouns[NN,Pl8] Number[Pl8] Cases[NN]
-Nouns[AA,Pl8] Number[Pl8] Cases[AA]
+Nouns[NN,Pl1] Number[Pl1] Cases[NN]|Emphatic
+Nouns[AA,Pl1] Number[Pl1] Cases[AA]|Emphatic
+Nouns[NN,Pl2] Number[Pl2] Cases[NN]|Emphatic
+Nouns[AA,Pl2] Number[Pl2] Cases[AA]|Emphatic
+Nouns[NN,Pl3] Number[Pl3] Cases[NN]|Emphatic
+Nouns[AA,Pl3] Number[Pl3] Cases[AA]|Emphatic
+Nouns[NN,Pl4] Number[Pl4] Cases[NN]|Emphatic
+Nouns[AA,Pl4] Number[Pl4] Cases[AA]|Emphatic
+Nouns[NN,Pl5] Number[Pl5] Cases[NN]|Emphatic
+Nouns[AA,Pl5] Number[Pl5] Cases[AA]|Emphatic
+Nouns[NN,Pl6] Number[Pl6] Cases[NN]|Emphatic
+Nouns[AA,Pl6] Number[Pl6] Cases[AA]|Emphatic
+Nouns[NN,Pl7] Number[Pl7] Cases[NN]|Emphatic
+Nouns[AA,Pl7] Number[Pl7] Cases[AA]|Emphatic
+Nouns[NN,Pl8] Number[Pl8] Cases[NN]|Emphatic
+Nouns[AA,Pl8] Number[Pl8] Cases[AA]|Emphatic
 # Verbs
 ## Transitives
 ### Infinitives
@@ -179,16 +180,17 @@ LEXICON Number
 ################## CASES
 LEXICON Cases
 <nom>:[AA,NN]                                    # null
-<acc>:>{AI}[AA,NN]                               # 'ay'
+<acc>:>{AI}[AA]                                  # 'ay'
 <int>:>{AA}லை[AA,NN]                           # 'aalay~ai'
 <dat>:>{U}க்கு[AA,NN]                            # 'ukku'
+<dat>:>{AI}[VIrr]                                # 'ay'             (irregular dative for 'veetu')    Dir/LR
 <com>:>{OO}டை[AA,NN]                           # 'ootay~ai'
 <loc>:>{I}லை[AA,NN]                            # 'ilay~ai'
 <refr>:>{Irefr}ட்டை[AA]                         # 'ittay~ai'
 <gen>:>{I}{N}{Pul}{R}{AI}[AA,NN]                 # 'inray~ai'
-<gen>:[AA,NN]                                    # null             (irregular genitive)  Dir/LR
+<gen>:[AA,NN]                                    # null             (irregular genitive)              Dir/LR
 <abl>:>{I}ட்டை\ இருந்து[AA,NN]                 # 'ittay~ai iruntu'
-<abl>:>{I}லை\ இருந்து[AA,NN]                  # 'ilay~ai iruntu'                        Dir/LR
+<abl>:>{I}லை\ இருந்து[AA,NN]                  # 'ilay~ai iruntu'                                    Dir/LR
 <ben>:>{AA}க[AA,NN]                             # 'aaka'
 # fix ask about ai
 
@@ -196,6 +198,10 @@ LEXICON Cases
 LEXICON Interrogative
 <qst>:{AA}              # 'aa'
 # fix add for verbs after tenses and such
+
+################## EMPHATIC
+LEXICON Emphatic
+<emph>:>{AI}                                     # 'ay'
 
 ########################### VERBS
 ################## VOICE
@@ -425,7 +431,7 @@ LEXICON Nouns
 
 # Class 1
 மரம்<n><nn>:மர{M}{Pul}[NN,Pl1]                                  # 'maram'           tree
-வீடு<n><nn>:வீ{T}{U}[NN,Pl1]                                      # 'veetu'           house
+வீடு<n><nn>:வீ{T}{U}[NN,VIrr,Pl1]                                 # 'veetu'           house
 காசு<n><nn>:காச{U}[NN,Pl1]                                      # 'kaacu'           money
 தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                # 'thabaal'         letter
 கால்<n><nn>:கால{Pul}[NN,Pl1]                                   # 'kaal'            leg
@@ -437,6 +443,7 @@ LEXICON Nouns
 தோசை<n><nn>:தோச{AI}[NN,Pl1]                                # 'toocay'           dosa
 வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                # 'vayiru'           stomach
 காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                         # 'kaaiccal'         fever
+கார்<n><nn>:கார{Pul}[NN,Pl1]                                    # 'kaar'             car
 
 # Class 3
 கை<n><nn>:க{AI}[NN,Pl3]                                        # 'kay'             hand
@@ -460,6 +467,7 @@ LEXICON TransVerbStem
 
 # Class 2
 மேய்:மேய்[Class2]                        # 'mei'         graze
+தா:தா[Class2]                            # 'thaa'        give
 
 # Class 3
 எழுது:எழுத{U}[Class3,CAUSIRR2]           # 'ezhuthu'     write
@@ -493,6 +501,7 @@ LEXICON TransVerbStem
 
 # Class 5
 உண்:உண{Pul}[Class5]                  # 'un'          eat
+சொல்:சொல{Pul}[Class5]                # 'col'         tell
 
 # Class 6
 எடு:எட{U}[Class6]                        # 'etu'         take
@@ -519,11 +528,12 @@ LEXICON IntraVerbStem
 
 # Class 2
 நிமிர்:நிமிர{Pul}[Class2]                  # 'nimir'       erect
-வா:வ{AA}[Class2]                        # 'vaa'          come 
+வா:வ{AA}[Class2]                         # 'vaa'         come 
 
 # Class 3
 ஒட்டு:ஒட்ட{U}[Class3]                     # 'ottu'        adhere
 பேசு:பேச{U}[Class3]                      # 'peecu'       speak
+போ:போ[Class3]                          # 'poo'         go
 
 ## Special passive form
 வாடு:வாட{U}[Class3,PASSIVE]             # 'vaatu'       wither

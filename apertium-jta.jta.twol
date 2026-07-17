@@ -56,6 +56,7 @@ ShortVowSym = ி  ு  ெ  ை  ொ;
 LongVowSym =  ா  ீ  ூ  ே  ோ  ௌ;
 SuffixVowels = %{A%} %{AA%} %{I%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} %{Irefr%} ;
 SuffixVowelsIr = %{A%} %{AA%} %{I%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} ;
+SuffixVowelsU = %{A%} %{AA%} %{I%} %{II%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} %{Irefr%} ;
 
 Rules 
 
@@ -160,8 +161,9 @@ Rules
 0:வ <=> %{AA%}: _ %>: SuffixVowelsIr: ;
 
 "Removing  ு"
-%{U%}:0 <=> _ %>: SuffixVowels: ;
-            SuffixVowels: %>: _ ;
+%{U%}:0 <=> _ %>: SuffixVowelsU: ;
+            SuffixVowelsU: %>: _ ;
+            _ %>: %{U%}: ;
 
 "Starting with K"
 %{M%}:ங <=> _ %{Pul%}: %>: %{K%}: ;

@@ -1,12 +1,19 @@
 # Firstly, we need to define what tags should be considered sentence delimiters. For this example, only full stop is set as delimiter.
 DELIMITERS = "<.>" ;
 
+# TAGS
 LIST CAUS = caus;
 LIST VPAST = (v past);
 LIST HON = (hon);
 LIST PL = (pl);
 LIST ACC = (acc);
 LIST GEN = (gen);
+LIST DAT = (dat);
+LIST EMPH = (emph);
+# WORDS
+LIST VEETU = "வீடு" ;
+LIST VA = "வா" ;
+LIST POO = "போ" ;
 
 SECTION
 # Select Rules
@@ -33,6 +40,12 @@ SELECT GEN IF
     (0 (n gen))
     (1 (n)) ;
 
+SELECT DAT IF
+    (0 VEETU)
+    (0 DAT)
+    (0 EMPH)
+    (1 VA OR POO) ;
+    
 # Resources:
 # http://visl.sdu.dk/cg3.html
 # http://groups.google.com/group/constraint-grammar
