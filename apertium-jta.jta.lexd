@@ -580,7 +580,7 @@ LEXICON IntraVerbStem
 LEXICON Adjectives
 நல்ல:நல்ல                 # 'nalla'       good
 உச்சி:உச்சி                # 'ucci'         top
-பெரு:பெர{U}              # 'peru'         big
+பெரிய:பெரிய             # 'periya'       big
 
 ################################     COMPARATIVES     ################################
 LEXICON Comparatives
