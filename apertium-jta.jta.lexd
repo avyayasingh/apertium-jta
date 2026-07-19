@@ -101,7 +101,7 @@ IntraVerbStem[INTRACAUS] [ <v><iv>: ] Causativiser[INTRACAUS]
 IntraVerbStem[CAUSIRR1] [ <v><iv>: ] Causativiser[CAUSIRR1]
 IntraVerbStem[STRONGDOUBCAUS] [ <v><iv>: ] Causativiser[STRONGDOUBCAUS]
 # Others
-Adjectives [ <adj>: ]
+Adjectives [ <adj>: ] Predicative[APRED]? Honorifics[H]?
 Comparatives [ <post><comp>: ]
 PostPositions [ <post>: ]
 CausativePart [ <caus>: ]
@@ -214,7 +214,11 @@ LEXICON Emphatic
 
 ################## PREDICATIVE
 LEXICON Predicative
-<pred>:[PRED]                                    # null, built-in for <nq>
+<pred>:[PRED]                                    # null        built-in for <nq>
+# Pronominalizing predicatives (GENDERED)
+<pron><pred><nt>:>{C}{U}[APRED]                  # 'cu'        neuter (adjectives)  
+<pron><pred><f>:>வ{PLR}{Pul}[APRED]             # 'val'       female (adjectives)  
+<pron><pred><m>:>வ{NR}{Pul}[APRED]              # 'val'       male (adjectives)  
 
 ########################### VERBS
 ################## VOICE
@@ -580,7 +584,7 @@ LEXICON IntraVerbStem
 LEXICON Adjectives
 நல்ல:நல்ல                 # 'nalla'       good
 உச்சி:உச்சி                # 'ucci'         top
-பெரிய:பெரிய             # 'periya'       big
+பெரிய:பெரி{Y}            # 'periya'       big
 
 ################################     COMPARATIVES     ################################
 LEXICON Comparatives

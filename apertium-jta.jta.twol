@@ -27,10 +27,13 @@ Alphabet
      %{NP%}:ன %{NP%}:ங %{NP%}:0
      %{K%}:க
      %{PL%}:ள
+     %{PLR%}:ள
      %{R%}:ர
      %{RP%}:ர %{RP%}:0     
      %{RR%}:ற
      %{T%}:ட
+     %{Y%}:ய
+     %{C%}:ச
      %{AN%}:ங %{AN%}:0
      %{NR%}:ங %{NR%}:ன %{NR%}:0
      ! Noun case irregulars
@@ -95,6 +98,7 @@ Rules
 "Removing Pulli"
 %{Pul%}:0 <=> :ConsonantNOTTM _ %>: SuffixVowels: ;
               %{NR%}: _ %>: %{R%}: ;
+              %{PLR%}: _ %>: %{R%}: ;
                 except 
                 ப: ல: _ %>: ;
                 %{M%}: _ %>: SuffixVowels: ;  
@@ -183,8 +187,17 @@ Rules
 "Starting with R"
 %{NR%}:0 <=> _ %{Pul%}: %>: %{R%}: ;
 
+"Starting with R"
+%{PLR%}:0 <=> _ %{Pul%}: %>: %{R%}: ;
+
+"Starting with C"
+%{Y%}:0 <=> _ %>: %{C%}: ;
+
 "Ending with nothing"
 %{NR%}:ன <=> _ %{Pul%}: .#. ;
+
+"Ending with nothing"
+%{PLR%}:ள <=> _ %{Pul%}: .#. ;
 
 ! Resources:
 ! https://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
