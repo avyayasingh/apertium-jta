@@ -106,6 +106,7 @@ Adjectives [ <adj>: ] Predicative[NPREDS] Number[ENS]
 Adjectives [ <adj>: ] Predicative[NPREDP] Number[ENP] 
 Adjectives [ <adj>: ] Predicative[PREDP] Number[EHIrr2] Honorifics[EHIrr2]
 Adjectives [ <adj>: ] Predicative[APRED] Honorifics[H]? Number[GPro]
+# Others
 Comparatives [ <post><comp>: ] EndwordMorph?
 PostPositions [ <post>: ]
 CausativePart [ <caus>: ]
