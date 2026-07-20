@@ -50,32 +50,32 @@ Location(1)[NOC] PronounStems[NOC,PH] Number[PH] Honorifics[PH] Cases[AA] Locati
 Location(1)[NOC] PronounStems[NOC,IH] Number[IH] Honorifics[IH] Cases[AA] Location(2)[NOC] Interrogative?
 # Nouns & NP
 ## Irregulars
-Nouns[NN,MNoun] Number[MNoun] Cases[NN]|Emphatic
-Nouns[NN,FNoun] Number[FNoun] Cases[NN]|Emphatic
-Nouns[TNoun] Number[TNoun] Cases[AA]|Emphatic
-Nouns[NN,PRED] Number[Pl1] Cases[NN]|Emphatic Predicative[PRED]?
-Nouns[AA,ES] Number[ES] Cases[AA]|Emphatic
-Nouns[VIrr,Pl1] Number[Pl1] Cases[VIrr]
+Nouns[NN,MNoun] Number[MNoun] Cases[NN]|Emphatic EndwordMorph?
+Nouns[NN,FNoun] Number[FNoun] Cases[NN]|Emphatic EndwordMorph?
+Nouns[TNoun] Number[TNoun] Cases[AA]|Emphatic EndwordMorph?
+Nouns[NN,PRED] Number[Pl1] Cases[NN]|Emphatic Predicative[PRED]? EndwordMorph?
+Nouns[AA,ES] Number[ES] Cases[AA]|Emphatic EndwordMorph?
+Nouns[VIrr,Pl1] Number[Pl1] Cases[VIrr] EndwordMorph?
 ## Honorifics
-Nouns[AA,H] Number[H] Honorifics[H] Cases[AA]
-Nouns[AA,EH] Number[EH] Honorifics[H] Cases[AA]
+Nouns[AA,H] Number[H] Honorifics[H] Cases[AA] EndwordMorph?
+Nouns[AA,EH] Number[EH] Honorifics[H] Cases[AA] EndwordMorph?
 ## Regulars
-Nouns[NN,Pl1] Number[Pl1] Cases[NN]|Emphatic
-Nouns[AA,Pl1] Number[Pl1] Cases[AA]|Emphatic
-Nouns[NN,Pl2] Number[Pl2] Cases[NN]|Emphatic
-Nouns[AA,Pl2] Number[Pl2] Cases[AA]|Emphatic
-Nouns[NN,Pl3] Number[Pl3] Cases[NN]|Emphatic
-Nouns[AA,Pl3] Number[Pl3] Cases[AA]|Emphatic
-Nouns[NN,Pl4] Number[Pl4] Cases[NN]|Emphatic
-Nouns[AA,Pl4] Number[Pl4] Cases[AA]|Emphatic
-Nouns[NN,Pl5] Number[Pl5] Cases[NN]|Emphatic
-Nouns[AA,Pl5] Number[Pl5] Cases[AA]|Emphatic
-Nouns[NN,Pl6] Number[Pl6] Cases[NN]|Emphatic
-Nouns[AA,Pl6] Number[Pl6] Cases[AA]|Emphatic
-Nouns[NN,Pl7] Number[Pl7] Cases[NN]|Emphatic
-Nouns[AA,Pl7] Number[Pl7] Cases[AA]|Emphatic
-Nouns[NN,Pl8] Number[Pl8] Cases[NN]|Emphatic
-Nouns[AA,Pl8] Number[Pl8] Cases[AA]|Emphatic
+Nouns[NN,Pl1] Number[Pl1] Cases[NN]|Emphatic EndwordMorph?
+Nouns[AA,Pl1] Number[Pl1] Cases[AA]|Emphatic EndwordMorph?
+Nouns[NN,Pl2] Number[Pl2] Cases[NN]|Emphatic EndwordMorph?
+Nouns[AA,Pl2] Number[Pl2] Cases[AA]|Emphatic EndwordMorph?
+Nouns[NN,Pl3] Number[Pl3] Cases[NN]|Emphatic EndwordMorph?
+Nouns[AA,Pl3] Number[Pl3] Cases[AA]|Emphatic EndwordMorph?
+Nouns[NN,Pl4] Number[Pl4] Cases[NN]|Emphatic EndwordMorph?
+Nouns[AA,Pl4] Number[Pl4] Cases[AA]|Emphatic EndwordMorph?
+Nouns[NN,Pl5] Number[Pl5] Cases[NN]|Emphatic EndwordMorph?
+Nouns[AA,Pl5] Number[Pl5] Cases[AA]|Emphatic EndwordMorph?
+Nouns[NN,Pl6] Number[Pl6] Cases[NN]|Emphatic EndwordMorph?
+Nouns[AA,Pl6] Number[Pl6] Cases[AA]|Emphatic EndwordMorph?
+Nouns[NN,Pl7] Number[Pl7] Cases[NN]|Emphatic EndwordMorph?
+Nouns[AA,Pl7] Number[Pl7] Cases[AA]|Emphatic EndwordMorph?
+Nouns[NN,Pl8] Number[Pl8] Cases[NN]|Emphatic EndwordMorph?
+Nouns[AA,Pl8] Number[Pl8] Cases[AA]|Emphatic EndwordMorph?
 # Verbs
 ## Transitives
 ### Infinitives
@@ -100,9 +100,13 @@ IntraVerbStem[PASSIVE] [ <v><iv>: ] Voice[PASSIVE]
 IntraVerbStem[INTRACAUS] [ <v><iv>: ] Causativiser[INTRACAUS]
 IntraVerbStem[CAUSIRR1] [ <v><iv>: ] Causativiser[CAUSIRR1]
 IntraVerbStem[STRONGDOUBCAUS] [ <v><iv>: ] Causativiser[STRONGDOUBCAUS]
-# Others
-Adjectives [ <adj>: ] Predicative[APRED]? Honorifics[H]?
-Comparatives [ <post><comp>: ]
+# Adjectives
+Adjectives [ <adj>: ] 
+Adjectives [ <adj>: ] Predicative[NPREDS] Number[ENS]
+Adjectives [ <adj>: ] Predicative[NPREDP] Number[ENP] 
+Adjectives [ <adj>: ] Predicative[PREDP] Number[EHIrr2] Honorifics[EHIrr2]
+Adjectives [ <adj>: ] Predicative[APRED] Honorifics[H]? Number[GPro]
+Comparatives [ <post><comp>: ] EndwordMorph?
 PostPositions [ <post>: ]
 CausativePart [ <caus>: ]
 Numbers
@@ -129,7 +133,7 @@ LEXICON Honorifics
 ## p3
 <hon>:>{R}{Pul}[MH]                                   # 'r'   male honorific
 <hon>:>{AA}[FH]                                       # 'aa'  female honorific
-<hon>:>{AI}[EHIrr]                                    # 'ai'  irregular epicene plural honorific
+<hon>:>{AI}[EHIrr,EHIrr2]                             # 'ai'  irregular epicene plural honorific
 # add more honorifics
 
 ################## NUMBER
@@ -142,15 +146,19 @@ LEXICON Number
 ##   e. Regular Nouns      [Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]     (Singular form)
 ##   f. Honorifics         [IH,H,MH,FH,PH]                       (Forced singular for honorifics 'null')
 ##   g. Mass Nouns         [MNoun]                               (Uncountable)
-<sg>:[FNoun,TNoun,GPro,FPro]                  # null  singular
-<sg>:[ES,Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]     # null  singular
-<sg>:[IH,H,FH,MH,PH]                          # null  singular
-<unc>:[MNoun]                                 # null  uncountable
+<sg>:[FNoun,TNoun,GPro,FPro]                      # null  singular
+<sg>:[ES,ENS,Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]     # null  singular
+<sg>:[IH,H,FH,MH,PH]                              # null  singular
+<unc>:[MNoun]                                     # null  uncountable
 
 # PANMAI: Plural Classes: 1 through 8
 # 1/2: Epicene Plural (Unisex)
 # Ungendered forced plural used for groups of people, honorific implied [EH,EHIrr]
 <epl>:[EH,EHIrr]
+# Forced plural for neuter objects, 'vay' suffix
+# Can act as epicene (honorific implied) or regular plural (no honorific)
+<epl>:>வ[EHIrr2]
+<pl>:>வ{AI}[ENP] 
 ###### GENERAL CLASSES
 # 1: Common Plural (Inanimate and Animate)
 # This plural also applies to pronouns generally [GPro]
@@ -216,9 +224,17 @@ LEXICON Emphatic
 LEXICON Predicative
 <pred>:[PRED]                                    # null        built-in for <nq>
 # Pronominalizing predicatives (GENDERED)
-<pron><pred><nt>:>{C}{U}[APRED]                  # 'cu'        neuter (adjectives)  
+<pron><pred><nt>:>{C}{U}[NPREDS]                 # 'cu'        neuter (adjectives)  
+<pron><pred><nt>:[NPREDP]                        # null        neuter (adjectives)   built-in through plural number 
+<pron><pred>:[PREDP]                             # null        epicene (adjectives)   built-in through plural number 
 <pron><pred><f>:>வ{PLR}{Pul}[APRED]             # 'val'       female (adjectives)  
 <pron><pred><m>:>வ{NR}{Pul}[APRED]              # 'val'       male (adjectives)  
+
+################## ENDWORDMORPH
+LEXICON EndwordMorph
+# This is a letter that can appear at the end of certain classes of words matching the next word's first letter
+:
+:>{X}{Pul}                             # Dir/LR
 
 ########################### VERBS
 ################## VOICE
