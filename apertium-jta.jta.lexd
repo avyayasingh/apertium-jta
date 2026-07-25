@@ -107,7 +107,9 @@ Adjectives [ <adj>: ] Predicative[NPREDP] Number[ENP]
 Adjectives [ <adj>: ] Predicative[PREDP] Number[EHIrr2] Honorifics[EHIrr2]
 Adjectives [ <adj>: ] Predicative[APRED] Honorifics[H]? Number[GPro]
 # Others
-Comparatives [ <post><comp>: ] EndwordMorph?
+Adverbs [ <adv>: ] EndwordMorph?
+Determiners
+Comparatives EndwordMorph?
 PostPositions [ <post>: ]
 CausativePart [ <caus>: ]
 Numbers
@@ -135,7 +137,7 @@ LEXICON Honorifics
 <hon>:>{R}{Pul}[MH]                                   # 'r'   male honorific
 <hon>:>{AA}[FH]                                       # 'aa'  female honorific
 <hon>:>{AI}[EHIrr,EHIrr2]                             # 'ai'  irregular epicene plural honorific
-# add more honorifics
+# fix add more honorifics
 
 ################## NUMBER
 LEXICON Number
@@ -317,6 +319,7 @@ LEXICON Nouns
 ## MALE
 ### 0
 ஆண்<n><m><aa>:ஆ{N}{Pul}[AA,Pl1]                               # 'aan'              male
+மனிதன்<n><m><aa>:மனித{N}{Pul}[AA,Pl1]                        # 'manithan'          man
 ### I
 வேலைக்காரன்<n><m><aa>:வேலை>க்காரன{Pul}[AA,Pl1]           # 'veelaykkaaran'   male servant
 பைடியன்<n><m><aa>:பைடிய{N}{Pul}[AA,Pl1]                      # 'petiyan'          boy
@@ -335,9 +338,12 @@ LEXICON Nouns
 ## (0) Proper Nouns
 பொன்னம்பலம்<np><m><aa>:பொன்னம்பல{M}{Pul}[AA,Pl2]        # 'Ponnambalam'
 அருள்<np><m><aa>:அருள{Pul}[AA,Pl2]                             # 'Arul'
+செல்லையா<np><m><aa>:செல்லைய{AA}[AA,Pl2]                   # 'Chelliah'
 ### -N or -R ending irregulars
 முருகன்<np><m><aa>:முருக{NP}{Pul}[AA,Pl2]                       # 'Murugan'
 கண்ணன்<np><m><aa>:கண்ண{NP}{Pul}[AA,Pl2]                   # 'Kannan'
+பொன்னன்<np><m><aa>:பொன்ன{NP}{Pul}[AA,Pl2]                 # 'Ponnan'
+பொன்னர்<np><m><aa>:பொன்ன{RP}{Pul}[AA,Pl2]                  # 'Ponnar'
 
 # Class 3
 ## UNISEX
@@ -360,6 +366,7 @@ LEXICON Nouns
 கிளார்க்<n><mf><aa>:கிளார்க்{Pul}[AA,Pl5]                         # 'kilaakku'        clerk
 மேனேஜர்<n><mf><aa>:மேனேஜர{Pul}[AA,Pl5]                      # 'maneeccar'       manager
 டாக்டர்<n><mf><aa>:டாக்டர{Pul}[AA,Pl5]                           # 'taaktar'         doctor
+வாத்தியார்<n><mf><aa>:வாத்தியார{Pul}[AA,Pl5]                   # 'vaaththiyaar'    teacher
 
 # Class 6
 ## FEMALE
@@ -481,6 +488,8 @@ LEXICON Nouns
 # Class 3
 கை<n><nn>:க{AI}[NN,Pl3]                                        # 'kay'             hand
 தலை<n><nn>:தல{AI}[NN,Pl3]                                    # 'thalay'           head
+சட்டை<n><nn>:சட்ட{AI}[NN,Pl3]                                  # 'sattay'          shirt
+வேலை<n><nn>:வேல{AI}[NN,Pl3]                                 # 'veelay'          work
 
 # Class 4
 வான்<n><nn>:வா{N}{Pul}[NN,Pl4]                                 # 'vaan'           van
@@ -602,13 +611,25 @@ LEXICON Adjectives
 நல்ல:நல்ல                 # 'nalla'       good
 உச்சி:உச்சி                # 'ucci'         top
 பெரிய:பெரி{Y}            # 'periya'       big
+மாதிரி:மாதிரி             # 'maathiri'     like
+
+################################     ADVERBS     ################################
+LEXICON Adverbs
+மாதிரி:மாதிரி             # 'maathiri'     like
+
+################################     DETERMINERS     ################################
+LEXICON Determiners
+ஒரு<det><ind>:ஒரு           # 'oru'     a
 
 ################################     COMPARATIVES     ################################
 LEXICON Comparatives
-விட:விட                    # 'vita'        than
-காட்டிலும்:காட்டிலும்       # 'kaattilum'   than
-பார்க்க:பார்க்க             # 'paarkka'     than
-பார்க்கிலும்:பார்க்கிலும்    # 'paarkkilum'  than
+# Comparison
+விட<post><comp>:விட                         # 'vita'        than
+காட்டிலும்<post><comp>:காட்டிலும{Pul}       # 'kaattilum'   than
+பார்க்க<post><comp>:பார்க்க                  # 'paarkka'     than
+பார்க்கிலும்<post><comp>:பார்க்கிலும{Pul}    # 'paarkkilum'  than
+# Equatives
+பூலே<post><eq>:பூலே                        # 'poolay~ai"   like
 
 ################################     POSTPOSITIONS     ################################
 LEXICON PostPositions
@@ -638,12 +659,20 @@ LEXICON PostPositions
 
 ################################     NUMBERS     ################################
 PATTERN Numbers
-Numeral [<num>:]
+Numeral [ <num>: ]
+NumStems [ <num>: ]
+
+LEXICON NumStems
+ஒன்று:ஒன்று            # 'onru'        one
+ஒரு:ஒரு                 # 'oru'         one         Dir/LR
+இரண்டு:இரண்டு        # 'irandu'      two
+ரெண்டு:ரெண்டு         # 'rendu'       two         Dir/LR
 
 LEXICON Numeral
+# Latin
 /([0123456789])+/
 /([0123456789])+[.,]([0123456789])+/
-
+# Tamil
 /([௦௧௨௩௪௫௬௭௮௯௰௱௲])+/
 /([௦௧௨௩௪௫௬௭௮௯])+[.,]([௦௧௨௩௪௫௬௭௮௯])+/
 
@@ -694,26 +723,26 @@ Fractions [<num>:]
 
 LEXICON Fractions
 𑿀:𑿀          # 1/320
-𑿁:𑿁	          # 1/160
-𑿂:𑿂              # 1/80
+𑿁:𑿁	           # 1/160
+𑿂:𑿂               # 1/80
 𑿃:𑿃            # 1/64
 𑿄:𑿄             # 1/40
 𑿅:𑿅            # 1/32
-𑿆:𑿆           # 3/8
+𑿆:𑿆            # 3/8
 𑿇:𑿇            # 3/64
 𑿈:𑿈              # 1/20
 𑿉:𑿉            # 1/16
 𑿊:𑿊            # 1/16         Dir/LR
 𑿋:𑿋              # 1/10
 𑿌:𑿌          # 1/8
-𑿍:𑿍            # 3/20
+𑿍:𑿍             # 3/20
 𑿎:𑿎           # 3/16
-𑿏:𑿏            # 1/5
-𑿐:𑿐            # 1/4
-𑿑:𑿑             # 1/2
-𑿒:𑿒           # 1/2           Dir/LR
-𑿓:𑿓           # 3/4
-𑿔:𑿔            # Downscaling factor
+𑿏:𑿏             # 1/5
+𑿐:𑿐             # 1/4
+𑿑:𑿑               # 1/2
+𑿒:𑿒             # 1/2           Dir/LR
+𑿓:𑿓            # 3/4
+𑿔:𑿔             # Downscaling factor
 
 ################################     MEASURES     ################################
 PATTERN Measure
