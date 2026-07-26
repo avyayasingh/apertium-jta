@@ -50,10 +50,11 @@ Location(1)[NOC] PronounStems[NOC,PH] Number[PH] Honorifics[PH] Cases[AA] Locati
 Location(1)[NOC] PronounStems[NOC,IH] Number[IH] Honorifics[IH] Cases[AA] Location(2)[NOC] Interrogative?
 # Nouns & NP
 ## Irregulars
+Nouns[NN,ANoun] Number[ANoun] Cases[NN]|Emphatic|Predicative[ADPRED] EndwordMorph?
 Nouns[NN,MNoun] Number[MNoun] Cases[NN]|Emphatic EndwordMorph?
 Nouns[NN,FNoun] Number[FNoun] Cases[NN]|Emphatic EndwordMorph?
-Nouns[TNoun] Number[TNoun] Cases[AA]|Emphatic EndwordMorph?
-Nouns[NN,PRED] Number[Pl1] Cases[NN]|Emphatic Predicative[PRED]? EndwordMorph?
+Nouns[TNoun] Number[TNoun] Cases[TN]|Emphatic EndwordMorph?
+Nouns[NN,PRED] Number[Pl1] Cases[NN]|Emphatic|Predicative[PRED] EndwordMorph?
 Nouns[AA,ES] Number[ES] Cases[AA]|Emphatic EndwordMorph?
 Nouns[VIrr,Pl1] Number[Pl1] Cases[VIrr] EndwordMorph?
 ## Honorifics
@@ -142,14 +143,15 @@ LEXICON Honorifics
 ################## NUMBER
 LEXICON Number
 # ORUMAI: Singular Class: 0
-# 0: a. Foodstuffs         [FNoun]                               (Always singular)
-##   b. Toponyms           [TNoun]                               (Always singular)
-##   c. Pronouns           [GPro,FPro]                           (Singular form)
-##   d. Epicenes           [ES]                                  (Dont have regular plural)
-##   e. Regular Nouns      [Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]     (Singular form)
-##   f. Honorifics         [IH,H,MH,FH,PH]                       (Forced singular for honorifics 'null')
-##   g. Mass Nouns         [MNoun]                               (Uncountable)
-<sg>:[FNoun,TNoun,GPro,FPro]                      # null  singular
+# 0: a. Abstract nouns     [ANoun]                               (Always singular)
+##   b. Foodstuffs         [FNoun]                               (Always singular)
+##   c. Toponyms           [TNoun]                               (Always singular)
+##   d. Pronouns           [GPro,FPro]                           (Singular form)
+##   e. Epicenes           [ES]                                  (Dont have regular plural)
+##   f. Regular Nouns      [Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]     (Singular form)
+##   g. Honorifics         [IH,H,MH,FH,PH]                       (Forced singular for honorifics 'null')
+##   h. Mass Nouns         [MNoun]                               (Uncountable)
+<sg>:[ANoun,FNoun,TNoun,GPro,FPro]                # null  singular
 <sg>:[ES,ENS,Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]     # null  singular
 <sg>:[IH,H,FH,MH,PH]                              # null  singular
 <unc>:[MNoun]                                     # null  uncountable
@@ -198,19 +200,20 @@ LEXICON Number
 
 ################## CASES
 LEXICON Cases
-<nom>:[AA,NN]                                    # null
-<acc>:>{AI}[AA]                                  # 'ay'
-<int>:>{AA}லை[AA,NN]                           # 'aalay~ai'
-<dat>:>{U}க்கு[AA,NN]                            # 'ukku'
-<dat>:>{AI}[VIrr]                                # 'ay'             (irregular dative for 'veetu')    Dir/LR
-<com>:>{OO}டை[AA,NN]                           # 'ootay~ai'
-<loc>:>{I}லை[AA,NN]                            # 'ilay~ai'
-<refr>:>{Irefr}ட்டை[AA]                         # 'ittay~ai'
-<gen>:>{I}{N}{Pul}{R}{AI}[AA,NN]                 # 'inray~ai'
-<gen>:[AA,NN]                                    # null             (irregular genitive)              Dir/LR
-<abl>:>{I}ட்டை\ இருந்து[AA,NN]                 # 'ittay~ai iruntu'
-<abl>:>{I}லை\ இருந்து[AA,NN]                  # 'ilay~ai iruntu'                                    Dir/LR
-<ben>:>{AA}க[AA,NN]                             # 'aaka'
+<nom>:[AA,NN,TN]                                    # null
+<acc>:>{AI}[AA,TN]                                  # 'ay'
+<int>:>{AA}லை[AA,NN,TN]                           # 'aalay~ai'
+<dat>:>{U}க்கு[AA,NN,TN]                            # 'ukku'
+<dat>:>{AI}[VIrr]                                   # 'ay'                (irregular dative for 'veetu')    Dir/LR
+<com>:>{OO}டை[AA,NN,TN]                           # 'ootay~ai'
+<loc>:>{I}லை[AA,NN,TN]                            # 'ilay~ai'
+<refr>:>{Irefr}ட்டை[AA]                            # 'ittay~ai'
+<gen>:>{I}{N}{Pul}{R}{AI}[AA,NN,TN]                 # 'inray~ai'
+<gen>:[AA,NN,TN]                                    # null                (irregular genitive)              Dir/LR
+<abl>:>{I}ட்டை\ இருந்து[AA,NN,TN]                 # 'ittay~ai iruntu'
+<abl>:>{I}லை\ இருந்து[AA,NN,TN]                  # 'ilay~ai iruntu'                                       Dir/LR
+<ben>:>{U}க்காக[AA,NN,TN]                         # 'ukkaaka'
+<ben>:>{U}க்கெண்டு[AA,NN,TN]                     # 'ukkentu'                                              Dir/LR
 # fix ask about ai
 
 ################## INTERROGATIVE
@@ -232,12 +235,15 @@ LEXICON Predicative
 <pron><pred>:[PREDP]                             # null        epicene (adjectives)   built-in through plural number 
 <pron><pred><f>:>வ{PLR}{Pul}[APRED]             # 'val'       female (adjectives)  
 <pron><pred><m>:>வ{NR}{Pul}[APRED]              # 'val'       male (adjectives)  
+# Adverbalizing predicative (UNGENDERED)
+<advz><pred>:>{AA}ய்[ADPRED]                     # 'aai'       added for ANoun
 
 ################## ENDWORDMORPH
 LEXICON EndwordMorph
 # This is a letter that can appear at the end of certain classes of words matching the next word's first letter
-:
-:>{X}{Pul}                             # Dir/LR
+:              
+# null so that Dir/LR can work
+:>{X}{Pul}                                         # Dir/LR
 
 ########################### VERBS
 ################## VOICE
@@ -335,7 +341,9 @@ LEXICON Nouns
 கட்டுவனாள்<n><f><aa>:கட்டுவனாள{Pul}[AA,Pl2]                 # 'kattuvanaal'    lady from kattuvan
 பிரத்தியாள்<n><f><aa>:பிரத்தியாள{Pul}[AA,Pl2]                   # 'piraththiyaal'  lady from a different place
 
-## (0) Proper Nouns
+## FEMALE Proper Nouns
+கமலா<np><f><aa>:கமல{AA}[AA,Pl2]                              # 'Kamala'
+## MALE Proper Nouns
 பொன்னம்பலம்<np><m><aa>:பொன்னம்பல{M}{Pul}[AA,Pl2]        # 'Ponnambalam'
 அருள்<np><m><aa>:அருள{Pul}[AA,Pl2]                             # 'Arul'
 செல்லையா<np><m><aa>:செல்லைய{AA}[AA,Pl2]                   # 'Chelliah'
@@ -466,6 +474,12 @@ LEXICON Nouns
 # Toponyms
 யாழ்ப்பாணம்<n><top>:யாழ்ப்பாண{M}{Pul}[NN,TNoun]             # 'yaazhppaanam'    Jaffna 
 கொழும்பு<n><top>:கொழும்ப{U}[NN,TNoun]                        # 'kozhumpu'        Colombo
+# Abstract nouns (Nouns can attach Adverbalizing predicative)
+## Emotions
+அன்பு<n><nn>:அன்ப{U}[NN,ANoun]                                 # 'anpu'            love
+கோபம்<n><nn>:கோபம{Pul}[NN,ANoun]                            # 'koopam'          anger
+## Behaviour
+கண்டிப்பு<n><nn>:கண்டிப்ப{U}[NN,ANoun]                          # 'kantippu'        discipline
 
 # Class 1
 மரம்<n><nn>:மர{M}{Pul}[NN,Pl1]                                  # 'maram'           tree
@@ -603,7 +617,7 @@ LEXICON IntraVerbStem
 # Class 7
 
 ## Special irregular causitive form
-இரு:இர{U}[Class7,CAUSIRR1]              # 'iru'          sit
+இரு:இர{U}[Class7,CAUSIRR1]              # 'iru'          sit/stay/exist
 
 ### Special double causitive
 நட:நட[Class7,CAUSIRR1,STRONGDOUBCAUS]   # 'nata'         walk
@@ -618,6 +632,8 @@ LEXICON Adjectives
 ################################     ADVERBS     ################################
 LEXICON Adverbs
 மாதிரி:மாதிரி             # 'maathiri'     like
+சரியான:சரியான         # 'cariyaana'    very
+ரொம்ப:ரொம்ப           # 'rompa'        very         Dir/LR
 
 ################################     DETERMINERS     ################################
 LEXICON Determiners
