@@ -137,7 +137,7 @@ LEXICON Honorifics
 <hon>:>{R}{Pul}[MH]                                   # 'r'   male honorific
 <hon>:>{AA}[FH]                                       # 'aa'  female honorific
 <hon>:>{AI}[EHIrr,EHIrr2]                             # 'ai'  irregular epicene plural honorific
-# fix add more honorifics
+# fix add more honorifics, kaari honorific, -r ending class v honorific built in?, veelaykaaran irr -r honorific?
 
 ################## NUMBER
 LEXICON Number
@@ -321,7 +321,7 @@ LEXICON Nouns
 ஆண்<n><m><aa>:ஆ{N}{Pul}[AA,Pl1]                               # 'aan'              male
 மனிதன்<n><m><aa>:மனித{N}{Pul}[AA,Pl1]                        # 'manithan'          man
 ### I
-வேலைக்காரன்<n><m><aa>:வேலை>க்காரன{Pul}[AA,Pl1]           # 'veelaykkaaran'   male servant
+வேலைக்காரன்<n><m><aa>:வேலை>க்கார{N}{Pul}[AA,Pl1]          # 'veelaykkaaran'   male servant
 பைடியன்<n><m><aa>:பைடிய{N}{Pul}[AA,Pl1]                      # 'petiyan'          boy
 ### IV
 பண்டாரம்<n><m><aa>:பண்டார{M}{Pul}[AA,Pl1]                    # 'pantaaram'       male from pantaaram comm.
@@ -367,6 +367,7 @@ LEXICON Nouns
 மேனேஜர்<n><mf><aa>:மேனேஜர{Pul}[AA,Pl5]                      # 'maneeccar'       manager
 டாக்டர்<n><mf><aa>:டாக்டர{Pul}[AA,Pl5]                           # 'taaktar'         doctor
 வாத்தியார்<n><mf><aa>:வாத்தியார{Pul}[AA,Pl5]                   # 'vaaththiyaar'    teacher
+விதானயார்<n><mf><aa>:விதானயார{Pul}[AA,Pl5]                  # 'vithaanayaar'    village headman
 
 # Class 6
 ## FEMALE
@@ -443,8 +444,8 @@ LEXICON Nouns
 தலைவன்<n><m><aa>:தலைவ{NR}{Pul}[AA,Pl8,H]                    # 'thalayvan'       male leader        
 சகோதரன்<n><m><aa>:சகோதர{NR}{Pul}[AA,Pl8,H]                  # 'cakootharan'     brother
 சினேகிதன்<n><m><aa>:சினேகித{NR}{Pul}[AA,Pl8,H]                 # 'cineekithan'     male friend
-பாட்டுக்காரன்<n><m><aa>:பாட்டு>க்கார{NR}{Pul}[AA,Pl8,H]          # 'paattukkaaran'   singer
-எண்ணெய்க்காரன்<n><m><aa>:எண்ணெய்>க்கார{NR}{Pul}[AA,Pl8,H] # 'ennaikkaaran'    oil presser
+பாட்டுக்காரன்<n><m><aa>:பாட்டு>க்கார{NR}{Pul}[AA,Pl8,H]          # 'paattukkaaran'   male singer
+எண்ணெய்க்காரன்<n><m><aa>:எண்ணெய்>க்கார{NR}{Pul}[AA,Pl8,H] # 'ennaikkaaran'    male oil presser
 துணைவன்<n><m><aa>:துணைவ{NR}{Pul}[AA,Pl8,H]                 # 'tunayvan'        male assistant
 பிராமணன்<n><m><aa>:பிராமண{NR}{Pul}[AA,Pl8,H]                 # 'piraamanan'      male brahmin
 நட்டுவன்<n><m><aa>:நட்டுவ{NR}{Pul}[AA,Pl8,H]                      # 'nattuvan'        male from drum-beater comm.
@@ -528,6 +529,7 @@ LEXICON TransVerbStem
 கூப்பிடு:கூப்பிட{U}[Class3]                # 'kuuppitu'    call
 கட்டு:கட்ட{U}[Class3]                     # 'kattu'       tie
 காட்டு:காட்ட{U}[Class3]                  # 'kaattu'      show
+ஆக்கு:ஆக்க{U}[Class3]                   # 'aakku'       make
 
 ## Special passive forms
 வெட்டு:வெட்ட{U}[Class3,PASSIVE]         # 'vettu'       cut
