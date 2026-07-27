@@ -256,7 +256,7 @@ LEXICON EndwordMorph
 LEXICON Voice
 <actv>:
 <pasv>:>ப்பட்டு                        # 'ppattu'
-<pasv>:>{U}ண்டு[PASSIVE]              # 'untu'      eat
+<vaux><pasv>:>{U}ண்டு[PASSIVE]        # 'untu'      eat       meaning is non-existent and thus verb as <vaux> is lost
 
 ################## CAUSATIVE
 LEXICON Causativiser
@@ -537,7 +537,8 @@ LEXICON TransVerbStem
 
 # Class 2
 மேய்:மேய்[Class2]                        # 'mei'         graze
-தா:தா[Class2]                            # 'thaa'        give
+தா:த{AA}[Class2]                         # 'thaa'        give
+அறி:அற{I}[Class2]                       # 'ari'         find out
 
 # Class 3
 எழுது:எழுத{U}[Class3,CAUSIRR2]           # 'ezhuthu'     write
@@ -553,7 +554,6 @@ LEXICON TransVerbStem
 புரட்டு:புரட்ட{U}[Class3]                  # 'purattu'     roll over
 வாங்கு:வாங்க{U}[Class3]                 # 'vaanku'      buy
 வேண்டு:வேண்ட{U}[Class3]               # 'veentu'      want
-கூப்பிடு:கூப்பிட{U}[Class3]                # 'kuuppitu'    call
 கட்டு:கட்ட{U}[Class3]                     # 'kattu'       tie
 காட்டு:காட்ட{U}[Class3]                  # 'kaattu'      show
 ஆக்கு:ஆக்க{U}[Class3]                   # 'aakku'       make
@@ -564,6 +564,7 @@ LEXICON TransVerbStem
 கொட்டு:கொட்ட{U}[Class3,PASSIVE]       # 'kottu'       pour
 ஊற்று:ஊற்ற{U}[Class3,PASSIVE]          # 'uurru'       pour
 பூட்டு:பூட்ட{U}[Class3,PASSIVE]            # 'puuttu'      lock
+ஒட்டு:ஒட்ட{U}[Class3,PASSIVE]             # 'ottu'        paste
 
 ## Special double causitive
 தேடு:தேட{U}[Class3,WEAKDOUBCAUS]        # 'theetu'      search
@@ -571,6 +572,7 @@ LEXICON TransVerbStem
 # Class 4
 விளங்கு:விளங்க{U}[Class4]               # 'vilanku'     understand
 விடு:விட{U}[Class4]                       # 'vitu'        leave
+கூப்பிடு:கூப்பிட{U}[Class4]                # 'kuuppitu'    call
 
 # Class 5
 உண்:உண{Pul}[Class5]                  # 'un'          eat
@@ -584,12 +586,8 @@ LEXICON TransVerbStem
 பிடி:பிட{I}[Class6]                       # 'piti'        catch
 பார்:பார{Pul}[Class6]                    # 'paar'        see
 
-## Special passive forms
-ஒட்டு:ஒட்ட{U}[Class6,PASSIVE]             # 'ottu'        paste
-
 # Class 7
 வை:வ{AI}[Class7]                        # 'vay'         place
-நனை:நன{AI}[Class7]                    # 'nanay'       wet
 
 ################## INTRANSITIVE VERBS
 LEXICON IntraVerbStem
@@ -602,11 +600,13 @@ LEXICON IntraVerbStem
 # Class 2
 நிமிர்:நிமிர{Pul}[Class2]                  # 'nimir'       erect
 வா:வ{AA}[Class2]                         # 'vaa'         come 
+நனை:நன{AI}[Class2]                    # 'nanay'       wet
 
 # Class 3
 ஒட்டு:ஒட்ட{U}[Class3]                     # 'ottu'        adhere
 பேசு:பேச{U}[Class3]                      # 'peecu'       speak
 போ:போ[Class3]                          # 'poo'         go
+திரும்பு:திரும்ப{U}[Class3]                 # 'thirumpu'    turn
 
 ## Special passive form
 வாடு:வாட{U}[Class3,PASSIVE]             # 'vaatu'       wither
@@ -616,16 +616,16 @@ LEXICON IntraVerbStem
 
 # Class 4
 திருந்து:திருந்த{U}[Class4]                # 'thirunthu'   improve
-திரும்பு:திரும்ப{U}[Class4]                # 'thirumpu'    turn
 சுருங்கு:சுருங்க{U}[Class4]                # 'curunku'     shrink
 ஆடு:ஆட{U}[Class4]                      # 'aatu'        swing
 உருகு:உருக{U}[Class4]                   # 'uruku'       melt
-நனை:நன{AI}[Class4]                    # 'nanay'       wet
+பிடி:பிட{I}[Class4]                       # 'piti'        like
 தெரி:தெர{I}[Class4]                     # 'theri'       know
 புரி:புர{I}[Class4]                        # 'puri'        understand
-பிடி:பிட{I}[Class4]                       # 'piti'        like
-கிடை:கிட{AI}[Class4]                    # 'kitay'       be available
-வலி:வல{I}[Class4]                       # 'vali'        ache
+
+# Class 6
+வலி:வல{I}[Class6]                       # 'vali'        ache
+கிடை:கிட{AI}[Class6]                    # 'kitay'       be available
 
 # Class 7
 
@@ -644,9 +644,12 @@ LEXICON Adjectives
 
 ################################     ADVERBS     ################################
 LEXICON Adverbs
+# Intensive
 மாதிரி:மாதிரி             # 'maathiri'     like
 சரியான:சரியான         # 'cariyaana'    very
 ரொம்ப:ரொம்ப           # 'rompa'        very         Dir/LR
+# Temporal
+இன்னும்:இன்னும்         # 'innum'         yet
 
 ################################     DETERMINERS     ################################
 LEXICON Determiners
