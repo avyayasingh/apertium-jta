@@ -4,8 +4,12 @@
 # Part of speech categories
 # <prn>    # Pronoun
 # <n>      # Noun
+# <np>     # Proper nouns
+# <top>    # Toponyms
 # <v>      # Verb
 # <adj>    # Adjective
+# <adv>    # Adverb
+# <det>    # Determiner
 # <comp>   # Comparative
 # <post>   # Postposition
 # <caus>   # Causative particles
@@ -25,6 +29,7 @@
 # <sg>     # Singular
 # <pl>     # Plural
 # <epl>    # Epicene Plural
+# <unc>    # Uncountable
 
 # Other symbols
 # >        # Morpheme boundary
@@ -210,10 +215,11 @@ LEXICON Cases
 <refr>:>{Irefr}ட்டை[AA]                            # 'ittay~ai'
 <gen>:>{I}{N}{Pul}{R}{AI}[AA,NN,TN]                 # 'inray~ai'
 <gen>:[AA,NN,TN]                                    # null                (irregular genitive)              Dir/LR
-<abl>:>{I}ட்டை\ இருந்து[AA,NN,TN]                 # 'ittay~ai iruntu'
+<abl>:>{I}ட்டை\ இருந்து[AA]                       # 'ittay~ai iruntu'
 <abl>:>{I}லை\ இருந்து[AA,NN,TN]                  # 'ilay~ai iruntu'                                       Dir/LR
-<ben>:>{U}க்காக[AA,NN,TN]                         # 'ukkaaka'
-<ben>:>{U}க்கெண்டு[AA,NN,TN]                     # 'ukkentu'                                              Dir/LR
+# Benefactive is a special case which adds '-aaka' or '-entu' to the dative '-ukku'
+<ben>:>{U}க்க>{AA}க[AA,NN,TN]                     # 'ukkaaka'
+<ben>:>{U}க்க>{E}ண்டு[AA,NN,TN]                   # 'ukkentu'                                              Dir/LR
 # fix ask about ai
 
 ################## INTERROGATIVE
@@ -310,6 +316,8 @@ LEXICON Nouns
 # FEMALE and MALE further grouped into Classes I - IV
 # 0th Class contains words with no gendered equivalent or irregulars
 #####
+## For MALE Professions, '-kaaran' is changed to '-kaari' in FEMALE
+## In other instances, FEMALE equivalents exist as '-i' for MALE '-an' most commonly, among other forms as listed below
 # MALE I: -'an', II: -'aan', III: -'van', IV: communal words
 # FEMALE I(a): -'al', (b): -'i', (c): -'aththi', (d): -'cci',
 ## II(a): -'aal', II(b): -'aaththi', II(c): -'aatti'
@@ -417,6 +425,8 @@ LEXICON Nouns
 தலைவி<n><f><aa>:தலைவ{I}[AA,Pl7]                            # 'talayvi'         female leader
 சினேகிதி<n><f><aa>:சினேகித{I}[AA,Pl7]                         # 'cineekithi'      female friend
 துணைவி<n><f><aa>:துணைவ{I}[AA,Pl7]                         # 'tunayvi'         female assistant
+பாட்டுக்காரி<n><f><aa>:பாட்டு>க்கார{I}[AA,Pl7]                  # 'paattukkaari'    female singer
+எண்ணெய்க்காரி<n><f><aa>:எண்ணெய்>க்கார{I}[AA,Pl7]        # 'ennaikkaari'     female oil presser
 ### I(c)
 பிராமணத்தி<n><f><aa>:பிராமணத்த{I}[AA,Pl7]                  # 'piraamanaththi'  female brahmin
 நட்டுவத்தி<n><f><aa>:நட்டுவத்த{I}[AA,Pl7]                       # 'nattuvaththi'    female from drum-beater comm.
@@ -434,7 +444,7 @@ LEXICON Nouns
 குசத்தி<n><f><aa>:குசத்த{I}[AA,Pl7]                             # 'kucaththi'        female from potmaker comm.
 குறத்தி<n><f><aa>:குறத்த{I}[AA,Pl7]                            # 'kuraththi'        tribal woman
 சிங்களத்தி<n><f><aa>:சிங்களத்த{I}[AA,Pl7]                     # 'cinkalaththi'     Sinhalese woman
-ஒருத்தி<n><f><aa>:ஒருத்த{I}[AA,Pl7]                            # 'oruththi'         one woman
+ஒருத்தி<n><f><aa>:ஒரு>த்த{I}[AA,Pl7]                           # 'oruththi'         one woman
 பண்டாரத்தி<n><f><aa>:பண்டாரத்த{I}[AA,Pl7]                  # 'pantaaraththi'    female from pantaaram comm.
 செட்டிச்சி<n><f><aa>:செட்டிச்ச{I}[AA,Pl7]                       # 'cetticci'         female from cetti comm.
 ## MALE
@@ -443,7 +453,7 @@ LEXICON Nouns
 
 # Class 8
 ## EPICENE
-சொந்தக்காரன்<n><aa>:சொந்தக்கார{NR}{Pul}[AA,EH,ES]           # 'conthakkaaran'    relative
+சொந்தக்காரன்<n><aa>:சொந்த>க்கார{NR}{Pul}[AA,EH,ES]           # 'conthakkaaran'    relative
 ## MALE
 ### I
 குருடன்<n><m><aa>:குருட{NR}{Pul}[AA,Pl8,H]                        # 'kurutan'         blind man
@@ -454,16 +464,18 @@ LEXICON Nouns
 சினேகிதன்<n><m><aa>:சினேகித{NR}{Pul}[AA,Pl8,H]                 # 'cineekithan'     male friend
 பாட்டுக்காரன்<n><m><aa>:பாட்டு>க்கார{NR}{Pul}[AA,Pl8,H]          # 'paattukkaaran'   male singer
 எண்ணெய்க்காரன்<n><m><aa>:எண்ணெய்>க்கார{NR}{Pul}[AA,Pl8,H] # 'ennaikkaaran'    male oil presser
+மீன்காரன்<n><m><aa>:மீன்>கார{NR}{Pul}[AA,Pl8,H]                  # 'meenkaaran'      fisherman
 துணைவன்<n><m><aa>:துணைவ{NR}{Pul}[AA,Pl8,H]                 # 'tunayvan'        male assistant
 பிராமணன்<n><m><aa>:பிராமண{NR}{Pul}[AA,Pl8,H]                 # 'piraamanan'      male brahmin
 நட்டுவன்<n><m><aa>:நட்டுவ{NR}{Pul}[AA,Pl8,H]                      # 'nattuvan'        male from drum-beater comm.
 கட்டயன்<n><m><aa>:கட்டய{NR}{Pul}[AA,Pl8,H]                       # 'kattayan'        short man
 பேயன்<n><m><aa>:பேய{NR}{Pul}[AA,Pl8,H]                          # 'peeyan'          male fool
+மகன்<n><m><aa>:மக{NR}{Pul}[AA,Pl8,H]                             # 'makan'           son
 ### III
 குசவன்<n><m><aa>:குசவ{NR}{Pul}[AA,Pl8,H]                         # 'kucavan'         male from potmaker comm.
 குறவன்<n><m><aa>:குறவ{NR}{Pul}[AA,Pl8,H]                         # 'kuravan'         tribal man
 சிங்களவன்<n><m><aa>:சிங்களவ{NR}{Pul}[AA,Pl8,H]                 # 'cinkalavan'      Sinhalese man
-ஒருவன்<n><m><aa>:ஒருவ{NR}{Pul}[AA,Pl8,H]                         # 'oruvan'          one woman
+ஒருவன்<n><m><aa>:ஒரு>வ{NR}{Pul}[AA,Pl8,H]                        # 'oruvan'          one man
 
 ##################### INANIMATE
 # Class 0
@@ -508,7 +520,8 @@ LEXICON Nouns
 
 # Class 4
 வான்<n><nn>:வா{N}{Pul}[NN,Pl4]                                 # 'vaan'           van
-
+# fix ask about n changing before kal plural
+# fix ask about n changes to r to give honorific in plural for male humans. swap honorific and number if needed
 ################################     VERBS     ################################
 # Verb Classes:
 # 1-4:  Melvinaigal (Weak)
