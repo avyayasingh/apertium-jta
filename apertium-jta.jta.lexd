@@ -16,7 +16,8 @@
 # <det>    # Determiner
 # <comp>   # Comparative
 # <post>   # Postposition
-# <caus>   # Causative particles
+# <caus>   # Causative particle
+# <neg>    # Negative particle
 # <num>    # Numeral
 
 # <sent>   # Sentence-ending punctuation
@@ -125,8 +126,9 @@ Adjectives [ <adj>: ] Predicative[APRED] Honorifics[H]? Number[GPro]
 Adverbs [ <adv>: ] EndwordMorph?
 Determiners
 Comparatives EndwordMorph?
-PostPositions [ <post>: ]
+PostPositions [ <post>: ] EndwordMorph?
 CausativePart [ <caus>: ]
+NegativePart
 Numbers
 Symbol
 Fraction
@@ -164,7 +166,7 @@ LEXICON Number
 ##   e. Epicenes           [ES]                                  (Dont have regular plural)
 ##   f. Regular Nouns      [Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]     (Singular form)
 ##   g. Honorifics         [IH,H,MH,FH,PH]                       (Forced singular for honorifics 'null')
-##   h. Mass Nouns         [MNoun]                               (Uncountable)
+##   h. Mass Nouns & Time  [MNoun]                               (Uncountable)
 <sg>:[ANoun,FNoun,TNoun,GPro,FPro]                # null  singular
 <sg>:[ES,ENS,Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]     # null  singular
 <sg>:[IH,H,FH,MH,PH]                              # null  singular
@@ -256,7 +258,7 @@ LEXICON Predicative
 
 ################## ENDWORDMORPH
 LEXICON EndwordMorph
-# This is a letter that can appear at the end of certain classes of words matching the next word's first letter
+# Can appear at the end of certain words matching the next word's first letter through Sandhi
 :              
 # null so that Dir/LR can work
 :>{X}{Pul}                                         # Dir/LR
@@ -266,7 +268,7 @@ LEXICON EndwordMorph
 LEXICON Voice
 <actv>:
 <pasv>:>ப்பட்டு                        # 'ppattu'
-<vaux><pasv>:>{U}ண்டு[PASSIVE]        # 'untu'      eat       meaning is non-existent and thus verb as <vaux> is lost
+<pasv>:>{U}ண்டு[PASSIVE]              # 'untu'      eat       meaning is non-existent and thus verb as <vaux> is lost
 
 ################## CAUSATIVE
 LEXICON Causativiser
@@ -306,6 +308,13 @@ LEXICON CausativePart
 பண்ணு:பண்ணினா                    # 'panninaa'         Dir/LR
 கொள்:கொண்டு                       # 'kontu'            Dir/LR
 பிடி:பிடிச்சு                             # 'piticcu'          Dir/LR
+
+LEXICON NegativePart
+# Postpositionals
+இல்லாமல்<neg><post>:இல்ல>{AA}மல்    # 'illaamal'        without
+இல்லாம<neg><post>:இல்ல>{AA}ம        # 'illaama'         without          Dir/LR
+# Negative polarity item
+ஒன்றும்<neg>:ஒன்று>ம்                  # 'onrum'           not even one
 
 ###############################################################################
 ###                          L E X I C O N                                  ###
@@ -496,12 +505,17 @@ LEXICON Nouns
 # Toponyms
 யாழ்ப்பாணம்<n><top>:யாழ்ப்பாண{M}{Pul}[NN,TNoun]             # 'yaazhppaanam'    Jaffna 
 கொழும்பு<n><top>:கொழும்ப{U}[NN,TNoun]                        # 'kozhumpu'        Colombo
+# Uncountable Nouns
+## Mass Nouns
+## Time Nouns
+நேற்று<n><nn>:நேற்ற{U}[NN,MNoun]                                # 'neerru'           yesterday
 # Abstract nouns (Nouns can attach Adverbalizing predicative)
 ## Emotions
 அன்பு<n><nn>:அன்ப{U}[NN,ANoun]                                 # 'anpu'            love
 கோபம்<n><nn>:கோபம{Pul}[NN,ANoun]                            # 'koopam'          anger
 ## Behaviour
 கண்டிப்பு<n><nn>:கண்டிப்ப{U}[NN,ANoun]                          # 'kantippu'        discipline
+தனி<n><nn>:தன{I}[NN,ANoun]                                     # 'tani'            solitude
 
 # Class 1
 மரம்<n><nn>:மர{M}{Pul}[NN,Pl1]                                  # 'maram'           tree
@@ -518,6 +532,7 @@ LEXICON Nouns
 வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                # 'vayiru'           stomach
 காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                         # 'kaaiccal'         fever
 கார்<n><nn>:கார{Pul}[NN,Pl1]                                    # 'kaar'             car
+கத்தி<n><nn>:கத்த{I}[NN,Pl1]                                    # 'kaththi'          knife
 
 ## Quality nouns (Nouns with built-in predicative)
 உயரம்<nq><nn>:உயர{M}{Pul}[NN,Pl1,PRED]                       # 'uyaram'           height
@@ -641,6 +656,7 @@ LEXICON IntraVerbStem
 திரும்பு<v><iv>:திரும்ப{U}[Class3]                 # 'thirumpu'    turn                    Paired
 பேசு<v><iv>:பேச{U}[Class3]                      # 'peecu'       speak
 போ<v><iv>:போ[Class3]                          # 'poo'         go
+கூடு<v><iv>:கூட{U}[Class3]                       # 'kuutu'       join
 
 ## Special passive form
 வாடு<v><iv>:வாட{U}[Class3,PASSIVE]             # 'vaatu'       wither
@@ -681,11 +697,14 @@ LEXICON Adjectives
 ################################     ADVERBS     ################################
 LEXICON Adverbs
 # Intensive
-மாதிரி:மாதிரி             # 'maathiri'     like
-சரியான:சரியான         # 'cariyaana'    very
-ரொம்ப:ரொம்ப           # 'rompa'        very         Dir/LR
+மாதிரி:மாதிர{I}               # 'maathiri'     like
+சரியான:சரியான              # 'cariyaana'    very
+ரொம்ப:ரொம்ப                # 'rompa'        very         Dir/LR
 # Temporal
-இன்னும்:இன்னும்         # 'innum'         yet
+இன்னும்:இன்னும{Pul}         # 'innum'         yet
+நேற்று:நேற்ற{U}               # 'neerru'        yesterday
+# Manner
+தனிய:தனிய                  # 'taniya'        alone
 
 ################################     DETERMINERS     ################################
 LEXICON Determiners
@@ -726,6 +745,9 @@ LEXICON PostPositions
 பக்கத்திலே:பக்கத்திலே         # 'pakkattilee'        nearby
 எதிரே:எதிரே                   # 'etiree'              opposite
 அடியிலே:அடியிலே             # 'atiyilee'            at the bottom of
+
+# following a Comitative
+கூட:கூட                       # 'kuuta'                along with
 
 ################################     NUMBERS     ################################
 PATTERN Numbers

@@ -18,6 +18,7 @@ LIST PRED = (pred);
 LIST PREDNOM = (nom pred);
 LIST ADJ = (adj);
 LIST ADV = (adv);
+LIST V = (v);
 # WORDS
 LIST VEETU = "வீடு" ;
 LIST VA = "வா" ;
@@ -80,7 +81,7 @@ SELECT COMP IF
     (-1 LOC)
     (1 (n) OR (prn));
 
-## Predicative selection
+## Predicative selection and non selection
 SELECT NOM IF
     (0 NOM)
     (0 GEN)
@@ -94,6 +95,11 @@ SELECT ADV IF
     (0 ADJ)
     (0 ADV)
     (-1 ADJ);
+
+SELECT ADV IF
+    (0 ADV)
+    (0 PRED)
+    (1 V);
 
 # Resources:
 # http://visl.sdu.dk/cg3.html
