@@ -47,17 +47,17 @@
 PATTERNS
 # Pronouns
 ## Location necessary
-Location(1)[LOC] PronounStems[LOC,GPro] Number[GPro] Cases[AA] Location(2)[LOC] Interrogative?
-Location(1)[LOC] PronounStems[LOC,FPro] Number[FPro] Cases[AA] Location(2)[LOC] Interrogative?
+Location(1)[LOC] PronounStems[LOC,GPro] Number[GPro] Cases[AA] Location(2)[LOC] InterroClitic?
+Location(1)[LOC] PronounStems[LOC,FPro] Number[FPro] Cases[AA] Location(2)[LOC] InterroClitic?
 ### Honorifics
-Location(1)[LOC] PronounStems[LOC,MH] Number[MH] Honorifics[MH] Cases[AA] Location(2)[LOC] Interrogative?
-Location(1)[LOC] PronounStems[LOC,FH] Number[FH] Honorifics[FH] Cases[AA] Location(2)[LOC] Interrogative?
-Location(1)[LOC] PronounStems[LOC,EHIrr] Number[EHIrr] Honorifics[EHIrr] Cases[AA] Location(2)[LOC] Interrogative?
+Location(1)[LOC] PronounStems[LOC,MH] Number[MH] Honorifics[MH] Cases[AA] Location(2)[LOC] InterroClitic?
+Location(1)[LOC] PronounStems[LOC,FH] Number[FH] Honorifics[FH] Cases[AA] Location(2)[LOC] InterroClitic?
+Location(1)[LOC] PronounStems[LOC,EHIrr] Number[EHIrr] Honorifics[EHIrr] Cases[AA] Location(2)[LOC] InterroClitic?
 ## Non-location
-Location(1)[NOC] PronounStems[NOC,GPro] Number[GPro] Cases[AA] Location(2)[NOC] Interrogative?
+Location(1)[NOC] PronounStems[NOC,GPro] Number[GPro] Cases[AA] Location(2)[NOC] InterroClitic?
 ### Honorifics
-Location(1)[NOC] PronounStems[NOC,PH] Number[PH] Honorifics[PH] Cases[AA] Location(2)[NOC] Interrogative?
-Location(1)[NOC] PronounStems[NOC,IH] Number[IH] Honorifics[IH] Cases[AA] Location(2)[NOC] Interrogative?
+Location(1)[NOC] PronounStems[NOC,PH] Number[PH] Honorifics[PH] Cases[AA] Location(2)[NOC] InterroClitic?
+Location(1)[NOC] PronounStems[NOC,IH] Number[IH] Honorifics[IH] Cases[AA] Location(2)[NOC] InterroClitic?
 # Nouns & NP
 ## Irregulars
 Nouns[NN,ANoun] Number[ANoun] Cases[NN]|Emphatic|Predicative[ADPRED] EndwordMorph?
@@ -90,16 +90,16 @@ Nouns[AA,Pl8] Number[Pl8] Cases[AA]|Emphatic EndwordMorph?
 # Verbs
 ## Auxiliaries
 ModalVerbAux
-# fix add dynamic based png, NOT tense
+# fix add dynamic based png, NOT tense, add infix? or just doubling for png
 ModalVerbAux[DYN]
-ModalVerbAux[INT] Interrogative?
+ModalVerbAux[INT] InterroClitic?
 # fix add class based png, tense
 AspectVerbAux[Class4]
 AspectVerbAux[Class7]
 ## Transitives
 ### REGULAR
 # fix add class based png, tense, combine with | with Causativiser
-TransVerbStem NegSuffix?
+TransVerbStem NegSuffix
 ### Infinitives
 TransVerbStem Infinitives AuxSuffix?
 ### Passivisers
@@ -114,8 +114,11 @@ TransVerbStem[Class7] Causativiser[Class7]
 TransVerbStem[WEAKDOUBCAUS] Causativiser[WEAKDOUBCAUS]
 TransVerbStem[CAUSIRR2] Causativiser[CAUSIRR2]
 ## Intransitives
+# fix example combination of all to make regular, negation is aa not illay
+# IntraVerbStem Voice|Causativiser? Negation|TenseInfix Participle|(PNG InterroClitic?)
+# IntraVerbStem Infinitives AuxSuffix|NegSuffix?
 ### REGULAR
-IntraVerbStem NegSuffix?
+IntraVerbStem NegSuffix
 ### Infinitives
 IntraVerbStem Infinitives AuxSuffix?
 ### Passivisers
@@ -142,7 +145,8 @@ Symbol
 Fraction
 Measure
 Punctuation
-
+# fix add tense infix for verbs based on classes, 5 is irregular root changes as :infix. not applied to infinitives. interro is clitic
+# fix add oblique stems/possessives for pronouns
 ################################     SUFFIXOLOGY     ################################
 ########################### GENERAL
 ################## HONORIFICS
@@ -242,7 +246,7 @@ LEXICON Cases
 # fix ask about ai
 
 ################## INTERROGATIVE
-LEXICON Interrogative
+LEXICON InterroClitic
 <qst>:{AA}              # 'aa'
 <qst>:{OO}              # 'oo'      Dir/LR
 # fix add for verbs after tenses and such
@@ -307,7 +311,12 @@ LEXICON NegSuffix
 ################## INFINITIVE
 LEXICON Infinitives
 <inf>:>{A}                                        # 'a'           
-# fix based on classes
+# fix based on letter ending
+
+################## PARTICIPLE
+LEXICON Participle
+<rpar>:>{A}                                        # 'a'           
+# fix based on class infix
 
 ########################### PRONOUN LOCATION
 LEXICON Location(2)
@@ -580,7 +589,7 @@ LEXICON Nouns
 ################## AUXILIARY VERBS
 ####### Modals
 LEXICON ModalVerbAux
-## Some modals take interrogative suffix [INT]
+## Some modals take interrogative clitic [INT]
 
 ## Dynamic modals indicate gender, person, number but not time [DYN]
 மாட்<vaux><vbmod>:மாட{Pul}[DYN]                            # 'maat'           cannot
@@ -717,6 +726,9 @@ LEXICON IntraVerbStem
 பிடி<v><iv>:பிட{I}[Class4]                       # 'piti'        like
 தெரி<v><iv>:தெர{I}[Class4]                     # 'theri'       know
 புரி<v><iv>:புர{I}[Class4]                        # 'puri'        understand
+
+# Class 5
+நில்<v><iv>:நில{Pul}[Class5]                     # 'nil'         stand
 
 # Class 6
 வலி<v><iv>:வல{I}[Class6]                       # 'vali'        ache
