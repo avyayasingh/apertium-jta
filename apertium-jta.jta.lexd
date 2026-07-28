@@ -70,7 +70,7 @@ Nouns[VIrr,Pl1] Number[Pl1] Cases[VIrr] EndwordMorph?
 ## Honorifics
 Nouns[AA,H] Number[H] Honorifics[H] Cases[AA] EndwordMorph?
 Nouns[AA,EH] Number[EH] Honorifics[H] Cases[AA] EndwordMorph?
-## Regulars
+## REGULAR
 Nouns[NN,Pl1] Number[Pl1] Cases[NN]|Emphatic EndwordMorph?
 Nouns[AA,Pl1] Number[Pl1] Cases[AA]|Emphatic EndwordMorph?
 Nouns[NN,Pl2] Number[Pl2] Cases[NN]|Emphatic EndwordMorph?
@@ -89,13 +89,19 @@ Nouns[NN,Pl8] Number[Pl8] Cases[NN]|Emphatic EndwordMorph?
 Nouns[AA,Pl8] Number[Pl8] Cases[AA]|Emphatic EndwordMorph?
 # Verbs
 ## Auxiliaries
-ModalVerbAux[UNFROZE] [ <vaux><vbmod>: ]
-ModalVerbAux [ <vaux><vbmod>: ]
+ModalVerbAux
+# fix add dynamic based png, NOT tense
+ModalVerbAux[DYN]
+ModalVerbAux[INT] Interrogative?
+# fix add class based png, tense
 AspectVerbAux[Class4]
 AspectVerbAux[Class7]
 ## Transitives
+### REGULAR
+# fix add class based png, tense, combine with | with Causativiser
+TransVerbStem NegSuffix?
 ### Infinitives
-TransVerbStem Infinitives
+TransVerbStem Infinitives AuxSuffix?
 ### Passivisers
 TransVerbStem[PASSIVE] Voice[PASSIVE]
 TransVerbStem Voice[-PASSIVE]
@@ -108,8 +114,10 @@ TransVerbStem[Class7] Causativiser[Class7]
 TransVerbStem[WEAKDOUBCAUS] Causativiser[WEAKDOUBCAUS]
 TransVerbStem[CAUSIRR2] Causativiser[CAUSIRR2]
 ## Intransitives
+### REGULAR
+IntraVerbStem NegSuffix?
 ### Infinitives
-IntraVerbStem Infinitives
+IntraVerbStem Infinitives AuxSuffix?
 ### Passivisers
 IntraVerbStem[PASSIVE] Voice[PASSIVE]
 ### Causativisers
@@ -236,6 +244,7 @@ LEXICON Cases
 ################## INTERROGATIVE
 LEXICON Interrogative
 <qst>:{AA}              # 'aa'
+<qst>:{OO}              # 'oo'      Dir/LR
 # fix add for verbs after tenses and such
 
 ########################### NOUNS
@@ -267,8 +276,8 @@ LEXICON EndwordMorph
 ################## VOICE
 LEXICON Voice
 <actv>:
-<pasv>:>ப்பட்டு                        # 'ppattu'
-<pasv>:>{U}ண்டு[PASSIVE]              # 'untu'      eat       meaning is non-existent and thus verb as <vaux> is lost
+<pasv>:>ப்பட்ட{U}                        # 'ppattu'
+<pasv>:>{U}ண்ட{U}[PASSIVE]              # 'untu'      eat       meaning is non-existent and thus verb as <vaux> is lost
 
 ################## CAUSATIVE
 LEXICON Causativiser
@@ -285,6 +294,14 @@ LEXICON Causativiser
 # Irregular double causitive marker
 <caus><caus>:விப்பி[WEAKDOUBCAUS]                 # 'vippi'
 <caus><caus>:த்துவி[STRONGDOUBCAUS]               # 'ththuvi'
+
+################## AUXILIARY SUFFIX
+LEXICON AuxSuffix
+<vaux><vbmod>:>லாம்                   # 'laam'      may
+
+################## NEGATION SUFFIX
+LEXICON NegSuffix
+<neg><vaux>:இல்லை                   # 'illay'
 
 ################## INFINITIVE
 LEXICON Infinitives
@@ -315,6 +332,8 @@ LEXICON NegativePart
 இல்லாம<neg><post>:இல்ல>{AA}ம        # 'illaama'         without          Dir/LR
 # Negative polarity item
 ஒன்றும்<neg>:ஒன்று>ம்                  # 'onrum'           not even one
+# Negating Auxiliary
+இல்லை<neg><vaux>:இல்ல>{AI}          # 'illay'           not
 
 ###############################################################################
 ###                          L E X I C O N                                  ###
@@ -553,19 +572,44 @@ LEXICON Nouns
 # 5:    Irregulars
 # 6-7:  Valvinaigal (Strong)
 ##########
+
 # General verbs and Aspectual Auxiliaries belong to 7 classes as discussed above
 # Modal Auxiliary verbs are Defective, and are thus classless
 
 ################## AUXILIARY VERBS
-# Modals
-## Frozen modals do not take any suffix [-UNFROZE]
+####### Modals
 LEXICON ModalVerbAux
-முடி:முட{I}[UNFROZE]         # 'muti'        can
-# fix ask about ventum, ventam and frozens
+## Some modals take interrogative suffix [INT]
+
+## Dynamic modals indicate gender, person, number but not time [DYN]
+மாட்<vaux><vbmod>:மாட{Pul}[DYN]                            # 'maat'           cannot
+
+## Time-Dynamic modals indicate time (derived)
+முடி<vaux><vbmod><pres>:முடியும{Pul}[INT]                    # 'mutiyum'        can (now)
+முடி<vaux><vbmod><past>:முடிஞ்சது                            # 'mutinjathu'     could (then)
+### Negating time-dynamic modals <neg>
+முடி<neg><vaux><vbmod><past>:முடி>யேல்லை                  # 'mutiyeellay'    can/could not
+
+## Frozen modals do not indicate time, person, number
+வேண்டு<vaux><vbmod>:வேணும்                               # 'venum'          should
+வேண்டு<vaux><vbmod>:வேண்டி                               # 'venti'          should           Dir/LR    paired with 'iru' Aspectual
+ஏலும்<vaux><vbmod>:ஏலும{Pul}[INT]                          # 'eelum'           possible
+இயலும்<vaux><vbmod>:இயலும{Pul}[INT]                     # 'iyalum'          possible         Dir/LR
+### Negating frozen modals <neg>
+முடி<neg><vaux><vbmod>:முடி>யா>த{U}[INT]                   # 'mutiyaathu'      cannot
+முடி<neg><vaux><vbmod>:முடி>யா                              # 'mutiyaa'         cannot          Dir/LR
+வேண்டு<neg><vaux><vbmod>:வேண்ட>{AA}>ம்                  # 'ventaam'         should not
+வேண்டு<neg><vaux><vbmod>:வேண்டி\ இல்லை                # 'venti illai'     should not      Dir/LR
+ஏலாது<neg><vaux><vbmod>:ஏல>{AA}>து                        # 'eelaathu'        not possible
+இயலாது<neg><vaux><vbmod>:இயல>{AA}>து                   # 'iyalaathu'       not possible     Dir/LR
+கூடு<neg><vaux><vbmod>:கூட>{AA}>து                          # 'kuutaathu'       must not
+கூடு<neg><vaux><vbmod>:கூட>{AA}                             # 'kuutaa'          must not        Dir/LR
+படு<neg><vaux><vbmod>:பட>{AA}>து                           # 'pataathu'        not happening
+
 # fix read wagisha
 # fix add Auxiliary suffix
 
-# Aspectuals
+####### Aspectuals
 LEXICON AspectVerbAux
 # Class 4
 விடு<vaux><perf>:விட{U}[Class4]          # 'vitu'        complete
@@ -577,6 +621,7 @@ LEXICON AspectVerbAux
 # These may have slight variance, or be the same
 # Special verbs, <vbdo>, <vbser> placed on top of class list
 # Followed by paired, then unpaired
+
 LEXICON TransVerbStem
 # Class 1
 
@@ -657,6 +702,7 @@ LEXICON IntraVerbStem
 பேசு<v><iv>:பேச{U}[Class3]                      # 'peecu'       speak
 போ<v><iv>:போ[Class3]                          # 'poo'         go
 கூடு<v><iv>:கூட{U}[Class3]                       # 'kuutu'       join
+படு<v><iv>:பட{U}[Class3]                        # 'patu'        experience
 
 ## Special passive form
 வாடு<v><iv>:வாட{U}[Class3,PASSIVE]             # 'vaatu'       wither
