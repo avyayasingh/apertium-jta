@@ -9,7 +9,7 @@ Alphabet
      %{X%}:ச %{X%}:ட %{X%}:த %{X%}:ப %{X%}:ற %{X%}:ய %{X%}:ர
      %{X%}:ல %{X%}:வ %{X%}:ழ %{X%}:ள
      ! Vowels
-     %{A%}:0
+     %{A%}:0 %{A%}:ா
      %{AA%}:ா
      %{I%}:ி
      %{II%}:ீ
@@ -162,6 +162,9 @@ Rules
 ! Noun endings 
 "Inserting ய"
 0:ய <=> [ %{AI%}: | %{I%}: | %{II%}: ] (%{AN%}:) _ %>: SuffixVowels:;
+
+"A changes to AA before Y"
+%{A%}:ா <=> :ய %>: _ ;
 
 "Inserting வ"
 0:வ <=> %{AA%}: _ %>: SuffixVowelsIr: ;

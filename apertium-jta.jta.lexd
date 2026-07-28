@@ -298,6 +298,7 @@ LEXICON Causativiser
 ################## AUXILIARY SUFFIX
 LEXICON AuxSuffix
 <vaux><vbmod>:>லாம்                   # 'laam'      may
+<vaux><vbmod>:>{A}ட்டும்                # 'attum'     let
 
 ################## NEGATION SUFFIX
 LEXICON NegSuffix
@@ -605,9 +606,6 @@ LEXICON ModalVerbAux
 கூடு<neg><vaux><vbmod>:கூட>{AA}>து                          # 'kuutaathu'       must not
 கூடு<neg><vaux><vbmod>:கூட>{AA}                             # 'kuutaa'          must not        Dir/LR
 படு<neg><vaux><vbmod>:பட>{AA}>து                           # 'pataathu'        not happening
-
-# fix read wagisha
-# fix add Auxiliary suffix
 
 ####### Aspectuals
 LEXICON AspectVerbAux
