@@ -19,6 +19,7 @@ LIST PREDNOM = (nom pred);
 LIST ADJ = (adj);
 LIST ADV = (adv);
 LIST V = (v);
+LIST PRN = (prn);
 LIST VBMOD = (vbmod);
 # WORDS
 LIST VEETU = "வீடு" ;
@@ -107,6 +108,13 @@ SELECT VBMOD IF
     (0 V)
     (0 VBMOD)
     (-1 INF);
+
+# Remove rules
+## Genitive irregular
+REMOVE GEN IF
+    (0 GEN)
+    (0 NOM)
+    (0 PRN);
 
 # Resources:
 # http://visl.sdu.dk/cg3.html
