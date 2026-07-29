@@ -117,7 +117,8 @@ TransVerbStem[WEAKDOUBCAUS] Causativiser[WEAKDOUBCAUS]
 TransVerbStem[CAUSIRR2] Causativiser[CAUSIRR2]
 ## Intransitives
 # fix example combination of all to make regular, negation is aa not illay
-# IntraVerbStem Voice|Causativiser? Negation|TenseInfix Participle|(PNG InterroClitic?)
+# IntraVerbStem[Classes] (Voice[passive,non]|Causativiser[classes])? (Negation PNG InterroClitic?)|(TenseInfix[classes] Participle|(PNG InterroClitic?))
+# IntraVerbStem[ClassDef] (Voice|Causativiser)? Aorist|(Negation PNG) InterroClitic?
 # IntraVerbStem Infinitives AuxSuffix|NegSuffix[INF]?
 # IntraVerbStem NegSuffix[-INF]
 ### REGULAR
@@ -242,8 +243,8 @@ LEXICON Cases
 <refr>:>{Irefr}ட்டை[AA]                            # 'ittay~ai'
 <gen>:>{I}{N}{Pul}{R}{AI}[AA,NN,TN]                 # 'inray~ai'
 <gen>:[AA,NN,TN]                                    # null                (irregular genitive)              Dir/LR
-<abl>:>{I}ட்டை\ இருந்து[AA]                       # 'ittay~ai iruntu'
-<abl>:>{I}லை\ இருந்து[AA,NN,TN]                  # 'ilay~ai iruntu'                                       Dir/LR
+<abl>:>{I}ட்டை\ இருந்து[AA]                       # 'ittay~ai irunhtu'
+<abl>:>{I}லை\ இருந்து[AA,NN,TN]                  # 'ilay~ai irunhtu                                       Dir/LR
 # Benefactive is a special case which adds '-aaka' or '-entu' to the dative '-ukku'
 <ben>:>{U}க்க>{AA}க[AA,NN,TN]                     # 'ukkaaka'
 <ben>:>{U}க்க>{E}ண்டு[AA,NN,TN]                   # 'ukkentu'                                              Dir/LR
@@ -282,8 +283,10 @@ LEXICON EndwordMorph
 ########################### NOUNS
 ################## ADJECTIVIZER
 LEXICON Adjectivizer
-<adjz>:>{AAm}ன               # 'aana'
-<adjz>:>{Um}ள்ள              # 'ulla'                Dir/LR
+<adjz>:>{AAm}ன                        # 'aana'
+<adjz>:>{Um}ள்ள                       # 'ulla'                Dir/LR
+# Negating adjectivizer
+<neg><vaux><adjz>:>{I}ல்ல>{AA}த       # 'illatha'
 
 ########################### VERBS
 ################## VOICE
@@ -316,9 +319,18 @@ LEXICON AuxSuffix
 ################## NEGATION SUFFIX
 LEXICON NegSuffix
 # Some require preceding infinitives [INF]
-<neg><vaux>:>இல்லை[INF]                   # 'illay'
+<neg><vaux>:>{I}ல்லை[INF]                  # 'illay'
 <neg><adv>:>{AA}>மல்                        # 'aamal'
 <neg><adv>:>{AA}>ம                          # 'aama'           Dir/LR
+
+################## NEGATION
+LEXICON Negation
+<neg>:>{AA}                                       # 'aa'
+
+################## AORIST
+LEXICON Aorist
+# attaches to Defective verbs to form habitual aspect
+<aor><hab>:>{U}ம்                                 # 'um'
 
 ################## INFINITIVE
 LEXICON Infinitives
@@ -341,7 +353,7 @@ LEXICON Location(2)
 
 ################################     PARTICLES     ################################
 LEXICON EmphaticPart
-தான்:தான்                             # 'taan'
+தான்:தான்                             # 'thaan'
 
 LEXICON CausativePart
 வை:வைக்க                            # 'vaykka'
@@ -358,7 +370,7 @@ LEXICON NegativePart
 # Negative polarity item
 ஒன்றும்<neg>:ஒன்று>ம்                  # 'onrum'           not even one
 # Negating Auxiliary
-இல்லை<neg><vaux>:இல்ல>{AI}          # 'illay'           not
+இல்லை<neg><vaux>:இல்ல>{AI}          # 'illay'           not exist
 
 ###############################################################################
 ###                          L E X I C O N                                  ###
@@ -370,7 +382,7 @@ LEXICON PronounStems
 வன்<prn><p3><m>:வ>{NR}{Pul}[LOC,GPro,MH]     # '-van'            -he
 வள்<prn><p3><f>:வ>{PL}{Pul}[LOC,FPro,FH]     # '-val'            -she
 வ<prn><p3>:வ[LOC,EHIrr]                      # '-va'            -they-
-து<prn><p3><nt>:த{U}[LOC,GPro]                # '-tu'            -they
+து<prn><p3><nt>:த{U}[LOC,GPro]                # '-thu'           -they
 
 ################################     NOUNS & NP     ################################
 LEXICON Nouns
@@ -487,9 +499,9 @@ LEXICON Nouns
 குருடி<n><f><aa>:குருட{I}[AA,Pl7]                                # 'kuruti'           blind woman
 விசரி<n><f><aa>:விசர{I}[AA,Pl7]                                 # 'vicari'          mad woman
 செகிடி<n><f><aa>:செகிட{I}[AA,Pl7]                              # 'cekiti'          deaf woman
-தலைவி<n><f><aa>:தலைவ{I}[AA,Pl7]                            # 'talayvi'         female leader
+தலைவி<n><f><aa>:தலைவ{I}[AA,Pl7]                            # 'thalayvi'        female leader
 சினேகிதி<n><f><aa>:சினேகித{I}[AA,Pl7]                         # 'cineekithi'      female friend
-துணைவி<n><f><aa>:துணைவ{I}[AA,Pl7]                         # 'tunayvi'         female assistant
+துணைவி<n><f><aa>:துணைவ{I}[AA,Pl7]                         # 'thunayvi'        female assistant
 பாட்டுக்காரி<n><f><aa>:பாட்டு>க்கார{I}[AA,Pl7]                  # 'paattukkaari'    female singer
 எண்ணெய்க்காரி<n><f><aa>:எண்ணெய்>க்கார{I}[AA,Pl7]        # 'ennaikkaari'     female oil presser
 ### I(c)
@@ -530,7 +542,7 @@ LEXICON Nouns
 பாட்டுக்காரன்<n><m><aa>:பாட்டு>க்கார{NR}{Pul}[AA,Pl8,H]          # 'paattukkaaran'   male singer
 எண்ணெய்க்காரன்<n><m><aa>:எண்ணெய்>க்கார{NR}{Pul}[AA,Pl8,H] # 'ennaikkaaran'    male oil presser
 மீன்காரன்<n><m><aa>:மீன்>கார{NR}{Pul}[AA,Pl8,H]                  # 'meenkaaran'      fisherman
-துணைவன்<n><m><aa>:துணைவ{NR}{Pul}[AA,Pl8,H]                 # 'tunayvan'        male assistant
+துணைவன்<n><m><aa>:துணைவ{NR}{Pul}[AA,Pl8,H]                 # 'thunayvan'       male assistant
 பிராமணன்<n><m><aa>:பிராமண{NR}{Pul}[AA,Pl8,H]                 # 'piraamanan'      male brahmin
 நட்டுவன்<n><m><aa>:நட்டுவ{NR}{Pul}[AA,Pl8,H]                      # 'nattuvan'        male from drum-beater comm.
 கட்டயன்<n><m><aa>:கட்டய{NR}{Pul}[AA,Pl8,H]                       # 'kattayan'        short man
@@ -563,7 +575,7 @@ LEXICON Nouns
 கோபம்<nq><nn>:கோப{M}{Pul}[NN,ANoun,NQ]                       # 'koopam'          anger
 ## Behaviour
 கண்டிப்பு<nq><nn>:கண்டிப்ப{U}[NN,ANoun,NQ]                      # 'kantippu'        discipline
-தனி<nq><nn>:தன{I}[NN,ANoun,NQ]                                 # 'tani'            solitude
+தனி<nq><nn>:தன{I}[NN,ANoun,NQ]                                 # 'thani'           solitude
 
 # Class 1
 காசு<n><nn>:காச{U}[NN,Pl1]                                      # 'kaacu'           money
@@ -572,7 +584,7 @@ LEXICON Nouns
 கத்தி<n><nn>:கத்த{I}[NN,Pl1]                                     # 'kaththi'         knife
 வேட்டி<n><nn>:வேட்ட{I}[NN,Pl1]                                  # 'veetti'          dhoti
 கடை<n><nn>:கட{AI}[NN,Pl1]                                     # 'katay'           shop
-தோசை<n><nn>:தோச{AI}[NN,Pl1]                                # 'toocay'          dosa
+தோசை<n><nn>:தோச{AI}[NN,Pl1]                                # 'thoocay'         dosa
 காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                          # 'kaaiccal'       fever
 கார்<n><nn>:கார{Pul}[NN,Pl1]                                    # 'kaar'            car
 கால்<n><nn>:கால{Pul}[NN,Pl1]                                   # 'kaal'            leg
@@ -601,9 +613,10 @@ LEXICON Nouns
 # fix ask about n changes to r to give honorific in plural for male humans. swap honorific and number if needed
 ################################     VERBS     ################################
 # Verb Classes:
-# 1-4:  Melvinaigal (Weak)
-# 5:    Irregulars
-# 6-7:  Valvinaigal (Strong)
+# Def:  Defectives  (Do not take tense markers but take PNG)
+# 1-4:  Melvinaigal (Weak, take tense and PNG)
+# 5:    Irregulars  (Take tense and PNG)
+# 6-7:  Valvinaigal (Strong, take tense and PNG)
 ##########
 
 # General verbs and Aspectual Auxiliaries belong to 7 classes as discussed above
@@ -614,27 +627,27 @@ LEXICON Nouns
 LEXICON ModalVerbAux
 ## Some modals take interrogative clitic [INT]
 
-## Dynamic modals indicate gender, person, number but not time [DYN]
-மாட்<vaux><vbmod>:மாட{Pul}[DYN]                            # 'maat'           cannot
+## Dynamic modals indicate PNG but not time [DYN]
+மாட்<vaux><vbmod>:மாட{Pul}[DYN]                             # 'maat'           cannot
 
-## Time-Dynamic modals indicate time (derived)
-முடி<vaux><vbmod><pres>:முடியும{Pul}[INT]                    # 'mutiyum'        can (now)
-முடி<vaux><vbmod><past>:முடிஞ்சது                            # 'mutinjathu'     could (then)
+## Time-Dynamic modals indicate only time (derived)
+முடி<vaux><vbmod><pres>:முடிய>{U}ம{Pul}[INT]                # 'mutiyum'        can (now)
+முடி<vaux><vbmod><past>:முடி>ஞ்ச>து                          # 'mutinjathu'     could (then)
 ### Negating time-dynamic modals <neg>
-முடி<neg><vaux><vbmod><past>:முடி>யேல்லை                  # 'mutiyeellay'    can/could not
+முடி<neg><vaux><vbmod><past>:முடிய{EE}>ல்லை                # 'mutiyeellay'    can/could not
 
-## Frozen modals do not indicate time, person, number
-வேண்டு<vaux><vbmod>:வேணும்                               # 'venum'          should
+## Frozen modals do not indicate time, PNG
+வேண்டு<vaux><vbmod>:வேண>{U}ம்                           # 'venum'          should
 வேண்டு<vaux><vbmod>:வேண்டி                               # 'venti'          should           Dir/LR    paired with 'iru' Aspectual
-ஏலும்<vaux><vbmod>:ஏலும{Pul}[INT]                          # 'eelum'           possible
-இயலும்<vaux><vbmod>:இயலும{Pul}[INT]                     # 'iyalum'          possible         Dir/LR
+ஏலும்<vaux><vbmod>:ஏல>{U}ம{Pul}[INT]                       # 'eelum'           possible
+இயலும்<vaux><vbmod>:இயல>{U}ம{Pul}[INT]                  # 'iyalum'          possible         Dir/LR
 ### Negating frozen modals <neg>
-முடி<neg><vaux><vbmod>:முடி>யா>த{U}[INT]                   # 'mutiyaathu'      cannot
-முடி<neg><vaux><vbmod>:முடி>யா                              # 'mutiyaa'         cannot          Dir/LR
-வேண்டு<neg><vaux><vbmod>:வேண்ட>{AA}>ம்                  # 'ventaam'         should not
-வேண்டு<neg><vaux><vbmod>:வேண்டி\ இல்லை                # 'venti illai'     should not      Dir/LR
-ஏலாது<neg><vaux><vbmod>:ஏல>{AA}>து                        # 'eelaathu'        not possible
-இயலாது<neg><vaux><vbmod>:இயல>{AA}>து                   # 'iyalaathu'       not possible     Dir/LR
+முடி<neg><vaux><vbmod>:முடிய>{AA}>த{U}[INT]                 # 'mutiyaathu'      cannot
+முடி<neg><vaux><vbmod>:முடிய>{AA}                            # 'mutiyaa'         cannot          Dir/LR
+வேண்டு<neg><vaux><vbmod>:வேண்ட>{AA}>ம்                   # 'ventaam'         should not
+வேண்டு<neg><vaux><vbmod>:வேண்டி\ இல்லை                 # 'venti illai'     should not      Dir/LR
+ஏலாது<neg><vaux><vbmod>:ஏல>{AA}>து                         # 'eelaathu'        not possible
+இயலாது<neg><vaux><vbmod>:இயல>{AA}>து                    # 'iyalaathu'       not possible     Dir/LR
 கூடு<neg><vaux><vbmod>:கூட>{AA}>து                          # 'kuutaathu'       must not
 கூடு<neg><vaux><vbmod>:கூட>{AA}                             # 'kuutaa'          must not        Dir/LR
 படு<neg><vaux><vbmod>:பட>{AA}>து                           # 'pataathu'        not happening
@@ -705,6 +718,7 @@ LEXICON TransVerbStem
 
 # Class 6
 முடி<v><tv>:முட{I}[Class6]                      # 'muti'        complete                   Paired
+கெடு<v><iv>:கெட{U}[Class6]                    # 'ketu'        spoil                      Paired
 எடு<v><tv>:எட{U}[Class6]                        # 'etu'         take
 கொடு<v><tv>:கொட{U}[Class6]                  # 'kotu'        give
 அடி<v><tv>:அட{I}[Class6]                       # 'ati'         beat
@@ -717,6 +731,11 @@ LEXICON TransVerbStem
 
 ################## INTRANSITIVE VERBS
 LEXICON IntraVerbStem
+# Defectives
+பிடி<v><iv>:பிட{I}[ClassDef]                      # 'piti'        like
+தெரி<v><iv>:தெர{I}[ClassDef]                    # 'theri'       know
+புரி<v><iv>:புர{I}[ClassDef]                       # 'puri'        understand
+
 # Class 1
 பிரள்<v><iv>:பிரள{Pul}                           # 'piral'       roll over                Paired
 
@@ -747,10 +766,8 @@ LEXICON IntraVerbStem
 சுருங்கு<v><iv>:சுருங்க{U}[Class4]                # 'curunku'     shrink                   Paired
 ஆடு<v><iv>:ஆட{U}[Class4]                      # 'aatu'        swing                    Paired
 உருகு<v><iv>:உருக{U}[Class4]                   # 'uruku'       melt                     Paired
+கெடு<v><iv>:கெட{U}[Class4]                    # 'ketu'        spoil                    Paired
 முடி<v><iv>:முட{I}[Class4]                      # 'muti'        complete                 Paired
-பிடி<v><iv>:பிட{I}[Class4]                       # 'piti'        like
-தெரி<v><iv>:தெர{I}[Class4]                     # 'theri'       know
-புரி<v><iv>:புர{I}[Class4]                        # 'puri'        understand
 
 # Class 5
 நில்<v><iv>:நில{Pul}[Class5]                     # 'nil'         stand
@@ -785,7 +802,7 @@ LEXICON Adverbs
 இன்னும்:இன்னும{Pul}         # 'innum'         yet
 நேற்று:நேற்ற{U}               # 'neerru'        yesterday
 # Manner
-தனிய:தனிய                  # 'taniya'        alone
+தனிய:தனிய                  # 'thaniya'       alone
 
 ################################     DETERMINERS     ################################
 LEXICON Determiners
@@ -823,8 +840,8 @@ LEXICON PostPositions
 பின்னாலே:பின்னாலே          # 'pinnaalee'           after
 பின்னுக்கு:முன்னுக்கு           # 'pinnukku'            after             Dir/LR
 உள்ளே:உள்ளே                 # 'ullee'               inside
-பக்கத்திலே:பக்கத்திலே         # 'pakkattilee'        nearby
-எதிரே:எதிரே                   # 'etiree'              opposite
+பக்கத்திலே:பக்கத்திலே         # 'pakkaththilee'      nearby
+எதிரே:எதிரே                   # 'ethiree'             opposite
 அடியிலே:அடியிலே             # 'atiyilee'            at the bottom of
 
 # following a Comitative
