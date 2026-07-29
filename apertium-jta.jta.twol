@@ -32,6 +32,7 @@ Alphabet
      %{N%}:ன %{N%}:ங
      %{NP%}:ன %{NP%}:ங %{NP%}:0
      %{K%}:க
+     %{L%}:ல
      %{PL%}:ள
      %{PLR%}:ள
      %{R%}:ர
@@ -69,37 +70,6 @@ SuffixVowelsU = %{A%} %{AA%} %{I%} %{II%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%
 
 Rules 
 
-! "Ending with ல"
-! X:ற <=> ல:  ்: %>: _ ;
-!               except
-!                ி: ல:  ்: %>: _ ;
-!                ோ: ல:  ்: %>: _ ;
-
-! "Ending with ல"
-! X:ல <=> Vx: ல:  ்: %>: _ ;
-!               where Vx in ( ி  ோ ) ;
-
-! "Ending with ல"
-! X:வ <=>  ா: _ %»:;
-
-! "Inserting ல"
-! X:ல <=> Vallinam: ல:   ்: _ %»:;
-!             except 
-!             ட: ல:   ்: _ %»:;
-
-
-! "Changing to ட"
-! X:ட <=> VowSym: ட:  ு: _ %»:;
-
-! "Removing  ு"
-!  ு:Vx <=> VowSym: ட: _ X: %»:;
-!           where Vx in (  ் ) ;
-
-! "Removing  ு"
-!  ு:0 <=> வ: _ X: %»:;
-!           க: _ X: %»:;
-!            ்: ட: _ X: %»:;
-
 ! Pulli
 "Removing Pulli"
 %{Pul%}:0 <=> :ConsonantNOTTM _ %>: SuffixVowels: ;
@@ -133,7 +103,7 @@ Rules
 "Insert a second T"
 0:த <=> %{M%}: %{Pul%}: _ %>: SuffixVowels: ;
 
-! rr ending
+! -rr ending
 "Insert a second RR"
 0:ற <=> %{RR%}: :Vy _ %{U%}: %>: SuffixVowels: ;
               where Vy in ( ் ) ;
@@ -143,6 +113,10 @@ Rules
 0:ட <=> %{T%}: :Vy _ %{U%}: %>: SuffixVowels: ;
               where Vy in ( ் ) ;
 
+! -l ending irregular
+"Insert a second L"
+0:ல <=> %{L%}: :Vy _ %>: SuffixVowels: ;
+              where Vy in ( ் ) ;
 ! N addition
 "Starting with K"
 %{AN%}:ங <=> _ :Vy %>: %{K%}: ;

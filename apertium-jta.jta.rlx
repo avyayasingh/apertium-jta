@@ -51,6 +51,11 @@ SELECT GEN IF
     (0 (n gen))
     (1 (n nom)) ;
 
+SELECT NOM IF
+    (0 (n nom))
+    (0 (n gen))
+    (-1 (n gen)) ;
+
 ## Dative irregular
 SELECT DAT IF
     (0 VEETU)

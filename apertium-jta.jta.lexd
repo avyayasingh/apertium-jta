@@ -297,8 +297,11 @@ LEXICON EndwordMorph
 
 ################## ADJECTIVIZER
 LEXICON Adjectivizer
-<adjz>:>{AAm}ன                        # 'aana'
-<adjz>:>{Um}ள்ள                       # 'ulla'                Dir/LR
+# Quality
+<adjz><qual>:>{AAm}ன                        # 'aana'
+# Quantity
+<adjz><quan>:>{AAm}ன                        # 'aana'               used often for both
+<adjz><quan>:>{Um}ள்ள                       # 'ulla'                Dir/LR
 # Negating adjectivizer
 <neg><vaux><adjz>:>{I}ல்ல>{AA}த       # 'illatha'
 
@@ -581,7 +584,11 @@ LEXICON Nouns
 கொழும்பு<n><top>:கொழும்ப{U}[NN,TNoun]                        # 'kozhumpu'        Colombo
 # Uncountable Nouns
 ## Mass Nouns
+தண்ணீ<n><nn>:தண்ண{II}[NN,MNoun]                             # 'thannii'         water
+தண்ணீர்<n><nn>:தண்ணீர{Pul}[NN,MNoun]                         # 'thanniir'        water                               Dir/LR
+காற்று<n><nn>:காற்ற{U}[NN,MNoun]                                # 'kaarru'          wind
 பட்டு<n><nn>:பட்ட{U}[NN,MNoun]                                   # 'pattu'           silk
+பொன்<n><nn>:பொ{N}{Pul}[NN,MNoun]                             # 'pon'             gold
 ## Time Nouns
 நேற்று<n><nn>:நேற்ற{U}[NN,MNoun]                                # 'neerru'           yesterday
 # Abstract nouns 
@@ -595,27 +602,31 @@ LEXICON Nouns
 
 # Class 1
 காசு<n><nn>:காச{U}[NN,Pl1]                                      # 'kaacu'           money
+நெஞ்சு<n><nn>:நெஞ்ச{U}[NN,Pl1]                                 # 'nencu'           heart
 பெட்டி<n><nn>:பெட்ட{I}[NN,Pl1]                                  # 'petti'           box
 மூடி<n><nn>:மூட{I}[NN,Pl1]                                       # 'muuti'           lid
 கத்தி<n><nn>:கத்த{I}[NN,Pl1]                                     # 'kaththi'         knife
 வேட்டி<n><nn>:வேட்ட{I}[NN,Pl1]                                  # 'veetti'          dhoti
 கடை<n><nn>:கட{AI}[NN,Pl1]                                     # 'katay'           shop
 தோசை<n><nn>:தோச{AI}[NN,Pl1]                                # 'thoocay'         dosa
-காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                          # 'kaaiccal'       fever
+காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                         # 'kaaiccal'        fever
 கார்<n><nn>:கார{Pul}[NN,Pl1]                                    # 'kaar'            car
 கால்<n><nn>:கால{Pul}[NN,Pl1]                                   # 'kaal'            leg
 தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                # 'thabaal'         letter
 வால்<n><nn>:வால{Pul}[NN,Pl1]                                   # 'vaal'            tail
 மரம்<n><nn>:மர{M}{Pul}[NN,Pl1]                                  # 'maram'           tree
 பாடம்<n><nn>:பாட{M}{Pul}[NN,Pl1]                               # 'paatam'          lesson
+மனம்<n><nn>:மன{M}{Pul}[NN,Pl1]                               # 'manam'            mind
 வீடு<n><nn>:வீ{T}{U}[NN,VIrr,Pl1]                                 # 'veetu'           house
-வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                # 'vayiru'           stomach
+வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                # 'vayiru'          stomach
 
 ## Quality Nouns <nq> (can take Adjectivizer [NQ])
 குணம்<nq><nn>:குண{M}{Pul}[NN,Pl1,NQ]                          # 'kunam'           quality
 உயரம்<nq><nn>:உயர{M}{Pul}[NN,Pl1,NQ]                         # 'uyaram'           height
 இரக்கம்<nq><nn>:இரக்க{M}{Pul}[NN,Pl1,NQ]                       # 'irakkam'         compassion
 யோக்கியம்<nq><nn>:யோக்கிய{M}{Pul}[NN,Pl1,NQ]                # 'yookkiyam'       integrity
+நீளம்<nq><nn>:நீள{M}{Pul}[NN,Pl1,NQ]                             # 'neelam'          length
+எடை<nq><nn>:எட{AI}[NN,Pl1,NQ]                                 # 'etay'            weight
 
 # Class 3
 கை<n><nn>:க{AI}[NN,Pl3]                                        # 'kay'             hand
@@ -625,7 +636,10 @@ LEXICON Nouns
 சால்வை<n><nn>:சால்வ{AI}[NN,Pl3]                              # 'caalvay'         shawl
 
 # Class 4
-வான்<n><nn>:வா{N}{Pul}[NN,Pl4]                                 # 'vaan'           van
+வான்<n><nn>:வா{N}{Pul}[NN,Pl4]                                # 'vaan'             van
+கல்<n><nn>:க{L}{Pul}[NN,Pl4]                                   # 'kal'             stone
+நெல்<n><nn>:நெ{L}{Pul}[NN,Pl4]                                # 'nel'             paddy
+
 # fix ask about n changing before kal plural for some nouns
 # fix ask about n changes to r to give honorific in plural for male human pronouns/nouns. swap honorific and number if needed
 ################################     VERBS     ################################
