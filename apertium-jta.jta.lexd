@@ -47,54 +47,57 @@
 ################################     PATTERNS     ################################
 PATTERNS
 # Pronouns
-## Locative
+## Personals
+### Locative
 Location(1) PronounStems[LOC,GPro] Number[GPro] Cases[AA] Location(2) InterroClitic?
 Location(1) PronounStems[LOC,FPro] Number[FPro] Cases[AA] Location(2) InterroClitic?
-### Honorifics
+#### Honorifics
 Location(1) PronounStems[LOC,MH] Number[MH] Honorifics[MH] Cases[AA] Location(2) InterroClitic?
 Location(1) PronounStems[LOC,FH] Number[FH] Honorifics[FH] Cases[AA] Location(2) InterroClitic?
 Location(1) PronounStems[LOC,EHIrr] Number[EHIrr] Honorifics[EHIrr] Cases[AA] Location(2) InterroClitic?
-### Interrogative Prefixing
+#### Interrogative Prefixing
 InterroPrefix(1) PronounStems[LOC,GPro] Number[GPro] Cases[AA] InterroPrefix(2)
 InterroPrefix(1) PronounStems[LOC,FPro] Number[FPro] Cases[AA] InterroPrefix(2)
 InterroPrefix(1) PronounStems[LOC,MH] Number[MH] Honorifics[MH] Cases[AA] InterroPrefix(2)
 InterroPrefix(1) PronounStems[LOC,FH] Number[FH] Honorifics[FH] Cases[AA] InterroPrefix(2)
 InterroPrefix(1) PronounStems[LOC,EHIrr] Number[EHIrr] Honorifics[EHIrr] Cases[AA] InterroPrefix(2)
-## Non-locative
+### Non-locative
 PronounStems[-LOC,GPro] Number[GPro] Cases[AA] InterroClitic?
-### Honorifics
+#### Honorifics
 PronounStems[-LOC,PH] Number[PH] Honorifics[PH] Cases[AA] InterroClitic?
 PronounStems[-LOC,IH] Number[IH] Honorifics[IH] Cases[AA] InterroClitic?
+## Other Types
+IndefProStem ((HumanRadical[Hum] Cases[AA])|(HumanRadical[NHum] Cases[NN]))? TotalClitic
 # Nouns & NP
-## Adjectivizer
-Nouns[NQ] Adjectivizer
 ## Irregulars
-Nouns[NN,ANoun] Number[ANoun] Cases[NN]|EmphaticSuf|Predicative[ADPRED] EndwordMorph?
-Nouns[NN,MNoun] Number[MNoun] Cases[NN]|EmphaticSuf EndwordMorph?
-Nouns[NN,FNoun] Number[FNoun] Cases[NN]|EmphaticSuf EndwordMorph?
-Nouns[TNoun] Number[TNoun] Cases[TN]|EmphaticSuf EndwordMorph?
-Nouns[AA,ES] Number[ES] Cases[AA]|EmphaticSuf EndwordMorph?
+Nouns[NQ] Adjectivizer
+Nouns[NN,ANoun] Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[NN,QNoun] Number[QNoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[NN,UNoun] Number[UNoun] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[NN,FNoun] Number[FNoun] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[TNoun] Number[TNoun] Cases[TN]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[AA,ES] Number[ES] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
 Nouns[VIrr,Pl1] Number[Pl1] Cases[VIrr] EndwordMorph?
 ## Honorifics
-Nouns[AA,H] Number[H] Honorifics[H] Cases[AA] EndwordMorph?
-Nouns[AA,EH] Number[EH] Honorifics[H] Cases[AA] EndwordMorph?
+Nouns[AA,H] Number[H] Honorifics[H] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[AA,EH] Number[EH] Honorifics[H] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
 ## REGULAR
-Nouns[NN,Pl1] Number[Pl1] Cases[NN]|EmphaticSuf EndwordMorph?
-Nouns[AA,Pl1] Number[Pl1] Cases[AA]|EmphaticSuf EndwordMorph?
-Nouns[NN,Pl2] Number[Pl2] Cases[NN]|EmphaticSuf EndwordMorph?
-Nouns[AA,Pl2] Number[Pl2] Cases[AA]|EmphaticSuf EndwordMorph?
-Nouns[NN,Pl3] Number[Pl3] Cases[NN]|EmphaticSuf EndwordMorph?
-Nouns[AA,Pl3] Number[Pl3] Cases[AA]|EmphaticSuf EndwordMorph?
-Nouns[NN,Pl4] Number[Pl4] Cases[NN]|EmphaticSuf EndwordMorph?
-Nouns[AA,Pl4] Number[Pl4] Cases[AA]|EmphaticSuf EndwordMorph?
-Nouns[NN,Pl5] Number[Pl5] Cases[NN]|EmphaticSuf EndwordMorph?
-Nouns[AA,Pl5] Number[Pl5] Cases[AA]|EmphaticSuf EndwordMorph?
-Nouns[NN,Pl6] Number[Pl6] Cases[NN]|EmphaticSuf EndwordMorph?
-Nouns[AA,Pl6] Number[Pl6] Cases[AA]|EmphaticSuf EndwordMorph?
-Nouns[NN,Pl7] Number[Pl7] Cases[NN]|EmphaticSuf EndwordMorph?
-Nouns[AA,Pl7] Number[Pl7] Cases[AA]|EmphaticSuf EndwordMorph?
-Nouns[NN,Pl8] Number[Pl8] Cases[NN]|EmphaticSuf EndwordMorph?
-Nouns[AA,Pl8] Number[Pl8] Cases[AA]|EmphaticSuf EndwordMorph?
+Nouns[NN,Pl1] Number[Pl1] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[AA,Pl1] Number[Pl1] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[NN,Pl2] Number[Pl2] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[AA,Pl2] Number[Pl2] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[NN,Pl3] Number[Pl3] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[AA,Pl3] Number[Pl3] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[NN,Pl4] Number[Pl4] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[AA,Pl4] Number[Pl4] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[NN,Pl5] Number[Pl5] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[AA,Pl5] Number[Pl5] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[NN,Pl6] Number[Pl6] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[AA,Pl6] Number[Pl6] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[NN,Pl7] Number[Pl7] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[AA,Pl7] Number[Pl7] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[NN,Pl8] Number[Pl8] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[AA,Pl8] Number[Pl8] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
 # Verbs
 ## Auxiliaries
 ModalVerbAux
@@ -149,7 +152,7 @@ Location(1) LocAdverbs Location(2)
 InterroPrefix(1) LocAdverbs InterroPrefix(2)
 # Determiners
 Determiners
-#Determiners[SUF] PNG
+#Determiners[SUF] PNG?
 Location(1) DeterStems Location(2)
 InterroPrefix(1) DeterStems InterroPrefix(2)
 # Others
@@ -196,11 +199,11 @@ LEXICON Number
 ##   e. Epicenes           [ES]                                  (Dont have regular plural)
 ##   f. Regular Nouns      [Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]     (Singular form)
 ##   g. Honorifics         [IH,H,MH,FH,PH]                       (Forced singular for honorifics 'null')
-##   h. Mass Nouns & Time  [MNoun]                               (Uncountable)
+##   h. Mass Nouns & Time  [UNoun]                               (Uncountable)
 <sg>:[ANoun,FNoun,TNoun,GPro,FPro]                # null  singular
 <sg>:[ES,ENS,Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]     # null  singular
 <sg>:[IH,H,FH,MH,PH]                              # null  singular
-<unc>:[MNoun]                                     # null  uncountable
+<unc>:[UNoun]                                     # null  uncountable
 
 # PANMAI: Plural Classes: 1 through 8
 # 1/2: Epicene Plural (Unisex)
@@ -248,20 +251,22 @@ LEXICON Number
 LEXICON Cases
 <nom>:[AA,NN,TN]                                    # null
 <acc>:>{AI}[AA,TN]                                  # 'ay'
-<int>:>{AA}லை[AA,NN,TN]                           # 'aalay~ai'
+<int>:>{AA}ல{EE}[AA,NN,TN]                         # 'aalay~ai'
 <dat>:>{U}க்கு[AA,NN,TN]                            # 'ukku'
 <dat>:>{AI}[VIrr]                                   # 'ay'                (irregular dative for 'veetu')    Dir/LR
-<com>:>{OO}டை[AA,NN,TN]                           # 'ootay~ai'
-<loc>:>{I}லை[AA,NN,TN]                            # 'ilay~ai'
-<refr>:>{Irefr}ட்டை[AA]                            # 'ittay~ai'
+<com>:>{OO}ட{EE}[AA,NN,TN]                         # 'ootay~ai'
+<loc>:>{I}ல{EE}[AA,NN,TN]                          # 'ilay~ai'
+<loc>:>{I}ல[AA,NN,TN]                              # 'ilay~ai'           (irregular locative)              Dir/LR
+<refr>:>{Irefr}ட்ட{EE}[AA]                          # 'ittay~ai'
 <gen>:>{I}{N}{Pul}{R}{AI}[AA,NN,TN]                 # 'inray~ai'
 <gen>:[AA,NN,TN]                                    # null                (irregular genitive)              Dir/LR
-<abl>:>{I}ட்டை\ இருந்து[AA]                       # 'ittay~ai irunhtu'
-<abl>:>{I}லை\ இருந்து[AA,NN,TN]                  # 'ilay~ai irunhtu                                       Dir/LR
-# Benefactive is a special case which adds '-aaka' or '-entu' to the dative '-ukku'
+<abl>:>{I}ட்ட{EE}\ இருந்து[AA]                     # 'ittay~ai irunthu'
+<abl>:>{I}ல{EE}\ இருந்து[AA,NN,TN]                # 'ilay~ai irunthu                                       Dir/LR
+# Benefactive is irregular 
+# adds '-aaka' or '-entu' to the dative '-ukku'
 <ben>:>{U}க்க>{AA}க[AA,NN,TN]                     # 'ukkaaka'
 <ben>:>{U}க்க>{E}ண்டு[AA,NN,TN]                   # 'ukkentu'                                              Dir/LR
-# fix ask about ai
+# fix ask about ee
 
 ################## LOCATION
 LEXICON Location(2)
@@ -284,9 +289,12 @@ LEXICON Predicative
 <prnz><pred>:[PREDP]                             # null        epicene (adjectives)   built-in through plural number 
 <prnz><pred><f>:>வ{PLR}{Pul}[APRED]             # 'val'       female (adjectives)  
 <prnz><pred><m>:>வ{NR}{Pul}[APRED]              # 'val'       male (adjectives)  
-# Adverbalizing predicative (UNGENDERED)  
-# Although predicative, they need Vaux 'to be'
-<advz><pred>:>{AAm}ய்[ADPRED]                    # 'aai'       added for ANoun
+
+################## ADVERBIALIZER
+LEXICON Adverbializer
+# Adverbializer for ANouns
+<advz>:>{AAm}ய்                                  # 'aai'
+<advz>:>{AAm}க                                  # 'aaka'        Dir/LR
 
 ################## ENDWORDMORPH
 LEXICON EndwordMorph
@@ -303,7 +311,11 @@ LEXICON Adjectivizer
 <adjz><quan>:>{AAm}ன                        # 'aana'               used often for both
 <adjz><quan>:>{Um}ள்ள                       # 'ulla'                Dir/LR
 # Negating adjectivizer
-<neg><vaux><adjz>:>{I}ல்ல>{AA}த       # 'illatha'
+<neg><vaux><adjz>:>{Im}ல்ல>{AA}த            # 'illatha'
+
+################## TOTALIZING CLITIC
+LEXICON TotalClitic
+<tot>:>{Um}ம்                                # 'um'                 fully
 
 ########################### VERBS
 ################## VOICE
@@ -370,6 +382,14 @@ LEXICON InterroPrefix(2)
 # added only for Pronouns, Determiners and Locatives
 :எ>           <qst>:
 
+########################### PRONOUNS
+LEXICON HumanRadical
+# Added to indefinite pronouns
+# human
+<h>:>{A}ர{Pul}[Hum]           # '-ar'
+# non-human
+<nh>:>{A}த்{TH}{Pul}[NHum]     # '-att'
+
 ################################     PARTICLES     ################################
 LEXICON EmphaticPart
 தான்:தான்                             # 'thaan'
@@ -383,9 +403,9 @@ LEXICON CausativePart
 பிடி:பிடிச்சு                             # 'piticcu'          Dir/LR
 
 LEXICON NegativePart
-# Postpositionals
-இல்லாமல்<neg><post>:இல்ல>{AA}மல்    # 'illaamal'        without
-இல்லாம<neg><post>:இல்ல>{AA}ம        # 'illaama'         without          Dir/LR
+# Adverbials
+இல்லாமல்<neg><adv>:இல்ல>{AA}மல்     # 'illaamal'        without
+இல்லாம<neg><adv>:இல்ல>{AA}ம         # 'illaama'         without          Dir/LR
 # Negative polarity item
 ஒன்றும்<neg>:ஒன்று>ம்                  # 'onrum'           not even one
 # Negating Auxiliary
@@ -394,7 +414,7 @@ LEXICON NegativePart
 ###############################################################################
 ###                          L E X I C O N                                  ###
 ###############################################################################
-################################     PRONOUN STEMS     ################################
+################################     PRONOUNS     ################################
 LEXICON PronounStems
 நான்<prn><p1>:நா{N}{Pul}[GPro]               # 'naan'             I
 நீ<prn><p2>:ந{II}{AN}[GPro,PH,IH]              # 'nee'             you
@@ -402,6 +422,9 @@ LEXICON PronounStems
 வள்<prn><p3><f>:வ>{PL}{Pul}[LOC,FPro,FH]     # '-val'            -she
 வ<prn><p3>:வ[LOC,EHIrr]                      # '-va'            -they-
 து<prn><p3><nt>:த{U}[LOC,GPro]                # '-thu'           -they
+
+LEXICON IndefProStem
+எல்லா<prn><ind>:எல்ல{AA}                    # 'ella'            every-
 
 ################################     NOUNS & NP     ################################
 LEXICON Nouns
@@ -584,21 +607,26 @@ LEXICON Nouns
 கொழும்பு<n><top>:கொழும்ப{U}[NN,TNoun]                        # 'kozhumpu'        Colombo
 # Uncountable Nouns
 ## Mass Nouns
-தண்ணீ<n><nn>:தண்ண{II}[NN,MNoun]                             # 'thannii'         water
-தண்ணீர்<n><nn>:தண்ணீர{Pul}[NN,MNoun]                         # 'thanniir'        water                               Dir/LR
-காற்று<n><nn>:காற்ற{U}[NN,MNoun]                                # 'kaarru'          wind
-பட்டு<n><nn>:பட்ட{U}[NN,MNoun]                                   # 'pattu'           silk
-பொன்<n><nn>:பொ{N}{Pul}[NN,MNoun]                             # 'pon'             gold
+### Nouns of Quantity, Number, Size [QNoun]
+கொஞ்சம்<n><nn>:கொஞ்ச{M}{Pul}[NN,QNoun]                      # 'koncam'          a little bit
+கன<n><nn>:கன[NN,QNoun]                                        # 'kana'            many
+### Masses
+தண்ணீ<n><nn>:தண்ண{II}[NN,UNoun]                             # 'thannii'         water
+தண்ணீர்<n><nn>:தண்ணீர{Pul}[NN,UNoun]                         # 'thanniir'        water                               Dir/LR
+காற்று<n><nn>:காற்ற{U}[NN,UNoun]                                # 'kaarru'          wind
+பட்டு<n><nn>:பட்ட{U}[NN,UNoun]                                   # 'pattu'           silk
+பொன்<n><nn>:பொ{N}{Pul}[NN,UNoun]                             # 'pon'             gold
 ## Time Nouns
-நேற்று<n><nn>:நேற்ற{U}[NN,MNoun]                                # 'neerru'           yesterday
+நேற்று<n><nn>:நேற்ற{U}[NN,UNoun]                                # 'neerru'           yesterday
 # Abstract nouns 
-## Nouns that can attach Adverbalizing predicative [ANoun] or take Adjectivizer [NQ]
+## Nouns that can attach Adverbializer [ANoun] or take Adjectivizer [NQ]
 ## Emotions
 அன்பு<nq><nn>:அன்ப{U}[NN,ANoun,NQ]                             # 'anpu'            love
 கோபம்<nq><nn>:கோப{M}{Pul}[NN,ANoun,NQ]                       # 'koopam'          anger
 ## Behaviour
 கண்டிப்பு<nq><nn>:கண்டிப்ப{U}[NN,ANoun,NQ]                      # 'kantippu'        discipline
 தனி<nq><nn>:தன{I}[NN,ANoun,NQ]                                 # 'thani'           solitude
+உசார்<nq><nn>:உசார{Pul}[NN,ANoun,NQ]                           # 'ucaar'           enthusiasm
 
 # Class 1
 காசு<n><nn>:காச{U}[NN,Pl1]                                      # 'kaacu'           money
@@ -840,11 +868,14 @@ LEXICON LocAdverbs
 
 ################################     DETERMINERS     ################################
 LEXICON Determiners
-# 'cila' is irregular in that it takes suffixes
-# others are frozen
+# Indefinites
+## 'cila' is irregular in that it can take suffixes
+சில<det><ind>:சில[SUF]     # 'cila'    few
+## others are frozen
 ஒரு<det><ind>:ஒரு           # 'oru'     a
-சில<det><ind>:சில[SUF]     # 'cila'   few
 கன<det><ind>:கன          # 'kana'    many
+# Definites
+எல்லா<det><def>:எல்லா     # 'ella'    all
 
 LEXICON DeterStems
 <det><dem>:>ந்த              # 'ntha'    this/that/which

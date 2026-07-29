@@ -15,12 +15,13 @@ Alphabet
      %{AA%}:ா
      %{AAm%}:ா
      %{I%}:ி
+     %{Im%}:ி
      %{II%}:ீ
      %{U%}:ு %{U%}:0
      %{Um%}:ு %{Um%}:0
      %{UU%}:ூ
      %{E%}:ெ
-     %{EE%}:ே
+     %{EE%}:ே %{EE%}:0
      %{AI%}:ை
      %{O%}:ொ
      %{OO%}:ோ
@@ -39,6 +40,7 @@ Alphabet
      %{RP%}:ர %{RP%}:0     
      %{RR%}:ற
      %{T%}:ட
+     %{TH%}:த
      %{Y%}:ய
      %{C%}:ச
      %{AN%}:ங %{AN%}:0
@@ -65,16 +67,18 @@ VowSym = ா  ி  ீ  ு  ூ  ெ  ே  ை  ொ  ோ  ௌ ;
 ShortVowSym = ி  ு  ெ  ை  ொ;
 LongVowSym =  ா  ீ  ூ  ே  ோ  ௌ;
 SuffixVowels = %{A%} %{AA%} %{I%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} %{Irefr%} ;
-SuffixVowelsIr = %{A%} %{AA%} %{I%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} ;
+SuffixVowelsIr = %{AA%} %{I%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} ;
 SuffixVowelsU = %{A%} %{AA%} %{I%} %{II%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} %{Irefr%} ;
 
 Rules 
 
 ! Pulli
 "Removing Pulli"
-%{Pul%}:0 <=> :ConsonantNOTTM _ %>: SuffixVowels: ;
+%{Pul%}:0 <=> :ConsonantNOTTM _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: ] ;
+              %{M%}: _ %>: [ %{AAm%}: | %{Um%}: ] ;
               %{NR%}: _ %>: %{R%}: ;
               %{PLR%}: _ %>: %{R%}: ;
+              %{TH%}: _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: ] ;
                 except 
                 ப: ல: _ %>: ;
                 %{M%}: _ %>: SuffixVowels: ;  
@@ -139,9 +143,12 @@ Rules
 
 ! Noun endings 
 "Inserting ய"
-0:ய <=> [ %{AI%}: | %{I%}: | %{II%}: ] (%{AN%}:) _ %>: SuffixVowels:;
+0:ய <=> [ %{AI%}: | %{I%}: | %{II%}: | %{EE%}: ] (%{AN%}:) _ %>: [ SuffixVowels: | %{Um%}: | %{AAm%}: ] ;
 
-"A changes to AA before Y"
+"EE drops before Y"
+%{EE%}:0 <=> _ :ய %>: ;
+
+"A changes to AA after Y"
 %{A%}:ா <=> :ய %>: _ ;
 
 "Inserting வ"
