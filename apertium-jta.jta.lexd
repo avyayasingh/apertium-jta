@@ -626,8 +626,8 @@ LEXICON Nouns
 
 # Class 4
 வான்<n><nn>:வா{N}{Pul}[NN,Pl4]                                 # 'vaan'           van
-# fix ask about n changing before kal plural
-# fix ask about n changes to r to give honorific in plural for male humans. swap honorific and number if needed
+# fix ask about n changing before kal plural for some nouns
+# fix ask about n changes to r to give honorific in plural for male human pronouns/nouns. swap honorific and number if needed
 ################################     VERBS     ################################
 # Verb Classes:
 # Def:  Defectives  (Do not take tense markers but take PNG)
