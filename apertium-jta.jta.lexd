@@ -105,44 +105,55 @@ ModalVerbAux
 #ModalVerbAux[DYN] PNG
 ModalVerbAux[INT] InterroClitic?
 # fix add class based png, tense
-AspectVerbAux[Class4]
-AspectVerbAux[Class7]
+#AspectVerbAux[Class4] TenseInfix[Class4] PNG InterroClitic?
+#AspectVerbAux[Class7] TenseInfix[Class4] PNG InterroClitic?
 ## Transitives
 ### REGULAR
 # fix add class based png, tense, combine with | with Causativiser
+### Imperative
+TransVerbStem Imperatives
+### Negation
+TransVerbStem Infinitives (AuxSuffix|NegSuffix[INF])?
 TransVerbStem NegSuffix[-INF]
-### Infinitives
-TransVerbStem Infinitives NegSuffix[INF]|AuxSuffix?
+#TransVerbStem Negation PNG[NHum]|PNG[P3EP]
+
 ### Passivisers
 TransVerbStem[PASSIVE] Voice[PASSIVE]
 TransVerbStem Voice[-PASSIVE]
 ### Causativisers
 TransVerbStem[Class1a] Causativiser[Class1a]
+TransVerbStem[Class1b] Causativiser[Class1b]
+TransVerbStem[Class2] Causativiser[Class2]
 TransVerbStem[Class3] Causativiser[Class3]
 TransVerbStem[Class4] Causativiser[Class4]
+TransVerbStem[Class5] Causativiser[Class5]
 TransVerbStem[Class6] Causativiser[Class6]
 TransVerbStem[Class7] Causativiser[Class7]
 TransVerbStem[WEAKDOUBCAUS] Causativiser[WEAKDOUBCAUS]
 TransVerbStem[CAUSIRR2] Causativiser[CAUSIRR2]
+
 ## Intransitives
 # fix example combination of all to make regular, negation is aa not illay
-#IntraVerbStem[Classes] (Voice[passive,non]|Causativiser[classes])? (Negation PNG InterroClitic?)|(TenseInfix[classes] Participle|(PNG InterroClitic?))
-#IntraVerbStem[ClassDef] (Voice|Causativiser)? Aorist|(Negation PNG) InterroClitic?
-#IntraVerbStem Infinitives AuxSuffix|NegSuffix[INF]?
-#IntraVerbStem NegSuffix[-INF]
+#IntraVerbStem[Classes] (Voice[passive,non]|Causativiser[classes])? TenseInfix[classes] Participle|PNG InterroClitic?
+#IntraVerbStem[ClassDef] (Voice|Causativiser)? Aspect|(Negation PNG) InterroClitic?
 ### REGULAR
-IntraVerbStem NegSuffix
-### Infinitives
-IntraVerbStem Infinitives AuxSuffix?
+### Imperative
+IntraVerbStem Imperatives
+### Negation
+IntraVerbStem NegSuffix[-INF]
+IntraVerbStem Infinitives (AuxSuffix|NegSuffix[INF])?
+#IntraVerbStem Negation PNG[NHum]|PNG[P3EP]               third person epicene
+
 ### Passivisers
 IntraVerbStem[PASSIVE] Voice[PASSIVE]
 ### Causativisers
 IntraVerbStem[INTRACAUS] Causativiser[INTRACAUS]
 IntraVerbStem[CAUSIRR1] Causativiser[CAUSIRR1]
 IntraVerbStem[STRONGDOUBCAUS] Causativiser[STRONGDOUBCAUS]
+
 # Adjectives
-Adjectives[IND] [ <adj>: ] > (Nominalizer Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?)
-Adjectives[BOTH] [ <adj>: ] > (Nominalizer (Adjectivizer EndwordMorph?)|(Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?))
+Adjectives[IND] [ <adj>: ] > (Adverbializer|(Nominalizer Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?))
+Adjectives[BOTH] [ <adj>: ] > (Adverbializer|(Nominalizer (Adjectivizer EndwordMorph?)|(Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?)))
 Adjectives[FROZE] [ <adj>: ] Nominalizer Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
 Adjectives [ <adj>: ] Predicative[NPREDS] Number[ENS]
 Adjectives [ <adj>: ] Predicative[NPREDP] Number[ENP] 
@@ -253,17 +264,17 @@ LEXICON Number
 LEXICON Cases
 <nom>:[AA,NN,TN]                                    # null
 <acc>:>{AI}[AA,TN]                                  # 'ay'
-<int>:>{AA}ல{EE}[AA,NN,TN]                         # 'aalay~ai'
+<int>:>{AA}ல{E}[AA,NN,TN]                          # 'aalay~ai'
 <dat>:>{U}க்கு[AA,NN,TN]                            # 'ukku'
 <dat>:>{AI}[VIrr]                                   # 'ay'                (irregular dative for 'veetu')    Dir/LR
 <com>:>{OO}ட{EE}[AA,NN,TN]                         # 'ootay~ai'
-<loc>:>{I}ல{EE}[AA,NN,TN]                          # 'ilay~ai'
+<loc>:>{I}ல{E}[AA,NN,TN]                           # 'ilay~ai'
 <loc>:>{I}ல[AA,NN,TN]                              # 'ilay~ai'           (irregular locative)              Dir/LR
 <refr>:>{Irefr}ட்ட{EE}[AA]                          # 'ittay~ai'
 <gen>:>{I}{N}{Pul}{R}{EE}[AA,NN,TN]                 # 'inray~ai'
 <gen>:[AA,NN,TN]                                    # null                (irregular genitive)              Dir/LR
 <abl>:>{I}ட்ட{EE}\ இருந்து[AA]                     # 'ittay~ai irunthu'
-<abl>:>{I}ல{EE}\ இருந்து[AA,NN,TN]                # 'ilay~ai irunthu                                       Dir/LR
+<abl>:>{I}ல{E}\ இருந்து[AA,NN,TN]                 # 'ilay~ai irunthu                                       Dir/LR
 # Benefactive is irregular 
 # adds '-aaka' or '-entu' to the dative '-ukku'
 <ben>:>{U}க்க>{AA}க[AA,NN,TN]                     # 'ukkaaka'
@@ -340,10 +351,10 @@ LEXICON Voice
 ################## CAUSATIVE
 LEXICON Causativiser
 # Weak verb causitive marker
-<caus>:>வி[Class1a,Class3,Class4,INTRACAUS]      # 'vi'
+<caus>:>வி[Class1a,Class1b,Class2,Class3,Class4,Class5,INTRACAUS]      # 'vi'
 
 # Strong verb causitive marker
-<caus>:>ப்பி[Class6,Class7]                       # 'ppi'
+<caus>:>ப்பி[Class6,Class7]                                             # 'ppi'
 
 # Irregular causitive markers
 <caus>:>த்து[CAUSIRR1]                            # 'ththu'
@@ -361,16 +372,21 @@ LEXICON AuxSuffix
 ################## NEGATION SUFFIX
 LEXICON NegSuffix
 # Some require preceding infinitives [INF]
+## <vaux>
 <neg><vaux>:>{I}ல்லை[INF]                  # 'illay'
-<neg><adv>:>{AA}>மல்                        # 'aamal'
-<neg><adv>:>{AA}>ம                          # 'aama'           Dir/LR
+<neg><vaux>:>லெ[INF]                       # 'illay'          Dir/LR
+## <adv>
+<neg><adv><par>:>{AA}>மல்                   # 'aamal'
+<neg><adv><par>:>{AA}>ம                          # 'aama'           Dir/LR
+## <adj>
+<neg><adj><par>:>{AA}>த                          # 'aatha'
 
 ################## NEGATION
 LEXICON Negation
 <neg>:>{AA}                                       # 'aa'
 
-################## AORIST
-LEXICON Aorist
+################## ASPECT
+LEXICON Aspect
 # attaches to Defective verbs to form habitual aspect
 <aor><hab>:>{U}ம்                                 # 'um'
 
@@ -381,8 +397,16 @@ LEXICON Infinitives
 
 ################## PARTICIPLE
 LEXICON Participle
-<rpar>:>{A}                                        # 'a'           
-# fix based on class infix
+<rpar><adj>:>{A}                                  # 'a'
+<cpar><adv>:>{U}                                  # 'u'
+
+################## IMPERATIVES
+LEXICON Imperatives
+<imp><p2><sg>:                                    # null    singular
+<imp><p2><sg><hon>:>{U}ங்கோ                     # 'unkoo' singular honorific
+<imp><p2><pl>:>{U}ங்கோ                          # 'unkoo' plural
+# negative imperative
+<neg><imp><p2>:>{AA}த                             # 'aatha' (unnumbered)
 
 ########################### PRONOUNS
 LEXICON HumanRadical
@@ -733,10 +757,13 @@ LEXICON AspectVerbAux
 # Followed by paired, then unpaired
 
 LEXICON TransVerbStem
-# Class 1
+# Class 1a
+# Class 1b
+கொள்<v><tv>:கொள{Pul}[Class1b]               # 'kol'         contain
+# Class 1c
 
 ## Special double causitive
-செய்<vbdo><tv>:செய்[Class1a,WEAKDOUBCAUS]       # 'cei'         do
+செய்<vbdo><tv>:செய{Pul}[Class1a,WEAKDOUBCAUS]  # 'cei'         do
 
 # Class 2
 மேய்<v><tv>:மேய்[Class2]                        # 'mei'         graze

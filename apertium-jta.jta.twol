@@ -130,7 +130,7 @@ Rules
 
 ! Accusative case
 "Removing AA when faced with SuffixVowels"
-%{AA%}:0 <=> _ %>: SuffixVowelsIr: ;
+%{AA%}:0 <=> _ %>: SuffixVowelsIr: .#. ;
 
 ! Genitive case
 "Removing I for nouns ending in N or R"
@@ -154,7 +154,7 @@ Rules
 %{A%}:ா <=> :ய %>: _ ;
 
 "Inserting வ"
-0:வ <=> %{AA%}: _ %>: SuffixVowelsIr: ;
+0:வ <=> [ %{A%}: | %{AA%}: ] _ %>: SuffixVowelsIr: ;
 
 "Removing  ு"
 %{U%}:0 <=> _ %>: SuffixVowelsU: ;
