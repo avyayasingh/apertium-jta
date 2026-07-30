@@ -49,12 +49,12 @@ PATTERNS
 # Pronouns
 ## Personals
 ### Locative
-Location(1) PronounStems[LOC,GPro] Number[GPro] Cases[AA] Location(2) InterroClitic?
-Location(1) PronounStems[LOC,FPro] Number[FPro] Cases[AA] Location(2) InterroClitic?
+Location(1) PronounStems[LOC,GPro] Number[GPro] Location(2) Cases[AA] InterroClitic?
+Location(1) PronounStems[LOC,FPro] Number[FPro] Location(2) Cases[AA] InterroClitic?
 #### Honorifics
-Location(1) PronounStems[LOC,MH] Number[MH] Honorifics[MH] Cases[AA] Location(2) InterroClitic?
-Location(1) PronounStems[LOC,FH] Number[FH] Honorifics[FH] Cases[AA] Location(2) InterroClitic?
-Location(1) PronounStems[LOC,EHIrr] Number[EHIrr] Honorifics[EHIrr] Cases[AA] Location(2) InterroClitic?
+Location(1) PronounStems[LOC,MH] Number[MH] Honorifics[MH] Location(2) Cases[AA] InterroClitic?
+Location(1) PronounStems[LOC,FH] Number[FH] Honorifics[FH] Location(2) Cases[AA] InterroClitic?
+Location(1) PronounStems[LOC,EHIrr] Number[EHIrr] Honorifics[EHIrr] Location(2) Cases[AA] InterroClitic?
 #### Interrogative Prefixing
 InterroPrefix(1) PronounStems[LOC,GPro] Number[GPro] Cases[AA] InterroPrefix(2)
 InterroPrefix(1) PronounStems[LOC,FPro] Number[FPro] Cases[AA] InterroPrefix(2)
@@ -70,7 +70,7 @@ PronounStems[-LOC,IH] Number[IH] Honorifics[IH] Cases[AA] InterroClitic?
 IndefProStem ((HumanRadical[Hum] Cases[AA])|(HumanRadical[NHum] Cases[NN]))? TotalClitic
 # Nouns & NP
 ## Irregulars
-Nouns[NQ] Adjectivizer
+Nouns[NQ] Adjectivizer EndwordMorph?
 Nouns[NN,ANoun] Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
 Nouns[NN,QNoun] Number[QNoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
 Nouns[NN,UNoun] Number[UNoun] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
@@ -141,7 +141,9 @@ IntraVerbStem[INTRACAUS] Causativiser[INTRACAUS]
 IntraVerbStem[CAUSIRR1] Causativiser[CAUSIRR1]
 IntraVerbStem[STRONGDOUBCAUS] Causativiser[STRONGDOUBCAUS]
 # Adjectives
-Adjectives [ <adj>: ] 
+Adjectives[IND] [ <adj>: ] > (Nominalizer Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?)
+Adjectives[BOTH] [ <adj>: ] > (Nominalizer (Adjectivizer EndwordMorph?)|(Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?))
+Adjectives[FROZE] [ <adj>: ] Nominalizer Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
 Adjectives [ <adj>: ] Predicative[NPREDS] Number[ENS]
 Adjectives [ <adj>: ] Predicative[NPREDP] Number[ENP] 
 Adjectives [ <adj>: ] Predicative[PREDP] Number[EHIrr2] Honorifics[EHIrr2]
@@ -258,7 +260,7 @@ LEXICON Cases
 <loc>:>{I}ல{EE}[AA,NN,TN]                          # 'ilay~ai'
 <loc>:>{I}ல[AA,NN,TN]                              # 'ilay~ai'           (irregular locative)              Dir/LR
 <refr>:>{Irefr}ட்ட{EE}[AA]                          # 'ittay~ai'
-<gen>:>{I}{N}{Pul}{R}{AI}[AA,NN,TN]                 # 'inray~ai'
+<gen>:>{I}{N}{Pul}{R}{EE}[AA,NN,TN]                 # 'inray~ai'
 <gen>:[AA,NN,TN]                                    # null                (irregular genitive)              Dir/LR
 <abl>:>{I}ட்ட{EE}\ இருந்து[AA]                     # 'ittay~ai irunthu'
 <abl>:>{I}ல{EE}\ இருந்து[AA,NN,TN]                # 'ilay~ai irunthu                                       Dir/LR
@@ -276,6 +278,17 @@ LEXICON Location(2)
 :உ>                     <med>:
 :அ>                     <dst>:
 
+################## INTERROGATIVE
+LEXICON InterroClitic
+<qst>:>{AA}              # 'aa'
+<qst>:>{OO}              # 'oo'      Dir/LR
+# fix add for verbs after tenses and such
+
+LEXICON InterroPrefix(2)
+# instead of the usual clitic '-aa'/'-oo'
+# added only for Pronouns, Determiners and Locatives
+:எ>           <qst>:
+
 ########################### NOUNS
 ################## EMPHATIC
 LEXICON EmphaticSuf
@@ -285,7 +298,7 @@ LEXICON EmphaticSuf
 LEXICON Predicative
 # Pronominalizing predicatives (GENDERED)
 <prnz><pred><nt>:>{C}{U}[NPREDS]                 # 'cu'        neuter (adjectives)  
-<prnz><pred><nt>:[NPREDP]                        # null        neuter (adjectives)   built-in through plural number 
+<prnz><pred><nt>:[NPREDP]                        # null        neuter (adjectives)    built-in through plural number 
 <prnz><pred>:[PREDP]                             # null        epicene (adjectives)   built-in through plural number 
 <prnz><pred><f>:>வ{PLR}{Pul}[APRED]             # 'val'       female (adjectives)  
 <prnz><pred><m>:>வ{NR}{Pul}[APRED]              # 'val'       male (adjectives)  
@@ -371,24 +384,18 @@ LEXICON Participle
 <rpar>:>{A}                                        # 'a'           
 # fix based on class infix
 
-########################### INTERROGATIVE
-LEXICON InterroClitic
-<qst>:>{AA}              # 'aa'
-<qst>:>{OO}              # 'oo'      Dir/LR
-# fix add for verbs after tenses and such
-
-LEXICON InterroPrefix(2)
-# instead of the usual clitic '-aa'/'-oo'
-# added only for Pronouns, Determiners and Locatives
-:எ>           <qst>:
-
 ########################### PRONOUNS
 LEXICON HumanRadical
 # Added to indefinite pronouns
 # human
-<h>:>{A}ர{Pul}[Hum]           # '-ar'
+<h>:>{A}ர{Pul}[Hum]           # 'ar'
 # non-human
-<nh>:>{A}த்{TH}{Pul}[NHum]     # '-att'
+<nh>:>{A}த்{TH}{Pul}[NHum]     # 'att'
+
+########################### ADJECTIVES
+LEXICON Nominalizer
+# makes nouns from adjectives
+<nmz>:>ம{AI}                    # 'mai'
 
 ################################     PARTICLES     ################################
 LEXICON EmphaticPart
@@ -449,8 +456,8 @@ LEXICON Nouns
 பெண்<n><f><aa>:பெ{N}{Pul}[AA,Pl1]                              # 'pen'             female
 ## MALE
 ### 0
-ஆண்<n><m><aa>:ஆ{N}{Pul}[AA,Pl1]                               # 'aan'              male
-மனிதன்<n><m><aa>:மனித{N}{Pul}[AA,Pl1]                        # 'manithan'          man
+ஆண்<n><m><aa>:ஆ{NP}{Pul}[AA,Pl1]                               # 'aan'              male
+மனிதன்<n><m><aa>:மனித{NP}{Pul}[AA,Pl1]                        # 'manithan'          man
 ### I
 வேலைக்காரன்<n><m><aa>:வேலை>க்கார{N}{Pul}[AA,Pl1]          # 'veelaykkaaran'   male servant
 பைடியன்<n><m><aa>:பைடிய{N}{Pul}[AA,Pl1]                      # 'petiyan'          boy
@@ -516,18 +523,18 @@ LEXICON Nouns
 ### 0
 அப்பா<n><m><aa>:அப்ப{AA}[AA,Pl6]                               # 'appa'            father
 மாமா<n><m><aa>:மாம{AA}[AA,Pl6]                                # 'maamaa'          uncle
-அம்மான்<n><m><aa>:அம்மா{N}{Pul}[AA,Pl6]                       # 'ammaan'          uncle                              Dir/LR
-மச்சான்<n><m><aa>:மச்சா{N}{Pul}[AA,Pl6]                         # 'maccaan'         male cousin
+அம்மான்<n><m><aa>:அம்மா{NP}{Pul}[AA,Pl6]                      # 'ammaan'          uncle                              Dir/LR
+மச்சான்<n><m><aa>:மச்சா{NP}{Pul}[AA,Pl6]                        # 'maccaan'         male cousin
 அய்யர்<n><m><aa>:அய்யர{Pul}[AA,Pl6]                            # 'ayyar'           Hindu priest
 ஐயர்<n><m><aa>:ஐயர{Pul}[AA,Pl6]                                # 'aiyar'           Hindu priest                       Dir/LR
 தம்பி<n><m><aa>:தம்ப{I}[AA,Pl6]                                 # 'thambi'          younger brother
 ### II
-கட்டுவனான்<n><m><aa>:கட்டுவனா{N}{Pul}[AA,Pl6]               # 'kattuvanaan'     male from kattuvan
-பிரத்தியான்<n><m><aa>:பிரத்தியா{N}{Pul}[AA,Pl6]                 # 'piraththiyaan'   male from a different place
-வண்ணான்<n><m><aa>:வண்ணா{N}{Pul}[AA,Pl6]                  # 'vannaan'         washerman
-தட்டான்<n><m><aa>:தட்டா{N}{Pul}[AA,Pl6]                        # 'thattaan'         goldsmith (male)
-சீமான்<n><m><aa>:சீமா{N}{Pul}[AA,Pl6]                           # 'ciimaan'          lord (male)
-வித்துவான்<n><m><aa>:வித்துவா{N}{Pul}[AA,Pl6]                  # 'viththuvaan'      learned man
+கட்டுவனான்<n><m><aa>:கட்டுவனா{NP}{Pul}[AA,Pl6]              # 'kattuvanaan'     male from kattuvan
+பிரத்தியான்<n><m><aa>:பிரத்தியா{NP}{Pul}[AA,Pl6]                # 'piraththiyaan'   male from a different place
+வண்ணான்<n><m><aa>:வண்ணா{NP}{Pul}[AA,Pl6]                 # 'vannaan'         washerman
+தட்டான்<n><m><aa>:தட்டா{NP}{Pul}[AA,Pl6]                       # 'thattaan'         goldsmith (male)
+சீமான்<n><m><aa>:சீமா{NP}{Pul}[AA,Pl6]                          # 'ciimaan'          lord (male)
+வித்துவான்<n><m><aa>:வித்துவா{NP}{Pul}[AA,Pl6]                 # 'viththuvaan'      learned man
 
 # Class 7
 ## UNISEX
@@ -625,8 +632,9 @@ LEXICON Nouns
 கோபம்<nq><nn>:கோப{M}{Pul}[NN,ANoun,NQ]                       # 'koopam'          anger
 ## Behaviour
 கண்டிப்பு<nq><nn>:கண்டிப்ப{U}[NN,ANoun,NQ]                      # 'kantippu'        discipline
-தனி<nq><nn>:தன{I}[NN,ANoun,NQ]                                 # 'thani'           solitude
 உசார்<nq><nn>:உசார{Pul}[NN,ANoun,NQ]                           # 'ucaar'           enthusiasm
+### irregular which is the same as its adjective
+தனி<nq><nn>:தன{I}[NN,ANoun,NQ]                                 # 'thani'           solitude               Dir/LR
 
 # Class 1
 காசு<n><nn>:காச{U}[NN,Pl1]                                      # 'kaacu'           money
@@ -846,10 +854,16 @@ LEXICON IntraVerbStem
 
 ################################     ADJECTIVES     ################################
 LEXICON Adjectives
-நல்ல:நல்ல                 # 'nalla'       good
-உச்சி:உச்சி                # 'ucci'         top
-பெரிய:பெரி{Y}            # 'periya'       big
-மாதிரி:மாதிரி             # 'maathiri'     like
+# Some are independent
+நல்ல:நல்ல[IND]                           # 'nalla'       good
+உச்சி:உச்சி[IND]                          # 'ucci'         top
+பெரிய:பெரி{Y}[IND]                      # 'periya'       big
+மாதிரி:மாதிரி[IND]                       # 'maathiri'     like
+## Some can take nomz, adjz both
+தனி:தன{I}[BOTH]                        # 'thani'        solo
+# Some are frozen (require suffixes)
+பெரு:பெர{U}[FROZE]                      # 'peru'         proud
+
 
 ################################     ADVERBS     ################################
 LEXICON Adverbs

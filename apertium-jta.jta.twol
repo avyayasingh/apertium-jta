@@ -69,6 +69,7 @@ LongVowSym =  ா  ீ  ூ  ே  ோ  ௌ;
 SuffixVowels = %{A%} %{AA%} %{I%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} %{Irefr%} ;
 SuffixVowelsIr = %{AA%} %{I%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} ;
 SuffixVowelsU = %{A%} %{AA%} %{I%} %{II%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} %{Irefr%} ;
+VowelRight = ShortVowSym LongVowSym ;
 
 Rules 
 
@@ -76,20 +77,21 @@ Rules
 "Removing Pulli"
 %{Pul%}:0 <=> :ConsonantNOTTM _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: ] ;
               %{M%}: _ %>: [ %{AAm%}: | %{Um%}: ] ;
-              %{NR%}: _ %>: %{R%}: ;
+              %{NR%}: _ %>: %{R%}: %{Pul%}: ;
               %{PLR%}: _ %>: %{R%}: ;
               %{TH%}: _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: ] ;
+              [ %{NP%}: | %{NR%}: ] _ %>: %{I%}: :0 %{Pul%}: %{R%}: %{EE%}: ;  
                 except 
                 ப: ல: _ %>: ;
-                %{M%}: _ %>: SuffixVowels: ;  
+                %{M%}: _ %>: SuffixVowels: ;
 
 "Keeping Pulli"
 %{Pul%}:் <=> _ .#. ;
               _ %>: :RemConsonant ;
               _ %>: %{K%}: ;
               %{N%}: _ %{R%}: ;
-              %{NP%}: _ %>: %{R%}: ;
               %{M%}: _ (0:) %>: SuffixVowels: ;
+              [ %{NP%}: | %{NR%}: ] :0 %>: %{I%}: :0 _ %{R%}: %{EE%}: ;
 
 "Adding Pulli"
 0:Vy <=> %{AN%}: _ %>: %{K%}: ;
@@ -97,7 +99,7 @@ Rules
          %{RR%}: _ (0:) %{U%}: %>: SuffixVowels: ;
          where Vy in ( ் ) ;
 
-! M ending pulli
+! -m ending
 "Keep M to m if end of word"
 %{M%}:ம <=> _ %{Pul%}: .#. ;
 
@@ -131,11 +133,11 @@ Rules
 %{AA%}:0 <=> _ %>: SuffixVowelsIr: ;
 
 ! Genitive case
-"Removing I for proper nouns ending in N or R"
-%{I%}:0 <=> [ %{NP%}: | %{RP%}: ] %{Pul%}: %>: _ %{N%}: %{Pul%}: %{R%}: %{AI%}: ;
+"Removing I for nouns ending in N or R"
+%{I%}:0 <=> [ %{NP%}: | %{RP%}: | %{NR%}: ] %{Pul%}: %>: _ %{N%}: %{Pul%}: %{R%}: %{EE%}: ;
 
-"Removing N for proper nouns ending in N or R"
-%{N%}:0 <=> [ %{NP%}: | %{RP%}: ] %{Pul%}: %>: %{I%}: _ %{Pul%}: %{R%}: %{AI%}: ;
+"Removing N for nouns ending in N or R"
+%{N%}:0 <=> [ %{NP%}: | %{RP%}: | %{NR%}: ] %{Pul%}: %>: %{I%}: _ %{Pul%}: %{R%}: %{EE%}: ;
 
 ! Referential case
 "Removing I when Referential and noun ends in AA"
@@ -143,7 +145,7 @@ Rules
 
 ! Noun endings 
 "Inserting ய"
-0:ய <=> [ %{AI%}: | %{I%}: | %{II%}: | %{EE%}: ] (%{AN%}:) _ %>: [ SuffixVowels: | %{Um%}: | %{AAm%}: ] ;
+0:ய <=> [ %{AI%}: | %{I%}: | %{II%}: | %{EE%}: ] (%{AN%}:) _ %>: [ :VowelRight | %{Um%}: | %{AAm%}: ] ;
 
 "EE drops before Y"
 %{EE%}:0 <=> _ :ய %>: ;
@@ -175,7 +177,7 @@ Rules
 %{PL%}:0 <=> _ %{Pul%}: %>: [ %{AA%}: | %{AAm%}: ] ;
 
 "Starting with R"
-%{NR%}:0 <=> _ %{Pul%}: %>: %{R%}: ;
+%{NR%}:0 <=> _ %{Pul%}: %>: %{R%}: %{Pul%}: ;
 
 "Starting with R"
 %{PLR%}:0 <=> _ %{Pul%}: %>: %{R%}: ;
@@ -186,8 +188,9 @@ Rules
 "Starting with C"
 %{Y%}:0 <=> _ %>: %{C%}: ;
 
-"Ending with nothing"
+"Ending with nothing or genitive"
 %{NR%}:ன <=> _ %{Pul%}: .#. ;
+              _ %{Pul%}: %>: :0 :0 %{Pul%}: %{R%}: %{EE%}: ;
 
 "Ending with nothing"
 %{PLR%}:ள <=> _ %{Pul%}: .#. ;
