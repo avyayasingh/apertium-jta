@@ -57,7 +57,7 @@ Consonant = க ங ச ஞ	ட ண த ந ப ம ய ர ல வ	ழ ள ற 
 Mellinam = ங ஞ ண ந ம ன;
 Vallinam = க ச ட த ப ற;
 Idaiyinam = ய ர ல வ ழ ள;
-ConsonantNOTTM = க ங ச ஞ	ட ண ந ப ய ர ல வ	ழ ள ற ன ;
+ConsonantNOTTMorY = க ங ச ஞ	ட ண ந ப ர ல வ	ழ ள ற ன ;
 
 RemConsonant = Mellinam ல ;
 
@@ -76,7 +76,7 @@ Rules
 
 ! Pulli
 "Removing Pulli"
-%{Pul%}:0 <=> :ConsonantNOTTM _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: ] ;
+%{Pul%}:0 <=> :ConsonantNOTTMorY _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: ] ;
               %{M%}: _ %>: [ %{AAm%}: | %{Um%}: ] ;
               %{NR%}: _ %>: %{R%}: %{Pul%}: ;
               %{PLR%}: _ %>: %{R%}: ;
@@ -93,11 +93,13 @@ Rules
               %{N%}: _ %{R%}: ;
               %{M%}: _ (0:) %>: SuffixVowels: ;
               [ %{NP%}: | %{NR%}: ] :0 %>: %{I%}: :0 _ %{R%}: %{EE%}: ;
+              %{Y%}: _ 0: %>: %{U%}: ;
 
 "Adding Pulli"
 0:Vy <=> %{AN%}: _ %>: %{K%}: ;
          %{T%}: _ (0:) %{U%}: %>: SuffixVowels: ;
          %{RR%}: _ (0:) %{U%}: %>: SuffixVowels: ;
+         %{AA%}: %>: 0: _ %{K%}: ;
          where Vy in ( ் ) ;
 
 ! -m ending
@@ -149,15 +151,19 @@ Rules
 "Inserting ய"
 0:ய <=> [ %{AI%}: | %{I%}: | %{II%}: | %{EE%}: ] (%{AN%}:) _ %>: [ :VowelRight | %{Um%}: | %{AAm%}: ] ;
          %{AA%}: _ %>: %{I%}: ;
+         %{Y%}: %{Pul%}: _ %>: %{U%}: ;
+
+"Inserting வ"
+0:வ <=> [ %{A%}: | %{AA%}: ] _ %>: SuffixVowelsI: ;
+
+"Inserting க"
+0:க <=> %{AA%}: %>: _ 0: %{K%}: ;
 
 "EE drops before Y"
 %{EE%}:0 <=> _ :ய %>: ;
 
 "A changes to AA after Y"
 %{A%}:ா <=> :ய %>: _ ;
-
-"Inserting வ"
-0:வ <=> [ %{A%}: | %{AA%}: ] _ %>: SuffixVowelsI: ;
 
 "Removing  ு"
 %{U%}:0 <=> _ %>: SuffixVowelsU: ;

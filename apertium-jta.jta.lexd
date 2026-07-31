@@ -82,22 +82,22 @@ Nouns[VIrr,Pl1] Number[Pl1] Cases[VIrr] EndwordMorph?
 Nouns[AA,H] Number[H] Honorifics[H] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
 Nouns[AA,EH] Number[EH] Honorifics[H] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
 ## REGULAR
-Nouns[NN,Pl1] Number[Pl1] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
-Nouns[AA,Pl1] Number[Pl1] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
-Nouns[NN,Pl2] Number[Pl2] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
-Nouns[AA,Pl2] Number[Pl2] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
-Nouns[NN,Pl3] Number[Pl3] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
-Nouns[AA,Pl3] Number[Pl3] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
-Nouns[NN,Pl4] Number[Pl4] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
-Nouns[AA,Pl4] Number[Pl4] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
-Nouns[NN,Pl5] Number[Pl5] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
-Nouns[AA,Pl5] Number[Pl5] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
-Nouns[NN,Pl6] Number[Pl6] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
-Nouns[AA,Pl6] Number[Pl6] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
-Nouns[NN,Pl7] Number[Pl7] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
-Nouns[AA,Pl7] Number[Pl7] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
-Nouns[NN,Pl8] Number[Pl8] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
-Nouns[AA,Pl8] Number[Pl8] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[NN,Pl1] Number[Pl1] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,Pl1] Number[Pl1] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[NN,Pl2] Number[Pl2] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,Pl2] Number[Pl2] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[NN,Pl3] Number[Pl3] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,Pl3] Number[Pl3] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[NN,Pl4] Number[Pl4] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,Pl4] Number[Pl4] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[NN,Pl5] Number[Pl5] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,Pl5] Number[Pl5] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[NN,Pl6] Number[Pl6] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,Pl6] Number[Pl6] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[NN,Pl7] Number[Pl7] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,Pl7] Number[Pl7] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[NN,Pl8] Number[Pl8] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,Pl8] Number[Pl8] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
 # Verbs
 ## Auxiliaries
 ModalVerbAux
@@ -111,7 +111,8 @@ ModalVerbAux[INT] InterroClitic?
 ### REGULAR
 # fix add class based png, tense, combine with | with Causativiser
 ### Imperative
-TransVerbStem Imperatives
+TransVerbStem[-INF] Infinitives? Imperatives
+TransVerbStem[INF] Infinitives Imperatives
 ### Negation
 TransVerbStem Infinitives (AuxSuffix|NegSuffix[INF])?
 TransVerbStem NegSuffix[-INF]
@@ -134,11 +135,12 @@ TransVerbStem[CAUSIRR2] Causativiser[CAUSIRR2]
 
 ## Intransitives
 # fix example combination of all to make regular, negation is aa not illay
-#IntraVerbStem[Classes] (Voice[passive,non]|Causativiser[classes])? TenseInfix[classes] Participle|PNG InterroClitic?
+#IntraVerbStem[Classes] (Voice[passive,non]|Causativiser[classes])? TenseInfix[classes] (Nominalizer[VERB] Cases[NN])|(Participle|PNG InterroClitic?)
 #IntraVerbStem[ClassDef] (Voice|Causativiser)? Aspect|(Negation PNG) InterroClitic?
 ### REGULAR
 ### Imperative
-IntraVerbStem Imperatives
+IntraVerbStem[-INF] Infinitives? Imperatives
+IntraVerbStem[INF] Infinitives Imperatives
 ### Negation
 IntraVerbStem NegSuffix[-INF]
 IntraVerbStem Infinitives (AuxSuffix|NegSuffix[INF])?
@@ -152,9 +154,9 @@ IntraVerbStem[CAUSIRR1] Causativiser[CAUSIRR1]
 IntraVerbStem[STRONGDOUBCAUS] Causativiser[STRONGDOUBCAUS]
 
 # Adjectives
-Adjectives[IND] [ <adj>: ] > (Adverbializer|(Nominalizer Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?))
-Adjectives[BOTH] [ <adj>: ] > (Adverbializer|(Nominalizer (Adjectivizer EndwordMorph?)|(Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?)))
-Adjectives[FROZE] [ <adj>: ] Nominalizer Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Adjectives[IND] [ <adj>: ] > ((Adverbializer EndwordMorph?)|(Nominalizer[ADJ] Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?))
+Adjectives[BOTH] [ <adj>: ] > ((Adverbializer EndwordMorph?)|(Nominalizer[ADJ] (Adjectivizer EndwordMorph?)|(Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?)))
+Adjectives[FROZE] [ <adj>: ] Nominalizer[ADJ] Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
 Adjectives [ <adj>: ] Predicative[NPREDS] Number[ENS]
 Adjectives [ <adj>: ] Predicative[NPREDP] Number[ENP] 
 Adjectives [ <adj>: ] Predicative[PREDP] Number[EHIrr2] Honorifics[EHIrr2]
@@ -300,6 +302,13 @@ LEXICON InterroPrefix(2)
 # added only for Pronouns, Determiners and Locatives
 :எ>           <qst>:
 
+########################### ADJECTIVES
+LEXICON Nominalizer
+# makes nouns from adjectives
+<nmz>:>ம{AI}[ADJ]                    # 'mai'
+# makes nouns from verbs
+<nmz>:>{AA}த{U}[VERB]                # 'aathu'
+
 ########################### NOUNS
 ################## EMPHATIC
 LEXICON EmphaticSuf
@@ -316,7 +325,6 @@ LEXICON Predicative
 
 ################## ADVERBIALIZER
 LEXICON Adverbializer
-# Adverbializer for ANouns
 <advz>:>{AAm}ய்                                  # 'aai'
 <advz>:>{AAm}க                                  # 'aaka'        Dir/LR
 
@@ -402,11 +410,15 @@ LEXICON Participle
 
 ################## IMPERATIVES
 LEXICON Imperatives
-<imp><p2><sg>:                                    # null    singular
-<imp><p2><hon><sg>:>{U}ங்கோ                     # 'unkoo' singular honorific
-<imp><p2><pl>:>{U}ங்கோ                          # 'unkoo' plural
+# positives
+<imp><sg>:                                    #  null              singular
+<imp><hon><sg>:>{U}ம்                         # 'um'               singular honorific
+<imp><pl>:>{U}ங்கோ                         # 'unkoo'             plural
 # negative imperative
-<neg><imp><p2>:>{AA}த                             # 'aatha' (unnumbered)
+<neg><imp><sg>:>{AA}த{EE}                    # 'aathee'           singular
+<neg><imp><sg>:>{AA}த                        # 'aatha'            singular                     Dir/LR
+<neg><imp><hon><sg>:>{AA}த>யும்              # 'aathayum'         singular honorific
+<neg><imp><pl>:>{AA}த>யுங்கோ               # 'aathayunkoo'      plural
 
 ################## PERSON, NUMBER, GENDER
 LEXICON PNG
@@ -442,11 +454,6 @@ LEXICON HumanRadical
 <h>:>{A}ர{Pul}[Hum]           # 'ar'
 # non-human
 <nh>:>{A}த்{TH}{Pul}[NHum]     # 'att'
-
-########################### ADJECTIVES
-LEXICON Nominalizer
-# makes nouns from adjectives
-<nmz>:>ம{AI}                    # 'mai'
 
 ################################     PARTICLES     ################################
 LEXICON EmphaticPart
@@ -602,7 +609,6 @@ LEXICON Nouns
 விசரி<n><f><aa>:விசர{I}[AA,Pl7]                                 # 'vicari'          mad woman
 செகிடி<n><f><aa>:செகிட{I}[AA,Pl7]                              # 'cekiti'          deaf woman
 தலைவி<n><f><aa>:தலைவ{I}[AA,Pl7]                            # 'thalayvi'        female leader
-சினேகிதி<n><f><aa>:சினேகித{I}[AA,Pl7]                         # 'cineekithi'      female friend
 துணைவி<n><f><aa>:துணைவ{I}[AA,Pl7]                         # 'thunayvi'        female assistant
 பாட்டுக்காரி<n><f><aa>:பாட்டு>க்கார{I}[AA,Pl7]                  # 'paattukkaari'    female singer
 எண்ணெய்க்காரி<n><f><aa>:எண்ணெய்>க்கார{I}[AA,Pl7]        # 'ennaikkaari'     female oil presser
@@ -663,7 +669,8 @@ LEXICON Nouns
 சாப்பாடு<n><nn>:சாப்பா{T}{U}[NN,FNoun]                          # 'caappatu'        food
 சோறு<n><nn>:சோ{RR}{U}[NN,FNoun]                               # 'cooru'           rice
 # Toponyms
-யாழ்ப்பாணம்<n><top>:யாழ்ப்பாண{M}{Pul}[NN,TNoun]             # 'yaazhppaanam'    Jaffna 
+யாழ்ப்பாணம்<n><top>:யாழ்ப்பாண{M}{Pul}[NN,TNoun]             # 'yaazhppaanam'    Jaffna
+லண்டன்<n><top>:லண்ட{N}{Pul}[NN,TNoun]                        # 'lantan'          London
 கொழும்பு<n><top>:கொழும்ப{U}[NN,TNoun]                        # 'kozhumpu'        Colombo
 # Uncountable Nouns
 ## Mass Nouns
@@ -679,7 +686,7 @@ LEXICON Nouns
 ## Time Nouns
 நேற்று<n><nn>:நேற்ற{U}[NN,UNoun]                                # 'neerru'           yesterday
 # Abstract nouns 
-## Nouns that can attach Adverbializer [ANoun] or take Adjectivizer [NQ]
+## Nouns that can attach Adjectivizer [NQ]
 ## Emotions
 அன்பு<nq><nn>:அன்ப{U}[NN,ANoun,NQ]                             # 'anpu'            love
 கோபம்<nq><nn>:கோப{M}{Pul}[NN,ANoun,NQ]                       # 'koopam'          anger
@@ -690,12 +697,14 @@ LEXICON Nouns
 தனி<nq><nn>:தன{I}[NN,ANoun,NQ]                                 # 'thani'           solitude               Dir/LR
 
 # Class 1
+பேனா<n><nn>:பேன{AA}[NN,Pl1]                                  # 'peena'           pen
 காசு<n><nn>:காச{U}[NN,Pl1]                                      # 'kaacu'           money
 நெஞ்சு<n><nn>:நெஞ்ச{U}[NN,Pl1]                                 # 'nencu'           heart
 பெட்டி<n><nn>:பெட்ட{I}[NN,Pl1]                                  # 'petti'           box
 மூடி<n><nn>:மூட{I}[NN,Pl1]                                       # 'muuti'           lid
 கத்தி<n><nn>:கத்த{I}[NN,Pl1]                                     # 'kaththi'         knife
 வேட்டி<n><nn>:வேட்ட{I}[NN,Pl1]                                  # 'veetti'          dhoti
+ஊசி<n><nn>:ஊச{I}[NN,Pl1]                                      # 'uuci'            needle
 கடை<n><nn>:கட{AI}[NN,Pl1]                                     # 'katay'           shop
 தோசை<n><nn>:தோச{AI}[NN,Pl1]                                # 'thoocay'         dosa
 காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                         # 'kaaiccal'        fever
@@ -706,6 +715,7 @@ LEXICON Nouns
 மரம்<n><nn>:மர{M}{Pul}[NN,Pl1]                                  # 'maram'           tree
 பாடம்<n><nn>:பாட{M}{Pul}[NN,Pl1]                               # 'paatam'          lesson
 மனம்<n><nn>:மன{M}{Pul}[NN,Pl1]                               # 'manam'            mind
+ஆயுதம்<n><nn>:ஆயுத{M}{Pul}[NN,Pl1]                            # 'aayutham'        instrument
 வீடு<n><nn>:வீ{T}{U}[NN,VIrr,Pl1]                                 # 'veetu'           house
 வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                # 'vayiru'          stomach
 
@@ -792,12 +802,12 @@ LEXICON TransVerbStem
 # Class 1c
 
 ## Special double causitive
-செய்<vbdo><tv>:செய{Pul}[Class1a,WEAKDOUBCAUS]  # 'cei'         do
+செய்<vbdo><tv>:செ{Y}{Pul}[Class1a,WEAKDOUBCAUS] # 'cei'         do
 
 # Class 2
-மேய்<v><tv>:மேய்[Class2]                        # 'mei'         graze
-தா<v><tv>:த{AA}[Class2]                         # 'thaa'        give
+தா<v><tv>:த{AA}[Class2,INF]                      # 'thaa'        give
 அறி<v><tv>:அற{I}[Class2]                       # 'ari'         find out
+மேய்<v><tv>:மே{Y}{Pul}[Class2]                  # 'mei'         graze
 
 # Class 3
 பண்ணு<vbdo><tv>:பண்ண{U}[Class3]             # 'pannu'       do
@@ -845,7 +855,9 @@ LEXICON TransVerbStem
 எடு<v><tv>:எட{U}[Class6]                        # 'etu'         take
 கொடு<v><tv>:கொட{U}[Class6]                  # 'kotu'        give
 அடி<v><tv>:அட{I}[Class6]                       # 'ati'         beat
+படி<v><tv>:பட{I}[Class6]                        # 'pati'        study
 பிடி<v><tv>:பிட{I}[Class6]                       # 'piti'        catch
+பாவி<v><tv>:பாவ{I}[Class6]                     # 'paavi'       use
 சமை<v><tv>:சம{AI}[Class6]                     # 'chamai'      cook
 பார்<v><tv>:பார{Pul}[Class6]                    # 'paar'        see
 
@@ -867,7 +879,8 @@ LEXICON IntraVerbStem
 
 # Class 2
 நிமிர்<v><iv>:நிமிர{Pul}[Class2]                  # 'nimir'       erect                    Paired
-வா<v><iv>:வ{AA}[Class2]                         # 'vaa'         come 
+வா<v><iv>:வ{AA}[Class2,INF]                     # 'vaa'         come
+கொண்டுவா<v><iv>:கொண்டுவ{AA}[Class2,INF]  # 'kontuvaa'    bring
 நனை<v><iv>:நன{AI}[Class2]                    # 'nanay'       wet
 
 # Class 3
@@ -876,7 +889,7 @@ LEXICON IntraVerbStem
 பேசு<v><iv>:பேச{U}[Class3]                      # 'peecu'       speak
 கூடு<v><iv>:கூட{U}[Class3]                       # 'kuutu'       join
 படு<v><iv>:பட{U}[Class3]                        # 'patu'        experience
-போ<v><iv>:போ[Class3]                          # 'poo'         go
+போ<v><iv>:போ[Class3,INF]                     # 'poo'         go
 
 ## Special passive form
 வாடு<v><iv>:வாட{U}[Class3,PASSIVE]             # 'vaatu'       wither
