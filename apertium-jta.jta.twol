@@ -69,6 +69,7 @@ LongVowSym =  ா  ீ  ூ  ே  ோ  ௌ;
 SuffixVowels = %{A%} %{AA%} %{I%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} %{Irefr%} ;
 SuffixVowelsIr = %{AA%} %{I%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} ;
 SuffixVowelsU = %{A%} %{AA%} %{I%} %{II%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} %{Irefr%} ;
+SuffixVowelsI = %{A%} %{AA%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} %{Irefr%} ;
 VowelRight = ShortVowSym LongVowSym ;
 
 Rules 
@@ -131,6 +132,7 @@ Rules
 ! Accusative case
 "Removing AA when faced with SuffixVowels"
 %{AA%}:0 <=> _ %>: SuffixVowelsIr: .#. ;
+            :வ %>: _ ;
 
 ! Genitive case
 "Removing I for nouns ending in N or R"
@@ -146,6 +148,7 @@ Rules
 ! Noun endings 
 "Inserting ய"
 0:ய <=> [ %{AI%}: | %{I%}: | %{II%}: | %{EE%}: ] (%{AN%}:) _ %>: [ :VowelRight | %{Um%}: | %{AAm%}: ] ;
+         %{AA%}: _ %>: %{I%}: ;
 
 "EE drops before Y"
 %{EE%}:0 <=> _ :ய %>: ;
@@ -154,7 +157,7 @@ Rules
 %{A%}:ா <=> :ய %>: _ ;
 
 "Inserting வ"
-0:வ <=> [ %{A%}: | %{AA%}: ] _ %>: SuffixVowelsIr: ;
+0:வ <=> [ %{A%}: | %{AA%}: ] _ %>: SuffixVowelsI: ;
 
 "Removing  ு"
 %{U%}:0 <=> _ %>: SuffixVowelsU: ;

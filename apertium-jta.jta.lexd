@@ -102,7 +102,7 @@ Nouns[AA,Pl8] Number[Pl8] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
 ## Auxiliaries
 ModalVerbAux
 # fix add dynamic based png, NOT tense, add infix? or just doubling for png
-#ModalVerbAux[DYN] PNG
+ModalVerbAux[DYN] PNG
 ModalVerbAux[INT] InterroClitic?
 # fix add class based png, tense
 #AspectVerbAux[Class4] TenseInfix[Class4] PNG InterroClitic?
@@ -115,7 +115,7 @@ TransVerbStem Imperatives
 ### Negation
 TransVerbStem Infinitives (AuxSuffix|NegSuffix[INF])?
 TransVerbStem NegSuffix[-INF]
-#TransVerbStem Negation PNG[NHum]|PNG[P3EP]
+TransVerbStem Negation PNG[NHum]|PNG[P3EP]
 
 ### Passivisers
 TransVerbStem[PASSIVE] Voice[PASSIVE]
@@ -142,7 +142,7 @@ IntraVerbStem Imperatives
 ### Negation
 IntraVerbStem NegSuffix[-INF]
 IntraVerbStem Infinitives (AuxSuffix|NegSuffix[INF])?
-#IntraVerbStem Negation PNG[NHum]|PNG[P3EP]               third person epicene
+IntraVerbStem Negation PNG[NHum]|PNG[P3EP]
 
 ### Passivisers
 IntraVerbStem[PASSIVE] Voice[PASSIVE]
@@ -165,7 +165,7 @@ Location(1) LocAdverbs Location(2)
 InterroPrefix(1) LocAdverbs InterroPrefix(2)
 # Determiners
 Determiners
-#Determiners[SUF] PNG?
+Determiners[SUF] PNG?
 Location(1) DeterStems Location(2)
 InterroPrefix(1) DeterStems InterroPrefix(2)
 # Others
@@ -403,11 +403,38 @@ LEXICON Participle
 ################## IMPERATIVES
 LEXICON Imperatives
 <imp><p2><sg>:                                    # null    singular
-<imp><p2><sg><hon>:>{U}ங்கோ                     # 'unkoo' singular honorific
+<imp><p2><hon><sg>:>{U}ங்கோ                     # 'unkoo' singular honorific
 <imp><p2><pl>:>{U}ங்கோ                          # 'unkoo' plural
 # negative imperative
 <neg><imp><p2>:>{AA}த                             # 'aatha' (unnumbered)
 
+################## PERSON, NUMBER, GENDER
+LEXICON PNG
+# p1
+<p1><sg>:>{EE}>ன{Pul}                      # 'en'        singular
+<p1><sg>:>ன{Pul}                           # 'n'         singular       (var)                      Dir/LR
+<p1><pl>:>ம{Pul}                            # 'm'         plural
+# p2
+<p2><sg>:>{AA}ய{Pul}                        # 'aay'       singular
+<p2><ihon><sg>:>{II}>ர{Pul}                 # 'iir'       singular       (intermediate honorific)
+<p2><hon><sg>:>{II}>ங்>கள{Pul}             # 'iinkal'    singular       (honorific)
+<p2><pl>:>{I}ய>ள{Pul}                      # 'iyal'      plural
+<p2><pl>:>{II}>ங்>கள{Pul}                  # 'iinkal'    plural         (var)                      Dir/LR
+# p3
+## human
+<p3><h><m><sg>:>{AA}>ன{Pul}                # 'aan'       singular       (masc)
+<p3><h><m><hon><sg>:>{AA}>ர{Pul}            # 'aar'       singular       (masc honorific)
+<p3><h><m><pl>:>{AA}>ங்>கள{Pul}            # 'aankal'    plural         (masc)
+<p3><h><m><pl>:>ர{Pul}                      # 'r'         plural         (masc var)                 Dir/LR
+<p3><h><f><sg>:>{AA}>ள{Pul}                # 'aal'       singular       (fem)
+<p3><h><f><hon><sg>:>{AA}                   # 'aa'        singular       (fem honorific)
+<p3><h><f><pl>:>{AA}ளவ{AI}                # 'aalavay'   plural         (fem)
+<p3><h><f><pl>:>{AA}>ளு>கள{Pul}           # 'aalukal'   plural         (fem var)                  Dir/LR  
+<p3><h><epl><hon>:>{I}னம{Pul}[P3EP]       # 'inam'      epicene plural (honorific)
+## non-human
+<p3><nh><sg>:>{U}த{U}[NHum]                # 'utu'       singular       (non-human)
+<p3><nh><pl>:>{U}த{U}[NHum]                # 'utu'       plural         (non-human)
+# fix adding tense [] for present -inam and -utu and future -utu
 ########################### PRONOUNS
 LEXICON HumanRadical
 # Added to indefinite pronouns
@@ -447,12 +474,14 @@ LEXICON NegativePart
 ###############################################################################
 ################################     PRONOUNS     ################################
 LEXICON PronounStems
+# human
 நான்<prn><p1>:நா{N}{Pul}[GPro]               # 'naan'             I
 நீ<prn><p2>:ந{II}{AN}[GPro,PH,IH]              # 'nee'             you
 வன்<prn><p3><m>:வ>{NR}{Pul}[LOC,GPro,MH]     # '-van'            -he
 வள்<prn><p3><f>:வ>{PL}{Pul}[LOC,FPro,FH]     # '-val'            -she
 வ<prn><p3>:வ[LOC,EHIrr]                      # '-va'            -they-
-து<prn><p3><nt>:த{U}[LOC,GPro]                # '-thu'           -they
+# non-human
+து<prn><p3><nh>:த{U}[LOC,GPro]                # '-thu'           -they
 
 LEXICON IndefProStem
 எல்லா<prn><ind>:எல்ல{AA}                    # 'ella'            every-
@@ -719,7 +748,7 @@ LEXICON ModalVerbAux
 ## Some modals take interrogative clitic [INT]
 
 ## Dynamic modals indicate PNG but not time [DYN]
-மாட்<vaux><vbmod>:மாட{Pul}[DYN]                             # 'maat'           cannot
+மாட்<vaux><vbmod>:மா{T}{Pul}[DYN]                           # 'maat'           cannot
 
 ## Time-Dynamic modals indicate only time (derived)
 முடி<vaux><vbmod><pres>:முடிய>{U}ம{Pul}[INT]                # 'mutiyum'        can (now)
@@ -911,7 +940,7 @@ LEXICON LocAdverbs
 LEXICON Determiners
 # Indefinites
 ## 'cila' is irregular in that it can take suffixes
-சில<det><ind>:சில[SUF]     # 'cila'    few
+சில<det><ind>:சில{A}[SUF]   # 'cila'    few
 ## others are frozen
 ஒரு<det><ind>:ஒரு           # 'oru'     a
 கன<det><ind>:கன          # 'kana'    many
