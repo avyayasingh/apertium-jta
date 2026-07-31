@@ -57,7 +57,7 @@ Consonant = க ங ச ஞ	ட ண த ந ப ம ய ர ல வ	ழ ள ற 
 Mellinam = ங ஞ ண ந ம ன;
 Vallinam = க ச ட த ப ற;
 Idaiyinam = ய ர ல வ ழ ள;
-ConsonantNOTTMorY = க ங ச ஞ	ட ண ந ப ர ல வ	ழ ள ற ன ;
+ConsonantNOTTM = க ங ச ஞ	ட ண ந ய ப ர ல வ	ழ ள ற ன ;
 
 RemConsonant = Mellinam ல ;
 
@@ -76,7 +76,7 @@ Rules
 
 ! Pulli
 "Removing Pulli"
-%{Pul%}:0 <=> :ConsonantNOTTMorY _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: ] ;
+%{Pul%}:0 <=> :ConsonantNOTTM _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: ] ;
               %{M%}: _ %>: [ %{AAm%}: | %{Um%}: ] ;
               %{NR%}: _ %>: %{R%}: %{Pul%}: ;
               %{PLR%}: _ %>: %{R%}: ;
