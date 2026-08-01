@@ -267,7 +267,7 @@ LEXICON Number
 LEXICON Cases
 <nom>:[AA,NN,TN]                                    #  null
 <acc>:>{AI}[AA,TN]                                  # 'ay'
-<int>:>{AA}ல{E}[AA,NN,TN]                          # 'aalay~ai'
+<int>:>{AA}ல{AI}[AA,NN,TN]                         # 'aalay~ai'
 <dat>:>{U}க்கு[AA,NN,TN]                            # 'ukku'
 <dat>:>{AI}[VIrr]                                   # 'ay'                (irregular dative for 'veetu')    Dir/LR
 <com>:>{OO}ட{EE}[AA,NN,TN]                         # 'ootay~ai'
