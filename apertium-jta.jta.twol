@@ -35,6 +35,7 @@ Alphabet
      %{M%}:ம %{M%}:த %{M%}:ங
      %{N%}:ன %{N%}:ங
      %{NP%}:ன %{NP%}:ங
+     %{NK%}:ன %{NK%}:ர
      %{K%}:க
      %{L%}:ல
      %{PL%}:ள
@@ -85,7 +86,7 @@ Rules
               %{PLR%}: _ %>: %{R%}: ;
               %{PL%}: _ %>: %{T%}: ;
               %{TH%}: _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: ] ;
-              [ %{NP%}: | %{NR%}: ] _ %>: %{I%}: :0 %{Pul%}: %{R%}: ;  
+              [ %{NP%}: | %{NR%}: | %{NK%}: | %{RP%}: ] _ %>: %{I%}: :0 %{Pul%}: %{R%}: ;  
                 except 
                 ப: ல: _ %>: ;
                 %{M%}: _ %>: SuffixVowels: ;
@@ -96,7 +97,7 @@ Rules
               _ %>: %{K%}: ;
               %{N%}: _ %{R%}: ;
               %{M%}: _ (0:) %>: SuffixVowels: ;
-              [ %{NP%}: | %{NR%}: ] :0 %>: %{I%}: :0 _ %{R%}: ;
+              [ %{NP%}: | %{NR%}: | %{NK%}: | %{RP%}: ] :0 %>: %{I%}: :0 _ %{R%}: ;
               %{Y%}: _ 0: %>: %{U%}: ;
               %{T%}: _ 0: %>: SuffixVowels: ;
               %{NP%}: _ %>: %{T%}: ;
@@ -144,10 +145,10 @@ Rules
 
 ! Genitive case
 "Removing I for nouns ending in N or R"
-%{I%}:0 <=> [ %{NP%}: | %{RP%}: | %{NR%}: ] %{Pul%}: %>: _ %{N%}: %{Pul%}: %{R%}: ;
+%{I%}:0 <=> [ %{NP%}: | %{RP%}: | %{NR%}: | %{NK%}: ] %{Pul%}: %>: _ %{N%}: %{Pul%}: %{R%}: ;
 
 "Removing N for nouns ending in N or R"
-%{N%}:0 <=> [ %{NP%}: | %{RP%}: | %{NR%}: ] %{Pul%}: %>: %{I%}: _ %{Pul%}: %{R%}: ;
+%{N%}:0 <=> [ %{NP%}: | %{RP%}: | %{NR%}: | %{NK%}: ] %{Pul%}: %>: %{I%}: _ %{Pul%}: %{R%}: ;
 
 ! Referential case
 "Removing I when Referential and noun ends in AA"
@@ -184,6 +185,9 @@ Rules
 
 "Starting with K"
 %{N%}:ங <=> _ %{Pul%}: %>: %{K%}: ;
+
+"Starting with K"
+%{NK%}:ர <=> _ %{Pul%}: %>: %{K%}: ;
 
 "Starting with K"
 %{NP%}:ங <=> _ %{Pul%}: %>: %{K%}: ;

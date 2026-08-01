@@ -82,24 +82,23 @@ Nouns[NN,FNoun] Number[FNoun] Cases[NN]|EmphaticSuf|TotalClitic EndwordMorph?
 Nouns[TNoun] Number[TNoun] Cases[TN]|EmphaticSuf|TotalClitic EndwordMorph?
 Nouns[AA,ES] Number[ES] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
 Nouns[VIrr,Pl1] Number[Pl1] Cases[VIrr] EndwordMorph?
-## Honorifics
+## REGULAR
 Nouns[AA,H] Honorifics[H] Number[H] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
 Nouns[AA,EH] Honorifics[H] Number[EH] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
-## REGULAR
 Nouns[NN,Pl1] Number[Pl1] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,Pl1] Number[Pl1] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,Pl1] Number[Pl1]|(Honorifics[Pl1] Number[H]) Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
 Nouns[NN,Pl2] Number[Pl2] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,Pl2] Number[Pl2] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,Pl2] Number[Pl2]|(Honorifics[Pl2] Number[H]) Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
 Nouns[NN,Pl3] Number[Pl3] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,Pl3] Number[Pl3] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,Pl3] Number[Pl3]|(Honorifics[Pl3] Number[H]) Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
 Nouns[NN,Pl4] Number[Pl4] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,Pl4] Number[Pl4] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,Pl4] Number[Pl4]|(Honorifics[Pl4] Number[H]) Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
 Nouns[NN,Pl5] Number[Pl5] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,Pl5] Number[Pl5] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,Pl5] Number[Pl5]|(Honorifics[Pl5] Number[H]) Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
 Nouns[NN,Pl6] Number[Pl6] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,Pl6] Number[Pl6] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,Pl6] Number[Pl6]|(Honorifics[Pl6] Number[H]) Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
 Nouns[NN,Pl7] Number[Pl7] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,Pl7] Number[Pl7] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,Pl7] Number[Pl7]|(Honorifics[Pl7] Number[H]) Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
 Nouns[NN,Pl8] Number[Pl8] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
 Nouns[AA,Pl8] Number[Pl8] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
 # Verbs
@@ -193,9 +192,23 @@ LEXICON Honorifics
 ## this is changed to 'kaarar' in both male and female to denote honor
 ## this is similar to the general honorific, '-r', which changes (mainly male) '-n' ending nouns
 # General honorific
-<hon>:>{R}{Pul}[H]                                    # 'r'   honorific
+<hon>:>{R}{Pul}[H]                                    # 'r'        honorific
 # Epicene plural (implied honorific)
-<hon>:>{R}{Pul}[EH]                                   # 'r'   honorific
+<hon>:>{R}{Pul}[EH]                                   # 'r'        honorific
+# Plural honorific for other nouns
+<hon>:>{K}ள{Pul}[Pl1]                                # 'kal'      plural honorific
+<hon>:>{A}வ{AI}[Pl2]                                 # 'avay'     plural honorific
+<hon>:>{A}ள{Pul}[Pl3]                                # 'al'       plural honorific
+<hon>:>{U}கள{Pul}[Pl4]                              # 'ukal'     plural honorific
+<hon>:>{U}ள{Pul}[Pl4]                                # 'ul'       plural honorific      Dir/LR
+<hon>:>ம{AA}ர{Pul}[Pl5]                              # 'maar'     plural honorific
+<hon>:>{K}ள{Pul}[Pl5]                                # 'kal'      plural honorific      Dir/LR
+<hon>:>ம{AA}ர{Pul}[Pl6]                              # 'maar'     plural honorific
+<hon>:>{A}வ{AI}[Pl6]                                 # 'avay'     plural honorific      Dir/LR
+<hon>:>{A}ள{Pul}[Pl7]                                # 'al'       plural honorific
+<hon>:>ம{AA}ர{Pul}[Pl7]                              # 'maar'     plural honorific      Dir/LR
+<hon>:>{A}வ{AI}[Pl7]                                 # 'avay'     plural honorific      Dir/LR
+
 # For pronouns (applied to p2,p3)
 ## p2
 <ihon>:>{R}{Pul}[IH]                                  # 'r'   intermediate honorific
@@ -204,7 +217,6 @@ LEXICON Honorifics
 <hon>:>{R}{Pul}[MH]                                   # 'r'   male honorific
 <hon>:>{AA}[FH]                                       # 'aa'  female honorific
 <hon><epl>:>வ{AI}[EHIrr,EHIrr2]                      # 'vay'  irregular epicene plural honorific
-# fix add more honorifics, kaari honorific, -r ending class v honorific built in?, veelaykaaran irr -r honorific?
 
 ################## NUMBER
 LEXICON Number
@@ -523,7 +535,7 @@ LEXICON Nouns
 ## MALE
 ### 0
 ஆண்<n><m><aa>:ஆ{NP}{Pul}[AA,Pl1]                               # 'aan'            male
-மனிதன்<n><m><aa>:மனித{NP}{Pul}[AA,Pl1]                        # 'manithan'        man
+மனிதன்<n><m><aa>:மனித{NK}{Pul}[AA,Pl1]                        # 'manithan'        man
 ### I
 வேலைக்காரன்<n><m><aa>:வேலை>க்கார{N}{Pul}[AA,Pl1]          # 'veelaykkaaran'   male servant
 பைடியன்<n><m><aa>:பைடிய{N}{Pul}[AA,Pl1]                      # 'petiyan'         boy
