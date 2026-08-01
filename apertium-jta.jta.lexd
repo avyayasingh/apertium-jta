@@ -49,26 +49,27 @@ PATTERNS
 # Pronouns
 ## Personals
 ### Locative
-Location(1) PronounStems[LOC,GPro] Number[GPro] Location(2) Cases[AA] InterroClitic?
-Location(1) PronounStems[LOC,FPro] Number[FPro] Location(2) Cases[AA] InterroClitic?
+Location(1) PronounStems[LOC,GPro] Number[GPro] Location(2) Cases[P] InterroClitic?
+Location(1) PronounStems[LOC,FPro] Number[FPro] Location(2) Cases[P] InterroClitic?
 #### Honorifics
-Location(1) PronounStems[LOC,MH] Number[MH] Honorifics[MH] Location(2) Cases[AA] InterroClitic?
-Location(1) PronounStems[LOC,FH] Number[FH] Honorifics[FH] Location(2) Cases[AA] InterroClitic?
-Location(1) PronounStems[LOC,EHIrr] Number[EHIrr] Honorifics[EHIrr] Location(2) Cases[AA] InterroClitic?
+Location(1) PronounStems[LOC,MH] Honorifics[MH] Number[MH] Location(2) Cases[P] InterroClitic?
+Location(1) PronounStems[LOC,FH] Honorifics[FH] Number[FH] Location(2) Cases[P] InterroClitic?
+Location(1) PronounStems[LOC,EHIrr] Honorifics[EHIrr] Number[EHIrr] Location(2) Cases[P] InterroClitic?
 #### Interrogative Prefixing
-InterroPrefix(1) PronounStems[LOC,GPro] Number[GPro] Cases[AA] InterroPrefix(2)
-InterroPrefix(1) PronounStems[LOC,FPro] Number[FPro] Cases[AA] InterroPrefix(2)
-InterroPrefix(1) PronounStems[LOC,MH] Number[MH] Honorifics[MH] Cases[AA] InterroPrefix(2)
-InterroPrefix(1) PronounStems[LOC,FH] Number[FH] Honorifics[FH] Cases[AA] InterroPrefix(2)
-InterroPrefix(1) PronounStems[LOC,EHIrr] Number[EHIrr] Honorifics[EHIrr] Cases[AA] InterroPrefix(2)
+InterroPrefix(1) PronounStems[LOC,GPro] Number[GPro] Cases[P] InterroPrefix(2)
+InterroPrefix(1) PronounStems[LOC,FPro] Number[FPro] Cases[P] InterroPrefix(2)
+InterroPrefix(1) PronounStems[LOC,MH] Honorifics[MH] Number[MH] Cases[P] InterroPrefix(2)
+InterroPrefix(1) PronounStems[LOC,FH] Honorifics[FH] Number[FH] Cases[P] InterroPrefix(2)
+InterroPrefix(1) PronounStems[LOC,EHIrr] Honorifics[EHIrr] Number[EHIrr] Cases[P] InterroPrefix(2)
 ### Non-locative
-PronounStems[-LOC,Obl,GPro] Number[GPro] Cases[AA]|Cases[P] InterroClitic?
+PronounStems[-LOC,Obl,GPro] Number[PS] Cases[PS] InterroClitic?
+PronounStems[-LOC,Obl,GPro] Number[PL] Cases[PL] InterroClitic?
 PronounStems[-LOC,NObl,GPro] Number[GPro] InterroClitic?
 #### Honorifics
-PronounStems[-LOC,Obl,PH] Number[PH] Honorifics[PH] Cases[AA]|Cases[P] InterroClitic?
-PronounStems[-LOC,Obl,IH] Number[IH] Honorifics[IH] Cases[AA]|Cases[P] InterroClitic?
-PronounStems[-LOC,NObl,PH] Number[PH] Honorifics[PH] InterroClitic?
-PronounStems[-LOC,NObl,IH] Number[IH] Honorifics[IH] InterroClitic?
+PronounStems[-LOC,Obl,PH] Honorifics[PH] Number[PH,PS] Cases[PS] InterroClitic?
+PronounStems[-LOC,Obl,IH] Honorifics[IH] Number[IH,PS] Cases[PS] InterroClitic?
+PronounStems[-LOC,NObl,PH] Honorifics[PH] Number[PH] InterroClitic?
+PronounStems[-LOC,NObl,IH] Honorifics[IH] Number[IH] InterroClitic?
 ## Other Types
 IndefProStem ((HumanRadical[Hum] Cases[AA])|(HumanRadical[NHum] Cases[NN]))? TotalClitic
 # Nouns & NP
@@ -82,8 +83,8 @@ Nouns[TNoun] Number[TNoun] Cases[TN]|EmphaticSuf|TotalClitic EndwordMorph?
 Nouns[AA,ES] Number[ES] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
 Nouns[VIrr,Pl1] Number[Pl1] Cases[VIrr] EndwordMorph?
 ## Honorifics
-Nouns[AA,H] Number[H] Honorifics[H] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
-Nouns[AA,EH] Number[EH] Honorifics[H] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[AA,H] Honorifics[H] Number[H] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
+Nouns[AA,EH] Honorifics[H] Number[EH] Cases[AA]|EmphaticSuf|TotalClitic EndwordMorph?
 ## REGULAR
 Nouns[NN,Pl1] Number[Pl1] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
 Nouns[AA,Pl1] Number[Pl1] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?
@@ -202,7 +203,7 @@ LEXICON Honorifics
 ## p3
 <hon>:>{R}{Pul}[MH]                                   # 'r'   male honorific
 <hon>:>{AA}[FH]                                       # 'aa'  female honorific
-<hon>:>{AI}[EHIrr,EHIrr2]                             # 'ai'  irregular epicene plural honorific
+<hon><epl>:>வ{AI}[EHIrr,EHIrr2]                      # 'vay'  irregular epicene plural honorific
 # fix add more honorifics, kaari honorific, -r ending class v honorific built in?, veelaykaaran irr -r honorific?
 
 ################## NUMBER
@@ -217,7 +218,7 @@ LEXICON Number
 ##   g. Honorifics         [IH,H,MH,FH,PH]                       (Forced singular for honorifics 'null')
 ##   h. Mass Nouns & Time  [UNoun]                               (Uncountable)
 <sg>:[ANoun,FNoun,TNoun,GPro,FPro]                # null  singular
-<sg>:[ES,ENS,Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]     # null  singular
+<sg>:[ES,ENS,PS,Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]  # null  singular
 <sg>:[IH,H,FH,MH,PH]                              # null  singular
 <unc>:[UNoun]                                     # null  uncountable
 
@@ -226,13 +227,11 @@ LEXICON Number
 # Ungendered forced plural used for groups of people, honorific implied [EH,EHIrr]
 <epl>:[EH,EHIrr]
 # Forced plural for neuter objects, 'vay' suffix
-# Can act as epicene (honorific implied) or regular plural (no honorific)
-<epl>:>வ[EHIrr2]
 <pl>:>வ{AI}[ENP] 
 ###### GENERAL CLASSES
 # 1: Common Plural (Inanimate and Animate)
 # This plural also applies to pronouns generally [GPro]
-<pl>:>{K}ள{Pul}[Pl1,GPro]           # 'kal'
+<pl>:>{K}{PL}{Pul}[Pl1,GPro,PL]      # 'kal'
 
 # 2: Plurals of feminine Proper Nouns, people related to locations (Animate)
 # This plural also applies to female pronouns [FPro]
@@ -265,26 +264,28 @@ LEXICON Number
 
 ################## CASES
 LEXICON Cases
-<nom>:[AA,NN,TN]                                    #  null
-<acc>:>{AI}[AA,TN]                                  # 'ay'
-<int>:>{AA}ல{AI}[AA,NN,TN]                         # 'aalay~ai'
-<dat>:>{U}க்கு[AA,NN,TN]                            # 'ukku'
-<dat>:>{AI}[VIrr]                                   # 'ay'                (irregular dative for 'veetu')    Dir/LR
-<com>:>{OO}ட{EE}[AA,NN,TN]                         # 'ootay~ai'
-<loc>:>{I}ல{E}[AA,NN,TN]                           # 'ilay~ai'
-<loc>:>{I}ல[AA,NN,TN]                              # 'ilay~ai'           (irregular locative)              Dir/LR
-<refr>:>{Irefr}ட்ட{EE}[AA]                          # 'ittay~ai'
-<gen>:>{I}{N}{Pul}{R}{EE}[AA,NN,TN]                 # 'inray~ai'
-<gen>:>{UN}ட{AI}ய[P]                               # 'utayya'            (irregular genitive Pronouns)     Dir/LR
-<gen>:>{TK}{AI}[P]                                  # 'atay~ai'           (irregular genitive Pronouns)     Dir/LR
-<gen>:[AA,NN,TN]                                    #  null                (irregular genitive)             Dir/LR
-<abl>:>{I}ட்ட{EE}\ இருந்து[AA]                      # 'ittay~ai irunthu'
-<abl>:>{I}ல{E}\ இருந்து[AA,NN,TN]                  # 'ilay~ai irunthu                                      Dir/LR
+<nom>:[AA,NN,TN,P,PS,PL]                                    #  null
+<acc>:>{AI}[AA,TN,P,PS,PL]                                  # 'ay'
+<int>:>{AA}ல{AIE}[AA,NN,TN,P,PS,PL]                        # 'aalay~ai'
+<int>:>\ கொண்டு[AA,NN,TN,P,PS,PL]                       # 'kontu'              (irregular instrumental)          Dir/LR
+<dat>:>{U}க்கு[AA,NN,TN,P,PS,PL]                            # 'ukku'
+<dat>:>{AI}[VIrr]                                          # 'ay'                 (irregular dative for 'veetu')    Dir/LR
+<com>:>{OO}ட[AA,NN,TN,P,PS,PL]                             # 'oota'
+<loc>:>{I}ல{AIE}[AA,NN,TN,P,PS,PL]                         # 'ilay~ai'
+<loc>:>{I}ல[AA,NN]                                         # 'il'                (irregular locative)              Dir/LR
+<loc>:>\ இருந்து[AA,NN,TN,P,PS,PL]                          # 'irunthu'           (irregular locative)              Dir/LR
+<refr>:>{Irefr}ட்ட[AA,P,PS,PL]                              # 'itta'
+<gen>:>{I}{N}{Pul}{R}[AA,NN,TN,P,PS]                        # 'inra'
+<gen>:>{I}{N}{Pul}{R}[PL]                                   # 'inra'              (irregular genitive Pronouns)     Dir/LR
+<gen>:>{T}[PL]                                              # 'ata'               (irregular genitive Pronouns)
+<gen>:>{U}ட{AI}ய[P,PS,PL]                                  # 'utayya'           (irregular genitive Pronouns)     Dir/LR
+<gen>:[AA,NN,TN]                                            #  null               (irregular genitive)              Dir/LR
+<abl>:>{I}ட்ட\ இருந்து[AA,P,PS,PL]                          # 'itta irunthu'
+<abl>:>{I}ல{AIE}\ இருந்து[AA,NN,P,TN,PS,PL]                # 'ilay~ai irunthu'   (irregular ablative)              Dir/LR
 # Benefactive is irregular 
 # adds '-aaka' or '-entu' to the dative '-ukku'
-<ben>:>{U}க்க>{AA}க[AA,NN,TN]                     # 'ukkaaka'
-<ben>:>{U}க்க>{E}ண்டு[AA,NN,TN]                   # 'ukkentu'                                              Dir/LR
-# fix ask about ee
+<ben>:>{U}க்க>{AA}க[AA,NN,TN,P,PS,PL]                      # 'ukkaaka'
+<ben>:>{U}க்க>{E}ண்டு[AA,NN,TN,P,PS,PL]                    # 'ukkentu'                                              Dir/LR
 
 ################## LOCATION
 LEXICON Location(2)
@@ -323,7 +324,7 @@ LEXICON Predicative
 <prnz><pred><nt>:[NPREDP]                        # null        neuter (adjectives)    built-in through plural number 
 <prnz><pred>:[PREDP]                             # null        epicene (adjectives)   built-in through plural number 
 <prnz><pred><f>:>வ{PLR}{Pul}[APRED]             # 'val'       female (adjectives)  
-<prnz><pred><m>:>வ{NR}{Pul}[APRED]              # 'val'       male (adjectives)  
+<prnz><pred><m>:>வ{NR}{Pul}[APRED]              # 'van'       male (adjectives)  
 
 ################## ADVERBIALIZER
 LEXICON Adverbializer
@@ -485,12 +486,12 @@ LEXICON NegativePart
 ################################     PRONOUNS     ################################
 LEXICON PronounStems
 # human
-நான்<prn><p1>:நா{NP}{Pul}[GPro,NObl]          # 'naan'            I
-என்<prn><p1>:எ{NP}{Pul}[GPro,Obl]             # 'en'              I          oblique stem for 'naan'
-நீ<prn><p2>:ந{II}{AN}[GPro,PH,IH,NObl]         # 'nee'             you
-உன்<prn><p2>:உ{NP}{Pul}[GPro,PH,IH,Obl]      # 'un'              you        oblique stem for 'nee'
-வன்<prn><p3><m>:வ>{NR}{Pul}[LOC,GPro,MH]     # '-van'            -he
-வள்<prn><p3><f>:வ>{PL}{Pul}[LOC,FPro,FH]     # '-val'            -she
+நான்<prn><p1>:நா{NP}{Pul}[GPro,NObl]        # 'naan'            I
+என்<prn><p1>:{El}{NP}{Pul}[GPro,Obl]         # 'en'              I          oblique stem for 'naan'
+நீ<prn><p2>:ந{II}{AN}[GPro,PH,IH,NObl]        # 'nee'             you
+உன்<prn><p2>:{Ul}{NP}{Pul}[GPro,PH,IH,Obl]   # 'un'              you        oblique stem for 'nee'
+வன்<prn><p3><m>:வ>{NR}{Pul}[LOC,GPro,MH]    # '-van'            -he
+வள்<prn><p3><f>:வ>{PL}{Pul}[LOC,FPro,FH]     # '-val'           -she
 வ<prn><p3>:வ[LOC,EHIrr]                      # '-va'            -they-
 # non-human
 து<prn><p3><nh>:த{U}[LOC,GPro]                # '-thu'            -it
@@ -521,11 +522,11 @@ LEXICON Nouns
 பெண்<n><f><aa>:பெ{N}{Pul}[AA,Pl1]                              # 'pen'             female
 ## MALE
 ### 0
-ஆண்<n><m><aa>:ஆ{NP}{Pul}[AA,Pl1]                               # 'aan'              male
-மனிதன்<n><m><aa>:மனித{NP}{Pul}[AA,Pl1]                        # 'manithan'          man
+ஆண்<n><m><aa>:ஆ{NP}{Pul}[AA,Pl1]                               # 'aan'            male
+மனிதன்<n><m><aa>:மனித{NP}{Pul}[AA,Pl1]                        # 'manithan'        man
 ### I
 வேலைக்காரன்<n><m><aa>:வேலை>க்கார{N}{Pul}[AA,Pl1]          # 'veelaykkaaran'   male servant
-பைடியன்<n><m><aa>:பைடிய{N}{Pul}[AA,Pl1]                      # 'petiyan'          boy
+பைடியன்<n><m><aa>:பைடிய{N}{Pul}[AA,Pl1]                      # 'petiyan'         boy
 ### IV
 பண்டாரம்<n><m><aa>:பண்டார{M}{Pul}[AA,Pl1]                    # 'pantaaram'       male from pantaaram comm.
 பண்டாரி<n><m><aa>:பண்டார{I}[AA,Pl1]                          # 'pantaari'        male from pantaaram comm.          Dir/LR
@@ -740,12 +741,10 @@ LEXICON Nouns
 சால்வை<n><nn>:சால்வ{AI}[NN,Pl3]                              # 'caalvay'         shawl
 
 # Class 4
-வான்<n><nn>:வா{N}{Pul}[NN,Pl4]                                # 'vaan'             van
+வான்<n><nn>:வான{Pul}[NN,Pl4]                                # 'vaan'             van              loanword (n does not change)
 கல்<n><nn>:க{L}{Pul}[NN,Pl4]                                   # 'kal'             stone
 நெல்<n><nn>:நெ{L}{Pul}[NN,Pl4]                                # 'nel'             paddy
 
-# fix ask about n changing before kal plural for some nouns
-# fix ask about n changes to r to give honorific in plural for male human pronouns/nouns. swap honorific and number if needed
 ################################     VERBS     ################################
 # Verb Classes:
 # Def:  Defectives  (Do not take tense markers but take PNG)
