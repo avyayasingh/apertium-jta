@@ -96,6 +96,7 @@ Rules
               %{M%}: _ (0:) %>: SuffixVowels: ;
               [ %{NP%}: | %{NR%}: ] :0 %>: %{I%}: :0 _ %{R%}: %{EE%}: ;
               %{Y%}: _ 0: %>: %{U%}: ;
+              %{T%}: _ 0: %>: SuffixVowels: ;
               %{NP%}: _ %>: 0: [ %{UN%}: | %{TK%}: ] ;
 
 "Adding Pulli"
@@ -120,9 +121,9 @@ Rules
 0:ற <=> %{RR%}: :Vy _ %{U%}: %>: SuffixVowels: ;
               where Vy in ( ் ) ;
 
-! -tu ending
+! -t ending
 "Insert a second T"
-0:ட <=> %{T%}: :Vy _ %{U%}: %>: SuffixVowels: ;
+0:ட <=> %{T%}: :Vy _ (%{U%}:) %>: SuffixVowels: ;
               where Vy in ( ் ) ;
 
 ! -l ending irregular

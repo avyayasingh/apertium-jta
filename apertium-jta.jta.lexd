@@ -104,7 +104,6 @@ Nouns[AA,Pl8] Number[Pl8] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic Endwor
 # Verbs
 ## Auxiliaries
 ModalVerbAux
-# fix add dynamic based png, NOT tense, add infix? or just doubling for png
 ModalVerbAux[DYN] PNG
 ModalVerbAux[INT] InterroClitic?
 # fix add class based png, tense
@@ -184,8 +183,7 @@ Symbol
 Fraction
 Measure
 Punctuation
-# fix add tense infix for verbs based on classes, 5 is irregular root changes as :infix. not applied to infinitives. interro is clitic
-# fix add oblique stems/possessives for pronouns
+# fix add tense infix for verbs based on classes, 5 is irregular root changes as :infix. not applied to infinitives.
 ################################     SUFFIXOLOGY     ################################
 ########################### GENERAL
 ################## HONORIFICS
@@ -300,7 +298,6 @@ LEXICON Location(2)
 LEXICON InterroClitic
 <qst>:>{AA}              # 'aa'
 <qst>:>{OO}              # 'oo'      Dir/LR
-# fix add for verbs after tenses and such
 
 LEXICON InterroPrefix(2)
 # instead of the usual clitic '-aa'/'-oo'
@@ -428,7 +425,8 @@ LEXICON Imperatives
 ################## PERSON, NUMBER, GENDER
 LEXICON PNG
 # p1
-<p1><sg>:>{EE}>ன{Pul}                      # 'en'        singular
+<p1><sg>:>{EE}>ன{Pul}                      # 'een'       singular
+<p1><sg>:>{E}>ன{Pul}                       # 'en'        singular       (var)
 <p1><sg>:>ன{Pul}                           # 'n'         singular       (var)                      Dir/LR
 <p1><pl>:>ம{Pul}                            # 'm'         plural
 # p2
