@@ -62,10 +62,13 @@ InterroPrefix(1) PronounStems[LOC,MH] Number[MH] Honorifics[MH] Cases[AA] Interr
 InterroPrefix(1) PronounStems[LOC,FH] Number[FH] Honorifics[FH] Cases[AA] InterroPrefix(2)
 InterroPrefix(1) PronounStems[LOC,EHIrr] Number[EHIrr] Honorifics[EHIrr] Cases[AA] InterroPrefix(2)
 ### Non-locative
-PronounStems[-LOC,GPro] Number[GPro] Cases[AA] InterroClitic?
+PronounStems[-LOC,Obl,GPro] Number[GPro] Cases[AA]|Cases[P] InterroClitic?
+PronounStems[-LOC,NObl,GPro] Number[GPro] InterroClitic?
 #### Honorifics
-PronounStems[-LOC,PH] Number[PH] Honorifics[PH] Cases[AA] InterroClitic?
-PronounStems[-LOC,IH] Number[IH] Honorifics[IH] Cases[AA] InterroClitic?
+PronounStems[-LOC,Obl,PH] Number[PH] Honorifics[PH] Cases[AA]|Cases[P] InterroClitic?
+PronounStems[-LOC,Obl,IH] Number[IH] Honorifics[IH] Cases[AA]|Cases[P] InterroClitic?
+PronounStems[-LOC,NObl,PH] Number[PH] Honorifics[PH] InterroClitic?
+PronounStems[-LOC,NObl,IH] Number[IH] Honorifics[IH] InterroClitic?
 ## Other Types
 IndefProStem ((HumanRadical[Hum] Cases[AA])|(HumanRadical[NHum] Cases[NN]))? TotalClitic
 # Nouns & NP
@@ -264,7 +267,7 @@ LEXICON Number
 
 ################## CASES
 LEXICON Cases
-<nom>:[AA,NN,TN]                                    # null
+<nom>:[AA,NN,TN]                                    #  null
 <acc>:>{AI}[AA,TN]                                  # 'ay'
 <int>:>{AA}ல{E}[AA,NN,TN]                          # 'aalay~ai'
 <dat>:>{U}க்கு[AA,NN,TN]                            # 'ukku'
@@ -274,9 +277,11 @@ LEXICON Cases
 <loc>:>{I}ல[AA,NN,TN]                              # 'ilay~ai'           (irregular locative)              Dir/LR
 <refr>:>{Irefr}ட்ட{EE}[AA]                          # 'ittay~ai'
 <gen>:>{I}{N}{Pul}{R}{EE}[AA,NN,TN]                 # 'inray~ai'
-<gen>:[AA,NN,TN]                                    # null                (irregular genitive)              Dir/LR
-<abl>:>{I}ட்ட{EE}\ இருந்து[AA]                     # 'ittay~ai irunthu'
-<abl>:>{I}ல{E}\ இருந்து[AA,NN,TN]                 # 'ilay~ai irunthu                                       Dir/LR
+<gen>:>{UN}ட{AI}ய[P]                               # 'utayya'            (irregular genitive Pronouns)     Dir/LR
+<gen>:>{TK}{AI}[P]                                  # 'atay~ai'           (irregular genitive Pronouns)     Dir/LR
+<gen>:[AA,NN,TN]                                    #  null                (irregular genitive)             Dir/LR
+<abl>:>{I}ட்ட{EE}\ இருந்து[AA]                      # 'ittay~ai irunthu'
+<abl>:>{I}ல{E}\ இருந்து[AA,NN,TN]                  # 'ilay~ai irunthu                                      Dir/LR
 # Benefactive is irregular 
 # adds '-aaka' or '-entu' to the dative '-ukku'
 <ben>:>{U}க்க>{AA}க[AA,NN,TN]                     # 'ukkaaka'
@@ -482,13 +487,15 @@ LEXICON NegativePart
 ################################     PRONOUNS     ################################
 LEXICON PronounStems
 # human
-நான்<prn><p1>:நா{N}{Pul}[GPro]               # 'naan'             I
-நீ<prn><p2>:ந{II}{AN}[GPro,PH,IH]              # 'nee'             you
+நான்<prn><p1>:நா{NP}{Pul}[GPro,NObl]          # 'naan'            I
+என்<prn><p1>:எ{NP}{Pul}[GPro,Obl]             # 'en'              I          oblique stem for 'naan'
+நீ<prn><p2>:ந{II}{AN}[GPro,PH,IH,NObl]         # 'nee'             you
+உன்<prn><p2>:உ{NP}{Pul}[GPro,PH,IH,Obl]      # 'un'              you        oblique stem for 'nee'
 வன்<prn><p3><m>:வ>{NR}{Pul}[LOC,GPro,MH]     # '-van'            -he
 வள்<prn><p3><f>:வ>{PL}{Pul}[LOC,FPro,FH]     # '-val'            -she
 வ<prn><p3>:வ[LOC,EHIrr]                      # '-va'            -they-
 # non-human
-து<prn><p3><nh>:த{U}[LOC,GPro]                # '-thu'           -they
+து<prn><p3><nh>:த{U}[LOC,GPro]                # '-thu'            -it
 
 LEXICON IndefProStem
 எல்லா<prn><ind>:எல்ல{AA}                    # 'ella'            every-
