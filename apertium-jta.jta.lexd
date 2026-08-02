@@ -426,27 +426,31 @@ LEXICON Infinitives
 ################## PARTICIPLE
 LEXICON Participle
 # Class wise word-ending
-# Adverbials are non-time
-# Adjectivals indicate time
 ## Adverbials
-<par><adv>:>து[Class1a]                              # 'thu'
-<par><adv>:>{T}{U}[Class1b]                          # 'tu'
-<par><adv>:>{RR}{U}[Class1c]                         # 'ru' 
-<par><adv>:>ந்து[Class2]                              # 'nthu'
-<par><adv>:>{I}[Class3]                              # 'i'
-<par><adv>:>{TR}{U}[Class4]                          # 'ru'/'tu'
+## Adverbials are non-time
+<par><adv>:>து[Class1a]                                                           # 'thu'
+<par><adv>:>{T}{U}[Class1b]                                                       # 'tu'
+<par><adv>:>{RR}{U}[Class1c,Class5a]                                              # 'ru' 
+<par><adv>:>ந்து[Class2]                                                           # 'nthu'
+<par><adv>:>{I}[Class3]                                                           # 'i'
+<par><adv>:>{TR}{U}[Class4]                                                       # 'ru'/'tu'
 ## Adjectivals
+## Adjectivals indicate time
 ### past
-<par><adj><past>:>த[Class1a]                        # 'th'
-<par><adj><past>:>{T}[Class1b]                       # 't'
-<par><adj><past>:>{RR}[Class1c]                      # 'r'
-<par><adj><past>:>ந்த[Class2]                        # 'nth'
-<par><adj><past>:>{I}ய[Class3]                      # 'iya'
-<par><adj><past>:>{TR}[Class4]                       # 'r'/'t'
+<par><adj><past>:>த[Class1a]                                                     # 'th'
+<par><adj><past>:>{T}[Class1b]                                                    # 't'
+<par><adj><past>:>{RR}[Class1c]                                                   # 'r'
+<par><adj><past>:>ந்த[Class2]                                                     # 'nth'
+<par><adj><past>:>{I}ய[Class3]                                                   # 'iya'
+<par><adj><past>:>{TR}[Class4]                                                    # 'r'/'t'
 ### present
+#### weak form
 <par><adj><pres>:>கிற[Class1a,Class1b,Class1c,Class2,Class3,Class4]              # 'kir'
+#### irregular class
+<par><adj><pres>:>கிற[Class5a]                                                   # 'kir'
 ### future
 <par><adj><fut>:>{U}ம்[Class1a,Class1b,Class1c,Class2,Class3,Class4]              # 'um'
+<par><adj><fut>:>{K}{U}ம்[Class5a]                                                # 'kum'
 
 ################## IMPERATIVES
 LEXICON Imperatives
