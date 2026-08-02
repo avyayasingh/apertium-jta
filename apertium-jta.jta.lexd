@@ -107,12 +107,10 @@ Nouns[AA,Pl8] Number[Pl8] Cases[AA]|EmphaticSuf|Adverbializer|TotalClitic Endwor
 ModalVerbAux
 ModalVerbAux[DYN] PNG
 ModalVerbAux[INT] InterroClitic?
-# fix add class based png, tense
-#AspectVerbAux[Class4] TenseInfix[Class4] PNG InterroClitic?
-#AspectVerbAux[Class7] TenseInfix[Class7] PNG InterroClitic?
+AspectVerbAux[Class4] TenseInfix[Class4] PNG InterroClitic?
+AspectVerbAux[Class7] TenseInfix[Class7] PNG InterroClitic?
 ## Transitives
 ### REGULAR
-# fix add class based png, tense, combine with | with Causativiser
 ### Imperative
 TransVerbStem[-INF] Infinitives? Imperatives
 TransVerbStem[INF] Infinitives Imperatives
@@ -187,7 +185,7 @@ Symbol
 Fraction
 Measure
 Punctuation
-# fix add tense infix for verbs based on classes, 5 is irregular root changes as :infix. not applied to infinitives.
+
 ################################     SUFFIXOLOGY     ################################
 ########################### GENERAL
 ################## HONORIFICS
