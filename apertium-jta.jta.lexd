@@ -430,10 +430,13 @@ LEXICON Participle
 ## Adverbials are non-time
 <par><adv>:>து[Class1a]                                                           # 'thu'
 <par><adv>:>{T}{U}[Class1b]                                                       # 'tu'
-<par><adv>:>{RR}{U}[Class1c,Class5a]                                              # 'ru' 
+<par><adv>:>{RR}{U}[Class1c]                                                      # 'ru' 
 <par><adv>:>ந்து[Class2]                                                           # 'nthu'
 <par><adv>:>{I}[Class3]                                                           # 'i'
 <par><adv>:>{TR}{U}[Class4]                                                       # 'ru'/'tu'
+<par><adv>:>{RR}{U}[Class5a]                                                      # 'ru'
+<par><adv>:>{I}[Class5b]                                                          # 'i'
+
 ## Adjectivals
 ## Adjectivals indicate time
 ### past
@@ -443,14 +446,20 @@ LEXICON Participle
 <par><adj><past>:>ந்த[Class2]                                                     # 'nth'
 <par><adj><past>:>{I}ய[Class3]                                                   # 'iya'
 <par><adj><past>:>{TR}[Class4]                                                    # 'r'/'t'
+<par><adj><past>:>{RR}[Class5a]                                                   # 'r'
+<par><adj><past>:>{Nn}[Class5b]                                                   # 'n'
 ### present
 #### weak form
 <par><adj><pres>:>கிற[Class1a,Class1b,Class1c,Class2,Class3,Class4]              # 'kir'
 #### irregular class
 <par><adj><pres>:>கிற[Class5a]                                                   # 'kir'
+<par><adj><pres>:>கிற[Class5b]                                                   # 'kir'
 ### future
+#### weak form
 <par><adj><fut>:>{U}ம்[Class1a,Class1b,Class1c,Class2,Class3,Class4]              # 'um'
+#### irregular class
 <par><adj><fut>:>{K}{U}ம்[Class5a]                                                # 'kum'
+<par><adj><fut>:>{U}ம்[Class5b]                                                   # 'um'
 
 ################## IMPERATIVES
 LEXICON Imperatives
@@ -505,16 +514,18 @@ LEXICON TenseInfix
 # Past
 <past>:>த[Class1a]                                             # 'th'
 <past>:>{T}[Class1b]                                            # 't'
-<past>:>{RR}[Class1c,Class5a]                                   # 'r'
+<past>:>{RR}[Class1c]                                           # 'r'
 <past>:>ந்த[Class2]                                             # 'nth'
 <past>:>{I}ன[Class3]                                           # 'in'
 <past>:>{TR}[Class4]                                            # 'r'/'t'
+<past>:>{RR}[Class5a]                                           # 'r'
+<past>:>{Nn}[Class5b]                                           # 'n'
 
 # Present
 ## weak form
 <pres>:>{K}{I}ற[Class1a,Class1b,Class1c,Class2,Class3,Class4]  # 'kir'
 ## irregular class
-<pres>:>{K}{I}ற[Class5a]                                       # 'kir'
+<pres>:>{K}{I}ற[Class5a,Class5b]                               # 'kir'
 
 ## irregulars
 <pres><neg>:                                                    # null
@@ -526,6 +537,7 @@ LEXICON TenseInfix
 <fut>:>{U}வ[Class2]                                            # 'uv'
 ## irregular class
 <fut>:>{P}[Class5a]                                             # 'p'
+<fut>:>வ[Class5b]                                              # 'v'
 
 ## irregulars
 <fut>:{U}ம்[NHumE]                                              # 'um'
@@ -929,7 +941,7 @@ LEXICON TransVerbStem
 பெறு<v><tv>:பெ{RR}{U}[Class4]                  # 'peru'         give birth
 
 # Class 5b
-சொல்<v><tv>:சொல{Pul}[Class5b]               # 'col'         tell
+சொல்<v><tv>:சொ{LLn}{Pul}[Class5b]           # 'col'         tell
 # Class 5c
 உண்<v><tv>:உண{Pul}[Class5c]                 # 'un'          eat
 

@@ -34,6 +34,7 @@ Alphabet
      ! Consonants
      %{M%}:ம %{M%}:த %{M%}:ங
      %{N%}:ன %{N%}:ங
+     %{Nn%}:ன
      %{NP%}:ன %{NP%}:ங
      %{NK%}:ன %{NK%}:ர
      %{K%}:க
@@ -41,6 +42,7 @@ Alphabet
      %{PL%}:ள
      %{LN%}:ள %{LN%}:ண
      %{Ln%}:ல %{Ln%}:ன
+     %{LLn%}:ல
      %{PLR%}:ள
      %{R%}:ர
      %{RP%}:ர   
@@ -144,7 +146,7 @@ Rules
 
 ! -l ending irregular
 "Insert a second L"
-0:ல <=> [ %{L%}: | %{Ln%}: ] :Vy _ %>: SuffixVowels: ;
+0:ல <=> [ %{L%}: | %{Ln%}: | %{LLn%}: ] :Vy _ %>: SuffixVowels: ;
          where Vy in ( ் ) ;
 
 ! N addition
@@ -224,6 +226,9 @@ Rules
 
 "Starting with R"
 %{Ln%}:ன <=> _ %{Pul%}: %>: %{RR%}: ;
+
+"Starting with N"
+%{LLn%}:ன <=> _ %{Pul%}: %>: %{Nn%}: ;
 
 "Starting with K"
 %{Ln%}:ற <=> _ %{Pul%}: %>: [ %{K%}: | %{P%}: ] ;
