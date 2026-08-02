@@ -40,6 +40,7 @@ Alphabet
      %{L%}:ல
      %{PL%}:ள
      %{LN%}:ள %{LN%}:ண
+     %{Ln%}:ல %{Ln%}:ன
      %{PLR%}:ள
      %{R%}:ர
      %{RP%}:ர   
@@ -47,6 +48,7 @@ Alphabet
      %{T%}:ட
      %{TR%}:ட %{TR%}:ற
      %{TH%}:த
+     %{P%}:ப
      %{Y%}:ய
      %{C%}:ச
      %{AN%}:ங %{AN%}:0
@@ -142,8 +144,9 @@ Rules
 
 ! -l ending irregular
 "Insert a second L"
-0:ல <=> %{L%}: :Vy _ %>: SuffixVowels: ;
-              where Vy in ( ் ) ;
+0:ல <=> [ %{L%}: | %{Ln%}: ] :Vy _ %>: SuffixVowels: ;
+         where Vy in ( ் ) ;
+
 ! N addition
 "Starting with K"
 %{AN%}:ங <=> _ :Vy %>: %{K%}: ;
@@ -218,6 +221,12 @@ Rules
 
 "Starting with T"
 %{LN%}:ண <=> _ %{Pul%}: %>: %{T%}: ;
+
+"Starting with R"
+%{Ln%}:ன <=> _ %{Pul%}: %>: %{RR%}: ;
+
+"Starting with K"
+%{Ln%}:ற <=> _ %{Pul%}: %>: [ %{K%}: | %{P%}: ] ;
 
 "Starting with R"
 %{NR%}:0 <=> _ %{Pul%}: %>: %{R%}: %{Pul%}: ;

@@ -108,7 +108,7 @@ ModalVerbAux[DYN] PNG
 ModalVerbAux[INT] InterroClitic?
 # fix add class based png, tense
 #AspectVerbAux[Class4] TenseInfix[Class4] PNG InterroClitic?
-#AspectVerbAux[Class7] TenseInfix[Class4] PNG InterroClitic?
+#AspectVerbAux[Class7] TenseInfix[Class7] PNG InterroClitic?
 ## Transitives
 ### REGULAR
 # fix add class based png, tense, combine with | with Causativiser
@@ -119,7 +119,7 @@ TransVerbStem[INF] Infinitives Imperatives
 TransVerbStem Infinitives (AuxSuffix|NegSuffix[INF])?
 TransVerbStem Infinitives NegSuffix[DYN] PNG
 TransVerbStem NegSuffix[-INF]
-TransVerbStem Negation PNG[NHum]|PNG[P3EP]
+TransVerbStem Negation PNG[NHum]|PNG[P3EP]|PNG[NHumE2]
 
 ### Passivisers
 TransVerbStem[PASSIVE] Voice[PASSIVE]
@@ -127,6 +127,7 @@ TransVerbStem Voice[-PASSIVE]
 ### Causativisers
 TransVerbStem[Class1a] Causativiser[Class1a]
 TransVerbStem[Class1b] Causativiser[Class1b]
+TransVerbStem[Class1c] Causativiser[Class1c]
 TransVerbStem[Class2] Causativiser[Class2]
 TransVerbStem[Class3] Causativiser[Class3]
 TransVerbStem[Class4] Causativiser[Class4]
@@ -138,7 +139,7 @@ TransVerbStem[CAUSIRR2] Causativiser[CAUSIRR2]
 
 ## Intransitives
 # fix example combination of all to make regular, negation is aa not illay
-#IntraVerbStem[Classes] (Voice[passive,non]|Causativiser[classes])? Participle[Classes]|(TenseInfix[classes] (Nominalizer[VERB] Cases[NN])|(Participle[T]|PNG InterroClitic?))
+#IntraVerbStem[Classes] (Voice[passive,non]|Causativiser[classes])? Participle[Classes]|(TenseInfix[classes] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
 #IntraVerbStem[ClassDef] (Voice|Causativiser)? Aspect|(Negation PNG) InterroClitic?
 ### REGULAR
 ### Imperative
@@ -376,10 +377,10 @@ LEXICON Voice
 ################## CAUSATIVE
 LEXICON Causativiser
 # Weak verb causitive marker
-<caus>:>வி[Class1a,Class1b,Class2,Class3,Class4,Class5,INTRACAUS]      # 'vi'
+<caus>:>வி[Class1a,Class1b,Class1c,Class2,Class3,Class4,Class5,INTRACAUS]      # 'vi'
 
 # Strong verb causitive marker
-<caus>:>ப்பி[Class6,Class7]                                             # 'ppi'
+<caus>:>ப்பி[Class6,Class7]                                                     # 'ppi'
 
 # Irregular causitive markers
 <caus>:>த்து[CAUSIRR1]                            # 'ththu'
@@ -424,14 +425,13 @@ LEXICON Infinitives
 
 ################## PARTICIPLE
 LEXICON Participle
-<rpar><adj>:>{A}[T]                                  # 'a'
-<cpar><adv>:>{U}[T]                                  # 'u'
 # Class wise word-ending
 # Adverbials are non-time
 # Adjectivals indicate time
 ## Adverbials
 <par><adv>:>து[Class1a]                              # 'thu'
-<par><adv>:>{T}{U}[Class1b]                          # 'tu' 
+<par><adv>:>{T}{U}[Class1b]                          # 'tu'
+<par><adv>:>{RR}{U}[Class1c]                         # 'ru' 
 <par><adv>:>ந்து[Class2]                              # 'nthu'
 <par><adv>:>{I}[Class3]                              # 'i'
 <par><adv>:>{TR}{U}[Class4]                          # 'ru'/'tu'
@@ -439,13 +439,14 @@ LEXICON Participle
 ### past
 <par><adj><past>:>த[Class1a]                        # 'th'
 <par><adj><past>:>{T}[Class1b]                       # 't'
+<par><adj><past>:>{RR}[Class1c]                      # 'r'
 <par><adj><past>:>ந்த[Class2]                        # 'nth'
 <par><adj><past>:>{I}ய[Class3]                      # 'iya'
 <par><adj><past>:>{TR}[Class4]                       # 'r'/'t'
 ### present
-<par><adj><pres>:>கிற[Class1a,Class1b,Class2,Class3,Class4]              # 'kir'
+<par><adj><pres>:>கிற[Class1a,Class1b,Class1c,Class2,Class3,Class4]              # 'kir'
 ### future
-<par><adj><fut>:>{U}ம்[Class1a,Class1b,Class2,Class3,Class4]              # 'um'
+<par><adj><fut>:>{U}ம்[Class1a,Class1b,Class1c,Class2,Class3,Class4]              # 'um'
 
 ################## IMPERATIVES
 LEXICON Imperatives
@@ -463,20 +464,23 @@ LEXICON Imperatives
 LEXICON PNG
 # p1
 <p1><sg>:>{EE}>ன{Pul}                      # 'een'       singular
-<p1><sg>:>{E}>ன{Pul}                       # 'en'        singular       (var)
+<p1><sg>:>{E}>ன{Pul}                       # 'en'        singular       (var)                      Dir/LR
 <p1><sg>:>ன{Pul}                           # 'n'         singular       (var)                      Dir/LR
 <p1><pl>:>ம{Pul}                            # 'm'         plural
+<p1><pl>:>{OO}ம{Pul}                        # 'om'        plural         (var)                      Dir/LR
 # p2
 <p2><sg>:>{AA}ய{Pul}                        # 'aay'       singular
 <p2><ihon><sg>:>{II}>ர{Pul}                 # 'iir'       singular       (intermediate honorific)
 <p2><hon><sg>:>{II}>ங்>கள{Pul}             # 'iinkal'    singular       (honorific)
 <p2><pl>:>{I}ய>ள{Pul}                      # 'iyal'      plural
 <p2><pl>:>{II}>ங்>கள{Pul}                  # 'iinkal'    plural         (var)                      Dir/LR
+<p2><pl>:>{II}>ர்>கள{Pul}                   # 'iirkal'    plural         (var)                      Dir/LR
 # p3
 ## human
 <p3><h><m><sg>:>{AA}>ன{Pul}                # 'aan'       singular       (masc)
 <p3><h><m><hon><sg>:>{AA}>ர{Pul}            # 'aar'       singular       (masc honorific)
 <p3><h><m><pl>:>{AA}>ங்>கள{Pul}            # 'aankal'    plural         (masc)
+<p3><h><m><pl>:>{AA}>ர்>கள{Pul}            # 'aarkal'    plural         (masc var)                 Dir/LR
 <p3><h><m><pl>:>ர{Pul}                      # 'r'         plural         (masc var)                 Dir/LR
 <p3><h><f><sg>:>{AA}>ள{Pul}                # 'aal'       singular       (fem)
 <p3><h><f><hon><sg>:>{AA}                   # 'aa'        singular       (fem honorific)
@@ -485,32 +489,42 @@ LEXICON PNG
 <p3><h><epl><hon>:>{I}னம{Pul}[P3EP]       # 'inam'      epicene plural (honorific)
 ## non-human
 <p3><nh><sg>:>{U}த{U}[NHum]                # 'utu'       singular       (non-human)
-<p3><nh><pl>:>{U}த{U}[NHum]                # 'utu'       plural         (non-human)
+<p3><nh><sg>:>த{U}[NHumE2]                 # 'tu'        singular       (non-human var)            Dir/LR
+<p3><nh><pl>:>ன[NHum]                     # 'na'        plural         (non-human)
 ### empty forms added for future tense
 <p3><nh><sg>:>[NHumE]                       # null       singular       (non-human)
-<p3><nh><sg>:>[NHumE]                       # null       plural         (non-human)
+<p3><nh><pl>:>[NHumE,NHumE2]                # null       plural         (non-human)
 # fix adding tense [] for present -inam and -utu and future -utu
 ################## TENSE
 LEXICON TenseInfix
 # Class-wise distribution
 # Past
-<past>:>த[Class1a]                        # 'th'
-<past>:>{T}[Class1b]                      # 't'
-<past>:>ந்த[Class2]                       # 'nth'
-<past>:>{I}ன[Class3]                     # 'in'
-<past>:>{TR}[Class4]                      # 'r'/'t'
+<past>:>த[Class1a]                                             # 'th'
+<past>:>{T}[Class1b]                                            # 't'
+<past>:>{RR}[Class1c,Class5a]                                   # 'r'
+<past>:>ந்த[Class2]                                             # 'nth'
+<past>:>{I}ன[Class3]                                           # 'in'
+<past>:>{TR}[Class4]                                            # 'r'/'t'
 
 # Present
-<pres>:>{K}{I}ற[Class1a,Class1b,Class2,Class3,Class4]  # 'kir'
+## weak form
+<pres>:>{K}{I}ற[Class1a,Class1b,Class1c,Class2,Class3,Class4]  # 'kir'
+## irregular class
+<pres>:>{K}{I}ற[Class5a]                                       # 'kir'
+
 ## irregulars
-<pres><neg>:                              # null
-<pres>:[NHum,P3EP]                        # null
+<pres><neg>:                                                    # null
+<pres>:[NHum,P3EP]                                              # null
 
 # Future
-<fut>:>வ[Class1a,Class1b,Class3,Class4]                # 'v'
-<fut>:>{U}வ[Class2]                      # 'uv'
+## weak form
+<fut>:>வ[Class1a,Class1b,Class1c,Class3,Class4]                # 'v'
+<fut>:>{U}வ[Class2]                                            # 'uv'
+## irregular class
+<fut>:>{P}[Class5a]                                             # 'p'
+
 ## irregulars
-<fut>:{U}ம்[NHumE]                        # 'um'
+<fut>:{U}ம்[NHumE]                                              # 'um'
 
 ########################### PRONOUNS
 LEXICON HumanRadical
@@ -813,6 +827,7 @@ LEXICON Nouns
 # 1-4:  Melvinaigal (Weak, take tense and PNG)
 # 5:    Irregulars  (Take tense and PNG)
 # 6-7:  Valvinaigal (Strong, take tense and PNG)
+## 1 and 5 have subclasses (a,b,c) based on endings
 ##########
 
 # General verbs and Aspectual Auxiliaries belong to 7 classes as discussed above
@@ -863,12 +878,10 @@ LEXICON AspectVerbAux
 
 LEXICON TransVerbStem
 # Class 1a
-# Class 1b
-கொள்<v><tv>:கொ{LN}{Pul}[Class1b]             # 'kol'         contain
-# Class 1c
-
 ## Special double causitive
 செய்<vbdo><tv>:செ{Y}{Pul}[Class1a,WEAKDOUBCAUS] # 'cei'         do
+# Class 1b
+கொள்<v><tv>:கொ{LN}{Pul}[Class1b]             # 'kol'         contain
 
 # Class 2
 தா<v><tv>:த{AA}[Class2,INF]                      # 'thaa'        give
@@ -908,19 +921,20 @@ LEXICON TransVerbStem
 # Class 4
 விடு<v><tv>:வி{T}{U}[Class4]                     # 'vitu'        leave
 கூப்பிடு<v><tv>:கூப்பி{T}{U}[Class4]              # 'kuuppitu'    call
-உடு<v><tv>:உ{T}{U}[Class4]                     # 'utu'          wear
 போடு<v><tv>:போ{T}{U}[Class4]                 # 'pootu'        put
 பெறு<v><tv>:பெ{RR}{U}[Class4]                  # 'peru'         give birth
 
-# Class 5
-உண்<v><tv>:உண{Pul}[Class5]                  # 'un'          eat
-சொல்<v><tv>:சொல{Pul}[Class5]                # 'col'         tell
+# Class 5b
+சொல்<v><tv>:சொல{Pul}[Class5b]               # 'col'         tell
+# Class 5c
+உண்<v><tv>:உண{Pul}[Class5c]                 # 'un'          eat
 
 # Class 6
 முடி<v><tv>:முட{I}[Class6]                      # 'muti'        complete                   Paired
 கெடு<v><iv>:கெட{U}[Class6]                    # 'ketu'        spoil                      Paired
 எடு<v><tv>:எட{U}[Class6]                        # 'etu'         take
 கொடு<v><tv>:கொட{U}[Class6]                  # 'kotu'        give
+உடு<v><tv>:உ{T}{U}[Class6]                     # 'utu'          wear
 அடி<v><tv>:அட{I}[Class6]                       # 'ati'         beat
 படி<v><tv>:பட{I}[Class6]                        # 'pati'        study
 பிடி<v><tv>:பிட{I}[Class6]                       # 'piti'        catch
@@ -938,8 +952,10 @@ LEXICON IntraVerbStem
 தெரி<v><iv>:தெர{I}[ClassDef]                    # 'theri'       know
 புரி<v><iv>:புர{I}[ClassDef]                       # 'puri'        understand
 
-# Class 1
+# Class 1b
 பிரள்<v><iv>:பிர{LN}{Pul}[Class1b]                # 'piral'       roll over                Paired
+# Class 1c
+செல்<v><iv>:செ{Ln}{Pul}[Class1c]                # 'cel'         occur  
 
 ## Special causitive form
 அழு<v><iv>:அழ{U}[Class1a,INTRACAUS]            # 'azhu'        cry
@@ -973,9 +989,10 @@ LEXICON IntraVerbStem
 படு<v><iv>:ப{T}{U}[Class4]                      # 'patu'        experience
 # fix muti and check other verbs, and irregular verbs vaa thaa poo etc.
 # fix add avaiyinr
+# fix ask about colloquial forms for all classes
 
-# Class 5
-நில்<v><iv>:நில{Pul}[Class5]                     # 'nil'         stand
+# Class 5a
+நில்<v><iv>:நி{Ln}{Pul}[Class5a]                  # 'nil'         stand
 
 # Class 6
 வலி<v><iv>:வல{I}[Class6]                       # 'vali'        ache
