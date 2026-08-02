@@ -14,6 +14,7 @@ Alphabet
      %{A%}:0 %{A%}:ா
      %{AA%}:ா
      %{AAm%}:ா
+     %{AAIrr%}:ா
      %{I%}:ி
      %{Im%}:ி
      %{II%}:ீ
@@ -35,6 +36,7 @@ Alphabet
      %{M%}:ம %{M%}:த %{M%}:ங
      %{N%}:ன %{N%}:ங
      %{Nn%}:ன
+     %{NN%}:ண
      %{NP%}:ன %{NP%}:ங
      %{NK%}:ன %{NK%}:ர
      %{K%}:க
@@ -170,7 +172,7 @@ Rules
 "Removing I when Referential and noun ends in AA"
 %{Irefr%}:0 <=> %{AA%}: %>: _ ;
 
-! Noun endings 
+! Word endings 
 "Inserting ய"
 0:ய <=> [ %{AI%}: | %{I%}: | %{II%}: | %{EE%}: | %{E%}: | %{AIE%}: ] (%{AN%}:) _ %>: [ :VowelRight | %{Um%}: | %{AAm%}: ] ;
          %{AA%}: _ %>: %{I%}: ;
@@ -178,6 +180,9 @@ Rules
 
 "Inserting ள"
 0:ள <=> %{LN%}: %{Pul%}: _ %>: %{U%}: ;
+
+"Inserting ண"
+0:ண <=> %{NN%}: %{Pul%}: _ %>: %{U%}: ;
 
 "Inserting வ"
 0:வ <=> [ %{A%}: | %{AA%}: ] _ %>: SuffixVowelsI: ;
@@ -252,6 +257,19 @@ Rules
 
 "Ending with nothing"
 %{PLR%}:ள <=> _ %{Pul%}: .#. ;
+
+! Irregular verb forms
+"Inserting Ru for thaa, vaa"
+0:ர <=> [ :த | :வ ] %{AAIrr%}: _ 0: %>: [ %{K%}: | வ: ] ;
+        [ :த | :வ ] %{AAIrr%}: _ %>: %{U%}: ;
+
+"Inserting rU for thaa, vaa"
+0:Vy <=> [ :த | :வ ] %{AAIrr%}: 0: _ %>: [ %{K%}: | வ: ] ;
+         where Vy in ( ு ) ;
+
+"Dropping AA for thaa, vaa"
+%{AAIrr%}:0 <=> [ :த | :வ ] _ (0: 0:) %>: :Consonant ;
+             [ :த | :வ ] _ 0: %>: %{U%}: ;
 
 ! Resources:
 ! https://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
