@@ -117,6 +117,7 @@ TransVerbStem[-INF] Infinitives? Imperatives
 TransVerbStem[INF] Infinitives Imperatives
 ### Negation
 TransVerbStem Infinitives (AuxSuffix|NegSuffix[INF])?
+TransVerbStem Infinitives NegSuffix[DYN] PNG
 TransVerbStem NegSuffix[-INF]
 TransVerbStem Negation PNG[NHum]|PNG[P3EP]
 
@@ -137,7 +138,7 @@ TransVerbStem[CAUSIRR2] Causativiser[CAUSIRR2]
 
 ## Intransitives
 # fix example combination of all to make regular, negation is aa not illay
-#IntraVerbStem[Classes] (Voice[passive,non]|Causativiser[classes])? TenseInfix[classes] (Nominalizer[VERB] Cases[NN])|(Participle|PNG InterroClitic?)
+#IntraVerbStem[Classes] (Voice[passive,non]|Causativiser[classes])? Participle[Classes]|(TenseInfix[classes] (Nominalizer[VERB] Cases[NN])|(Participle[T]|PNG InterroClitic?))
 #IntraVerbStem[ClassDef] (Voice|Causativiser)? Aspect|(Negation PNG) InterroClitic?
 ### REGULAR
 ### Imperative
@@ -146,6 +147,7 @@ IntraVerbStem[INF] Infinitives Imperatives
 ### Negation
 IntraVerbStem NegSuffix[-INF]
 IntraVerbStem Infinitives (AuxSuffix|NegSuffix[INF])?
+IntraVerbStem Infinitives NegSuffix[DYN] PNG
 IntraVerbStem Negation PNG[NHum]|PNG[P3EP]
 
 ### Passivisers
@@ -395,15 +397,17 @@ LEXICON AuxSuffix
 ################## NEGATION SUFFIX
 LEXICON NegSuffix
 # Some require preceding infinitives [INF]
+# Some are dynamic and require infinitives [DYN]
 ## <vaux>
 <neg><vaux>:>{I}ல்லை[INF]                  # 'illay'
 <neg><vaux>:>லெ[INF]                       # 'illay'          Dir/LR
+மாட்<vaux><fut>:மா{T}{Pul}[DYN]            # 'maat'
 ## <adv>
 <neg><adv><par>:>{AA}>மல்                   # 'aamal'
-<neg><adv><par>:>{AA}>ம                          # 'aama'           Dir/LR
+<neg><adv><par>:>{AA}>ம                     # 'aama'           Dir/LR
 ## <adj>
-<neg><adj><par>:>{AA}>த                          # 'aatha'
-
+<neg><adj><par>:>{AA}>த                     # 'aatha'
+# fix negsuffix by adding more from book
 ################## NEGATION
 LEXICON Negation
 <neg>:>{AA}                                       # 'aa'
@@ -420,8 +424,28 @@ LEXICON Infinitives
 
 ################## PARTICIPLE
 LEXICON Participle
-<rpar><adj>:>{A}                                  # 'a'
-<cpar><adv>:>{U}                                  # 'u'
+<rpar><adj>:>{A}[T]                                  # 'a'
+<cpar><adv>:>{U}[T]                                  # 'u'
+# Class wise word-ending
+# Adverbials are non-time
+# Adjectivals indicate time
+## Adverbials
+<par><adv>:>து[Class1a]                              # 'thu'
+<par><adv>:>{T}{U}[Class1b]                          # 'tu' 
+<par><adv>:>ந்து[Class2]                              # 'nthu'
+<par><adv>:>{I}[Class3]                              # 'i'
+<par><adv>:>{TR}{U}[Class4]                          # 'ru'/'tu'
+## Adjectivals
+### past
+<par><adj><past>:>த[Class1a]                        # 'th'
+<par><adj><past>:>{T}[Class1b]                       # 't'
+<par><adj><past>:>ந்த[Class2]                        # 'nth'
+<par><adj><past>:>{I}ய[Class3]                      # 'iya'
+<par><adj><past>:>{TR}[Class4]                       # 'r'/'t'
+### present
+<par><adj><pres>:>கிற[Class1a,Class1b,Class2,Class3,Class4]              # 'kir'
+### future
+<par><adj><fut>:>{U}ம்[Class1a,Class1b,Class2,Class3,Class4]              # 'um'
 
 ################## IMPERATIVES
 LEXICON Imperatives
@@ -462,7 +486,32 @@ LEXICON PNG
 ## non-human
 <p3><nh><sg>:>{U}த{U}[NHum]                # 'utu'       singular       (non-human)
 <p3><nh><pl>:>{U}த{U}[NHum]                # 'utu'       plural         (non-human)
+### empty forms added for future tense
+<p3><nh><sg>:>[NHumE]                       # null       singular       (non-human)
+<p3><nh><sg>:>[NHumE]                       # null       plural         (non-human)
 # fix adding tense [] for present -inam and -utu and future -utu
+################## TENSE
+LEXICON TenseInfix
+# Class-wise distribution
+# Past
+<past>:>த[Class1a]                        # 'th'
+<past>:>{T}[Class1b]                      # 't'
+<past>:>ந்த[Class2]                       # 'nth'
+<past>:>{I}ன[Class3]                     # 'in'
+<past>:>{TR}[Class4]                      # 'r'/'t'
+
+# Present
+<pres>:>{K}{I}ற[Class1a,Class1b,Class2,Class3,Class4]  # 'kir'
+## irregulars
+<pres><neg>:                              # null
+<pres>:[NHum,P3EP]                        # null
+
+# Future
+<fut>:>வ[Class1a,Class1b,Class3,Class4]                # 'v'
+<fut>:>{U}வ[Class2]                      # 'uv'
+## irregulars
+<fut>:{U}ம்[NHumE]                        # 'um'
+
 ########################### PRONOUNS
 LEXICON HumanRadical
 # Added to indefinite pronouns
@@ -580,7 +629,7 @@ LEXICON Nouns
 மான்<n><aa>:மா{N}{Pul}[AA,Pl4]                                 # 'maan'            deer
 நுல்லான்<n><aa>:நுள்ளா{N}{Pul}[AA,Pl4]                         # 'nullaan'         small reddish ant
 
-# Class 5
+# Class 5 (loanwords)
 ## UNISEX
 எஞ்சினியர்<n><mf><aa>:எஞ்சினியர{Pul}[AA,Pl5]                  # 'enciniyar'       engineer
 கிளார்க்<n><mf><aa>:கிளார்க்{Pul}[AA,Pl5]                         # 'kilaakku'        clerk
@@ -652,18 +701,18 @@ LEXICON Nouns
 செட்டிச்சி<n><f><aa>:செட்டிச்ச{I}[AA,Pl7]                       # 'cetticci'         female from cetti comm.
 ## MALE
 ### IV
-செட்டி<n><m><aa>:செட்ட{I}[AA,Pl7]                               # 'cetti'           male from cetti comm.
+செட்டி<n><m><aa>:செட்ட{I}[AA,Pl7]                             # 'cetti'             male from cetti comm.
 
 # Class 8
 ## EPICENE
-சொந்தக்காரன்<n><aa>:சொந்த>க்கார{NR}{Pul}[AA,EH,ES]           # 'conthakkaaran'    relative
+சொந்தக்காரன்<n><aa>:சொந்த>க்கார{NR}{Pul}[AA,EH,ES]          # 'conthakkaaran'    relative
 ## MALE
 ### I
-குருடன்<n><m><aa>:குருட{NR}{Pul}[AA,Pl8,H]                        # 'kurutan'         blind man
-விசரன்<n><m><aa>:விசர{NR}{Pul}[AA,Pl8,H]                         # 'vicaran'         mad man
-செகிடன்<n><m><aa>:செகிட{NR}{Pul}[AA,Pl8,H]                      # 'cekitan'         deaf man
-தலைவன்<n><m><aa>:தலைவ{NR}{Pul}[AA,Pl8,H]                    # 'thalayvan'       male leader        
-சகோதரன்<n><m><aa>:சகோதர{NR}{Pul}[AA,Pl8,H]                  # 'cakootharan'     brother
+குருடன்<n><m><aa>:குருட{NR}{Pul}[AA,Pl8,H]                         # 'kurutan'         blind man
+விசரன்<n><m><aa>:விசர{NR}{Pul}[AA,Pl8,H]                          # 'vicaran'         mad man
+செகிடன்<n><m><aa>:செகிட{NR}{Pul}[AA,Pl8,H]                       # 'cekitan'         deaf man
+தலைவன்<n><m><aa>:தலைவ{NR}{Pul}[AA,Pl8,H]                     # 'thalayvan'       male leader        
+சகோதரன்<n><m><aa>:சகோதர{NR}{Pul}[AA,Pl8,H]                   # 'cakootharan'     brother
 சினேகிதன்<n><m><aa>:சினேகித{NR}{Pul}[AA,Pl8,H]                 # 'cineekithan'     male friend
 பாட்டுக்காரன்<n><m><aa>:பாட்டு>க்கார{NR}{Pul}[AA,Pl8,H]          # 'paattukkaaran'   male singer
 எண்ணெய்க்காரன்<n><m><aa>:எண்ணெய்>க்கார{NR}{Pul}[AA,Pl8,H] # 'ennaikkaaran'    male oil presser
@@ -681,6 +730,7 @@ LEXICON Nouns
 ஒருவன்<n><m><aa>:ஒரு>வ{NR}{Pul}[AA,Pl8,H]                        # 'oruvan'          one man
 
 ##################### INANIMATE
+# loanwords placed on top of each class
 # Class 0
 # Foodstuffs
 பழம்<n><nn>:பழ{M}{Pul}[NN,FNoun]                                # 'pazham'          fruit
@@ -697,7 +747,7 @@ LEXICON Nouns
 கன<n><nn>:கன[NN,QNoun]                                        # 'kana'            many
 ### Masses
 தண்ணீ<n><nn>:தண்ண{II}[NN,UNoun]                             # 'thannii'         water
-தண்ணீர்<n><nn>:தண்ணீர{Pul}[NN,UNoun]                         # 'thanniir'        water                               Dir/LR
+தண்ணீர்<n><nn>:தண்ணீர{Pul}[NN,UNoun]                         # 'thanniir'        water               Dir/LR
 காற்று<n><nn>:காற்ற{U}[NN,UNoun]                                # 'kaarru'          wind
 பட்டு<n><nn>:பட்ட{U}[NN,UNoun]                                   # 'pattu'           silk
 பொன்<n><nn>:பொ{N}{Pul}[NN,UNoun]                             # 'pon'             gold
@@ -709,13 +759,14 @@ LEXICON Nouns
 அன்பு<nq><nn>:அன்ப{U}[NN,ANoun,NQ]                             # 'anpu'            love
 கோபம்<nq><nn>:கோப{M}{Pul}[NN,ANoun,NQ]                       # 'koopam'          anger
 ## Behaviour
+உசார்<nq><nn>:உசார{Pul}[NN,ANoun,NQ]                           # 'ucaar'           enthusiasm         loanword
 கண்டிப்பு<nq><nn>:கண்டிப்ப{U}[NN,ANoun,NQ]                      # 'kantippu'        discipline
-உசார்<nq><nn>:உசார{Pul}[NN,ANoun,NQ]                           # 'ucaar'           enthusiasm
 ### irregular which is the same as its adjective
-தனி<nq><nn>:தன{I}[NN,ANoun,NQ]                                 # 'thani'           solitude               Dir/LR
+தனி<nq><nn>:தன{I}[NN,ANoun,NQ]                                 # 'thani'           solitude           Dir/LR
 
 # Class 1
-பேனா<n><nn>:பேன{AA}[NN,Pl1]                                  # 'peena'           pen
+பேனா<n><nn>:பேன{AA}[NN,Pl1]                                  # 'peena'           pen                loanword
+கார்<n><nn>:கார{Pul}[NN,Pl1]                                    # 'kaar'            car                loanword
 காசு<n><nn>:காச{U}[NN,Pl1]                                      # 'kaacu'           money
 நெஞ்சு<n><nn>:நெஞ்ச{U}[NN,Pl1]                                 # 'nencu'           heart
 பெட்டி<n><nn>:பெட்ட{I}[NN,Pl1]                                  # 'petti'           box
@@ -726,19 +777,18 @@ LEXICON Nouns
 கடை<n><nn>:கட{AI}[NN,Pl1]                                     # 'katay'           shop
 தோசை<n><nn>:தோச{AI}[NN,Pl1]                                # 'thoocay'         dosa
 காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                         # 'kaaiccal'        fever
-கார்<n><nn>:கார{Pul}[NN,Pl1]                                    # 'kaar'            car
 கால்<n><nn>:கால{Pul}[NN,Pl1]                                   # 'kaal'            leg
 தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                # 'thabaal'         letter
 வால்<n><nn>:வால{Pul}[NN,Pl1]                                   # 'vaal'            tail
 மரம்<n><nn>:மர{M}{Pul}[NN,Pl1]                                  # 'maram'           tree
 பாடம்<n><nn>:பாட{M}{Pul}[NN,Pl1]                               # 'paatam'          lesson
-மனம்<n><nn>:மன{M}{Pul}[NN,Pl1]                               # 'manam'            mind
+மனம்<n><nn>:மன{M}{Pul}[NN,Pl1]                                # 'manam'           mind
 ஆயுதம்<n><nn>:ஆயுத{M}{Pul}[NN,Pl1]                            # 'aayutham'        instrument
 வீடு<n><nn>:வீ{T}{U}[NN,VIrr,Pl1]                                 # 'veetu'           house
 வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                # 'vayiru'          stomach
 
 ## Quality Nouns <nq> (can take Adjectivizer [NQ])
-குணம்<nq><nn>:குண{M}{Pul}[NN,Pl1,NQ]                          # 'kunam'           quality
+குணம்<nq><nn>:குண{M}{Pul}[NN,Pl1,NQ]                          # 'kunam'           quality           loanword
 உயரம்<nq><nn>:உயர{M}{Pul}[NN,Pl1,NQ]                         # 'uyaram'           height
 இரக்கம்<nq><nn>:இரக்க{M}{Pul}[NN,Pl1,NQ]                       # 'irakkam'         compassion
 யோக்கியம்<nq><nn>:யோக்கிய{M}{Pul}[NN,Pl1,NQ]                # 'yookkiyam'       integrity
@@ -753,9 +803,9 @@ LEXICON Nouns
 சால்வை<n><nn>:சால்வ{AI}[NN,Pl3]                              # 'caalvay'         shawl
 
 # Class 4
-வான்<n><nn>:வான{Pul}[NN,Pl4]                                # 'vaan'             van              loanword (n does not change)
-கல்<n><nn>:க{L}{Pul}[NN,Pl4]                                   # 'kal'             stone
-நெல்<n><nn>:நெ{L}{Pul}[NN,Pl4]                                # 'nel'             paddy
+வான்<n><nn>:வான{Pul}[NN,Pl4]                                 # 'vaan'             van             loanword (n does not change)
+கல்<n><nn>:க{L}{Pul}[NN,Pl4]                                    # 'kal'             stone
+நெல்<n><nn>:நெ{L}{Pul}[NN,Pl4]                                 # 'nel'             paddy
 
 ################################     VERBS     ################################
 # Verb Classes:
@@ -814,7 +864,7 @@ LEXICON AspectVerbAux
 LEXICON TransVerbStem
 # Class 1a
 # Class 1b
-கொள்<v><tv>:கொள{Pul}[Class1b]               # 'kol'         contain
+கொள்<v><tv>:கொ{LN}{Pul}[Class1b]             # 'kol'         contain
 # Class 1c
 
 ## Special double causitive
@@ -837,6 +887,7 @@ LEXICON TransVerbStem
 ஏற்று<v><tv>:ஏற்ற{U}[Class3]                     # 'ettu'        reach                    Paired
 எழுது<v><tv>:எழுத{U}[Class3,CAUSIRR2]           # 'ezhuthu'     write
 விளக்கு<v><tv>:விளக்க{U}[Class3]                # 'vilakku'     explain
+விளங்கு<v><tv>:விளங்க{U}[Class3]               # 'vilanku'     understand
 வாங்கு<v><tv>:வாங்க{U}[Class3]                 # 'vaanku'      buy
 வேண்டு<v><tv>:வேண்ட{U}[Class3]               # 'veentu'      want
 கட்டு<v><tv>:கட்ட{U}[Class3]                     # 'kattu'       tie
@@ -855,11 +906,11 @@ LEXICON TransVerbStem
 தேடு<v><tv>:தேட{U}[Class3,WEAKDOUBCAUS]        # 'theetu'      search
 
 # Class 4
-விளங்கு<v><tv>:விளங்க{U}[Class4]               # 'vilanku'     understand
-விடு<v><tv>:விட{U}[Class4]                       # 'vitu'        leave
-கூப்பிடு<v><tv>:கூப்பிட{U}[Class4]                # 'kuuppitu'    call
-உடு<v><tv>:உட{U}[Class4]                       # 'utu'          wear
-போடு<v><tv>:போட{U}[Class4]                   # 'pootu'        put
+விடு<v><tv>:வி{T}{U}[Class4]                     # 'vitu'        leave
+கூப்பிடு<v><tv>:கூப்பி{T}{U}[Class4]              # 'kuuppitu'    call
+உடு<v><tv>:உ{T}{U}[Class4]                     # 'utu'          wear
+போடு<v><tv>:போ{T}{U}[Class4]                 # 'pootu'        put
+பெறு<v><tv>:பெ{RR}{U}[Class4]                  # 'peru'         give birth
 
 # Class 5
 உண்<v><tv>:உண{Pul}[Class5]                  # 'un'          eat
@@ -888,7 +939,7 @@ LEXICON IntraVerbStem
 புரி<v><iv>:புர{I}[ClassDef]                       # 'puri'        understand
 
 # Class 1
-பிரள்<v><iv>:பிரள{Pul}                           # 'piral'       roll over                Paired
+பிரள்<v><iv>:பிர{LN}{Pul}[Class1b]                # 'piral'       roll over                Paired
 
 ## Special causitive form
 அழு<v><iv>:அழ{U}[Class1a,INTRACAUS]            # 'azhu'        cry
@@ -902,10 +953,12 @@ LEXICON IntraVerbStem
 # Class 3
 ஒட்டு<v><iv>:ஒட்ட{U}[Class3]                     # 'ottu'        adhere                  Paired
 திரும்பு<v><iv>:திரும்ப{U}[Class3]                 # 'thirumpu'    turn                    Paired
+திருந்து<v><iv>:திருந்த{U}[Class3]                 # 'thirunthu'   improve                 Paired
+சுருங்கு<v><iv>:சுருங்க{U}[Class3]                # 'curunku'     shrink                   Paired
 பேசு<v><iv>:பேச{U}[Class3]                      # 'peecu'       speak
 கூடு<v><iv>:கூட{U}[Class3]                       # 'kuutu'       join
-படு<v><iv>:பட{U}[Class3]                        # 'patu'        experience
-போ<v><iv>:போ[Class3,INF]                     # 'poo'         go
+உருகு<v><iv>:உருக{U}[Class3]                   # 'uruku'        melt
+போ<v><iv>:போ[Class3,INF]                     # 'poo'          go
 
 ## Special passive form
 வாடு<v><iv>:வாட{U}[Class3,PASSIVE]             # 'vaatu'       wither
@@ -914,12 +967,12 @@ LEXICON IntraVerbStem
 ஏறு<v><iv>:ஏற{U}[Class3,INTRACAUS]              # 'eeru'        climb                    Paired
 
 # Class 4
-திருந்து<v><iv>:திருந்த{U}[Class4]                # 'thirunthu'   improve                  Paired
-சுருங்கு<v><iv>:சுருங்க{U}[Class4]                # 'curunku'     shrink                   Paired
-ஆடு<v><iv>:ஆட{U}[Class4]                      # 'aatu'        swing                    Paired
-உருகு<v><iv>:உருக{U}[Class4]                   # 'uruku'       melt                     Paired
-கெடு<v><iv>:கெட{U}[Class4]                    # 'ketu'        spoil                    Paired
+ஆடு<v><iv>:ஆ{T}{U}[Class4]                    # 'aatu'        swing                    Paired
+கெடு<v><iv>:கெ{T}{U}[Class4]                   # 'ketu'        spoil                   Paired
 முடி<v><iv>:முட{I}[Class4]                      # 'muti'        complete                 Paired
+படு<v><iv>:ப{T}{U}[Class4]                      # 'patu'        experience
+# fix muti and check other verbs, and irregular verbs vaa thaa poo etc.
+# fix add avaiyinr
 
 # Class 5
 நில்<v><iv>:நில{Pul}[Class5]                     # 'nil'         stand

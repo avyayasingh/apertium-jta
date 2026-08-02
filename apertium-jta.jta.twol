@@ -39,11 +39,13 @@ Alphabet
      %{K%}:க
      %{L%}:ல
      %{PL%}:ள
+     %{LN%}:ள %{LN%}:ண
      %{PLR%}:ள
      %{R%}:ர
      %{RP%}:ர   
      %{RR%}:ற
      %{T%}:ட
+     %{TR%}:ட %{TR%}:ற
      %{TH%}:த
      %{Y%}:ய
      %{C%}:ச
@@ -107,6 +109,7 @@ Rules
          %{T%}: _ (0:) %{U%}: %>: SuffixVowels: ;
          %{RR%}: _ (0:) %{U%}: %>: SuffixVowels: ;
          %{AA%}: %>: 0: _ %{K%}: ;
+         [ %{T%}: | %{RR%}: ] _ %{U%}: %>: %{TR%}: ;
          where Vy in ( ் ) ;
 
 ! -m ending
@@ -122,11 +125,19 @@ Rules
 ! -rr ending
 "Insert a second RR"
 0:ற <=> %{RR%}: :Vy _ %{U%}: %>: SuffixVowels: ;
+         where Vy in ( ் ) ;
+
+"Change to RR"
+%{TR%}:ற <=> %{RR%}: :Vy %{U%}: %>: _ ;
               where Vy in ( ் ) ;
 
 ! -t ending
 "Insert a second T"
 0:ட <=> %{T%}: :Vy _ (%{U%}:) %>: SuffixVowels: ;
+              where Vy in ( ் ) ;
+
+"Change to T"
+%{TR%}:ட <=> %{T%}: :Vy %{U%}: %>: _ ;
               where Vy in ( ் ) ;
 
 ! -l ending irregular
@@ -160,6 +171,9 @@ Rules
          %{AA%}: _ %>: %{I%}: ;
          %{Y%}: %{Pul%}: _ %>: %{U%}: ;
 
+"Inserting ள"
+0:ள <=> %{LN%}: %{Pul%}: _ %>: %{U%}: ;
+
 "Inserting வ"
 0:வ <=> [ %{A%}: | %{AA%}: ] _ %>: SuffixVowelsI: ;
 
@@ -179,6 +193,7 @@ Rules
 %{U%}:0 <=> _ %>: SuffixVowelsU: ;
             SuffixVowelsU: %>: _ ;
             _ %>: [ %{U%}: | %{Um%}: ] ;
+            [ %{T%}: | %{RR%}: ] 0: _ %>: %{TR%}: ;
 
 "Starting with K"
 %{M%}:ங <=> _ %{Pul%}: %>: %{K%}: ;
@@ -200,6 +215,9 @@ Rules
 
 "Starting with T"
 %{PL%}:0 <=> _ %{Pul%}: %>: %{T%}: ;
+
+"Starting with T"
+%{LN%}:ண <=> _ %{Pul%}: %>: %{T%}: ;
 
 "Starting with R"
 %{NR%}:0 <=> _ %{Pul%}: %>: %{R%}: %{Pul%}: ;
