@@ -111,52 +111,57 @@ AspectVerbAux[Class4] TenseInfix[Class4] PNG InterroClitic?
 AspectVerbAux[Class7] TenseInfix[Class7] PNG InterroClitic?
 ## Transitives
 ### REGULAR
+TransVerbStem[Class1a] (Voice[-PASSIVE]|Causativiser[Class1a])? Participle[Class1a]|(TenseInfix[Class1a] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+TransVerbStem[Class1b] (Voice[-PASSIVE]|Causativiser[Class1b])? Participle[Class1b]|(TenseInfix[Class1b] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+TransVerbStem[Class2] (Voice[-PASSIVE]|Causativiser[Class2])? Participle[Class2]|(TenseInfix[Class2] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+TransVerbStem[Class3] (Voice[-PASSIVE]|Causativiser[Class3])? Participle[Class3]|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+TransVerbStem[Class4] (Voice[-PASSIVE]|Causativiser[Class4])? Participle[Class4]|(TenseInfix[Class4] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+TransVerbStem[Class5b] (Voice[-PASSIVE]|Causativiser[Class5b])? Participle[Class5b]|(TenseInfix[Class5b] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+TransVerbStem[Class5c] (Voice[-PASSIVE]|Causativiser[Class5c])? Participle[Class5c]|(TenseInfix[Class5c] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+TransVerbStem[Class6] (Voice[-PASSIVE]|Causativiser[Class6])? Participle[Class6]|(TenseInfix[Class6] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+TransVerbStem[Class7] (Voice[-PASSIVE]|Causativiser[Class7])? Participle[Class7]|(TenseInfix[Class7] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+TransVerbStem[Class1a,WEAKDOUBCAUS] (Voice[-PASSIVE]|Causativiser[WEAKDOUBCAUS])? Participle[Class1a]|(TenseInfix[Class1a] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+TransVerbStem[Class3,WEAKDOUBCAUS] (Voice[-PASSIVE]|Causativiser[WEAKDOUBCAUS])? Participle[Class3]|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+TransVerbStem[Class3,CAUSIRR2] (Voice[-PASSIVE]|Causativiser[CAUSIRR2])? Participle[Class3]|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+TransVerbStem[Class3,PASSIVE] (Voice[PASSIVE]|Causativiser[Class3])? Participle[Class3]|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
 ### Imperative
-TransVerbStem[-INF] Infinitives? Imperatives
-TransVerbStem[INF] Infinitives Imperatives
+TransVerbStem[-INF] Imperatives[POS]
+TransVerbStem[INF] Imperatives[POSIrr]
+TransVerbStem[-INF] Infinitives? Imperatives[NEG]
+TransVerbStem[INF] Infinitives Imperatives[NEG]
 ### Negation
 TransVerbStem Infinitives (AuxSuffix|NegSuffix[INF])?
 TransVerbStem Infinitives NegSuffix[DYN] PNG
 TransVerbStem NegSuffix[-INF]
 TransVerbStem Negation PNG[NHum]|PNG[P3EP]|PNG[NHumE2]
-
-### Passivisers
-TransVerbStem[PASSIVE] Voice[PASSIVE]
-TransVerbStem Voice[-PASSIVE]
-### Causativisers
-TransVerbStem[Class1a] Causativiser[Class1a]
-TransVerbStem[Class1b] Causativiser[Class1b]
-TransVerbStem[Class1c] Causativiser[Class1c]
-TransVerbStem[Class2] Causativiser[Class2]
-TransVerbStem[Class3] Causativiser[Class3]
-TransVerbStem[Class4] Causativiser[Class4]
-TransVerbStem[Class5] Causativiser[Class5]
-TransVerbStem[Class6] Causativiser[Class6]
-TransVerbStem[Class7] Causativiser[Class7]
-TransVerbStem[WEAKDOUBCAUS] Causativiser[WEAKDOUBCAUS]
-TransVerbStem[CAUSIRR2] Causativiser[CAUSIRR2]
-
 ## Intransitives
-# fix example combination of all to make regular, negation is aa not illay
-#IntraVerbStem[Classes] (Voice[passive,non]|Causativiser[classes])? Participle[Classes]|(TenseInfix[classes] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
-#IntraVerbStem[ClassDef] (Voice|Causativiser)? Aspect|(Negation PNG) InterroClitic?
 ### REGULAR
+IntraVerbStem[Class1a] Participle[Class1a]|(TenseInfix[Class1a] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+IntraVerbStem[Class1b] Participle[Class1b]|(TenseInfix[Class1b] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+IntraVerbStem[Class1c] Participle[Class1c]|(TenseInfix[Class1c] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+IntraVerbStem[Class2] Participle[Class2]|(TenseInfix[Class2] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+IntraVerbStem[Class3] Participle[Class3]|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+IntraVerbStem[Class3Irr] Participle[Class3Irr]|(TenseInfix[Class3Irr] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+IntraVerbStem[Class4] Participle[Class4]|(TenseInfix[Class4] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+IntraVerbStem[Class5a] Participle[Class5a]|(TenseInfix[Class5a] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+IntraVerbStem[Class6] Participle[Class6]|(TenseInfix[Class6] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+IntraVerbStem[Class7] Participle[Class7]|(TenseInfix[Class7] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+IntraVerbStem[Class1a,INTRACAUS] Causativiser[INTRACAUS]? Participle[Class1a]|(TenseInfix[Class1a] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+IntraVerbStem[Class3,INTRACAUS] Causativiser[INTRACAUS]? Participle[Class3]|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+IntraVerbStem[Class7,CAUSIRR1] Causativiser[CAUSIRR1]? Participle[Class7]|(TenseInfix[Class7] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+IntraVerbStem[Class7,STRONGDOUBCAUS] Causativiser[STRONGDOUBCAUS]? Participle[Class7]|(TenseInfix[Class7] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+IntraVerbStem[Class3,PASSIVE] Voice[PASSIVE]? Participle[Class3]|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG InterroClitic?))
+IntraVerbStem[ClassDef] Causativiser? Aspect|(Negation PNG) InterroClitic?
 ### Imperative
-IntraVerbStem[-INF] Infinitives? Imperatives
-IntraVerbStem[INF] Infinitives Imperatives
+IntraVerbStem[-INF] Imperatives[POS]
+IntraVerbStem[INF] Imperatives[POSIrr]
+IntraVerbStem[-INF] Infinitives? Imperatives[NEG]
+IntraVerbStem[INF] Infinitives Imperatives[NEG]
 ### Negation
 IntraVerbStem NegSuffix[-INF]
 IntraVerbStem Infinitives (AuxSuffix|NegSuffix[INF])?
 IntraVerbStem Infinitives NegSuffix[DYN] PNG
 IntraVerbStem Negation PNG[NHum]|PNG[P3EP]
-
-### Passivisers
-IntraVerbStem[PASSIVE] Voice[PASSIVE]
-### Causativisers
-IntraVerbStem[INTRACAUS] Causativiser[INTRACAUS]
-IntraVerbStem[CAUSIRR1] Causativiser[CAUSIRR1]
-IntraVerbStem[STRONGDOUBCAUS] Causativiser[STRONGDOUBCAUS]
-
 # Adjectives
 Adjectives[IND] [ <adj>: ] > ((Adverbializer EndwordMorph?)|(Nominalizer[ADJ] Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?))
 Adjectives[BOTH] [ <adj>: ] > ((Adverbializer EndwordMorph?)|(Nominalizer[ADJ] (Adjectivizer EndwordMorph?)|(Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?)))
@@ -378,17 +383,20 @@ LEXICON Voice
 
 ################## CAUSATIVE
 LEXICON Causativiser
-# Weak verb causitive marker
-<caus>:>வி[Class1a,Class1b,Class1c,Class2,Class3,Class4,Class5,INTRACAUS]      # 'vi'
+# Weak verb causative marker
+<caus>:>வி[Class1a,Class1b,Class1c,Class2,Class3,Class4]                # 'vi'
 
-# Strong verb causitive marker
-<caus>:>ப்பி[Class6,Class7]                                                     # 'ppi'
+# Irregular causative marker
+<caus>:>வி[Class5a,Class5b,Class5c,INTRACAUS]                           # 'vi'
 
-# Irregular causitive markers
+# Strong verb causative marker
+<caus>:>ப்பி[Class6,Class7]                                              # 'ppi'
+
+# Irregular causative markers
 <caus>:>த்து[CAUSIRR1]                            # 'ththu'
 <caus>:>{II}[CAUSIRR2]                            # 'ii'
 
-# Irregular double causitive marker
+# Irregular double causative marker
 <caus><caus>:விப்பி[WEAKDOUBCAUS]                 # 'vippi'
 <caus><caus>:த்துவி[STRONGDOUBCAUS]               # 'ththuvi'
 
@@ -404,7 +412,7 @@ LEXICON NegSuffix
 ## <vaux>
 <neg><vaux>:>{I}ல்லை[INF]                  # 'illay'
 <neg><vaux>:>லெ[INF]                       # 'illay'          Dir/LR
-மாட்<vaux><fut>:மா{T}{Pul}[DYN]            # 'maat'
+<neg><vaux><fut>:>மா{T}{Pul}[DYN]          # 'maat'
 ## <adv>
 <neg><adv><par>:>{AA}>மல்                   # 'aamal'
 <neg><adv><par>:>{AA}>ம                     # 'aama'           Dir/LR
@@ -477,14 +485,15 @@ LEXICON Participle
 ################## IMPERATIVES
 LEXICON Imperatives
 # positives
-<imp><sg>:                                    #  null              singular
-<imp><hon><sg>:>{U}ம்                         # 'um'               singular honorific
-<imp><pl>:>{U}ங்கோ                         # 'unkoo'             plural
+<imp><sg>:[POS]                                    #  null              singular
+<imp><hon><sg>:>{U}ம்[POS]                         # 'um'               singular honorific
+<imp><hon><sg>:>{UIrr}ம்[POSIrr]                   # 'um'               irregular singular honorific      Dir/LR
+<imp><pl>:>{U}ங்கோ[POS]                         # 'unkoo'             plural
 # negative imperative
-<neg><imp><sg>:>{AA}த{EE}                    # 'aathee'           singular
-<neg><imp><sg>:>{AA}த                        # 'aatha'            singular                     Dir/LR
-<neg><imp><hon><sg>:>{AA}த>யும்              # 'aathayum'         singular honorific
-<neg><imp><pl>:>{AA}த>யுங்கோ               # 'aathayunkoo'      plural
+<neg><imp><sg>:>{AA}த{EE}[NEG]                    # 'aathee'           singular
+<neg><imp><sg>:>{AA}த[NEG]                        # 'aatha'            singular                          Dir/LR
+<neg><imp><hon><sg>:>{AA}த>யும்[NEG]              # 'aathayum'         singular honorific
+<neg><imp><pl>:>{AA}த>யுங்கோ[NEG]               # 'aathayunkoo'      plural
 
 ################## PERSON, NUMBER, GENDER
 LEXICON PNG
@@ -864,9 +873,21 @@ LEXICON Nouns
 # Verb Classes:
 # Def:  Defectives  (Do not take tense markers but take PNG)
 # 1-4:  Melvinaigal (Weak, take tense and PNG)
+## 1: has subclasses (a,b,c) based on endings
+### 1a: One syllable, -ய்
+### 1b: One syllable, -ள்
+### 1c: One syllable, -ல்
+## 2: Two syllables, -ய், -ர், -ழ், -இ, -ஐ
+## 3: -உ
+## 4: -டு, -று
 # 5:    Irregulars  (Take tense and PNG)
+## 5: has subclasses (a,b,c) based on type
+### 5a: நில் type
+### 5b: சொல் type
+### 5c: உண் type
 # 6-7:  Valvinaigal (Strong, take tense and PNG)
-## 1 and 5 have subclasses (a,b,c) based on endings
+## 6: Two syllables, -ய், -ர், -ழ், -இ, -ஐ and -டு, -று
+## 7: -அ
 ##########
 
 # General verbs and Aspectual Auxiliaries belong to 7 classes as discussed above
@@ -878,7 +899,7 @@ LEXICON ModalVerbAux
 ## Some modals take interrogative clitic [INT]
 
 ## Dynamic modals indicate PNG but not time [DYN]
-மாட்<vaux><vbmod>:மா{T}{Pul}[DYN]                           # 'maat'           cannot
+மாட்<neg><vaux><vbmod>:மா{T}{Pul}[DYN]                      # 'maat'           cannot
 
 ## Time-Dynamic modals indicate only time (derived)
 முடி<vaux><vbmod><pres>:முடிய>{U}ம{Pul}[INT]                # 'mutiyum'        can (now)
@@ -917,7 +938,7 @@ LEXICON AspectVerbAux
 
 LEXICON TransVerbStem
 # Class 1a
-## Special double causitive
+## Special double causative
 செய்<vbdo><tv>:செ{Y}{Pul}[Class1a,WEAKDOUBCAUS]    # 'cei'         do
 # Class 1b
 கொள்<v><tv>:கொ{LN}{Pul}[Class1b]                # 'kol'         contain
@@ -939,6 +960,7 @@ LEXICON TransVerbStem
 ஏற்று<v><tv>:ஏற்ற{U}[Class3]                        # 'ettu'        reach                    Paired
 வேண்டு<v><tv>:வேண்ட{U}[Class3]                  # 'veentu'      request                  Paired
 கட்டு<v><tv>:கட்ட{U}[Class3]                        # 'kattu'       tie                      Paired
+ஏறு<v><tv>:ஏற{U}[Class3]                           # 'eeru'        climb                    Paired
 எழுது<v><tv>:எழுத{U}[Class3,CAUSIRR2]              # 'ezhuthu'     write
 விளக்கு<v><tv>:விளக்க{U}[Class3]                   # 'vilakku'     explain
 விளங்கு<v><tv>:விளங்க{U}[Class3]                  # 'vilanku'     understand
@@ -954,10 +976,7 @@ LEXICON TransVerbStem
 ஊற்று<v><tv>:ஊற்ற{U}[Class3,PASSIVE]             # 'uurru'       pour
 பூட்டு<v><tv>:பூட்ட{U}[Class3,PASSIVE]               # 'puuttu'      lock
 
-## Special causitive form
-ஏறு<v><tv>:ஏற{U}[Class3,INTRACAUS]                 # 'eeru'        climb                    Paired
-
-## Special double causitive
+## Special double causative
 தேடு<v><tv>:தேட{U}[Class3,WEAKDOUBCAUS]           # 'theetu'      search
 
 # Class 4
@@ -996,13 +1015,14 @@ LEXICON IntraVerbStem
 தெரி<v><iv>:தெர{I}[ClassDef]                       # 'theri'       know
 புரி<v><iv>:புர{I}[ClassDef]                          # 'puri'        understand
 
+# Class 1a
+## Special causative form
+அழு<v><iv>:அழ{U}[Class1a,INTRACAUS]               # 'azhu'        cry
+
 # Class 1b
 பிரள்<v><iv>:பிர{LN}{Pul}[Class1b]                   # 'piral'       roll over                Paired
 # Class 1c
 செல்<v><iv>:செ{Ln}{Pul}[Class1c]                   # 'cel'         occur  
-
-## Special causitive form
-அழு<v><iv>:அழ{U}[Class1a,INTRACAUS]               # 'azhu'        cry
 
 # Class 2
 முடி<v><iv>:முட{I}[Class2]                          # 'muti'        complete                 Paired
@@ -1027,7 +1047,7 @@ LEXICON IntraVerbStem
 ## Special passive form
 வாடு<v><iv>:வாட{U}[Class3,PASSIVE]                # 'vaatu'       wither
 
-## Special causitive form
+## Special causative form
 ஏறு<v><iv>:ஏற{U}[Class3,INTRACAUS]                 # 'eeru'        go up                    Paired
 
 # Class 4
@@ -1045,10 +1065,10 @@ LEXICON IntraVerbStem
 மற<v><iv>:மற[Class7]                             # 'mara'        forget                   Paired
 இரு<vbser><iv>:இர{U}[Class7]                      # 'iru'         be
 
-## Special irregular causitive form
+## Special irregular causative form
 இரு<v><iv>:இர{U}[Class7,CAUSIRR1]                 # 'iru'         sit/stay
 
-### Special double causitive
+### Special double causative
 நட<v><iv>:நட[Class7,CAUSIRR1,STRONGDOUBCAUS]      # 'nata'        walk
 
 # fix ask about colloquial forms for all classes

@@ -19,6 +19,7 @@ Alphabet
      %{Im%}:ி
      %{II%}:ீ
      %{U%}:ு %{U%}:0
+     %{UIrr%}:ு
      %{Ul%}:உ
      %{Um%}:ு %{Um%}:0
      %{UU%}:ூ
@@ -185,7 +186,8 @@ Rules
 0:ண <=> %{NN%}: %{Pul%}: _ %>: %{U%}: ;
 
 "Inserting வ"
-0:வ <=> [ %{A%}: | %{AA%}: ] _ %>: SuffixVowelsI: ;
+0:வ <=> %{AA%}: _ %>: SuffixVowelsI: ;
+         %{A%}: _ %>: SuffixVowels: ;
 
 "Inserting க"
 0:க <=> %{AA%}: %>: _ 0: %{K%}: ;
@@ -262,6 +264,7 @@ Rules
 "Inserting Ru for thaa, vaa"
 0:ர <=> [ :த | :வ ] %{AAIrr%}: _ 0: %>: [ %{K%}: | வ: ] ;
         [ :த | :வ ] %{AAIrr%}: _ %>: %{U%}: ;
+        [ :த | :வ ] %{AAIrr%}: _ %>: %{UIrr%}: ;
 
 "Inserting rU for thaa, vaa"
 0:Vy <=> [ :த | :வ ] %{AAIrr%}: 0: _ %>: [ %{K%}: | வ: ] ;
@@ -270,6 +273,9 @@ Rules
 "Dropping AA for thaa, vaa"
 %{AAIrr%}:0 <=> [ :த | :வ ] _ (0: 0:) %>: :Consonant ;
              [ :த | :வ ] _ 0: %>: %{U%}: ;
+
+"Dropping irregular U after OO for poo"
+%{UIrr%}:0 <=> %{OO%}: %>: _ ;
 
 ! Resources:
 ! https://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
