@@ -461,7 +461,7 @@ LEXICON Infinitives
 <inf>:>ர{A}[I1]                                  # 'ra'
 <inf>:>{K}{A}[I2]                                # 'ka'
 # strong
-<inf>:>{K}{Pul}க{A}[S]                          # 'kka'
+<inf>:>{K}{Pul}{K}{A}[S]                         # 'kka'
 
 ################## PARTICIPLE
 LEXICON Participle
@@ -505,7 +505,7 @@ LEXICON Participle
 #### irregular class
 <par><adj><pres>:>{K}{I}ற[Class5a,Class5b,Class5c]                                 # 'kir'
 #### strong form
-<par><adj><pres>:>{K}{Pul}கிற[Class6,Class7]                                       # 'kkir'
+<par><adj><pres>:>{K}{Pul}{K}{I}ற[Class6,Class7]                                   # 'kkir'
 ### future
 #### weak form
 <par><adj><fut>:>{U}ம்[Class1a,Class1b,Class1c,Class2,Class3,Class4]                # 'um'
@@ -513,7 +513,7 @@ LEXICON Participle
 <par><adj><fut>:>{K}{U}ம்[Class3Irr,Class5a]                                        # 'kum'
 <par><adj><fut>:>{U}ம்[Class5b,Class5c]                                             # 'um'
 #### strong form
-<par><adj><fut>:>{K}{Pul}கும்[Class6,Class7]                                        # 'kkum'
+<par><adj><fut>:>{K}{Pul}{K}{U}ம்[Class6,Class7]                                    # 'kkum'
 
 ################## IMPERATIVES
 LEXICON Imperatives
@@ -589,8 +589,8 @@ LEXICON TenseInfix
 <pres>:>{K}{I}ற[Class5a,Class5b,Class5c]                                           # 'kir'
 <pres>:>{K}{I}ன்ற[Class5a,Class5b,Class5c]                                         # 'kinr'       Dir/LR
 ## strong form
-<pres>:>{K}{Pul}கிற[Class6,Class7]                                                 # 'kkir'
-<pres>:>{K}{Pul}கின்ற[Class6,Class7]                                               # 'kkinr'     Dir/LR
+<pres>:>{K}{Pul}{K}{I}ற[Class6,Class7]                                             # 'kkir'
+<pres>:>{K}{Pul}{K}{I}ன்ற[Class6,Class7]                                           # 'kkinr'     Dir/LR
 
 ## irregulars
 <pres><neg>:                                                                        # null
