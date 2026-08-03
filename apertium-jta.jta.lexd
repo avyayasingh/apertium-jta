@@ -127,11 +127,22 @@ TransVerbStem[Class3,PASSIVE] Voice[PASSIVE] Causativiser[Class3]? Participle[Cl
 ### Imperative
 TransVerbStem[-INF] Imperatives[POS]
 TransVerbStem[INF] Imperatives[POSIrr]
-TransVerbStem[-INF] Infinitives? Imperatives[NEG]
-TransVerbStem[INF] Infinitives Imperatives[NEG]
+TransVerbStem[-INF,W] Infinitives[W]? Imperatives[NEG]
+TransVerbStem[-INF,S] Infinitives[S]? Imperatives[NEG]
+TransVerbStem[-INF,Class5b] Infinitives[Class5b]? Imperatives[NEG]
+TransVerbStem[-INF,Class5c] Infinitives[Class5c]? Imperatives[NEG]
+TransVerbStem[INF,I1] Infinitives[I1] Imperatives[NEG]
 ### Negation
-TransVerbStem Infinitives (AuxSuffix|NegSuffix[INF])?
-TransVerbStem Infinitives NegSuffix[DYN] PNG
+TransVerbStem[W] Infinitives[W] (AuxSuffix|NegSuffix[INF])?
+TransVerbStem[S] Infinitives[S] (AuxSuffix|NegSuffix[INF])?
+TransVerbStem[Class5b] Infinitives[Class5b] (AuxSuffix|NegSuffix[INF])?
+TransVerbStem[Class5c] Infinitives[Class5c] (AuxSuffix|NegSuffix[INF])?
+TransVerbStem[I1] Infinitives[I1] (AuxSuffix|NegSuffix[INF])?
+TransVerbStem[W] Infinitives[W] NegSuffix[DYN] PNG
+TransVerbStem[S] Infinitives[S] NegSuffix[DYN] PNG
+TransVerbStem[Class5b] Infinitives[Class5b] NegSuffix[DYN] PNG
+TransVerbStem[Class5c] Infinitives[Class5c] NegSuffix[DYN] PNG
+TransVerbStem[I1] Infinitives[I1] NegSuffix[DYN] PNG
 TransVerbStem NegSuffix[-INF]
 TransVerbStem Negation PNG[NHum]|PNG[P3EP]|PNG[NHumE2]
 ## Intransitives
@@ -155,12 +166,23 @@ IntraVerbStem[ClassDef] [ <actv>: ] Causativiser? Aspect|(Negation PNG) InterroC
 ### Imperative
 IntraVerbStem[-INF] Imperatives[POS]
 IntraVerbStem[INF] Imperatives[POSIrr]
-IntraVerbStem[-INF] Infinitives? Imperatives[NEG]
-IntraVerbStem[INF] Infinitives Imperatives[NEG]
+IntraVerbStem[-INF,W] Infinitives[W]? Imperatives[NEG]
+IntraVerbStem[-INF,S] Infinitives[S]? Imperatives[NEG]
+IntraVerbStem[-INF,Class5a] Infinitives[Class5a]? Imperatives[NEG]
+IntraVerbStem[-INF,I1] Infinitives[I1]? Imperatives[NEG]
+IntraVerbStem[INF,I2] Infinitives[I2] Imperatives[NEG]
 ### Negation
+IntraVerbStem[W] Infinitives[W] (AuxSuffix|NegSuffix[INF])?
+IntraVerbStem[S] Infinitives[S] (AuxSuffix|NegSuffix[INF])?
+IntraVerbStem[Class5a] Infinitives[Class5a] (AuxSuffix|NegSuffix[INF])?
+IntraVerbStem[I1] Infinitives[I1] (AuxSuffix|NegSuffix[INF])?
+IntraVerbStem[I2] Infinitives[I2] (AuxSuffix|NegSuffix[INF])?
+IntraVerbStem[W] Infinitives[W] NegSuffix[DYN] PNG
+IntraVerbStem[S] Infinitives[S] NegSuffix[DYN] PNG
+IntraVerbStem[Class5a] Infinitives[Class5a] NegSuffix[DYN] PNG
+IntraVerbStem[I1] Infinitives[I1] NegSuffix[DYN] PNG
+IntraVerbStem[I2] Infinitives[I2] NegSuffix[DYN] PNG
 IntraVerbStem NegSuffix[-INF]
-IntraVerbStem Infinitives (AuxSuffix|NegSuffix[INF])?
-IntraVerbStem Infinitives NegSuffix[DYN] PNG
 IntraVerbStem Negation PNG[NHum]|PNG[P3EP]
 # Adjectives
 Adjectives[IND] [ <adj>: ] > ((Adverbializer EndwordMorph?)|(Nominalizer[ADJ] Number[ANoun] Cases[NN]|EmphaticSuf|Adverbializer|TotalClitic EndwordMorph?))
@@ -430,26 +452,37 @@ LEXICON Aspect
 
 ################## INFINITIVE
 LEXICON Infinitives
-<inf>:>{A}                                        # 'a'           
-# fix based on letter ending
+# weak
+<inf>:>{A}[W]                                    # 'a'
+# irregulars
+<inf>:>{K}{A}[Class5a]                           # 'ka'
+<inf>:>{A}[Class5b]                              # 'a'
+<inf>:>ண{A}[Class5c]                           # 'na'
+<inf>:>ர{A}[I1]                                  # 'ra'
+<inf>:>{K}{A}[I2]                                # 'ka'
+# strong
+<inf>:>{K}{Pul}க{A}[S]                          # 'kka'
 
 ################## PARTICIPLE
 LEXICON Participle
 # Class wise word-ending
 ## Adverbials
 ## Adverbials are non-time
-<par><adv>:>து[Class1a]                                                           # 'thu'
+<par><adv>:>த{U}[Class1a]                                                        # 'thu'
 <par><adv>:>{T}{U}[Class1b]                                                       # 'tu'
 <par><adv>:>{RR}{U}[Class1c]                                                      # 'ru' 
-<par><adv>:>ந்து[Class2]                                                           # 'nthu'
+<par><adv>:>ந{Pul}த{U}[Class2]                                                   # 'nthu'
 <par><adv>:>{I}[Class3]                                                           # 'i'
 <par><adv>:>ய்[Class3Irr]                                                         # 'y'
 <par><adv>:>{TR}{U}[Class4]                                                       # 'ru'/'tu'
 <par><adv>:>{RR}{U}[Class5a]                                                      # 'ru'
+<par><adv>:>ன{U}[Class5a]                                                        # 'nu'            Dir/LR
 <par><adv>:>{I}[Class5b]                                                          # 'i'
 <par><adv>:>{T}{U}[Class5c]                                                       # 'tu'
-<par><adv>:>த்து[Class6]                                                          # 'ththu'
-<par><adv>:>ந்து[Class7]                                                          # 'nthu'
+<par><adv>:>த{Pul}து[Class6]                                                     # 'ththu'
+<par><adv>:>ச{Pul}சு[Class6]                                                     # 'ccu'            Dir/LR
+<par><adv>:>ச{Pul}சி[Class6]                                                     # 'cci'            Dir/LR 
+<par><adv>:>ந{Pul}து[Class7]                                                     # 'nthu'
 
 ## Adjectivals
 ## Adjectivals indicate time
@@ -457,22 +490,22 @@ LEXICON Participle
 <par><adj><past>:>த[Class1a]                                                       # 'th'
 <par><adj><past>:>{T}[Class1b]                                                      # 't'
 <par><adj><past>:>{RR}[Class1c]                                                     # 'r'
-<par><adj><past>:>ந்த[Class2]                                                       # 'nth'
+<par><adj><past>:>ந{Pul}த[Class2]                                                  # 'nth'
 <par><adj><past>:>{I}ய[Class3]                                                     # 'iya'
 <par><adj><past>:>ன[Class3Irr]                                                     # 'n'
 <par><adj><past>:>{TR}[Class4]                                                      # 'r'/'t'
 <par><adj><past>:>{RR}[Class5a]                                                     # 'r'
 <par><adj><past>:>{Nn}[Class5b]                                                     # 'n'
 <par><adj><past>:>{T}[Class5c]                                                      # 't'
-<par><adj><past>:>த்த[Class6]                                                       # 'thth'
-<par><adj><past>:>ந்த[Class7]                                                       # 'nth'
+<par><adj><past>:>த{Pul}த[Class6]                                                  # 'thth'
+<par><adj><past>:>ந{Pul}த[Class7]                                                  # 'nth'
 ### present
 #### weak form
 <par><adj><pres>:>{K}{I}ற[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]  # 'kir'
 #### irregular class
-<par><adj><pres>:>கிற[Class5a,Class5b,Class5c]                                     # 'kir'
+<par><adj><pres>:>{K}{I}ற[Class5a,Class5b,Class5c]                                 # 'kir'
 #### strong form
-<par><adj><pres>:>க்கிற[Class6,Class7]                                             # 'kkir'
+<par><adj><pres>:>{K}{Pul}கிற[Class6,Class7]                                       # 'kkir'
 ### future
 #### weak form
 <par><adj><fut>:>{U}ம்[Class1a,Class1b,Class1c,Class2,Class3,Class4]                # 'um'
@@ -480,7 +513,7 @@ LEXICON Participle
 <par><adj><fut>:>{K}{U}ம்[Class3Irr,Class5a]                                        # 'kum'
 <par><adj><fut>:>{U}ம்[Class5b,Class5c]                                             # 'um'
 #### strong form
-<par><adj><fut>:>க்கும்[Class6,Class7]                                              # 'kkum'
+<par><adj><fut>:>{K}{Pul}கும்[Class6,Class7]                                        # 'kkum'
 
 ################## IMPERATIVES
 LEXICON Imperatives
@@ -500,8 +533,8 @@ LEXICON PNG
 # p1
 <p1><sg>:>{EE}>ன{Pul}                      # 'een'       singular
 <p1><sg>:>{E}>ன{Pul}                       # 'en'        singular       (var)                      Dir/LR
-<p1><sg>:>{A}ன{Pul}                        # 'an'        singular       (var)                      Dir/LR
-<p1><pl>:>{A}ம{Pul}                         # 'am'        plural
+<p1><sg>:>ன{Pul}                           # 'n'        singular        (var)                      Dir/LR
+<p1><pl>:>ம{Pul}                            # 'm'        plural
 <p1><pl>:>{OO}ம{Pul}                        # 'om'        plural         (var)                      Dir/LR
 # p2
 <p2><sg>:>{AA}ய{Pul}                        # 'aay'       singular
@@ -515,8 +548,8 @@ LEXICON PNG
 <p3><h><m><sg>:>{AA}>ன{Pul}                # 'aan'       singular       (masc)
 <p3><h><m><hon><sg>:>{AA}>ர{Pul}            # 'aar'       singular       (masc honorific)
 <p3><h><m><pl>:>{AA}>ங்>கள{Pul}            # 'aankal'    plural         (masc)
-<p3><h><m><pl>:>{AA}>ர்>கள{Pul}            # 'aarkal'    plural         (masc var)                 Dir/LR
-<p3><h><m><pl>:>{A}ர{Pul}                   # 'ar'        plural         (masc var)                 Dir/LR
+<p3><h><m><pl>:>{AA}>ர்>கள{Pul}            # 'aarkal'    plural          (masc var)                 Dir/LR
+<p3><h><m><pl>:>ர{Pul}                      # 'r'         plural         (masc var)                 Dir/LR
 <p3><h><f><sg>:>{AA}>ள{Pul}                # 'aal'       singular       (fem)
 <p3><h><f><hon><sg>:>{AA}                   # 'aa'        singular       (fem honorific)
 <p3><h><f><pl>:>{AA}ளவ{AI}                # 'aalavay'   plural         (fem)
@@ -524,8 +557,8 @@ LEXICON PNG
 <p3><h><epl><hon>:>{I}னம{Pul}[P3EP]       # 'inam'      epicene plural (honorific)
 ## non-human
 <p3><nh><sg>:>{U}த{U}[NHum]                # 'utu'       singular       (non-human)
-<p3><nh><sg>:>{A}த{U}[NHumE2]              # 'atu'       singular       (non-human var)            Dir/LR
-<p3><nh><pl>:>{A}ன[NHum]                  # 'ana'       plural         (non-human)
+<p3><nh><sg>:>த{U}[NHumE2]                 # 'tu'        singular       (non-human var)            Dir/LR
+<p3><nh><pl>:>ன[NHum]                     # 'na'        plural         (non-human)
 ### empty forms added for future tense
 <p3><nh><sg>:>[NHumE]                       # null       singular       (non-human)
 <p3><nh><pl>:>[NHumE,NHumE2]                # null       plural         (non-human)
@@ -537,27 +570,27 @@ LEXICON TenseInfix
 <past>:>த[Class1a]                                                                 # 'th'
 <past>:>{T}[Class1b]                                                                # 't'
 <past>:>{RR}[Class1c]                                                               # 'r'
-<past>:>ந்த[Class2]                                                                 # 'nth'
+<past>:>ந{Pul}த[Class2]                                                            # 'nth'
 <past>:>{I}ன[Class3]                                                               # 'in'
 <past>:>ன[Class3Irr]                                                               # 'n'
 <past>:>{TR}[Class4]                                                                # 'r'/'t'
 <past>:>{RR}[Class5a]                                                               # 'r'
 <past>:>{Nn}[Class5b]                                                               # 'n'
 <past>:>{T}[Class5c]                                                                # 't'
-<past>:>ச்ச[Class6]                                                                 # 'cc'
-<past>:>த்த[Class6]                                                                 # 'thth'      Dir/LR
-<past>:>ந்த[Class7]                                                                 # 'nth'
+<past>:>ச{Pul}ச[Class6]                                                            # 'cc'
+<past>:>த{Pul}த[Class6]                                                            # 'thth'      Dir/LR
+<past>:>ந{Pul}த[Class7]                                                            # 'nth'
 
 # Present
 ## weak form
-<pres>:>{K}{I}ற{U}[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]         # 'kiru'
-<pres>:>{K}{I}ன்ற{U}[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]       # 'kinru'       Dir/LR
+<pres>:>{K}{I}ற[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]            # 'kir'
+<pres>:>{K}{I}ன்ற[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]          # 'kinr'       Dir/LR
 ## irregular class
-<pres>:>{K}{I}ற{U}[Class5a,Class5b,Class5c]                                        # 'kiru'
-<pres>:>{K}{I}ன்ற{U}[Class5a,Class5b,Class5c]                                      # 'kinru'       Dir/LR
+<pres>:>{K}{I}ற[Class5a,Class5b,Class5c]                                           # 'kir'
+<pres>:>{K}{I}ன்ற[Class5a,Class5b,Class5c]                                         # 'kinr'       Dir/LR
 ## strong form
-<pres>:>க்கிற{U}[Class6,Class7]                                                     # 'kkiru'
-<pres>:>க்கின்ற{U}[Class6,Class7]                                                   # 'kkinru'     Dir/LR
+<pres>:>{K}{Pul}கிற[Class6,Class7]                                                 # 'kkir'
+<pres>:>{K}{Pul}கின்ற[Class6,Class7]                                               # 'kkinr'     Dir/LR
 
 ## irregulars
 <pres><neg>:                                                                        # null
@@ -572,7 +605,7 @@ LEXICON TenseInfix
 <fut>:>{P}[Class5c]                                                                 # 'p'
 <fut>:>{U}வ[Class5c]                                                               # 'uv'        Dir/LR
 ## strong form
-<fut>:>ப்ப[Class6,Class7]                                                           # 'pp'
+<fut>:>{P}{Pul}ப[Class6,Class7]                                                    # 'pp'
 
 ## irregulars
 <fut>:{U}ம்[NHumE]                                                                  # 'um'
@@ -942,51 +975,52 @@ LEXICON AspectVerbAux
 LEXICON TransVerbStem
 # Class 1a
 ## Special double causative
-செய்<vbdo><tv>:ச{E}{Y}{Pul}[Class1a,WEAKDOUBCAUS]   # 'cei'         do
+செய்<vbdo><tv>:ச{E}{Yy}{Pul}[Class1a,WEAKDOUBCAUS,W]  # 'cei'         do
 # Class 1b
-கொள்<v><tv>:க{O}{LN}{Pul}[Class1b]                # 'kol'         contain
+கொள்<v><tv>:க{O}{LN}{Pul}[Class1b,W]                # 'kol'         contain
 
 # Class 2
-தா<v><tv>:த{AAIrr}[Class2,INF]                      # 'thaa'        give                    Irregular
-கொண்டுவா<v><tv>:கொண்டுவ{AAIrr}[Class2,INF]  # 'kontuvaa'    bring                   Irregular
-அறி<v><tv>:அற{I}[Class2]                          # 'ari'         find out
+தா<v><tv>:த{AAIrr}[Class2,INF,I1]                    # 'thaa'        give                    Irregular
+கொண்டுவா<v><tv>:கொண்டுவ{AAIrr}[Class2,INF,I1] # 'kontuvaa'    bring                   Irregular
+அறி<v><tv>:அற{I}[Class2,W]                          # 'ari'         find out
 
 # Class 3
-பண்ணு<vbdo><tv>:பண்ண{U}[Class3]                # 'pannu'       do
-திருத்து<v><tv>:திருத்த{U}[Class3]                    # 'thiruththu'  improve                 Paired
-திருப்பு<v><tv>:திருப்ப{U}[Class3]                    # 'thiruppu'    turn                     Paired
-சுருக்கு<v><tv>:சுருக்க{U}[Class3]                    # 'curukku'     shrink                   Paired
-ஆட்டு<v><tv>:ஆட்ட{U}[Class3]                      # 'aattu'       swing                    Paired
-உருக்கு<v><tv>:உருக்க{U}[Class3]                   # 'urukku'      melt                     Paired
-நிமிர்த்து<v><tv>:நிமிர்த்த{U}[Class3]                # 'nimirththu'  erect                     Paired
-புரட்டு<v><tv>:புரட்ட{U}[Class3]                     # 'purattu'     roll over                Paired
-ஏற்று<v><tv>:ஏற்ற{U}[Class3]                        # 'ettu'        reach                    Paired
-வேண்டு<v><tv>:வேண்ட{U}[Class3]                  # 'veentu'      request                  Paired
-கட்டு<v><tv>:கட்ட{U}[Class3]                        # 'kattu'       tie                      Paired
-ஏறு<v><tv>:ஏற{U}[Class3]                           # 'eeru'        climb                    Paired
-எழுது<v><tv>:எழுத{U}[Class3,CAUSIRR2]              # 'ezhuthu'     write
-விளக்கு<v><tv>:விளக்க{U}[Class3]                   # 'vilakku'     explain
-விளங்கு<v><tv>:விளங்க{U}[Class3]                  # 'vilanku'     understand
-வாங்கு<v><tv>:வாங்க{U}[Class3]                    # 'vaanku'      buy
-காட்டு<v><tv>:காட்ட{U}[Class3]                     # 'kaattu'      show
-ஆக்கு<v><tv>:ஆக்க{U}[Class3]                      # 'aakku'       make
+பண்ணு<vbdo><tv>:பண்ண{U}[Class3,W]                # 'pannu'       do
+திருத்து<v><tv>:திருத்த{U}[Class3,W]                    # 'thiruththu'  improve                 Paired
+திருப்பு<v><tv>:திருப்ப{U}[Class3,W]                    # 'thiruppu'    turn                     Paired
+சுருக்கு<v><tv>:சுருக்க{U}[Class3,W]                    # 'curukku'     shrink                   Paired
+ஆட்டு<v><tv>:ஆட்ட{U}[Class3,W]                      # 'aattu'       swing                    Paired
+உருக்கு<v><tv>:உருக்க{U}[Class3,W]                   # 'urukku'      melt                     Paired
+நிமிர்த்து<v><tv>:நிமிர்த்த{U}[Class3,W]                # 'nimirththu'  erect                     Paired
+புரட்டு<v><tv>:புரட்ட{U}[Class3,W]                     # 'purattu'     roll over                Paired
+ஏற்று<v><tv>:ஏற்ற{U}[Class3,W]                        # 'ettu'        reach                    Paired
+வேண்டு<v><tv>:வேண்ட{U}[Class3,W]                  # 'veentu'      request                  Paired
+கட்டு<v><tv>:கட்ட{U}[Class3,W]                        # 'kattu'       tie                      Paired
+ஏறு<v><tv>:ஏற{U}[Class3,W]                           # 'eeru'        climb                    Paired
+எழுது<v><tv>:எழுத{U}[Class3,CAUSIRR2,W]              # 'ezhuthu'     write
+விளக்கு<v><tv>:விளக்க{U}[Class3,W]                   # 'vilakku'     explain
+விளங்கு<v><tv>:விளங்க{U}[Class3,W]                  # 'vilanku'     understand
+வாங்கு<v><tv>:வாங்க{U}[Class3,W]                    # 'vaanku'      buy
+காட்டு<v><tv>:காட்ட{U}[Class3,W]                     # 'kaattu'      show
+ஆக்கு<v><tv>:ஆக்க{U}[Class3,W]                      # 'aakku'       make
 
 ## Special passive forms
-ஒட்டு<v><tv>:ஒட்ட{U}[Class3,PASSIVE]                # 'ottu'        paste                    Paired
-வெட்டு<v><tv>:வெட்ட{U}[Class3,PASSIVE]            # 'vettu'       cut
-தட்டு<v><tv>:தட்ட{U}[Class3,PASSIVE]                # 'thattu'      knock
-கொட்டு<v><tv>:கொட்ட{U}[Class3,PASSIVE]          # 'kottu'       pour
-ஊற்று<v><tv>:ஊற்ற{U}[Class3,PASSIVE]             # 'uurru'       pour
-பூட்டு<v><tv>:பூட்ட{U}[Class3,PASSIVE]               # 'puuttu'      lock
+ஒட்டு<v><tv>:ஒட்ட{U}[Class3,PASSIVE,W]                # 'ottu'        paste                    Paired
+வெட்டு<v><tv>:வெட்ட{U}[Class3,PASSIVE,W]            # 'vettu'       cut
+தட்டு<v><tv>:தட்ட{U}[Class3,PASSIVE,W]                # 'thattu'      knock
+கொட்டு<v><tv>:கொட்ட{U}[Class3,PASSIVE,W]          # 'kottu'       pour
+ஊற்று<v><tv>:ஊற்ற{U}[Class3,PASSIVE,W]             # 'uurru'       pour
+பூட்டு<v><tv>:பூட்ட{U}[Class3,PASSIVE,W]               # 'puuttu'      lock
 
 ## Special double causative
-தேடு<v><tv>:தேட{U}[Class3,WEAKDOUBCAUS]           # 'theetu'      search
+தேடு<v><tv>:தேட{U}[Class3,WEAKDOUBCAUS,W]           # 'theetu'      search
 
 # Class 4
-விடு<v><tv>:வி{T}{U}[Class4]                        # 'vitu'        leave
-கூப்பிடு<v><tv>:கூப்பி{T}{U}[Class4]                 # 'kuuppitu'    call
-போடு<v><tv>:போ{T}{U}[Class4]                    # 'pootu'       put
-பெறு<v><tv>:பெ{RR}{U}[Class4]                     # 'peru'        give birth
+விடு<v><tv>:வி{T}{U}[Class4,W]                        # 'vitu'        leave
+கூப்பிடு<v><tv>:கூப்பி{T}{U}[Class4,W]                 # 'kuuppitu'    call
+போடு<v><tv>:போ{T}{U}[Class4,W]                    # 'pootu'       put
+சாப்பிடு<v><tv>:சாப்{Pi}{T}{U}[Class4,W]              # 'caapitu'     eat
+பெறு<v><tv>:பெ{RR}{U}[Class4,W]                     # 'peru'        give birth
 
 # Class 5b
 சொல்<v><tv>:ச{O}{LLn}{Pul}[Class5b]              # 'col'         tell
@@ -994,22 +1028,23 @@ LEXICON TransVerbStem
 உண்<v><tv>:{Ul}ண{Pul}[Class5c]                 # 'un'          eat
 
 # Class 6
-முடி<v><tv>:முட{I}[Class6]                         # 'muti'        complete                   Paired
-கெடு<v><tv>:கெட{U}[Class6]                       # 'ketu'        spoil                      Paired
-மேய்<v><tv>:ம{EE}{Y}{Pul}[Class6]                  # 'mei'         graze                      Paired
-எடு<v><tv>:எட{U}[Class6]                           # 'etu'         take
-கொடு<v><tv>:கொட{U}[Class6]                     # 'kotu'        give
-உடு<v><tv>:உட{U}[Class6]                          # 'utu'          wear
-அடி<v><tv>:அட{I}[Class6]                          # 'ati'         beat
-படி<v><tv>:பட{I}[Class6]                           # 'pati'        study
-பிடி<v><tv>:பிட{I}[Class6]                          # 'piti'        catch
-பாவி<v><tv>:பாவ{I}[Class6]                        # 'paavi'       use
-சமை<v><tv>:சம{AI}[Class6]                        # 'chamai'      cook
-வை<v><tv>:வ{AI}[Class6]                           # 'vay'        place
-பார்<v><tv>:பார{Pul}[Class6]                       # 'paar'        see
+முடி<v><tv>:முட{I}[Class6,S]                         # 'muti'        complete                   Paired
+நனை<v><iv>:நன{AI}[Class6,S]                       # 'nanay'       wet                       Paired
+கெடு<v><tv>:கெட{U}[Class6,S]                       # 'ketu'        spoil                      Paired
+மேய்<v><tv>:ம{EE}{Y}{Pul}[Class6,S]                  # 'mei'         graze                      Paired
+எடு<v><tv>:எட{U}[Class6,S]                           # 'etu'         take
+கொடு<v><tv>:கொட{U}[Class6,S]                     # 'kotu'        give
+உடு<v><tv>:உட{U}[Class6,S]                          # 'utu'          wear
+அடி<v><tv>:அட{I}[Class6,S]                          # 'ati'         beat
+படி<v><tv>:பட{I}[Class6,S]                           # 'pati'        study
+பிடி<v><tv>:பிட{I}[Class6,S]                          # 'piti'        catch
+பாவி<v><tv>:பாவ{I}[Class6,S]                        # 'paavi'       use
+சமை<v><tv>:சம{AI}[Class6,S]                        # 'chamai'      cook
+வை<v><tv>:வ{AI}[Class6,S]                           # 'vay'        place
+பார்<v><tv>:பார{Pul}[Class6,S]                       # 'paar'        see
 
 # Class 7
-மற<v><tv>:மற[Class7]                              # 'mara'       forget                     Paired
+மற<v><tv>:மற[Class7,S]                              # 'mara'       forget                     Paired
 
 ################## INTRANSITIVE VERBS
 LEXICON IntraVerbStem
@@ -1020,62 +1055,61 @@ LEXICON IntraVerbStem
 
 # Class 1a
 ## Special causative form
-அழு<v><iv>:அழ{U}[Class1a,INTRACAUS]               # 'azhu'        cry
+அழு<v><iv>:அழ{U}[Class1a,INTRACAUS,W]               # 'azhu'        cry
 
 # Class 1b
-பிரள்<v><iv>:பிர{A}{LN}{Pul}[Class1b]                # 'piral'       roll over                Paired
+பிரள்<v><iv>:பிர{A}{LN}{Pul}[Class1b,W]                # 'piral'       roll over                Paired
 # Class 1c
-செல்<v><iv>:ச{E}{Ln}{Pul}[Class1c]                  # 'cel'         occur  
+செல்<v><iv>:ச{E}{Ln}{Pul}[Class1c,W]                  # 'cel'         occur  
 
 # Class 2
-முடி<v><iv>:முட{I}[Class2]                          # 'muti'        complete                 Paired
-நிமிர்<v><iv>:நிமிர{Pul}[Class2]                     # 'nimir'       erect                    Paired
-மேய்<v><iv>:ம{EE}{Y}{Pul}[Class2]                  # 'mei'         graze                   Paired
-வா<v><iv>:வ{AAIrr}[Class2,INF]                     # 'vaa'         come                    Irregular
-நனை<v><iv>:நன{AI}[Class2]                       # 'nanay'       wet
+முடி<v><iv>:முட{I}[Class2,W]                          # 'muti'        complete                 Paired
+நனை<v><iv>:நன{AI}[Class2,W]                       # 'nanay'       wet                      Paired
+நிமிர்<v><iv>:நிமிர{Pul}[Class2,W]                     # 'nimir'       erect                    Paired
+மேய்<v><iv>:ம{EE}{Y}{Pul}[Class2,W]                  # 'mei'         graze                    Paired
+வா<v><iv>:வ{AAIrr}[Class2,INF,I1]                    # 'vaa'         come                    Irregular
 
 # Class 3
-ஒட்டு<v><iv>:ஒட்ட{U}[Class3]                        # 'ottu'        adhere                  Paired
-திரும்பு<v><iv>:திரும்ப{U}[Class3]                    # 'thirumpu'    turn                    Paired
-திருந்து<v><iv>:திருந்த{U}[Class3]                    # 'thirunthu'   improve                 Paired
-சுருங்கு<v><iv>:சுருங்க{U}[Class3]                   # 'curunku'     shrink                   Paired
-வேண்டு<v><iv>:வேண்ட{U}[Class3]                  # 'veentu'      want                    Paired
-கட்டு<v><iv>:கட்ட{U}[Class3]                        # 'kattu'       harden                  Paired
-ஆடு<v><iv>:ஆட{U}[Class3]                         # 'aatu'         move                    Paired
-போ<v><iv>:ப{OO}[Class3Irr,INF]                    # 'poo'          go                     Irregular
-பேசு<v><iv>:பேச{U}[Class3]                         # 'peecu'       speak
-கூடு<v><iv>:கூட{U}[Class3]                          # 'kuutu'       join
-உருகு<v><iv>:உருக{U}[Class3]                       # 'uruku'       melt
+ஒட்டு<v><iv>:ஒட்ட{U}[Class3,W]                        # 'ottu'        adhere                  Paired
+திரும்பு<v><iv>:திரும்ப{U}[Class3,W]                    # 'thirumpu'    turn                    Paired
+திருந்து<v><iv>:திருந்த{U}[Class3,W]                    # 'thirunthu'   improve                 Paired
+சுருங்கு<v><iv>:சுருங்க{U}[Class3,W]                   # 'curunku'     shrink                   Paired
+வேண்டு<v><iv>:வேண்ட{U}[Class3,W]                  # 'veentu'      want                    Paired
+கட்டு<v><iv>:கட்ட{U}[Class3,W]                        # 'kattu'       harden                  Paired
+ஆடு<v><iv>:ஆட{U}[Class3,W]                         # 'aatu'         move                    Paired
+போ<v><iv>:ப{OO}[Class3Irr,INF,I2]                   # 'poo'          go                     Irregular
+பேசு<v><iv>:பேச{U}[Class3,W]                         # 'peecu'       speak
+கூடு<v><iv>:கூட{U}[Class3,W]                          # 'kuutu'       join
+உருகு<v><iv>:உருக{U}[Class3,W]                       # 'uruku'       melt
 
 ## Special passive form
-வாடு<v><iv>:வாட{U}[Class3,PASSIVE]                # 'vaatu'       wither
+வாடு<v><iv>:வாட{U}[Class3,PASSIVE,W]                # 'vaatu'       wither
 
 ## Special causative form
-ஏறு<v><iv>:ஏற{U}[Class3,INTRACAUS]                 # 'eeru'        go up                    Paired
+ஏறு<v><iv>:ஏற{U}[Class3,INTRACAUS,W]                 # 'eeru'        go up                    Paired
 
 # Class 4
-கெடு<v><iv>:கெ{T}{U}[Class4]                      # 'ketu'        spoil                    Paired
-படு<v><iv>:ப{T}{U}[Class4]                         # 'patu'        experience
+கெடு<v><iv>:கெ{T}{U}[Class4,W]                      # 'ketu'        spoil                    Paired
+படு<v><iv>:ப{T}{U}[Class4,W]                         # 'patu'        experience
 
 # Class 5a
-நில்<v><iv>:ந{I}{Ln}{Pul}[Class5a]                  # 'nil'         stand
+நில்<v><iv>:ந{I}{Ln}{Pul}[Class5a]                    # 'nil'         stand
 
 # Class 6
-வலி<v><iv>:வல{I}[Class6]                          # 'vali'        ache
-சிரி<v><iv>:சிர{I}[Class6]                           # 'siri'        laugh
-கிடை<v><iv>:கிட{AI}[Class6]                       # 'kitay'       be available
+வலி<v><iv>:வல{I}[Class6,S]                          # 'vali'        ache
+சிரி<v><iv>:சிர{I}[Class6,S]                           # 'siri'        laugh
+கிடை<v><iv>:கிட{AI}[Class6,S]                       # 'kitay'       be available
 
 # Class 7
-மற<v><iv>:மற[Class7]                             # 'mara'        forget                   Paired
-இரு<vbser><iv>:இர{U}[Class7]                      # 'iru'         be
+மற<v><iv>:மற[Class7,S]                             # 'mara'        forget                   Paired
+இரு<vbser><iv>:இர{U}[Class7,S]                      # 'iru'         be
 
 ## Special irregular causative form
-இரு<v><iv>:இர{U}[Class7,CAUSIRR1]                 # 'iru'         sit/stay
+இரு<v><iv>:இர{U}[Class7,CAUSIRR1,S]                 # 'iru'         sit/stay
 
 ### Special double causative
-நட<v><iv>:நட[Class7,CAUSIRR1,STRONGDOUBCAUS]      # 'nata'        walk
+நட<v><iv>:நட[Class7,CAUSIRR1,STRONGDOUBCAUS,S]      # 'nata'        walk
 
-# fix ask about colloquial forms for all classes
 ################################     ADJECTIVES     ################################
 LEXICON Adjectives
 # Some are independent
