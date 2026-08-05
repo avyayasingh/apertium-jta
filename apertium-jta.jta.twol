@@ -183,8 +183,8 @@ Rules
 "Inserting வ"
 0:வ <=> %{AA%}: _ %>: SuffixVowelsI: ;
          %{A%}: _ %>: SuffixVowelsA: ;
-         [ %{Al%}: | %{Il%}: | %{Ul%}: | %{El%}: ] _ %{Pul%}: 0: %>: %{Al%}: ;
-         [ %{Al%}: | %{Il%}: | %{Ul%}: | %{El%}: ] 0: %{Pul%}: _ %>: %{Al%}: ;
+         [ %{Al%}: | %{Il%}: | %{Ul%}: | %{El%}: ] _ 0: 0: %>: %{Al%}: ;
+         [ %{Al%}: | %{Il%}: | %{Ul%}: | %{El%}: ] 0: 0: _ %>: %{Al%}: ;
 
 "Insert a second RR"
 0:ற <=> %{RR%}: :Vy _ %{U%}: %>: SuffixVowels: ;
@@ -212,7 +212,7 @@ Rules
 0:ன <=> [ %{El%}: | %{Ul%}: ] %{NP%}: %{Pul%}: %>: _ SuffixVowelsIA: ;
 
 "Dropping Al"
-%{Al%}:0 <=> [ %{Al%}: | %{Il%}: | %{Ul%}: | %{El%}: ] 0: %{Pul%}: 0: %>: _ ;
+%{Al%}:0 <=> [ %{Al%}: | %{Il%}: | %{Ul%}: | %{El%}: ] 0: 0: 0: %>: _ ;
 
 "AIE drops before Y"
 %{AIE%}:0 <=> _ :ய %>: ;

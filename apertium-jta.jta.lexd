@@ -274,42 +274,42 @@ LEXICON Number
 # PANMAI: Plural Classes: 1 through 8
 # 1/2: Epicene Plural (Unisex)
 # Ungendered forced plural used for groups of people, honorific implied [EH,EHIrr]
-<epl>:[EH,EHIrr]
-# Forced plural for neuter objects, 'vay' suffix
-<pl>:>வ{AI}[ENP] 
+<epl>:[EH,EHIrr]                      #  null
+# Forced plural for neuter objects
+<pl>:>வ{AI}[ENP]                     # 'vay'
 ###### GENERAL CLASSES
 # 1: Common Plural (Inanimate and Animate)
 # This plural also applies to pronouns generally [GPro]
-<pl>:>{K}{PL}{Pul}[Pl1,GPro,PL]      # 'kal'
+<pl>:>{K}{PL}{Pul}[Pl1,GPro,PL,MH,FH] # 'kal'
 
 # 2: Plurals of feminine Proper Nouns, people related to locations (Animate)
 # This plural also applies to female pronouns [FPro]
-<pl>:>{A}வ{AI}[Pl2,FPro]            # 'avay'
+<pl>:>{A}வ{AI}[Pl2,FPro]             # 'avay'
 
 # 3: Variation of Common Plural (Inanimate and Animate)
-<pl>:>{A}ள{Pul}[Pl3]                # 'al'
+<pl>:>{A}ள{Pul}[Pl3]                 # 'al'
 
 ###### AHTHINAI 'irrational beings and inanimate objects' - Low Class (NON-GENDERED)
 # 4: Non humans (Inanimate and Irrational Animates)
-<pl>:>{U}கள{Pul}[Pl4]              # 'ukal'
+<pl>:>{U}கள{Pul}[Pl4]               # 'ukal'
 ## Special form
-<pl>:>{U}ள{Pul}[Pl4]                # 'ul'      Dir/LR
+<pl>:>{U}ள{Pul}[Pl4]                 # 'ul'      Dir/LR
 
 ###### UYARTHINAI 'rational beings' - High Class(es) (GENDERED)
 # 5: Professional terms and loanwords (Animates)
-<pl>:>ம{AA}ர{Pul}[Pl5]              # 'maar'
+<pl>:>ம{AA}ர{Pul}[Pl5]               # 'maar'
 
 # 6: Combination of 2 and 5 (Animates) (RELATIONS)
-<pl>:>ம{AA}ர{Pul}[Pl6]              # 'maar'
-<pl>:>{A}வ{AI}[Pl6]                 # 'avay'    Dir/LR
+<pl>:>ம{AA}ர{Pul}[Pl6]               # 'maar'
+<pl>:>{A}வ{AI}[Pl6]                  # 'avay'    Dir/LR
 
 # 7: Combination of 2, 3 and 5 (Animates only) (Mainly FEMALES)
-<pl>:>{A}ள{Pul}[Pl7]                # 'al'
-<pl>:>ம{AA}ர{Pul}[Pl7]              # 'maar'    Dir/LR
-<pl>:>{A}வ{AI}[Pl7]                 # 'avay'     Dir/LR
+<pl>:>{A}ள{Pul}[Pl7]                 # 'al'
+<pl>:>ம{AA}ர{Pul}[Pl7]               # 'maar'    Dir/LR
+<pl>:>{A}வ{AI}[Pl7]                  # 'avay'     Dir/LR
 
 # 8: -N ending nouns (Animates) (MALES)
-<pl>:>{R}{Pul}[Pl8]                  # 'r'
+<pl>:>{R}{Pul}[Pl8]                   # 'r'
 
 ################## CASES
 LEXICON Cases
