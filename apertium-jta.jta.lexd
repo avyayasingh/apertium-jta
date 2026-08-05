@@ -166,6 +166,7 @@ IntraVerbStem[Class7,CAUSIRR1] [ <actv>: ] Causativiser[CAUSIRR1]? (Participle[C
 IntraVerbStem[Class7,STRONGDOUBCAUS] [ <actv>: ] Causativiser[STRONGDOUBCAUS]? (Participle[Class7] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class7] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
 IntraVerbStem[Class3,PASSIVE] Voice[PASSIVE]? (Participle[Class3] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
 IntraVerbStem[ClassDef] [ <actv>: ] Causativiser? Aspect|(Negation PNG[Nor]) InterroClitic?
+IntraVerbStem[Irr] [ <actv>: ] TenseInfix[Irr] PNG[Irr]
 IntraVerbStem TenseInfix[P3EP] PNG[P3EP]
 IntraVerbStem TenseInfix[NHumE] PNG[NHumE]
 ### Imperative
@@ -571,6 +572,7 @@ LEXICON PNG
 <p3><h><epl><hon>:>{I}னம{Pul}[Nor,P3EP]        # 'inam'      epicene plural (honorific)
 ## non-human
 <p3><nh><sg>:>த{U}[Nor,NHumE2]                  # 'tu'        singular       (non-human)
+<p3><nh><sg>:>{U}[Irr]                           # 'u'        singular       (non-human var)            Dir/LR  (only for [Irr])
 <p3><nh><sg>:>{UA}த{U}[Nor,NHum]                # 'utu'       singular       (non-human var)            Dir/LR
 <p3><nh><pl>:>ன[Nor,NHum]                      # 'na'        plural         (non-human)
 ### empty forms added for future tense
@@ -598,17 +600,24 @@ LEXICON TenseInfix
 # Present
 ## weak form
 <pres>:>{K}{I}ற[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]            # 'kir'
+### variants
 <pres>:>{K}{I}ன்ற[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]          # 'kinr'       Dir/LR
+<pres>:>ற[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]                  # 'r'          Dir/LR
 ## irregular class
 <pres>:>{K}{I}ற[Class5a,Class5b,Class5c]                                           # 'kir'
+### variants
 <pres>:>{K}{I}ன்ற[Class5a,Class5b,Class5c]                                         # 'kinr'       Dir/LR
+<pres>:>ற[Class5a,Class5b,Class5c]                                                 # 'r'          Dir/LR
 ## strong form
 <pres>:>{K}{Pul}{K}{I}ற[Class6,Class7]                                             # 'kkir'
+### variants
 <pres>:>{K}{Pul}{K}{I}ன்ற[Class6,Class7]                                           # 'kkinr'     Dir/LR
+<pres>:>ற[Class6,Class7]                                                           # 'r'         Dir/LR
 
 ## irregulars
 <pres><neg>:[E]                                                                     # null
 <pres>:[NHum,P3EP]                                                                  # null
+<pres>:>{K}{Pul}{K}[Irr]                                                            # 'kk'        Dir/LR (only for [Irr])
 
 # Future
 ## weak form
@@ -1135,7 +1144,7 @@ LEXICON IntraVerbStem
 
 # Class 7
 மற<v><iv>:மற[Class7,S]                             # 'mara'        forget                   Paired
-இரு<vbser><iv>:இர{U}[Class7,S]                      # 'iru'         be
+இரு<vbser><iv>:இர{U}[Class7,Irr,S]                  # 'iru'         be
 
 ## Special irregular causative form
 இரு<v><iv>:இர{U}[Class7,CAUSIRR1,S]                 # 'iru'         sit/stay
@@ -1243,6 +1252,10 @@ LEXICON NumStems
 ஒரு:ஒரு                 # 'oru'         one         Dir/LR
 இரண்டு:இரண்டு        # 'irandu'      two
 ரெண்டு:ரெண்டு         # 'rendu'       two         Dir/LR
+மூன்று:மூன்று           # 'moonru'      three
+நான்கு:நான்கு           # 'naanku'      four
+ஐந்து:ஐந்து              # 'aynthu'      five
+ஆறு:ஆறு               # 'aaru'        six
 
 LEXICON Numeral
 # Latin

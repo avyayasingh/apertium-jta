@@ -12,11 +12,17 @@ else
 	CAT="cat"
 fi;
 
-$CAT $CORPUS > $TMPCORPUS
+$CAT "$CORPUS" | sed 's/\r$//' > "$TMPCORPUS"
+
+if [[ "$ANALYSER" =~ \.bin$ ]]; then
+	PROC="lt-proc -w"
+else
+	PROC="hfst-proc -w"
+fi
 
 echo "Generating hitparade (might take a bit!)"
 
-cat $TMPCORPUS | apertium-destxt | hfst-proc -w $ANALYSER | apertium-retxt | sed -E $'s/\\$[^^]*/\\$\\\n/g' > /tmp/$LG.parade.txt
+cat "$TMPCORPUS" | apertium-destxt | $PROC "$ANALYSER" | apertium-retxt | sed -E $'s/\\$[^^]*/\\$\\\n/g' > /tmp/$LG.parade.txt
 
 echo "TOP UNKNOWN WORDS:"
 
