@@ -79,6 +79,7 @@ Nouns[NQ] Adjectivizer EndwordMorph?
 Nouns[NN,ANoun] Number[ANoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
 Nouns[NN,QNoun] Number[QNoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
 Nouns[NN,UNoun] Number[UNoun] Cases[NN]|EmphaticCli|TotalClitic EndwordMorph?
+Nouns[NN,TiNoun] Number[TiNoun] Cases[NN]|EmphaticCli|TotalClitic EndwordMorph?
 Nouns[NN,FNoun] Number[FNoun] Cases[NN]|EmphaticCli|TotalClitic EndwordMorph?
 Nouns[TNoun] Number[TNoun] Cases[TN]|EmphaticCli|TotalClitic EndwordMorph?
 Nouns[AA,ES] Number[ES] Cases[AA]|EmphaticCli|TotalClitic EndwordMorph?
@@ -211,6 +212,7 @@ InterroPrefix(1) DeterStems InterroPrefix(2)
 # Others
 Comparatives EndwordMorph?
 PostPositions [ <post>: ] EndwordMorph?
+CasePost
 EmphaticPart [ <emph>: ]
 CausativePart [ <caus>: ]
 NegativePart
@@ -266,11 +268,11 @@ LEXICON Number
 ##   e. Epicenes           [ES]                                  (Dont have regular plural)
 ##   f. Regular Nouns      [Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]     (Singular form)
 ##   g. Honorifics         [IH,H,MH,FH,PH]                       (Forced singular for honorifics 'null')
-##   h. Mass Nouns & Time  [UNoun]                               (Uncountable)
+##   h. Mass Nouns & Time  [UNoun,TiNoun]                        (Uncountable)
 <sg>:[ANoun,FNoun,TNoun,GPro,FPro]                # null  singular
 <sg>:[ES,ENS,PS,Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]  # null  singular
 <sg>:[IH,H,FH,MH,PH]                              # null  singular
-<unc>:[UNoun]                                     # null  uncountable
+<unc>:[UNoun,TiNoun]                              # null  uncountable
 
 # PANMAI: Plural Classes: 1 through 8
 # 1/2: Epicene Plural (Unisex)
@@ -327,7 +329,6 @@ LEXICON Cases
 <loc>:>{I}ல{AI}[AA,NN,TN,P,PS,PL]                          # 'ilay~ai'
 <loc>:>{I}ல{AIE}[AA,NN,TN,P,PS,PL]                         # 'ilay~ai'           (irregular locative)              Dir/LR
 <loc>:>{I}ல[AA,NN]                                         # 'il'                (irregular locative)              Dir/LR
-<loc>:>\ இருந்து[AA,NN,TN,P,PS,PL]                          # 'irunthu'           (irregular locative)              Dir/LR
 <refr>:>{Irefr}ட்ட[AA,P,PS,PL]                              # 'itta'
 <gen>:>{I}{N}{Pul}{R}[AA,NN,TN,P,PS]                        # 'inra'
 <gen>:>{I}{N}{Pul}{R}{AI}[AA,NN,TN,P,PS]                    # 'inra'              (irregular genitive Pronouns)     Dir/LR
@@ -552,7 +553,7 @@ LEXICON PNG
 <p1><pl>:>ம{Pul}[Nor]                            # 'm'        plural
 <p1><pl>:>{OO}ம{Pul}[Nor]                        # 'om'        plural         (var)                      Dir/LR
 # p2
-<p2><sg>:>{AA}ய{Pul}[Nor]                        # 'aay'       singular
+<p2><sg>:>{AAv}ய{Pul}[Nor]                       # 'aay'       singular
 <p2><ihon><sg>:>{II}>ர{Pul}[Nor]                 # 'iir'       singular       (intermediate honorific)
 <p2><hon><sg>:>{II}>ங்>கள{Pul}[Nor]             # 'iinkal'    singular       (honorific)
 <p2><pl>:>{I}ய>ள{Pul}[Nor]                      # 'iyal'      plural
@@ -560,15 +561,15 @@ LEXICON PNG
 <p2><pl>:>{II}>ர்>கள{Pul}[Nor]                   # 'iirkal'    plural         (var)                      Dir/LR
 # p3
 ## human
-<p3><h><m><sg>:>{AA}>ன{Pul}[Nor]                # 'aan'       singular       (masc)
-<p3><h><m><hon><sg>:>{AA}>ர{Pul}[Nor]            # 'aar'       singular       (masc honorific)
-<p3><h><m><pl>:>{AA}>ங்>கள{Pul}[Nor]            # 'aankal'    plural         (masc)
-<p3><h><m><pl>:>{AA}>ர்>கள{Pul}[Nor]            # 'aarkal'    plural          (masc var)                 Dir/LR
+<p3><h><m><sg>:>{AAv}>ன{Pul}[Nor]               # 'aan'       singular       (masc)
+<p3><h><m><hon><sg>:>{AAv}>ர{Pul}[Nor]           # 'aar'       singular       (masc honorific)
+<p3><h><m><pl>:>{AAv}>ங்>கள{Pul}[Nor]           # 'aankal'    plural         (masc)
+<p3><h><m><pl>:>{AAv}>ர்>கள{Pul}[Nor]           # 'aarkal'    plural          (masc var)                 Dir/LR
 <p3><h><m><pl>:>ர{Pul}[Nor]                      # 'r'         plural         (masc var)                 Dir/LR
-<p3><h><f><sg>:>{AA}>ள{Pul}[Nor]                # 'aal'       singular       (fem)
-<p3><h><f><hon><sg>:>{AA}[Nor]                   # 'aa'        singular       (fem honorific)
-<p3><h><f><pl>:>{AA}ளவ{AI}[Nor]                # 'aalavay'   plural         (fem)
-<p3><h><f><pl>:>{AA}>ளு>கள{Pul}[Nor]           # 'aalukal'   plural         (fem var)                  Dir/LR  
+<p3><h><f><sg>:>{AAv}>ள{Pul}[Nor]               # 'aal'       singular       (fem)
+<p3><h><f><hon><sg>:>{AAv}[Nor]                  # 'aa'        singular       (fem honorific)
+<p3><h><f><pl>:>{AAv}ளவ{AI}[Nor]               # 'aalavay'   plural         (fem)
+<p3><h><f><pl>:>{AAv}>ளு>கள{Pul}[Nor]          # 'aalukal'   plural         (fem var)                  Dir/LR  
 <p3><h><epl><hon>:>{I}னம{Pul}[Nor,P3EP]        # 'inam'      epicene plural (honorific)
 ## non-human
 <p3><nh><sg>:>த{U}[Nor,NHumE2]                  # 'tu'        singular       (non-human)
@@ -875,9 +876,11 @@ LEXICON Nouns
 பட்டு<n><nn>:பட்ட{U}[NN,UNoun]                                   # 'pattu'           silk
 பொன்<n><nn>:பொ{N}{Pul}[NN,UNoun]                             # 'pon'             gold
 ## Time Nouns
-இன்று<n><nn>:இன்ற{U}[NN,UNoun]                                 # 'inru'            today
-நாளை<n><nn>:நாள{AI}[NN,UNoun]                                # 'naalay'          tomorrow
-நேற்று<n><nn>:நேற்ற{U}[NN,UNoun]                                # 'neerru'          yesterday
+வருடம்<n><nn>:வருட{M}{Pul}[NN,TiNoun]                           # 'varutam'         year               loanword
+வருசம்<n><nn>:வருச{M}{Pul}[NN,TiNoun]                           # 'varucam'         year               Dir/LR
+இன்று<n><nn>:இன்ற{U}[NN,TiNoun]                                 # 'inru'            today
+நாளை<n><nn>:நாள{AI}[NN,TiNoun]                                # 'naalay'          tomorrow
+நேற்று<n><nn>:நேற்ற{U}[NN,TiNoun]                                # 'neerru'          yesterday
 # Abstract nouns 
 ## Nouns that can attach Adjectivizer [NQ]
 ## Emotions
@@ -895,6 +898,7 @@ LEXICON Nouns
 கார்<n><nn>:கார{Pul}[NN,Pl1]                                    # 'kaar'            car                loanword
 சைக்கிள்<n><nn>:சைக்கிள{Pul}[NN,Pl1]                          # 'caykkil'         cycle              loanword
 வேகம்<n><nn>:வேகம{Pul}[NN,Pl1]                               # 'veekam'          speed              loanword
+விமானம்<n><nn>:விமான{M}{Pul}[NN,Pl1]                         # 'vimaanam'        airplane           loanword 
 தனி<n><nn>:தன{I}[NN,Pl1]                                      # 'thani'           singleness         Irregular
 காசு<n><nn>:காச{U}[NN,Pl1]                                      # 'kaacu'           money
 நெஞ்சு<n><nn>:நெஞ்ச{U}[NN,Pl1]                                 # 'nencu'           heart
@@ -905,6 +909,7 @@ LEXICON Nouns
 கத்தி<n><nn>:கத்த{I}[NN,Pl1]                                     # 'kaththi'         knife
 வேட்டி<n><nn>:வேட்ட{I}[NN,Pl1]                                  # 'veetti'          dhoti
 ஊசி<n><nn>:ஊச{I}[NN,Pl1]                                      # 'uuci'            needle
+மணி<n><nn>:மண{I}[NN,Pl1]                                    # 'mani'             hour
 கடை<n><nn>:கட{AI}[NN,Pl1]                                     # 'katay'           shop
 தோசை<n><nn>:தோச{AI}[NN,Pl1]                                # 'thoocay'         dosa
 காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                         # 'kaaiccal'        fever
@@ -1192,16 +1197,17 @@ LEXICON LocAdverbs
 LEXICON Determiners
 # Indefinites
 ## 'cila' is irregular in that it can take suffixes
-சில<det><ind>:சில{A}[SUF]   # 'cila'    few
+சில<det><ind>:சில{A}[SUF]               # 'cila'    few
 ## others are frozen
-ஒரு<det><ind>:ஒரு           # 'oru'     a
-கன<det><ind>:கன          # 'kana'    many
+ஒரு<det><ind>:ஒரு                       # 'oru'     a
+கன<det><ind>:கன                      # 'kana'    many
+ஒவ்வொரு<det><ind>:ஒவ்வொரு         # 'ovvoru'  every
 # Definites
-எல்லா<det><def>:எல்லா     # 'ella'    all
+எல்லா<det><def>:எல்லா                 # 'ella'    all
 
 LEXICON DeterStems
-ந்த<det><dem>:ந்த            # 'ntha'    this/that/which
-அளவு<det><dem>:{Al}ளவு     # 'alavu'    this/that/how    much
+ந்த<det><dem>:ந்த                        # 'ntha'    this/that/which
+அளவு<det><dem>:{Al}ளவு                 # 'alavu'    this/that/how    much
 
 ################################     COMPARATIVES     ################################
 LEXICON Comparatives
@@ -1242,20 +1248,38 @@ LEXICON PostPositions
 # following a Comitative
 கூட:கூட                       # 'kuuta'                along with
 
+LEXICON CasePost
+இருந்து<loc><post>:இருந்து     # 'irunthu'
+இருந்து<abl><post>:இருந்து     # 'irunthu'
+
 ################################     NUMBERS     ################################
 PATTERN Numbers
 Numeral [ <num>: ]
-NumStems [ <num>: ]
+NumStems [ <num>: ] Cases[NN]? EndwordMorph?
 
 LEXICON NumStems
-ஒன்று:ஒன்று            # 'onru'        one
-ஒரு:ஒரு                 # 'oru'         one         Dir/LR
-இரண்டு:இரண்டு        # 'irandu'      two
-ரெண்டு:ரெண்டு         # 'rendu'       two         Dir/LR
-மூன்று:மூன்று           # 'moonru'      three
-நான்கு:நான்கு           # 'naanku'      four
-ஐந்து:ஐந்து              # 'aynthu'      five
-ஆறு:ஆறு               # 'aaru'        six
+ஒன்று:ஒன்ற{U}                              # 'onru'             one
+ஒரு:ஒர{U}                                   # 'oru'              one         Dir/LR
+இரண்டு:இரண்ட{U}                          # 'irandu'           two
+ரெண்டு:ரெண்ட{U}                           # 'rendu'            two         Dir/LR
+மூன்று:மூன்ற{U}                             # 'moonru'           three
+நான்கு:நான்க{U}                             # 'naanku'           four
+ஐந்து:ஐந்த{U}                                # 'aynthu'           five
+ஆறு:ஆற{U}                                 # 'aaru'             six
+ஏழு:ஏழ{U}                                   # 'eezhu'            seven
+எட்டு:எட்ட{U}                                # 'ettu'             eight
+ஒன்பது:ஒன்பத{U}                           # 'onpathu'          nine
+பத்து:பத்த{U}                                # 'paththu'          ten
+பதினொன்று:பதினொன்ற{U}                 # 'pathinonru'       eleven
+பன்னிரண்டு:பன்னிரண்ட{U}                 # 'pannirantu'       twelve
+பதின்மூன்று:பதின்மூன்ற{U}                  # 'pathinmoonru'     thirteen
+பதினான்கு:பதினான்க{U}                     # 'pathinaanthu'     fourteen
+பதினைந்து:பதினைந்த{U}                    # 'pathinaynthu'     fifteen
+பதினாறு:பதினாற{U}                         # 'pathinaaru'       sixteen
+பதினேழு:பதினேழ{U}                        # 'pathineezhu'      seventeen
+பதினெட்டு:பதினெட்ட{U}                     # 'pathinettu'       eighteen
+பத்தொன்பது:பத்தொன்பத{U}                # 'pathithonpathu'   nineteen
+இருபது:இருபத{U}                            # 'irupathu'         twenty    
 
 LEXICON Numeral
 # Latin

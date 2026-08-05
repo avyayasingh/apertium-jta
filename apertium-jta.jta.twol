@@ -14,6 +14,7 @@ Alphabet
      %{A%}:0
      %{Al%}:அ
      %{AA%}:ா
+     %{AAv%}:ா
      %{AAm%}:ா
      %{AAIrr%}:ா
      %{I%}:ி
@@ -73,6 +74,7 @@ Alphabet
 Sets
 
 Consonant = க ங ச ஞ	ட ண த ந ப ம ய ர ல வ	ழ ள ற ன ;
+ConsonantR = க ங ச ஞ	ட ண த ந ப ம ய ர ல வ	ழ ள ன ;
 Mellinam = ங ஞ ண ந ம ன;
 Vallinam = க ச ட த ப ற;
 Idaiyinam = ய ர ல வ ழ ள;
@@ -287,7 +289,7 @@ Rules
          where Vy in ( ு ) ;
 
 "Dropping AA for thaa, vaa"
-%{AAIrr%}:0 <=> [ :த | :வ ] _ (0: 0:) %>: :Consonant ;
+%{AAIrr%}:0 <=> [ :த | :வ ] _ (0: 0:) %>: :ConsonantR ;
              [ :த | :வ ] _ 0: %>: [ SuffixVowels: | %{UIrr%}: ] ;
 
 "Dropping irregular U after OO for poo"
