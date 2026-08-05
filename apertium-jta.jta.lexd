@@ -49,13 +49,13 @@ PATTERNS
 # Pronouns
 ## Personals
 ### Locative
-Location(1) PronounStems[LOC,GPro] Number[GPro] Location(2) Cases[P] InterroClitic?
-Location(1) PronounStems[LOC,FPro] Number[FPro] Location(2) Cases[P] InterroClitic?
+Location(1) PronounStems[LOC,GPro] Number[GPro] Location(2) Cases[P] (EndwordMorph|InterroClitic)?
+Location(1) PronounStems[LOC,FPro] Number[FPro] Location(2) Cases[P] (EndwordMorph|InterroClitic)?
 #### Honorifics
-Location(1) PronounStems[LOC,MH] Honorifics[MH] Number[MH] Location(2) Cases[P] InterroClitic?
-Location(1) PronounStems[LOC,FH] Honorifics[FH] Number[FH] Location(2) Cases[P] InterroClitic?
-Location(1) PronounStems[LOC,EHIrr] Honorifics[EHIrr] Number[EHIrr] Location(2) Cases[P] InterroClitic?
-Location(1) PronounStems[LOC,EHIrr] Honorifics[EHIrrN] Number[EHIrr] Location(2) Cases[EHIrrN] InterroClitic?
+Location(1) PronounStems[LOC,MH] Honorifics[MH] Number[MH] Location(2) Cases[P] (EndwordMorph|InterroClitic)?
+Location(1) PronounStems[LOC,FH] Honorifics[FH] Number[FH] Location(2) Cases[P] (EndwordMorph|InterroClitic)?
+Location(1) PronounStems[LOC,EHIrr] Honorifics[EHIrr] Number[EHIrr] Location(2) Cases[P] (EndwordMorph|InterroClitic)?
+Location(1) PronounStems[LOC,EHIrr] Honorifics[EHIrrN] Number[EHIrr] Location(2) Cases[EHIrrN] (EndwordMorph|InterroClitic)?
 #### Interrogative Prefixing
 InterroPrefix(1) PronounStems[LOC,GPro] Number[GPro] Cases[P] InterroPrefix(2)
 InterroPrefix(1) PronounStems[LOC,FPro] Number[FPro] Cases[P] InterroPrefix(2)
@@ -63,14 +63,14 @@ InterroPrefix(1) PronounStems[LOC,MH] Honorifics[MH] Number[MH] Cases[P] Interro
 InterroPrefix(1) PronounStems[LOC,FH] Honorifics[FH] Number[FH] Cases[P] InterroPrefix(2)
 InterroPrefix(1) PronounStems[LOC,EHIrr] Honorifics[EHIrr] Number[EHIrr] Cases[P] InterroPrefix(2)
 ### Non-locative
-PronounStems[-LOC,Obl,GPro] Number[PS] Cases[PS] InterroClitic?
-PronounStems[-LOC,Obl,GPro] Number[PL] Cases[PL] InterroClitic?
-PronounStems[-LOC,NObl,GPro] Number[GPro] InterroClitic?
+PronounStems[-LOC,Obl,GPro] Number[PS] Cases[PS] (EndwordMorph|InterroClitic)?
+PronounStems[-LOC,Obl,GPro] Number[PL] Cases[PL] (EndwordMorph|InterroClitic)?
+PronounStems[-LOC,NObl,GPro] Number[GPro] (EndwordMorph|InterroClitic)?
 #### Honorifics
-PronounStems[-LOC,Obl,PH] Honorifics[PH] Number[PH,PS] Cases[PS] InterroClitic?
-PronounStems[-LOC,Obl,IH] Honorifics[IH] Number[IH,PS] Cases[PS] InterroClitic?
-PronounStems[-LOC,NObl,PH] Honorifics[PH] Number[PH] InterroClitic?
-PronounStems[-LOC,NObl,IH] Honorifics[IH] Number[IH] InterroClitic?
+PronounStems[-LOC,Obl,PH] Honorifics[PH] Number[PH,PS] Cases[PS] (EndwordMorph|InterroClitic)?
+PronounStems[-LOC,Obl,IH] Honorifics[IH] Number[IH,PS] Cases[PS] (EndwordMorph|InterroClitic)?
+PronounStems[-LOC,NObl,PH] Honorifics[PH] Number[PH] (EndwordMorph|InterroClitic)?
+PronounStems[-LOC,NObl,IH] Honorifics[IH] Number[IH] (EndwordMorph|InterroClitic)?
 ## Other Types
 IndefProStem ((HumanRadical[Hum] Cases[AA])|(HumanRadical[NHum] Cases[NN]))? TotalClitic
 # Nouns & NP
@@ -135,11 +135,11 @@ TransVerbStem[-INF,Class5b] Infinitives[Class5b]? Imperatives[NEG]
 TransVerbStem[-INF,Class5c] Infinitives[Class5c]? Imperatives[NEG]
 TransVerbStem[INF,I1] Infinitives[I1] Imperatives[NEG]
 ### Infinitives
-TransVerbStem[W] Infinitives[W] (EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))?
-TransVerbStem[S] Infinitives[S] (EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))?
-TransVerbStem[Class5b] Infinitives[Class5b] (EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))?
-TransVerbStem[Class5c] Infinitives[Class5c] (EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))?
-TransVerbStem[I1] Infinitives[I1] (EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))?
+TransVerbStem[W] Infinitives[W] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+TransVerbStem[S] Infinitives[S] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+TransVerbStem[Class5b] Infinitives[Class5b] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+TransVerbStem[Class5c] Infinitives[Class5c] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+TransVerbStem[I1] Infinitives[I1] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
 ### Negation
 TransVerbStem[W] Infinitives[W] NegSuffix[DYN] PNG[Nor]
 TransVerbStem[S] Infinitives[S] NegSuffix[DYN] PNG[Nor]
@@ -177,11 +177,11 @@ IntraVerbStem[-INF,Class5a] Infinitives[Class5a]? Imperatives[NEG]
 IntraVerbStem[INF,I1] Infinitives[I1] Imperatives[NEG]
 IntraVerbStem[INF,I2] Infinitives[I2] Imperatives[NEG]
 ### Infinitives
-IntraVerbStem[W] Infinitives[W] (EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))?
-IntraVerbStem[S] Infinitives[S] (EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))?
-IntraVerbStem[Class5a] Infinitives[Class5a] (EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))?
-IntraVerbStem[I1] Infinitives[I1] (EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))?
-IntraVerbStem[I2] Infinitives[I2] (EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))?
+IntraVerbStem[W] Infinitives[W] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+IntraVerbStem[S] Infinitives[S] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+IntraVerbStem[Class5a] Infinitives[Class5a] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+IntraVerbStem[I1] Infinitives[I1] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+IntraVerbStem[I2] Infinitives[I2] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
 ### Negation
 IntraVerbStem[W] Infinitives[W] NegSuffix[DYN] PNG[Nor]
 IntraVerbStem[S] Infinitives[S] NegSuffix[DYN] PNG[Nor]
@@ -319,8 +319,10 @@ LEXICON Cases
 <int>:>{AA}ல{AIE}[AA,NN,TN,P,PS,PL]                        # 'aalay~ai'           (irregular instrumental)         Dir/LR
 <int>:>\ கொண்டு[AA,NN,TN,P,PS,PL]                       # 'kontu'              (irregular instrumental)          Dir/LR
 <dat>:>{U}க்கு[AA,NN,TN,P,PS,PL]                            # 'ukku'
+<dat>:>{A}க்கு[AA,NN,TN,P,PS,PL]                            # 'akku'               (irregular dative)               Dir/LR
 <dat>:>{AI}[VIrr]                                          # 'ay'                 (irregular dative for 'veetu')    Dir/LR
 <com>:>{OO}ட[AA,NN,TN,P,PS,PL]                             # 'oota'
+<com>:>{OO}ட{AI}[AA,NN,TN,P,PS,PL]                         # 'ootay'             (irregular comitative)            Dir/LR
 <loc>:>{I}ல{AI}[AA,NN,TN,P,PS,PL]                          # 'ilay~ai'
 <loc>:>{I}ல{AIE}[AA,NN,TN,P,PS,PL]                         # 'ilay~ai'           (irregular locative)              Dir/LR
 <loc>:>{I}ல[AA,NN]                                         # 'il'                (irregular locative)              Dir/LR
@@ -346,19 +348,19 @@ LEXICON Cases
 LEXICON Location(2)
 # No location prefix for p1,p2
 # Mandatory prefix for p3
-:இ>                     <prx>:
-:உ>                     <med>:
-:அ>                     <dst>:
+:{Il}>                    <prx>:
+:{Ul}>                    <med>:
+:{Al}>                    <dst>:
 
 ################## INTERROGATIVE
 LEXICON InterroClitic
-<qst>:>{AA}              # 'aa'
-<qst>:>{OO}              # 'oo'      Dir/LR
+<qst>:>{AAm}              # 'aa'
+<qst>:>{OOm}              # 'oo'      Dir/LR
 
 LEXICON InterroPrefix(2)
 # instead of the usual clitic '-aa'/'-oo'
 # added only for Pronouns, Determiners and Locatives
-:எ>           <qst>:
+:{El}>           <qst>:
 
 ########################### ADJECTIVES
 LEXICON Nominalizer
@@ -437,7 +439,7 @@ LEXICON Causativiser
 ################## AUXILIARY SUFFIX
 LEXICON AuxSuffix
 <vaux><vbmod>:>லாம்                   # 'laam'      may
-<vaux><vbmod>:>{A}ட்டும்                # 'attum'     let
+<vaux><vbmod>:>{A}ட்டும{Pul}           # 'attum'     let
 
 ################## NEGATION SUFFIX
 LEXICON NegSuffix
@@ -452,7 +454,7 @@ LEXICON NegSuffix
 <neg><adv><par>:>{AA}>ம                     # 'aama'           Dir/LR
 ## <adj>
 <neg><adj><par>:>{AA}>த                     # 'aatha'
-# fix negsuffix by adding more from book
+
 ################## NEGATION
 LEXICON Negation
 <neg>:>{AA}                                       # 'aa'
@@ -485,7 +487,7 @@ LEXICON Participle
 <par><adv>:>{RR}{U}[Class1c]                                                      # 'ru' 
 <par><adv>:>ந{Pul}த{U}[Class2]                                                   # 'nthu'
 <par><adv>:>{I}[Class3]                                                           # 'i'
-<par><adv>:>ய்[Class3Irr]                                                         # 'y'
+<par><adv>:>ய{Pul}[Class3Irr]                                                    # 'y'
 <par><adv>:>{TR}{U}[Class4]                                                       # 'ru'/'tu'
 <par><adv>:>{RR}{U}[Class5a]                                                      # 'ru'
 <par><adv>:>ன{U}[Class5a]                                                        # 'nu'            Dir/LR
@@ -841,6 +843,7 @@ LEXICON Nouns
 
 ##################### INANIMATE
 # loanwords placed on top of each class
+# irregulars placed after
 # Class 0
 # Foodstuffs
 பழம்<n><nn>:பழ{M}{Pul}[NN,FNoun]                                # 'pazham'          fruit
@@ -863,8 +866,9 @@ LEXICON Nouns
 பட்டு<n><nn>:பட்ட{U}[NN,UNoun]                                   # 'pattu'           silk
 பொன்<n><nn>:பொ{N}{Pul}[NN,UNoun]                             # 'pon'             gold
 ## Time Nouns
-நேற்று<n><nn>:நேற்ற{U}[NN,UNoun]                                # 'neerru'           yesterday
 இன்று<n><nn>:இன்ற{U}[NN,UNoun]                                 # 'inru'            today
+நாளை<n><nn>:நாள{AI}[NN,UNoun]                                # 'naalay'          tomorrow
+நேற்று<n><nn>:நேற்ற{U}[NN,UNoun]                                # 'neerru'          yesterday
 # Abstract nouns 
 ## Nouns that can attach Adjectivizer [NQ]
 ## Emotions
@@ -872,15 +876,20 @@ LEXICON Nouns
 கோபம்<nq><nn>:கோப{M}{Pul}[NN,ANoun,NQ]                       # 'koopam'          anger
 ## Behaviour
 உசார்<nq><nn>:உசார{Pul}[NN,ANoun,NQ]                           # 'ucaar'           enthusiasm         loanword
+திமிர்<nq><nn>:திமிர{Pul}[NN,ANoun,NQ]                            # 'timir'           arrogance
 கண்டிப்பு<nq><nn>:கண்டிப்ப{U}[NN,ANoun,NQ]                      # 'kantippu'        discipline
-### irregular which is the same as its adjective
+### irregular which is the same as its adjective and noun
 தனி<nq><nn>:தன{I}[NN,ANoun,NQ]                                 # 'thani'           solitude           Dir/LR
 
 # Class 1
 பேனா<n><nn>:பேன{AA}[NN,Pl1]                                  # 'peena'           pen                loanword
 கார்<n><nn>:கார{Pul}[NN,Pl1]                                    # 'kaar'            car                loanword
+சைக்கிள்<n><nn>:சைக்கிள{Pul}[NN,Pl1]                          # 'caykkil'         cycle              loanword
+வேகம்<n><nn>:வேகம{Pul}[NN,Pl1]                               # 'veekam'          speed              loanword
+தனி<n><nn>:தன{I}[NN,Pl1]                                      # 'thani'           singleness         Irregular
 காசு<n><nn>:காச{U}[NN,Pl1]                                      # 'kaacu'           money
 நெஞ்சு<n><nn>:நெஞ்ச{U}[NN,Pl1]                                 # 'nencu'           heart
+வகுப்பு<n><nn>:வகுப்ப{U}[NN,Pl1]                                 # 'vakuppu'         class
 இரவு<n><nn>:இரவ{U}[NN,Pl1]                                     # 'irvu'            night
 பெட்டி<n><nn>:பெட்ட{I}[NN,Pl1]                                  # 'petti'           box
 மூடி<n><nn>:மூட{I}[NN,Pl1]                                       # 'muuti'           lid
@@ -898,6 +907,7 @@ LEXICON Nouns
 மனம்<n><nn>:மன{M}{Pul}[NN,Pl1]                                # 'manam'           mind
 ஆயுதம்<n><nn>:ஆயுத{M}{Pul}[NN,Pl1]                            # 'aayutham'        instrument
 திருமணம்<n><nn>:திருமண{M}{Pul}[NN,Pl1]                      # 'thirumanam'      wedding
+பொய்<n><nn>:பொ{Y}{Pul}[NN,Pl1]                               # 'poi'             lie
 வீடு<n><nn>:வீ{T}{U}[NN,VIrr,Pl1]                                 # 'veetu'           house
 வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                # 'vayiru'          stomach
 
@@ -986,7 +996,7 @@ LEXICON AspectVerbAux
 # Many verbs are paired between transitive and intransitive (marked as Paired)
 # These may have slight variance, or be the same
 # Special verbs, <vbdo>, <vbser> placed on top of class list
-# Followed by paired, then irregular, then unpaired
+# Followed by loanwords, paired, irregular, then unpaired
 
 LEXICON TransVerbStem
 # Class 1a
@@ -1014,6 +1024,7 @@ LEXICON TransVerbStem
 கட்டு<v><tv>:கட்ட{U}[Class3,W]                        # 'kattu'       tie                      Paired
 ஏறு<v><tv>:ஏற{U}[Class3,W]                           # 'eeru'        climb                    Paired
 ஆக்கு<v><tv>:ஆக்க{U}[Class3,W]                      # 'aakku'       make                     Paired
+ஓட்டு<v><tv>:ஓட்ட{U}[Class3,W]                       # 'oottu'       drive
 நீந்து<v><tv>:நீந்த{U}[Class3,W]                        # 'neentu'      swim
 எழுது<v><tv>:எழுத{U}[Class3,CAUSIRR2,W]              # 'ezhuthu'     write
 விளக்கு<v><tv>:விளக்க{U}[Class3,W]                   # 'vilakku'     explain
@@ -1048,7 +1059,7 @@ LEXICON TransVerbStem
 முடி<v><tv>:முட{I}[Class6,S]                         # 'muti'        complete                   Paired
 நனை<v><iv>:நன{AI}[Class6,S]                       # 'nanay'       wet                       Paired
 கெடு<v><tv>:கெட{U}[Class6,S]                       # 'ketu'        spoil                      Paired
-மேய்<v><tv>:ம{EE}{Y}{Pul}[Class6,S]                  # 'mei'         graze                      Paired
+மேய்<v><tv>:ம{EE}{Y}{Pul}[Class6,S]                  # 'mei'         graze                     Paired
 எடு<v><tv>:எட{U}[Class6,S]                           # 'etu'         take
 கொடு<v><tv>:கொட{U}[Class6,S]                     # 'kotu'        give
 உடு<v><tv>:உட{U}[Class6,S]                          # 'utu'          wear
@@ -1101,6 +1112,7 @@ LEXICON IntraVerbStem
 கூடு<v><iv>:கூட{U}[Class3,W]                         # 'kuutu'        join
 உருகு<v><iv>:உருக{U}[Class3,W]                      # 'uruku'        melt
 தூங்கு<v><iv>:தூங்க{U}[Class3,W]                     # 'tuunku'       sleep
+விளையாடு<v><iv>:விளையாட{U}[Class3,W]           # 'vilayyaatu'   play
 
 ## Special passive form
 வாடு<v><iv>:வாட{U}[Class3,PASSIVE,W]                # 'vaatu'       wither
@@ -1116,6 +1128,7 @@ LEXICON IntraVerbStem
 நில்<v><iv>:ந{I}{Ln}{Pul}[Class5a]                    # 'nil'         stand
 
 # Class 6
+கதை<v><iv>:கத{AI}[Class6,S]                        # 'kathay'      speak                   loanword
 வலி<v><iv>:வல{I}[Class6,S]                          # 'vali'        ache
 சிரி<v><iv>:சிர{I}[Class6,S]                           # 'siri'        laugh
 கிடை<v><iv>:கிட{AI}[Class6,S]                       # 'kitay'       be available
@@ -1152,15 +1165,19 @@ LEXICON Adverbs
 கட்டாயம்:கட்டாயம{Pul}       # 'kattaayam'    definitely
 # Temporal
 இன்னும்:இன்னும{Pul}         # 'innum'         yet
-இப்பொழுது:இப்பொழுத{U}    # 'ippolutu'       now
+இப்பொழுது:இப்பொழுத{U}    # 'ippolutu'      now
+இப்ப:இப்ப                    # 'ippa'           now                    Dir/LR
+மறுபடியும்:மறுபடியும{Pul}    # 'marupatiyum'   again
 இன்று:இன்ற{U}               # 'inru'           today
+நாளை:நாள{AI}               # 'naalay'        tomorrow
 நேற்று:நேற்ற{U}               # 'neerru'        yesterday
 # Manner
 தனிய:தனிய                  # 'thaniya'       alone
+நல்லா:நல்லா                  # 'nallaa'        well
 
 LEXICON LocAdverbs
 <adv><loc>:>ங்க{EE}            # 'nkee'          here/there/where
-<adv><loc>:>ங்க{AI}            # 'nkay'           here/there/where       Dir/LR
+<adv><loc>:>ங்க{AI}            # 'nkay'          here/there/where       Dir/LR
 
 ################################     DETERMINERS     ################################
 LEXICON Determiners
@@ -1174,7 +1191,8 @@ LEXICON Determiners
 எல்லா<det><def>:எல்லா     # 'ella'    all
 
 LEXICON DeterStems
-<det><dem>:>ந்த              # 'ntha'    this/that/which
+ந்த<det><dem>:ந்த            # 'ntha'    this/that/which
+அளவு<det><dem>:{Al}ளவு     # 'alavu'    this/that/how    much
 
 ################################     COMPARATIVES     ################################
 LEXICON Comparatives

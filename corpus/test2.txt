@@ -2,9 +2,9 @@
 ^அவன்/வன்<prn><p3><m><sg><dst><nom>$ ^இப்பொழுது/இப்பொழுது<adv>$ ^தூங்கலாம்/தூங்கு<v><iv><inf><vaux><vbmod>$^./.<sent>$
 ^நான்/நான்<prn><p1><sg>$ ^வீட்டுக்குப்/வீடு<n><nn><sg><dat>$ ^போக/போ<v><iv><inf>$ ^வேணும்/வேண்டு<vaux><vbmod>$^./.<sent>$
 ^நீங்கள்/நீ<prn><p2><pl>/நீ<prn><p2><hon><sg>$ ^என்ரை/என்<prn><p1><sg><gen>$ ^திருமணத்துக்கு/திருமணம்<n><nn><sg><dat>$ ^கட்டாயம்/கட்டாயம்<adv>$ ^வர/வா<v><iv><inf>$ ^வேணும்/வேண்டு<vaux><vbmod>$^./.<sent>$
-^அவன்/வன்<prn><p3><m><sg><dst><nom>$ ^அங்கை/<adv><loc><dst>$ ^போயே/*போயே$ ^ஆக/ஆகு<v><iv><inf>$ ^வேணும்/வேண்டு<vaux><vbmod>$^./.<sent>$ 
+^அவன்/வன்<prn><p3><m><sg><dst><nom>$ ^அங்கை/<adv><loc><dst>$ ^போயே/போ<v><iv><actv><par><adv><emph>$ ^ஆக/ஆகு<v><iv><inf>$ ^வேணும்/வேண்டு<vaux><vbmod>$^./.<sent>$ 
 ^நீ/நீ<prn><p2><sg>$ ^இன்று/இன்று<adv>/இன்று<n><nn><unc><gen>/இன்று<n><nn><unc><nom>$ ^இரவு/இரவு<n><nn><sg><gen>/இரவு<n><nn><sg><nom>$ ^சென்னைக்குப்/சென்னை<n><top><sg><dat>$ ^போக/போ<v><iv><inf>$ ^வேண்டி/வேண்டு<v><tv><actv><par><adv>/வேண்டு<v><iv><actv><par><adv>/வேண்டு<vaux><vbmod>$ ^இருக்கும்/இரு<v><iv><actv><par><adj><fut>/இரு<vbser><iv><actv><par><adj><fut>$^./.<sent>$ 
-^நான்/நான்<prn><p1><sg>$ ^அந்த/<det><dem><dst>$ ^வேலை/வேலை<n><nn><sg><gen>/வேலை<n><nn><sg><nom>$ ^செய்ய/செய்<vbdo><tv><inf>$ ^வேண்டி/வேண்டு<v><tv><actv><par><adv>/வேண்டு<v><iv><actv><par><adv>/வேண்டு<vaux><vbmod>$ ^இருந்தது/இரு<v><iv><actv><past><p3><nh><sg>/இரு<vaux><vbser><hab><past><p3><nh><sg>/இரு<vbser><iv><actv><past><p3><nh><sg>$^./.<sent>$ 
+^நான்/நான்<prn><p1><sg>$ ^அந்த/ந்த<det><dem><dst>$ ^வேலை/வேலை<n><nn><sg><gen>/வேலை<n><nn><sg><nom>$ ^செய்ய/செய்<vbdo><tv><inf>$ ^வேண்டி/வேண்டு<v><tv><actv><par><adv>/வேண்டு<v><iv><actv><par><adv>/வேண்டு<vaux><vbmod>$ ^இருந்தது/இரு<v><iv><actv><past><p3><nh><sg>/இரு<vaux><vbser><hab><past><p3><nh><sg>/இரு<vbser><iv><actv><past><p3><nh><sg>$^./.<sent>$ 
 ^அவன்/வன்<prn><p3><m><sg><dst><nom>$ ^வேலைக்குப்/வேலை<n><nn><sg><dat>$ ^போக/போ<v><iv><inf>$ ^வேண்டி/வேண்டு<v><tv><actv><par><adv>/வேண்டு<v><iv><actv><par><adv>/வேண்டு<vaux><vbmod>$ ^வரும்/வா<v><iv><imp><hon><sg>/வா<v><iv><actv><par><adj><fut>/வா<v><iv><fut><p3><nh><sg>/வா<v><iv><fut><p3><nh><pl>$^./.<sent>$ 
 ^படிக்க/படி<v><tv><inf>$ ^வேண்டி இல்லை/வேண்டு<neg><vaux><vbmod>$^./.<sent>$ 
 ^எடுக்க/எடு<v><tv><inf>$ ^வேண்டாம்/வேண்டு<neg><vaux><vbmod>$^./.<sent>$ 
@@ -14,33 +14,33 @@
 ^அவன்/வன்<prn><p3><m><sg><dst><nom>$ ^படிக்க/படி<v><tv><inf>$ ^வேண்டாம்/வேண்டு<neg><vaux><vbmod>$^./.<sent>$ 
 ^அவன்/வன்<prn><p3><m><sg><dst><nom>$ ^படிக்க/படி<v><tv><inf>$ ^கூடாது/கூடு<neg><vaux><vbmod>/கூடு<v><iv><neg><p3><nh><sg>$^./.<sent>$ 
 ^அவன்/வன்<prn><p3><m><sg><dst><nom>$ ^படிக்க/படி<v><tv><inf>$ ^படாது/படு<neg><vaux><vbmod>/படு<v><iv><neg><p3><nh><sg>$^./.<sent>$ 
-^நீங்கள்/நீ<prn><p2><pl>/நீ<prn><p2><hon><sg>$ ^இங்கை/<adv><loc><prx>$ ^காரை/கார்<n><nn><sg><emph>$ ^வேகமாக/*வேகமாக$ ^ஓட்டக்/*ஓட்டக்$ ^கூடாது/கூடு<neg><vaux><vbmod>/கூடு<v><iv><neg><p3><nh><sg>$^./.<sent>$ 
-^பொய்/*பொய்$ ^சொல்லக்/*சொல்லக்$ ^கூடாது/கூடு<neg><vaux><vbmod>/கூடு<v><iv><neg><p3><nh><sg>$^./.<sent>$ 
-^அவளுக்கு/வள்<prn><p3><f><sg><dst><dat>$ ^இவ்வளவு/*இவ்வளவு$ ^திமிர்/*திமிர்$ ^கூடாது/கூடு<neg><vaux><vbmod>/கூடு<v><iv><neg><p3><nh><sg>$^./.<sent>$ 
-^நீங்கள்/நீ<prn><p2><pl>/நீ<prn><p2><hon><sg>$ ^அதை/து<prn><p3><nh><sg><dst><acc>$ ^எடுக்கக்/*எடுக்கக்$ ^கூடா/கூடு<neg><vaux><vbmod>/கூடு<v><iv><neg><p3><nh><pl>/கூடு<v><iv><actv><pres><neg><p3><h><f><hon><sg>$^./.<sent>$ 
-^அவள்/வள்<prn><p3><f><sg><dst><nom>$ ^மறுபடியும்/*மறுபடியும்$ ^சைக்கிள்/*சைக்கிள்$ ^ஓட்ட/*ஓட்ட$ ^முடியும்/முடி<vaux><vbmod><pres>/முடி<v><tv><imp><hon><sg>/முடி<v><iv><imp><hon><sg>/முடி<v><iv><actv><par><adj><fut>/முடி<v><tv><fut><p3><nh><sg>/முடி<v><tv><fut><p3><nh><pl>/முடி<v><iv><fut><p3><nh><sg>/முடி<v><iv><fut><p3><nh><pl>$^./.<sent>$ 
-^அவளாலை/வள்<prn><p3><f><sg><dst><int>$ ^மறுபடியும்/*மறுபடியும்$ ^சைக்கிள்/*சைக்கிள்$ ^ஓட்ட/*ஓட்ட$ ^முடியும்/முடி<vaux><vbmod><pres>/முடி<v><tv><imp><hon><sg>/முடி<v><iv><imp><hon><sg>/முடி<v><iv><actv><par><adj><fut>/முடி<v><tv><fut><p3><nh><sg>/முடி<v><tv><fut><p3><nh><pl>/முடி<v><iv><fut><p3><nh><sg>/முடி<v><iv><fut><p3><nh><pl>$^./.<sent>$ 
-^என்னாலை/என்<prn><p1><sg><int>$ ^நல்லா/*நல்லா$ ^சைக்கிள்/*சைக்கிள்$ ^ஓட்ட/*ஓட்ட$ ^முடிஞ்சது/முடி<vaux><vbmod><past>$^./.<sent>$ 
+^நீங்கள்/நீ<prn><p2><pl>/நீ<prn><p2><hon><sg>$ ^இங்கை/<adv><loc><prx>$ ^காரை/கார்<n><nn><sg><emph>$ ^வேகமாக/வேகம்<n><nn><sg><advz>$ ^ஓட்டக்/ஓட்டு<v><tv><inf>$ ^கூடாது/கூடு<neg><vaux><vbmod>/கூடு<v><iv><neg><p3><nh><sg>$^./.<sent>$ 
+^பொய்/பொய்<n><nn><sg><gen>/பொய்<n><nn><sg><nom>$ ^சொல்லக்/சொல்<v><tv><inf>$ ^கூடாது/கூடு<neg><vaux><vbmod>/கூடு<v><iv><neg><p3><nh><sg>$^./.<sent>$ 
+^அவளுக்கு/வள்<prn><p3><f><sg><dst><dat>$ ^இவ்வளவு/*இவ்வளவு$ ^திமிர்/திமிர்<nq><nn><sg><gen>/திமிர்<nq><nn><sg><nom>$ ^கூடாது/கூடு<neg><vaux><vbmod>/கூடு<v><iv><neg><p3><nh><sg>$^./.<sent>$ 
+^நீங்கள்/நீ<prn><p2><pl>/நீ<prn><p2><hon><sg>$ ^அதை/து<prn><p3><nh><sg><dst><acc>$ ^எடுக்கக்/எடு<v><tv><inf>$ ^கூடா/கூடு<v><iv><inf><qst>/கூடு<neg><vaux><vbmod>/கூடு<v><iv><neg><p3><nh><pl>/கூடு<v><iv><actv><pres><neg><p3><h><f><hon><sg>$^./.<sent>$ 
+^அவள்/வள்<prn><p3><f><sg><dst><nom>$ ^மறுபடியும்/மறுபடியும்<adv>$ ^சைக்கிள்/சைக்கிள்<n><nn><sg><gen>/சைக்கிள்<n><nn><sg><nom>$ ^ஓட்ட/ஓட்டு<v><tv><inf>$ ^முடியும்/முடி<vaux><vbmod><pres>/முடி<v><tv><imp><hon><sg>/முடி<v><iv><imp><hon><sg>/முடி<v><iv><actv><par><adj><fut>/முடி<v><tv><fut><p3><nh><sg>/முடி<v><tv><fut><p3><nh><pl>/முடி<v><iv><fut><p3><nh><sg>/முடி<v><iv><fut><p3><nh><pl>$^./.<sent>$ 
+^அவளாலை/வள்<prn><p3><f><sg><dst><int>$ ^மறுபடியும்/மறுபடியும்<adv>$ ^சைக்கிள்/சைக்கிள்<n><nn><sg><gen>/சைக்கிள்<n><nn><sg><nom>$ ^ஓட்ட/ஓட்டு<v><tv><inf>$ ^முடியும்/முடி<vaux><vbmod><pres>/முடி<v><tv><imp><hon><sg>/முடி<v><iv><imp><hon><sg>/முடி<v><iv><actv><par><adj><fut>/முடி<v><tv><fut><p3><nh><sg>/முடி<v><tv><fut><p3><nh><pl>/முடி<v><iv><fut><p3><nh><sg>/முடி<v><iv><fut><p3><nh><pl>$^./.<sent>$ 
+^என்னாலை/என்<prn><p1><sg><int>$ ^நல்லா/நல்லா<adv>$ ^சைக்கிள்/சைக்கிள்<n><nn><sg><gen>/சைக்கிள்<n><nn><sg><nom>$ ^ஓட்ட/ஓட்டு<v><tv><inf>$ ^முடிஞ்சது/முடி<vaux><vbmod><past>$^./.<sent>$ 
 ^என்னாலை/என்<prn><p1><sg><int>$ ^மரத்திலை/மரம்<n><nn><sg><loc>$ ^ஏற/ஏறு<v><tv><inf>/ஏறு<v><iv><inf>$ ^முடியும்/முடி<vaux><vbmod><pres>/முடி<v><tv><imp><hon><sg>/முடி<v><iv><imp><hon><sg>/முடி<v><iv><actv><par><adj><fut>/முடி<v><tv><fut><p3><nh><sg>/முடி<v><tv><fut><p3><nh><pl>/முடி<v><iv><fut><p3><nh><sg>/முடி<v><iv><fut><p3><nh><pl>$^./.<sent>$ 
-^என்னாலை/என்<prn><p1><sg><int>$ ^இப்ப/*இப்ப$ ^படிக்க/படி<v><tv><inf>$ ^முடியேல்லை/முடி<neg><vaux><vbmod><past>$^./.<sent>$ 
+^என்னாலை/என்<prn><p1><sg><int>$ ^இப்ப/இப்ப<adv>$ ^படிக்க/படி<v><tv><inf>$ ^முடியேல்லை/முடி<neg><vaux><vbmod><past>$^./.<sent>$ 
 ^என்னாலை/என்<prn><p1><sg><int>$ ^நேற்று/நேற்று<adv>/நேற்று<n><nn><unc><gen>/நேற்று<n><nn><unc><nom>$ ^படிக்க/படி<v><tv><inf>$ ^முடியேல்லை/முடி<neg><vaux><vbmod><past>$^./.<sent>$ 
-^முடியுமா/*முடியுமா$^?/?<sent>$ 
-^முடியுமோ/*முடியுமோ$^?/?<sent>$ 
+^முடியுமா/முடி<vaux><vbmod><pres><qst>$^?/?<sent>$ 
+^முடியுமோ/முடி<vaux><vbmod><pres><qst>$^?/?<sent>$ 
 ^நான்/நான்<prn><p1><sg>$ ^அங்கை/<adv><loc><dst>$ ^வர/வா<v><iv><inf>$ ^முடியாது/முடி<neg><vaux><vbmod>/முடி<v><tv><neg><p3><nh><sg>/முடி<v><iv><neg><p3><nh><sg>$^./.<sent>$ 
 ^என்னாலை/என்<prn><p1><sg><int>$ ^படிக்க/படி<v><tv><inf>$ ^முடியாது/முடி<neg><vaux><vbmod>/முடி<v><tv><neg><p3><nh><sg>/முடி<v><iv><neg><p3><nh><sg>$^./.<sent>$ 
-^என்னாலை/என்<prn><p1><sg><int>$ ^சாப்பிட/சாப்பிடு<v><tv><inf>$ ^முடியா/முடி<neg><vaux><vbmod>/முடி<v><tv><neg><p3><nh><pl>/முடி<v><iv><neg><p3><nh><pl>/முடி<v><tv><actv><pres><neg><p3><h><f><hon><sg>/முடி<v><iv><actv><pres><neg><p3><h><f><hon><sg>$^./.<sent>$ 
+^என்னாலை/என்<prn><p1><sg><int>$ ^சாப்பிட/சாப்பிடு<v><tv><inf>$ ^முடியா/முடி<v><iv><neg><p3><nh><pl>/முடி<v><iv><actv><pres><neg><p3><h><f><hon><sg>/முடி<v><tv><actv><pres><neg><p3><h><f><hon><sg>/முடி<neg><vaux><vbmod>/முடி<v><tv><neg><p3><nh><pl>/முடி<v><iv><inf><qst>$^./.<sent>$ 
 ^உங்களாலை/உன்<prn><p2><pl><int>$ ^ஆட/ஆடு<v><iv><inf>$ ^முடியாதா/முடி<neg><vaux><vbmod><qst>$^?/?<sent>$ 
 ^நீங்கள்/நீ<prn><p2><pl>/நீ<prn><p2><hon><sg>$ ^அங்கை/<adv><loc><dst>$ ^வர/வா<v><iv><inf>$ ^முடியாதோ/முடி<neg><vaux><vbmod><qst>$^?/?<sent>$ 
-^என்னாலை/என்<prn><p1><sg><int>$ ^கதைக்க/*கதைக்க$ ^ஏலும்/ஏலும்<vaux><vbmod>$^./.<sent>$
-^உன்னாலை/உன்<prn><p2><sg><int>$ ^போக/போ<v><iv><inf>$ ^ஏலுமா/*ஏலுமா$^?/?<sent>$ 
-^உன்னாலை/உன்<prn><p2><sg><int>$ ^போக/போ<v><iv><inf>$ ^ஏலுமோ/*ஏலுமோ$^?/?<sent>$ 
+^என்னாலை/என்<prn><p1><sg><int>$ ^கதைக்க/கதை<v><iv><inf>$ ^ஏலும்/ஏலும்<vaux><vbmod>$^./.<sent>$
+^உன்னாலை/உன்<prn><p2><sg><int>$ ^போக/போ<v><iv><inf>$ ^ஏலுமா/ஏலும்<vaux><vbmod><qst>$^?/?<sent>$ 
+^உன்னாலை/உன்<prn><p2><sg><int>$ ^போக/போ<v><iv><inf>$ ^ஏலுமோ/ஏலும்<vaux><vbmod><qst>$^?/?<sent>$ 
 ^நான்/நான்<prn><p1><sg>$ ^அங்கை/<adv><loc><dst>$ ^போக/போ<v><iv><inf>$ ^ஏலாது/ஏலாது<neg><vaux><vbmod>$^./.<sent>$ 
-^என்னாலை/என்<prn><p1><sg><int>$ ^கதைக்க/*கதைக்க$ ^ஏலாது/ஏலாது<neg><vaux><vbmod>$^./.<sent>$ 
-^எனக்குப்/*எனக்குப்$ ^படிக்க/படி<v><tv><inf>$ ^ஏலாது/ஏலாது<neg><vaux><vbmod>$^./.<sent>$ 
-^அவன்/வன்<prn><p3><m><sg><dst><nom>$ ^கதைக்க/*கதைக்க$ ^மாட்டான்/மாட்<neg><vaux><vbmod><p3><h><m><sg>$^./.<sent>$ 
-^நான்/நான்<prn><p1><sg>$ ^நாளைக்கு/*நாளைக்கு$ ^வர/வா<v><iv><inf>$ ^மாட்டென்/மாட்<neg><vaux><vbmod><p1><sg>$^./.<sent>$ 
-^நீ/நீ<prn><p2><sg>$ ^அந்த/<det><dem><dst>$ ^வீட்டுக்குப்/வீடு<n><nn><sg><dat>$ ^போகக்/*போகக்$ ^கூடாது/கூடு<neg><vaux><vbmod>/கூடு<v><iv><neg><p3><nh><sg>$^./.<sent>$ 
-^நீ/நீ<prn><p2><sg>$ ^அந்த/<det><dem><dst>$ ^வீட்டுக்குப்/வீடு<n><nn><sg><dat>$ ^போகப்/*போகப்$ ^படாது/படு<neg><vaux><vbmod>/படு<v><iv><neg><p3><nh><sg>$^./.<sent>$ 
-^அவர்/வன்<prn><p3><m><hon><sg><dst><nom>$ ^வகுப்புக்கு/*வகுப்புக்கு$ ^வரட்டும்/*வரட்டும்$^./.<sent>$ 
-^அவர்கள்/*அவர்கள்$ ^விளையாடட்டும்/*விளையாடட்டும்$^./.<sent>$ 
-^நான்/நான்<prn><p1><sg>$ ^உங்களோடை/*உங்களோடை$ ^வரட்டுமா/*வரட்டுமா$^?/?<sent>$
+^என்னாலை/என்<prn><p1><sg><int>$ ^கதைக்க/கதை<v><iv><inf>$ ^ஏலாது/ஏலாது<neg><vaux><vbmod>$^./.<sent>$ 
+^எனக்குப்/என்<prn><p1><sg><dat>$ ^படிக்க/படி<v><tv><inf>$ ^ஏலாது/ஏலாது<neg><vaux><vbmod>$^./.<sent>$ 
+^அவன்/வன்<prn><p3><m><sg><dst><nom>$ ^கதைக்க/கதை<v><iv><inf>$ ^மாட்டான்/மாட்<neg><vaux><vbmod><p3><h><m><sg>$^./.<sent>$ 
+^நான்/நான்<prn><p1><sg>$ ^நாளைக்கு/நாளை<n><nn><unc><dat>$ ^வர/வா<v><iv><inf>$ ^மாட்டென்/மாட்<neg><vaux><vbmod><p1><sg>$^./.<sent>$ 
+^நீ/நீ<prn><p2><sg>$ ^அந்த/ந்த<det><dem><dst>$ ^வீட்டுக்குப்/வீடு<n><nn><sg><dat>$ ^போகக்/போ<v><iv><inf>$ ^கூடாது/கூடு<neg><vaux><vbmod>/கூடு<v><iv><neg><p3><nh><sg>$^./.<sent>$ 
+^நீ/நீ<prn><p2><sg>$ ^அந்த/ந்த<det><dem><dst>$ ^வீட்டுக்குப்/வீடு<n><nn><sg><dat>$ ^போகப்/போ<v><iv><inf>$ ^படாது/படு<neg><vaux><vbmod>/படு<v><iv><neg><p3><nh><sg>$^./.<sent>$ 
+^அவர்/வன்<prn><p3><m><hon><sg><dst><nom>$ ^வகுப்புக்கு/வகுப்பு<n><nn><sg><dat>$ ^வரட்டும்/வா<v><iv><inf><vaux><vbmod>$^./.<sent>$ 
+^அவர்கள்/*அவர்கள்$ ^விளையாடட்டும்/விளையாடு<v><iv><inf><vaux><vbmod>$^./.<sent>$ 
+^நான்/நான்<prn><p1><sg>$ ^உங்களோடை/உன்<prn><p2><pl><com>$ ^வரட்டுமா/வா<v><iv><inf><vaux><vbmod><qst>$^?/?<sent>$
