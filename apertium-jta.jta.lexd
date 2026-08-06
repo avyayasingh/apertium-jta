@@ -76,7 +76,7 @@ IndefProStem ((HumanRadical[Hum] Cases[AA])|(HumanRadical[NHum] Cases[NN]))? Tot
 InterProStem
 # Nouns & NP
 ## Irregulars
-Nouns[NQ] Adjectivizer EndwordMorph?
+Nouns[NQ] Adjectivizer|(Professionalizer Number[Pl1] Cases[AA]) EndwordMorph?
 Nouns[NN,ANoun] Number[ANoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
 Nouns[NN,QNoun] Number[QNoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
 Nouns[NN,UNoun] Number[UNoun] Cases[NN]|EmphaticCli|TotalClitic EndwordMorph?
@@ -113,19 +113,19 @@ AspectVerbAux[Class4] TenseInfix[Class4] PNG[Nor] InterroClitic?
 AspectVerbAux[Class7] TenseInfix[Class7] PNG[Nor] InterroClitic?
 ## Transitives
 ### REGULAR
-TransVerbStem[Class1a] Voice[-PASSIVE] Causativiser[Class1a]? (Participle[Class1a] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1a] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class1b] Voice[-PASSIVE] Causativiser[Class1b]? (Participle[Class1b] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1b] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class2] Voice[-PASSIVE] Causativiser[Class2]? (Participle[Class2] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class2] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class3] Voice[-PASSIVE] Causativiser[Class3]? (Participle[Class3] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class4] Voice[-PASSIVE] Causativiser[Class4]? (Participle[Class4] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class4] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class5b] Voice[-PASSIVE] Causativiser[Class5b]? (Participle[Class5b] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class5b] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class5c] Voice[-PASSIVE] Causativiser[Class5c]? (Participle[Class5c] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class5c] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class6] Voice[-PASSIVE] Causativiser[Class6]? (Participle[Class6] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class6] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class7] Voice[-PASSIVE] Causativiser[Class7]? (Participle[Class7] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class7] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class1a,WEAKDOUBCAUS] Voice[-PASSIVE] Causativiser[WEAKDOUBCAUS]? (Participle[Class1a] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1a] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class3,WEAKDOUBCAUS] Voice[-PASSIVE] Causativiser[WEAKDOUBCAUS]? (Participle[Class3] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class3,CAUSIRR2] Voice[-PASSIVE] Causativiser[CAUSIRR2]? (Participle[Class3] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class3,PASSIVE] Voice[PASSIVE] Causativiser[Class3]? (Participle[Class3] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+TransVerbStem[Class1a] Voice[-PASSIVE] Causativiser[Class1a]? (Participle[Class1a] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1a] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+TransVerbStem[Class1b] Voice[-PASSIVE] Causativiser[Class1b]? (Participle[Class1b] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1b] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+TransVerbStem[Class2] Voice[-PASSIVE] Causativiser[Class2]? (Participle[Class2] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class2] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+TransVerbStem[Class3] Voice[-PASSIVE] Causativiser[Class3]? (Participle[Class3] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+TransVerbStem[Class4] Voice[-PASSIVE] Causativiser[Class4]? (Participle[Class4] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class4] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+TransVerbStem[Class5b] Voice[-PASSIVE] Causativiser[Class5b]? (Participle[Class5b] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class5b] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+TransVerbStem[Class5c] Voice[-PASSIVE] Causativiser[Class5c]? (Participle[Class5c] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class5c] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+TransVerbStem[Class6] Voice[-PASSIVE] Causativiser[Class6]? (Participle[Class6] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class6] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+TransVerbStem[Class7] Voice[-PASSIVE] Causativiser[Class7]? (Participle[Class7] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class7] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+TransVerbStem[Class1a,WEAKDOUBCAUS] Voice[-PASSIVE] Causativiser[WEAKDOUBCAUS]? (Participle[Class1a] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1a] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+TransVerbStem[Class3,WEAKDOUBCAUS] Voice[-PASSIVE] Causativiser[WEAKDOUBCAUS]? (Participle[Class3] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+TransVerbStem[Class3,CAUSIRR2] Voice[-PASSIVE] Causativiser[CAUSIRR2]? (Participle[Class3] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+TransVerbStem[Class3,PASSIVE] Voice[PASSIVE] Causativiser[Class3]? (Participle[Class3] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
 TransVerbStem TenseInfix[P3EP] PNG[P3EP]
 TransVerbStem TenseInfix[NHumE] PNG[NHumE]
 ### Imperative
@@ -137,11 +137,11 @@ TransVerbStem[-INF,Class5b] Infinitives[Class5b]? Imperatives[NEG]
 TransVerbStem[-INF,Class5c] Infinitives[Class5c]? Imperatives[NEG]
 TransVerbStem[INF,I1] Infinitives[I1] Imperatives[NEG]
 ### Infinitives
-TransVerbStem[W] Infinitives[W] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
-TransVerbStem[S] Infinitives[S] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
-TransVerbStem[Class5b] Infinitives[Class5b] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
-TransVerbStem[Class5c] Infinitives[Class5c] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
-TransVerbStem[I1] Infinitives[I1] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+TransVerbStem[W] Infinitives[W] (EndwordMorph|EmphaticCli|ModAuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+TransVerbStem[S] Infinitives[S] (EndwordMorph|EmphaticCli|ModAuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+TransVerbStem[Class5b] Infinitives[Class5b] (EndwordMorph|EmphaticCli|ModAuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+TransVerbStem[Class5c] Infinitives[Class5c] (EndwordMorph|EmphaticCli|ModAuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+TransVerbStem[I1] Infinitives[I1] (EndwordMorph|EmphaticCli|ModAuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
 ### Negation
 TransVerbStem[W] Infinitives[W] NegSuffix[DYN] PNG[Nor]
 TransVerbStem[S] Infinitives[S] NegSuffix[DYN] PNG[Nor]
@@ -152,21 +152,21 @@ TransVerbStem NegSuffix[-INF]
 TransVerbStem Negation PNG[P3EP]|PNG[NHumE2]
 ## Intransitives
 ### REGULAR
-IntraVerbStem[Class1a] [ <actv>: ] (Participle[Class1a] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1a] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class1b] [ <actv>: ] (Participle[Class1b] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1b] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class1c] [ <actv>: ] (Participle[Class1c] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1c] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class2] [ <actv>: ] (Participle[Class2] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class2] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class3] [ <actv>: ] (Participle[Class3] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class3Irr] [ <actv>: ] (Participle[Class3Irr] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3Irr] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class4] [ <actv>: ] (Participle[Class4] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class4] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class5a] [ <actv>: ] (Participle[Class5a] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class5a] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class6] [ <actv>: ] (Participle[Class6] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class6] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class7] [ <actv>: ] (Participle[Class7] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class7] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class1a,INTRACAUS] [ <actv>: ] Causativiser[INTRACAUS]? (Participle[Class1a] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1a] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class3,INTRACAUS] [ <actv>: ] Causativiser[INTRACAUS]? (Participle[Class3] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class7,CAUSIRR1] [ <actv>: ] Causativiser[CAUSIRR1]? (Participle[Class7] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class7] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class7,STRONGDOUBCAUS] [ <actv>: ] Causativiser[STRONGDOUBCAUS]? (Participle[Class7] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class7] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class3,PASSIVE] Voice[PASSIVE]? (Participle[Class3] EmphaticCli?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+IntraVerbStem[Class1a] [ <actv>: ] (Participle[Class1a] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1a] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+IntraVerbStem[Class1b] [ <actv>: ] (Participle[Class1b] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1b] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+IntraVerbStem[Class1c] [ <actv>: ] (Participle[Class1c] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1c] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+IntraVerbStem[Class2] [ <actv>: ] (Participle[Class2] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class2] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+IntraVerbStem[Class3] [ <actv>: ] (Participle[Class3] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+IntraVerbStem[Class3Irr] [ <actv>: ] (Participle[Class3Irr] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3Irr] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+IntraVerbStem[Class4] [ <actv>: ] (Participle[Class4] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class4] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+IntraVerbStem[Class5a] [ <actv>: ] (Participle[Class5a] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class5a] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+IntraVerbStem[Class6] [ <actv>: ] (Participle[Class6] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class6] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+IntraVerbStem[Class7] [ <actv>: ] (Participle[Class7] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class7] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+IntraVerbStem[Class1a,INTRACAUS] [ <actv>: ] Causativiser[INTRACAUS]? (Participle[Class1a] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1a] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+IntraVerbStem[Class3,INTRACAUS] [ <actv>: ] Causativiser[INTRACAUS]? (Participle[Class3] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+IntraVerbStem[Class7,CAUSIRR1] [ <actv>: ] Causativiser[CAUSIRR1]? (Participle[Class7] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class7] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+IntraVerbStem[Class7,STRONGDOUBCAUS] [ <actv>: ] Causativiser[STRONGDOUBCAUS]? (Participle[Class7] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class7] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
+IntraVerbStem[Class3,PASSIVE] Voice[PASSIVE]? (Participle[Class3] (AspAuxSuffix|EmphaticCli)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[NN])|(PNG[Nor] InterroClitic?))
 IntraVerbStem[ClassDef] [ <actv>: ] Causativiser? Aspect|(Negation PNG[Nor]) InterroClitic?
 IntraVerbStem[Irr] [ <actv>: ] TenseInfix[Irr] PNG[Irr]
 IntraVerbStem TenseInfix[P3EP] PNG[P3EP]
@@ -180,11 +180,11 @@ IntraVerbStem[-INF,Class5a] Infinitives[Class5a]? Imperatives[NEG]
 IntraVerbStem[INF,I1] Infinitives[I1] Imperatives[NEG]
 IntraVerbStem[INF,I2] Infinitives[I2] Imperatives[NEG]
 ### Infinitives
-IntraVerbStem[W] Infinitives[W] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
-IntraVerbStem[S] Infinitives[S] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
-IntraVerbStem[Class5a] Infinitives[Class5a] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
-IntraVerbStem[I1] Infinitives[I1] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
-IntraVerbStem[I2] Infinitives[I2] (EndwordMorph|EmphaticCli|AuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+IntraVerbStem[W] Infinitives[W] (EndwordMorph|EmphaticCli|ModAuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+IntraVerbStem[S] Infinitives[S] (EndwordMorph|EmphaticCli|ModAuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+IntraVerbStem[Class5a] Infinitives[Class5a] (EndwordMorph|EmphaticCli|ModAuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+IntraVerbStem[I1] Infinitives[I1] (EndwordMorph|EmphaticCli|ModAuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
+IntraVerbStem[I2] Infinitives[I2] (EndwordMorph|EmphaticCli|ModAuxSuffix|NegSuffix[INF]|(TenseInfix[NHum] PNG[NHum]))? InterroClitic?
 ### Negation
 IntraVerbStem[W] Infinitives[W] NegSuffix[DYN] PNG[Nor]
 IntraVerbStem[S] Infinitives[S] NegSuffix[DYN] PNG[Nor]
@@ -228,9 +228,6 @@ Punctuation
 ########################### GENERAL
 ################## HONORIFICS
 LEXICON Honorifics
-## 'kaaran' is usually added for professions (female eq. 'kaari')
-## this is changed to 'kaarar' in both male and female to denote honor
-## this is similar to the general honorific, '-r', which changes (mainly male) '-n' ending nouns
 # General honorific
 <hon>:>{R}{Pul}[H]                                    # 'r'        honorific
 # Epicene plural (implied honorific)
@@ -410,6 +407,14 @@ LEXICON Adjectivizer
 # Negating adjectivizer
 <neg><vaux><adjz>:>{Im}ல்ல>{AA}த            # 'illatha'
 
+################## PROFESSIONALIZER
+LEXICON Professionalizer
+# 'kaaran' is usually added for professions (female eq. 'kaari')
+# this is changed to 'kaarar' in both male and female to denote honor
+<m>:>{Kk}{AA}ர{N}{Pul}
+<f>:>{Kk}{AA}ர{I}
+<hon>:>{Kk}{AA}ர{R}{Pul}
+
 ################## TOTALIZING CLITIC
 LEXICON TotalClitic
 <tot>:>{Um}ம்                                # 'um'                 fully
@@ -441,9 +446,14 @@ LEXICON Causativiser
 <caus><caus>:த்துவி[STRONGDOUBCAUS]               # 'ththuvi'
 
 ################## AUXILIARY SUFFIX
-LEXICON AuxSuffix
+LEXICON ModAuxSuffix
+# modals
 <vaux><vbmod>:>லாம்                   # 'laam'      may
 <vaux><vbmod>:>{A}ட்டும{Pul}           # 'attum'     let
+
+LEXICON AspAuxSuffix
+# aspectuals
+<vaux><perf>:>ட்டு                     # 'ttu'       (completion)
 
 ################## NEGATION SUFFIX
 LEXICON NegSuffix
@@ -702,151 +712,154 @@ LEXICON Nouns
 ## II(a): -'aal', II(b): -'aaththi', II(c): -'aatti'
 ## III: -'ththi', IV: communal words  
 ##################### ANIMATE
+# 'kaaran' here denoting professions is built-in (female eq. 'kaari')
+# loanwords with language of origin placed on top of each class
+# irregulars placed after
 # Class 1
 ## UNGENDERED (AHTHINAI Animate)
-மாட்டு<n><aa>:மாட்ட{U}[AA,Pl1]                                   # 'maattu'          cow
-ஆடு<n><aa>:ஆட{U}[AA,Pl1]                                       # 'aatu'            goat
+மாட்டு<n><aa>:மாட்ட{U}[AA,Pl1]                                      # 'maattu'          cow
+ஆடு<n><aa>:ஆட{U}[AA,Pl1]                                          # 'aatu'            goat
 ## FEMALE
 ### 0
-பெண்<n><f><aa>:பெ{N}{Pul}[AA,Pl1]                              # 'pen'             female
+பெண்<n><f><aa>:பெ{N}{Pul}[AA,Pl1]                                 # 'pen'             female
 ## MALE
 ### 0
-ஆண்<n><m><aa>:ஆ{NP}{Pul}[AA,Pl1]                               # 'aan'            male
-மனிதன்<n><m><aa>:மனித{NK}{Pul}[AA,Pl1]                        # 'manithan'        man
+ஆண்<n><m><aa>:ஆ{NP}{Pul}[AA,Pl1]                                  # 'aan'            male
+மனிதன்<n><m><aa>:மனித{NK}{Pul}[AA,Pl1]                           # 'manithan'        man
 ### I
-வேலைக்காரன்<n><m><aa>:வேலை>க்கார{N}{Pul}[AA,Pl1]          # 'veelaykkaaran'   male servant
-பைடியன்<n><m><aa>:பைடிய{N}{Pul}[AA,Pl1]                      # 'petiyan'         boy
+வேலைக்காரன்<n><m><aa>:வேலை>க்கார{N}{Pul}[AA,Pl1]             # 'veelaykkaaran'   male servant
+பைடியன்<n><m><aa>:பைடிய{N}{Pul}[AA,Pl1]                         # 'petiyan'         boy
 ### IV
-பண்டாரம்<n><m><aa>:பண்டார{M}{Pul}[AA,Pl1]                    # 'pantaaram'       male from pantaaram comm.
-பண்டாரி<n><m><aa>:பண்டார{I}[AA,Pl1]                          # 'pantaari'        male from pantaaram comm.          Dir/LR
+பண்டாரம்<n><m><aa>:பண்டார{M}{Pul}[AA,Pl1]                       # 'pantaaram'       male from pantaaram comm.
+பண்டாரி<n><m><aa>:பண்டார{I}[AA,Pl1]                             # 'pantaari'        male from pantaaram comm.          Dir/LR
 
 # Class 2
 ## FEMALE
 ### II(a)
-தீவாள்<n><f><aa>:தீவாள{Pul}[AA,Pl2]                             # 'theevaal'       lady from an island
-பன்னாலயாள்<n><f><aa>:பன்னாலயாள{Pul}[AA,Pl2]              # 'pannaalayaal'   lady from pannaalai
-கட்டுவனாள்<n><f><aa>:கட்டுவனாள{Pul}[AA,Pl2]                 # 'kattuvanaal'    lady from kattuvan
-பிரத்தியாள்<n><f><aa>:பிரத்தியாள{Pul}[AA,Pl2]                   # 'piraththiyaal'  lady from a different place
+தீவாள்<n><f><aa>:தீவாள{Pul}[AA,Pl2]                                # 'theevaal'       lady from an island
+பன்னாலயாள்<n><f><aa>:பன்னாலயாள{Pul}[AA,Pl2]                 # 'pannaalayaal'   lady from pannaalai
+கட்டுவனாள்<n><f><aa>:கட்டுவனாள{Pul}[AA,Pl2]                    # 'kattuvanaal'    lady from kattuvan
+பிரத்தியாள்<n><f><aa>:பிரத்தியாள{Pul}[AA,Pl2]                      # 'piraththiyaal'  lady from a different place
 
 ## FEMALE Proper Nouns
-கமலா<np><f><aa>:கமல{AA}[AA,Pl2]                              # 'Kamala'
+கமலா<np><f><aa>:கமல{AA}[AA,Pl2]                                 # 'Kamala'
 ## MALE Proper Nouns
-பொன்னம்பலம்<np><m><aa>:பொன்னம்பல{M}{Pul}[AA,Pl2]        # 'Ponnambalam'
-ரத்னம்<np><m><aa>:ரத்ன{M}{Pul}[AA,Pl2]                          # 'Ratnam'
-ரத்தினம்<np><m><aa>:ரத்தின{M}{Pul}[AA,Pl2]                      # 'Ratnam'             Dir/LR
-அருள்<np><m><aa>:அருள{Pul}[AA,Pl2]                             # 'Arul'
-செல்லையா<np><m><aa>:செல்லைய{AA}[AA,Pl2]                   # 'Chelliah'
+பொன்னம்பலம்<np><m><aa>:பொன்னம்பல{M}{Pul}[AA,Pl2]           # 'Ponnambalam'
+ரத்னம்<np><m><aa>:ரத்ன{M}{Pul}[AA,Pl2]                             # 'Ratnam'
+ரத்தினம்<np><m><aa>:ரத்தின{M}{Pul}[AA,Pl2]                         # 'Ratnam'           Dir/LR
+அருள்<np><m><aa>:அருள{Pul}[AA,Pl2]                                # 'Arul'
+செல்லையா<np><m><aa>:செல்லைய{AA}[AA,Pl2]                      # 'Chelliah'
 ### -N or -R ending irregulars
-முருகன்<np><m><aa>:முருக{NP}{Pul}[AA,Pl2]                       # 'Murugan'
-கண்ணன்<np><m><aa>:கண்ண{NP}{Pul}[AA,Pl2]                   # 'Kannan'
-பொன்னன்<np><m><aa>:பொன்ன{NP}{Pul}[AA,Pl2]                 # 'Ponnan'
-பொன்னர்<np><m><aa>:பொன்ன{RP}{Pul}[AA,Pl2]                  # 'Ponnar'
+முருகன்<np><m><aa>:முருக{NP}{Pul}[AA,Pl2]                          # 'Murugan'
+கண்ணன்<np><m><aa>:கண்ண{NP}{Pul}[AA,Pl2]                      # 'Kannan'
+பொன்னன்<np><m><aa>:பொன்ன{NP}{Pul}[AA,Pl2]                    # 'Ponnan'
+பொன்னர்<np><m><aa>:பொன்ன{RP}{Pul}[AA,Pl2]                     # 'Ponnar'
 
 # Class 3
 ## UNISEX
-பிள்ளை<n><mf><aa>:பிள்ள{AI}[AA,Pl3]                            # 'pillay'          child
+பிள்ளை<n><mf><aa>:பிள்ள{AI}[AA,Pl3]                               # 'pillay'          child
 ## FEMALE
 ### 0
-பெட்டை<n><f><aa>:பெட்ட{AI}[AA,Pl3]                            # 'pettay'          girl
+பெட்டை<n><f><aa>:பெட்ட{AI}[AA,Pl3]                               # 'pettay'          girl
 ### I(b)
-மீன்காரி<n><f><aa>:மீன்>கார{I}[AA,Pl3]                          # 'meenkaari'       fisherwoman
-வேலைக்காரி<n><f><aa>:வேலை>க்கார{I}[AA,Pl3]                # 'veelaykkaari'    female servant
+மீன்காரி<n><f><aa>:மீன்>கார{I}[AA,Pl3]                             # 'meenkaari'       fisherwoman
+வேலைக்காரி<n><f><aa>:வேலை>க்கார{I}[AA,Pl3]                   # 'veelaykkaari'    female servant
 
 # Class 4
 ## UNGENDERED (AHTHINAI Animate)
-மான்<n><aa>:மா{N}{Pul}[AA,Pl4]                                 # 'maan'            deer
-நுல்லான்<n><aa>:நுள்ளா{N}{Pul}[AA,Pl4]                         # 'nullaan'         small reddish ant
+மான்<n><aa>:மா{N}{Pul}[AA,Pl4]                                    # 'maan'            deer
+நுல்லான்<n><aa>:நுள்ளா{N}{Pul}[AA,Pl4]                            # 'nullaan'         small reddish ant
 
 # Class 5 (loanwords)
 ## UNISEX
-எஞ்சினியர்<n><mf><aa>:எஞ்சினியர{Pul}[AA,Pl5]                  # 'enciniyar'       engineer
-கிளார்க்<n><mf><aa>:கிளார்க்{Pul}[AA,Pl5]                         # 'kilaakku'        clerk
-மேனேஜர்<n><mf><aa>:மேனேஜர{Pul}[AA,Pl5]                      # 'maneeccar'       manager
-டாக்டர்<n><mf><aa>:டாக்டர{Pul}[AA,Pl5]                           # 'taaktar'         doctor
-வாத்தியார்<n><mf><aa>:வாத்தியார{Pul}[AA,Pl5]                   # 'vaaththiyaar'    teacher
-விதானயார்<n><mf><aa>:விதானயார{Pul}[AA,Pl5]                  # 'vithaanayaar'    village headman
+எஞ்சினியர்<n><mf><aa>:எஞ்சினியர{Pul}[AA,Pl5]                     # 'enciniyar'       engineer                           loanword (English)
+கிளார்க்<n><mf><aa>:கிளார்க்{Pul}[AA,Pl5]                            # 'kilaakku'        clerk                              loanword (English)
+மேனேஜர்<n><mf><aa>:மேனேஜர{Pul}[AA,Pl5]                         # 'maneeccar'       manager                           loanword (English)
+டாக்டர்<n><mf><aa>:டாக்டர{Pul}[AA,Pl5]                              # 'taaktar'         doctor                            loanword (English)
+வாத்தியார்<n><mf><aa>:வாத்தியார{Pul}[AA,Pl5]                      # 'vaaththiyaar'    teacher                            loanword (Sanskrit)
+விதானயார்<n><mf><aa>:விதானயார{Pul}[AA,Pl5]                     # 'vithaanayaar'    village headman
 
 # Class 6
 ## FEMALE
 ### 0 
-தோழி<n><f><aa>:தோழ{I}[AA,Pl6]                                # 'thoozhi'         female friend
-தங்கச்சி<n><f><aa>:தங்கச்ச{I}[AA,Pl6]                            # 'thankachchi'     younger sister
-அம்மா<n><f><aa>:அம்ம{AA}[AA,Pl6]                               # 'amma'            mother
+தோழி<n><f><aa>:தோழ{I}[AA,Pl6]                                   # 'thoozhi'         female friend
+தங்கச்சி<n><f><aa>:தங்கச்ச{I}[AA,Pl6]                               # 'thankachchi'     younger sister
+அம்மா<n><f><aa>:அம்ம{AA}[AA,Pl6]                                  # 'amma'            mother
 ### I(b)
-மாமி<n><f><aa>:மாம{I}[AA,Pl6]                                  # 'maami'           aunt
+மாமி<n><f><aa>:மாம{I}[AA,Pl6]                                     # 'maami'           aunt
 ## MALE
 ### 0
-அப்பா<n><m><aa>:அப்ப{AA}[AA,Pl6]                               # 'appa'            father
-மாமா<n><m><aa>:மாம{AA}[AA,Pl6]                                # 'maamaa'          uncle
-அம்மான்<n><m><aa>:அம்மா{NP}{Pul}[AA,Pl6]                      # 'ammaan'          uncle                              Dir/LR
-மச்சான்<n><m><aa>:மச்சா{NP}{Pul}[AA,Pl6]                        # 'maccaan'         male cousin
-அய்யர்<n><m><aa>:அய்யர{Pul}[AA,Pl6]                            # 'ayyar'           Hindu priest
-ஐயர்<n><m><aa>:ஐயர{Pul}[AA,Pl6]                                # 'aiyar'           Hindu priest                       Dir/LR
-தம்பி<n><m><aa>:தம்ப{I}[AA,Pl6]                                 # 'thambi'          younger brother
+அப்பா<n><m><aa>:அப்ப{AA}[AA,Pl6]                                  # 'appa'            father
+மாமா<n><m><aa>:மாம{AA}[AA,Pl6]                                   # 'maamaa'          uncle
+அம்மான்<n><m><aa>:அம்மா{NP}{Pul}[AA,Pl6]                         # 'ammaan'          uncle                              Dir/LR
+மச்சான்<n><m><aa>:மச்சா{NP}{Pul}[AA,Pl6]                           # 'maccaan'         male cousin
+அய்யர்<n><m><aa>:அய்யர{Pul}[AA,Pl6]                               # 'ayyar'           Hindu priest
+ஐயர்<n><m><aa>:ஐயர{Pul}[AA,Pl6]                                   # 'aiyar'           Hindu priest                       Dir/LR
+தம்பி<n><m><aa>:தம்ப{I}[AA,Pl6]                                    # 'thambi'          younger brother
 ### II
-கட்டுவனான்<n><m><aa>:கட்டுவனா{NP}{Pul}[AA,Pl6]              # 'kattuvanaan'     male from kattuvan
-பிரத்தியான்<n><m><aa>:பிரத்தியா{NP}{Pul}[AA,Pl6]                # 'piraththiyaan'   male from a different place
-வண்ணான்<n><m><aa>:வண்ணா{NP}{Pul}[AA,Pl6]                 # 'vannaan'         washerman
-தட்டான்<n><m><aa>:தட்டா{NP}{Pul}[AA,Pl6]                       # 'thattaan'         goldsmith (male)
-சீமான்<n><m><aa>:சீமா{NP}{Pul}[AA,Pl6]                          # 'ciimaan'          lord (male)
-வித்துவான்<n><m><aa>:வித்துவா{NP}{Pul}[AA,Pl6]                 # 'viththuvaan'      learned man
+கட்டுவனான்<n><m><aa>:கட்டுவனா{NP}{Pul}[AA,Pl6]                 # 'kattuvanaan'     male from kattuvan
+பிரத்தியான்<n><m><aa>:பிரத்தியா{NP}{Pul}[AA,Pl6]                   # 'piraththiyaan'   male from a different place
+வண்ணான்<n><m><aa>:வண்ணா{NP}{Pul}[AA,Pl6]                    # 'vannaan'         washerman
+தட்டான்<n><m><aa>:தட்டா{NP}{Pul}[AA,Pl6]                          # 'thattaan'         goldsmith (male)
+சீமான்<n><m><aa>:சீமா{NP}{Pul}[AA,Pl6]                             # 'ciimaan'          lord (male)
+வித்துவான்<n><m><aa>:வித்துவா{NP}{Pul}[AA,Pl6]                    # 'viththuvaan'      learned man
 
 # Class 7
 ## UNISEX
-வியாபாரி<n><mf><aa>:வியாபார{I}[AA,Pl7]                       # 'viyaapaari'      trader
-நோயாளி<n><mf><aa>:நோயாள{I}[AA,Pl7]                        # 'nooyaali'        patient
-பாவி<n><mf><aa>:பாவ{I}[AA,Pl7]                                 # 'paavi'           sinner
+வியாபாரி<n><mf><aa>:வியாபார{I}[AA,Pl7]                          # 'viyaapaari'      trader                             loanword (Sanskrit)
+பாவி<n><mf><aa>:பாவ{I}[AA,Pl7]                                    # 'paavi'           sinner                             loanword (Sanskrit)
+நோயாளி<n><mf><aa>:நோயாள{I}[AA,Pl7]                           # 'nooyaali'        patient
 ## FEMALE
 ### I(b)
-சகோதரி<n><f><aa>:சகோதர{I}[AA,Pl7]                          # 'cakoothari'      sister
-சினேகிதி<n><f><aa>:சினேகித{I}[AA,Pl7]                         # 'cineekithi'      female friend
-குருடி<n><f><aa>:குருட{I}[AA,Pl7]                                # 'kuruti'           blind woman
-விசரி<n><f><aa>:விசர{I}[AA,Pl7]                                 # 'vicari'          mad woman
-செகிடி<n><f><aa>:செகிட{I}[AA,Pl7]                              # 'cekiti'          deaf woman
-தலைவி<n><f><aa>:தலைவ{I}[AA,Pl7]                            # 'thalayvi'        female leader
-துணைவி<n><f><aa>:துணைவ{I}[AA,Pl7]                         # 'thunayvi'        female assistant
-பாட்டுக்காரி<n><f><aa>:பாட்டு>க்கார{I}[AA,Pl7]                  # 'paattukkaari'    female singer
-எண்ணெய்க்காரி<n><f><aa>:எண்ணெய்>க்கார{I}[AA,Pl7]        # 'ennaikkaari'     female oil presser
+சகோதரி<n><f><aa>:சகோதர{I}[AA,Pl7]                             # 'cakoothari'      sister                             loanword (Sanskrit)
+சினேகிதி<n><f><aa>:சினேகித{I}[AA,Pl7]                            # 'cineekithi'      female friend                      loanword (Sanskrit)
+குருடி<n><f><aa>:குருட{I}[AA,Pl7]                                   # 'kuruti'           blind woman
+விசரி<n><f><aa>:விசர{I}[AA,Pl7]                                    # 'vicari'          mad woman
+செகிடி<n><f><aa>:செகிட{I}[AA,Pl7]                                 # 'cekiti'          deaf woman
+தலைவி<n><f><aa>:தலைவ{I}[AA,Pl7]                               # 'thalayvi'        female leader
+துணைவி<n><f><aa>:துணைவ{I}[AA,Pl7]                            # 'thunayvi'        female assistant
+பாட்டுக்காரி<n><f><aa>:பாட்டு>க்கார{I}[AA,Pl7]                     # 'paattukkaari'    female singer
+எண்ணெய்க்காரி<n><f><aa>:எண்ணெய்>க்கார{I}[AA,Pl7]           # 'ennaikkaari'     female oil presser
 ### I(c)
-பிராமணத்தி<n><f><aa>:பிராமணத்த{I}[AA,Pl7]                  # 'piraamanaththi'  female brahmin
-நட்டுவத்தி<n><f><aa>:நட்டுவத்த{I}[AA,Pl7]                       # 'nattuvaththi'    female from drum-beater comm.
+பிராமணத்தி<n><f><aa>:பிராமணத்த{I}[AA,Pl7]                     # 'piraamanaththi'  female brahmin                     loanword (Sanskrit)
+நட்டுவத்தி<n><f><aa>:நட்டுவத்த{I}[AA,Pl7]                          # 'nattuvaththi'    female from drum-beater comm.
 ### I(d)
-பெடிச்சி<n><f><aa>:பெட்டிச்ச{I}[AA,Pl7]                          # 'peticci'         girl
-கட்டயச்சி<n><f><aa>:கட்டயச்ச{I}[AA,Pl7]                        # 'kattayacci'      short woman
-பேச்சி<n><f><aa>:பேச்ச{I}[AA,Pl7]                               # 'peecci'          female fool
+பெடிச்சி<n><f><aa>:பெட்டிச்ச{I}[AA,Pl7]                             # 'peticci'         girl
+கட்டயச்சி<n><f><aa>:கட்டயச்ச{I}[AA,Pl7]                           # 'kattayacci'      short woman
+பேச்சி<n><f><aa>:பேச்ச{I}[AA,Pl7]                                  # 'peecci'          female fool
 ### II(b)
-வன்னாத்தி<n><f><aa>:வன்னாத்த{I}[AA,Pl7]                     # 'vannaaththi'      washerwoman
-தட்டாத்தி<n><f><aa>:தட்டாத்த{I}[AA,Pl7]                        # 'thattaaththi'     goldsmith (female)
+வன்னாத்தி<n><f><aa>:வன்னாத்த{I}[AA,Pl7]                        # 'vannaaththi'      washerwoman
+தட்டாத்தி<n><f><aa>:தட்டாத்த{I}[AA,Pl7]                           # 'thattaaththi'     goldsmith (female)
 ### II(c)
-சீமாட்டி<n><f><aa>:சீமாட்ட{I}[AA,Pl7]                           # 'ciimaatti'        lady
-வித்துவாட்டி<n><f><aa>:வித்துவாட்ட{I}[AA,Pl7]                  # 'viththuvaatti'    learned woman
+சீமாட்டி<n><f><aa>:சீமாட்ட{I}[AA,Pl7]                              # 'ciimaatti'        lady
+வித்துவாட்டி<n><f><aa>:வித்துவாட்ட{I}[AA,Pl7]                     # 'viththuvaatti'    learned woman
 ### III
-குசத்தி<n><f><aa>:குசத்த{I}[AA,Pl7]                             # 'kucaththi'        female from potmaker comm.
-குறத்தி<n><f><aa>:குறத்த{I}[AA,Pl7]                            # 'kuraththi'        tribal woman
-சிங்களத்தி<n><f><aa>:சிங்களத்த{I}[AA,Pl7]                     # 'cinkalaththi'     Sinhalese woman
-ஒருத்தி<n><f><aa>:ஒரு>த்த{I}[AA,Pl7]                           # 'oruththi'         one woman
-பண்டாரத்தி<n><f><aa>:பண்டாரத்த{I}[AA,Pl7]                  # 'pantaaraththi'    female from pantaaram comm.
-செட்டிச்சி<n><f><aa>:செட்டிச்ச{I}[AA,Pl7]                       # 'cetticci'         female from cetti comm.
+குசத்தி<n><f><aa>:குசத்த{I}[AA,Pl7]                                # 'kucaththi'        female from potmaker comm.
+குறத்தி<n><f><aa>:குறத்த{I}[AA,Pl7]                               # 'kuraththi'        tribal woman
+சிங்களத்தி<n><f><aa>:சிங்களத்த{I}[AA,Pl7]                        # 'cinkalaththi'     Sinhalese woman
+ஒருத்தி<n><f><aa>:ஒரு>த்த{I}[AA,Pl7]                              # 'oruththi'         one woman
+பண்டாரத்தி<n><f><aa>:பண்டாரத்த{I}[AA,Pl7]                     # 'pantaaraththi'    female from pantaaram comm.
+செட்டிச்சி<n><f><aa>:செட்டிச்ச{I}[AA,Pl7]                          # 'cetticci'         female from cetti comm.
 ## MALE
 ### IV
-செட்டி<n><m><aa>:செட்ட{I}[AA,Pl7]                             # 'cetti'             male from cetti comm.
+செட்டி<n><m><aa>:செட்ட{I}[AA,Pl7]                                # 'cetti'             male from cetti comm.
 
 # Class 8
 ## EPICENE
 சொந்தக்காரன்<n><aa>:சொந்த>க்கார{NR}{Pul}[AA,EH,ES]          # 'conthakkaaran'    relative
 ## MALE
 ### I
+சகோதரன்<n><m><aa>:சகோதர{NR}{Pul}[AA,Pl8,H]                   # 'cakootharan'     brother                            loanword (Sanskrit)
+சினேகிதன்<n><m><aa>:சினேகித{NR}{Pul}[AA,Pl8,H]                 # 'cineekithan'     male friend                         loanword (Sanskrit)
+பிராமணன்<n><m><aa>:பிராமண{NR}{Pul}[AA,Pl8,H]                 # 'piraamanan'      male brahmin                       loanword (Sanskrit)
 குருடன்<n><m><aa>:குருட{NR}{Pul}[AA,Pl8,H]                         # 'kurutan'         blind man
 விசரன்<n><m><aa>:விசர{NR}{Pul}[AA,Pl8,H]                          # 'vicaran'         mad man
 செகிடன்<n><m><aa>:செகிட{NR}{Pul}[AA,Pl8,H]                       # 'cekitan'         deaf man
 தலைவன்<n><m><aa>:தலைவ{NR}{Pul}[AA,Pl8,H]                     # 'thalayvan'       male leader        
-சகோதரன்<n><m><aa>:சகோதர{NR}{Pul}[AA,Pl8,H]                   # 'cakootharan'     brother
-சினேகிதன்<n><m><aa>:சினேகித{NR}{Pul}[AA,Pl8,H]                 # 'cineekithan'     male friend
 பாட்டுக்காரன்<n><m><aa>:பாட்டு>க்கார{NR}{Pul}[AA,Pl8,H]          # 'paattukkaaran'   male singer
 எண்ணெய்க்காரன்<n><m><aa>:எண்ணெய்>க்கார{NR}{Pul}[AA,Pl8,H] # 'ennaikkaaran'    male oil presser
 மீன்காரன்<n><m><aa>:மீன்>கார{NR}{Pul}[AA,Pl8,H]                  # 'meenkaaran'      fisherman
 துணைவன்<n><m><aa>:துணைவ{NR}{Pul}[AA,Pl8,H]                 # 'thunayvan'       male assistant
-பிராமணன்<n><m><aa>:பிராமண{NR}{Pul}[AA,Pl8,H]                 # 'piraamanan'      male brahmin
 நட்டுவன்<n><m><aa>:நட்டுவ{NR}{Pul}[AA,Pl8,H]                      # 'nattuvan'        male from drum-beater comm.
 கட்டயன்<n><m><aa>:கட்டய{NR}{Pul}[AA,Pl8,H]                       # 'kattayan'        short man
 பேயன்<n><m><aa>:பேய{NR}{Pul}[AA,Pl8,H]                          # 'peeyan'          male fool
@@ -858,102 +871,104 @@ LEXICON Nouns
 ஒருவன்<n><m><aa>:ஒரு>வ{NR}{Pul}[AA,Pl8,H]                        # 'oruvan'          one man
 
 ##################### INANIMATE
-# loanwords placed on top of each class
-# irregulars placed after
 # Class 0
 # Foodstuffs
-பழம்<n><nn>:பழ{M}{Pul}[NN,FNoun]                                # 'pazham'          fruit
-சாப்பாடு<n><nn>:சாப்பா{T}{U}[NN,FNoun]                          # 'caappatu'        food
-சோறு<n><nn>:சோ{RR}{U}[NN,FNoun]                               # 'cooru'           rice
+பழம்<n><nn>:பழ{M}{Pul}[NN,FNoun]                                  # 'pazham'          fruit
+சாப்பாடு<n><nn>:சாப்பா{T}{U}[NN,FNoun]                            # 'caappatu'        food
+சோறு<n><nn>:சோ{RR}{U}[NN,FNoun]                                 # 'cooru'           rice
 # Toponyms
-யாழ்ப்பாணம்<n><top>:யாழ்ப்பாண{M}{Pul}[NN,TNoun]             # 'yaazhppaanam'    Jaffna
-லண்டன்<n><top>:லண்ட{N}{Pul}[NN,TNoun]                        # 'lantan'          London
-சென்னை<n><top>:சென்ன{AI}[NN,TNoun]                          # 'cennay'          Chennai
-கொழும்பு<n><top>:கொழும்ப{U}[NN,TNoun]                        # 'kozhumpu'        Colombo
+யாழ்ப்பாணம்<n><top>:யாழ்ப்பாண{M}{Pul}[NN,TNoun]               # 'yaazhppaanam'    Jaffna
+லண்டன்<n><top>:லண்ட{N}{Pul}[NN,TNoun]                          # 'lantan'          London
+சென்னை<n><top>:சென்ன{AI}[NN,TNoun]                            # 'cennay'          Chennai
+கொழும்பு<n><top>:கொழும்ப{U}[NN,TNoun]                          # 'kozhumpu'        Colombo
 # Uncountable Nouns
 ## Mass Nouns
 ### Nouns of Quantity, Number, Size [QNoun]
-கொஞ்சம்<n><nn>:கொஞ்ச{M}{Pul}[NN,QNoun]                      # 'koncam'          a little bit
-கன<n><nn>:கன[NN,QNoun]                                        # 'kana'            many
+கொஞ்சம்<n><nn>:கொஞ்ச{M}{Pul}[NN,QNoun]                        # 'koncam'          a little bit
+கன<n><nn>:கன[NN,QNoun]                                          # 'kana'            many
 ### Masses
-தண்ணீ<n><nn>:தண்ண{II}[NN,UNoun]                             # 'thannii'         water
-தண்ணீர்<n><nn>:தண்ணீர{Pul}[NN,UNoun]                         # 'thanniir'        water               Dir/LR
-காற்று<n><nn>:காற்ற{U}[NN,UNoun]                                # 'kaarru'          wind
-பட்டு<n><nn>:பட்ட{U}[NN,UNoun]                                   # 'pattu'           silk
-பொன்<n><nn>:பொ{N}{Pul}[NN,UNoun]                             # 'pon'             gold
+பட்டு<n><nn>:பட்ட{U}[NN,UNoun]                                     # 'pattu'           silk                loanword (Sanskrit)
+தண்ணீ<n><nn>:தண்ண{II}[NN,UNoun]                               # 'thannii'         water
+தண்ணீர்<n><nn>:தண்ணீர{Pul}[NN,UNoun]                           # 'thanniir'        water               Dir/LR
+காற்று<n><nn>:காற்ற{U}[NN,UNoun]                                  # 'kaarru'          wind
+பொன்<n><nn>:பொ{N}{Pul}[NN,UNoun]                               # 'pon'             gold
 ## Time Nouns
-வருடம்<n><nn>:வருட{M}{Pul}[NN,TiNoun]                           # 'varutam'         year               loanword
-வருசம்<n><nn>:வருச{M}{Pul}[NN,TiNoun]                           # 'varucam'         year               Dir/LR
-இன்று<n><nn>:இன்ற{U}[NN,TiNoun]                                 # 'inru'            today
-நாளை<n><nn>:நாள{AI}[NN,TiNoun]                                # 'naalay'          tomorrow
-நேற்று<n><nn>:நேற்ற{U}[NN,TiNoun]                                # 'neerru'          yesterday
+வருடம்<n><nn>:வருட{M}{Pul}[NN,TiNoun]                             # 'varutam'         year               loanword (Sanskrit)
+வருசம்<n><nn>:வருச{M}{Pul}[NN,TiNoun]                             # 'varucam'         year               Dir/LR
+இன்று<n><nn>:இன்ற{U}[NN,TiNoun]                                   # 'inru'            today
+நாளை<n><nn>:நாள{AI}[NN,TiNoun]                                  # 'naalay'          tomorrow
+நேற்று<n><nn>:நேற்ற{U}[NN,TiNoun]                                  # 'neerru'          yesterday
 # Abstract nouns 
 ## Nouns that can attach Adjectivizer [NQ]
 ## Emotions
-அன்பு<nq><nn>:அன்ப{U}[NN,ANoun,NQ]                             # 'anpu'            love
-கோபம்<nq><nn>:கோப{M}{Pul}[NN,ANoun,NQ]                       # 'koopam'          anger
+கோபம்<nq><nn>:கோப{M}{Pul}[NN,ANoun,NQ]                         # 'koopam'          anger              loanword (Sanskrit)    
+அன்பு<nq><nn>:அன்ப{U}[NN,ANoun,NQ]                               # 'anpu'            love
 ## Behaviour
-உசார்<nq><nn>:உசார{Pul}[NN,ANoun,NQ]                           # 'ucaar'           enthusiasm         loanword
-திமிர்<nq><nn>:திமிர{Pul}[NN,ANoun,NQ]                            # 'timir'           arrogance
-கண்டிப்பு<nq><nn>:கண்டிப்ப{U}[NN,ANoun,NQ]                      # 'kantippu'        discipline
-வடிவு<nq><nn>:வடிவ{U}[NN,ANoun,NQ]                              # 'vativu'          beauty
+உசார்<nq><nn>:உசார{Pul}[NN,ANoun,NQ]                             # 'ucaar'           enthusiasm         loanword (Sanskrit)
+திமிர்<nq><nn>:திமிர{Pul}[NN,ANoun,NQ]                              # 'timir'           arrogance
+கண்டிப்பு<nq><nn>:கண்டிப்ப{U}[NN,ANoun,NQ]                        # 'kantippu'        discipline
+வடிவு<nq><nn>:வடிவ{U}[NN,ANoun,NQ]                                # 'vativu'          beauty
+கெட்டி<nq><nn>:கெட்ட{I}[NN,ANoun,NQ]                              # 'ketti'           smartness
 ### irregular which is the same as its adjective and noun
-தனி<nq><nn>:தன{I}[NN,ANoun,NQ]                                 # 'thani'           solitude           Dir/LR
+தனி<nq><nn>:தன{I}[NN,ANoun,NQ]                                   # 'thani'           solitude           Dir/LR
 
 # Class 1
-பேனா<n><nn>:பேன{AA}[NN,Pl1]                                  # 'peena'           pen                loanword
-கார்<n><nn>:கார{Pul}[NN,Pl1]                                    # 'kaar'            car                loanword
-சைக்கிள்<n><nn>:சைக்கிள{Pul}[NN,Pl1]                          # 'caykkil'         cycle              loanword
-வேகம்<n><nn>:வேகம{Pul}[NN,Pl1]                               # 'veekam'          speed              loanword
-விமானம்<n><nn>:விமான{M}{Pul}[NN,Pl1]                         # 'vimaanam'        airplane           loanword 
-தனி<n><nn>:தன{I}[NN,Pl1]                                      # 'thani'           singleness         Irregular
-காசு<n><nn>:காச{U}[NN,Pl1]                                      # 'kaacu'           money
-நெஞ்சு<n><nn>:நெஞ்ச{U}[NN,Pl1]                                 # 'nencu'           heart
-வகுப்பு<n><nn>:வகுப்ப{U}[NN,Pl1]                                 # 'vakuppu'         class
-இரவு<n><nn>:இரவ{U}[NN,Pl1]                                     # 'irvu'            night
-பெட்டி<n><nn>:பெட்ட{I}[NN,Pl1]                                  # 'petti'           box
-மூடி<n><nn>:மூட{I}[NN,Pl1]                                       # 'muuti'           lid
-கத்தி<n><nn>:கத்த{I}[NN,Pl1]                                     # 'kaththi'         knife
-வேட்டி<n><nn>:வேட்ட{I}[NN,Pl1]                                  # 'veetti'          dhoti
-ஊசி<n><nn>:ஊச{I}[NN,Pl1]                                      # 'uuci'            needle
-மணி<n><nn>:மண{I}[NN,Pl1]                                    # 'mani'             hour
-கடை<n><nn>:கட{AI}[NN,Pl1]                                     # 'katay'           shop
-தோசை<n><nn>:தோச{AI}[NN,Pl1]                                # 'thoocay'         dosa
-பிழை<n><nn>:பிழ{AI}[NN,Pl1]                                    # 'pizhay'         error
-காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                         # 'kaaiccal'        fever
-கால்<n><nn>:கால{Pul}[NN,Pl1]                                   # 'kaal'            leg
-தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                # 'thabaal'         letter
-வால்<n><nn>:வால{Pul}[NN,Pl1]                                   # 'vaal'            tail
-மரம்<n><nn>:மர{M}{Pul}[NN,Pl1]                                  # 'maram'           tree
-பாடம்<n><nn>:பாட{M}{Pul}[NN,Pl1]                               # 'paatam'          lesson
-மனம்<n><nn>:மன{M}{Pul}[NN,Pl1]                                # 'manam'           mind
-ஆயுதம்<n><nn>:ஆயுத{M}{Pul}[NN,Pl1]                            # 'aayutham'        instrument
-திருமணம்<n><nn>:திருமண{M}{Pul}[NN,Pl1]                      # 'thirumanam'      wedding
-பட்டணம்<n><nn>:பட்டண{M}{Pul}[NN,Pl1]                        # 'pattanam'        town
-நேரம்<n><nn>:நேர{M}{Pul}[NN,Pl1]                               # 'neeram'          time
-பொய்<n><nn>:பொ{Y}{Pul}[NN,Pl1]                               # 'poi'             lie
-வீடு<n><nn>:வீ{T}{U}[NN,VIrr,Pl1]                                 # 'veetu'           house
-வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                # 'vayiru'          stomach
+பேனா<n><nn>:பேன{AA}[NN,Pl1]                                    # 'peena'           pen                loanword (English)
+கார்<n><nn>:கார{Pul}[NN,Pl1]                                      # 'kaar'            car                loanword (English)
+சைக்கிள்<n><nn>:சைக்கிள{Pul}[NN,Pl1]                            # 'caykkil'         cycle              loanword (English)
+அவை<n><nn>:அவ{AI}[NN,Pl1]                                     # 'avay'            audience           loanword (Sanskrit)
+கூரை<n><nn>:கூர{AI}[NN,Pl1]                                      # 'kooray'          roof
+வேகம்<n><nn>:வேகம{Pul}[NN,Pl1]                                 # 'veekam'          speed              loanword (Sanskrit)
+விமானம்<n><nn>:விமான{M}{Pul}[NN,Pl1]                           # 'vimaanam'        airplane           loanword (Sanskrit) 
+பாடம்<n><nn>:பாட{M}{Pul}[NN,Pl1]                                 # 'paatam'          lesson             loanword (Sanskrit)
+ஆயுதம்<n><nn>:ஆயுத{M}{Pul}[NN,Pl1]                              # 'aayutham'        instrument         loanword (Sanskrit)
+தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                  # 'thabaal'         letter             loanword (Hindustani)
+தனி<n><nn>:தன{I}[NN,Pl1]                                        # 'thani'           singleness         Irregular
+காசு<n><nn>:காச{U}[NN,Pl1]                                        # 'kaacu'           money
+நெஞ்சு<n><nn>:நெஞ்ச{U}[NN,Pl1]                                   # 'nencu'           heart
+வகுப்பு<n><nn>:வகுப்ப{U}[NN,Pl1]                                   # 'vakuppu'         class
+இரவு<n><nn>:இரவ{U}[NN,Pl1]                                       # 'irvu'            night
+பெட்டி<n><nn>:பெட்ட{I}[NN,Pl1]                                    # 'petti'           box
+மூடி<n><nn>:மூட{I}[NN,Pl1]                                         # 'muuti'           lid
+கத்தி<n><nn>:கத்த{I}[NN,Pl1]                                       # 'kaththi'         knife
+வேட்டி<n><nn>:வேட்ட{I}[NN,Pl1]                                    # 'veetti'          dhoti
+ஊசி<n><nn>:ஊச{I}[NN,Pl1]                                        # 'uuci'            needle
+மணி<n><nn>:மண{I}[NN,Pl1]                                      # 'mani'             hour
+கடை<n><nn>:கட{AI}[NN,Pl1]                                       # 'katay'           shop
+தோசை<n><nn>:தோச{AI}[NN,Pl1]                                  # 'thoocay'         dosa
+பிழை<n><nn>:பிழ{AI}[NN,Pl1]                                      # 'pizhay'         error
+காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                           # 'kaaiccal'        fever
+கால்<n><nn>:கால{Pul}[NN,Pl1]                                     # 'kaal'            leg
+வால்<n><nn>:வால{Pul}[NN,Pl1]                                     # 'vaal'            tail
+மரம்<n><nn>:மர{M}{Pul}[NN,Pl1]                                    # 'maram'           tree
+மனம்<n><nn>:மன{M}{Pul}[NN,Pl1]                                  # 'manam'           mind
+திருமணம்<n><nn>:திருமண{M}{Pul}[NN,Pl1]                        # 'thirumanam'      wedding
+பட்டணம்<n><nn>:பட்டண{M}{Pul}[NN,Pl1]                          # 'pattanam'        town
+நேரம்<n><nn>:நேர{M}{Pul}[NN,Pl1]                                 # 'neeram'          time
+பொய்<n><nn>:பொ{Y}{Pul}[NN,Pl1]                                 # 'poi'             lie
+வீடு<n><nn>:வீ{T}{U}[NN,VIrr,Pl1]                                   # 'veetu'           house
+வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                  # 'vayiru'          stomach
 
 ## Quality Nouns <nq> (can take Adjectivizer [NQ])
-குணம்<nq><nn>:குண{M}{Pul}[NN,Pl1,NQ]                          # 'kunam'           quality           loanword
-உயரம்<nq><nn>:உயர{M}{Pul}[NN,Pl1,NQ]                         # 'uyaram'           height
-இரக்கம்<nq><nn>:இரக்க{M}{Pul}[NN,Pl1,NQ]                       # 'irakkam'         compassion
-யோக்கியம்<nq><nn>:யோக்கிய{M}{Pul}[NN,Pl1,NQ]                # 'yookkiyam'       integrity
-நீளம்<nq><nn>:நீள{M}{Pul}[NN,Pl1,NQ]                             # 'neelam'          length
-எடை<nq><nn>:எட{AI}[NN,Pl1,NQ]                                 # 'etay'            weight
+குணம்<nq><nn>:குண{M}{Pul}[NN,Pl1,NQ]                            # 'kunam'           quality           loanword (Sanskrit)
+யோக்கியம்<nq><nn>:யோக்கிய{M}{Pul}[NN,Pl1,NQ]                  # 'yookkiyam'       integrity         loanword (Sanskrit)
+உயரம்<nq><nn>:உயர{M}{Pul}[NN,Pl1,NQ]                           # 'uyaram'           height
+இரக்கம்<nq><nn>:இரக்க{M}{Pul}[NN,Pl1,NQ]                         # 'irakkam'         compassion
+நீளம்<nq><nn>:நீள{M}{Pul}[NN,Pl1,NQ]                               # 'neelam'          length
+எடை<nq><nn>:எட{AI}[NN,Pl1,NQ]                                   # 'etay'            weight
 
 # Class 3
-கை<n><nn>:க{AI}[NN,Pl3]                                        # 'kay'             hand
-தலை<n><nn>:தல{AI}[NN,Pl3]                                    # 'thalay'           head
-சட்டை<n><nn>:சட்ட{AI}[NN,Pl3]                                  # 'sattay'          shirt
-வேலை<n><nn>:வேல{AI}[NN,Pl3]                                 # 'veelay'          work
-சால்வை<n><nn>:சால்வ{AI}[NN,Pl3]                              # 'caalvay'         shawl
+சால்வை<n><nn>:சால்வ{AI}[NN,Pl3]                                # 'caalvay'         shawl             loanword (Hindustani)
+கை<n><nn>:க{AI}[NN,Pl3]                                          # 'kay'             hand
+தலை<n><nn>:தல{AI}[NN,Pl3]                                      # 'thalay'           head
+சட்டை<n><nn>:சட்ட{AI}[NN,Pl3]                                    # 'sattay'          shirt
+வேலை<n><nn>:வேல{AI}[NN,Pl3]                                   # 'veelay'          work
 
 # Class 4
-வான்<n><nn>:வான{Pul}[NN,Pl4]                                 # 'vaan'             van             loanword (n does not change)
-கல்<n><nn>:க{L}{Pul}[NN,Pl4]                                    # 'kal'             stone
-நெல்<n><nn>:நெ{L}{Pul}[NN,Pl4]                                 # 'nel'             paddy
+வான்<n><nn>:வான{Pul}[NN,Pl4]                                   # 'vaan'             van             loanword (English) (n does not change)
+கல்<n><nn>:க{L}{Pul}[NN,Pl4]                                      # 'kal'             stone
+கல்லு<n><nn>:கல்ல{U}[NN,Pl4]                                     # 'kallu'           stone            Dir/LR
+நெல்<n><nn>:நெ{L}{Pul}[NN,Pl4]                                   # 'nel'             paddy
 
 ################################     VERBS     ################################
 # Verb Classes:
@@ -1020,7 +1035,7 @@ LEXICON AspectVerbAux
 # Many verbs are paired between transitive and intransitive (marked as Paired)
 # These may have slight variance, or be the same
 # Special verbs, <vbdo>, <vbser> placed on top of class list
-# Followed by loanwords, paired, irregular, then unpaired
+# Followed by loanword (Sanskrit)s, paired, irregular, then unpaired
 
 LEXICON TransVerbStem
 # Class 1a
@@ -1121,6 +1136,7 @@ LEXICON IntraVerbStem
 நிமிர்<v><iv>:நிமிர{Pul}[Class2,W]                     # 'nimir'       erect                    Paired
 மேய்<v><iv>:ம{EE}{Y}{Pul}[Class2,W]                  # 'mei'         graze                    Paired
 வா<v><iv>:வ{AAIrr}[Class2,INF,I1]                    # 'vaa'         come                    Irregular
+விழு<v><iv>:விழ{U}[Class2,W]                         # 'vizhu'       fall
 
 # Class 3
 ஒட்டு<v><iv>:ஒட்ட{U}[Class3,W]                        # 'ottu'        adhere                  Paired
@@ -1153,7 +1169,7 @@ LEXICON IntraVerbStem
 நில்<v><iv>:ந{I}{Ln}{Pul}[Class5a]                    # 'nil'         stand
 
 # Class 6
-கதை<v><iv>:கத{AI}[Class6,S]                        # 'kathay'      speak                   loanword
+கதை<v><iv>:கத{AI}[Class6,S]                        # 'kathay'      speak                   loanword (Sanskrit)
 வலி<v><iv>:வல{I}[Class6,S]                          # 'vali'        ache
 சிரி<v><iv>:சிர{I}[Class6,S]                           # 'siri'        laugh
 கிடை<v><iv>:கிட{AI}[Class6,S]                       # 'kitay'       be available
@@ -1171,8 +1187,8 @@ LEXICON IntraVerbStem
 ################################     ADJECTIVES     ################################
 LEXICON Adjectives
 # Some are independent
+உச்சி:உச்சி[IND]                          # 'ucci'         top             loanword (Sanskrit)
 நல்ல:நல்ல[IND]                           # 'nalla'       good
-உச்சி:உச்சி[IND]                          # 'ucci'         top
 பெரிய:பெரி{Y}[IND]                      # 'periya'       big
 மாதிரி:மாதிரி[IND]                       # 'maathiri'     like
 ## Some can take nomz, adjz both
@@ -1230,6 +1246,7 @@ LEXICON Comparatives
 விட<post><comp>:விட                         # 'vita'        than
 காட்டிலும்<post><comp>:காட்டிலும{Pul}       # 'kaattilum'   than
 பார்க்க<post><comp>:பார்க்க                  # 'paarkka'     than
+பாக்க<post><comp>:பாக்க                    # 'paakka'      than        Dir/LR
 பார்க்கிலும்<post><comp>:பார்க்கிலும{Pul}    # 'paarkkilum'  than
 # Equatives
 பூலே<post><eq>:பூலே                        # 'poolay~ai"   like

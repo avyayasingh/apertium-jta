@@ -46,6 +46,7 @@ Alphabet
      %{NP%}:ன %{NP%}:ங
      %{NK%}:ன %{NK%}:ர
      %{K%}:க
+     %{Kk%}:க
      %{L%}:ல
      %{PL%}:ள
      %{LN%}:ள %{LN%}:ண
@@ -138,6 +139,7 @@ Rules
          %{AA%}: %>: 0: _ %{K%}: ;
          [ %{T%}: | %{RR%}: ] _ %{U%}: %>: %{TR%}: ;
          [ %{Al%}: | %{Il%}: | %{Ul%}: | %{El%}: ] 0: _ 0: %>: %{Al%}: ;
+         SuffixVowels: %>: 0: _ %{Kk%}: ;
          where Vy in ( ் ) ;
 
 ! -m ending
@@ -213,6 +215,7 @@ Rules
 
 "Inserting க"
 0:க <=> %{AA%}: %>: _ 0: %{K%}: ;
+         SuffixVowels: %>: _ 0: %{Kk%}: ;
 
 "Inserting ன"
 0:ன <=> [ %{El%}: | %{Ul%}: ] %{NP%}: %{Pul%}: %>: _ SuffixVowelsIA: ;
