@@ -72,7 +72,7 @@ PronounStems[-LOC,Obl,IH] Honorifics[IH] Number[IH,PS] Cases[PS] (EndwordMorph|I
 PronounStems[-LOC,NObl,PH] Honorifics[PH] Number[PH] (EndwordMorph|InterroClitic)?
 PronounStems[-LOC,NObl,IH] Honorifics[IH] Number[IH] (EndwordMorph|InterroClitic)?
 ## Other Types
-IndefProStem ((HumanRadical[Hum] Cases[AA])|(HumanRadical[NHum] Cases[NN]))? TotalClitic
+IndefProStem ((HumanRadical[Hum] Cases[AA])|(HumanRadical[NHum] Cases[NN]))? TotalClitic?
 InterProStem
 # Nouns & NP
 ## Irregulars
@@ -379,7 +379,8 @@ LEXICON EmphaticCli
 ################## PREDICATIVE
 LEXICON Predicative
 # Pronominalizing predicatives (GENDERED)
-<prnz><pred><nt>:>{C}{U}[NPREDS]                 # 'cu'        neuter (adjectives)  
+<prnz><pred><nt>:>{C}{U}[NPREDS]                 # 'cu'        neuter (adjectives) 
+<prnz><pred><nt>:>த{U}[NPREDS]                  # 'thu'       neuter (adjectives)   variant  
 <prnz><pred><nt>:[NPREDP]                        # null        neuter (adjectives)    built-in through plural number 
 <prnz><pred>:[PREDP]                             # null        epicene (adjectives)   built-in through plural number 
 <prnz><pred><f>:>வ{PLR}{Pul}[APRED]             # 'val'       female (adjectives)  
@@ -696,7 +697,7 @@ LEXICON InterProStem
 ஆர்<prn><ind><h><itg>:ஆ>ர்                   # 'aar'             who
 
 LEXICON IndefProStem
-எல்லா<prn><ind>:எல்ல{AA}                    # 'ella'            every-
+எல்லா<prn><ind>:எல்ல{AAv}                   # 'ella'            every-
 
 ################################     NOUNS & NP     ################################
 LEXICON Nouns
