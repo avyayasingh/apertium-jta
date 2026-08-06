@@ -315,20 +315,28 @@ LEXICON Number
 
 ################## CASES
 LEXICON Cases
+# nominative
 <nom>:[AA,NN,TN,P,PS,PL]                                    #  null
+# accusative
 <acc>:>{AI}[AA,TN,P,PS,PL]                                  # 'ay'
+# instrumental
 <int>:>{AA}ல{AI}[AA,NN,TN,P,PS,PL]                         # 'aalay~ai'
 <int>:>{AA}ல{AIE}[AA,NN,TN,P,PS,PL]                        # 'aalay~ai'           (irregular instrumental)         Dir/LR
 <int>:>\ கொண்டு[AA,NN,TN,P,PS,PL]                       # 'kontu'              (irregular instrumental)          Dir/LR
+# dative
 <dat>:>{U}க்கு[AA,NN,TN,P,PS,PL]                            # 'ukku'
 <dat>:>{A}க்கு[AA,NN,TN,P,PS,PL]                            # 'akku'               (irregular dative)               Dir/LR
 <dat>:>{AI}[VIrr]                                          # 'ay'                 (irregular dative for 'veetu')    Dir/LR
+# comitative/sociative
 <com>:>{OO}ட[AA,NN,TN,P,PS,PL]                             # 'oota'
 <com>:>{OO}ட{AI}[AA,NN,TN,P,PS,PL]                         # 'ootay'             (irregular comitative)            Dir/LR
+# locative
 <loc>:>{I}ல{AI}[AA,NN,TN,P,PS,PL]                          # 'ilay~ai'
 <loc>:>{I}ல{AIE}[AA,NN,TN,P,PS,PL]                         # 'ilay~ai'           (irregular locative)              Dir/LR
 <loc>:>{I}ல[AA,NN]                                         # 'il'                (irregular locative)              Dir/LR
+# referential
 <refr>:>{Irefr}ட்ட[AA,P,PS,PL]                              # 'itta'
+# genitive
 <gen>:>{I}{N}{Pul}{R}[AA,NN,TN,P,PS]                        # 'inra'
 <gen>:>{I}{N}{Pul}{R}{AI}[AA,NN,TN,P,PS]                    # 'inra'              (irregular genitive Pronouns)     Dir/LR
 <gen>:>{I}{N}{Pul}{R}[PL]                                   # 'inra'              (irregular genitive Pronouns)     Dir/LR
@@ -337,11 +345,12 @@ LEXICON Cases
 <gen>:>{T}[PL]                                              # 'ata'               (irregular genitive Pronouns)
 <gen>:>{U}ட{AI}ய[P,PS,PL]                                  # 'utayya'           (irregular genitive Pronouns)     Dir/LR
 <gen>:[AA,NN,TN]                                            #  null               (irregular genitive)              Dir/LR
-<abl>:>{I}ட்ட\ இருந்து[AA,P,PS,PL]                          # 'itta irunthu'
+# ablative
+<abl>:>{Irefr}ட்ட\ இருந்து[AA,P,PS,PL]                      # 'itta irunthu'
 <abl>:>{I}ல{AI}\ இருந்து[AA,NN,P,TN,PS,PL]                 # 'ilay~ai irunthu'   (irregular ablative)              Dir/LR
 <abl>:>{I}ல{AIE}\ இருந்து[AA,NN,P,TN,PS,PL]                # 'ilay~ai irunthu'   (irregular ablative)              Dir/LR
-# Benefactive is irregular 
-# adds '-aaka' or '-entu' to the dative '-ukku'
+# benefactive
+## adds '-aaka' or '-entu' to the dative '-ukku'
 <ben>:>{U}க்க>{AA}க[AA,NN,TN,P,PS,PL]                      # 'ukkaaka'
 <ben>:>{U}க்க>{E}ண்டு[AA,NN,TN,P,PS,PL]                    # 'ukkentu'                                              Dir/LR
 
