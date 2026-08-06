@@ -73,6 +73,7 @@ PronounStems[-LOC,NObl,PH] Honorifics[PH] Number[PH] (EndwordMorph|InterroClitic
 PronounStems[-LOC,NObl,IH] Honorifics[IH] Number[IH] (EndwordMorph|InterroClitic)?
 ## Other Types
 IndefProStem ((HumanRadical[Hum] Cases[AA])|(HumanRadical[NHum] Cases[NN]))? TotalClitic
+InterProStem
 # Nouns & NP
 ## Irregulars
 Nouns[NQ] Adjectivizer EndwordMorph?
@@ -204,11 +205,12 @@ Adjectives [ <adj>: ] Predicative[APRED] Honorifics[H]? Number[GPro]
 Adverbs [ <adv>: ] EndwordMorph?
 Location(1) LocAdverbs Location(2)
 InterroPrefix(1) LocAdverbs InterroPrefix(2)
+IntAdverbs
 # Determiners
 Determiners
 Determiners[SUF] PNG[Nor]?
-Location(1) DeterStems Location(2)
-InterroPrefix(1) DeterStems InterroPrefix(2)
+Location(1) DeterStems Location(2) EndwordMorph?
+InterroPrefix(1) DeterStems InterroPrefix(2) EndwordMorph?
 # Others
 Comparatives EndwordMorph?
 PostPositions [ <post>: ] EndwordMorph?
@@ -534,10 +536,10 @@ LEXICON Participle
 ################## IMPERATIVES
 LEXICON Imperatives
 # positives
-<imp><sg>:[POS]                                    #  null              singular
+<imp><sg>:[POS,POSIrr]                             #  null              singular
 <imp><hon><sg>:>{U}ம்[POS]                         # 'um'               singular honorific
 <imp><hon><sg>:>{UIrr}ம்[POSIrr]                   # 'um'               irregular singular honorific      Dir/LR
-<imp><pl>:>{U}ங்கோ[POS]                         # 'unkoo'             plural
+<imp><pl>:>{U}ங்கோ[POS,POSIrr]                   # 'unkoo'             plural
 # negative imperative
 <neg><imp><sg>:>{AAIrr}த{EE}[NEG]                 # 'aathee'           singular
 <neg><imp><sg>:>{AA}த[NEG]                        # 'aatha'            singular                          Dir/LR
@@ -629,7 +631,7 @@ LEXICON TenseInfix
 <fut>:>{P}[Class5c]                                                                 # 'p'
 <fut>:>{U}வ[Class5c]                                                               # 'uv'        Dir/LR
 ## strong form
-<fut>:>{P}{Pul}ப[Class6,Class7]                                                    # 'pp'
+<fut>:>{P}{Pul}{P}[Class6,Class7]                                                   # 'pp'
 
 ## irregulars
 <fut>:>{U}ம்[NHumE]                                                                 # 'um'
@@ -678,6 +680,10 @@ LEXICON PronounStems
 வ<prn><p3>:வ[LOC,EHIrr]                      # '-va'            -they-
 # non-human
 து<prn><p3><nh>:த{U}[LOC,GPro]                # '-thu'            -it
+
+LEXICON InterProStem
+என்ன<prn><ind><itg>:எ>ன்ன                  # 'enna'            what
+ஆர்<prn><ind><h><itg>:ஆ>ர்                   # 'aar'             who
 
 LEXICON IndefProStem
 எல்லா<prn><ind>:எல்ல{AA}                    # 'ella'            every-
@@ -890,6 +896,7 @@ LEXICON Nouns
 உசார்<nq><nn>:உசார{Pul}[NN,ANoun,NQ]                           # 'ucaar'           enthusiasm         loanword
 திமிர்<nq><nn>:திமிர{Pul}[NN,ANoun,NQ]                            # 'timir'           arrogance
 கண்டிப்பு<nq><nn>:கண்டிப்ப{U}[NN,ANoun,NQ]                      # 'kantippu'        discipline
+வடிவு<nq><nn>:வடிவ{U}[NN,ANoun,NQ]                              # 'vativu'          beauty
 ### irregular which is the same as its adjective and noun
 தனி<nq><nn>:தன{I}[NN,ANoun,NQ]                                 # 'thani'           solitude           Dir/LR
 
@@ -912,6 +919,7 @@ LEXICON Nouns
 மணி<n><nn>:மண{I}[NN,Pl1]                                    # 'mani'             hour
 கடை<n><nn>:கட{AI}[NN,Pl1]                                     # 'katay'           shop
 தோசை<n><nn>:தோச{AI}[NN,Pl1]                                # 'thoocay'         dosa
+பிழை<n><nn>:பிழ{AI}[NN,Pl1]                                    # 'pizhay'         error
 காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                         # 'kaaiccal'        fever
 கால்<n><nn>:கால{Pul}[NN,Pl1]                                   # 'kaal'            leg
 தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                # 'thabaal'         letter
@@ -921,6 +929,8 @@ LEXICON Nouns
 மனம்<n><nn>:மன{M}{Pul}[NN,Pl1]                                # 'manam'           mind
 ஆயுதம்<n><nn>:ஆயுத{M}{Pul}[NN,Pl1]                            # 'aayutham'        instrument
 திருமணம்<n><nn>:திருமண{M}{Pul}[NN,Pl1]                      # 'thirumanam'      wedding
+பட்டணம்<n><nn>:பட்டண{M}{Pul}[NN,Pl1]                        # 'pattanam'        town
+நேரம்<n><nn>:நேர{M}{Pul}[NN,Pl1]                               # 'neeram'          time
 பொய்<n><nn>:பொ{Y}{Pul}[NN,Pl1]                               # 'poi'             lie
 வீடு<n><nn>:வீ{T}{U}[NN,VIrr,Pl1]                                 # 'veetu'           house
 வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                # 'vayiru'          stomach
@@ -1061,7 +1071,7 @@ LEXICON TransVerbStem
 விடு<v><tv>:வி{T}{U}[Class4,W]                        # 'vitu'        leave
 கூப்பிடு<v><tv>:கூப்பி{T}{U}[Class4,W]                 # 'kuuppitu'    call
 போடு<v><tv>:போ{T}{U}[Class4,W]                    # 'pootu'       put
-சாப்பிடு<v><tv>:சாப்{Pi}{T}{U}[Class4,W]              # 'caapitu'     eat
+சாப்பிடு<v><tv>:சாப்{Pi}{pI}{T}{U}[Class4,W]          # 'caapitu'     eat
 பெறு<v><tv>:பெ{RR}{U}[Class4,W]                     # 'peru'        give birth
 
 # Class 5b
@@ -1081,6 +1091,7 @@ LEXICON TransVerbStem
 படி<v><tv>:பட{I}[Class6,S]                           # 'pati'        study
 பிடி<v><tv>:பிட{I}[Class6,S]                          # 'piti'        catch
 பாவி<v><tv>:பாவ{I}[Class6,S]                        # 'paavi'       use
+குடி<v><tv>:குட{I}[Class6,S]                          # 'kuti'        drink
 சமை<v><tv>:சம{AI}[Class6,S]                        # 'chamai'      cook
 வை<v><tv>:வ{AI}[Class6,S]                           # 'vay'        place
 பார்<v><tv>:பார{Pul}[Class6,S]                       # 'paar'        see
@@ -1182,6 +1193,7 @@ LEXICON Adverbs
 இப்பொழுது:இப்பொழுத{U}    # 'ippolutu'      now
 இப்ப:இப்ப                    # 'ippa'           now                    Dir/LR
 மறுபடியும்:மறுபடியும{Pul}    # 'marupatiyum'   again
+பிறகு:பிறகு                   # 'piraku'         after
 இன்று:இன்ற{U}               # 'inru'           today
 நாளை:நாள{AI}               # 'naalay'        tomorrow
 நேற்று:நேற்ற{U}               # 'neerru'        yesterday
@@ -1189,9 +1201,12 @@ LEXICON Adverbs
 தனிய:தனிய                  # 'thaniya'       alone
 நல்லா:நல்லா                  # 'nallaa'        well
 
+LEXICON IntAdverbs
+ஏன்<adv><itg>:ஏன்             # 'een'           why
+
 LEXICON LocAdverbs
-<adv><loc>:>ங்க{EE}            # 'nkee'          here/there/where
-<adv><loc>:>ங்க{AI}            # 'nkay'          here/there/where       Dir/LR
+ங்கே<adv><loc>:ங்க{EE}        # 'nkee'          here/there/where
+ங்கை<adv><loc>:ங்க{AI}       # 'nkay'          here/there/where       Dir/LR
 
 ################################     DETERMINERS     ################################
 LEXICON Determiners

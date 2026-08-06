@@ -59,7 +59,8 @@ Alphabet
      %{TR%}:ட %{TR%}:ற
      %{TH%}:த
      %{P%}:ப
-     %{Pi%}:பி %{Pi%}:0
+     %{Pi%}:ப %{Pi%}:0
+     %{pI%}:ி %{pI%}:0
      %{Y%}:ய
      %{Yy%}:ய
      %{C%}:ச
@@ -117,6 +118,9 @@ Rules
               %{K%}: _ %{K%}: ;
               %{N%}: _ %{R%}: ;
               :ந _ :த ;
+              :த _ :த ;
+              :ச _ :ச ;
+              %{P%}: _ %{P%}: ;
               [ SuffixVowels: | %{Ul%}: ] [ %{Yy%}: | %{Y%}: | %{Ln%}: | %{LN%}: | %{LLn%}: | :ண | :ர ] _ %>: [  %{RR%}: | %{P%}: | %{T%}: | :த | :ச | :வ | :ன ] ;
               [ SuffixVowels: | %{Ul%}: ] [ %{Yy%}: | %{Ln%}: | %{LN%}: | %{LLn%}: | :ண | :ர ] _ 0: %>: SuffixVowels: ;              
               %{M%}: _ 0: %>: SuffixVowels: ;
@@ -291,6 +295,11 @@ Rules
 "Dropping AA for thaa, vaa"
 %{AAIrr%}:0 <=> [ :த | :வ ] _ (0: 0:) %>: :ConsonantR ;
              [ :த | :வ ] _ 0: %>: [ SuffixVowels: | %{UIrr%}: ] ;
+
+"Dropping AA for thaa, vaa"
+%{AAIrr%}:Vy <=> [ :த | :வ ] _ %>: :ற ;
+                 [ :த | :வ ] _ .#. ;  
+                 where Vy in ( ா ) ;
 
 "Dropping irregular U after OO for poo"
 %{UIrr%}:0 <=> %{OO%}: %>: _ ;

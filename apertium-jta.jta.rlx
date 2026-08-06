@@ -18,9 +18,12 @@ LIST PRED = (pred);
 LIST PREDNOM = (nom pred);
 LIST ADJ = (adj);
 LIST ADV = (adv);
+LIST ADVZ = (advz);
 LIST V = (v);
 LIST PRN = (prn);
 LIST VBMOD = (vbmod);
+LIST N = (n);
+LIST ADV = (adv);
 # WORDS
 LIST VEETU = "வீடு" ;
 LIST VA = "வா" ;
@@ -59,7 +62,23 @@ SELECT NOM IF
 SELECT NOM IF
     (0 (n nom))
     (0 (n gen))
-    (0 (<<<));
+    (1 (<<<));
+
+SELECT NOM IF
+    (0 (n nom))
+    (0 (n gen))
+    (1 V);
+
+## Adverbs
+SELECT ADV IF
+    (0 N)
+    (0 ADV)
+    (1 V) ;
+
+SELECT ADVZ IF
+    (0 ADJ)
+    (0 ADVZ)
+    (1 V) ;
 
 ## Dative irregular
 SELECT DAT IF
