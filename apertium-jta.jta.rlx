@@ -23,7 +23,10 @@ LIST V = (v) (vbser) (vbdo) (vaux);
 LIST PRN = (prn);
 LIST VBMOD = (vbmod);
 LIST N = (n);
+LIST NMZ = (nmz);
 LIST ADV = (adv);
+LIST TV = (tv);
+LIST IV = (iv);
 # WORDS
 LIST VEETU = "வீடு" ;
 LIST VA = "வா" ;
@@ -137,6 +140,17 @@ SELECT VBMOD IF
     (0 V)
     (0 VBMOD)
     (-1 INF);
+
+## Noun selection
+SELECT N IF
+    (0 N)
+    (0 NMZ);
+
+## Transitive selection
+SELECT TV IF
+    (0 TV)
+    (0 IV)
+    (-1 N);
 
 # Remove rules
 ## Genitive irregular

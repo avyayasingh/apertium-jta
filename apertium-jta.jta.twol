@@ -120,6 +120,7 @@ Rules
               _ %>: %{K%}: ;
               %{K%}: _ %{K%}: ;
               %{N%}: _ %{R%}: ;
+              %{T%}: _ %{T%}: ;
               :ந _ :த ;
               :த _ :த ;
               :ச _ :ச ;
@@ -183,6 +184,7 @@ Rules
 ! Referential case
 "Removing I when Referential and noun ends in AA"
 %{Irefr%}:0 <=> %{AA%}: %>: _ ;
+                [ %{El%}: | %{Ul%}: ] %{NP%}: %{Pul%}: %>: 0: _ ;
 
 ! Word endings 
 "Inserting ய"
@@ -252,11 +254,9 @@ Rules
 "Starting with K"
 %{NR%}:ங <=> _ %{Pul%}: %>: %{K%}: ;
 
-"Starting with AA"
+"Starting with AA or T"
 %{PL%}:0 <=> _ %{Pul%}: %>: %{AA%}: .#. ;
-
-"Starting with T"
-%{PL%}:0 <=> _ %{Pul%}: %>: %{T%}: ;
+             _ %{Pul%}: %>: %{T%}: ;
 
 "Starting with T"
 %{LN%}:ண <=> _ %{Pul%}: %>: %{T%}: ;
