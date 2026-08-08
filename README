@@ -61,11 +61,11 @@ If you are in the source directory after running make, the following
 commands should work:
 
 ```console
-$ echo "TODO: test sentence" | apertium -d . jta-morph
-TODO: test analysis result
+$ echo "மாட்டை வாங்கு" | apertium -d . jta-morph
+^மாட்டை/மாடு<n><aa><sg><emph>/மாடு<n><aa><sg><acc>$ ^வாங்கு/வாங்கு<v><tv><imp><sg>$^./.<sent>$
 
-$ echo "TODO: test sentence" | apertium -d . jta-tagger
-TODO: test tagger result
+$ echo "மாட்டை வாங்கு" | apertium -d . jta-tagger
+^மாட்டை/மாடு<n><aa><sg><emph>/மாடு<n><aa><sg><acc>$ ^வாங்கு/வாங்கு<v><tv><imp><sg>$^./.<sent>$
 ```
 
 Files and data

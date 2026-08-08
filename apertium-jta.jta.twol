@@ -94,7 +94,6 @@ SuffixVowelsA = %{AIE%} %{AA%} %{I%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O
 SuffixVowelsIr = %{AIE%} %{AA%} %{I%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} ;
 SuffixVowelsU = %{AIE%} %{A%} %{AA%} %{I%} %{II%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} %{Irefr%} ;
 SuffixVowelsI = %{AIE%} %{A%} %{AA%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} ;
-SuffixVowelsIA = %{AIE%} %{AA%} %{II%} %{U%} %{UU%} %{E%} %{EE%} %{AI%} %{O%} %{OO%} %{AU%} %{Irefr%} ;
 VowelRight = ShortVowSym LongVowSym ;
 
 Rules 
@@ -140,6 +139,7 @@ Rules
          %{T%}: _ 0: (%{U%}:) %>: %{A%}: :Consonant ;
          %{RR%}: _ 0: %{U%}: %>: SuffixVowels: ;
          %{AA%}: %>: 0: _ %{K%}: ;
+         [ %{L%}: | %{Ln%}: | %{LLn%}: ] _ 0: %>: SuffixVowels: ;
          [ %{T%}: | %{RR%}: ] _ %{U%}: %>: %{TR%}: ;
          [ %{Al%}: | %{Il%}: | %{Ul%}: | %{El%}: ] 0: _ 0: %>: %{Al%}: ;
          SuffixVowels: %>: 0: _ %{Kk%}: ;
@@ -222,7 +222,7 @@ Rules
          SuffixVowels: %>: _ 0: %{Kk%}: ;
 
 "Inserting ன"
-0:ன <=> [ %{El%}: | %{Ul%}: ] %{NP%}: %{Pul%}: %>: _ SuffixVowelsIA: ;
+0:ன <=> [ %{El%}: | %{Ul%}: ] %{NP%}: %{Pul%}: %>: _ SuffixVowelsA: ;
 
 "Dropping Al"
 %{Al%}:0 <=> [ %{Al%}: | %{Il%}: | %{Ul%}: | %{El%}: ] 0: 0: 0: %>: _ ;

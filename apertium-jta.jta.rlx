@@ -13,6 +13,7 @@ LIST EMPH = (emph);
 LIST NOM = (nom);
 LIST LOC = (loc);
 LIST COMP = (post comp);
+LIST POST = (post eq);
 LIST INF = (inf);
 LIST PRED = (pred);
 LIST PREDNOM = (nom pred);
@@ -31,6 +32,7 @@ LIST IV = (iv);
 LIST VEETU = "வீடு" ;
 LIST VA = "வா" ;
 LIST POO = "போ" ;
+LIST MATHIRI = "மாதிரி" ;
 
 SECTION
 # Select Rules
@@ -151,6 +153,13 @@ SELECT TV IF
     (0 TV)
     (0 IV)
     (-1 N);
+
+## Postposition selection
+SELECT ADV IF
+    (0 MATHIRI)
+    (0 POST)
+    (0 ADV)
+    (-1* ACC OR EMPH);
 
 # Remove rules
 ## Genitive irregular

@@ -63,14 +63,14 @@ InterroPrefix(1) PronounStems[LOC,MH] Honorifics[MH] Number[MH] Cases[P] Interro
 InterroPrefix(1) PronounStems[LOC,FH] Honorifics[FH] Number[FH] Cases[P] InterroPrefix(2)
 InterroPrefix(1) PronounStems[LOC,EHIrr] Honorifics[EHIrr] Number[EHIrr] Cases[P] InterroPrefix(2)
 ### Non-locative
-PronounStems[-LOC,Obl,GPro] Number[PS] Cases[PS] (EndwordMorph|InterroClitic)?
-PronounStems[-LOC,Obl,GPro] Number[PL] Cases[PL] (EndwordMorph|InterroClitic)?
-PronounStems[-LOC,NObl,GPro] Number[GPro] (EndwordMorph|InterroClitic)?
+PronounStems[-LOC,Obl,GPro] Number[PS] Cases[PS] (EndwordMorph|InterroClitic|Intensifier)?
+PronounStems[-LOC,Obl,GPro] Number[PL] Cases[PL] (EndwordMorph|InterroClitic|Intensifier)?
+PronounStems[-LOC,NObl,GPro] Number[GPro] (EndwordMorph|InterroClitic|Intensifier)?
 #### Honorifics
-PronounStems[-LOC,Obl,PH] Honorifics[PH] Number[PH,PS] Cases[PS] (EndwordMorph|InterroClitic)?
-PronounStems[-LOC,Obl,IH] Honorifics[IH] Number[IH,PS] Cases[PS] (EndwordMorph|InterroClitic)?
-PronounStems[-LOC,NObl,PH] Honorifics[PH] Number[PH] (EndwordMorph|InterroClitic)?
-PronounStems[-LOC,NObl,IH] Honorifics[IH] Number[IH] (EndwordMorph|InterroClitic)?
+PronounStems[-LOC,Obl,PH] Honorifics[PH] Number[PH,PS] Cases[PS] (EndwordMorph|InterroClitic|Intensifier)?
+PronounStems[-LOC,Obl,IH] Honorifics[IH] Number[IH,PS] Cases[PS] (EndwordMorph|InterroClitic|Intensifier)?
+PronounStems[-LOC,NObl,PH] Honorifics[PH] Number[PH] (EndwordMorph|InterroClitic|Intensifier)?
+PronounStems[-LOC,NObl,IH] Honorifics[IH] Number[IH] (EndwordMorph|InterroClitic|Intensifier)?
 ## Other Types
 IndefProStem ((HumanRadical[Hum] Cases[AA])|(HumanRadical[NHum] Cases[NN]))? TotalClitic?
 InterProStem
@@ -346,6 +346,7 @@ LEXICON Cases
 ## dative
 <dat>:>{U}க்கு[AA,NN,NNIrr,TN,P,PS,PL]                            # 'ukku'
 <dat>:>{A}க்கு[AA,NN,NNIrr,TN,P,PS,PL]                            # 'akku'               (irregular dative)               Dir/LR
+<dat>:>க்கு[AA,NN,NNIrr,TN,P,PS,PL]                               # 'kku'                (irregular dative)               Dir/LR
 <dat>:>{AI}[VIrr]                                                # 'ay'                 (irregular dative for 'veetu')    Dir/LR
 ## comitative/sociative
 <com>:>{OO}ட[AA,NN,NNIrr,TN,P,PS,PL]                             # 'oota'
@@ -353,7 +354,7 @@ LEXICON Cases
 ## locative
 <loc>:>{I}ல{AI}[AA,NN,NNIrr,TN,P,PS,PL]                          # 'ilay~ai'
 <loc>:>{I}ல{AIE}[AA,NN,NNIrr,TN,P,PS,PL]                         # 'ilay~ai'           (irregular locative)              Dir/LR
-<loc>:>{I}ல[AA,NN,NNIrr]                                         # 'il'                (irregular locative)              Dir/LR
+<loc>:>{I}ல{Pul}[AA,NN,NNIrr,P,PS,PL]                            # 'il'                (irregular locative)              Dir/LR
 ## referential
 <refr>:>{Irefr}ட்ட[AA,NNIrr,P,PS,PL]                              # 'itta'
 ## genitive
@@ -410,6 +411,10 @@ LEXICON Nominalizer
 ### non-human
 #### singular
 <nmz><nt><nh><sg>:>த{U}[VERB]                       # 'athu'
+
+################## INTENSIFIER
+LEXICON Intensifier
+<emph>:>{U}ம{Pul}                               # 'um'
 
 ########################### NOUNS
 ################## EMPHATIC
@@ -594,6 +599,7 @@ LEXICON Participle
 LEXICON Imperatives
 # positives
 <imp><sg>:[POS,POSIrr]                             #  null              singular
+<imp><sg>:>{U}[POS]                                # 'u'                irregular singular                Dir/LR
 <imp><hon><sg>:>{U}ம{Pul}[POS]                    # 'um'               singular honorific
 <imp><hon><sg>:>{UIrr}ம{Pul}[POSIrr]              # 'um'               irregular singular honorific      Dir/LR
 <imp><pl>:>{U}ங்கோ[POS,POSIrr]                   # 'unkoo'            plural
@@ -1261,7 +1267,6 @@ LEXICON Adjectives
 உச்சி:உச்சி[IND]                          # 'ucci'         top             loanword (Sanskrit)
 நல்ல:நல்ல[IND]                           # 'nalla'       good
 பெரிய:பெரி{Y}[IND]                      # 'periya'       big
-மாதிரி:மாதிரி[IND]                       # 'maathiri'     like
 ## Some can take nomz, adjz both
 தனி:தன{I}[BOTH]                        # 'thani'        solo
 # Some are frozen (require suffixes)
@@ -1320,7 +1325,8 @@ LEXICON Comparatives
 பாக்க<post><comp>:பாக்க                    # 'paakka'      than        Dir/LR
 பார்க்கிலும்<post><comp>:பார்க்கிலும{Pul}    # 'paarkkilum'  than
 # Equatives
-பூலே<post><eq>:பூலே                        # 'poolay~ai"   like
+போலே<post><eq>:போலே                   # 'poolee'      like
+மாதிரி<post><eq>:மாதிரி                    # 'maathiri'    like
 
 ################################     POSTPOSITIONS     ################################
 LEXICON PostPositions
