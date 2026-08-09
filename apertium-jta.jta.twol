@@ -104,7 +104,7 @@ Rules
 
 ! Pulli
 "Removing Pulli"
-%{Pul%}:0 <=> :Consonant _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: | %{Im%}: | %{OOm%}: ] ;
+%{Pul%}:0 <=> :Consonant _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: | %{Im%}: | %{OOm%}: | %{Igen%}: ] ;
               %{M%}: _ %>: [ %{AAm%}: | %{Um%}: | %{Im%}: | %{OOm%}: ] ;
               _ %>: %{UA%}: ;
               %{NR%}: _ %>: %{R%}: %{Pul%}: ;
@@ -127,6 +127,7 @@ Rules
               :ந _ :த ;
               :த _ :த ;
               :ச _ :ச ;
+              :ஞ _ :ச ;
               %{P%}: _ %{P%}: ;
               [ SuffixVowels: | %{Ul%}: ] [ %{Yy%}: | %{Y%}: | %{Ln%}: | %{LN%}: | %{LK%}: | %{LLn%}: | %{LT%}: | :ண | :ர ] _ %>: [  %{RR%}: | %{P%}: | %{T%}: | :த | :ச | :வ | :ன ] ;
               [ SuffixVowels: | %{Ul%}: ] [ %{Yy%}: | %{Ln%}: | %{LN%}: | %{LLn%}: | :ண | :ர ] _ 0: %>: SuffixVowels: ;              

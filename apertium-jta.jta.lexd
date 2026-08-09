@@ -105,6 +105,10 @@ Nouns[NN,Pl7] Number[Pl7] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic Endwor
 Nouns[AA,Pl7] Number[Pl7]|(Honorifics[Pl7] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
 Nouns[NN,Pl8] Number[Pl8] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
 Nouns[AA,Pl8] Number[Pl8] Cases[AA]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
+Nouns[NN,MGEN,Pl1] Number[Pl1] Cases[MGEN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,MGEN,Pl1] Number[Pl1]|(Honorifics[Pl1] Number[H]) Cases[MGEN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
+Nouns[NN,MGEN,Pl2] Number[Pl2] Cases[MGEN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,MGEN,Pl2] Number[Pl2]|(Honorifics[Pl2] Number[H]) Cases[MGEN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
 # Verbs
 ## Auxiliaries
 ModalVerbAux
@@ -366,6 +370,7 @@ LEXICON Cases
 <gen>:>யின்ர[EHIrrN]                                             # 'yinra'             (irregular genitive Pronouns)     Dir/LR
 <gen>:>{T}[PL]                                                    # 'ata'               (irregular genitive Pronouns)
 <gen>:>{U}ட{AI}ய[P,PS,PL]                                        # 'utayya'           (irregular genitive Pronouns)     Dir/LR
+<gen>:>{U}[MGEN]                                                  # 'u'                 (irregular genitive -M Nouns)     Dir/LR
 <gen>:[AA,NN,NNIrr,TN]                                            #  null               (irregular genitive)              Dir/LR
 ## ablative
 <abl>:>{Irefr}ட்ட\ இருந்து[AA,NNIrr,P,PS,PL]                      # 'itta irunthu'
@@ -556,54 +561,62 @@ LEXICON Participle
 # Class wise word-ending
 ## Adverbials
 ## Adverbials are non-time
-<par><adv>:>த{U}[Class1a]                                                        # 'thu'
-<par><adv>:>{T}{U}[Class1b]                                                       # 'tu'
-<par><adv>:>{RR}{U}[Class1c]                                                      # 'ru' 
-<par><adv>:>ந{Pul}த{U}[Class2]                                                   # 'nthu'
-<par><adv>:>{I}[Class3]                                                           # 'i'
-<par><adv>:>ய{Pul}[Class3Irr]                                                    # 'y'
-<par><adv>:>{TR}{U}[Class4]                                                       # 'ru'/'tu'
-<par><adv>:>{RR}{U}[Class5a]                                                      # 'ru'
-<par><adv>:>ன{U}[Class5a]                                                        # 'nu'            Dir/LR
-<par><adv>:>{I}[Class5b]                                                          # 'i'
-<par><adv>:>{T}{U}[Class5c]                                                       # 'tu'
-<par><adv>:>{T}{U}[Class5d]                                                       # 'tu'
-<par><adv>:>த{Pul}த{U}[Class6]                                                   # 'ththu'
-<par><adv>:>ச{Pul}ச{U}[Class6]                                                   # 'ccu'            Dir/LR
-<par><adv>:>ச{Pul}ச{I}[Class6]                                                   # 'cci'            Dir/LR 
-<par><adv>:>ந{Pul}த{U}[Class7]                                                   # 'nthu'
+<par><adv>:>த{U}[Class1a]                                                                  # 'thu'
+<par><adv>:>{T}{U}[Class1b]                                                                 # 'tu'
+<par><adv>:>{RR}{U}[Class1c]                                                                # 'ru' 
+<par><adv>:>ந{Pul}த{U}[Class2]                                                             # 'nthu'
+<par><adv>:>ஞ{Pul}ச{U}[Class2]                                                            # 'njcu'           Dir/LR
+<par><adv>:>{I}[Class3]                                                                     # 'i'
+<par><adv>:>ய{Pul}[Class3Irr]                                                              # 'y'
+<par><adv>:>{TR}{U}[Class4]                                                                 # 'ru'/'tu'
+<par><adv>:>{RR}{U}[Class5a]                                                                # 'ru'
+<par><adv>:>ன{U}[Class5a]                                                                  # 'nu'            Dir/LR
+<par><adv>:>{I}[Class5b]                                                                    # 'i'
+<par><adv>:>{T}{U}[Class5c]                                                                 # 'tu'
+<par><adv>:>{T}{U}[Class5d]                                                                 # 'tu'
+<par><adv>:>த{Pul}த{U}[Class6]                                                             # 'ththu'
+<par><adv>:>ச{Pul}ச{U}[Class6]                                                             # 'ccu'            Dir/LR
+<par><adv>:>ச{Pul}ச{I}[Class6]                                                             # 'cci'            Dir/LR 
+<par><adv>:>ந{Pul}த{U}[Class7]                                                             # 'nthu'
+<par><adv>:>ஞ{Pul}ச{U}[Class7]                                                            # 'njcu'           Dir/LR
 
 ## Adjectivals
 ## Adjectivals indicate time
 ### past
-<par><adj><past>:>த[Class1a]                                                       # 'th'
-<par><adj><past>:>{T}[Class1b]                                                      # 't'
-<par><adj><past>:>{RR}[Class1c]                                                     # 'r'
-<par><adj><past>:>ந{Pul}த[Class2]                                                  # 'nth'
-<par><adj><past>:>{I}ய[Class3]                                                     # 'iya'
-<par><adj><past>:>ன[Class3Irr]                                                     # 'n'
-<par><adj><past>:>{TR}[Class4]                                                      # 'r'/'t'
-<par><adj><past>:>{RR}[Class5a]                                                     # 'r'
-<par><adj><past>:>{Nn}[Class5b]                                                     # 'n'
-<par><adj><past>:>{T}[Class5c]                                                      # 't'
-<par><adj><past>:>{T}[Class5d]                                                      # 't'
-<par><adj><past>:>த{Pul}த[Class6]                                                  # 'thth'
-<par><adj><past>:>ந{Pul}த[Class7]                                                  # 'nth'
+<par><adj><past>:>த[Class1a]                                                                 # 'th'
+<par><adj><past>:>{T}[Class1b]                                                                # 't'
+<par><adj><past>:>{RR}[Class1c]                                                               # 'r'
+<par><adj><past>:>ந{Pul}த[Class2]                                                            # 'nth'
+<par><adj><past>:>ஞ{Pul}ச[Class2]                                                            # 'njc'         Dir/LR
+<par><adj><past>:>{I}ய[Class3]                                                               # 'iya'
+<par><adj><past>:>ன[Class3Irr]                                                               # 'n'
+<par><adj><past>:>{TR}[Class4]                                                                # 'r'/'t'
+<par><adj><past>:>{RR}[Class5a]                                                               # 'r'
+<par><adj><past>:>{Nn}[Class5b]                                                               # 'n'
+<par><adj><past>:>{T}[Class5c]                                                                # 't'
+<par><adj><past>:>{T}[Class5d]                                                                # 't'
+<par><adj><past>:>த{Pul}த[Class6]                                                            # 'thth'
+<par><adj><past>:>ச{Pul}ச[Class6]                                                            # 'cc'           Dir/LR
+<par><adj><past>:>ந{Pul}த[Class7]                                                            # 'nth'
+<par><adj><past>:>ஞ{Pul}ச[Class7]                                                           # 'njc'          Dir/LR
 ### present
 #### weak form
-<par><adj><pres>:>{K}{I}ற[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]  # 'kir'
+<par><adj><pres>:>{K}{I}ற[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]            # 'kir'
+<par><adj><pres>:>{K}{I}ன்ற[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]          # 'kinr'         Dir/LR
 #### irregular class
-<par><adj><pres>:>{K}{I}ற[Class5a,Class5b,Class5c,Class5d]                         # 'kir'
+<par><adj><pres>:>{K}{I}ற[Class5a,Class5b,Class5c,Class5d]                                   # 'kir'
+<par><adj><pres>:>{K}{I}ன்ற[Class5a,Class5b,Class5c,Class5d]                                 # 'kinr'         Dir/LR
 #### strong form
-<par><adj><pres>:>{K}{Pul}{K}{I}ற[Class6,Class7]                                   # 'kkir'
+<par><adj><pres>:>{K}{Pul}{K}{I}ற[Class6,Class7]                                             # 'kkir'
+<par><adj><pres>:>{K}{Pul}{K}{I}ன்ற[Class6,Class7]                                           # 'kkir'         Dir/LR
 ### future
 #### weak form
-<par><adj><fut>:>{U}ம்[Class1a,Class1b,Class1c,Class2,Class3,Class4]                # 'um'
+<par><adj><fut>:>{U}ம்[Class1a,Class1b,Class1c,Class2,Class3,Class4]                          # 'um'
 #### irregular class/form
-<par><adj><fut>:>{K}{U}ம்[Class3Irr,Class5a,Class5d]                                # 'kum'
-<par><adj><fut>:>{U}ம்[Class5b,Class5c]                                             # 'um'
+<par><adj><fut>:>{K}{U}ம்[Class3Irr,Class5a,Class5d]                                          # 'kum'
+<par><adj><fut>:>{U}ம்[Class5b,Class5c]                                                       # 'um'
 #### strong form
-<par><adj><fut>:>{K}{Pul}{K}{U}ம{Pul}[Class6,Class7]                               # 'kkum'
+<par><adj><fut>:>{K}{Pul}{K}{U}ம{Pul}[Class6,Class7]                                         # 'kkum'
 
 ################## IMPERATIVES
 LEXICON Imperatives
@@ -664,6 +677,7 @@ LEXICON TenseInfix
 <past>:>{T}[Class1b]                                                                # 't'
 <past>:>{RR}[Class1c]                                                               # 'r'
 <past>:>ந{Pul}த[Class2]                                                            # 'nth'
+<past>:>ஞ{Pul}ச[Class2]                                                            # 'njc'       Dir/LR
 <past>:>{I}ன[Class3]                                                               # 'in'
 <past>:>ன[Class3Irr]                                                               # 'n'
 <past>:>{TR}[Class4]                                                                # 'r'/'t'
@@ -671,9 +685,10 @@ LEXICON TenseInfix
 <past>:>{Nn}[Class5b]                                                               # 'n'
 <past>:>{T}[Class5c]                                                                # 't'
 <past>:>{T}[Class5d]                                                                # 't'
-<past>:>ச{Pul}ச[Class6]                                                            # 'cc'
-<past>:>த{Pul}த[Class6]                                                            # 'thth'      Dir/LR
+<past>:>த{Pul}த[Class6]                                                            # 'thth'
+<past>:>ச{Pul}ச[Class6]                                                            # 'cc'        Dir/LR
 <past>:>ந{Pul}த[Class7]                                                            # 'nth'
+<past>:>ஞ{Pul}ச[Class7]                                                           # 'njc'        Dir/LR
 
 # Present
 ## weak form
@@ -789,6 +804,7 @@ LEXICON Nouns
 ## UNGENDERED (AHTHINAI Animate)
 மாடு<n><aa>:மா{T}{U}[AA,Pl1]                                       # 'maatu'           cow
 ஆடு<n><aa>:ஆ{T}{U}[AA,Pl1]                                        # 'aatu'            goat
+நாய்<n><aa>:நா{Y}{Pul}[AA,Pl1]                                     # 'naai'            dog
 ## FEMALE
 ### 0
 பெண்<n><f><aa>:பெ{N}{Pul}[AA,Pl1]                                 # 'pen'             female
@@ -797,11 +813,12 @@ LEXICON Nouns
 ஆண்<n><m><aa>:ஆ{NP}{Pul}[AA,Pl1]                                  # 'aan'            male
 மனிதன்<n><m><aa>:மனித{NK}{Pul}[AA,Pl1]                           # 'manithan'       man
 வேலையாள்<n><m><aa>:வேலை>யா{LK}{Pul}[AA,Pl1]                  # 'veelayyaal'     male worker
+பேர்<n><m><aa>:பே{R}{Pul}[AA,Pl1]                                   # 'peer'           person
 ### I
 வேலைக்காரன்<n><m><aa>:வேலை>க்கார{N}{Pul}[AA,Pl1]             # 'veelaykkaaran'   male servant
 பெடியன்<n><m><aa>:பெடிய{N}{Pul}[AA,Pl1]                          # 'petiyan'         boy
 ### IV
-பண்டாரம்<n><m><aa>:பண்டார{M}{Pul}[AA,Pl1]                       # 'pantaaram'       male from pantaaram comm.
+பண்டாரம்<n><m><aa>:பண்டார{M}{Pul}[AA,MGEN,Pl1]                  # 'pantaaram'       male from pantaaram comm.
 பண்டாரி<n><m><aa>:பண்டார{I}[AA,Pl1]                             # 'pantaari'        male from pantaaram comm.          Dir/LR
 
 # Class 2
@@ -815,9 +832,9 @@ LEXICON Nouns
 ## FEMALE Proper Nouns
 கமலா<np><f><aa>:கமல{AA}[AA,Pl2]                                 # 'Kamala'
 ## MALE Proper Nouns
-பொன்னம்பலம்<np><m><aa>:பொன்னம்பல{M}{Pul}[AA,Pl2]           # 'Ponnambalam'
-ரத்னம்<np><m><aa>:ரத்ன{M}{Pul}[AA,Pl2]                             # 'Ratnam'
-ரத்தினம்<np><m><aa>:ரத்தின{M}{Pul}[AA,Pl2]                         # 'Ratnam'           Dir/LR
+பொன்னம்பலம்<np><m><aa>:பொன்னம்பல{M}{Pul}[AA,MGEN,Pl2]      # 'Ponnambalam'
+ரத்னம்<np><m><aa>:ரத்ன{M}{Pul}[AA,MGEN,Pl2]                        # 'Ratnam'
+ரத்தினம்<np><m><aa>:ரத்தின{M}{Pul}[AA,MGEN,Pl2]                    # 'Ratnam'           Dir/LR
 அருள்<np><m><aa>:அருள{Pul}[AA,Pl2]                                # 'Arul'
 செல்லையா<np><m><aa>:செல்லைய{AA}[AA,Pl2]                      # 'Chelliah'
 ### -N or -R ending irregulars
@@ -844,7 +861,7 @@ LEXICON Nouns
 
 # Class 5 (loanwords)
 ## UNISEX
-எஞ்சினியர்<n><mf><aa>:எஞ்சினியர{Pul}[AA,Pl5]                     # 'enciniyar'       engineer                           loanword (English)
+எஞ்சினியர்<n><mf><aa>:எஞ்சினியர{Pul}[AA,Pl5]                     # 'enjciniyar'      engineer                           loanword (English)
 கிளார்க்<n><mf><aa>:கிளார்க்{Pul}[AA,Pl5]                            # 'kilaakku'        clerk                              loanword (English)
 மேனேஜர்<n><mf><aa>:மேனேஜர{Pul}[AA,Pl5]                         # 'maneeccar'       manager                           loanword (English)
 டாக்டர்<n><mf><aa>:டாக்டர{Pul}[AA,Pl5]                              # 'taaktar'         doctor                            loanword (English)
@@ -948,6 +965,7 @@ LEXICON Nouns
 # Class 0
 # Foodstuffs
 பழம்<n><nn>:பழ{M}{Pul}[NN,FNoun]                                  # 'pazham'          fruit
+எண்ணெய்<n><nn>:எண்ணெ{Y}{Pul}[NN,FNoun]                      # 'ennei'           oil
 சாப்பாடு<n><nn>:சாப்பா{T}{U}[NN,FNoun]                            # 'caappatu'        food
 சோறு<n><nn>:சோ{RR}{U}[NN,FNoun]                                 # 'cooru'           rice
 # Toponyms
@@ -958,7 +976,8 @@ LEXICON Nouns
 # Uncountable Nouns
 ## Mass Nouns
 ### Nouns of Quantity, Number, Size [QNoun]
-கொஞ்சம்<n><nn>:கொஞ்ச{M}{Pul}[NN,QNoun]                        # 'koncam'          a little bit
+கொஞ்சம்<n><nn>:கொஞ்ச{M}{Pul}[NN,QNoun]                        # 'konjcam'         a little bit
+கொஞ்ச<n><nn>:கொஞ்ச[NN,QNoun]                                  # 'konjca'          a little bit        Dir/LR
 கன<n><nn>:கன[NN,QNoun]                                          # 'kana'            many
 ### Masses
 பட்டு<n><nn>:பட்ட{U}[NN,UNoun]                                     # 'pattu'           silk                loanword (Sanskrit)
@@ -990,18 +1009,20 @@ LEXICON Nouns
 பேனா<n><nn>:பேன{AA}[NN,Pl1]                                    # 'peena'           pen                loanword (Portuguese)
 கார்<n><nn>:கார{Pul}[NN,Pl1]                                      # 'kaar'            car                loanword (English)
 சைக்கிள்<n><nn>:சைக்கிள{Pul}[NN,Pl1]                            # 'caykkil'         cycle              loanword (English)
+பாட்டில்<n><nn>:பாட்டில{Pul}[NN,Pl1]                               # 'paattil'        bottle              loanword (English)
+பூத்தல்<n><nn>:பூத்தல{Pul}[NN,Pl1]                                 # 'pooththal'      bottle              loanword (English)                   Dir/LR
 வதந்தி<n><nn>:வதந்த{I}[NN,Pl1]                                   # 'vathanthi'       rumor              loanword (Sanskrit)
 அவை<n><nn>:அவ{AI}[NN,Pl1]                                     # 'avay'            audience           loanword (Sanskrit)
 வேகம்<n><nn>:வேகம{Pul}[NN,Pl1]                                 # 'veekam'          speed              loanword (Sanskrit)
-விமானம்<n><nn>:விமான{M}{Pul}[NN,Pl1]                           # 'vimaanam'        airplane           loanword (Sanskrit) 
-பாடம்<n><nn>:பாட{M}{Pul}[NN,Pl1]                                 # 'paatam'          lesson             loanword (Sanskrit)
-ஆயுதம்<n><nn>:ஆயுத{M}{Pul}[NN,Pl1]                              # 'aayutham'        instrument         loanword (Sanskrit)
-சங்கம்<n><nn>:சங்க{M}{Pul}[NN,Pl1]                                # 'cankam'          association        loanword (Sanskrit)
+விமானம்<n><nn>:விமான{M}{Pul}[NN,MGEN,Pl1]                     # 'vimaanam'        airplane           loanword (Sanskrit) 
+பாடம்<n><nn>:பாட{M}{Pul}[NN,MGEN,Pl1]                           # 'paatam'          lesson             loanword (Sanskrit)
+ஆயுதம்<n><nn>:ஆயுத{M}{Pul}[NN,MGEN,Pl1]                        # 'aayutham'        instrument         loanword (Sanskrit)
+சங்கம்<n><nn>:சங்க{M}{Pul}[NN,MGEN,Pl1]                          # 'cankam'          association        loanword (Sanskrit)
 சங்க<n><nn>:சங்க[NN,Pl1]                                         # 'canka'           association        loanword (Sanskrit)                   Dir/LR
 தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                  # 'thapaal'         letter             loanword (Hindustani)
 தனி<n><nn>:தன{I}[NN,Pl1]                                        # 'thani'           singleness         Irregular
 காசு<n><nn>:காச{U}[NN,Pl1]                                        # 'kaacu'           money
-நெஞ்சு<n><nn>:நெஞ்ச{U}[NN,Pl1]                                   # 'nencu'           heart
+நெஞ்சு<n><nn>:நெஞ்ச{U}[NN,Pl1]                                   # 'nenjcu'          heart
 வகுப்பு<n><nn>:வகு>ப்ப{U}[NN,Pl1]                                  # 'vakuppu'         class
 இரவு<n><nn>:இரவ{U}[NN,Pl1]                                       # 'irvu'            night
 பெட்டி<n><nn>:பெட்ட{I}[NN,Pl1]                                    # 'petti'           box
@@ -1010,6 +1031,7 @@ LEXICON Nouns
 வேட்டி<n><nn>:வேட்ட{I}[NN,Pl1]                                    # 'veetti'          dhoti
 ஊசி<n><nn>:ஊச{I}[NN,Pl1]                                        # 'uuci'            needle
 மணி<n><nn>:மண{I}[NN,Pl1]                                      # 'mani'             hour
+நுனி<n><nn>:நுன{I}[NN,Pl1]                                       # 'nuni'             edge
 கூரை<n><nn>:கூர{AI}[NN,Pl1]                                      # 'kooray'          roof
 கடை<n><nn>:கட{AI}[NN,Pl1]                                       # 'katay'           shop
 தோசை<n><nn>:தோச{AI}[NN,Pl1]                                  # 'thoocay'         dosa
@@ -1017,12 +1039,12 @@ LEXICON Nouns
 காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                           # 'kaaiccal'        fever
 கால்<n><nn>:கால{Pul}[NN,Pl1]                                     # 'kaal'            leg
 வால்<n><nn>:வால{Pul}[NN,Pl1]                                     # 'vaal'            tail
-மரம்<n><nn>:மர{M}{Pul}[NN,Pl1]                                    # 'maram'           tree
-மனம்<n><nn>:மன{M}{Pul}[NN,Pl1]                                  # 'manam'           mind
-திருமணம்<n><nn>:திருமண{M}{Pul}[NN,Pl1]                        # 'thirumanam'      wedding
-பட்டணம்<n><nn>:பட்டண{M}{Pul}[NN,Pl1]                          # 'pattanam'        town
-நேரம்<n><nn>:நேர{M}{Pul}[NN,Pl1]                                 # 'neeram'          time
-மாம்பழம்<n><nn>:மாம்பழ{M}{Pul}[NN,Pl1]                         # 'maampazham'      mango
+மரம்<n><nn>:மர{M}{Pul}[NN,MGEN,Pl1]                               # 'maram'           tree
+மனம்<n><nn>:மன{M}{Pul}[NN,MGEN,Pl1]                            # 'manam'           mind
+திருமணம்<n><nn>:திருமண{M}{Pul}[NN,MGEN,Pl1]                   # 'thirumanam'      wedding
+பட்டணம்<n><nn>:பட்டண{M}{Pul}[NN,MGEN,Pl1]                     # 'pattanam'        town
+நேரம்<n><nn>:நேர{M}{Pul}[NN,MGEN,Pl1]                            # 'neeram'          time
+மாம்பழம்<n><nn>:மாம்பழ{M}{Pul}[NN,MGEN,Pl1]                    # 'maampazham'      mango
 பொய்<n><nn>:பொ{Y}{Pul}[NN,Pl1]                                # 'poi'             lie
 பொறுப்பு<n><nn>:பொறு>ப்ப{U}[NN,Pl1]                            # 'poruppu'         responsibility
 நாட்டு<n><nn>:நாட்ட{U}[NN,Pl1]                                    # 'naattu'          country
@@ -1030,11 +1052,11 @@ LEXICON Nouns
 வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                 # 'vayiru'          stomach
 
 ## Quality Nouns <nq> (can take Adjectivizer [NQ])
-குணம்<nq><nn>:குண{M}{Pul}[NN,Pl1,NQ]                            # 'kunam'           quality           loanword (Sanskrit)
-யோக்கியம்<nq><nn>:யோக்கிய{M}{Pul}[NN,Pl1,NQ]                  # 'yookkiyam'       integrity         loanword (Sanskrit)
-உயரம்<nq><nn>:உயர{M}{Pul}[NN,Pl1,NQ]                           # 'uyaram'           height
-இரக்கம்<nq><nn>:இரக்க{M}{Pul}[NN,Pl1,NQ]                         # 'irakkam'         compassion
-நீளம்<nq><nn>:நீள{M}{Pul}[NN,Pl1,NQ]                               # 'neelam'          length
+குணம்<nq><nn>:குண{M}{Pul}[NN,MGEN,Pl1,NQ]                      # 'kunam'           quality           loanword (Sanskrit)
+யோக்கியம்<nq><nn>:யோக்கிய{M}{Pul}[NN,MGEN,Pl1,NQ]            # 'yookkiyam'       integrity         loanword (Sanskrit)
+உயரம்<nq><nn>:உயர{M}{Pul}[NN,MGEN,Pl1,NQ]                     # 'uyaram'           height
+இரக்கம்<nq><nn>:இரக்க{M}{Pul}[NN,MGEN,Pl1,NQ]                   # 'irakkam'         compassion
+நீளம்<nq><nn>:நீள{M}{Pul}[NN,MGEN,Pl1,NQ]                         # 'neelam'          length
 எடை<nq><nn>:எட{AI}[NN,Pl1,NQ]                                   # 'etay'            weight
 
 ## Irregular UNISEX Inanimate (babies and infants)
@@ -1089,7 +1111,7 @@ LEXICON ModalVerbAux
 
 ## Time-Dynamic modals indicate only time (derived)
 முடி<vaux><vbmod><pres>:முடிய>{U}ம{Pul}[INT]                # 'mutiyum'        can (now)
-முடி<vaux><vbmod><past>:முடி>ஞ்ச>து                          # 'mutinjathu'     could (then)
+முடி<vaux><vbmod><past>:முடி>ஞ்ச>து                          # 'mutinjcathu'    could (then)
 ### Negating time-dynamic modals <neg>
 முடி<neg><vaux><vbmod><past>:முடிய{EE}>ல்லை                # 'mutiyeellay'    can/could not
 
@@ -1133,6 +1155,8 @@ LEXICON TransVerbStem
 தா<v><tv>:த{AAIrr}[Class2,INF,I1]                    # 'thaa'        give                    Irregular
 கொண்டுவா<v><tv>:கொண்டுவ{AAIrr}[Class2,INF,I1] # 'kontuvaa'    bring                   Irregular
 அறி<v><tv>:அற{I}[Class2,W]                          # 'ari'         find out
+தெரி<v><tv>:தெர{I}[Class2,W]                        # 'theri'       test
+தேர்<v><tv>:தேர{Pul}[Class2,W]                       # 'theer'       select
 
 # Class 3
 பண்ணு<vbdo><tv>:பண்ண{U}[Class3,W]                # 'pannu'       do
@@ -1199,6 +1223,8 @@ LEXICON TransVerbStem
 பிடி<v><tv>:பிட{I}[Class6,S]                          # 'piti'        catch
 பாவி<v><tv>:பாவ{I}[Class6,S]                        # 'paavi'       use
 குடி<v><tv>:குட{I}[Class6,S]                          # 'kuti'        drink
+நியமி<v><tv>:நியம{I}[Class6,S]                      # 'niyami'      appoint
+தெரி<v><tv>:தெர{I}[Class6,S]                        # 'theri'       make evident
 சமை<v><tv>:சம{AI}[Class6,S]                        # 'chamai'      cook
 வை<v><tv>:வ{AI}[Class6,S]                           # 'vay'        place
 பார்<v><tv>:ப{AA}{R}{Pul}[Class6,S]                   # 'paar'        see
@@ -1209,8 +1235,8 @@ LEXICON TransVerbStem
 ################## INTRANSITIVE VERBS
 LEXICON IntraVerbStem
 # Defectives
+தெரி<v><iv>:தெர{I}[ClassDef]                         # 'theri'       know                     Paired
 பிடி<v><iv>:பிட{I}[ClassDef]                           # 'piti'        like
-தெரி<v><iv>:தெர{I}[ClassDef]                         # 'theri'       know
 புரி<v><iv>:புர{I}[ClassDef]                            # 'puri'        understand
 
 # Class 1a
@@ -1224,11 +1250,13 @@ LEXICON IntraVerbStem
 
 # Class 2
 முடி<v><iv>:முட{I}[Class2,W]                          # 'muti'        complete                 Paired
+தெரி<v><iv>:தெர{I}[Class2,W]                        # 'theri'       perceive                 Paired
 நனை<v><iv>:நன{AI}[Class2,W]                       # 'nanay'       wet                      Paired
 நிமிர்<v><iv>:நிமிர{Pul}[Class2,W]                     # 'nimir'       erect                    Paired
 மேய்<v><iv>:ம{EE}{Y}{Pul}[Class2,W]                  # 'mei'         graze                    Paired
 வா<v><iv>:வ{AAIrr}[Class2,INF,I1]                    # 'vaa'         come                    Irregular
 விழு<v><iv>:விழ{U}[Class2,W]                         # 'vizhu'       fall
+தேர்<v><iv>:தேர{Pul}[Class2,W]                       # 'theer'       proficient
 
 # Class 3
 ஒட்டு<v><iv>:ஒட்ட{U}[Class3,W]                        # 'ottu'        adhere                  Paired
@@ -1266,7 +1294,9 @@ LEXICON IntraVerbStem
 கதை<v><iv>:கத{AI}[Class6,S]                        # 'kathay'      speak                   loanword (Sanskrit)
 வலி<v><iv>:வல{I}[Class6,S]                          # 'vali'        ache
 சிரி<v><iv>:சிர{I}[Class6,S]                           # 'siri'        laugh
+தெரி<v><iv>:தெர{I}[Class6,S]                        # 'theri'       perverse
 கிடை<v><iv>:கிட{AI}[Class6,S]                       # 'kitay'       be available
+தேர்<v><iv>:தேர{Pul}[Class6,S]                       # 'theer'       mingle
 
 # Class 7
 மற<v><iv>:மற[Class7,S]                             # 'mara'        forget                   Paired
