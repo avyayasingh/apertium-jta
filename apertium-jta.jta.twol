@@ -104,14 +104,14 @@ Rules
 
 ! Pulli
 "Removing Pulli"
-%{Pul%}:0 <=> :Consonant _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: | %{OOm%}: ] ;
-              %{M%}: _ %>: [ %{AAm%}: | %{Um%}: | %{OOm%}: ] ;
+%{Pul%}:0 <=> :Consonant _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: | %{Im%}: | %{OOm%}: ] ;
+              %{M%}: _ %>: [ %{AAm%}: | %{Um%}: | %{Im%}: | %{OOm%}: ] ;
               _ %>: %{UA%}: ;
               %{NR%}: _ %>: %{R%}: %{Pul%}: ;
               %{PLR%}: _ %>: %{R%}: ;
               %{PL%}: _ %>: %{T%}: ;
               %{PL%}: _ %>: %{AA%}: .#. ;
-              %{TH%}: _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: | %{OOm%}: ] ;
+              %{TH%}: _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: | %{Im%}: | %{OOm%}: ] ;
               [ %{NP%}: | %{NR%}: | %{NK%}: | %{RP%}: ] _ %>: %{Igen%}: :0 %{Pul%}: %{R%}: ;
                 except 
                 ப: ல: _ %>: ;
@@ -130,7 +130,7 @@ Rules
               %{P%}: _ %{P%}: ;
               [ SuffixVowels: | %{Ul%}: ] [ %{Yy%}: | %{Y%}: | %{Ln%}: | %{LN%}: | %{LK%}: | %{LLn%}: | %{LT%}: | :ண | :ர ] _ %>: [  %{RR%}: | %{P%}: | %{T%}: | :த | :ச | :வ | :ன ] ;
               [ SuffixVowels: | %{Ul%}: ] [ %{Yy%}: | %{Ln%}: | %{LN%}: | %{LLn%}: | :ண | :ர ] _ 0: %>: SuffixVowels: ;              
-              %{M%}: _ 0: %>: SuffixVowels: ;
+              %{M%}: _ 0: %>: [ SuffixVowels: | %{Igen%}: ] ;
               [ %{NP%}: | %{NR%}: | %{NK%}: | %{RP%}: ] :0 %>: %{Igen%}: :0 _ %{R%}: ;
               %{Y%}: _ 0: %>: %{U%}: ;
               %{T%}: _ 0: %>: [ SuffixVowelsA: | %{AAv%}: ] ;
@@ -153,14 +153,15 @@ Rules
 ! -m ending
 "Keep M to m if end of word"
 %{M%}:ம <=> _ %{Pul%}: .#. ;
-             _ %{Pul%}: %>: [ %{AAm%}: | %{Um%}: | %{OOm%}: ] ;
+             _ %{Pul%}: %>: [ %{AAm%}: | %{Um%}: | %{Im%}: | %{OOm%}: ] ;
 
 "Transform underlying M to T when vowel"
-%{M%}:த <=> _ %{Pul%}: 0: %>: SuffixVowels: ;
+%{M%}:த <=> _ %{Pul%}: 0: %>: [ SuffixVowels: | %{Igen%}: ] ;
 
 "Insert a second T"
-0:த <=> %{M%}: %{Pul%}: _ %>: SuffixVowels: ;
+0:த <=> %{M%}: %{Pul%}: _ %>: [ SuffixVowels: | %{Igen%}: ] ;
 
+! -t ending
 "Change to RR"
 %{TR%}:ற <=> %{RR%}: :Vy %{U%}: %>: _ ;
               where Vy in ( ் ) ;
@@ -193,7 +194,7 @@ Rules
 
 ! Word endings 
 "Inserting ய"
-0:ய <=> [ %{AI%}: | %{I%}: | %{II%}: | %{EE%}: | %{E%}: | %{AIE%}: ] (%{AN%}:) _ %>: [ :VowelRight | %{Irefr%}: | %{Um%}: | %{AAm%}: | %{OOm%}: | %{A%}: ] ;
+0:ய <=> [ %{AI%}: | %{I%}: | %{II%}: | %{EE%}: | %{E%}: | %{AIE%}: ] (%{AN%}:) _ %>: [ :VowelRight | %{Irefr%}: | %{Um%}: | %{Im%}: | %{AAm%}: | %{OOm%}: | %{A%}: ] ;
          %{AA%}: _ %>: %{I%}: ;
          %{Yy%}: %{Pul%}: _ %>: SuffixVowels: ;
 
@@ -239,7 +240,7 @@ Rules
 "Removing  ு"
 %{U%}:0 <=> _ %>: SuffixVowelsU: ;
             SuffixVowelsU: %>: _ ;
-            _ %>: [ %{U%}: | %{Um%}: | %{AAm%}: | %{OOm%}: ] ;
+            _ %>: [ %{U%}: | %{Um%}: | %{Im%}: | %{AAm%}: | %{OOm%}: ] ;
             [ %{T%}: | %{RR%}: ] 0: _ %>: %{TR%}: ;
             %{T%}: 0: _ %>: 0: %{Uu%}: ;
             _ %>: %{AAv%}: ;
