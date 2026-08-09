@@ -18,10 +18,12 @@ Alphabet
      %{AAm%}:ா
      %{AAIrr%}:ா
      %{I%}:ி
+     %{Igen%}:ி
      %{Im%}:ி
      %{II%}:ீ
      %{Il%}:இ
      %{U%}:ு %{U%}:0
+     %{Uu%}:ு
      %{UIrr%}:ு
      %{UA%}:ு
      %{Ul%}:உ
@@ -49,6 +51,7 @@ Alphabet
      %{Kk%}:க
      %{L%}:ல
      %{PL%}:ள
+     %{LK%}:ள %{LK%}:க
      %{LN%}:ள %{LN%}:ண
      %{Ln%}:ல %{Ln%}:ன
      %{LLn%}:ல
@@ -108,7 +111,7 @@ Rules
               %{PL%}: _ %>: %{T%}: ;
               %{PL%}: _ %>: %{AA%}: .#. ;
               %{TH%}: _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: | %{OOm%}: ] ;
-              [ %{NP%}: | %{NR%}: | %{NK%}: | %{RP%}: ] _ %>: %{I%}: :0 %{Pul%}: %{R%}: ;
+              [ %{NP%}: | %{NR%}: | %{NK%}: | %{RP%}: ] _ %>: %{Igen%}: :0 %{Pul%}: %{R%}: ;
                 except 
                 ப: ல: _ %>: ;
                 %{M%}: _ %>: SuffixVowels: ;
@@ -124,10 +127,10 @@ Rules
               :த _ :த ;
               :ச _ :ச ;
               %{P%}: _ %{P%}: ;
-              [ SuffixVowels: | %{Ul%}: ] [ %{Yy%}: | %{Y%}: | %{Ln%}: | %{LN%}: | %{LLn%}: | %{LT%}: | :ண | :ர ] _ %>: [  %{RR%}: | %{P%}: | %{T%}: | :த | :ச | :வ | :ன ] ;
+              [ SuffixVowels: | %{Ul%}: ] [ %{Yy%}: | %{Y%}: | %{Ln%}: | %{LN%}: | %{LK%}: | %{LLn%}: | %{LT%}: | :ண | :ர ] _ %>: [  %{RR%}: | %{P%}: | %{T%}: | :த | :ச | :வ | :ன ] ;
               [ SuffixVowels: | %{Ul%}: ] [ %{Yy%}: | %{Ln%}: | %{LN%}: | %{LLn%}: | :ண | :ர ] _ 0: %>: SuffixVowels: ;              
               %{M%}: _ 0: %>: SuffixVowels: ;
-              [ %{NP%}: | %{NR%}: | %{NK%}: | %{RP%}: ] :0 %>: %{I%}: :0 _ %{R%}: ;
+              [ %{NP%}: | %{NR%}: | %{NK%}: | %{RP%}: ] :0 %>: %{Igen%}: :0 _ %{R%}: ;
               %{Y%}: _ 0: %>: %{U%}: ;
               %{T%}: _ 0: %>: [ SuffixVowelsA: | %{AAv%}: ] ;
               %{T%}: _ 0: (%{U%}:) %>: %{A%}: :Consonant ;
@@ -143,6 +146,7 @@ Rules
          [ %{T%}: | %{RR%}: ] _ %{U%}: %>: %{TR%}: ;
          [ %{Al%}: | %{Il%}: | %{Ul%}: | %{El%}: ] 0: _ 0: %>: %{Al%}: ;
          SuffixVowels: %>: 0: _ %{Kk%}: ;
+         %{T%}: _ %{U%}: %>: 0: %{Uu%}: ;
          where Vy in ( ் ) ;
 
 ! -m ending
@@ -176,10 +180,10 @@ Rules
 
 ! Genitive case
 "Removing I for nouns ending in N or R"
-%{I%}:0 <=> [ %{NP%}: | %{RP%}: | %{NR%}: | %{NK%}: ] %{Pul%}: %>: _ %{N%}: %{Pul%}: %{R%}: ;
+%{Igen%}:0 <=> [ %{NP%}: | %{RP%}: | %{NR%}: | %{NK%}: ] %{Pul%}: %>: _ %{N%}: %{Pul%}: %{R%}: ;
 
 "Removing N for nouns ending in N or R"
-%{N%}:0 <=> [ %{NP%}: | %{RP%}: | %{NR%}: | %{NK%}: ] %{Pul%}: %>: %{I%}: _ %{Pul%}: %{R%}: ;
+%{N%}:0 <=> [ %{NP%}: | %{RP%}: | %{NR%}: | %{NK%}: ] %{Pul%}: %>: %{Igen%}: _ %{Pul%}: %{R%}: ;
 
 ! Referential case
 "Removing I when Referential and noun ends in AA"
@@ -205,6 +209,7 @@ Rules
 "Insert a second T"
 0:ட <=> %{T%}: :Vy _ (%{U%}:) %>: [ SuffixVowelsA: | %{AAv%}: ] ;
         %{T%}: :Vy _ (%{U%}:) %>: %{A%}: :Consonant ;
+        %{T%}: 0: %{U%}: %>: _ %{Uu%}: ; 
               where Vy in ( ் ) ;
 
 "Insert a second L"
@@ -235,6 +240,7 @@ Rules
             SuffixVowelsU: %>: _ ;
             _ %>: [ %{U%}: | %{Um%}: | %{AAm%}: | %{OOm%}: ] ;
             [ %{T%}: | %{RR%}: ] 0: _ %>: %{TR%}: ;
+            %{T%}: 0: _ %>: 0: %{Uu%}: ;
 
 "Removing UA"
 %{UA%}:0 <=> %{AA%}: %>: _ ;
@@ -244,6 +250,9 @@ Rules
 
 "Starting with K"
 %{N%}:ங <=> _ %{Pul%}: %>: %{K%}: ;
+
+"Starting with K"
+%{LK%}:க <=> _ %{Pul%}: %>: %{K%}: ;
 
 "Starting with K"
 %{NK%}:ர <=> _ %{Pul%}: %>: %{K%}: ;
