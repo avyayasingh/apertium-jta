@@ -271,7 +271,7 @@ LEXICON Honorifics
 ################## NUMBER
 LEXICON Number
 # ORUMAI: Singular Class: 0
-# 0: a. Abstract nouns     [ANoun]                               (Always singular)
+# 0: a. Abstract nouns     [ANoun,QNoun]                         (Always singular)
 ##   b. Foodstuffs         [FNoun]                               (Always singular)
 ##   c. Toponyms           [TNoun]                               (Always singular)
 ##   d. Pronouns           [GPro,FPro,PS]                        (Singular form)
@@ -279,7 +279,7 @@ LEXICON Number
 ##   f. Regular Nouns      [Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]     (Singular form)
 ##   g. Honorifics         [IH,H,MH,FH,PH]                       (Forced singular for honorifics 'null')
 ##   h. Mass Nouns & Time  [UNoun,TiNoun]                        (Uncountable)
-<sg>:[ANoun,FNoun,TNoun,GPro,FPro]                # null  singular
+<sg>:[ANoun,QNoun,FNoun,TNoun,GPro,FPro]          # null  singular
 <sg>:[ES,ENS,PS,Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]  # null  singular
 <sg>:[IH,H,MH,FH,PH]                              # null  singular
 <unc>:[UNoun,TiNoun]                              # null  uncountable
@@ -625,6 +625,7 @@ LEXICON PNG
 <p1><sg>:>{EE}>ன{Pul}[Nor]                      # 'een'       singular
 <p1><sg>:>{E}>ன{Pul}[Nor]                       # 'en'        singular       (var)                      Dir/LR
 <p1><sg>:>ன{Pul}[Nor]                           # 'n'         singular       (var)                      Dir/LR
+<p1><sg>:>னான{Pul}[Nor]                       # 'naan'       singular       (var)                      Dir/LR
 <p1><pl>:>ம{Pul}[Nor]                            # 'm'         plural
 <p1><pl>:>{OO}ம{Pul}[Nor]                        # 'om'        plural         (var)                      Dir/LR
 # p2
@@ -679,16 +680,19 @@ LEXICON TenseInfix
 <pres>:>{K}{I}ற[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]            # 'kir'
 ### variants
 <pres>:>{K}{I}ன்ற[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]          # 'kinr'       Dir/LR
+<pres>:>{I}ற[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]               # 'ir'         Dir/LR
 <pres>:>ற[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]                  # 'r'          Dir/LR
 ## irregular class
 <pres>:>{K}{I}ற[Class5a,Class5b,Class5c,Class5d]                                   # 'kir'
 ### variants
 <pres>:>{K}{I}ன்ற[Class5a,Class5b,Class5c,Class5d]                                 # 'kinr'       Dir/LR
+<pres>:>{I}ற[Class5a,Class5b,Class5c,Class5d]                                      # 'ir'         Dir/LR
 <pres>:>ற[Class5a,Class5b,Class5c,Class5d]                                         # 'r'          Dir/LR
 ## strong form
 <pres>:>{K}{Pul}{K}{I}ற[Class6,Class7]                                             # 'kkir'
 ### variants
 <pres>:>{K}{Pul}{K}{I}ன்ற[Class6,Class7]                                           # 'kkinr'     Dir/LR
+<pres>:>{I}ற[Class6,Class7]                                                        # 'ir'        Dir/LR
 <pres>:>ற[Class6,Class7]                                                           # 'r'         Dir/LR
 
 ## irregulars
@@ -974,7 +978,7 @@ LEXICON Nouns
 கோபம்<nq><nn>:கோப{M}{Pul}[NN,ANoun,NQ]                         # 'koopam'          anger              loanword (Sanskrit)    
 அன்பு<nq><nn>:அன்ப{U}[NN,ANoun,NQ]                               # 'anpu'            love
 ## Behaviour
-உசார்<nq><nn>:உசார{Pul}[NN,ANoun,NQ]                             # 'ucaar'           enthusiasm         loanword (Sanskrit)
+உஷார்<nq><nn>:உஷார{Pul}[NN,ANoun,NQ]                           # 'ushaar'          prudence           loanword (Hindustani)
 திமிர்<nq><nn>:திமிர{Pul}[NN,ANoun,NQ]                              # 'timir'           arrogance
 கண்டிப்பு<nq><nn>:கண்டி>ப்ப{U}[NN,ANoun,NQ]                       # 'kantippu'        discipline
 வடிவு<nq><nn>:வடிவ{U}[NN,ANoun,NQ]                                # 'vativu'          beauty
@@ -983,7 +987,7 @@ LEXICON Nouns
 தனி<nq><nn>:தன{I}[NN,ANoun,NQ]                                   # 'thani'           solitude           Dir/LR
 
 # Class 1
-பேனா<n><nn>:பேன{AA}[NN,Pl1]                                    # 'peena'           pen                loanword (English)
+பேனா<n><nn>:பேன{AA}[NN,Pl1]                                    # 'peena'           pen                loanword (Portuguese)
 கார்<n><nn>:கார{Pul}[NN,Pl1]                                      # 'kaar'            car                loanword (English)
 சைக்கிள்<n><nn>:சைக்கிள{Pul}[NN,Pl1]                            # 'caykkil'         cycle              loanword (English)
 வதந்தி<n><nn>:வதந்த{I}[NN,Pl1]                                   # 'vathanthi'       rumor              loanword (Sanskrit)
@@ -992,6 +996,8 @@ LEXICON Nouns
 விமானம்<n><nn>:விமான{M}{Pul}[NN,Pl1]                           # 'vimaanam'        airplane           loanword (Sanskrit) 
 பாடம்<n><nn>:பாட{M}{Pul}[NN,Pl1]                                 # 'paatam'          lesson             loanword (Sanskrit)
 ஆயுதம்<n><nn>:ஆயுத{M}{Pul}[NN,Pl1]                              # 'aayutham'        instrument         loanword (Sanskrit)
+சங்கம்<n><nn>:சங்க{M}{Pul}[NN,Pl1]                                # 'cankam'          association        loanword (Sanskrit)
+சங்க<n><nn>:சங்க[NN,Pl1]                                         # 'canka'           association        loanword (Sanskrit)                   Dir/LR
 தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                  # 'thapaal'         letter             loanword (Hindustani)
 தனி<n><nn>:தன{I}[NN,Pl1]                                        # 'thani'           singleness         Irregular
 காசு<n><nn>:காச{U}[NN,Pl1]                                        # 'kaacu'           money
@@ -1019,6 +1025,7 @@ LEXICON Nouns
 மாம்பழம்<n><nn>:மாம்பழ{M}{Pul}[NN,Pl1]                         # 'maampazham'      mango
 பொய்<n><nn>:பொ{Y}{Pul}[NN,Pl1]                                # 'poi'             lie
 பொறுப்பு<n><nn>:பொறு>ப்ப{U}[NN,Pl1]                            # 'poruppu'         responsibility
+நாட்டு<n><nn>:நாட்ட{U}[NN,Pl1]                                    # 'naattu'          country
 வீடு<n><nn>:வீ{T}{U}[NN,VIrr,Pl1]                                  # 'veetu'           house
 வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                 # 'vayiru'          stomach
 
