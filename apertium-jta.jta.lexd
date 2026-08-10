@@ -209,8 +209,10 @@ IntraVerbStem[I2] Infinitives[I2] NegSuffix[DYN] PNG[Nor]
 IntraVerbStem NegSuffix[-INF]
 IntraVerbStem Negation[Nor] PNG[P3EP]
 # Adjectives
-Adjectives[IND] [ <adj>: ] EndwordMorph? > ((Adverbializer EndwordMorph?)|(Nominalizer[ADJ] Number[ANoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?))
-Adjectives[BOTH] [ <adj>: ] EndwordMorph? > ((Adverbializer EndwordMorph?)|(Nominalizer[ADJ] (Adjectivizer EndwordMorph?)|(Number[ANoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?)))
+Adjectives[IND] [ <adj>: ] EndwordMorph?
+Adjectives[BOTH] [ <adj>: ] EndwordMorph?
+Adjectives[IND] [ <adj>: ] ((Adverbializer EndwordMorph?)|(Nominalizer[ADJ] Number[ANoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?))
+Adjectives[BOTH] [ <adj>: ] ((Adverbializer EndwordMorph?)|(Nominalizer[ADJ] (Adjectivizer EndwordMorph?)|(Number[ANoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?)))
 Adjectives[FROZE] [ <adj>: ] Nominalizer[ADJ] Number[ANoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
 Adjectives [ <adj>: ] Predicative[NPREDS] Number[ENS]
 Adjectives [ <adj>: ] Predicative[NPREDP] Number[ENP] 
@@ -964,9 +966,10 @@ LEXICON Nouns
 ##################### INANIMATE
 # Class 0
 # Foodstuffs
+அரிசி<n><nn>:அரிச{I}[NN,FNoun]                                    # 'arici'           rice
+பால்<n><nn>:பால{Pul}[NN,FNoun]                                    # 'paal'            milk
 பழம்<n><nn>:பழ{M}{Pul}[NN,FNoun]                                  # 'pazham'          fruit
 எண்ணெய்<n><nn>:எண்ணெ{Y}{Pul}[NN,FNoun]                      # 'ennei'           oil
-சாப்பாடு<n><nn>:சாப்பா{T}{U}[NN,FNoun]                            # 'caappatu'        food
 சோறு<n><nn>:சோ{RR}{U}[NN,FNoun]                                 # 'cooru'           rice
 # Toponyms
 யாழ்ப்பாணம்<n><top>:யாழ்ப்பாண{M}{Pul}[NN,TNoun]               # 'yaazhppaanam'    Jaffna
@@ -1049,6 +1052,7 @@ LEXICON Nouns
 பொறுப்பு<n><nn>:பொறு>ப்ப{U}[NN,Pl1]                            # 'poruppu'         responsibility
 நாட்டு<n><nn>:நாட்ட{U}[NN,Pl1]                                    # 'naattu'          country
 வீடு<n><nn>:வீ{T}{U}[NN,VIrr,Pl1]                                  # 'veetu'           house
+சாப்பாடு<n><nn>:சாப்பா{T}{U}[NN,Pl1]                            # 'caappatu'        food
 வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                 # 'vayiru'          stomach
 
 ## Quality Nouns <nq> (can take Adjectivizer [NQ])
@@ -1231,6 +1235,7 @@ LEXICON TransVerbStem
 
 # Class 7
 மற<v><tv>:மற[Class7,S]                              # 'mara'       forget                     Paired
+திற<v><tv>:திற[Class7,S]                              # 'tira'       open
 
 ################## INTRANSITIVE VERBS
 LEXICON IntraVerbStem
