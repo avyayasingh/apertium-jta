@@ -350,9 +350,9 @@ LEXICON Cases
 <int>:>{AA}ல{AIE}[AA,NN,NNIrr,TN,P,PS,PL]                        # 'aalay~ai'           (irregular instrumental)         Dir/LR
 <int>:>\ கொண்டு[AA,NN,NNIrr,TN,P,PS,PL]                       # 'kontu'              (irregular instrumental)          Dir/LR
 ## dative
-<dat>:>{U}க்கு[AA,NN,NNIrr,TN,P,PS,PL]                            # 'ukku'
-<dat>:>{A}க்கு[AA,NN,NNIrr,TN,P,PS,PL]                            # 'akku'               (irregular dative)               Dir/LR
-<dat>:>க்கு[AA,NN,NNIrr,TN,P,PS,PL]                               # 'kku'                (irregular dative)               Dir/LR
+<dat>:>{U}{K}{Pul}{K}{U}[AA,NN,NNIrr,TN,P,PS,PL]                 # 'ukku'
+<dat>:>{A}{K}{Pul}{K}{U}[AA,NN,NNIrr,TN,P,PS,PL]                 # 'akku'               (irregular dative)               Dir/LR
+<dat>:>{K}{Pul}{K}{U}[AA,NN,NNIrr,TN,P,PS,PL]                    # 'kku'                (irregular dative)               Dir/LR
 <dat>:>{AI}[VIrr]                                                # 'ay'                 (irregular dative for 'veetu')    Dir/LR
 ## comitative/sociative
 <com>:>{OO}ட[AA,NN,NNIrr,TN,P,PS,PL]                             # 'oota'
@@ -1017,12 +1017,17 @@ LEXICON Nouns
 வதந்தி<n><nn>:வதந்த{I}[NN,Pl1]                                   # 'vathanthi'       rumor              loanword (Sanskrit)
 அவை<n><nn>:அவ{AI}[NN,Pl1]                                     # 'avay'            audience           loanword (Sanskrit)
 வேகம்<n><nn>:வேகம{Pul}[NN,Pl1]                                 # 'veekam'          speed              loanword (Sanskrit)
-விமானம்<n><nn>:விமான{M}{Pul}[NN,MGEN,Pl1]                     # 'vimaanam'        airplane           loanword (Sanskrit) 
-பாடம்<n><nn>:பாட{M}{Pul}[NN,MGEN,Pl1]                           # 'paatam'          lesson             loanword (Sanskrit)
-ஆயுதம்<n><nn>:ஆயுத{M}{Pul}[NN,MGEN,Pl1]                        # 'aayutham'        instrument         loanword (Sanskrit)
+விமானம்<n><nn>:விமான{M}{Pul}[NN,MGEN,Pl1]                      # 'vimaanam'       airplane            loanword (Sanskrit) 
+பாடம்<n><nn>:பாட{M}{Pul}[NN,MGEN,Pl1]                            # 'paatam'          lesson             loanword (Sanskrit)
+ஆயுதம்<n><nn>:ஆயுத{M}{Pul}[NN,MGEN,Pl1]                         # 'aayutham'        instrument         loanword (Sanskrit)
+புத்தகம்<n><nn>:புத்தக{M}{Pul}[NN,MGEN,Pl1]                        # 'puththakam'      book               loanword (Sanskrit)
+புஸ்தகம்<n><nn>:புஸ்தக{M}{Pul}[NN,MGEN,Pl1]                      # 'pusthakam'       book               loanword (Sanskrit)                   Dir/LR
 சங்கம்<n><nn>:சங்க{M}{Pul}[NN,MGEN,Pl1]                          # 'cankam'          association        loanword (Sanskrit)
 சங்க<n><nn>:சங்க[NN,Pl1]                                         # 'canka'           association        loanword (Sanskrit)                   Dir/LR
 தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                  # 'thapaal'         letter             loanword (Hindustani)
+ரூபாய்<n><nn>:ரூபா{Y}{Pul}[NN,Pl1]                               # 'roopaai'         rupee              loanword (Hindustani)
+உரூபாய்<n><nn>:உரூபா{Y}{Pul}[NN,Pl1]                           # 'uroopaai'        rupee              loanword (Hindustani)                 Dir/LR
+ரூபா<n><nn>:ரூப{AA}[NN,Pl1]                                      # 'roopaa'          rupee              loanword (Hindustani)                 Dir/LR
 தனி<n><nn>:தன{I}[NN,Pl1]                                        # 'thani'           singleness         Irregular
 காசு<n><nn>:காச{U}[NN,Pl1]                                        # 'kaacu'           money
 நெஞ்சு<n><nn>:நெஞ்ச{U}[NN,Pl1]                                   # 'nenjcu'          heart
@@ -1039,6 +1044,8 @@ LEXICON Nouns
 கடை<n><nn>:கட{AI}[NN,Pl1]                                       # 'katay'           shop
 தோசை<n><nn>:தோச{AI}[NN,Pl1]                                  # 'thoocay'         dosa
 பிழை<n><nn>:பிழ{AI}[NN,Pl1]                                      # 'pizhay'         error
+சீலை<n><nn>:சீல{AI}[NN,Pl1]                                      # 'ciilay'          saree
+சேலை<n><nn>:சேல{AI}[NN,Pl1]                                   # 'ceellay'         saree               Dir/LR
 காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                           # 'kaaiccal'        fever
 கால்<n><nn>:கால{Pul}[NN,Pl1]                                     # 'kaal'            leg
 வால்<n><nn>:வால{Pul}[NN,Pl1]                                     # 'vaal'            tail
@@ -1048,11 +1055,13 @@ LEXICON Nouns
 பட்டணம்<n><nn>:பட்டண{M}{Pul}[NN,MGEN,Pl1]                     # 'pattanam'        town
 நேரம்<n><nn>:நேர{M}{Pul}[NN,MGEN,Pl1]                            # 'neeram'          time
 மாம்பழம்<n><nn>:மாம்பழ{M}{Pul}[NN,MGEN,Pl1]                    # 'maampazham'      mango
+வைரம்<n><nn>:வைர{M}{Pul}[NN,MGEN,Pl1]                         # 'vayram'          diamond
 பொய்<n><nn>:பொ{Y}{Pul}[NN,Pl1]                                # 'poi'             lie
 பொறுப்பு<n><nn>:பொறு>ப்ப{U}[NN,Pl1]                            # 'poruppu'         responsibility
 நாட்டு<n><nn>:நாட்ட{U}[NN,Pl1]                                    # 'naattu'          country
 வீடு<n><nn>:வீ{T}{U}[NN,VIrr,Pl1]                                  # 'veetu'           house
 சாப்பாடு<n><nn>:சாப்பா{T}{U}[NN,Pl1]                            # 'caappatu'        food
+மணிக்கூடு<n><nn>:மணிக்கூ{T}{U}[NN,Pl1]                        # 'manikkootu'      watch
 வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                 # 'vayiru'          stomach
 
 ## Quality Nouns <nq> (can take Adjectivizer [NQ])
@@ -1061,6 +1070,7 @@ LEXICON Nouns
 உயரம்<nq><nn>:உயர{M}{Pul}[NN,MGEN,Pl1,NQ]                     # 'uyaram'           height
 இரக்கம்<nq><nn>:இரக்க{M}{Pul}[NN,MGEN,Pl1,NQ]                   # 'irakkam'         compassion
 நீளம்<nq><nn>:நீள{M}{Pul}[NN,MGEN,Pl1,NQ]                         # 'neelam'          length
+பெறுமதி<nq><nn>:பெறுமத{I}[NN,Pl1,NQ]                          # 'perumathi'       value
 எடை<nq><nn>:எட{AI}[NN,Pl1,NQ]                                   # 'etay'            weight
 
 ## Irregular UNISEX Inanimate (babies and infants)
@@ -1422,28 +1432,49 @@ Numeral [ <num>: ]
 NumStems [ <num>: ] Cases[NN]? EndwordMorph?
 
 LEXICON NumStems
-ஒன்று:ஒன்ற{U}                              # 'onru'             one
-ஒரு:ஒர{U}                                   # 'oru'              one         Dir/LR
-இரண்டு:இரண்ட{U}                          # 'irandu'           two
-ரெண்டு:ரெண்ட{U}                           # 'rendu'            two         Dir/LR
-மூன்று:மூன்ற{U}                             # 'moonru'           three
-நான்கு:நான்க{U}                             # 'naanku'           four
-ஐந்து:ஐந்த{U}                                # 'aynthu'           five
-ஆறு:ஆற{U}                                 # 'aaru'             six
-ஏழு:ஏழ{U}                                   # 'eezhu'            seven
-எட்டு:எட்ட{U}                                # 'ettu'             eight
-ஒன்பது:ஒன்பத{U}                           # 'onpathu'          nine
-பத்து:பத்த{U}                                # 'paththu'          ten
-பதினொன்று:பதினொன்ற{U}                 # 'pathinonru'       eleven
-பன்னிரண்டு:பன்னிரண்ட{U}                 # 'pannirantu'       twelve
-பதின்மூன்று:பதின்மூன்ற{U}                  # 'pathinmoonru'     thirteen
-பதினான்கு:பதினான்க{U}                     # 'pathinaanthu'     fourteen
-பதினைந்து:பதினைந்த{U}                    # 'pathinaynthu'     fifteen
-பதினாறு:பதினாற{U}                         # 'pathinaaru'       sixteen
-பதினேழு:பதினேழ{U}                        # 'pathineezhu'      seventeen
-பதினெட்டு:பதினெட்ட{U}                     # 'pathinettu'       eighteen
-பத்தொன்பது:பத்தொன்பத{U}                # 'pathithonpathu'   nineteen
-இருபது:இருபத{U}                            # 'irupathu'         twenty    
+ஒன்று:ஒன்ற{U}                                     # 'onru'             one
+ஒரு:ஒர{U}                                          # 'oru'              one         Dir/LR
+இரண்டு:இரண்ட{U}                                 # 'irandu'           two
+ரெண்டு:ரெண்ட{U}                                  # 'rendu'            two         Dir/LR
+மூன்று:மூன்ற{U}                                    # 'moonru'           three
+நான்கு:நான்க{U}                                    # 'naanku'           four
+ஐந்து:ஐந்த{U}                                       # 'aynthu'           five
+ஆறு:ஆற{U}                                        # 'aaru'             six
+ஏழு:ஏழ{U}                                          # 'eezhu'            seven
+எட்டு:எட்ட{U}                                       # 'ettu'             eight
+ஒன்பது:ஒன்பத{U}                                  # 'onpathu'          nine
+பத்து:பத்த{U}                                       # 'paththu'          ten
+பதினொன்று:பதினொன்ற{U}                        # 'pathinonru'       eleven
+பன்னிரண்டு:பன்னிரண்ட{U}                        # 'pannirantu'       twelve
+பதின்மூன்று:பதின்மூன்ற{U}                         # 'pathinmoonru'     thirteen
+பதினான்கு:பதினான்க{U}                            # 'pathinaanthu'     fourteen
+பதினைந்து:பதினைந்த{U}                           # 'pathinaynthu'     fifteen
+பதினாறு:பதினாற{U}                                # 'pathinaaru'       sixteen
+பதினேழு:பதினேழ{U}                               # 'pathineezhu'      seventeen
+பதினெட்டு:பதினெட்ட{U}                            # 'pathinettu'       eighteen
+பத்தொன்பது:பத்தொன்பத{U}                       # 'pathithonpathu'   nineteen
+இருபது:இருபத{U}                                   # 'irupathu'         twenty 
+முப்பது:முப்பத{U}                                   # 'muppathu'         thirty
+நூறு:நூற{U}                                        # 'nooru'             hundred
+இருநூறு:இருநூற{U}                                # 'irunooru'          two hundred
+முந்நூறு:முந்நூற{U}                                # 'munnooru'          three hundred
+நானூறு:நானூற{U}                                 # 'naanooru'          four hundred
+ஐந்நூறு:ஐந்நூற{U}                                 # 'aynooru'           five hundred
+அறுநூறு:அறுநூற{U}                               # 'arunooru'          six hundred
+எழுநூறு:எழுநூற{U}                                # 'ezhunooru'         seven hundred
+எண்ணூறு:எண்ணூற{U}                            # 'ennooru'           eight hundred
+தொளாயிரம்:தொளாயிரம{Pul}                    # 'tholaayiram'       nine hundred
+ஆயிரம்:ஆயிரம{Pul}                               # 'aayiram'           thousand
+பத்தாயிரம்:பத்தாயிரம{Pul}                        # 'paththaayiram'     ten thousand
+இருபதாயிரம்:இருபதாயிரம{Pul}                   # 'irupathaayiram'     twenty thousand
+முப்பதாயிரம்:முப்பதாயிரம{Pul}                   # 'muppathaayiram'     thirty thousand
+நாற்பதாயிரம்:நாற்பதாயிரம{Pul}                  # 'naarpathaayiram'    forty thousand
+ஐம்பதாயிரம்:ஐம்பதாயிரம{Pul}                    # 'aympathaayiram'     fifty thousand
+அறுபதாயிரம்:அறுபதாயிரம{Pul}                  # 'arupathaayiram'     sixty thousand
+எழுபதாயிரம்:எழுபதாயிரம{Pul}                   # 'ezhupathaayiram'    seventy thousand
+எண்பதாயிரம்:எண்பதாயிரம{Pul}                 # 'enpathaayiram'      eighty thousand
+தொண்ணூறாயிரம்:தொண்ணூறாயிரம{Pul}       # 'thonnooraayiram'    ninety thousand
+லட்சம்:லட்சம{Pul}                                # 'latcam'             lakh (hundred thousand)             loanword (Sanskrit)
 
 LEXICON Numeral
 # Latin
