@@ -72,43 +72,43 @@ PronounStems[-LOC,Obl,IH] Honorifics[IH] Number[IH,PS] Cases[PS] (EndwordMorph|I
 PronounStems[-LOC,NObl,PH] Honorifics[PH] Number[PH] (EndwordMorph|InterroClitic|Intensifier)?
 PronounStems[-LOC,NObl,IH] Honorifics[IH] Number[IH] (EndwordMorph|InterroClitic|Intensifier)?
 ## Other Types
-IndefProStem ((HumanRadical[Hum] Cases[AA])|(HumanRadical[NHum] Cases[NN]))? TotalClitic?
+IndefProStem ((HumanRadical[Hum] Cases[AA])|(HumanRadical[NHum] Cases[NN]))? (TotalClitic|Conjuctive)?
 InterProStem
 # Nouns & NP
 ## Irregulars
 Nouns[NQ] Adjectivizer|(Professionalizer Number[Pl1] Cases[AA]) EndwordMorph?
-Nouns[NN,ANoun] Number[ANoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[NN,QNoun] Number[QNoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[NN,UNoun] Number[UNoun] Cases[NN]|EmphaticCli|TotalClitic EndwordMorph?
-Nouns[NN,TiNoun] Number[TiNoun] Cases[NN]|EmphaticCli|TotalClitic EndwordMorph?
-Nouns[NN,FNoun] Number[FNoun] Cases[NN]|EmphaticCli|TotalClitic EndwordMorph?
-Nouns[TNoun] Number[TNoun] Cases[TN]|EmphaticCli|TotalClitic EndwordMorph?
-Nouns[AA,ES] Number[ES] Cases[AA]|EmphaticCli|TotalClitic EndwordMorph?
+Nouns[NN,ANoun] Number[ANoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[NN,QNoun] Number[QNoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[NN,UNoun] Number[UNoun] Cases[NN]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
+Nouns[NN,TiNoun] Number[TiNoun] Cases[NN]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
+Nouns[NN,FNoun] Number[FNoun] Cases[NN]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
+Nouns[TNoun] Number[TNoun] Cases[TN]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,ES] Number[ES] Cases[AA]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
 Nouns[VIrr,Pl1] Number[Pl1] Cases[VIrr] EndwordMorph?
-Nouns[NNIrr,Pl1] Number[Pl1]|(Honorifics[Pl1] Number[H]) Cases[NNIrr]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
+Nouns[NNIrr,Pl1] Number[Pl1]|(Honorifics[Pl1] Number[H]) Cases[NNIrr]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
 ## REGULAR
-Nouns[AA,H] Honorifics[H] Number[H] Cases[AA]|EmphaticCli|TotalClitic EndwordMorph?
-Nouns[AA,EH] Honorifics[H] Number[EH] Cases[AA]|EmphaticCli|TotalClitic EndwordMorph?
-Nouns[NN,Pl1] Number[Pl1] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,Pl1] Number[Pl1]|(Honorifics[Pl1] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[NN,Pl2] Number[Pl2] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,Pl2] Number[Pl2]|(Honorifics[Pl2] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[NN,Pl3] Number[Pl3] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,Pl3] Number[Pl3]|(Honorifics[Pl3] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[NN,Pl4] Number[Pl4] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,Pl4] Number[Pl4]|(Honorifics[Pl4] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[NN,Pl5] Number[Pl5] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,Pl5] Number[Pl5]|(Honorifics[Pl5] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[NN,Pl6] Number[Pl6] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,Pl6] Number[Pl6]|(Honorifics[Pl6] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[NN,Pl7] Number[Pl7] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,Pl7] Number[Pl7]|(Honorifics[Pl7] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[NN,Pl8] Number[Pl8] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,Pl8] Number[Pl8] Cases[AA]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[NN,MGEN,Pl1] Number[Pl1] Cases[MGEN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,MGEN,Pl1] Number[Pl1]|(Honorifics[Pl1] Number[H]) Cases[MGEN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[NN,MGEN,Pl2] Number[Pl2] Cases[MGEN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
-Nouns[AA,MGEN,Pl2] Number[Pl2]|(Honorifics[Pl2] Number[H]) Cases[MGEN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
+Nouns[AA,H] Honorifics[H] Number[H] Cases[AA]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,EH] Honorifics[H] Number[EH] Cases[AA]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
+Nouns[NN,Pl1] Number[Pl1] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,Pl1] Number[Pl1]|(Honorifics[Pl1] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[NN,Pl2] Number[Pl2] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,Pl2] Number[Pl2]|(Honorifics[Pl2] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[NN,Pl3] Number[Pl3] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,Pl3] Number[Pl3]|(Honorifics[Pl3] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[NN,Pl4] Number[Pl4] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,Pl4] Number[Pl4]|(Honorifics[Pl4] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[NN,Pl5] Number[Pl5] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,Pl5] Number[Pl5]|(Honorifics[Pl5] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[NN,Pl6] Number[Pl6] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,Pl6] Number[Pl6]|(Honorifics[Pl6] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[NN,Pl7] Number[Pl7] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,Pl7] Number[Pl7]|(Honorifics[Pl7] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[NN,Pl8] Number[Pl8] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,Pl8] Number[Pl8] Cases[AA]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[NN,MGEN,Pl1] Number[Pl1] Cases[MGEN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,MGEN,Pl1] Number[Pl1]|(Honorifics[Pl1] Number[H]) Cases[MGEN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[NN,MGEN,Pl2] Number[Pl2] Cases[MGEN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,MGEN,Pl2] Number[Pl2]|(Honorifics[Pl2] Number[H]) Cases[MGEN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
 # Verbs
 ## Auxiliaries
 ModalVerbAux
@@ -118,20 +118,20 @@ AspectVerbAux[Class4] TenseInfix[Class4] PNG[Nor] InterroClitic?
 AspectVerbAux[Class7] TenseInfix[Class7] PNG[Nor] InterroClitic?
 ## Transitives
 ### REGULAR
-TransVerbStem[Class1a] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class1a]? Participle[Class1a] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(Voice[-PASSIVE] Causativiser[Class1a]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class1a]? TenseInfix[Class1a] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class1b] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class1b]? Participle[Class1b] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(Voice[-PASSIVE] Causativiser[Class1b]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class1b]? TenseInfix[Class1b] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class2] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class2]? Participle[Class2] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(Voice[-PASSIVE] Causativiser[Class2]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class2]? TenseInfix[Class2] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class3] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class3]? Participle[Class3] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(Voice[-PASSIVE] Causativiser[Class3]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class3]? TenseInfix[Class3] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class4] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class4]? Participle[Class4] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(Voice[-PASSIVE] Causativiser[Class4]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class4]? TenseInfix[Class4] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class5b] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class5b]? Participle[Class5b] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(Voice[-PASSIVE] Causativiser[Class5b]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class5b]? TenseInfix[Class5b] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class5c] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class5c]? Participle[Class5c] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(Voice[-PASSIVE] Causativiser[Class5c]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class5c]? TenseInfix[Class5c] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class5d] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class5d]? Participle[Class5d] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(Voice[-PASSIVE] Causativiser[Class5d]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class5d]? TenseInfix[Class5d] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class6] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class6]? Participle[Class6] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(Voice[-PASSIVE] Causativiser[Class6]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class6]? TenseInfix[Class6] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class7] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class7]? Participle[Class7] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(Voice[-PASSIVE] Causativiser[Class7]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class7]? TenseInfix[Class7] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class1a,WEAKDOUBCAUS] (Voice[-PASSIVE] PassParticiple)|(Causativiser[WEAKDOUBCAUS]? Participle[Class1a] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(Voice[-PASSIVE] Causativiser[WEAKDOUBCAUS]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[WEAKDOUBCAUS]? TenseInfix[Class1a] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class3,WEAKDOUBCAUS] (Voice[-PASSIVE] PassParticiple)|(Causativiser[WEAKDOUBCAUS]? Participle[Class3] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(Voice[-PASSIVE] Causativiser[WEAKDOUBCAUS]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[WEAKDOUBCAUS]? TenseInfix[Class3] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class3,CAUSIRR2] (Voice[-PASSIVE] PassParticiple)|(Causativiser[CAUSIRR2]? Participle[Class3] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(Voice[-PASSIVE] Causativiser[CAUSIRR2]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[CAUSIRR2]? TenseInfix[Class3] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-TransVerbStem[Class3,PASSIVE] (Voice[PASSIVE] PassParticiple)|(Causativiser[Class3]? Participle[Class3] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(Voice[PASSIVE] Causativiser[Class3]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[PASSIVE] Causativiser[Class3]? TenseInfix[Class3] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
+TransVerbStem[Class1a] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class1a]? Participle[Class1a] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(Voice[-PASSIVE] Causativiser[Class1a]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class1a]? TenseInfix[Class1a] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+TransVerbStem[Class1b] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class1b]? Participle[Class1b] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(Voice[-PASSIVE] Causativiser[Class1b]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class1b]? TenseInfix[Class1b] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+TransVerbStem[Class2] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class2]? Participle[Class2] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(Voice[-PASSIVE] Causativiser[Class2]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class2]? TenseInfix[Class2] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+TransVerbStem[Class3] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class3]? Participle[Class3] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(Voice[-PASSIVE] Causativiser[Class3]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class3]? TenseInfix[Class3] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+TransVerbStem[Class4] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class4]? Participle[Class4] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(Voice[-PASSIVE] Causativiser[Class4]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class4]? TenseInfix[Class4] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+TransVerbStem[Class5b] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class5b]? Participle[Class5b] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(Voice[-PASSIVE] Causativiser[Class5b]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class5b]? TenseInfix[Class5b] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+TransVerbStem[Class5c] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class5c]? Participle[Class5c] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(Voice[-PASSIVE] Causativiser[Class5c]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class5c]? TenseInfix[Class5c] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+TransVerbStem[Class5d] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class5d]? Participle[Class5d] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(Voice[-PASSIVE] Causativiser[Class5d]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class5d]? TenseInfix[Class5d] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+TransVerbStem[Class6] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class6]? Participle[Class6] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(Voice[-PASSIVE] Causativiser[Class6]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class6]? TenseInfix[Class6] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+TransVerbStem[Class7] (Voice[-PASSIVE] PassParticiple)|(Causativiser[Class7]? Participle[Class7] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(Voice[-PASSIVE] Causativiser[Class7]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[Class7]? TenseInfix[Class7] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+TransVerbStem[Class1a,WEAKDOUBCAUS] (Voice[-PASSIVE] PassParticiple)|(Causativiser[WEAKDOUBCAUS]? Participle[Class1a] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(Voice[-PASSIVE] Causativiser[WEAKDOUBCAUS]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[WEAKDOUBCAUS]? TenseInfix[Class1a] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+TransVerbStem[Class3,WEAKDOUBCAUS] (Voice[-PASSIVE] PassParticiple)|(Causativiser[WEAKDOUBCAUS]? Participle[Class3] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(Voice[-PASSIVE] Causativiser[WEAKDOUBCAUS]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[WEAKDOUBCAUS]? TenseInfix[Class3] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+TransVerbStem[Class3,CAUSIRR2] (Voice[-PASSIVE] PassParticiple)|(Causativiser[CAUSIRR2]? Participle[Class3] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(Voice[-PASSIVE] Causativiser[CAUSIRR2]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[-PASSIVE] Causativiser[CAUSIRR2]? TenseInfix[Class3] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+TransVerbStem[Class3,PASSIVE] (Voice[PASSIVE] PassParticiple)|(Causativiser[Class3]? Participle[Class3] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(Voice[PASSIVE] Causativiser[Class3]? TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[PASSIVE] Causativiser[Class3]? TenseInfix[Class3] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
 ### Irregular
 TransVerbStem Nominalizer[VERBInd] Number[Pl1] Cases[NN]|EmphaticCli
 TransVerbStem TenseInfix[P3EP] PNG[P3EP]
@@ -162,22 +162,22 @@ TransVerbStem NegSuffix[-INF]
 TransVerbStem Negation[Nor] PNG[P3EP]
 ## Intransitives
 ### REGULAR
-IntraVerbStem[Class1a] [ <actv>: ] (Participle[Class1a] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1a] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class1b] [ <actv>: ] (Participle[Class1b] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1b] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class1c] [ <actv>: ] (Participle[Class1c] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1c] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class2] [ <actv>: ] (Participle[Class2] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class2] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class3] [ <actv>: ] (Participle[Class3] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class3Irr] [ <actv>: ] (Participle[Class3Irr] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3Irr] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class4] [ <actv>: ] (Participle[Class4] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class4] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class5a] [ <actv>: ] (Participle[Class5a] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class5a] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class5d] [ <actv>: ] (Participle[Class5d] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class5d] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class6] [ <actv>: ] (Participle[Class6] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class6] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class7] [ <actv>: ] (Participle[Class7] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class7] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class1a,INTRACAUS] [ <actv>: ] Causativiser[INTRACAUS]? (Participle[Class1a] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1a] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class3,INTRACAUS] [ <actv>: ] Causativiser[INTRACAUS]? (Participle[Class3] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class7,CAUSIRR1] [ <actv>: ] Causativiser[CAUSIRR1]? (Participle[Class7] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class7] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class7,STRONGDOUBCAUS] [ <actv>: ] Causativiser[STRONGDOUBCAUS]? (Participle[Class7] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class7] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
-IntraVerbStem[Class3,PASSIVE] (Voice[PASSIVE] PassParticiple)|(Participle[Class3] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph)?)|(Voice[PASSIVE] TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[PASSIVE] TenseInfix[Class3] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?))
+IntraVerbStem[Class1a] [ <actv>: ] (Participle[Class1a] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1a] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+IntraVerbStem[Class1b] [ <actv>: ] (Participle[Class1b] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1b] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+IntraVerbStem[Class1c] [ <actv>: ] (Participle[Class1c] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1c] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+IntraVerbStem[Class2] [ <actv>: ] (Participle[Class2] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class2] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+IntraVerbStem[Class3] [ <actv>: ] (Participle[Class3] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+IntraVerbStem[Class3Irr] [ <actv>: ] (Participle[Class3Irr] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3Irr] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+IntraVerbStem[Class4] [ <actv>: ] (Participle[Class4] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class4] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+IntraVerbStem[Class5a] [ <actv>: ] (Participle[Class5a] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class5a] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+IntraVerbStem[Class5d] [ <actv>: ] (Participle[Class5d] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class5d] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+IntraVerbStem[Class6] [ <actv>: ] (Participle[Class6] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class6] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+IntraVerbStem[Class7] [ <actv>: ] (Participle[Class7] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class7] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+IntraVerbStem[Class1a,INTRACAUS] [ <actv>: ] Causativiser[INTRACAUS]? (Participle[Class1a] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class1a] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+IntraVerbStem[Class3,INTRACAUS] [ <actv>: ] Causativiser[INTRACAUS]? (Participle[Class3] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class3] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+IntraVerbStem[Class7,CAUSIRR1] [ <actv>: ] Causativiser[CAUSIRR1]? (Participle[Class7] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class7] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+IntraVerbStem[Class7,STRONGDOUBCAUS] [ <actv>: ] Causativiser[STRONGDOUBCAUS]? (Participle[Class7] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(TenseInfix[Class7] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
+IntraVerbStem[Class3,PASSIVE] (Voice[PASSIVE] PassParticiple)|(Participle[Class3] ((AspAuxSuffix PNG[Nor]?)|EmphaticCli|EndwordMorph|Concessive[PART])?)|(Voice[PASSIVE] TenseInfix[E] PNG[-P3EP,Nor] InterroClitic?)|(Voice[PASSIVE] TenseInfix[Class3] (Nominalizer[VERB] Cases[P]|EmphaticCli)|(PNG[Nor] InterroClitic?)|Concessive)
 IntraVerbStem[ClassDef] [ <actv>: ] Causativiser? Aspect|(Negation[Nor] PNG[Nor]) InterroClitic?
 # Irregular
 IntraVerbStem Nominalizer[VERBInd] Number[Pl1] Cases[NN]|EmphaticCli
@@ -211,9 +211,9 @@ IntraVerbStem Negation[Nor] PNG[P3EP]
 # Adjectives
 Adjectives[IND] [ <adj>: ] EndwordMorph?
 Adjectives[BOTH] [ <adj>: ] EndwordMorph?
-Adjectives[IND] [ <adj>: ] ((Adverbializer EndwordMorph?)|(Nominalizer[ADJ] Number[ANoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?))
-Adjectives[BOTH] [ <adj>: ] ((Adverbializer EndwordMorph?)|(Nominalizer[ADJ] (Adjectivizer EndwordMorph?)|(Number[ANoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?)))
-Adjectives[FROZE] [ <adj>: ] Nominalizer[ADJ] Number[ANoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic EndwordMorph?
+Adjectives[IND] [ <adj>: ] ((Adverbializer EndwordMorph?)|(Nominalizer[ADJ] Number[ANoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?))
+Adjectives[BOTH] [ <adj>: ] ((Adverbializer EndwordMorph?)|(Nominalizer[ADJ] (Adjectivizer EndwordMorph?)|(Number[ANoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?)))
+Adjectives[FROZE] [ <adj>: ] Nominalizer[ADJ] Number[ANoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
 Adjectives [ <adj>: ] Predicative[NPREDS] Number[ENS]
 Adjectives [ <adj>: ] Predicative[NPREDP] Number[ENP] 
 Adjectives [ <adj>: ] Predicative[PREDP] Number[EHIrr2] Honorifics[EHIrr2]
@@ -475,7 +475,11 @@ LEXICON Professionalizer
 
 ################## TOTALIZING CLITIC
 LEXICON TotalClitic
-<tot>:>{Um}ம்                                # 'um'                 fully
+<tot>:>{Um}ம்                             # 'um'        fully
+
+################## CONJUNCTIVE
+LEXICON Conjuctive
+<cnjcoo>:>{Um}ம்                          # 'um'        and
 
 ########################### VERBS
 ################## VOICE
@@ -733,13 +737,24 @@ LEXICON TenseInfix
 <fut>:[NHumE2]                                                                      # null
 <fut>:>{UA}ம{Pul}[NHumE]                                                           # 'um'
 
+################## CONCESSIVE
+LEXICON Concessive
+<concess>:>{AAv}ல>{U}ம்                   # 'aalum'        even if
+<concess>:>{U}ம்[PART]                     # 'um'           even if
+
 ########################### PRONOUNS
+################## HUMAN RADICAL
 LEXICON HumanRadical
 # Added to indefinite pronouns
 # human
 <h>:>{A}ர{Pul}[Hum]           # 'ar'
 # non-human
 <nh>:>{A}த்{TH}{Pul}[NHum]     # 'att'
+
+########################### NUMBERS
+################## MEASUREMENT
+LEXICON Measurement
+<msr>:>{AV}டி            # 'ti'     feet
 
 ################################     PARTICLES     ################################
 LEXICON EmphaticPart
@@ -838,6 +853,7 @@ LEXICON Nouns
 ரத்னம்<np><m><aa>:ரத்ன{M}{Pul}[AA,MGEN,Pl2]                        # 'Ratnam'
 ரத்தினம்<np><m><aa>:ரத்தின{M}{Pul}[AA,MGEN,Pl2]                    # 'Ratnam'           Dir/LR
 அருள்<np><m><aa>:அருள{Pul}[AA,Pl2]                                # 'Arul'
+அருளாய்<np><m><aa>:அருளாய{Pul}[AA,Pl2]                          # 'Arul'             Dir/LR
 செல்லையா<np><m><aa>:செல்லைய{AA}[AA,Pl2]                      # 'Chelliah'
 ### -N or -R ending irregulars
 முருகன்<np><m><aa>:முருக{NP}{Pul}[AA,Pl2]                          # 'Murugan'
@@ -1010,10 +1026,13 @@ LEXICON Nouns
 
 # Class 1
 பேனா<n><nn>:பேன{AA}[NN,Pl1]                                    # 'peena'           pen                loanword (Portuguese)
+மேசை<n><nn>:மேச{AI}[NN,Pl1]                                   # 'meecay'          table               loanword (Portuguese)
+மேஜை<n><nn>:மேஜ{AI}[NN,Pl1]                                   # 'meejay'          table               loanword (Portuguese)                Dir/LR
 கார்<n><nn>:கார{Pul}[NN,Pl1]                                      # 'kaar'            car                loanword (English)
 சைக்கிள்<n><nn>:சைக்கிள{Pul}[NN,Pl1]                            # 'caykkil'         cycle              loanword (English)
 பாட்டில்<n><nn>:பாட்டில{Pul}[NN,Pl1]                               # 'paattil'        bottle              loanword (English)
 பூத்தல்<n><nn>:பூத்தல{Pul}[NN,Pl1]                                 # 'pooththal'      bottle              loanword (English)                   Dir/LR
+மைல்<n><nn>:மைல{Pul}[NN,Pl1]                                   # 'mayl'            mile               loanword (English)
 வதந்தி<n><nn>:வதந்த{I}[NN,Pl1]                                   # 'vathanthi'       rumor              loanword (Sanskrit)
 அவை<n><nn>:அவ{AI}[NN,Pl1]                                     # 'avay'            audience           loanword (Sanskrit)
 வேகம்<n><nn>:வேகம{Pul}[NN,Pl1]                                 # 'veekam'          speed              loanword (Sanskrit)
@@ -1022,6 +1041,7 @@ LEXICON Nouns
 ஆயுதம்<n><nn>:ஆயுத{M}{Pul}[NN,MGEN,Pl1]                         # 'aayutham'        instrument         loanword (Sanskrit)
 புத்தகம்<n><nn>:புத்தக{M}{Pul}[NN,MGEN,Pl1]                        # 'puththakam'      book               loanword (Sanskrit)
 புஸ்தகம்<n><nn>:புஸ்தக{M}{Pul}[NN,MGEN,Pl1]                      # 'pusthakam'       book               loanword (Sanskrit)                   Dir/LR
+தூரம்<n><nn>:தூர{M}{Pul}[NN,MGEN,Pl1]                            # 'thooram'          distance           loanword (Sanskrit)
 சங்கம்<n><nn>:சங்க{M}{Pul}[NN,MGEN,Pl1]                          # 'cankam'          association        loanword (Sanskrit)
 சங்க<n><nn>:சங்க[NN,Pl1]                                         # 'canka'           association        loanword (Sanskrit)                   Dir/LR
 தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                  # 'thapaal'         letter             loanword (Hindustani)
@@ -1035,20 +1055,17 @@ LEXICON Nouns
 இரவு<n><nn>:இரவ{U}[NN,Pl1]                                       # 'irvu'            night
 பெட்டி<n><nn>:பெட்ட{I}[NN,Pl1]                                    # 'petti'           box
 மூடி<n><nn>:மூட{I}[NN,Pl1]                                         # 'muuti'           lid
+அடி<n><nn>:அட{I}[NN,Pl1]                                          # 'ati'            foot
 கத்தி<n><nn>:கத்த{I}[NN,Pl1]                                       # 'kaththi'         knife
 வேட்டி<n><nn>:வேட்ட{I}[NN,Pl1]                                    # 'veetti'          dhoti
 ஊசி<n><nn>:ஊச{I}[NN,Pl1]                                        # 'uuci'            needle
 மணி<n><nn>:மண{I}[NN,Pl1]                                      # 'mani'             hour
 நுனி<n><nn>:நுன{I}[NN,Pl1]                                       # 'nuni'             edge
-கூரை<n><nn>:கூர{AI}[NN,Pl1]                                      # 'kooray'          roof
-கடை<n><nn>:கட{AI}[NN,Pl1]                                       # 'katay'           shop
-தோசை<n><nn>:தோச{AI}[NN,Pl1]                                  # 'thoocay'         dosa
-பிழை<n><nn>:பிழ{AI}[NN,Pl1]                                      # 'pizhay'         error
-சீலை<n><nn>:சீல{AI}[NN,Pl1]                                      # 'ciilay'          saree
-சேலை<n><nn>:சேல{AI}[NN,Pl1]                                   # 'ceellay'         saree               Dir/LR
+புத்திமதி<n><nn>:புத்திமத{I}[NN,Pl1]                               # 'puththimathi'    advice
 காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                           # 'kaaiccal'        fever
 கால்<n><nn>:கால{Pul}[NN,Pl1]                                     # 'kaal'            leg
 வால்<n><nn>:வால{Pul}[NN,Pl1]                                     # 'vaal'            tail
+சுவர்<n><nn>:சுவர{Pul}[NN,Pl1]                                     # 'cuvar'           wall
 மரம்<n><nn>:மர{M}{Pul}[NN,MGEN,Pl1]                               # 'maram'           tree
 மனம்<n><nn>:மன{M}{Pul}[NN,MGEN,Pl1]                            # 'manam'           mind
 திருமணம்<n><nn>:திருமண{M}{Pul}[NN,MGEN,Pl1]                   # 'thirumanam'      wedding
@@ -1065,11 +1082,12 @@ LEXICON Nouns
 வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                 # 'vayiru'          stomach
 
 ## Quality Nouns <nq> (can take Adjectivizer [NQ])
-குணம்<nq><nn>:குண{M}{Pul}[NN,MGEN,Pl1,NQ]                      # 'kunam'           quality           loanword (Sanskrit)
-யோக்கியம்<nq><nn>:யோக்கிய{M}{Pul}[NN,MGEN,Pl1,NQ]            # 'yookkiyam'       integrity         loanword (Sanskrit)
-உயரம்<nq><nn>:உயர{M}{Pul}[NN,MGEN,Pl1,NQ]                     # 'uyaram'           height
-இரக்கம்<nq><nn>:இரக்க{M}{Pul}[NN,MGEN,Pl1,NQ]                   # 'irakkam'         compassion
-நீளம்<nq><nn>:நீள{M}{Pul}[NN,MGEN,Pl1,NQ]                         # 'neelam'          length
+குணம்<nq><nn>:குண>{M}{Pul}[NN,MGEN,Pl1,NQ]                     # 'kunam'           quality           loanword (Sanskrit)
+யோக்கியம்<nq><nn>:யோக்கிய>{M}{Pul}[NN,MGEN,Pl1,NQ]           # 'yookkiyam'       integrity         loanword (Sanskrit)
+உயரம்<nq><nn>:உயர>{M}{Pul}[NN,MGEN,Pl1,NQ]                    # 'uyaram'           height
+இரக்கம்<nq><nn>:இரக்க>{M}{Pul}[NN,MGEN,Pl1,NQ]                  # 'irakkam'         compassion
+நீளம்<nq><nn>:நீள>{M}{Pul}[NN,MGEN,Pl1,NQ]                        # 'neelam'          length
+அகலம்<nq><nn>:அகல{M}{Pul}[NN,MGEN,Pl1,NQ]                     # 'akalam'          width
 பெறுமதி<nq><nn>:பெறுமத{I}[NN,Pl1,NQ]                          # 'perumathi'       value
 எடை<nq><nn>:எட{AI}[NN,Pl1,NQ]                                   # 'etay'            weight
 
@@ -1083,6 +1101,12 @@ LEXICON Nouns
 தலை<n><nn>:தல{AI}[NN,Pl3]                                      # 'thalay'           head
 சட்டை<n><nn>:சட்ட{AI}[NN,Pl3]                                    # 'sattay'          shirt
 வேலை<n><nn>:வேல{AI}[NN,Pl3]                                   # 'veelay'          work
+கூரை<n><nn>:கூர{AI}[NN,Pl3]                                      # 'kooray'          roof
+கடை<n><nn>:கட{AI}[NN,Pl3]                                       # 'katay'           shop
+தோசை<n><nn>:தோச{AI}[NN,Pl3]                                  # 'thoocay'         dosa
+பிழை<n><nn>:பிழ{AI}[NN,Pl3]                                      # 'pizhay'         error
+சீலை<n><nn>:சீல{AI}[NN,Pl3]                                      # 'ciilay'          saree
+சேலை<n><nn>:சேல{AI}[NN,Pl3]                                   # 'ceellay'         saree               Dir/LR
 
 # Class 4
 வான்<n><nn>:வான{Pul}[NN,Pl4]                                   # 'vaan'             van             loanword (English) (n does not change)
@@ -1166,11 +1190,12 @@ LEXICON TransVerbStem
 கொள்<v><tv>:க{O}{LN}{Pul}[Class1b,W]                # 'kol'         contain
 
 # Class 2
+சேர்<v><tv>:ச{EE}ர{Pul}[Class2,W]                     # 'ceer'        join                     Paired
 தா<v><tv>:த{AAIrr}[Class2,INF,I1]                    # 'thaa'        give                    Irregular
 கொண்டுவா<v><tv>:கொண்டுவ{AAIrr}[Class2,INF,I1] # 'kontuvaa'    bring                   Irregular
 அறி<v><tv>:அற{I}[Class2,W]                          # 'ari'         find out
 தெரி<v><tv>:தெர{I}[Class2,W]                        # 'theri'       test
-தேர்<v><tv>:தேர{Pul}[Class2,W]                       # 'theer'       select
+தேர்<v><tv>:த{EE}ர{Pul}[Class2,W]                    # 'theer'       select
 
 # Class 3
 பண்ணு<vbdo><tv>:பண்ண{U}[Class3,W]                # 'pannu'       do
@@ -1186,6 +1211,7 @@ LEXICON TransVerbStem
 கட்டு<v><tv>:கட்ட{U}[Class3,W]                        # 'kattu'       tie                      Paired
 ஏறு<v><tv>:ஏற{U}[Class3,W]                           # 'eeru'        climb                    Paired
 ஆக்கு<v><tv>:ஆக்க{U}[Class3,W]                      # 'aakku'       make                     Paired
+துரத்து<v><tv>:துரத்த{U}[Class3,W]                    # 'thuraththu'  chase
 ஓட்டு<v><tv>:ஓட்ட{U}[Class3,W]                       # 'oottu'       drive
 நீந்து<v><tv>:நீந்த{U}[Class3,W]                        # 'neentu'      swim
 எழுது<v><tv>:எழுத{U}[Class3,CAUSIRR2,W]              # 'ezhuthu'     write
@@ -1226,6 +1252,7 @@ LEXICON TransVerbStem
 நனை<v><iv>:நன{AI}[Class6,S]                       # 'nanay'       wet                       Paired
 கெடு<v><tv>:கெட{U}[Class6,S]                        # 'ketu'        spoil                     Paired
 மேய்<v><tv>:ம{EE}{Y}{Pul}[Class6,S]                  # 'mei'         graze                     Paired
+சேர்<v><tv>:ச{EE}ர{Pul}[Class6,S]                     # 'ceer'        join                      Paired
 கண்டி<v><tv>:கண்ட{I}[Class6,S]                     # 'kanti'       condemn                   loanword (Sanskrit)
 எடு<v><tv>:எட{U}[Class6,S]                           # 'etu'         take
 கொடு<v><tv>:கொட{U}[Class6,S]                     # 'kotu'        give
@@ -1269,9 +1296,10 @@ LEXICON IntraVerbStem
 நனை<v><iv>:நன{AI}[Class2,W]                       # 'nanay'       wet                      Paired
 நிமிர்<v><iv>:நிமிர{Pul}[Class2,W]                     # 'nimir'       erect                    Paired
 மேய்<v><iv>:ம{EE}{Y}{Pul}[Class2,W]                  # 'mei'         graze                    Paired
+சேர்<v><iv>:ச{EE}ர{Pul}[Class2,W]                     # 'ceer'        unite                     Paired
 வா<v><iv>:வ{AAIrr}[Class2,INF,I1]                    # 'vaa'         come                    Irregular
 விழு<v><iv>:விழ{U}[Class2,W]                         # 'vizhu'       fall
-தேர்<v><iv>:தேர{Pul}[Class2,W]                       # 'theer'       proficient
+தேர்<v><iv>:த{EE}ர{Pul}[Class2,W]                    # 'theer'       proficient
 
 # Class 3
 ஒட்டு<v><iv>:ஒட்ட{U}[Class3,W]                        # 'ottu'        adhere                  Paired
@@ -1311,7 +1339,7 @@ LEXICON IntraVerbStem
 சிரி<v><iv>:சிர{I}[Class6,S]                           # 'siri'        laugh
 தெரி<v><iv>:தெர{I}[Class6,S]                        # 'theri'       perverse
 கிடை<v><iv>:கிட{AI}[Class6,S]                       # 'kitay'       be available
-தேர்<v><iv>:தேர{Pul}[Class6,S]                       # 'theer'       mingle
+தேர்<v><iv>:த{EE}ர{Pul}[Class6,S]                    # 'theer'       mingle
 
 # Class 7
 மற<v><iv>:மற[Class7,S]                             # 'mara'        forget                   Paired
@@ -1328,10 +1356,13 @@ LEXICON IntraVerbStem
 ################################     ADJECTIVES     ################################
 LEXICON Adjectives
 # Some are independent
-உச்சி:உச்சி[IND]                          # 'ucci'         top             loanword (Sanskrit)
+உச்சி:உச்ச{I}[IND]                        # 'ucci'         top             loanword (Sanskrit)
 நல்ல:நல்ல[IND]                           # 'nalla'       good
 பெரிய:பெரி{Y}[IND]                      # 'periya'       big
-ஊத்தை:ஊத்தை[IND]                     # 'uttay'       dirty
+ஊத்தை:ஊத்த{AI}[IND]                   # 'uttay'       dirty
+உயர:உயர[IND]                          # 'uyara'        high
+நீள:நீள[IND]                             # 'neela'        long
+அகல:அகல[IND]                         # 'akala'        wide
 ## Some can take nomz, adjz both
 தனி:தன{I}[BOTH]                        # 'thani'        solo
 # Some are frozen (require suffixes)
@@ -1429,7 +1460,7 @@ LEXICON CasePost
 ################################     NUMBERS     ################################
 PATTERN Numbers
 Numeral [ <num>: ]
-NumStems [ <num>: ] Cases[NN]? EndwordMorph?
+NumStems [ <num>: ] Measurement|Cases[NN] EndwordMorph?
 
 LEXICON NumStems
 ஒன்று:ஒன்ற{U}                                     # 'onru'             one
@@ -1438,6 +1469,7 @@ LEXICON NumStems
 ரெண்டு:ரெண்ட{U}                                  # 'rendu'            two         Dir/LR
 மூன்று:மூன்ற{U}                                    # 'moonru'           three
 நான்கு:நான்க{U}                                    # 'naanku'           four
+நாலு:நால{U}                                        # 'naalu'            four        Dir/LR
 ஐந்து:ஐந்த{U}                                       # 'aynthu'           five
 ஆறு:ஆற{U}                                        # 'aaru'             six
 ஏழு:ஏழ{U}                                          # 'eezhu'            seven
