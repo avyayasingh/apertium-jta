@@ -596,6 +596,7 @@ LEXICON Participle
 <par><adj><past>:>ஞ{Pul}ச[Class2]                                                            # 'njc'         Dir/LR
 <par><adj><past>:>{I}ய[Class3]                                                               # 'iya'
 <par><adj><past>:>ன[Class3Irr]                                                               # 'n'
+<par><adj><past>:>ச{Pul}ச[Class3Irr]                                                         # 'cc'           Dir/LR
 <par><adj><past>:>{TR}[Class4]                                                                # 'r'/'t'
 <par><adj><past>:>{RR}[Class5a]                                                               # 'r'
 <par><adj><past>:>{Nn}[Class5b]                                                               # 'n'
@@ -686,6 +687,7 @@ LEXICON TenseInfix
 <past>:>ஞ{Pul}ச[Class2]                                                            # 'njc'       Dir/LR
 <past>:>{I}ன[Class3]                                                               # 'in'
 <past>:>ன[Class3Irr]                                                               # 'n'
+<past>:>ச{Pul}ச[Class3Irr]                                                         # 'cc'        Dir/LR
 <past>:>{TR}[Class4]                                                                # 'r'/'t'
 <past>:>{RR}[Class5a]                                                               # 'r'
 <past>:>{Nn}[Class5b]                                                               # 'n'
@@ -854,6 +856,7 @@ LEXICON Nouns
 ரத்தினம்<np><m><aa>:ரத்தின{M}{Pul}[AA,MGEN,Pl2]                    # 'Ratnam'           Dir/LR
 அருள்<np><m><aa>:அருள{Pul}[AA,Pl2]                                # 'Arul'
 அருளாய்<np><m><aa>:அருளாய{Pul}[AA,Pl2]                          # 'Arul'             Dir/LR
+மணி<np><m><aa>:மண{I}[AA,Pl2]                                    # 'Mani'
 செல்லையா<np><m><aa>:செல்லைய{AA}[AA,Pl2]                      # 'Chelliah'
 ### -N or -R ending irregulars
 முருகன்<np><m><aa>:முருக{NP}{Pul}[AA,Pl2]                          # 'Murugan'
@@ -879,12 +882,12 @@ LEXICON Nouns
 
 # Class 5 (loanwords)
 ## UNISEX
+விதானயார்<n><mf><aa>:விதானயார{Pul}[AA,Pl5]                    # 'vithaanayaar'    village headman                    loanword (Sinhala)
 எஞ்சினியர்<n><mf><aa>:எஞ்சினியர{Pul}[AA,Pl5]                     # 'enjciniyar'      engineer                           loanword (English)
 கிளார்க்<n><mf><aa>:கிளார்க்{Pul}[AA,Pl5]                            # 'kilaakku'        clerk                              loanword (English)
 மேனேஜர்<n><mf><aa>:மேனேஜர{Pul}[AA,Pl5]                         # 'maneeccar'       manager                           loanword (English)
 டாக்டர்<n><mf><aa>:டாக்டர{Pul}[AA,Pl5]                              # 'taaktar'         doctor                            loanword (English)
 வாத்தியார்<n><mf><aa>:வாத்தியார{Pul}[AA,Pl5]                      # 'vaaththiyaar'    teacher                            loanword (Sanskrit)
-விதானயார்<n><mf><aa>:விதானயார{Pul}[AA,Pl5]                     # 'vithaanayaar'    village headman
 
 # Class 6
 ## FEMALE
@@ -1005,11 +1008,11 @@ LEXICON Nouns
 காற்று<n><nn>:காற்ற{U}[NN,UNoun]                                  # 'kaarru'          wind
 பொன்<n><nn>:பொ{N}{Pul}[NN,UNoun]                               # 'pon'             gold
 ## Time Nouns
-வருடம்<n><nn>:வருட{M}{Pul}[NN,TiNoun]                             # 'varutam'         year               loanword (Sanskrit)
-வருசம்<n><nn>:வருச{M}{Pul}[NN,TiNoun]                             # 'varucam'         year               Dir/LR
-இன்று<n><nn>:இன்ற{U}[NN,TiNoun]                                   # 'inru'            today
-நாளை<n><nn>:நாள{AI}[NN,TiNoun]                                  # 'naalay'          tomorrow
-நேற்று<n><nn>:நேற்ற{U}[NN,TiNoun]                                  # 'neerru'          yesterday
+வருடம்<time>:வருட{M}{Pul}[NN,TiNoun]                             # 'varutam'         year               loanword (Sanskrit)
+வருசம்<time>:வருச{M}{Pul}[NN,TiNoun]                             # 'varucam'         year               Dir/LR
+இன்று<time>:இன்ற{U}[NN,TiNoun]                                   # 'inru'            today
+நாளை<time>:நாள{AI}[NN,TiNoun]                                  # 'naalay'          tomorrow
+நேற்று<time>:நேற்ற{U}[NN,TiNoun]                                  # 'neerru'          yesterday
 # Abstract nouns 
 ## Nouns that can attach Adjectivizer [NQ]
 ## Emotions
@@ -1025,7 +1028,8 @@ LEXICON Nouns
 தனி<nq><nn>:தன{I}[NN,ANoun,NQ]                                   # 'thani'           solitude           Dir/LR
 
 # Class 1
-பேனா<n><nn>:பேன{AA}[NN,Pl1]                                    # 'peena'           pen                loanword (Portuguese)
+தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                  # 'thapaal'        letter              loanword (Dutch)
+பேனா<n><nn>:பேன{AA}[NN,Pl1]                                   # 'peena'           pen                 loanword (Portuguese)
 மேசை<n><nn>:மேச{AI}[NN,Pl1]                                   # 'meecay'          table               loanword (Portuguese)
 மேஜை<n><nn>:மேஜ{AI}[NN,Pl1]                                   # 'meejay'          table               loanword (Portuguese)                Dir/LR
 கார்<n><nn>:கார{Pul}[NN,Pl1]                                      # 'kaar'            car                loanword (English)
@@ -1044,7 +1048,6 @@ LEXICON Nouns
 தூரம்<n><nn>:தூர{M}{Pul}[NN,MGEN,Pl1]                            # 'thooram'          distance           loanword (Sanskrit)
 சங்கம்<n><nn>:சங்க{M}{Pul}[NN,MGEN,Pl1]                          # 'cankam'          association        loanword (Sanskrit)
 சங்க<n><nn>:சங்க[NN,Pl1]                                         # 'canka'           association        loanword (Sanskrit)                   Dir/LR
-தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                  # 'thapaal'         letter             loanword (Hindustani)
 ரூபாய்<n><nn>:ரூபா{Y}{Pul}[NN,Pl1]                               # 'roopaai'         rupee              loanword (Hindustani)
 உரூபாய்<n><nn>:உரூபா{Y}{Pul}[NN,Pl1]                           # 'uroopaai'        rupee              loanword (Hindustani)                 Dir/LR
 ரூபா<n><nn>:ரூப{AA}[NN,Pl1]                                      # 'roopaa'          rupee              loanword (Hindustani)                 Dir/LR
@@ -1080,6 +1083,17 @@ LEXICON Nouns
 சாப்பாடு<n><nn>:சாப்பா{T}{U}[NN,Pl1]                            # 'caappatu'        food
 மணிக்கூடு<n><nn>:மணிக்கூ{T}{U}[NN,Pl1]                        # 'manikkootu'      watch
 வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                 # 'vayiru'          stomach
+
+## Days of the week
+திங்கள்<date>:திங்கள{Pul}[NN,Pl1]                               # 'thinkal'                  Monday
+திங்கட்கிழமை<date>:திங்கட்>கிழம{AI}[NN,Pl1]                   # 'thinkatkizhamay'          Monday             Dir/LR
+செவ்வாய்க்கிழமை<date>:செவ்வாய்>க்கிழம{AI}[NN,Pl1]          # 'sevvaaikkizhamay'        Tuesday
+புதன்கிழமை<date>:புதன்>கிழம{AI}[NN,Pl1]                      # 'puthankizhamay'          Wednesday
+வியாழக்கிழமை<date>:வியாழ>க்கிழம{AI}[NN,Pl1]               # 'viyaazhakkizhamay'        Thursday
+வெள்ளிக்கிழமை<date>:வெள்ளி>க்கிழம{AI}[NN,Pl1]              # 'vellikkizhamay'           Friday
+சனிக்கிழமை<date>:சனி>க்கிழம{AI}[NN,Pl1]                     # 'sanikkizhamay'            Saturday
+ஞாயிறு<date>:ஞாயிற{U}[NN,Pl1]                                 # 'njaayiru'                 Sunday
+ஞாயிற்றுக்கிழமை<date>:ஞாயிற்று>க்கிழம{AI}[NN,Pl1]           # 'njaayirrukkizhamay'       Sunday             Dir/LR
 
 ## Quality Nouns <nq> (can take Adjectivizer [NQ])
 குணம்<nq><nn>:குண>{M}{Pul}[NN,MGEN,Pl1,NQ]                     # 'kunam'           quality           loanword (Sanskrit)
@@ -1191,6 +1205,7 @@ LEXICON TransVerbStem
 
 # Class 2
 சேர்<v><tv>:ச{EE}ர{Pul}[Class2,W]                     # 'ceer'        join                     Paired
+தவிர்<v><tv>:தவ{I}ர{Pul}[Class2,W]                   # 'thavir'      leave                    Paired
 தா<v><tv>:த{AAIrr}[Class2,INF,I1]                    # 'thaa'        give                    Irregular
 கொண்டுவா<v><tv>:கொண்டுவ{AAIrr}[Class2,INF,I1] # 'kontuvaa'    bring                   Irregular
 அறி<v><tv>:அற{I}[Class2,W]                          # 'ari'         find out
@@ -1216,8 +1231,10 @@ LEXICON TransVerbStem
 நீந்து<v><tv>:நீந்த{U}[Class3,W]                        # 'neentu'      swim
 எழுது<v><tv>:எழுத{U}[Class3,CAUSIRR2,W]              # 'ezhuthu'     write
 விளக்கு<v><tv>:விளக்க{U}[Class3,W]                   # 'vilakku'     explain
+விலக்கு<v><tv>:விலக்க{U}[Class3,W]                   # 'vilakku'     put aside
 விளங்கு<v><tv>:விளங்க{U}[Class3,W]                  # 'vilanku'     understand
 வாங்கு<v><tv>:வாங்க{U}[Class3,W]                    # 'vaanku'      buy
+நீக்கு<v><tv>:நீக்க{U}[Class3,W]                        # 'neekku'      remove
 காட்டு<v><tv>:காட்ட{U}[Class3,W]                     # 'kaattu'      show
 பரப்பு<v><tv>:பரப்ப{U}[Class3,W]                      # 'parappu'     spread
 
@@ -1253,6 +1270,7 @@ LEXICON TransVerbStem
 கெடு<v><tv>:கெட{U}[Class6,S]                        # 'ketu'        spoil                     Paired
 மேய்<v><tv>:ம{EE}{Y}{Pul}[Class6,S]                  # 'mei'         graze                     Paired
 சேர்<v><tv>:ச{EE}ர{Pul}[Class6,S]                     # 'ceer'        join                      Paired
+தவிர்<v><tv>:தவ{I}ர{Pul}[Class6,S]                   # 'thavir'      put away                  Paired
 கண்டி<v><tv>:கண்ட{I}[Class6,S]                     # 'kanti'       condemn                   loanword (Sanskrit)
 எடு<v><tv>:எட{U}[Class6,S]                           # 'etu'         take
 கொடு<v><tv>:கொட{U}[Class6,S]                     # 'kotu'        give
@@ -1296,7 +1314,8 @@ LEXICON IntraVerbStem
 நனை<v><iv>:நன{AI}[Class2,W]                       # 'nanay'       wet                      Paired
 நிமிர்<v><iv>:நிமிர{Pul}[Class2,W]                     # 'nimir'       erect                    Paired
 மேய்<v><iv>:ம{EE}{Y}{Pul}[Class2,W]                  # 'mei'         graze                    Paired
-சேர்<v><iv>:ச{EE}ர{Pul}[Class2,W]                     # 'ceer'        unite                     Paired
+சேர்<v><iv>:ச{EE}ர{Pul}[Class2,W]                     # 'ceer'        unite                    Paired
+தவிர்<v><iv>:தவ{I}ர{Pul}[Class2,W]                   # 'thavir'      cease                    Paired
 வா<v><iv>:வ{AAIrr}[Class2,INF,I1]                    # 'vaa'         come                    Irregular
 விழு<v><iv>:விழ{U}[Class2,W]                         # 'vizhu'       fall
 தேர்<v><iv>:த{EE}ர{Pul}[Class2,W]                    # 'theer'       proficient
@@ -1327,6 +1346,7 @@ LEXICON IntraVerbStem
 # Class 4
 கெடு<v><iv>:கெ{T}{U}[Class4,W]                      # 'ketu'        spoil                    Paired
 படு<v><iv>:ப{T}{U}[Class4,W]                         # 'patu'        experience
+உட்படு<v><iv>:உட்ப{T}{U}[Class4,W]                  # 'utpatu'      include
 
 # Class 5a
 நில்<v><iv>:ந{I}{Ln}{Pul}[Class5a]                    # 'nil'         stand
@@ -1376,6 +1396,7 @@ LEXICON Adverbs
 சரியான:சரியான              # 'cariyaana'    very
 ரொம்ப:ரொம்ப                # 'rompa'        very                    Dir/LR
 கட்டாயம்:கட்டாயம{Pul}       # 'kattaayam'    definitely
+இன்னும்:இன்னும{Pul}         # 'innum'         more
 # Temporal
 இன்னும்:இன்னும{Pul}         # 'innum'         yet
 இப்பொழுது:இப்பொழுத{U}    # 'ippolutu'      now

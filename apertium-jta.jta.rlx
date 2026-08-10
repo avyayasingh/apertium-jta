@@ -23,7 +23,7 @@ LIST ADVZ = (advz);
 LIST V = (v) (vbser) (vbdo) (vaux);
 LIST PRN = (prn);
 LIST VBMOD = (vbmod);
-LIST N = (n);
+LIST N = (n) (np);
 LIST NMZ = (nmz);
 LIST ADV = (adv);
 LIST TV = (tv);
@@ -55,23 +55,23 @@ SELECT PL IF
     
 ## Genitive irregular
 SELECT GEN IF
-    (0 (n nom))
-    (0 (n gen))
-    (1 (n nom)) ;
+    (0 (n nom) OR (np nom))
+    (0 (n gen) OR (np gen))
+    (1 (n nom) OR (np nom)) ;
 
 SELECT NOM IF
-    (0 (n nom))
-    (0 (n gen))
-    (-1 (n gen)) ;
+    (0 (n nom) OR (np nom))
+    (0 (n gen) OR (np gen))
+    (-1 (n gen) OR (np gen)) ;
 
 SELECT NOM IF
-    (0 (n nom))
-    (0 (n gen))
+    (0 (n nom) OR (np nom))
+    (0 (n gen) OR (np gen))
     (1 (<<<));
 
 SELECT NOM IF
-    (0 (n nom))
-    (0 (n gen))
+    (0 (n nom) OR (np nom))
+    (0 (n gen) OR (np gen))
     (1 V);
 
 ## Adverbs
