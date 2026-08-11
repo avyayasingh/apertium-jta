@@ -920,11 +920,11 @@ LEXICON Nouns
 # Class 5 (loanwords)
 ## UNISEX
 விதானயார்<n><mf><aa>:விதானயார{Pul}[AA,Pl5]                    # 'vithaanayaar'    village headman                    loanword (Sinhala)
+வாத்தியார்<n><mf><aa>:வாத்தியார{Pul}[AA,Pl5]                      # 'vaaththiyaar'    teacher                            loanword (Sanskrit)
 எஞ்சினியர்<n><mf><aa>:எஞ்சினியர{Pul}[AA,Pl5]                     # 'enjciniyar'      engineer                           loanword (English)
 கிளார்க்<n><mf><aa>:கிளார்க்{Pul}[AA,Pl5]                            # 'kilaakku'        clerk                              loanword (English)
 மேனேஜர்<n><mf><aa>:மேனேஜர{Pul}[AA,Pl5]                         # 'maneeccar'       manager                           loanword (English)
 டாக்டர்<n><mf><aa>:டாக்டர{Pul}[AA,Pl5]                              # 'taaktar'         doctor                            loanword (English)
-வாத்தியார்<n><mf><aa>:வாத்தியார{Pul}[AA,Pl5]                      # 'vaaththiyaar'    teacher                            loanword (Sanskrit)
 
 # Class 6
 ## FEMALE
@@ -1068,9 +1068,19 @@ LEXICON Nouns
 
 # Class 1
 தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                  # 'thapaal'        letter              loanword (Dutch)
-பேனா<n><nn>:பேன{AA}[NN,Pl1]                                   # 'peena'           pen                 loanword (Portuguese)
-மேசை<n><nn>:மேச{AI}[NN,Pl1]                                   # 'meecay'          table               loanword (Portuguese)
-மேஜை<n><nn>:மேஜ{AI}[NN,Pl1]                                   # 'meejay'          table               loanword (Portuguese)                Dir/LR
+குசினி<n><nn>:குசின{I}[NN,Pl1]                                   # 'kucini'          kitchen            loanword (French)
+ரொட்டி<n><nn>:ரொட்ட{I}[NN,Pl1]                                 # 'rotti'           bread              loanword (Hindi)
+பீங்கான்<n><nn>:பீங்கான{Pul}[NN,Pl1]                             # 'peenkaan'       ceramic             loanword (Farsi)
+கொய்யா<n><nn>:கொய்ய{AA}[NN,Pl1]                             # 'koiyaa'          guava              loanword (Brazilian Portuguese)
+கொய்யல்<n><nn>:கொய்யல்{Pul}[NN,Pl1]                          # 'koiyal'          guava              loanword (Brazilian Portuguese)      Dir/LR
+கொய்யப்பழம்<n><nn>:கொய்யப்பழ{M}{Pul}[NN,MGEN,Pl1]          # 'koiyappazham'    guava              loanword (Brazilian Portuguese)      Dir/LR
+ரூபாய்<n><nn>:ரூபா{Y}{Pul}[NN,Pl1]                               # 'roopaai'         rupee              loanword (Hindustani)
+உரூபாய்<n><nn>:உரூபா{Y}{Pul}[NN,Pl1]                           # 'uroopaai'        rupee              loanword (Hindustani)                 Dir/LR
+ரூபா<n><nn>:ரூப{AA}[NN,Pl1]                                      # 'roopaa'          rupee              loanword (Hindustani)                 Dir/LR
+பப்பாளி<n><nn>:பப்பாள{I}[NN,Pl1]                                # 'pappaali'        papaya             loanword (Malay)
+பப்பளி<n><nn>:பப்பள{I}[NN,Pl1]                                  # 'pappali'         papaya             loanword (Malay)                      Dir/LR
+பப்பாசி<n><nn>:பப்பாச{I}[NN,Pl1]                                 # 'pappaaci'        papaya             loanword (Malay)                      Dir/LR
+பப்பாபழம்<n><nn>:பப்பாபழ{M}{Pul}[NN,MGEN,Pl1]                  # 'pappaapazham'    papaya             loanword (Malay)                      Dir/LR
 கார்<n><nn>:கார{Pul}[NN,Pl1]                                      # 'kaar'            car                loanword (English)
 சைக்கிள்<n><nn>:சைக்கிள{Pul}[NN,Pl1]                            # 'caykkil'         cycle              loanword (English)
 பாட்டில்<n><nn>:பாட்டில{Pul}[NN,Pl1]                               # 'paattil'        bottle              loanword (English)
@@ -1089,9 +1099,22 @@ LEXICON Nouns
 மேலதிகம்<n><nn>:மேலதிக{M}{Pul}[NN,MGEN,Pl1]                   # 'meelathikam'     extra              loanword (Sanskrit)
 சங்கம்<n><nn>:சங்க{M}{Pul}[NN,MGEN,Pl1]                          # 'cankam'          association        loanword (Sanskrit)
 சங்க<n><nn>:சங்க[NN,Pl1]                                         # 'canka'           association        loanword (Sanskrit)                   Dir/LR
-ரூபாய்<n><nn>:ரூபா{Y}{Pul}[NN,Pl1]                               # 'roopaai'         rupee              loanword (Hindustani)
-உரூபாய்<n><nn>:உரூபா{Y}{Pul}[NN,Pl1]                           # 'uroopaai'        rupee              loanword (Hindustani)                 Dir/LR
-ரூபா<n><nn>:ரூப{AA}[NN,Pl1]                                      # 'roopaa'          rupee              loanword (Hindustani)                 Dir/LR
+பேனா<n><nn>:பேன{AA}[NN,Pl1]                                   # 'peena'           pen                 loanword (Portuguese)
+பைலா<n><nn>:பைல{AA}[NN,Pl1]                                  # 'payla'           dance               loanword (Portuguese)
+அலமாரி<n><nn>:அலமார{I}[NN,Pl1]                               # 'alamaari'        cupboard           loanword (Portuguese)
+அலுபுநெதி<n><nn>:அலுபுநெத{I}[NN,Pl1]                          # 'alupunethi'      safety pin          loanword (Portuguese)
+சாவி<n><nn>:சாவ{I}[NN,Pl1]                                      # 'caavi'           key                 loanword (Portuguese)
+கடதாசி<n><nn>:கடதாச{I}[NN,Pl1]                                # 'katathaaci'      paper               loanword (Portuguese)
+அன்னாசி<n><nn>:அன்னாச{I}[NN,Pl1]                             # 'annaaci'         pineapple          loanword (Portuguese)
+அனாசி<n><nn>:அனாச{I}[NN,Pl1]                                 # 'anaci'           pineapple          loanword (Portuguese)                Dir/LR
+அன்னாசு<n><nn>:அன்னாச{U}[NN,Pl1]                             # 'annacu'          pineapple          loanword (Portuguese)                Dir/LR
+அலவாங்கு<n><nn>:அலவாங்க{U}[NN,Pl1]                          # 'alavaanku'       crowbar            loanword (Portuguese)
+அலுகோசு<n><nn>:அலுகோச{U}[NN,Pl1]                            # 'alukoocu'        executioner        loanword (Portuguese)
+காஜு<n><nn>:காஜ{U}[NN,Pl1]                                     # 'kaaju'           cashew             loanword (Portuguese)
+ஜன்னல்<n><nn>:ஜன்னல{Pul}[NN,Pl1]                              # 'jannal'          window             loanword (Portuguese)
+சன்னல்<n><nn>:சன்னல{Pul}[NN,Pl1]                               # 'cannal'         window              loanword (Portuguese)                Dir/LR
+கல்சன்<n><nn>:கல்சன{Pul}[NN,Pl1]                                # 'kalcan'         trousers            loanword (Portuguese)
+பான்<n><nn>:பான{Pul}[NN,Pl1]                                    # 'paan'            bread              loanword (Portuguese)
 தனி<n><nn>:தன{I}[NN,Pl1]                                        # 'thani'           singleness         Irregular
 காசு<n><nn>:காச{U}[NN,Pl1]                                        # 'kaacu'           money
 நெஞ்சு<n><nn>:நெஞ்ச{U}[NN,Pl1]                                   # 'nenjcu'          heart
@@ -1155,9 +1178,16 @@ LEXICON Nouns
 
 # Class 3
 சால்வை<n><nn>:சால்வ{AI}[NN,Pl3]                                # 'caalvay'         shawl             loanword (Hindustani)
+மேசை<n><nn>:மேச{AI}[NN,Pl3]                                   # 'meecay'          table              loanword (Portuguese)
+மேஜை<n><nn>:மேஜ{AI}[NN,Pl3]                                   # 'meejay'          table             loanword (Portuguese)                Dir/LR
+ரோதை<n><nn>:ரோத{AI}[NN,Pl3]                                  # 'roothay'         wheel             loanword (Portuguese)
+கதிரை<n><nn>:கதிர{AI}[NN,Pl3]                                   # 'kathiray'        chair             loanword (Portuguese)
+கமிசை<n><nn>:கமிச{AI}[NN,Pl3]                                  # 'kamicay'         shirt             loanword (Portuguese)
+கோப்பை<n><nn>:கோப்ப{AI}[NN,Pl3]                              # 'kooppay'         cup               loanword (Portuguese)
 கை<n><nn>:க{AI}[NN,Pl3]                                          # 'kay'             hand
 தலை<n><nn>:தல{AI}[NN,Pl3]                                      # 'thalay'           head
-சட்டை<n><nn>:சட்ட{AI}[NN,Pl3]                                    # 'sattay'          shirt
+சட்டை<n><nn>:சட்ட{AI}[NN,Pl3]                                    # 'cattay'          shirt
+கால்சட்டை<n><nn>:கால்சட்ட{AI}[NN,Pl3]                           # 'kaalcattay'     trousers
 வேலை<n><nn>:வேல{AI}[NN,Pl3]                                   # 'veelay'          work
 கூரை<n><nn>:கூர{AI}[NN,Pl3]                                      # 'kooray'          roof
 கடை<n><nn>:கட{AI}[NN,Pl3]                                       # 'katay'           shop
