@@ -58,6 +58,7 @@ Alphabet
      %{LN%}:ள %{LN%}:ண
      %{Ln%}:ல %{Ln%}:ன
      %{LLn%}:ல
+     %{LR%}:ல %{LR%}:ற
      %{PLR%}:ள
      %{R%}:ர
      %{RP%}:ர   
@@ -88,7 +89,7 @@ ConsonantR = க ங ச ஞ	ட ண த ந ப ம ய ர ல வ	ழ ள ன
 Mellinam = ங ஞ ண ந ம ன;
 Vallinam = க ச ட த ப ற;
 Idaiyinam = ய ர ல வ ழ ள;
-ConsonantRight = %{NP%} %{M%} %{N%} %{Nn%} %{NN%} %{NK%} %{K%} %{Kk%} %{L%} %{PL%} %{LK%} %{LN%} %{Ln%} %{LLn%} %{PLR%} %{R%} %{RP%} %{RR%} %{T%} %{LT%} %{TR%} %{TH%} %{P%} %{Y%} %{Yy%} %{C%} %{NR%} ;
+ConsonantLeft = %{NP%} %{M%} %{N%} %{Nn%} %{NN%} %{NK%} %{K%} %{Kk%} %{L%} %{PL%} %{LK%} %{LN%} %{Ln%} %{LLn%} %{PLR%} %{R%} %{RP%} %{RR%} %{T%} %{LT%} %{TR%} %{TH%} %{P%} %{Y%} %{Yy%} %{C%} %{NR%} ;
 
 RemConsonant = Mellinam ல ;
 
@@ -297,6 +298,9 @@ Rules
 "Starting with N"
 %{LLn%}:ன <=> _ %{Pul%}: %>: %{Nn%}: ;
 
+"Starting with Consonant"
+%{LR%}:ற <=> _ %{Pul%}: %>: :Consonant ;
+
 "Starting with K"
 %{Ln%}:ற <=> _ %{Pul%}: %>: [ %{K%}: | %{P%}: ] ;
 
@@ -349,7 +353,7 @@ Rules
 
 ! Vocative
 "Vocative vowel rules"
-%{VOW%}:ா <=> :Consonant ConsonantRight: %{Pul%}: %>: _ ;
+%{VOW%}:ா <=> :Consonant ConsonantLeft: %{Pul%}: %>: _ ;
 
 "Vocative vowel rules"
 %{VOW%}:ீ <=> %{I%}: %>: _ ;
@@ -380,7 +384,7 @@ Rules
 
 "Dropping consonant"
 C:0 <=> :Consonant _ %{Pul%}: %>: %{VOW%}: ;
-        where C in ConsonantRight ;
+        where C in ConsonantLeft ;
 
 ! Resources:
 ! https://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
