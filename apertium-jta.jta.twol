@@ -133,6 +133,7 @@ Rules
               :த _ :த ;
               :ச _ :ச ;
               :ஞ _ :ச ;
+              :ங _ :க ;
               %{P%}: _ %{P%}: ;
               [ SuffixVowels: | %{Ul%}: ] [ %{Yy%}: | %{Y%}: | %{Ln%}: | %{LN%}: | %{LLn%}: | %{LT%}: | :ண | :ர ] _ %>: [  %{RR%}: | %{P%}: | %{T%}: | :த | :ச | :வ | :ன ] ;
               [ SuffixVowels: | %{Ul%}: ] [ %{Yy%}: | %{Ln%}: | %{LN%}: | %{LLn%}: | :ண | :ர ] _ 0: %>: SuffixVowels: ;              
@@ -324,6 +325,7 @@ Rules
 0:ர <=> [ :த | :வ ] %{AAIrr%}: _ 0: %>: [ %{K%}: | :வ ] ;
         [ :த | :வ ] %{AAIrr%}: _ %>: SuffixVowels: ;
         [ :த | :வ ] %{AAIrr%}: _ %>: %{UIrr%}: ;
+        [ :த | :வ ] %{AAIrr%}: _ %>: %{U%}: :ங %{Pul%}: :க ; 
 
 "Inserting rU for thaa, vaa"
 0:Vy <=> [ :த | :வ ] %{AAIrr%}: 0: _ %>: [ %{K%}: | :வ ] ;
@@ -332,11 +334,14 @@ Rules
 "Dropping AA for thaa, vaa"
 %{AAIrr%}:0 <=> [ :த | :வ ] _ (0: 0:) %>: :ConsonantR ;
              [ :த | :வ ] _ 0: %>: [ SuffixVowels: | %{UIrr%}: ] ;
+             except 
+                [ :த | :வ ] _ 0: %>: %{U%}: :ங %{Pul%}: :க ;
 
 "Keeping AA for thaa, vaa"
 %{AAIrr%}:Vy <=> [ :த | :வ ] _ %>: :ற ;
                  [ :த | :வ ] _ .#. ;
-                 [ :த | :வ ] _ %>: %{Uimp%}: ;  
+                 [ :த | :வ ] _ %>: %{Uimp%}: ;
+                 [ :த | :வ ] _ 0: %>: %{U%}: :ங %{Pul%}: :க ;  
                  where Vy in ( ா ) ;
 
 "Dropping irregular U after OO for poo"

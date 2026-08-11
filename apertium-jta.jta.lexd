@@ -636,6 +636,7 @@ LEXICON Imperatives
 <imp><hon><sg>:>{U}ம{Pul}[POS]                    # 'um'               singular honorific
 <imp><hon><sg>:>{UIrr}ம{Pul}[POSIrr]              # 'um'               irregular singular honorific      Dir/LR
 <imp><pl>:>{Uimp}ங்கோ[POS,POSIrr]               # 'unkoo'            plural
+<imp><pl>:>{U}ங{Pul}கள்[POS,POSIrr]              # 'unkal'            irregular plural                  Dir/LR
 # negative imperative
 <neg><imp><sg>:>{AAv}த{EE}[NEG]                   # 'aathee'           singular
 <neg><imp><sg>:>{AA}த[NEG]                        # 'aatha'            singular                          Dir/LR
@@ -1294,8 +1295,8 @@ LEXICON TransVerbStem
 பார்<v><tv>:ப{AA}{R}{Pul}[Class6,S]                   # 'paar'        see
 
 # Class 7
-மற<v><tv>:மற[Class7,S]                              # 'mara'       forget                     Paired
-திற<v><tv>:திற[Class7,S]                              # 'tira'       open
+மற<v><tv>:மற{A}[Class7,S]                           # 'mara'       forget                     Paired
+திற<v><tv>:திற{A}[Class7,S]                           # 'tira'       open
 
 ################## INTRANSITIVE VERBS
 LEXICON IntraVerbStem
@@ -1367,16 +1368,16 @@ LEXICON IntraVerbStem
 தேர்<v><iv>:த{EE}ர{Pul}[Class6,S]                    # 'theer'       mingle
 
 # Class 7
-மற<v><iv>:மற[Class7,S]                             # 'mara'        forget                   Paired
+மற<v><iv>:மற{A}[Class7,S]                          # 'mara'        forget                   Paired
 இரு<vbser><iv>:இர{U}[Class7,Irr,S]                  # 'iru'         be
-கிட<v><iv>:கிட[Class7,Irr,S]                         # 'kita'        lie down
-பற<v><iv>:பற[Class7,S]                              # 'para'        fly
+கிட<v><iv>:கிட{A}[Class7,Irr,S]                      # 'kita'        lie down
+பற<v><iv>:பற{A}[Class7,S]                           # 'para'        fly
 
 ## Special irregular causative form
 இரு<v><iv>:இர{U}[Class7,CAUSIRR1,S]                 # 'iru'         sit/stay
 
 ### Special double causative
-நட<v><iv>:நட[Class7,CAUSIRR1,STRONGDOUBCAUS,S]      # 'nata'        walk
+நட<v><iv>:நட{A}[Class7,CAUSIRR1,STRONGDOUBCAUS,S]   # 'nata'        walk
 
 ################################     ADJECTIVES     ################################
 LEXICON Adjectives
