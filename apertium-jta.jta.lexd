@@ -14,11 +14,13 @@
 # <adj>    # Adjective
 # <adv>    # Adverb
 # <det>    # Determiner
+# <ij>     # Interjections
 # <comp>   # Comparative
 # <post>   # Postposition
 # <emph>   # Emphatic particle
 # <caus>   # Causative particle
 # <neg>    # Negative particle
+# <cnj>    # Conjunctions
 # <num>    # Numeral
 
 # <sent>   # Sentence-ending punctuation
@@ -66,6 +68,7 @@ InterroPrefix(1) PronounStems[LOC,EHIrr] Honorifics[EHIrr] Number[EHIrr] Cases[P
 PronounStems[-LOC,Obl,GPro] Number[PS] Cases[PS] (EndwordMorph|InterroClitic|Intensifier)?
 PronounStems[-LOC,Obl,GPro] Number[PL] Cases[PL] (EndwordMorph|InterroClitic|Intensifier)?
 PronounStems[-LOC,NObl,GPro] Number[GPro] (EndwordMorph|InterroClitic|Intensifier)?
+PronounStems[-LOC,NObl,PPro] Number[PPro] (EndwordMorph|InterroClitic|Intensifier)?
 #### Honorifics
 PronounStems[-LOC,Obl,PH] Honorifics[PH] Number[PH,PS] Cases[PS] (EndwordMorph|InterroClitic|Intensifier)?
 PronounStems[-LOC,Obl,IH] Honorifics[IH] Number[IH,PS] Cases[PS] (EndwordMorph|InterroClitic|Intensifier)?
@@ -242,10 +245,12 @@ Determiners[SUF] PNG[Nor]?
 Location(1) DeterStems Location(2) EndwordMorph?
 InterroPrefix(1) DeterStems InterroPrefix(2) EndwordMorph?
 # Others
+Interjections [ <ij>: ]
+Conjunctions
 Comparatives EndwordMorph?
 PostPositions [ <post>: ] EndwordMorph?
 CasePost
-EmphaticPart [ <emph>: ]
+EmphaticPart [ <emph>: ] InterroClitic?
 CausativePart [ <caus>: ]
 NegativePart
 VocativePart [ <voc>: ]
@@ -294,12 +299,12 @@ LEXICON Number
 # 0: a. Abstract nouns     [ANoun,QNoun]                         (Always singular)
 ##   b. Foodstuffs         [FNoun]                               (Always singular)
 ##   c. Toponyms           [TNoun]                               (Always singular)
-##   d. Pronouns           [GPro,FPro,PS]                        (Singular form)
+##   d. Pronouns           [GPro,PPro,FPro,PS]                   (Singular form)
 ##   e. Epicenes           [ES,ENS]                              (Dont have regular plural)
 ##   f. Regular Nouns      [Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]     (Singular form)
 ##   g. Honorifics         [IH,H,MH,FH,PH]                       (Forced singular for honorifics 'null')
 ##   h. Mass Nouns & Time  [UNoun,TiNoun]                        (Uncountable)
-<sg>:[ANoun,QNoun,FNoun,TNoun,GPro,FPro]          # null  singular
+<sg>:[ANoun,QNoun,FNoun,TNoun,GPro,PPro,FPro]     # null  singular
 <sg>:[ES,ENS,PS,Pl1,Pl2,Pl3,Pl4,Pl5,Pl6,Pl7,Pl8]  # null  singular
 <sg>:[IH,H,MH,FH,PH]                              # null  singular
 <unc>:[UNoun,TiNoun]                              # null  uncountable
@@ -313,8 +318,10 @@ LEXICON Number
 ###### GENERAL CLASSES
 # 1: Common Plural (Inanimate and Animate)
 # This plural also applies to pronouns generally [GPro]
-<pl>:>{K}{PL}{Pul}[Pl1,GPro,PL]       # 'kal'
+<pl>:>{K}{PL}{Pul}[Pl1,GPro,PPro,PL]  # 'kal'
 <pl>:>{K}{PL}{Pul}[MH,FH]             # 'kal'
+# irregular colloquial pronominal plural
+<pl>:>{K}[PPro]                       # 'ka'            Dir/LR
 
 # 2: Plurals of feminine Proper Nouns, people related to locations (Animate)
 # This plural also applies to female pronouns [FPro]
@@ -412,6 +419,7 @@ LEXICON Location(2)
 LEXICON InterroClitic
 <qst>:>{AAm}              # 'aa'
 <qst>:>{OOm}              # 'oo'      Dir/LR
+<qst>:>{EEm}              # 'ee'      Dir/LR
 
 LEXICON InterroPrefix(2)
 # instead of the usual clitic '-aa'/'-oo'
@@ -784,7 +792,7 @@ LEXICON Measurement
 
 ################################     PARTICLES     ################################
 LEXICON EmphaticPart
-தான்:தான்                             # 'thaan'
+தான்:தான{Pul}                        # 'thaan'
 
 LEXICON CausativePart
 வை:வைக்க                            # 'vaykka'
@@ -824,7 +832,7 @@ LEXICON PronounStems
 # human
 நான்<prn><p1><h>:நா{NP}{Pul}[GPro,NObl]             # 'naan'            I
 என்<prn><p1><h>:{El}{NP}{Pul}[GPro,Obl]              # 'en'              I          oblique stem for 'naan'
-நீ<prn><p2><h>:ந{II}{AN}[GPro,PH,IH,NObl]             # 'nii'            you
+நீ<prn><p2><h>:ந{II}{AN}[PPro,PH,IH,NObl]             # 'nii'            you
 உன்<prn><p2><h>:{Ul}{NP}{Pul}[GPro,PH,IH,Obl]        # 'un'             you        oblique stem for 'nee'
 வன்<prn><p3><m><h>:வ>{NR}{Pul}[LOC,GPro,MH]         # '-van'            -he
 வள்<prn><p3><f><h>:வ>{PL}{Pul}[LOC,FPro,FH]         # '-val'           -she
@@ -891,6 +899,7 @@ LEXICON Nouns
 
 ## FEMALE Proper Nouns
 கமலா<np><f><aa>:கமல{AA}[AA,Pl2]                                 # 'Kamala'
+பானு<np><f><aa>:பான{U}[AA,Pl2]                                   # 'Panu'
 ## MALE Proper Nouns
 பொன்னம்பலம்<np><m><aa>:பொன்னம்பல{M}{Pul}[AA,MGEN,Pl2]      # 'Ponnambalam'
 செல்வம்<np><m><aa>:செல்வ{M}{Pul}[AA,MGEN,Pl2]                    # 'Selvam'
@@ -944,11 +953,12 @@ LEXICON Nouns
 ### 0
 அப்பா<n><m><aa>:அப்ப{AA}[AA,Pl6]                                  # 'appa'            father
 மாமா<n><m><aa>:மாம{AA}[AA,Pl6]                                   # 'maamaa'          uncle
-அம்மான்<n><m><aa>:அம்மா{NP}{Pul}[AA,Pl6]                         # 'ammaan'          uncle                              Dir/LR
-மச்சான்<n><m><aa>:மச்சா{NP}{Pul}[AA,Pl6]                           # 'maccaan'         male cousin
+அப்பு<n><m><aa>:அப்ப{U}[AA,Pl6]                                    # 'appu'             grandfather
+தம்பி<n><m><aa>:தம்ப{I}[AA,Pl6]                                     # 'thambi'          younger brother
 அய்யர்<n><m><aa>:அய்யர{Pul}[AA,Pl6]                               # 'ayyar'           Hindu priest
 ஐயர்<n><m><aa>:ஐயர{Pul}[AA,Pl6]                                   # 'aiyar'           Hindu priest                       Dir/LR
-தம்பி<n><m><aa>:தம்ப{I}[AA,Pl6]                                    # 'thambi'          younger brother
+அம்மான்<n><m><aa>:அம்மா{NP}{Pul}[AA,Pl6]                         # 'ammaan'          uncle                              Dir/LR
+மச்சான்<n><m><aa>:மச்சா{NP}{Pul}[AA,Pl6]                           # 'maccaan'         male cousin
 ### II
 கட்டுவனான்<n><m><aa>:கட்டுவனா{NP}{Pul}[AA,Pl6]                 # 'kattuvanaan'     male from kattuvan
 பிரத்தியான்<n><m><aa>:பிரத்தியா{NP}{Pul}[AA,Pl6]                   # 'piraththiyaan'   male from a different place
@@ -1061,6 +1071,8 @@ LEXICON Nouns
 # Abstract nouns 
 ## Nouns that can attach Adjectivizer [NQ]
 ## Emotions
+சரி<nq><nn>:சர{I}[NN,ANoun,NQ]                                     # 'cari'            okay               loanword (Sanskrit)
+செரி<nq><nn>:செர{I}[NN,ANoun,NQ]                                  # 'ceri'            okay               loanword (Sanskrit)           Dir/LR
 கோபம்<nq><nn>:கோப{M}{Pul}[NN,ANoun,NQ]                         # 'koopam'          anger              loanword (Sanskrit)    
 அன்பு<nq><nn>:அன்ப{U}[NN,ANoun,NQ]                               # 'anpu'            love
 ## Behaviour
@@ -1138,6 +1150,7 @@ LEXICON Nouns
 பிஸ்கெட்<n><nn>:பிஸ்கெட{Pul}[NN,Pl1]                            # 'pisket'          biscuit            loanword (English)                   Dir/LR
 பிஸ்கோத்து<n><nn>:பிஸ்கோத்த{U}[NN,Pl1]                        # 'piskooththu'      biscuit            loanword (English)                   Dir/LR
 விசுக்கோத்து<n><nn>:விசுக்கோத்த{U}[NN,Pl1]                      # 'vicukkooththu'   biscuit            loanword (English)                   Dir/LR
+ஆங்கிலம்<n><nn>:ஆங்கில{M}{Pul}[NN,MGEN,Pl1]                   # 'aankilam'         English            loanword (English)   
 பேனா<n><nn>:பேன{AA}[NN,Pl1]                                   # 'peena'           pen                 loanword (Portuguese)
 பீப்பா<n><nn>:பீப்ப{AA}[NN,Pl1]                                    # 'piippaa'         barrel              loanword (Portuguese)
 பீப்பாய்<n><nn>:பீப்பாய{Pul}[NN,Pl1]                              # 'piippaai'        barrel              loanword (Portuguese)                Dir/LR
@@ -1246,6 +1259,8 @@ LEXICON Nouns
 சேலை<n><nn>:சேல{AI}[NN,Pl3]                                   # 'ceellay'         saree               Dir/LR
 முட்டை<n><nn>:முட்ட{AI}[NN,Pl1]                                  # 'muttay'          egg
 விற்பனை<n><nn>:விற்பன{AI}[NN,Pl1]                             # 'virpanay'        sale
+கதை<n><nn>:கத{AI}[NN,Pl1]                                      # 'kathay'          story
+சிறுகதை<n><nn>:சிறுகத{AI}[NN,Pl1]                              # 'cirukathay'      short story
 
 # Class 4
 வான்<n><nn>:வான{Pul}[NN,Pl4]                                   # 'vaan'             van             loanword (English) (n does not change)
@@ -1533,6 +1548,7 @@ LEXICON Adverbs
 இன்னும்:இன்னும{Pul}         # 'innum'         yet
 இப்பொழுது:இப்பொழுத{U}    # 'ippolutu'      now
 இப்ப:இப்ப                    # 'ippa'           now                    Dir/LR
+அப்ப:அப்ப                    # 'appa'          then
 மறுபடியும்:மறுபடியும{Pul}    # 'marupatiyum'   again
 பிறகு:பிறகு                   # 'piraku'         after
 இன்று:இன்ற{U}               # 'inru'           today
@@ -1541,6 +1557,8 @@ LEXICON Adverbs
 # Manner
 தனிய:தனிய                  # 'thaniya'       alone
 நல்லா:நல்லா                  # 'nallaa'        well
+இப்படி:இ>ப்படி                # 'ippati'        this way
+உப்பிடி:உ>ப்பிடி               # 'uppiti'        this way               Dir/LR
 
 LEXICON IntAdverbs
 ஏன்<adv><itg>:ஏன்             # 'een'           why
@@ -1548,6 +1566,7 @@ LEXICON IntAdverbs
 LEXICON LocAdverbs
 ங்கே<adv><loc>:ங்க{EE}        # 'nkee'          here/there/where
 ங்கை<adv><loc>:ங்க{AI}       # 'nkay'          here/there/where       Dir/LR
+ஞ்ச<adv><loc>:ஞ்ச             # 'njc'           here/there/where       Dir/LR
 
 ################################     DETERMINERS     ################################
 LEXICON Determiners
@@ -1564,6 +1583,14 @@ LEXICON Determiners
 LEXICON DeterStems
 ந்த<det><dem>:ந்த                        # 'ntha'    this/that/which
 அளவு<det><dem>:{Al}ளவு                 # 'alavu'    this/that/how    much
+
+################################     INTERJECTIONS     ################################
+LEXICON Interjections
+ஓ:ஓ                                         # 'oo'          Oh
+
+################################     CONJUNCTIONS     ################################
+LEXICON Conjunctions
+எண்டு<cnjsub>:எண்டு                       # 'entu'        that
 
 ################################     COMPARATIVES     ################################
 LEXICON Comparatives
