@@ -382,6 +382,9 @@ LEXICON Cases
 ### adds '-aaka' or '-entu' to the dative '-ukku'
 <ben>:>{U}க்க>{AA}க[AA,NN,NNIrr,TN,P,PS,PL]                      # 'ukkaaka'
 <ben>:>{U}க்க>{E}ண்டு[AA,NN,NNIrr,TN,P,PS,PL]                    # 'ukkentu'                                              Dir/LR
+## vocative
+<voc>:>{VOW}[AA]                                                  #  lengthener
+<voc>:>{EEm}[AA,NN,NNIrr,TN,P,PS,PL]                              # 'ee'                                                   Dir/LR
 
 ################## LOCATION
 LEXICON Location(2)
@@ -632,7 +635,7 @@ LEXICON Imperatives
 <imp><sg>:>{U}[POS]                                # 'u'                irregular singular                Dir/LR
 <imp><hon><sg>:>{U}ம{Pul}[POS]                    # 'um'               singular honorific
 <imp><hon><sg>:>{UIrr}ம{Pul}[POSIrr]              # 'um'               irregular singular honorific      Dir/LR
-<imp><pl>:>{U}ங்கோ[POS,POSIrr]                   # 'unkoo'            plural
+<imp><pl>:>{Uimp}ங்கோ[POS,POSIrr]               # 'unkoo'            plural
 # negative imperative
 <neg><imp><sg>:>{AAv}த{EE}[NEG]                   # 'aathee'           singular
 <neg><imp><sg>:>{AA}த[NEG]                        # 'aatha'            singular                          Dir/LR
@@ -787,8 +790,8 @@ LEXICON PronounStems
 # human
 நான்<prn><p1><h>:நா{NP}{Pul}[GPro,NObl]             # 'naan'            I
 என்<prn><p1><h>:{El}{NP}{Pul}[GPro,Obl]              # 'en'              I          oblique stem for 'naan'
-நீ<prn><p2><h>:ந{II}{AN}[GPro,PH,IH,NObl]             # 'nee'            you
-உன்<prn><p2><h>:{Ul}{NP}{Pul}[GPro,PH,IH,Obl]        # 'un'              you        oblique stem for 'nee'
+நீ<prn><p2><h>:ந{II}{AN}[GPro,PH,IH,NObl]             # 'nii'            you
+உன்<prn><p2><h>:{Ul}{NP}{Pul}[GPro,PH,IH,Obl]        # 'un'             you        oblique stem for 'nee'
 வன்<prn><p3><m><h>:வ>{NR}{Pul}[LOC,GPro,MH]         # '-van'            -he
 வள்<prn><p3><f><h>:வ>{PL}{Pul}[LOC,FPro,FH]         # '-val'           -she
 வ<prn><p3><mf><h>:வ[LOC,EHIrr]                      # '-va'            -they-
@@ -1046,6 +1049,8 @@ LEXICON Nouns
 புத்தகம்<n><nn>:புத்தக{M}{Pul}[NN,MGEN,Pl1]                        # 'puththakam'      book               loanword (Sanskrit)
 புஸ்தகம்<n><nn>:புஸ்தக{M}{Pul}[NN,MGEN,Pl1]                      # 'pusthakam'       book               loanword (Sanskrit)                   Dir/LR
 தூரம்<n><nn>:தூர{M}{Pul}[NN,MGEN,Pl1]                            # 'thooram'          distance           loanword (Sanskrit)
+அதிகம்<n><nn>:அதிக{M}{Pul}[NN,MGEN,Pl1]                        # 'athikam'          extra              loanword (Sanskrit)
+மேலதிகம்<n><nn>:மேலதிக{M}{Pul}[NN,MGEN,Pl1]                   # 'meelathikam'     extra              loanword (Sanskrit)
 சங்கம்<n><nn>:சங்க{M}{Pul}[NN,MGEN,Pl1]                          # 'cankam'          association        loanword (Sanskrit)
 சங்க<n><nn>:சங்க[NN,Pl1]                                         # 'canka'           association        loanword (Sanskrit)                   Dir/LR
 ரூபாய்<n><nn>:ரூபா{Y}{Pul}[NN,Pl1]                               # 'roopaai'         rupee              loanword (Hindustani)
