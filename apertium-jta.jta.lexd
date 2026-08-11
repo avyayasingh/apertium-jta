@@ -860,12 +860,16 @@ LEXICON Nouns
 ## UNGENDERED (AHTHINAI Animate)
 மாடு<n><aa>:மா{T}{U}[AA,Pl1]                                       # 'maatu'           cow
 ஆடு<n><aa>:ஆ{T}{U}[AA,Pl1]                                        # 'aatu'            goat
+மீன்<n><aa>:மீ{N}{Pul}[AA,Pl1]                                       # 'miin'            fish
 நாய்<n><aa>:நா{Y}{Pul}[AA,Pl1]                                     # 'naai'            dog
 ## FEMALE
 ### 0
 பெண்<n><f><aa>:பெ{N}{Pul}[AA,Pl1]                                 # 'pen'             female
 ## MALE
 ### 0
+அலுகோசு<n><m><aa>:அலுகோச{U}[AA,Pl1]                            # 'alukoocu'       executioner                         loanword (Portuguese)
+மஹத்தயா<n><m><aa>:மஹத்தய{AA}[AA,Pl1]                          # 'mahaththayaa'   mister                              loanword (Sinhala)
+சேவகன்<n><m><aa>:சேவக{N}{Pul}[AA,Pl1]                            # 'ceevakan'       servant                             loanword (Sinhala)
 ஆண்<n><m><aa>:ஆ{NP}{Pul}[AA,Pl1]                                  # 'aan'            male
 மனிதன்<n><m><aa>:மனித{NK}{Pul}[AA,Pl1]                           # 'manithan'       man
 வேலையாள்<n><m><aa>:வேலை>யா{LK}{Pul}[AA,Pl1]                  # 'veelayyaal'     male worker
@@ -889,6 +893,7 @@ LEXICON Nouns
 கமலா<np><f><aa>:கமல{AA}[AA,Pl2]                                 # 'Kamala'
 ## MALE Proper Nouns
 பொன்னம்பலம்<np><m><aa>:பொன்னம்பல{M}{Pul}[AA,MGEN,Pl2]      # 'Ponnambalam'
+செல்வம்<np><m><aa>:செல்வ{M}{Pul}[AA,MGEN,Pl2]                    # 'Selvam'
 ரத்னம்<np><m><aa>:ரத்ன{M}{Pul}[AA,MGEN,Pl2]                        # 'Ratnam'
 ரத்தினம்<np><m><aa>:ரத்தின{M}{Pul}[AA,MGEN,Pl2]                    # 'Ratnam'           Dir/LR
 அருள்<np><m><aa>:அருள{Pul}[AA,Pl2]                                # 'Arul'
@@ -1042,6 +1047,7 @@ LEXICON Nouns
 கன<n><nn>:கன[NN,QNoun]                                          # 'kana'            many
 ### Masses
 பட்டு<n><nn>:பட்ட{U}[NN,UNoun]                                     # 'pattu'           silk                loanword (Sanskrit)
+நீர்<n><nn>:நீர{Pul}[NN,UNoun]                                       # 'niir'            water               loanword (Sanskrit)
 தண்ணீ<n><nn>:தண்ண{II}[NN,UNoun]                               # 'thannii'         water
 தண்ணீர்<n><nn>:தண்ணீர{Pul}[NN,UNoun]                           # 'thanniir'        water               Dir/LR
 காற்று<n><nn>:காற்ற{U}[NN,UNoun]                                  # 'kaarru'          wind
@@ -1067,27 +1073,38 @@ LEXICON Nouns
 தனி<nq><nn>:தன{I}[NN,ANoun,NQ]                                   # 'thani'           solitude           Dir/LR
 
 # Class 1
-தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                  # 'thapaal'        letter              loanword (Dutch)
+பீங்கான்<n><nn>:பீங்கா{N}{Pul}[NN,Pl1]                            # 'peenkaan'       ceramic             loanword (Farsi)
 குசினி<n><nn>:குசின{I}[NN,Pl1]                                   # 'kucini'          kitchen            loanword (French)
+கபீர்<n><nn>:கபீர{Pul}[NN,Pl1]                                     # 'kapiir'          bomber             loanword (Hebrew)
 ரொட்டி<n><nn>:ரொட்ட{I}[NN,Pl1]                                 # 'rotti'           bread              loanword (Hindi)
-பீங்கான்<n><nn>:பீங்கான{Pul}[NN,Pl1]                             # 'peenkaan'       ceramic             loanword (Farsi)
+பேட்டி<n><nn>:பேட்ட{I}[NN,Pl1]                                    # 'peetti'         audience            loanword (Hindustani)
 கொய்யா<n><nn>:கொய்ய{AA}[NN,Pl1]                             # 'koiyaa'          guava              loanword (Brazilian Portuguese)
 கொய்யல்<n><nn>:கொய்யல்{Pul}[NN,Pl1]                          # 'koiyal'          guava              loanword (Brazilian Portuguese)      Dir/LR
 கொய்யப்பழம்<n><nn>:கொய்யப்பழ{M}{Pul}[NN,MGEN,Pl1]          # 'koiyappazham'    guava              loanword (Brazilian Portuguese)      Dir/LR
 ரூபாய்<n><nn>:ரூபா{Y}{Pul}[NN,Pl1]                               # 'roopaai'         rupee              loanword (Hindustani)
 உரூபாய்<n><nn>:உரூபா{Y}{Pul}[NN,Pl1]                           # 'uroopaai'        rupee              loanword (Hindustani)                 Dir/LR
 ரூபா<n><nn>:ரூப{AA}[NN,Pl1]                                      # 'roopaa'          rupee              loanword (Hindustani)                 Dir/LR
+சபா<n><nn>:சப{AA}[NN,Pl1]                                        # 'sapaa'          council             loanword (Sinhala)
+பிரதீஸிய<n><nn>:பிரதீஸிய[NN,Pl1]                                # 'pirateesiya'    statewide           loanword (Sinhala)
+மாலு\ பணிஸ்<n><nn>:மாலு\ பணிஸ{Pul}[NN,Pl1]                 # 'maalu panis'    fish buns           loanword (Sinhala)
+காமரா<n><nn>:காமர{AA}[NN,Pl1]                                  # 'kaamaraa'       room                loanword (Dutch)
+கக்கூசு<n><nn>:கக்கூச{U}[NN,Pl1]                                  # 'kakkuucu'       toilet              loanword (Dutch)
+கக்கூஸ்<n><nn>:கக்கூஸ{Pul}[NN,Pl1]                              # 'kakkuus'        toilet              loanword (Dutch)                     Dir/LR
+தபால்<n><nn>:தபால{Pul}[NN,Pl1]                                  # 'thapaal'        letter              loanword (Dutch)
+கந்தோர்<n><nn>:கந்தோர{Pul}[NN,Pl1]                             # 'kantoor'        office              loanword (Dutch)
+கொக்கிஸ்<n><nn>:கொக்கிஸ{Pul}[NN,Pl1]                         # 'kokkis'         local snack         loanword (Dutch)
+ரெம்பா<n><nn>:ரெம்ப{AA}[NN,Pl1]                                 # 'rempaa'          curry              loanword (Malay)
 பப்பாளி<n><nn>:பப்பாள{I}[NN,Pl1]                                # 'pappaali'        papaya             loanword (Malay)
 பப்பளி<n><nn>:பப்பள{I}[NN,Pl1]                                  # 'pappali'         papaya             loanword (Malay)                      Dir/LR
 பப்பாசி<n><nn>:பப்பாச{I}[NN,Pl1]                                 # 'pappaaci'        papaya             loanword (Malay)                      Dir/LR
 பப்பாபழம்<n><nn>:பப்பாபழ{M}{Pul}[NN,MGEN,Pl1]                  # 'pappaapazham'    papaya             loanword (Malay)                      Dir/LR
-கார்<n><nn>:கார{Pul}[NN,Pl1]                                      # 'kaar'            car                loanword (English)
-சைக்கிள்<n><nn>:சைக்கிள{Pul}[NN,Pl1]                            # 'caykkil'         cycle              loanword (English)
-பாட்டில்<n><nn>:பாட்டில{Pul}[NN,Pl1]                               # 'paattil'        bottle              loanword (English)
-பூத்தல்<n><nn>:பூத்தல{Pul}[NN,Pl1]                                 # 'pooththal'      bottle              loanword (English)                   Dir/LR
-மைல்<n><nn>:மைல{Pul}[NN,Pl1]                                   # 'mayl'            mile               loanword (English)
+தேய்<n><nn>:தேய{Pul}[NN,Pl1]                                    # 'theei'            tea                loanword (Malay)
+டோடோல்<n><nn>:டோடோல{Pul}[NN,Pl1]                          # 'doodool'         dodol              loanword (Malay)
+மன்கொஸ்டின்<n><nn>:மன்கொஸ்டி{N}{Pul}[NN,Pl1]                # 'mankostin'       mangosteen         loanword (Malay)
+ரம்புட்டான்<n><nn>:ரம்புட்டா{N}{Pul}[NN,Pl1]                       # 'ramputtaan'      rambutan           loanword (Malay)
+துரியன்<n><nn>:துரிய{N}{Pul}[NN,Pl1]                             # 'thuriyan'        durian              loanword (Malay)
+கச்சான்<n><nn>:கச்சா{N}{Pul}[NN,Pl1]                             # 'kaccaan'         peanut              loanword (Malay)
 வதந்தி<n><nn>:வதந்த{I}[NN,Pl1]                                   # 'vathanthi'       rumor              loanword (Sanskrit)
-அவை<n><nn>:அவ{AI}[NN,Pl1]                                     # 'avay'            audience           loanword (Sanskrit)
 வேகம்<n><nn>:வேகம{Pul}[NN,Pl1]                                 # 'veekam'          speed              loanword (Sanskrit)
 விமானம்<n><nn>:விமான{M}{Pul}[NN,MGEN,Pl1]                      # 'vimaanam'       airplane            loanword (Sanskrit) 
 பாடம்<n><nn>:பாட{M}{Pul}[NN,MGEN,Pl1]                            # 'paatam'          lesson             loanword (Sanskrit)
@@ -1097,20 +1114,48 @@ LEXICON Nouns
 தூரம்<n><nn>:தூர{M}{Pul}[NN,MGEN,Pl1]                            # 'thooram'          distance           loanword (Sanskrit)
 அதிகம்<n><nn>:அதிக{M}{Pul}[NN,MGEN,Pl1]                        # 'athikam'          extra              loanword (Sanskrit)
 மேலதிகம்<n><nn>:மேலதிக{M}{Pul}[NN,MGEN,Pl1]                   # 'meelathikam'     extra              loanword (Sanskrit)
+கிராமம்<n><nn>:கிராம{M}{Pul}[NN,MGEN,Pl1]                       # 'kiraamam'        village            loanword (Sanskrit)
 சங்கம்<n><nn>:சங்க{M}{Pul}[NN,MGEN,Pl1]                          # 'cankam'          association        loanword (Sanskrit)
 சங்க<n><nn>:சங்க[NN,Pl1]                                         # 'canka'           association        loanword (Sanskrit)                   Dir/LR
+கமரா<n><nn>:காமர{AA}[NN,Pl1]                                   # 'kamaraa'         camera             loanword (English)
+வங்கி<n><nn>:வங்க{I}[NN,Pl1]                                     # 'vanki'           bank               loanword (English)
+குக்கீ<n><nn>:குக்க{II}[NN,Pl1]                                     # 'kukkii'          cookie             loanword (English)
+பால்கனி<n><nn>:பால்கன{I}[NN,Pl1]                               # 'paalkani'        balcony            loanword (English)
+காபி<n><nn>:காப{I}[NN,Pl1]                                       # 'kaapi'           coffee             loanword (English)
+காஃபி<n><nn>:காஃப{I}[NN,Pl1]                                     # 'kaahpi'          coffee             loanword (English)                   Dir/LR
+காப்பி<n><nn>:காப்ப{I}[NN,Pl1]                                    # 'kaappi'          coffee             loanword (English)                   Dir/LR
+கோப்பி<n><nn>:கோப்ப{I}[NN,Pl1]                                 # 'kooppi'          coffee             loanword (English)                   Dir/LR
+கார்<n><nn>:கார{Pul}[NN,Pl1]                                      # 'kaar'            car                loanword (English)
+சைக்கிள்<n><nn>:சைக்கிள{Pul}[NN,Pl1]                            # 'caykkil'         cycle              loanword (English)
+பாட்டில்<n><nn>:பாட்டில{Pul}[NN,Pl1]                               # 'paattil'        bottle              loanword (English)
+பூத்தல்<n><nn>:பூத்தல{Pul}[NN,Pl1]                                 # 'pooththal'      bottle              loanword (English)                   Dir/LR
+மைல்<n><nn>:மைல{Pul}[NN,Pl1]                                   # 'mayl'            mile               loanword (English)
+பெஞ்ச்<n><nn>:பெஞ்ச{Pul}[NN,Pl1]                                 # 'penjc'           bench              loanword (English)
+பிளவுஸ்<n><nn>:பிளவுஸ{Pul}[NN,Pl1]                              # 'pilavus'         blouse             loanword (English)
+கிளேமோர்<n><nn>:கிளேமோர{Pul}[NN,Pl1]                        # 'kileemoor'       claymore           loanword (English)
+ஹெலிகாப்டர்<n><nn>:ஹெலிகாப்டர{Pul}[NN,Pl1]                  # 'helikaaptar'     helicopter         loanword (English)
+பிஸ்கட்<n><nn>:பிஸ்கட{Pul}[NN,Pl1]                               # 'piskat'          biscuit            loanword (English)
+பிஸ்கெட்<n><nn>:பிஸ்கெட{Pul}[NN,Pl1]                            # 'pisket'          biscuit            loanword (English)                   Dir/LR
+பிஸ்கோத்து<n><nn>:பிஸ்கோத்த{U}[NN,Pl1]                        # 'piskooththu'      biscuit            loanword (English)                   Dir/LR
+விசுக்கோத்து<n><nn>:விசுக்கோத்த{U}[NN,Pl1]                      # 'vicukkooththu'   biscuit            loanword (English)                   Dir/LR
 பேனா<n><nn>:பேன{AA}[NN,Pl1]                                   # 'peena'           pen                 loanword (Portuguese)
+பீப்பா<n><nn>:பீப்ப{AA}[NN,Pl1]                                    # 'piippaa'         barrel              loanword (Portuguese)
+பீப்பாய்<n><nn>:பீப்பாய{Pul}[NN,Pl1]                              # 'piippaai'        barrel              loanword (Portuguese)                Dir/LR
 பைலா<n><nn>:பைல{AA}[NN,Pl1]                                  # 'payla'           dance               loanword (Portuguese)
-அலமாரி<n><nn>:அலமார{I}[NN,Pl1]                               # 'alamaari'        cupboard           loanword (Portuguese)
+வராந்தா<n><nn>:வராந்த{AA}[NN,Pl1]                              # 'varaanthaa'      balcony             loanword (Portuguese)
+அலமாரி<n><nn>:அலமார{I}[NN,Pl1]                               # 'alamaari'       cupboard            loanword (Portuguese)
 அலுபுநெதி<n><nn>:அலுபுநெத{I}[NN,Pl1]                          # 'alupunethi'      safety pin          loanword (Portuguese)
 சாவி<n><nn>:சாவ{I}[NN,Pl1]                                      # 'caavi'           key                 loanword (Portuguese)
 கடதாசி<n><nn>:கடதாச{I}[NN,Pl1]                                # 'katathaaci'      paper               loanword (Portuguese)
+தாச்சி<n><nn>:தாச்ச{I}[NN,Pl1]                                    # 'thacci'          pan                loanword (Portuguese)
 அன்னாசி<n><nn>:அன்னாச{I}[NN,Pl1]                             # 'annaaci'         pineapple          loanword (Portuguese)
-அனாசி<n><nn>:அனாச{I}[NN,Pl1]                                 # 'anaci'           pineapple          loanword (Portuguese)                Dir/LR
-அன்னாசு<n><nn>:அன்னாச{U}[NN,Pl1]                             # 'annacu'          pineapple          loanword (Portuguese)                Dir/LR
+அனாசி<n><nn>:அனாச{I}[NN,Pl1]                                 # 'anaci'           pineapple          loanword (Portuguese)                 Dir/LR
+அன்னாசு<n><nn>:அன்னாச{U}[NN,Pl1]                             # 'annacu'          pineapple          loanword (Portuguese)                 Dir/LR
 அலவாங்கு<n><nn>:அலவாங்க{U}[NN,Pl1]                          # 'alavaanku'       crowbar            loanword (Portuguese)
-அலுகோசு<n><nn>:அலுகோச{U}[NN,Pl1]                            # 'alukoocu'        executioner        loanword (Portuguese)
 காஜு<n><nn>:காஜ{U}[NN,Pl1]                                     # 'kaaju'           cashew             loanword (Portuguese)
+சப்பாத்து<n><nn>:சப்பாத்த{U}[NN,Pl1]                             # 'cappaaththu'     shoe                loanword (Portuguese)
+தொம்பு<n><nn>:தொம்ப{U}[NN,Pl1]                                # 'thompu'          title              loanword (Portuguese)
+வீத்துரு<n><nn>:வீத்துர{U}[NN,Pl1]                                 # 'viiththuru'       glass              loanword (Portuguese)
 ஜன்னல்<n><nn>:ஜன்னல{Pul}[NN,Pl1]                              # 'jannal'          window             loanword (Portuguese)
 சன்னல்<n><nn>:சன்னல{Pul}[NN,Pl1]                               # 'cannal'         window              loanword (Portuguese)                Dir/LR
 கல்சன்<n><nn>:கல்சன{Pul}[NN,Pl1]                                # 'kalcan'         trousers            loanword (Portuguese)
@@ -1120,7 +1165,9 @@ LEXICON Nouns
 நெஞ்சு<n><nn>:நெஞ்ச{U}[NN,Pl1]                                   # 'nenjcu'          heart
 வகுப்பு<n><nn>:வகு>ப்ப{U}[NN,Pl1]                                  # 'vakuppu'         class
 இரவு<n><nn>:இரவ{U}[NN,Pl1]                                       # 'irvu'            night
-ஆண்டு<n><nn>:ஆண்ட{U}[NN,Pl1]                                  # 'aantu'           year   
+ஆண்டு<n><nn>:ஆண்ட{U}[NN,Pl1]                                  # 'aantu'           year
+பொறுப்பு<n><nn>:பொறு>ப்ப{U}[NN,Pl1]                            # 'poruppu'         responsibility
+நாட்டு<n><nn>:நாட்ட{U}[NN,Pl1]                                    # 'naattu'          country   
 பெட்டி<n><nn>:பெட்ட{I}[NN,Pl1]                                    # 'petti'           box
 மூடி<n><nn>:மூட{I}[NN,Pl1]                                         # 'muuti'           lid
 அடி<n><nn>:அட{I}[NN,Pl1]                                          # 'ati'            foot
@@ -1130,12 +1177,12 @@ LEXICON Nouns
 மணி<n><nn>:மண{I}[NN,Pl1]                                      # 'mani'             hour
 நுனி<n><nn>:நுன{I}[NN,Pl1]                                       # 'nuni'             edge
 புத்திமதி<n><nn>:புத்திமத{I}[NN,Pl1]                               # 'puththimathi'    advice
-முட்டை<n><nn>:முட்ட{AI}[NN,Pl1]                                  # 'muttay'          egg
-விற்பனை<n><nn>:விற்பன{AI}[NN,Pl1]                             # 'virpanay'        sale
 காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                           # 'kaaiccal'        fever
 கால்<n><nn>:கால{Pul}[NN,Pl1]                                     # 'kaal'            leg
 வால்<n><nn>:வால{Pul}[NN,Pl1]                                     # 'vaal'            tail
 சுவர்<n><nn>:சுவர{Pul}[NN,Pl1]                                     # 'cuvar'           wall
+தேய்நீர்<n><nn>:தேய்நீர{Pul}[NN,Pl1]                               # 'theeiniir'        tea
+தேநீர்<n><nn>:தேநீர{Pul}[NN,Pl1]                                   # 'theeniir'         tea                       Dir/LR
 மரம்<n><nn>:மர{M}{Pul}[NN,MGEN,Pl1]                               # 'maram'           tree
 மனம்<n><nn>:மன{M}{Pul}[NN,MGEN,Pl1]                            # 'manam'           mind
 திருமணம்<n><nn>:திருமண{M}{Pul}[NN,MGEN,Pl1]                   # 'thirumanam'      wedding
@@ -1144,10 +1191,8 @@ LEXICON Nouns
 மாம்பழம்<n><nn>:மாம்பழ{M}{Pul}[NN,MGEN,Pl1]                    # 'maampazham'      mango
 வைரம்<n><nn>:வைர{M}{Pul}[NN,MGEN,Pl1]                         # 'vayram'          diamond
 பொய்<n><nn>:பொ{Y}{Pul}[NN,Pl1]                                # 'poi'             lie
-பொறுப்பு<n><nn>:பொறு>ப்ப{U}[NN,Pl1]                            # 'poruppu'         responsibility
-நாட்டு<n><nn>:நாட்ட{U}[NN,Pl1]                                    # 'naattu'          country
 வீடு<n><nn>:வீ{T}{U}[NN,VIrr,Pl1]                                  # 'veetu'           house
-சாப்பாடு<n><nn>:சாப்பா{T}{U}[NN,Pl1]                            # 'caappatu'        food
+சாப்பாடு<n><nn>:சாப்பா{T}{U}[NN,Pl1]                            # 'caappaatu'       food
 மணிக்கூடு<n><nn>:மணிக்கூ{T}{U}[NN,Pl1]                        # 'manikkootu'      watch
 வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                 # 'vayiru'          stomach
 
@@ -1178,12 +1223,16 @@ LEXICON Nouns
 
 # Class 3
 சால்வை<n><nn>:சால்வ{AI}[NN,Pl3]                                # 'caalvay'         shawl             loanword (Hindustani)
+தவறணை<n><nn>:தவறண{AI}[NN,Pl3]                            # 'thavaranay'      tavern            loanword (English)
+அவை<n><nn>:அவ{AI}[NN,Pl1]                                     # 'avay'            audience          loanword (Sanskrit)
+விறாந்தை<n><nn>:விறாந்த{AI}[NN,Pl3]                            # 'viraanthay'      balcony           loanword (Portuguese)                Dir/LR
 மேசை<n><nn>:மேச{AI}[NN,Pl3]                                   # 'meecay'          table              loanword (Portuguese)
 மேஜை<n><nn>:மேஜ{AI}[NN,Pl3]                                   # 'meejay'          table             loanword (Portuguese)                Dir/LR
 ரோதை<n><nn>:ரோத{AI}[NN,Pl3]                                  # 'roothay'         wheel             loanword (Portuguese)
 கதிரை<n><nn>:கதிர{AI}[NN,Pl3]                                   # 'kathiray'        chair             loanword (Portuguese)
 கமிசை<n><nn>:கமிச{AI}[NN,Pl3]                                  # 'kamicay'         shirt             loanword (Portuguese)
 கோப்பை<n><nn>:கோப்ப{AI}[NN,Pl3]                              # 'kooppay'         cup               loanword (Portuguese)
+துவாலை<n><nn>:துவால{AI}[NN,Pl3]                               # 'thuvaalay'       towel             loanword (Portuguese)
 கை<n><nn>:க{AI}[NN,Pl3]                                          # 'kay'             hand
 தலை<n><nn>:தல{AI}[NN,Pl3]                                      # 'thalay'           head
 சட்டை<n><nn>:சட்ட{AI}[NN,Pl3]                                    # 'cattay'          shirt
@@ -1195,6 +1244,8 @@ LEXICON Nouns
 பிழை<n><nn>:பிழ{AI}[NN,Pl3]                                      # 'pizhay'         error
 சீலை<n><nn>:சீல{AI}[NN,Pl3]                                      # 'ciilay'          saree
 சேலை<n><nn>:சேல{AI}[NN,Pl3]                                   # 'ceellay'         saree               Dir/LR
+முட்டை<n><nn>:முட்ட{AI}[NN,Pl1]                                  # 'muttay'          egg
+விற்பனை<n><nn>:விற்பன{AI}[NN,Pl1]                             # 'virpanay'        sale
 
 # Class 4
 வான்<n><nn>:வான{Pul}[NN,Pl4]                                   # 'vaan'             van             loanword (English) (n does not change)
@@ -1329,7 +1380,8 @@ LEXICON TransVerbStem
 கூப்பிடு<v><tv>:கூப்பி{T}{U}[Class4,W]                 # 'kuuppitu'    call
 போடு<v><tv>:போ{T}{U}[Class4,W]                    # 'pootu'       put
 இடு<v><tv>:இ{T}{U}[Class4,W]                        # 'itu'          place                       
-சாப்பிடு<v><tv>:சாப்{Pi}{pI}{T}{U}[Class4,W]          # 'caapitu'     eat
+சாப்பிடு<v><tv>:சாப்{Pi}{pI}{T}{U}[Class4,W]          # 'caappitu'    eat
+சாப்படு<v><tv>:சாப்ப{T}{U}[Class4,W]                 # 'caappatu'    eat                       Dir/LR
 பெறு<v><tv>:பெ{RR}{U}[Class4,W]                     # 'peru'        give birth
 
 # Class 5b
