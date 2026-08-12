@@ -51,27 +51,27 @@ PATTERNS
 # Pronouns
 ## Personals
 ### Locative
-Location(1) PronounStems[LOC,GPro] Number[GPro] Location(2) Cases[P] (EndwordMorph|InterroClitic)?
-Location(1) PronounStems[LOC,FPro] Number[FPro] Location(2) Cases[P] (EndwordMorph|InterroClitic)?
+Location(1) PronounStems[LOC,GPro] Number[GPro] Location(2) Cases[P]|PostPosSuf[PER] (EndwordMorph|InterroClitic)?
+Location(1) PronounStems[LOC,FPro] Number[FPro] Location(2) Cases[P]|PostPosSuf[PER] (EndwordMorph|InterroClitic)?
 #### Honorifics
-Location(1) PronounStems[LOC,MH] Honorifics[MH] Number[MH] Location(2) Cases[P] (EndwordMorph|InterroClitic)?
-Location(1) PronounStems[LOC,FH] Honorifics[FH] Number[FH] Location(2) Cases[P] (EndwordMorph|InterroClitic)?
-Location(1) PronounStems[LOC,EHIrr] Honorifics[EHIrr] Number[EHIrr] Location(2) Cases[P] (EndwordMorph|InterroClitic)?
+Location(1) PronounStems[LOC,MH] Honorifics[MH] Number[MH] Location(2) Cases[P]|PostPosSuf[PER] (EndwordMorph|InterroClitic)?
+Location(1) PronounStems[LOC,FH] Honorifics[FH] Number[FH] Location(2) Cases[P]|PostPosSuf[PER] (EndwordMorph|InterroClitic)?
+Location(1) PronounStems[LOC,EHIrr] Honorifics[EHIrr] Number[EHIrr] Location(2) Cases[P]|PostPosSuf[PER] (EndwordMorph|InterroClitic)?
 Location(1) PronounStems[LOC,EHIrr] Honorifics[EHIrrN] Number[EHIrr] Location(2) Cases[EHIrrN] (EndwordMorph|InterroClitic)?
 #### Interrogative Prefixing
-InterroPrefix(1) PronounStems[LOC,GPro] Number[GPro] Cases[P] InterroPrefix(2)
-InterroPrefix(1) PronounStems[LOC,FPro] Number[FPro] Cases[P] InterroPrefix(2)
-InterroPrefix(1) PronounStems[LOC,MH] Honorifics[MH] Number[MH] Cases[P] InterroPrefix(2)
-InterroPrefix(1) PronounStems[LOC,FH] Honorifics[FH] Number[FH] Cases[P] InterroPrefix(2)
-InterroPrefix(1) PronounStems[LOC,EHIrr] Honorifics[EHIrr] Number[EHIrr] Cases[P] InterroPrefix(2)
+InterroPrefix(1) PronounStems[LOC,GPro] Number[GPro] Cases[P]|PostPosSuf[PER] InterroPrefix(2)
+InterroPrefix(1) PronounStems[LOC,FPro] Number[FPro] Cases[P]|PostPosSuf[PER] InterroPrefix(2)
+InterroPrefix(1) PronounStems[LOC,MH] Honorifics[MH] Number[MH] Cases[P]|PostPosSuf[PER] InterroPrefix(2)
+InterroPrefix(1) PronounStems[LOC,FH] Honorifics[FH] Number[FH] Cases[P]|PostPosSuf[PER] InterroPrefix(2)
+InterroPrefix(1) PronounStems[LOC,EHIrr] Honorifics[EHIrr] Number[EHIrr] Cases[P]|PostPosSuf[PER] InterroPrefix(2)
 ### Non-locative
-PronounStems[-LOC,Obl,GPro] Number[PS] Cases[PS] (EndwordMorph|InterroClitic|Intensifier)?
-PronounStems[-LOC,Obl,GPro] Number[PL] Cases[PL] (EndwordMorph|InterroClitic|Intensifier)?
-PronounStems[-LOC,NObl,GPro] Number[GPro] (EndwordMorph|InterroClitic|Intensifier)?
-PronounStems[-LOC,NObl,PPro] Number[PPro] (EndwordMorph|InterroClitic|Intensifier)?
+PronounStems[-LOC,Obl,GPro] Number[PS] Cases[PS]|PostPosSuf[PER] (EndwordMorph|InterroClitic|Intensifier)?
+PronounStems[-LOC,Obl,GPro] Number[PL] Cases[PL]|PostPosSuf[PER] (EndwordMorph|InterroClitic|Intensifier)?
+PronounStems[-LOC,NObl,GPro] Number[GPro]|PostPosSuf[PER] (EndwordMorph|InterroClitic|Intensifier)?
+PronounStems[-LOC,NObl,PPro] Number[PPro]|PostPosSuf[PER] (EndwordMorph|InterroClitic|Intensifier)?
 #### Honorifics
-PronounStems[-LOC,Obl,PH] Honorifics[PH] Number[PH,PS] Cases[PS] (EndwordMorph|InterroClitic|Intensifier)?
-PronounStems[-LOC,Obl,IH] Honorifics[IH] Number[IH,PS] Cases[PS] (EndwordMorph|InterroClitic|Intensifier)?
+PronounStems[-LOC,Obl,PH] Honorifics[PH] Number[PH,PS] Cases[PS]|PostPosSuf[PER] (EndwordMorph|InterroClitic|Intensifier)?
+PronounStems[-LOC,Obl,IH] Honorifics[IH] Number[IH,PS] Cases[PS]|PostPosSuf[PER] (EndwordMorph|InterroClitic|Intensifier)?
 PronounStems[-LOC,NObl,PH] Honorifics[PH] Number[PH] (EndwordMorph|InterroClitic|Intensifier)?
 PronounStems[-LOC,NObl,IH] Honorifics[IH] Number[IH] (EndwordMorph|InterroClitic|Intensifier)?
 ## Other Types
@@ -79,39 +79,39 @@ IndefProStem ((HumanRadical[Hum] Cases[AA])|(HumanRadical[NHum] Cases[NN]))? (To
 InterProStem
 # Nouns & NP
 ## Irregulars
-Nouns[NQ] Adjectivizer|(Professionalizer Number[Pl1] Cases[AA]) EndwordMorph?
+Nouns[NQ] Adjectivizer|(Professionalizer Number[Pl1] Cases[AA]|PostPosSuf[PER]) EndwordMorph?
 Nouns[NN,ANoun] Number[ANoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
 Nouns[NN,QNoun] Number[QNoun] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
 Nouns[NN,UNoun] Number[UNoun] Cases[NN]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
 Nouns[NN,TiNoun] Number[TiNoun] Cases[NN]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
 Nouns[NN,FNoun] Number[FNoun] Cases[NN]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
 Nouns[TNoun] Number[TNoun] Cases[TN]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
-Nouns[AA,ES] Number[ES] Cases[AA]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,ES] Number[ES] Cases[AA]|PostPosSuf[PER]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
 Nouns[VIrr,Pl1] Number[Pl1] Cases[VIrr] EndwordMorph?
-Nouns[NNIrr,Pl1] Number[Pl1]|(Honorifics[Pl1] Number[H]) Cases[NNIrr]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[NNIrr,Pl1] Number[Pl1]|(Honorifics[Pl1] Number[H]) Cases[NNIrr]|PostPosSuf[PER]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
 ## REGULAR
-Nouns[AA,H] Honorifics[H] Number[H] Cases[AA]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
-Nouns[AA,EH] Honorifics[H] Number[EH] Cases[AA]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,H] Honorifics[H] Number[H] Cases[AA]|PostPosSuf[PER]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,EH] Honorifics[H] Number[EH] Cases[AA]|PostPosSuf[PER]|EmphaticCli|TotalClitic|Conjuctive EndwordMorph?
 Nouns[NN,Pl1] Number[Pl1] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive PostPosSuf[NN]? EndwordMorph?
-Nouns[AA,Pl1] Number[Pl1]|(Honorifics[Pl1] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,Pl1] Number[Pl1]|(Honorifics[Pl1] Number[H]) Cases[AA]|PostPosSuf[PER]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
 Nouns[NN,Pl2] Number[Pl2] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive PostPosSuf[NN]? EndwordMorph?
-Nouns[AA,Pl2] Number[Pl2]|(Honorifics[Pl2] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,Pl2] Number[Pl2]|(Honorifics[Pl2] Number[H]) Cases[AA]|PostPosSuf[PER]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
 Nouns[NN,Pl3] Number[Pl3] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive PostPosSuf[NN]? EndwordMorph?
-Nouns[AA,Pl3] Number[Pl3]|(Honorifics[Pl3] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,Pl3] Number[Pl3]|(Honorifics[Pl3] Number[H]) Cases[AA]|PostPosSuf[PER]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
 Nouns[NN,Pl4] Number[Pl4] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive PostPosSuf[NN]? EndwordMorph?
-Nouns[AA,Pl4] Number[Pl4]|(Honorifics[Pl4] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,Pl4] Number[Pl4]|(Honorifics[Pl4] Number[H]) Cases[AA]|PostPosSuf[PER]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
 Nouns[NN,Pl5] Number[Pl5] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive PostPosSuf[NN]? EndwordMorph?
-Nouns[AA,Pl5] Number[Pl5]|(Honorifics[Pl5] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,Pl5] Number[Pl5]|(Honorifics[Pl5] Number[H]) Cases[AA]|PostPosSuf[PER]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
 Nouns[NN,Pl6] Number[Pl6] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive PostPosSuf[NN]? EndwordMorph?
-Nouns[AA,Pl6] Number[Pl6]|(Honorifics[Pl6] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,Pl6] Number[Pl6]|(Honorifics[Pl6] Number[H]) Cases[AA]|PostPosSuf[PER]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
 Nouns[NN,Pl7] Number[Pl7] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive PostPosSuf[NN]? EndwordMorph?
-Nouns[AA,Pl7] Number[Pl7]|(Honorifics[Pl7] Number[H]) Cases[AA]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,Pl7] Number[Pl7]|(Honorifics[Pl7] Number[H]) Cases[AA]|PostPosSuf[PER]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
 Nouns[NN,Pl8] Number[Pl8] Cases[NN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive PostPosSuf[NN]? EndwordMorph?
-Nouns[AA,Pl8] Number[Pl8] Cases[AA]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,Pl8] Number[Pl8] Cases[AA]|PostPosSuf[PER]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
 Nouns[NN,MGEN,Pl1] Number[Pl1] Cases[MGEN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive PostPosSuf[NN]? EndwordMorph?
-Nouns[AA,MGEN,Pl1] Number[Pl1]|(Honorifics[Pl1] Number[H]) Cases[MGEN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,MGEN,Pl1] Number[Pl1]|(Honorifics[Pl1] Number[H]) Cases[MGEN]|PostPosSuf[PER]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
 Nouns[NN,MGEN,Pl2] Number[Pl2] Cases[MGEN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive PostPosSuf[NN]? EndwordMorph?
-Nouns[AA,MGEN,Pl2] Number[Pl2]|(Honorifics[Pl2] Number[H]) Cases[MGEN]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
+Nouns[AA,MGEN,Pl2] Number[Pl2]|(Honorifics[Pl2] Number[H]) Cases[MGEN]|PostPosSuf[PER]|EmphaticCli|Adverbializer|TotalClitic|Conjuctive EndwordMorph?
 # Verbs
 ## Auxiliaries
 ModalVerbAux
@@ -236,8 +236,10 @@ Adjectives [ <adj>: ] Predicative[PREDP] Number[EHIrr2] Honorifics[EHIrr2]
 Adjectives [ <adj>: ] Predicative[APRED] Honorifics[H]? Number[GPro]
 # Adverbs
 Adverbs [ <adv>: ] EndwordMorph?
-Location(1) LocAdverbs Location(2)
-InterroPrefix(1) LocAdverbs InterroPrefix(2)
+Location(1) LocAdverbs[NObl] Location(2)
+InterroPrefix(1) LocAdverbs[NObl] InterroPrefix(2)
+Location(1) LocAdverbs[Obl] PostPosSuf[PER] EmphaticSuf? Location(2)
+InterroPrefix(1) LocAdverbs[Obl] PostPosSuf[PER] EmphaticSuf? InterroPrefix(2)
 IntAdverbs
 # Determiners
 Determiners
@@ -411,7 +413,9 @@ LEXICON Cases
 
 ################## POSTPOSITIONAL SUFFIX
 LEXICON PostPosSuf
-<post><loc>:>{U}ள்ள[NN]   # 'ulla'
+<post><loc>:>{U}ள்ள[NN]         # 'ulla'
+<post><loc>:>{K}{I}ட்ட[PER]      # 'kitta'
+<post><loc>:>{K}{I}ட்ட{U}[PER]   # 'kittu'                        Dir/LR
 
 ################## LOCATION
 LEXICON Location(2)
@@ -455,6 +459,10 @@ LEXICON Nominalizer
 ################## INTENSIFIER
 LEXICON Intensifier
 <emph>:>{U}ம{Pul}                               # 'um'
+
+################## EMPHATIC SUFFIX
+LEXICON EmphaticSuf
+<emph>:>த்தான{Pul}                             # 'thaan'
 
 ########################### NOUNS
 ################## EMPHATIC
@@ -898,6 +906,8 @@ LEXICON Nouns
 வேலைக்காரன்<n><m><aa>:வேலை>க்கார{N}{Pul}[AA,Pl1]             # 'veelaykkaaran'   male servant
 பெடியன்<n><m><aa>:பெடிய{N}{Pul}[AA,Pl1]                          # 'petiyan'         boy
 ### IV
+கவி<n><m><aa>:கவ{I}[AA,Pl1]                                        # 'kavi'            poet                               loanword (Sanskrit)
+காரைக்கவி<n><m><aa>:காரைக்கவ{I}[AA,Pl1]                        # 'kaaraykkavi'     poet from Karainagar               loanword (Sanskrit)
 பண்டாரம்<n><m><aa>:பண்டார{M}{Pul}[AA,MGEN,Pl1]                  # 'pantaaram'       male from pantaaram comm.
 பண்டாரி<n><m><aa>:பண்டார{I}[AA,Pl1]                             # 'pantaari'        male from pantaaram comm.          Dir/LR
 
@@ -956,6 +966,7 @@ LEXICON Nouns
 ## FEMALE
 ### 0 
 தோழி<n><f><aa>:தோழ{I}[AA,Pl6]                                   # 'thoozhi'         female friend
+ஆச்சி<n><f><aa>:ஆச்ச{I}[AA,Pl6]                                    # 'aacci'           grandmother
 தங்கச்சி<n><f><aa>:தங்கச்ச{I}[AA,Pl6]                               # 'thankachchi'     younger sister
 அம்மா<n><f><aa>:அம்ம{AA}[AA,Pl6]                                  # 'amma'            mother
 ### I(b)
@@ -963,7 +974,9 @@ LEXICON Nouns
 தாய்<n><f><aa>:தாய{Pul}[AA,Pl6]                                   # 'thaai'           mother
 ## MALE
 ### 0
-அப்பா<n><m><aa>:அப்ப{AA}[AA,Pl6]                                  # 'appa'            father
+அப்பா<n><m><aa>:அப்ப{AA}[AA,Pl6]                                  # 'appaa'           father
+அண்ணா<n><m><aa>:அண்ண{AA}[AA,Pl6]                            # 'annaa'           brother
+அண்ண<n><m><aa>:அண்ண[AA,Pl6]                                 # 'anna'            brother                            Dir/LR
 மாமா<n><m><aa>:மாம{AA}[AA,Pl6]                                   # 'maamaa'          uncle
 அப்பு<n><m><aa>:அப்ப{U}[AA,Pl6]                                    # 'appu'             grandfather
 தம்பி<n><m><aa>:தம்ப{I}[AA,Pl6]                                     # 'thambi'          younger brother
@@ -1010,19 +1023,21 @@ LEXICON Nouns
 வித்துவாட்டி<n><f><aa>:வித்துவாட்ட{I}[AA,Pl7]                     # 'viththuvaatti'    learned woman
 ### III
 குசத்தி<n><f><aa>:குசத்த{I}[AA,Pl7]                                # 'kucaththi'        female from potmaker comm.
-குறத்தி<n><f><aa>:குறத்த{I}[AA,Pl7]                               # 'kuraththi'        tribal woman
-சிங்களத்தி<n><f><aa>:சிங்களத்த{I}[AA,Pl7]                        # 'cinkalaththi'     Sinhalese woman
-ஒருத்தி<n><f><aa>:ஒரு>த்த{I}[AA,Pl7]                              # 'oruththi'         one woman
-பண்டாரத்தி<n><f><aa>:பண்டாரத்த{I}[AA,Pl7]                     # 'pantaaraththi'    female from pantaaram comm.
-செட்டிச்சி<n><f><aa>:செட்டிச்ச{I}[AA,Pl7]                          # 'cetticci'         female from cetti comm.
+குறத்தி<n><f><aa>:குறத்த{I}[AA,Pl7]                                # 'kuraththi'        tribal woman
+சிங்களத்தி<n><f><aa>:சிங்களத்த{I}[AA,Pl7]                         # 'cinkalaththi'     Sinhalese woman
+ஒருத்தி<n><f><aa>:ஒரு>த்த{I}[AA,Pl7]                               # 'oruththi'         one woman
+பண்டாரத்தி<n><f><aa>:பண்டாரத்த{I}[AA,Pl7]                      # 'pantaaraththi'    female from pantaaram comm.
+செட்டிச்சி<n><f><aa>:செட்டிச்ச{I}[AA,Pl7]                           # 'cetticci'         female from cetti comm.
 ## MALE
 ### IV
-செட்டி<n><m><aa>:செட்ட{I}[AA,Pl7]                                # 'cetti'             male from cetti comm.
+செட்டி<n><m><aa>:செட்ட{I}[AA,Pl7]                                  # 'cetti'            male from cetti comm.
 
 # Class 8
 ## EPICENE
-சொந்தக்காரன்<n><aa>:சொந்த>க்கார{NR}{Pul}[AA,EH,ES]          # 'conthakkaaran'    relative
+சொந்தக்காரன்<n><aa>:சொந்த>க்கார{NR}{Pul}[AA,EH,ES]            # 'conthakkaaran'    relative
 ## MALE
+### 0
+அண்ணன்<n><m><aa>:அண்ண{NR}{Pul}[AA,Pl8,H]                    # 'annan'          brother                            Dir/LR
 ### I
 சகோதரன்<n><m><aa>:சகோதர{NR}{Pul}[AA,Pl8,H]                   # 'cakootharan'     brother                            loanword (Sanskrit)
 சிநேகிதன்<n><m><aa>:சிநேகித{NR}{Pul}[AA,Pl8,H]                   # 'cineekithan'     male friend                        loanword (Sanskrit)
@@ -1072,6 +1087,7 @@ LEXICON Nouns
 நீர்<n><nn>:நீர{Pul}[NN,UNoun]                                       # 'niir'            water               loanword (Sanskrit)
 தண்ணீ<n><nn>:தண்ண{II}[NN,UNoun]                               # 'thannii'         water
 தண்ணீர்<n><nn>:தண்ணீர{Pul}[NN,UNoun]                           # 'thanniir'        water               Dir/LR
+தண்ணி<n><nn>:தண்ண{I}[NN,UNoun]                               # 'thanni'          water               Dir/LR
 காற்று<n><nn>:காற்ற{U}[NN,UNoun]                                  # 'kaarru'          wind
 பொன்<n><nn>:பொ{N}{Pul}[NN,UNoun]                               # 'pon'             gold
 ## Time Nouns
@@ -1092,6 +1108,8 @@ LEXICON Nouns
 திமிர்<nq><nn>:திமிர{Pul}[NN,ANoun,NQ]                              # 'timir'           arrogance
 கண்டிப்பு<nq><nn>:கண்டி>ப்ப{U}[NN,ANoun,NQ]                       # 'kantippu'        discipline
 வடிவு<nq><nn>:வடிவ{U}[NN,ANoun,NQ]                                # 'vativu'          beauty
+வேறு<nq><nn>:வேற{U}[NN,ANoun,NQ]                                 # 'veeru'           difference
+வேற<nq><nn>:வேற[NN,ANoun,NQ]                                    # 'veer'            difference         Dir/LR
 கெட்டி<nq><nn>:கெட்ட{I}[NN,ANoun,NQ]                              # 'ketti'           smartness
 ### irregular which is the same as its adjective and noun
 தனி<nq><nn>:தன{I}[NN,ANoun,NQ]                                   # 'thani'           solitude           Dir/LR
@@ -1129,6 +1147,7 @@ LEXICON Nouns
 துரியன்<n><nn>:துரிய{N}{Pul}[NN,Pl1]                             # 'thuriyan'        durian              loanword (Malay)
 கச்சான்<n><nn>:கச்சா{N}{Pul}[NN,Pl1]                             # 'kaccaan'         peanut              loanword (Malay)
 வதந்தி<n><nn>:வதந்த{I}[NN,Pl1]                                   # 'vathanthi'       rumor              loanword (Sanskrit)
+கவி<n><nn>:கவ{I}[NN,Pl1]                                        # 'kavi'             poem               loanword (Sanskrit)
 வேகம்<n><nn>:வேகம{Pul}[NN,Pl1]                                 # 'veekam'          speed              loanword (Sanskrit)
 விமானம்<n><nn>:விமான{M}{Pul}[NN,MGEN,Pl1]                      # 'vimaanam'       airplane            loanword (Sanskrit) 
 பாடம்<n><nn>:பாட{M}{Pul}[NN,MGEN,Pl1]                            # 'paatam'          lesson             loanword (Sanskrit)
@@ -1138,7 +1157,12 @@ LEXICON Nouns
 தூரம்<n><nn>:தூர{M}{Pul}[NN,MGEN,Pl1]                            # 'thooram'          distance           loanword (Sanskrit)
 அதிகம்<n><nn>:அதிக{M}{Pul}[NN,MGEN,Pl1]                        # 'athikam'          extra              loanword (Sanskrit)
 மேலதிகம்<n><nn>:மேலதிக{M}{Pul}[NN,MGEN,Pl1]                   # 'meelathikam'     extra              loanword (Sanskrit)
+விசயம்<n><nn>:விசய{M}{Pul}[NN,MGEN,Pl1]                         # 'vicayam'         issue              loanword (Sanskrit)
+கலியாணம்<n><nn>:கலியாண{M}{Pul}[NN,MGEN,Pl1]                # 'kalliyaanam'     wedding            loanword (Sanskrit)
+கண்ணாலம்<n><nn>:கண்ணால{M}{Pul}[NN,MGEN,Pl1]               # 'kannaalam'      wedding            loanword (Sanskrit)
+கல்யாணம்<n><nn>:கல்யாண{M}{Pul}[NN,MGEN,Pl1]                 # 'kalyaanam'      wedding            loanword (Sanskrit)
 கிராமம்<n><nn>:கிராம{M}{Pul}[NN,MGEN,Pl1]                       # 'kiraamam'        village            loanword (Sanskrit)
+பக்கம்<n><nn>:பக்க{M}{Pul}[NN,MGEN,Pl1]                          # 'pakkam'          side               loanword (Sanskrit)
 சங்கம்<n><nn>:சங்க{M}{Pul}[NN,MGEN,Pl1]                          # 'cankam'          association        loanword (Sanskrit)
 சங்க<n><nn>:சங்க[NN,Pl1]                                         # 'canka'           association        loanword (Sanskrit)                   Dir/LR
 கமரா<n><nn>:காமர{AA}[NN,Pl1]                                   # 'kamaraa'         camera             loanword (English)
@@ -1191,11 +1215,13 @@ LEXICON Nouns
 வகுப்பு<n><nn>:வகு>ப்ப{U}[NN,Pl1]                                  # 'vakuppu'         class
 இரவு<n><nn>:இரவ{U}[NN,Pl1]                                       # 'irvu'            night
 ஆண்டு<n><nn>:ஆண்ட{U}[NN,Pl1]                                  # 'aantu'           year
+கேடு<n><nn>:கேட{U}[NN,Pl1]                                       # 'keetu'           disaster
 பொறுப்பு<n><nn>:பொறு>ப்ப{U}[NN,Pl1]                            # 'poruppu'         responsibility
 நாட்டு<n><nn>:நாட்ட{U}[NN,Pl1]                                    # 'naattu'          country   
 பெட்டி<n><nn>:பெட்ட{I}[NN,Pl1]                                    # 'petti'           box
 மூடி<n><nn>:மூட{I}[NN,Pl1]                                         # 'muuti'           lid
 அடி<n><nn>:அட{I}[NN,Pl1]                                          # 'ati'            foot
+வேலி<n><nn>:வேல{I}[NN,Pl1]                                      # 'veeli'           fence
 கத்தி<n><nn>:கத்த{I}[NN,Pl1]                                       # 'kaththi'         knife
 வேட்டி<n><nn>:வேட்ட{I}[NN,Pl1]                                    # 'veetti'          dhoti
 ஊசி<n><nn>:ஊச{I}[NN,Pl1]                                        # 'uuci'            needle
@@ -1205,7 +1231,12 @@ LEXICON Nouns
 காய்ச்சல்<n><nn>:காய்ச்சல{Pul}[NN,Pl1]                           # 'kaaiccal'        fever
 கால்<n><nn>:கால{Pul}[NN,Pl1]                                     # 'kaal'            leg
 வால்<n><nn>:வால{Pul}[NN,Pl1]                                     # 'vaal'            tail
+கோயில்<n><nn>:கோயில{Pul}[NN,Pl1]                              # 'kooyil'          temple
+கோவில்<n><nn>:கோவில{Pul}[NN,Pl1]                              # 'koovil'          temple                     Dir/LR
+நாள்<n><nn>:நா{LT}{Pul}[NN,Pl1]                                   # 'naal'            day
 சுவர்<n><nn>:சுவர{Pul}[NN,Pl1]                                     # 'cuvar'           wall
+ஊர்<n><nn>:ஊர{Pul}[NN,Pl1]                                      # 'uur'              village
+ஊரு<n><nn>:ஊர{U}[NN,Pl1]                                       # 'uuru'             village                    Dir/LR
 தேய்நீர்<n><nn>:தேய்நீர{Pul}[NN,Pl1]                               # 'theeiniir'        tea
 தேநீர்<n><nn>:தேநீர{Pul}[NN,Pl1]                                   # 'theeniir'         tea                       Dir/LR
 மரம்<n><nn>:மர{M}{Pul}[NN,MGEN,Pl1]                               # 'maram'           tree
@@ -1249,7 +1280,8 @@ LEXICON Nouns
 # Class 3
 சால்வை<n><nn>:சால்வ{AI}[NN,Pl3]                                # 'caalvay'         shawl             loanword (Hindustani)
 தவறணை<n><nn>:தவறண{AI}[NN,Pl3]                            # 'thavaranay'      tavern            loanword (English)
-அவை<n><nn>:அவ{AI}[NN,Pl1]                                     # 'avay'            audience          loanword (Sanskrit)
+அவை<n><nn>:அவ{AI}[NN,Pl3]                                     # 'avay'            audience          loanword (Sanskrit)
+சண்டை<n><nn>:சண்ட{AI}[NN,Pl3]                                # 'cantay'          fight              loanword (Sanskrit)
 விறாந்தை<n><nn>:விறாந்த{AI}[NN,Pl3]                            # 'viraanthay'      balcony           loanword (Portuguese)                Dir/LR
 மேசை<n><nn>:மேச{AI}[NN,Pl3]                                   # 'meecay'          table              loanword (Portuguese)
 மேஜை<n><nn>:மேஜ{AI}[NN,Pl3]                                   # 'meejay'          table             loanword (Portuguese)                Dir/LR
@@ -1269,10 +1301,11 @@ LEXICON Nouns
 பிழை<n><nn>:பிழ{AI}[NN,Pl3]                                      # 'pizhay'         error
 சீலை<n><nn>:சீல{AI}[NN,Pl3]                                      # 'ciilay'          saree
 சேலை<n><nn>:சேல{AI}[NN,Pl3]                                   # 'ceellay'         saree               Dir/LR
-முட்டை<n><nn>:முட்ட{AI}[NN,Pl1]                                  # 'muttay'          egg
-விற்பனை<n><nn>:விற்பன{AI}[NN,Pl1]                             # 'virpanay'        sale
-கதை<n><nn>:கத{AI}[NN,Pl1]                                      # 'kathay'          story
-சிறுகதை<n><nn>:சிறுகத{AI}[NN,Pl1]                              # 'cirukathay'      short story
+முட்டை<n><nn>:முட்ட{AI}[NN,Pl3]                                  # 'muttay'          egg
+விற்பனை<n><nn>:விற்பன{AI}[NN,Pl3]                             # 'virpanay'        sale
+கதை<n><nn>:கத{AI}[NN,Pl3]                                      # 'kathay'          story
+சிறுகதை<n><nn>:சிறுகத{AI}[NN,Pl3]                              # 'cirukathay'      short story
+பனை<n><nn>:பன{AI}[NN,Pl3]                                     # 'panay'           palmyra
 
 # Class 4
 வான்<n><nn>:வான{Pul}[NN,Pl4]                                   # 'vaan'             van             loanword (English) (n does not change)
@@ -1544,6 +1577,8 @@ LEXICON Adjectives
 நீள:நீள[IND]                             # 'neela'        long
 அகல:அகல[IND]                         # 'akala'        wide
 அடுத்த:அடுத்த[IND]                     # 'atuththa'      next
+வேற:வேற[IND]                          # 'veer'         different
+வேறு:வேறு[IND]                         # 'veeru'        different         Dir/LR
 ## Some can take nomz, adjz both
 தனி:தன{I}[BOTH]                        # 'thani'        solo
 # Some are frozen (require suffixes)
@@ -1574,12 +1609,15 @@ LEXICON Adverbs
 உப்பிடி:உ>ப்பிடி               # 'uppiti'        this way               Dir/LR
 
 LEXICON IntAdverbs
-ஏன்<adv><itg>:ஏன்             # 'een'           why
+ஏன்<adv><itg>:ஏன்                   # 'een'           why
 
 LEXICON LocAdverbs
-ங்கே<adv><loc>:ங்க{EE}        # 'nkee'          here/there/where
-ங்கை<adv><loc>:ங்க{AI}       # 'nkay'          here/there/where       Dir/LR
-ஞ்ச<adv><loc>:ஞ்ச             # 'njc'           here/there/where       Dir/LR
+ங்கே<adv><loc>:ங்க{EE}[NObl]        # 'nkee'          here/there/where
+ங்கே<adv><loc>:ங்க[NObl]            # 'nka'           here/there/where       Dir/LR
+ங்கை<adv><loc>:ங்க{AI}[NObl]       # 'nkay'          here/there/where       Dir/LR
+ஞ்ச<adv><loc>:ஞ்ச[NObl]             # 'njc'           here/there/where       Dir/LR
+# Oblique stem
+ங்கே<adv><loc>:ங்[Obl]        # 'n'                   here/there/where
 
 ################################     DETERMINERS     ################################
 LEXICON Determiners
