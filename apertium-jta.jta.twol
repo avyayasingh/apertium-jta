@@ -49,7 +49,8 @@ Alphabet
      %{M%}:ம %{M%}:த %{M%}:ங
      %{N%}:ன %{N%}:ங
      %{Nn%}:ன
-     %{NN%}:ண
+     %{NN%}:ண %{NN%}:ங
+     %{NT%}:ன %{NT%}:ண
      %{NP%}:ன %{NP%}:ங
      %{NK%}:ன %{NK%}:ர
      %{K%}:க
@@ -138,8 +139,8 @@ Rules
               :ஞ _ :ச ;
               :ங _ :க ;
               %{P%}: _ %{P%}: ;
-              [ SuffixVowels: | %{Ul%}: ] [ %{Yy%}: | %{Y%}: | %{Ln%}: | %{LN%}: | %{LLn%}: | %{LT%}: | :ண | :ர ] _ %>: [  %{RR%}: | %{P%}: | %{T%}: | :த | :ச | :வ | :ன ] ;
-              [ SuffixVowels: | %{Ul%}: ] [ %{Yy%}: | %{Ln%}: | %{LN%}: | %{LLn%}: | :ண | :ர ] _ 0: %>: SuffixVowels: ;              
+              [ SuffixVowels: | %{Ul%}: | %{El%}: ] [ %{Yy%}: | %{Y%}: | %{Ln%}: | %{LN%}: | %{LLn%}: | %{LT%}: | %{NT%}: | :ண | :ர ] _ %>: [  %{RR%}: | %{P%}: | %{T%}: | :த | :ச | :வ | :ன ] ;
+              [ SuffixVowels: | %{Ul%}: | %{El%}: ] [ %{Yy%}: | %{Ln%}: | %{LN%}: | %{LLn%}: | %{NT%}: | :ண | :ர ] _ 0: %>: SuffixVowels: ;              
               %{M%}: _ 0: %>: [ SuffixVowels: | %{Igen%}: ] ;
               [ %{NP%}: | %{NR%}: | %{NK%}: | %{RP%}: ] :0 %>: %{Igen%}: :0 _ %{R%}: ;
               %{Y%}: _ 0: %>: %{U%}: ;
@@ -234,7 +235,7 @@ Rules
 0:ள <=> %{LN%}: %{Pul%}: _ %>: SuffixVowels: ;
 
 "Inserting ண"
-0:ண <=> %{NN%}: %{Pul%}: _ %>: %{U%}: ;
+0:ண <=> %{NN%}: %{Pul%}: _ %>: SuffixVowels: ;
 
 "Inserting க"
 0:க <=> %{AA%}: %>: _ 0: %{K%}: ;
@@ -273,6 +274,9 @@ Rules
 %{N%}:ங <=> _ %{Pul%}: %>: %{K%}: ;
 
 "Starting with K"
+%{NN%}:ங <=> _ %{Pul%}: %>: %{K%}: ;
+
+"Starting with K"
 %{LK%}:க <=> _ %{Pul%}: %>: %{K%}: ;
 
 "Starting with K"
@@ -290,6 +294,9 @@ Rules
 
 "Starting with T"
 %{LN%}:ண <=> _ %{Pul%}: %>: %{T%}: ;
+
+"Starting with T"
+%{NT%}:ண <=> _ %{Pul%}: %>: %{T%}: ;
 
 "Starting with T"
 %{LT%}:ட <=> _ %{Pul%}: %>: :Consonant ;
