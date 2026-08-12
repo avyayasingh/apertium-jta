@@ -31,11 +31,14 @@ cat /tmp/$LG.parade.txt | grep '\*' | sort | uniq -c | sort -rn | head -n20
 TOTAL=`grep -v '^$' /tmp/$LG.parade.txt | wc -l`
 KNOWN=`grep -v '^$' /tmp/$LG.parade.txt | grep -v '\*' | wc -l`
 UNKNOWN=`grep -v '^$' /tmp/$LG.parade.txt | grep '\*' | wc -l`
+ANALYSES=`sed 's/$\W*\^/$\n^/g' /tmp/$LG.parade.txt | cut -f2- -d'/' | sed 's/\//\n/g' | wc -l`;
+AMBIG=`echo $ANALYSES/$TOTAL | calc -p | sed 's/[\s\t]//g'`
 
 PERCENTAGE=`echo $KNOWN/$TOTAL | calc -p | sed 's/[\s\t]//g'`
 
 echo "coverage: $KNOWN / $TOTAL ($PERCENTAGE)"
 echo "remaining unknown forms: $UNKNOWN"
+echo "ambiguity: $ANALYSES / $TOTAL ($AMBIG)"
 
 DATE=`date`;
 echo -e $LG $DATE"\t"$KNOWN"/"$TOTAL"\t"$PERCENTAGE >> history.log

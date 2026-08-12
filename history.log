@@ -137,3 +137,6 @@ ninethousand_corpus.txt Wed Aug 12 19:51:59 UTC 2026	48022/85954	~0.558694185261
 ninethousand_corpus.txt Wed Aug 12 19:54:10 UTC 2026	48064/85954	~0.55918281871698815646
 ninethousand_corpus.txt Wed Aug 12 19:58:12 UTC 2026	48153/85954	~0.56021825627661307211
 s.suseendirarajah_corpus.txt Wed Aug 12 19:58:24 UTC 2026	1534/1775	~0.86422535211267605634
+s.suseendirarajah_corpus.txt Wed Aug 12 20:00:56 UTC 2026	0/0	Error E_ZERODIVZERO	\|	0/0	Error E_ZERODIVZERO
+s.suseendirarajah_corpus.txt Wed Aug 12 20:02:49 UTC 2026	1534/1775	~0.86422535211267605634
+ninethousand_corpus.txt Wed Aug 12 20:02:59 UTC 2026	48153/85954	~0.56021825627661307211
