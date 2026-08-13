@@ -45,6 +45,7 @@ Alphabet
      %{AUU%}:ௗ
      ! Pulli
      %{Pul%}:் %{Pul%}:0
+     %{Pulo%}:் %{Pulo%}:0
      ! Consonants
      %{M%}:ம %{M%}:த %{M%}:ங
      %{N%}:ன %{N%}:ங
@@ -62,8 +63,9 @@ Alphabet
      %{Ln%}:ல %{Ln%}:ன
      %{LLn%}:ல
      %{LR%}:ல %{LR%}:ற
-     %{PLR%}:ள
+     %{PLR%}:ள %{PLR%}:ங
      %{R%}:ர
+     %{Ro%}:ர %{Ro%}:0
      %{RP%}:ர   
      %{RR%}:ற
      %{T%}:ட
