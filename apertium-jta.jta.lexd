@@ -599,6 +599,7 @@ LEXICON NegSuffix
 ## Auxiliaries
 <neg><vaux>:>{I}ல்லை[INF]                  # 'illay'
 <neg><vaux>:>{EEv}ல்லை[INF]                # 'eellay'         Dir/LR
+<neg><vaux>:>{EEv}லை[INF]                  # 'eelay'          Dir/LR
 <neg><vaux>:>{EEv}ல்ல[INF]                  # 'eell'           Dir/LR
 <neg><vaux>:>{EEv}ல[INF]                    # 'eel'            Dir/LR
 <neg><vaux>:>ல{E}[INF]                      # 'le'             Dir/LR
@@ -1091,6 +1092,7 @@ LEXICON Nouns
 ஆச்சி<n><f><aa>:ஆச்ச{I}[AA,Pl6]                                    # 'aacci'           grandmother
 தங்கச்சி<n><f><aa>:தங்கச்ச{I}[AA,Pl6]                               # 'thankachchi'     younger sister
 அம்மா<n><f><aa>:அம்ம{AA}[AA,Pl6]                                  # 'amma'            mother
+அக்கா<n><f><aa>:அக்க{AA}[AA,Pl6]                                  # 'akka'            elder sister
 ### I(b)
 மாமி<n><f><aa>:மாம{I}[AA,Pl6]                                     # 'maami'           aunt
 மனிதி<n><f><aa>:மனித{I}[AA,Pl6]                                  # 'manithi'         wife
@@ -1274,7 +1276,8 @@ LEXICON Nouns
 கச்சான்<n><nn>:கச்சா{N}{Pul}[NN,Pl1]                             # 'kaccaan'         peanut              loanword (Malay)
 வதந்தி<n><nn>:வதந்த{I}[NN,Pl1]                                   # 'vathanthi'       rumor              loanword (Sanskrit)
 கவி<n><nn>:கவ{I}[NN,Pl1]                                        # 'kavi'             poem               loanword (Sanskrit)
-வேகம்<n><nn>:வேகம{Pul}[NN,Pl1]                                 # 'veekam'          speed              loanword (Sanskrit)
+சனம்<n><nn>:சன{M}{Pul}[NN,MGEN,Pl1]                             # 'canam'            population         loanword (Sanskrit)
+வேகம்<n><nn>:வேக{M}{Pul}[NN,MGEN,Pl1]                           # 'veekam'          speed              loanword (Sanskrit)
 விமானம்<n><nn>:விமான{M}{Pul}[NN,MGEN,Pl1]                      # 'vimaanam'       airplane            loanword (Sanskrit) 
 பாடம்<n><nn>:பாட{M}{Pul}[NN,MGEN,Pl1]                            # 'paatam'          lesson             loanword (Sanskrit)
 ஆயுதம்<n><nn>:ஆயுத{M}{Pul}[NN,MGEN,Pl1]                         # 'aayutham'        instrument         loanword (Sanskrit)
@@ -1351,6 +1354,7 @@ LEXICON Nouns
 கத்தி<n><nn>:கத்த{I}[NN,Pl1]                                       # 'kaththi'         knife
 வேட்டி<n><nn>:வேட்ட{I}[NN,Pl1]                                    # 'veetti'          dhoti
 ஊசி<n><nn>:ஊச{I}[NN,Pl1]                                        # 'uuci'            needle
+உதவி<n><nn>:உதவ{I}[NN,Pl1]                                     # 'uthavi'           aid
 மணி<n><nn>:மண{I}[NN,Pl1]                                      # 'mani'             hour
 நுனி<n><nn>:நுன{I}[NN,Pl1]                                       # 'nuni'             edge
 புத்திமதி<n><nn>:புத்திமத{I}[NN,Pl1]                               # 'puththimathi'    advice
@@ -1367,6 +1371,7 @@ LEXICON Nouns
 ஊரு<n><nn>:ஊர{U}[NN,Pl1]                                       # 'uuru'             village                    Dir/LR
 தேய்நீர்<n><nn>:தேய்நீர{Pul}[NN,Pl1]                               # 'theeiniir'        tea
 தேநீர்<n><nn>:தேநீர{Pul}[NN,Pl1]                                   # 'theeniir'        tea                       Dir/LR
+பனங்காய்<n><nn>:பனங்காய{Pul}[NN,Pl1]                         # 'panankaay'       palmyra fruit
 மரம்<n><nn>:மர>{M}{Pul}[NN,MGEN,Pl1]                             # 'maram'           tree
 எண்ணம்<n><nn>:எண்ண>{M}{Pul}[NN,MGEN,Pl1]                    # 'ennam'           thought
 மனம்<n><nn>:மன{M}{Pul}[NN,MGEN,Pl1]                            # 'manam'           mind
@@ -1603,6 +1608,7 @@ LEXICON TransVerbStem
 சேர்<v><tv>:ச{EE}ர{Pul}[Class6,S]                     # 'ceer'        join                      Paired
 தவிர்<v><tv>:தவ{I}ர{Pul}[Class6,S]                   # 'thavir'      put away                  Paired
 கண்டி<v><tv>:கண்ட{I}[Class6,S]                     # 'kanti'       condemn                   loanword (Sanskrit)
+யோசி<v><tv>:யோச{I}[Class6,S]                     # 'yooci'        think                    loanword (Sanskrit)       Paired
 எடு<v><tv>:எட{U}[Class6,S]                           # 'etu'         take
 கொடு<v><tv>:கொட{U}[Class6,S,ALN]                 # 'kotu'        give
 குடு<v><tv>:குட{U}[Class6,S,ALN]                      # 'kutu'        give                      Dir/LR
@@ -1692,6 +1698,7 @@ LEXICON IntraVerbStem
 
 # Class 6
 கதை<v><iv>:கத{AI}[Class6,S]                        # 'kathay'      speak                   loanword (Sanskrit)
+யோசி<v><iv>:யோச{I}[Class6,S]                     # 'yooci'        think                  loanword (Sanskrit)       Paired
 கிடை<v><iv>:கிட{AI}[Class6,S]                       # 'kitay'       be available            Paired
 வலி<v><iv>:வல{I}[Class6,S]                          # 'vali'        ache
 சிரி<v><iv>:சிர{I}[Class6,S]                           # 'siri'        laugh
@@ -1724,7 +1731,10 @@ LEXICON Adjectives
 அடுத்த:அடுத்த[IND]                     # 'atuththa'      next
 வேற:வேற[IND]                          # 'veer'         different
 வேறு:வேறு[IND]                         # 'veeru'        different         Dir/LR
-மர:மர[IND]                              # 'mara'         wooden  
+மர:மர[IND]                              # 'mara'         wooden
+சின்ன:சின்ன[IND]                       # 'cinna'        small
+சிறு:சிறு[IND]                            # 'ciru'         small            Dir/LR
+சிறிய:சிறிய[IND]                         # 'ciriya'      small            Dir/LR
 ## Some can take nomz, adjz both
 தனி:தன{I}[BOTH]                        # 'thani'        solo
 # Some are frozen (require suffixes)
@@ -1739,10 +1749,14 @@ LEXICON Adverbs
 ரொம்ப:ரொம்ப                # 'rompa'        very                    Dir/LR
 கட்டாயம்:கட்டாயம{Pul}       # 'kattaayam'    definitely
 இன்னும்:இன்னும{Pul}         # 'innum'         more
+நிறைய:நிறைய               # 'nirayya'       a lot
+முழுக்க:முழுக்க               # 'muzhukka'      fully
 # Temporal
 இன்னும்:இன்னும{Pul}         # 'innum'         yet
+முந்தி:முந்த{I}                 # 'munthi'       before
 இப்பொழுது:இப்பொழுத{U}    # 'ippolutu'      now
 இப்ப:இப்ப                    # 'ippa'           now                    Dir/LR
+இனி:இன{I}                  # 'ini'            now
 அப்ப:அப்ப                    # 'appa'          then
 மறுபடியும்:மறுபடியும{Pul}    # 'marupatiyum'   again
 பிறகு:பிறகு                   # 'piraku'         after
@@ -1751,10 +1765,11 @@ LEXICON Adverbs
 நேற்று:நேற்ற{U}               # 'neerru'        yesterday
 # Manner
 தனிய:தனிய                  # 'thaniya'       alone
-நல்லா:நல்லா                  # 'nallaa'        well
-இப்படி:இ>ப்படி                # 'ippati'        this way
-உப்பிடி:உ>ப்பிடி               # 'uppiti'        this way               Dir/LR
-சும்மா:சும்மா                  # 'cummaa'        like that
+நல்லா:நல்ல{AA}               # 'nallaa'        well
+இப்படி:இ>ப்பட{I}             # 'ippati'        this way
+உப்பிடி:உ>ப்பிட{I}            # 'uppiti'        this way               Dir/LR
+அப்பிடி:அ>ப்பிட{I}            # 'appati'        that way
+சும்மா:சும்ம{AA}               # 'cummaa'        like that
 
 LEXICON IntAdverbs
 ஏன்<adv><itg>:ஏன்                   # 'een'           why
@@ -1776,6 +1791,8 @@ LEXICON Determiners
 ஒரு<det><ind>:ஒரு                       # 'oru'     a
 கன<det><ind>:கன                      # 'kana'    many
 ஒவ்வொரு<det><ind>:ஒவ்வொரு         # 'ovvoru'  every
+நிறைய<det><ind>:நிறைய              # 'nirayya' many
+பல<det><ind>:பல                       # 'pala'    many
 # Definites
 எல்லா<det><def>:எல்லா                 # 'ella'    all
 
