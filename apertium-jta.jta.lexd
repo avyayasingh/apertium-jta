@@ -76,7 +76,7 @@ PronounStems[-LOC,NObl,PH] Honorifics[PH] Number[PH] (EndwordMorph|InterroClitic
 PronounStems[-LOC,NObl,IH] Honorifics[IH] Number[IH] (EndwordMorph|InterroClitic|Intensifier|TotalClitic|Conjunctive)?
 ## Other Types
 IndefProStem ((HumanRadical[Hum] Cases[AA])|(HumanRadical[NHum] Cases[NN]))? (TotalClitic|Conjunctive)?
-InterProStem
+InterProStem TotalClitic?
 # Nouns & NP
 ## Irregulars
 Nouns[NQ] Adjectivizer|(Professionalizer Number[Pl1] Cases[AA]|(PostPosSuf[PER] EmphaticCli)) EndwordMorph?
@@ -247,6 +247,8 @@ Location(1) LocAdverbs[NObl] Location(2)
 InterroPrefix(1) LocAdverbs[NObl] InterroPrefix(2)
 Location(1) LocAdverbs[Obl] PostPosSuf[PER] EmphaticSuf? Location(2)
 InterroPrefix(1) LocAdverbs[Obl] PostPosSuf[PER] EmphaticSuf? InterroPrefix(2)
+Location(1) LocManAdverbs Location(2)
+InterroPrefix(1) LocManAdverbs InterroPrefix(2)
 IntAdverbs
 # Determiners
 Determiners
@@ -382,6 +384,7 @@ LEXICON Cases
 ## dative
 <dat>:>{U}{K}{Pul}{K}{U}[AA,NN,NNIrr,TN,P,PS,PL]                 # 'ukku'
 <dat>:>{A}{K}{Pul}{K}{U}[AA,NN,NNIrr,TN,P,PS,PL]                 # 'akku'               (irregular dative)               Dir/LR
+<dat>:>{AI}{K}{Pul}{K}{U}[AA,NN,NNIrr,TN,P,PS,PL]                # 'aykku'              (irregular dative)               Dir/LR
 <dat>:>{K}{Pul}{K}{U}[AA,NN,NNIrr,TN,P,PS,PL]                    # 'kku'                (irregular dative)               Dir/LR
 <dat>:>{AI}[VIrr]                                                # 'ay'                 (irregular dative for 'veetu')    Dir/LR
 ## comitative/sociative
@@ -704,12 +707,15 @@ LEXICON Participle
 #### weak form
 <par><adj><pres>:>{K}{I}ற[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]            # 'kir'
 <par><adj><pres>:>{K}{I}ன்ற[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]          # 'kinr'         Dir/LR
+<par><adj><pres>:>ற[Class1a,Class1b,Class1c,Class2,Class3,Class3Irr,Class4]                  # 'r'            Dir/LR
 #### irregular class
 <par><adj><pres>:>{K}{I}ற[Class5a,Class5b,Class5c,Class5d,Class5e,Class5f]                   # 'kir'
 <par><adj><pres>:>{K}{I}ன்ற[Class5a,Class5b,Class5c,Class5d,Class5e,Class5f]                 # 'kinr'         Dir/LR
+<par><adj><pres>:>ற[Class5a,Class5b,Class5c,Class5d,Class5e,Class5f]                         # 'r'            Dir/LR
 #### strong form
 <par><adj><pres>:>{K}{Pul}{K}{I}ற[Class6,Class7]                                             # 'kkir'
-<par><adj><pres>:>{K}{Pul}{K}{I}ன்ற[Class6,Class7]                                           # 'kkir'         Dir/LR
+<par><adj><pres>:>{K}{Pul}{K}{I}ன்ற[Class6,Class7]                                           # 'kkinr'        Dir/LR
+<par><adj><pres>:>ற[Class6,Class7]                                                           # 'r'            Dir/LR
 ### future
 #### weak form
 <par><adj><fut>:>{U}ம்[Class1a,Class1b,Class1c,Class2,Class3,Class4]                          # 'um'
@@ -976,7 +982,8 @@ LEXICON PronounStems
 
 LEXICON InterProStem
 என்ன<prn><ind><itg>:எ>ன்ன                         # 'enna'            what
-ஆர்<prn><ind><h><itg>:ஆ>ர்                          # 'aar'             who
+ஆர்<prn><ind><h><itg>:ஆ>ர{Pul}                     # 'aar'              who
+யார்<prn><ind><h><itg>:யா>ர{Pul}                    # 'yaar'            who
 
 LEXICON IndefProStem
 எல்லா<prn><ind>:எல்ல{AAv}                          # 'ella'            every-
@@ -1054,10 +1061,12 @@ LEXICON Nouns
 அருளாய்<np><m><aa>:அருளாய{Pul}[AA,Pl2]                          # 'Arul'             Dir/LR
 மணி<np><m><aa>:மண{I}[AA,Pl2]                                    # 'Mani'
 செல்லையா<np><m><aa>:செல்லைய{AA}[AA,Pl2]                      # 'Chelliah'
+கந்தையா<np><m><aa>:கந்தைய{AA}[AA,Pl2]                          # 'Kanthayyaa'
 ### -N or -R ending irregulars
 முருகன்<np><m><aa>:முருக{NP}{Pul}[AA,Pl2]                          # 'Murugan'
 கண்ணன்<np><m><aa>:கண்ண{NP}{Pul}[AA,Pl2]                      # 'Kannan'
 பொன்னன்<np><m><aa>:பொன்ன{NP}{Pul}[AA,Pl2]                    # 'Ponnan'
+பத்மநாதன்<np><m><aa>:பத்மநாத{NP}{Pul}[AA,Pl2]                   # 'Pathmanaathan'
 பொன்னர்<np><m><aa>:பொன்ன{RP}{Pul}[AA,Pl2]                     # 'Ponnar'
 
 # Class 3
@@ -1210,6 +1219,8 @@ LEXICON Nouns
 கொஞ்சம்<n><nn>:கொஞ்ச{M}{Pul}[NN,QNoun]                        # 'konjcam'         a little bit
 கொஞ்ச<n><nn>:கொஞ்ச[NN,QNoun]                                  # 'konjca'          a little bit        Dir/LR
 கன<n><nn>:கன[NN,QNoun]                                          # 'kana'            many
+வலு<n><nn>:வல{U}[NN,QNoun]                                       # 'valu'            weight
+மட்டு<n><nn>:மட்ட{U}[NN,QNoun]                                     # 'mattu'           measure
 ### Masses
 பட்டு<n><nn>:பட்ட{U}[NN,UNoun]                                     # 'pattu'           silk                loanword (Sanskrit)
 நீர்<n><nn>:நீர{Pul}[NN,UNoun]                                       # 'niir'            water               loanword (Sanskrit)
@@ -1222,6 +1233,7 @@ LEXICON Nouns
 வருடம்<time>:வருட{M}{Pul}[NN,TiNoun]                             # 'varutam'         year               loanword (Sanskrit)
 வருசம்<time>:வருச{M}{Pul}[NN,TiNoun]                             # 'varucam'         year               Dir/LR
 இன்று<time>:இன்ற{U}[NN,TiNoun]                                   # 'inru'            today
+இண்டு<time>:இண்ட{U}[NN,TiNoun]                                 # 'intu'            today              Dir/LR
 நாளை<time>:நாள{AI}[NN,TiNoun]                                  # 'naalay'          tomorrow
 நேற்று<time>:நேற்ற{U}[NN,TiNoun]                                  # 'neerru'          yesterday
 # Abstract nouns 
@@ -1386,6 +1398,7 @@ LEXICON Nouns
 சாப்பாடு<n><nn>:சாப்பா{T}{U}[NN,Pl1]                            # 'caappaatu'       food
 மணிக்கூடு<n><nn>:மணிக்கூ{T}{U}[NN,Pl1]                        # 'manikkootu'      watch
 வயிறு<n><nn>:வயி{RR}{U}[NN,Pl1]                                 # 'vayiru'          stomach
+வேல<n><nn>:வேல[NN,Pl1]                                        # 'veela'           work                        Dir/LR
 
 ## Days of the week
 திங்கள்<date>:திங்கள{Pul}[NN,Pl1]                               # 'thinkal'                  Monday
@@ -1698,12 +1711,13 @@ LEXICON IntraVerbStem
 
 # Class 6
 கதை<v><iv>:கத{AI}[Class6,S]                        # 'kathay'      speak                   loanword (Sanskrit)
-யோசி<v><iv>:யோச{I}[Class6,S]                     # 'yooci'        think                  loanword (Sanskrit)       Paired
+யோசி<v><iv>:யோச{I}[Class6,S]                     # 'yooci'       think                   loanword (Sanskrit)       Paired
 கிடை<v><iv>:கிட{AI}[Class6,S]                       # 'kitay'       be available            Paired
 வலி<v><iv>:வல{I}[Class6,S]                          # 'vali'        ache
 சிரி<v><iv>:சிர{I}[Class6,S]                           # 'siri'        laugh
 தெரி<v><iv>:தெர{I}[Class6,S]                        # 'theri'       perverse
 அடு<v><iv>:அட{U}[Class6,S]                          # 'atu'         approach
+வலு<v><iv>:வல{U}[Class6,S]                         # 'valu'        strong
 தேர்<v><iv>:த{EE}ர{Pul}[Class6,S]                    # 'theer'       mingle
 
 # Class 7
@@ -1730,11 +1744,12 @@ LEXICON Adjectives
 அகல:அகல[IND]                         # 'akala'        wide
 அடுத்த:அடுத்த[IND]                     # 'atuththa'      next
 வேற:வேற[IND]                          # 'veer'         different
-வேறு:வேறு[IND]                         # 'veeru'        different         Dir/LR
+வேறு:வேற{U}[IND]                       # 'veeru'        different         Dir/LR
 மர:மர[IND]                              # 'mara'         wooden
 சின்ன:சின்ன[IND]                       # 'cinna'        small
-சிறு:சிறு[IND]                            # 'ciru'         small            Dir/LR
-சிறிய:சிறிய[IND]                         # 'ciriya'      small            Dir/LR
+சிறு:சிற{U}[IND]                         # 'ciru'         small            Dir/LR
+சிறிய:சிறி{Y}[IND]                       # 'ciriya'      small            Dir/LR
+வலு:வல{U}[IND]                         # 'valu'        strong
 ## Some can take nomz, adjz both
 தனி:தன{I}[BOTH]                        # 'thani'        solo
 # Some are frozen (require suffixes)
@@ -1751,25 +1766,30 @@ LEXICON Adverbs
 இன்னும்:இன்னும{Pul}         # 'innum'         more
 நிறைய:நிறைய               # 'nirayya'       a lot
 முழுக்க:முழுக்க               # 'muzhukka'      fully
+உடனே:உடன{EE}             # 'utanee'        immediately
+உடன்:உடன{Pul}             # 'utan'          together
+வலு:வல{U}                   # 'valu'          very 
+மட்டும்:மட்டும{Pul}           # 'mattum'        only       
 # Temporal
 இன்னும்:இன்னும{Pul}         # 'innum'         yet
 முந்தி:முந்த{I}                 # 'munthi'       before
-இப்பொழுது:இப்பொழுத{U}    # 'ippolutu'      now
-இப்ப:இப்ப                    # 'ippa'           now                    Dir/LR
-இனி:இன{I}                  # 'ini'            now
-அப்ப:அப்ப                    # 'appa'          then
 மறுபடியும்:மறுபடியும{Pul}    # 'marupatiyum'   again
 பிறகு:பிறகு                   # 'piraku'         after
 இன்று:இன்ற{U}               # 'inru'           today
+இண்டு:இண்ட{U}              # 'intu'           today
 நாளை:நாள{AI}               # 'naalay'        tomorrow
 நேற்று:நேற்ற{U}               # 'neerru'        yesterday
 # Manner
 தனிய:தனிய                  # 'thaniya'       alone
 நல்லா:நல்ல{AA}               # 'nallaa'        well
-இப்படி:இ>ப்பட{I}             # 'ippati'        this way
-உப்பிடி:உ>ப்பிட{I}            # 'uppiti'        this way               Dir/LR
-அப்பிடி:அ>ப்பிட{I}            # 'appati'        that way
 சும்மா:சும்ம{AA}               # 'cummaa'        like that
+
+LEXICON LocManAdverbs
+ப்படி<adv>:ப்பட{I}             # 'ppati'          this way
+ப்பிடி<adv>:ப்பிட{I}            # 'ppiti'          this way
+ப்ப<adv>:ப்ப                   # 'ppa'            now
+னி<adv>:ன{I}                 # 'ni'             now
+ப்பொழுது<adv>:ப்பொழுத{U}  # 'ppozhuthu'      now
 
 LEXICON IntAdverbs
 ஏன்<adv><itg>:ஏன்                   # 'een'           why
@@ -1815,7 +1835,9 @@ LEXICON Conjunctions
 ## negatives
 இல்லாட்டில்<neg><cnjsub>:இல்லா>ட்டில்      # 'illaattil'   if not 
 # coordinating
-எண்டும்<cnjcoo>:எண்டும{Pul}              # 'entum'       and that 
+எண்டும்<cnjcoo>:எண்டும{Pul}              # 'entum'       and that
+ஆனா<cnjcoo>:ஆன{AA}                     # 'aanaa'       but
+ஆனால்<cnjcoo>:ஆனால{Pul}               # 'aanaal'      but
 
 ################################     COMPARATIVES     ################################
 LEXICON Comparatives
@@ -1869,24 +1891,30 @@ NumStems [ <num>: ] Measurement|Cases[NN] EndwordMorph?
 
 LEXICON NumStems
 ஒன்று:ஒன்ற{U}                                     # 'onru'             one
+ஒண்டு:ஒண்ட{U}                                   # 'ontu'             one         Dir/LR
 ஒரு:ஒர{U}                                          # 'oru'              one         Dir/LR
 இரண்டு:இரண்ட{U}                                 # 'irandu'           two
-ரெண்டு:ரெண்ட{U}                                  # 'rendu'            two         Dir/LR
+ரெண்டு:ரெண்ட{U}                                  # 'rendu'            two        Dir/LR
 மூன்று:மூன்ற{U}                                    # 'moonru'           three
+மூண்டு:மூண்ட{U}                                  # 'moontu'           three       Dir/LR
 நான்கு:நான்க{U}                                    # 'naanku'           four
-நாலு:நால{U}                                        # 'naalu'            four        Dir/LR
+நாலு:நால{U}                                        # 'naalu'            four       Dir/LR
 ஐந்து:ஐந்த{U}                                       # 'aynthu'           five
 ஆறு:ஆற{U}                                        # 'aaru'             six
+ஆடு:ஆட{U}                                        # 'aatu'             six         Dir/LR
 ஏழு:ஏழ{U}                                          # 'eezhu'            seven
 எட்டு:எட்ட{U}                                       # 'ettu'             eight
 ஒன்பது:ஒன்பத{U}                                  # 'onpathu'          nine
 பத்து:பத்த{U}                                       # 'paththu'          ten
 பதினொன்று:பதினொன்ற{U}                        # 'pathinonru'       eleven
+பதினொண்டு:பதினொண்ட{U}                      # 'pathiontu'        eleven     Dir/LR
 பன்னிரண்டு:பன்னிரண்ட{U}                        # 'pannirantu'       twelve
 பதின்மூன்று:பதின்மூன்ற{U}                         # 'pathinmoonru'     thirteen
+பதின்மூண்டு:பதின்மூண்ட{U}                       # 'pathinmoontu'     thirteen   Dir/LR
 பதினான்கு:பதினான்க{U}                            # 'pathinaanthu'     fourteen
 பதினைந்து:பதினைந்த{U}                           # 'pathinaynthu'     fifteen
 பதினாறு:பதினாற{U}                                # 'pathinaaru'       sixteen
+பதினாடு:பதினாட{U}                                # 'paathinaatu'      sixteen    Dir/LR
 பதினேழு:பதினேழ{U}                               # 'pathineezhu'      seventeen
 பதினெட்டு:பதினெட்ட{U}                            # 'pathinettu'       eighteen
 பத்தொன்பது:பத்தொன்பத{U}                       # 'pathithonpathu'   nineteen
@@ -1940,6 +1968,7 @@ LEXICON Symbols
 𑿯:𑿯       # starting from
 𑿰:𑿰       # et cetera (items in series)
 𑿱:𑿱      # et cetera (items of family or kind)
+ஶ்ரீ:ஶ்ரீ       # shri
 
 
 # Old currency units
