@@ -271,6 +271,7 @@ Rules
             _ %>: %{AAv%}: ;
             _ %>: %{Av%}: ;
             _ %>: %{VOW%}:ூ ;
+            :த _ %>: %{P%}: %{Pul%}: %{P%}: ;
 
 "Removing  ு"
 %{Uimp%}:0 <=> SuffixVowelsU: %>: _ ;
