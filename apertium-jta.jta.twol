@@ -18,6 +18,7 @@ Alphabet
      %{AAm%}:ா
      %{AAp%}:ா
      %{AAIrr%}:ா
+     %{AAIrr2%}:ா
      %{I%}:ி %{I%}:0
      %{Im%}:ி
      %{II%}:ீ
@@ -25,6 +26,7 @@ Alphabet
      %{U%}:ு %{U%}:0
      %{Uu%}:ு
      %{UIrr%}:ு
+     %{UIrr2%}:ு
      %{UA%}:ு
      %{Ul%}:உ
      %{Um%}:ு %{Um%}:0
@@ -81,6 +83,7 @@ Alphabet
      %{Y%}:ய
      %{Yy%}:ய
      %{C%}:ச
+     %{V%}:வ
      %{AN%}:ங %{AN%}:0
      %{NR%}:ங %{NR%}:ன %{NR%}:0
      ! Noun case irregulars
@@ -139,6 +142,10 @@ Rules
               %{K%}: _ %{K%}: ;
               %{N%}: _ %{R%}: ;
               %{T%}: _ %{T%}: ;
+              _ %>: %{V%}: %{I%}: ;
+              _ %>: %{P%}: %{I%}: ;
+              _ %>: %{P%}: %{Pul%}: %{P%}: %{I%}: ;
+              _ %>: :த %{Pul%}: ;
               :ந _ :த ;
               :த _ :த ;
               :ச _ :ச ;
@@ -146,8 +153,8 @@ Rules
               :ங _ :க ;
               %{P%}: _ %{P%}: ;
               :ம _ %>: %{P%}: ;
-              [ SuffixVowels: | %{Ul%}: | %{El%}: ] [ %{Yy%}: | %{Y%}: | %{Ln%}: | %{Lno%}: | %{LN%}: | %{LLn%}: | %{LT%}: | %{NT%}: | :ண | :ர ] _ %>: [  %{RR%}: | %{P%}: | %{T%}: | :த | :ச | :வ | :ன ] ;
-              [ SuffixVowels: | %{Ul%}: | %{El%}: ] [ %{Yy%}: | %{Ln%}: | %{Lno%}: | %{LN%}: | %{LLn%}: | %{NT%}: | :ண | :ர ] _ 0: %>: SuffixVowels: ;              
+              [ SuffixVowels: | %{Ul%}: | %{El%}: | %{AAIrr2%}: ] [ %{Yy%}: | %{Y%}: | %{Ln%}: | %{Lno%}: | %{LN%}: | %{LLn%}: | %{LT%}: | %{NT%}: | :ண | :ர ] _ %>: [  %{RR%}: | %{P%}: | %{T%}: | :த | :ச | :வ | :ன ] ;
+              [ SuffixVowels: | %{Ul%}: | %{El%}: | %{AAIrr2%}: ] [ %{Yy%}: | %{Ln%}: | %{Lno%}: | %{LN%}: | %{LLn%}: | %{NT%}: | :ண | :ர ] _ 0: %>: SuffixVowels: ;              
               %{M%}: _ 0: %>: [ SuffixVowels: | %{Igen%}: ] ;
               [ %{NP%}: | %{NR%}: | %{NK%}: | %{RP%}: ] :0 %>: %{Igen%}: :0 _ %{R%}: ;
               %{Y%}: _ 0: %>: %{U%}: ;
@@ -375,6 +382,13 @@ Rules
 
 "Dropping irregular U after OO for poo"
 %{UIrr%}:0 <=> %{OO%}: %>: _ ;
+
+"Dropping AAIrr2 if followed by T for Kaan/Kaanu"
+%{AAIrr2%}:0 <=> %{K%}: _ :ண [ %{Pul%}: | %{UIrr2%}: ] %>: %{T%}: ;
+
+"Dropping AAIrr2 if followed by T for Kaan/Kaanu"
+%{UIrr2%}:0 <=> %{K%}: %{AAIrr2%}: :ண _ %>: %{T%}: ;
+                _ %>: %{A%}: ;
 
 ! Vocative
 "Vocative vowel rules"
