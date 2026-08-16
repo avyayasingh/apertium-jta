@@ -77,6 +77,7 @@ Alphabet
      %{LT%}:ள %{LT%}:ட
      %{TR%}:ட %{TR%}:ற
      %{TH%}:த
+     %{THl%}:த
      %{P%}:ப
      %{Pi%}:ப %{Pi%}:0
      %{pI%}:ி %{pI%}:0
@@ -100,7 +101,7 @@ ConsonantR = க ங ச ஞ	ட ண த ந ப ம ய ர ல வ	ழ ள ன
 Mellinam = ங ஞ ண ந ம ன;
 Vallinam = க ச ட த ப ற;
 Idaiyinam = ய ர ல வ ழ ள;
-ConsonantLeft = %{NP%} %{M%} %{N%} %{Nn%} %{NN%} %{NK%} %{K%} %{Kk%} %{L%} %{PL%} %{LK%} %{LN%} %{Ln%} %{Lno%} %{LLn%} %{PLR%} %{R%} %{Ro%} %{RP%} %{RR%} %{T%} %{LT%} %{TR%} %{TH%} %{P%} %{Y%} %{Yy%} %{C%} %{NR%} ;
+ConsonantLeft = %{NP%} %{M%} %{N%} %{Nn%} %{NN%} %{NK%} %{K%} %{Kk%} %{L%} %{PL%} %{LK%} %{LN%} %{Ln%} %{Lno%} %{LLn%} %{PLR%} %{LR%} %{R%} %{Ro%} %{RP%} %{RR%} %{T%} %{LT%} %{TR%} %{TH%} %{P%} %{Y%} %{Yy%} %{C%} %{NR%} ;
 
 RemConsonant = Mellinam ல ;
 
@@ -127,7 +128,6 @@ Rules
               %{PLR%}: _ %>: %{R%}: ;
               %{PL%}: _ %>: %{T%}: ;
               %{PL%}: _ %>: %{AA%}: .#. ;
-
               %{TH%}: _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: | %{Uimp%}: | %{Im%}: | %{EEm%}: | %{OOm%}: ] ;
               [ %{NP%}: | %{NR%}: | %{NK%}: | %{RP%}: ] _ %>: %{Igen%}: :0 %{Pul%}: %{R%}: ;
               :Consonant :0 _ %>: %{VOW%}: ;
@@ -153,8 +153,8 @@ Rules
               :ங _ :க ;
               %{P%}: _ %{P%}: ;
               :ம _ %>: %{P%}: ;
-              [ SuffixVowels: | %{Ul%}: | %{El%}: | %{AAIrr2%}: ] [ %{Yy%}: | %{Y%}: | %{Ln%}: | %{Lno%}: | %{LN%}: | %{LLn%}: | %{LT%}: | %{NT%}: | :ண | :ர ] _ %>: [  %{RR%}: | %{P%}: | %{T%}: | :த | :ச | :வ | :ன ] ;
-              [ SuffixVowels: | %{Ul%}: | %{El%}: | %{AAIrr2%}: ] [ %{Yy%}: | %{Ln%}: | %{Lno%}: | %{LN%}: | %{LLn%}: | %{NT%}: | :ண | :ர ] _ 0: %>: SuffixVowels: ;              
+              [ SuffixVowels: | %{Ul%}: | %{El%}: | %{THl%}: | %{AAIrr2%}: ] [ %{Yy%}: | %{Y%}: | %{Ln%}: | %{Lno%}: | %{LN%}: | %{LLn%}: | %{LR%}: | %{LT%}: | %{NT%}: | :ண | :ர ] _ %>: [  %{RR%}: | %{P%}: | %{T%}: | :த | :ச | :வ | :ன ] ;
+              [ SuffixVowels: | %{Ul%}: | %{El%}: | %{THl%}: | %{AAIrr2%}: ] [ %{Yy%}: | %{Ln%}: | %{Lno%}: | %{LN%}: | %{LLn%}: | %{LR%}: | %{NT%}: | :ண | :ர ] _ 0: %>: SuffixVowels: ;              
               %{M%}: _ 0: %>: [ SuffixVowels: | %{Igen%}: ] ;
               [ %{NP%}: | %{NR%}: | %{NK%}: | %{RP%}: ] :0 %>: %{Igen%}: :0 _ %{R%}: ;
               %{Y%}: _ 0: %>: %{U%}: ;
@@ -215,11 +215,11 @@ Rules
 ! Referential case
 "Removing I when Referential and noun ends in AA"
 %{Irefr%}:0 <=> %{AA%}: %>: _ ;
-                [ %{El%}: | %{Ul%}: ] %{NP%}: %{Pul%}: %>: 0: _ ;
+                [ %{El%}: | %{Ul%}: | %{THl%}: ] %{NP%}: %{Pul%}: %>: 0: _ ;
 
 ! Word endings 
 "Inserting ய"
-0:ய <=> [ %{AI%}: | %{I%}: | %{II%}: | %{EE%}: | %{E%}: | %{AIE%}: ] (%{AN%}:) _ %>: [ :VowelRight | %{Irefr%}: | %{Um%}: | %{Uimp%}: | %{Im%}: | %{AAm%}: | %{OOm%}: | %{EEm%}: | %{A%}: ] ;
+0:ய <=> [ %{AI%}: | %{I%}: | %{II%}: | %{EE%}: | %{E%}: | %{AIE%}: ] (%{AN%}:) _ %>: [ :VowelRight | %{Irefr%}: | %{Um%}: | %{Uimp%}: | %{Im%}: | %{AAm%}: | %{OOm%}: | %{EEm%}: | %{A%}: | %{AAp%}: ] ;
          %{AA%}: _ %>: %{I%}: ;
          %{Yy%}: %{Pul%}: _ %>: SuffixVowels: ;
          %{Yy%}: %{Pul%}: _ %>: ம: ;
@@ -258,7 +258,7 @@ Rules
          SuffixVowels: %>: _ 0: %{Kk%}: ;
 
 "Inserting ன"
-0:ன <=> [ %{El%}: | %{Ul%}: ] %{NP%}: %{Pul%}: %>: _ SuffixVowelsA: ;
+0:ன <=> [ %{El%}: | %{Ul%}: | %{THl%}: ] %{NP%}: %{Pul%}: %>: _ SuffixVowelsA: ;
 
 "Dropping Al"
 %{Al%}:0 <=> [ %{Al%}: | %{Il%}: | %{Ul%}: | %{El%}: ] 0: 0: 0: %>: _ ;
@@ -331,7 +331,7 @@ Rules
 %{LLn%}:ன <=> _ %{Pul%}: %>: %{Nn%}: ;
 
 "Starting with Consonant"
-%{LR%}:ற <=> _ %{Pul%}: %>: :Consonant ;
+%{LR%}:ற <=> _ %{Pul%}: %>: [ :Consonant | ConsonantLeft: ] ;
 
 "Starting with K"
 %{Ln%}:ற <=> _ %{Pul%}: %>: [ %{K%}: | %{P%}: ] ;
