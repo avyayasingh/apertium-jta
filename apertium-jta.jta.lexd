@@ -916,8 +916,8 @@ LEXICON Infinitives
 <inf>:>{A}[Class5c]                              # 'na'
 <inf>:>{K}{A}[Class5d]                           # 'ka'
 <inf>:>{K}{A}[Class5e]                           # 'ka'
-<inf>:>ன{A}[Class5f]                            # 'na'
-<inf>:>{A}[Class5f]                              # 'a'          Dir/LR
+<inf>:>{A}[Class5f]                              # 'a'
+<inf>:>{An}[Class5f]                             # 'a'          Dir/LR
 <inf>:>{A}[Class5g]                              # 'a'
 <inf>:>ர{A}[I1]                                  # 'ra'
 <inf>:>{K}{A}[I2]                                # 'ka'
@@ -1169,12 +1169,51 @@ LEXICON TenseInfix
 ################## GERUND
 LEXICON Gerund
 # Form I
-<ger>:>வது[Class1a,Class1b]
+## weak form
+<ger>:>வத{U}[Class1a,Class1b,Class1c,Class2,Class3,Class4]                        # 'vathu'
+## irregulars
+<ger>:>{P}த{U}[Class5a]                                                            # 'pathu'
+<ger>:>வத{U}[Class5b]                                                             # 'vathu'
+<ger>:>{P}த{U}[Class5c]                                                            # 'pathu'
+<ger>:>{U}வத{U}[Class5c]                                                          # 'uvathu'                Dir/LR
+<ger>:>{P}த{U}[Class5d]                                                            # 'pathu'
+<ger>:>{P}த{U}[Class5e]                                                            # 'pathu'
+<ger>:>{P}த{U}[Class5f]                                                            # 'pathu'
+<ger>:>{P}த{U}[Class5g]                                                            # 'pathu'
+## strong form
+<ger>:>{P}{Pul}{P}த{U}[Class6,Class7]                                              # 'ppathu'
+
 # Form II
-<ger>:>தல்[Class1a]
-<ger>:>டல்[Class1b]
+## weak form
+<ger>:>தல{Pul}[Class1a,Class2,Class3,Class4]                                      # 'thal'
+## irregulars (1b,1c)
+<ger>:>{T}ல{Pul}[Class1b]                                                          # 'tal'
+<ger>:>{RR}ல{Pul}[Class1c]                                                         # 'ral'
+## irregulars 5
+<ger>:>{RR}ல{Pul}[Class5a]                                                         # 'ral'
+<ger>:>{U}தல{Pul}[Class5b]                                                        # 'ral'
+<ger>:>{T}ல{Pul}[Class5c]                                                          # 'tal'
+<ger>:>{T}ல{Pul}[Class5d]                                                          # 'tal'
+<ger>:>{RR}ல{Pul}[Class5e]                                                         # 'ral'
+<ger>:>{RR}ல{Pul}[Class5f]                                                         # 'ral'
+<ger>:>{U}தல{Pul}[Class5g]                                                        # 'uthal'
+## strong form
+<ger>:>த்தல{Pul}[Class6,Class7]                                                    # 'ththal'
+
 # Form III
-<ger>:>{A}ல்[Class1a,Class1b]
+## weak form
+<ger>:>{A}ல{Pul}[Class1a,Class1b,Class1c,Class2,Class3,Class4]                     # 'al'
+## irregulars
+<ger>:>{K}ல{Pul}[Class5a]                                                          # 'kal'
+<ger>:>{A}ல{Pul}[Class5b]                                                          # 'al'
+<ger>:>{A}ல{Pul}[Class5c]                                                          # 'al'
+<ger>:>{K}ல{Pul}[Class5d]                                                          # 'kal'
+<ger>:>{K}ல{Pul}[Class5e]                                                          # 'kal'
+<ger>:>{A}ல{Pul}[Class5f]                                                          # 'al'
+<ger>:>{An}ல{Pul}[Class5f]                                                         # 'al'                    Dir/LR
+<ger>:>{A}ல{Pul}[Class5g]                                                          # 'al'
+## strong form
+<ger>:>{K}{Pul}{K}ல{Pul}[Class6,Class7]                                            # 'kkal'
 
 ################## CONDITIONALS
 LEXICON Conditionals

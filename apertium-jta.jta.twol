@@ -12,6 +12,7 @@ Alphabet
      %{VOW%}:ா %{VOW%}:ீ %{VOW%}:ூ %{VOW%}:ே %{VOW%}:ோ %{VOW%}:ௗ
      %{A%}:0
      %{Av%}:0
+     %{An%}:0
      %{Al%}:அ
      %{AA%}:ா
      %{AAv%}:ா
@@ -124,6 +125,7 @@ Rules
 %{Pul%}:0 <=> :Consonant _ %>: [ SuffixVowels: | %{AAm%}: | %{Um%}: | %{Uimp%}: | %{Im%}: | %{OOm%}: | %{EEm%}: | %{Igen%}: ] ;
               %{M%}: _ %>: [ %{AAm%}: | %{Um%}: | %{Uimp%}: | %{Im%}: | %{OOm%}: ] ;
               _ %>: %{UA%}: ;
+              _ %>: %{An%}: ;
               %{NR%}: _ %>: %{R%}: %{Pul%}: ;
               %{PLR%}: _ %>: %{R%}: ;
               %{PL%}: _ %>: %{T%}: ;
@@ -259,6 +261,7 @@ Rules
 
 "Inserting ன"
 0:ன <=> [ %{El%}: | %{Ul%}: | %{THl%}: ] %{NP%}: %{Pul%}: %>: _ SuffixVowelsA: ;
+         %{NT%}: %{Pul%}: _ %>: SuffixVowels: ;
 
 "Dropping Al"
 %{Al%}:0 <=> [ %{Al%}: | %{Il%}: | %{Ul%}: | %{El%}: ] 0: 0: 0: %>: _ ;
@@ -323,9 +326,6 @@ Rules
 
 "Starting with R or N"
 %{Ln%}:ன <=> _ %{Pul%}: %>: [ %{RR%}: | :ன ] ;
-
-"Starting with R or N"
-%{Lno%}:ன <=> _ %{Pul%}: %>: [ %{RR%}: | :ன ] ;
 
 "Starting with N"
 %{LLn%}:ன <=> _ %{Pul%}: %>: %{Nn%}: ;
